@@ -149,6 +149,11 @@ For example:
   True or false: Statistics is awesome. TRUE FALSE
 \end{itemize}
 
+\hypertarget{errors-and-mistakes}{%
+\section{Errors and mistakes}\label{errors-and-mistakes}}
+
+I am human, therefore I err. If you find an error in the textbook or something you think might be a mistake, please let me know ASAP so I can update this for everyone else. Let me know which section you find the error or mistake in and what the error or mistake is. For example, if there was an error here you could say, ``There was an error in 1.2 that the first sentence should really be `To err is human.'\,''
+
 \hypertarget{independent-t-test}{%
 \chapter{Independent t-test}\label{independent-t-test}}
 
@@ -389,7 +394,7 @@ Here is what the output for all three tests look like:
 To conduct this in jamovi, under Tests select \texttt{Welch\textquotesingle{}s}. You will interpret the results similarly to the independent t-test:
 
 \begin{quote}
-Using a Welch's t-test, there was not a statistically significant difference in grades between Anastasia's students (\emph{M} = 74.53, \emph{SD} = 9.00, \emph{n} = 15) and Bernadette's students (\emph{M} = 69.06, \emph{SD} = 5.77, \emph{n}~= 18), \emph{t} (23.02) = 2.03, \emph{p} = .054, \emph{d} = .72.
+Using a Welch's t-test, there was not a statistically significant difference in grades between Anastasia's students (\emph{M} = 74.53, \emph{SD} = 9.00, \emph{n} = 15) and Bernadette's students (\emph{M} = 69.06, \emph{SD} = 5.77, \emph{n} = 18), \emph{t} (23.02) = 2.03, \emph{p} = .054, \emph{d} = .72.
 \end{quote}
 
 Why is it no longer statistically significant? Which result should you trust? In reality, the difference in \emph{p}-values is likely due to chance. However, the independent t-test and Welch's test have different strengths and weaknesses. If the two populations really do have equal variances, then the independent t-test is slightly more powerful (lower Type II error rate) than the Welch's test. However, if they \emph{don't} have the same variances, then the assumptions of the independent t-test are violated and you may not be able to trust the results; you may end up with a higher Type I error rate. So it's a trade-off.
@@ -406,6 +411,342 @@ I will not go into specifics, but the idea behind the Mann-Whitney U test is tha
 \begin{quote}
 Using the Mann-Whitney U test, there was a statistically significant difference in grades between Anastasia's students (\emph{Mdn} = 76, \emph{n} = 15) and Bernadette's students (\emph{Mdn} = 69, \emph{n}~= 18), \emph{t} (23.02) = 2.03, \emph{p} = .054, \emph{d} = .72.
 \end{quote}
+
+\hypertarget{your-turn}{%
+\section{Your turn!}\label{your-turn}}
+
+Open the \texttt{Sample\_Dataset\_2014.xlsx} file that we will be using for all Your Turn exercises.
+
+Perform independent t-tests based on the following research questions. Think critically about whether you should be using a one-tailed or two-tailed hypothesis and check your assumptions so you know which test to use!
+
+To get the most out of these exercises, try to first find out the answer on your own and then use the drop-down menus to check your answer.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \textbf{Does height differ by gender (Gender: male = 0, female = 1)?}
+
+  \begin{itemize}
+  \item
+    Should you use a one-tailed or two-tailed hypothesis? one-tailed two-tailed
+  \item
+    Which statistic should you use based on your assumptions? independent t-test Welch's t-test Mann Whitney U
+  \item
+    Does height differ by gender? yes no
+  \end{itemize}
+\item
+  \textbf{Do athletes (Athlete: athletes = 1, non-athlete = 0) have faster sprint times than non-athletes?}
+
+  \begin{itemize}
+  \item
+    Should you use a one-tailed or two-tailed hypothesis? one-tailed two-tailed
+  \item
+    Which statistic should you use based on your assumptions? independent t-test Welch's t-test Mann Whitney U
+  \item
+    Do athletes have faster sprint times than non-athletes? yes no
+  \end{itemize}
+\item
+  \textbf{Do students who live on campus (LiveOnCampus: on campus = 1, off campus = 0) have higher English scores than students who live off campus?}
+
+  \begin{itemize}
+  \item
+    Should you use a one-tailed or two-tailed hypothesis? one-tailed two-tailed
+  \item
+    Which statistic should you use based on your assumptions? independent t-test Welch's t-test Mann Whitney U
+  \item
+    Does students who live on campus have higher English scores? yes no
+  \end{itemize}
+\item
+  \textbf{Does athletic status relate to math scores?}
+
+  \begin{itemize}
+  \item
+    Should you use a one-tailed or two-tailed hypothesis? one-tailed two-tailed
+  \item
+    Which statistic should you use based on your assumptions? independent t-test Welch's t-test Mann Whitney U
+  \item
+    Does athletic status relate to math scores? yes no
+  \end{itemize}
+\end{enumerate}
+
+\hypertarget{dependent-t-test}{%
+\chapter{Dependent t-test}\label{dependent-t-test}}
+
+\hypertarget{what-is-the-dependent-t-test}{%
+\section{What is the dependent t-test?}\label{what-is-the-dependent-t-test}}
+
+The dependent t-test is used to test the difference in our dependent variable between two categories in which participants are the \emph{same} across categories. Our category variable is our independent variable. In other words, we use the independent t-test when we have a research question with a \textbf{continuous dependent variable} and a \textbf{categorical independent variable with two categories in which the same participants are in each category}.
+
+The dependent t-test is also called a dependent samples t-test or paired samples t-test.
+
+\hypertarget{data-set-up-1}{%
+\section{Data set-up}\label{data-set-up-1}}
+
+To conduct the dependent t-test, we first need to ensure our data is set-up properly in our dataset. This requires having two columns: one is our dependent variable score for the participant in one category and the other column is our dependent variable score for the participant in the other category. Each row is a unique participant or unit of analysis. Here's what example data may look like if we were testing for differences in test scores across the same participants in the fall and spring:
+
+\begin{longtable}[]{@{}llr@{}}
+\caption{Example data for the dependent t-test}\tabularnewline
+\toprule
+\begin{minipage}[b]{0.30\columnwidth}\raggedright
+ID\strut
+\end{minipage} & \begin{minipage}[b]{0.30\columnwidth}\raggedright
+TestScore\_Fall\strut
+\end{minipage} & \begin{minipage}[b]{0.30\columnwidth}\raggedleft
+TestScore\_Spring\strut
+\end{minipage}\tabularnewline
+\midrule
+\endfirsthead
+\toprule
+\begin{minipage}[b]{0.30\columnwidth}\raggedright
+ID\strut
+\end{minipage} & \begin{minipage}[b]{0.30\columnwidth}\raggedright
+TestScore\_Fall\strut
+\end{minipage} & \begin{minipage}[b]{0.30\columnwidth}\raggedleft
+TestScore\_Spring\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.30\columnwidth}\raggedright
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedright
+75\strut
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedleft
+86\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.30\columnwidth}\raggedright
+2\strut
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedright
+79\strut
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedleft
+80\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.30\columnwidth}\raggedright
+3\strut
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedright
+65\strut
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedleft
+75\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.30\columnwidth}\raggedright
+4\strut
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedright
+81\strut
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedleft
+79\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.30\columnwidth}\raggedright
+5\strut
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedright
+73\strut
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedleft
+82\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.30\columnwidth}\raggedright
+6\strut
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedright
+72\strut
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedleft
+84\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.30\columnwidth}\raggedright
+7\strut
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedright
+69\strut
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedleft
+90\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.30\columnwidth}\raggedright
+8\strut
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedright
+60\strut
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedleft
+72\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.30\columnwidth}\raggedright
+9\strut
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedright
+75\strut
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedleft
+75\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.30\columnwidth}\raggedright
+10\strut
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedright
+74\strut
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedleft
+81\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+In the example data above, what is your \textbf{independent variable}? ID Semester TestScore
+
+In the example data above, what is your \textbf{dependent variable}? ID Semester Test Score
+
+\hypertarget{the-math-behind-the-independent-t-test-1}{%
+\section{The math behind the independent t-test}\label{the-math-behind-the-independent-t-test-1}}
+
+The basic math of the dependent t-test is the mean difference divided by the standard error, which is estimated based on the standard deviation and sample size (N).
+
+\(t = \frac{\bar{X}_1 - \bar{X}_2}{s_d/ \sqrt{N}}\)
+
+\hypertarget{assumptions-1}{%
+\section{Assumptions}\label{assumptions-1}}
+
+As a parametric test, the independent t-test has the same assumptions as other parametric tests minus the homogeneity of variance assumption because we are dealing with the same people across categories
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  The \emph{differences in scores} in the dependent variable are \textbf{normally distributed}
+\item
+  The dependent variable is \textbf{interval or ratio} (i.e., continuous)
+\item
+  Scores are \textbf{independent} across participants
+\end{enumerate}
+
+We cannot \underline{test} the second and third assumptions; rather, those are based on knowing your data.
+
+However, we can and should test for the first assumption. Fortunately, the dependent samples t-test in jamovi has two check boxes under ``Assumption Checks'' that lets us test normality.
+
+\hypertarget{in-jamovi-1}{%
+\section{In jamovi}\label{in-jamovi-1}}
+
+Let's run an example with data from lsj-data. Open data from your Data Library in ``lsj-data''. Select and open ``Chico''. This dataset is hypothetical data from Dr.~Chico's class in which students took two tests: one early in the semester and one later in the semester. Dr.~Chico thinks that the first test is a ``wake up call'' for students. When they realise how hard her class really is, they'll work harder for the second test and get a better mark. Is she right? Let's test it!
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  To perform an dependent t-test in jamovi, go to the Analyses tab, click the T-Tests button, and choose ``Paired Samples T-Test''.
+\item
+  Move both measurements of your dependent variable (\texttt{grade\_test1} and \texttt{grade\_test2}) to the Paired Variables box.
+\item
+  Under Tests, select \texttt{Student\textquotesingle{}s}
+\item
+  Under Hypothesis, choose the correct hypothesis: Measure 1 is not equal to Measure 2 Measure 1 \textgreater{} Measure 2 Measure 1 \textless{} Measure 2
+\item
+  Under Additional Statistics, select \texttt{Mean\ difference}, \texttt{Effect\ size}, and \texttt{Descriptives}.
+\item
+  Under Assumption Checks, select both options: \texttt{Normality\ test} and \texttt{Q-Q\ plot}.
+\end{enumerate}
+
+When you are done, your setup should look like this
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.8\linewidth]{images/03_dependent_t-test/dependent_setup} 
+
+}
+
+\caption{Dependent t-test setup in jamovi}\label{fig:unnamed-chunk-1}
+\end{figure}
+
+\hypertarget{checking-assumptions-in-jamovi-1}{%
+\subsection{Checking assumptions in jamovi}\label{checking-assumptions-in-jamovi-1}}
+
+\hypertarget{testing-normality-1}{%
+\subsubsection{Testing normality}\label{testing-normality-1}}
+
+We test for normality using the Shapiro-Wilk test and the Q-Q plot. The Shapiro-Wilk test was not statistically significant (W = .97, \emph{p} = .678); therefore, this indicates the data is normally distributed. Furthermore, the lines are fairly close to the diagonal line in the Q-Q plot (although it's a bit hard to tell because our sample size is small). We can conclude that we satisfy the assumption of normality.
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{images/03_dependent_t-test/dependent_normality} 
+
+}
+
+\caption{Testing normality in jamovi}\label{fig:unnamed-chunk-2}
+\end{figure}
+
+\hypertarget{interpreting-results-1}{%
+\subsection{Interpreting results}\label{interpreting-results-1}}
+
+Once we are satisfied we have satisfied the assumptions for the dependent t-test, we can interpret our results.
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{images/03_dependent_t-test/dependent_results} 
+
+}
+
+\caption{Dependent t-test results in jamovi}\label{fig:unnamed-chunk-3}
+\end{figure}
+
+Our p-value is less than .05, so our results are statistically significant. We can write up our results in APA something like this:
+
+\begin{quote}
+The 20 students in Dr.~Chico's class performed worse on the first test (\emph{M} = 56.98, \emph{SD} = 6.62) than they did on the second test (\emph{M} = 58.38, \emph{SD} = 6.41), \emph{t}(19) = -6.48, \emph{p} \textless{} .001, \emph{d} = -1.45.
+\end{quote}
+
+Remember in the previous chapter that our t-test can be negative but we can always flip the interpretation. Here's another example of how we could write-up our results in APA style:
+
+\begin{quote}
+Dr.~Chico's hypothesis was correct in that her 20 students performed better on the second test (\emph{M} = 58.38, \emph{SD} = 6.41) than they did on the first test (\emph{M} = 56.98, \emph{SD} = 6.62), \emph{t}(19) = 6.48, \emph{p} \textless{} .001, \emph{d} = 1.45.
+\end{quote}
+
+\hypertarget{what-if-i-violated-assumptions-1}{%
+\section{What if I violated assumptions?}\label{what-if-i-violated-assumptions-1}}
+
+If you violated the assumption of normality and no transformation fixed your data, then you can perform the non-parametric version of the dependent t-test called the Wilcoxon Rank test. As a reminder, non-parametric tests do not make assumptions about the distribution of data because it deals with the \emph{median} not the \emph{mean}.
+
+Here is the output for both the dependent t-test and the Wilcoxon rank test:
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{images/03_dependent_t-test/dependent_results_full} 
+
+}
+
+\caption{All independent t-test results in jamovi}\label{fig:unnamed-chunk-4}
+\end{figure}
+
+\hypertarget{wilcoxon-rank-in-jamovi}{%
+\subsubsection{Wilcoxon rank in jamovi}\label{wilcoxon-rank-in-jamovi}}
+
+To conduct this in jamovi, under Tests select \texttt{Wilcoxon\ rank}. You will interpret the results similarly to the dependent t-test:
+
+\begin{quote}
+Using Wilcoxon rank test, students' test scores were significantly higher at the second test (\emph{Mdn} = 59.70) than at the first test (\emph{Mdn} = 57.70), W = 2.00, \emph{p} \textless{} .001.
+\end{quote}
+
+The note about tied values is not necessary to discuss. It is just telling us one participant had identical values for both test1 and test2 (student15).
+
+\hypertarget{your-turn-1}{%
+\section{Your turn!}\label{your-turn-1}}
+
+Open the \texttt{Sample\_Dataset\_2014.xlsx} file that we use for all Your Turn exercises.
+
+Perform dependent t-tests based on the following research questions. Think critically about whether you should be using a one-tailed or two-tailed hypothesis and check your assumptions so you know which test to use!
+
+To get the most out of these exercises, try to first find out the answer on your own and then use the drop-down menus to check your answer.
+
+\textbf{Note}: Technically, none of our data is suitable for a dependent t-test in this dataset. We will pretend that the four test score variables (\texttt{English}, \texttt{Reading}, \texttt{Math}, and \texttt{Writing}) are really four measurements of the same underlying test. In reality, we would analyze this data using correlation.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \textbf{Do students perform better on the English test than they do the Writing test?}
+
+  \begin{itemize}
+  \item
+    Should you use a one-tailed or two-tailed hypothesis? one-tailed two-tailed
+  \item
+    Which statistic should you use based on your assumptions? dependent t-test Wilcoxon rank
+  \item
+    Do students perform better on the English test than they do the Writing test? yes no
+  \end{itemize}
+\item
+  \textbf{Does students' English scores relate to their Reading scores?}
+
+  \begin{itemize}
+  \item
+    Should you use a one-tailed or two-tailed hypothesis? one-tailed two-tailed
+  \item
+    Which statistic should you use based on your assumptions? dependent t-test Wilcoxon rank
+  \item
+    Does students' English scores relate to their Reading scores? yes no
+  \end{itemize}
+\end{enumerate}
 
 \hypertarget{appendix-appendices}{%
 \appendix}

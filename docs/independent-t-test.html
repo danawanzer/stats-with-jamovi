@@ -31,7 +31,7 @@
   
   
 <link rel="prev" href="introduction.html"/>
-<link rel="next" href="references.html"/>
+<link rel="next" href="dependent-t-test.html"/>
 <script src="libs/header-attrs-2.5/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -76,6 +76,7 @@
 <li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
 <ul>
 <li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#quiz-questions"><i class="fa fa-check"></i><b>1.1</b> Quiz Questions</a></li>
+<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#errors-and-mistakes"><i class="fa fa-check"></i><b>1.2</b> Errors and mistakes</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="independent-t-test.html"><a href="independent-t-test.html"><i class="fa fa-check"></i><b>2</b> Independent t-test</a>
 <ul>
@@ -93,6 +94,21 @@
 <li class="chapter" data-level="2.6.1" data-path="independent-t-test.html"><a href="independent-t-test.html#positive-and-negative-t-values"><i class="fa fa-check"></i><b>2.6.1</b> Positive and negative t values</a></li>
 <li class="chapter" data-level="2.6.2" data-path="independent-t-test.html"><a href="independent-t-test.html#what-if-i-violated-assumptions"><i class="fa fa-check"></i><b>2.6.2</b> What if I violated assumptions?</a></li>
 </ul></li>
+<li class="chapter" data-level="2.7" data-path="independent-t-test.html"><a href="independent-t-test.html#your-turn"><i class="fa fa-check"></i><b>2.7</b> Your turn!</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="dependent-t-test.html"><a href="dependent-t-test.html"><i class="fa fa-check"></i><b>3</b> Dependent t-test</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="dependent-t-test.html"><a href="dependent-t-test.html#what-is-the-dependent-t-test"><i class="fa fa-check"></i><b>3.1</b> What is the dependent t-test?</a></li>
+<li class="chapter" data-level="3.2" data-path="dependent-t-test.html"><a href="dependent-t-test.html#data-set-up-1"><i class="fa fa-check"></i><b>3.2</b> Data set-up</a></li>
+<li class="chapter" data-level="3.3" data-path="dependent-t-test.html"><a href="dependent-t-test.html#the-math-behind-the-independent-t-test-1"><i class="fa fa-check"></i><b>3.3</b> The math behind the independent t-test</a></li>
+<li class="chapter" data-level="3.4" data-path="dependent-t-test.html"><a href="dependent-t-test.html#assumptions-1"><i class="fa fa-check"></i><b>3.4</b> Assumptions</a></li>
+<li class="chapter" data-level="3.5" data-path="dependent-t-test.html"><a href="dependent-t-test.html#in-jamovi-1"><i class="fa fa-check"></i><b>3.5</b> In jamovi</a>
+<ul>
+<li class="chapter" data-level="3.5.1" data-path="dependent-t-test.html"><a href="dependent-t-test.html#checking-assumptions-in-jamovi-1"><i class="fa fa-check"></i><b>3.5.1</b> Checking assumptions in jamovi</a></li>
+<li class="chapter" data-level="3.5.2" data-path="dependent-t-test.html"><a href="dependent-t-test.html#interpreting-results-1"><i class="fa fa-check"></i><b>3.5.2</b> Interpreting results</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="dependent-t-test.html"><a href="dependent-t-test.html#what-if-i-violated-assumptions-1"><i class="fa fa-check"></i><b>3.6</b> What if I violated assumptions?</a></li>
+<li class="chapter" data-level="3.7" data-path="dependent-t-test.html"><a href="dependent-t-test.html#your-turn-1"><i class="fa fa-check"></i><b>3.7</b> Your turn!</a></li>
 </ul></li>
 <li class="appendix"><span><b>Appendices</b></span></li>
 <li class="chapter" data-level="A" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>A</b> References</a></li>
@@ -329,7 +345,7 @@ Figure 2.5: All independent t-test results in jamovi
 <h4><span class="header-section-number">2.6.2.1</span> Welch’s t-test in jamovi</h4>
 <p>To conduct this in jamovi, under Tests select <code>Welch's</code>. You will interpret the results similarly to the independent t-test:</p>
 <blockquote>
-<p>Using a Welch’s t-test, there was not a statistically significant difference in grades between Anastasia’s students (<em>M</em> = 74.53, <em>SD</em> = 9.00, <em>n</em> = 15) and Bernadette’s students (<em>M</em> = 69.06, <em>SD</em> = 5.77, <em>n</em> = 18), <em>t</em> (23.02) = 2.03, <em>p</em> = .054, <em>d</em> = .72.</p>
+<p>Using a Welch’s t-test, there was not a statistically significant difference in grades between Anastasia’s students (<em>M</em> = 74.53, <em>SD</em> = 9.00, <em>n</em> = 15) and Bernadette’s students (<em>M</em> = 69.06, <em>SD</em> = 5.77, <em>n</em> = 18), <em>t</em> (23.02) = 2.03, <em>p</em> = .054, <em>d</em> = .72.</p>
 </blockquote>
 <p>Why is it no longer statistically significant? Which result should you trust? In reality, the difference in <em>p</em>-values is likely due to chance. However, the independent t-test and Welch’s test have different strengths and weaknesses. If the two populations really do have equal variances, then the independent t-test is slightly more powerful (lower Type II error rate) than the Welch’s test. However, if they <em>don’t</em> have the same variances, then the assumptions of the independent t-test are violated and you may not be able to trust the results; you may end up with a higher Type I error rate. So it’s a trade-off.</p>
 <p>Which should you use? I tend to prefer always using Welch’s t-test because if the variances are equal, then there will be practically no difference between the independent and Welch’s t-test. But if the variances are not equal, then Welch’s t-test will outperform the independent t-test. For that reason, defaulting to the Welch’s t-test makes most sense to me.</p>
@@ -341,14 +357,42 @@ Figure 2.5: All independent t-test results in jamovi
 <blockquote>
 <p>Using the Mann-Whitney U test, there was a statistically significant difference in grades between Anastasia’s students (<em>Mdn</em> = 76, <em>n</em> = 15) and Bernadette’s students (<em>Mdn</em> = 69, <em>n</em> = 18), <em>t</em> (23.02) = 2.03, <em>p</em> = .054, <em>d</em> = .72.</p>
 </blockquote>
-
 </div>
 </div>
 </div>
+<div id="your-turn" class="section level2" number="2.7">
+<h2><span class="header-section-number">2.7</span> Your turn!</h2>
+<p>Open the <code>Sample_Dataset_2014.xlsx</code> file that we will be using for all Your Turn exercises.</p>
+<p>Perform independent t-tests based on the following research questions. Think critically about whether you should be using a one-tailed or two-tailed hypothesis and check your assumptions so you know which test to use!</p>
+<p>To get the most out of these exercises, try to first find out the answer on your own and then use the drop-down menus to check your answer.</p>
+<ol style="list-style-type: decimal">
+<li><p><strong>Does height differ by gender (Gender: male = 0, female = 1)?</strong></p>
+<ul>
+<li><p>Should you use a one-tailed or two-tailed hypothesis? <select class='solveme' data-answer='["two-tailed"]'> <option></option> <option>one-tailed</option> <option>two-tailed</option></select></p></li>
+<li><p>Which statistic should you use based on your assumptions? <select class='solveme' data-answer='["Mann Whitney U"]'> <option></option> <option>independent t-test</option> <option>Welch’s t-test</option> <option>Mann Whitney U</option></select></p></li>
+<li><p>Does height differ by gender? <select class='solveme' data-answer='["yes"]'> <option></option> <option>yes</option> <option>no</option></select></p></li>
+</ul></li>
+<li><p><strong>Do athletes (Athlete: athletes = 1, non-athlete = 0) have faster sprint times than non-athletes?</strong></p>
+<ul>
+<li><p>Should you use a one-tailed or two-tailed hypothesis? <select class='solveme' data-answer='["one-tailed"]'> <option></option> <option>one-tailed</option> <option>two-tailed</option></select></p></li>
+<li><p>Which statistic should you use based on your assumptions? <select class='solveme' data-answer='["Mann Whitney U"]'> <option></option> <option>independent t-test</option> <option>Welch’s t-test</option> <option>Mann Whitney U</option></select></p></li>
+<li><p>Do athletes have faster sprint times than non-athletes? <select class='solveme' data-answer='["yes"]'> <option></option> <option>yes</option> <option>no</option></select></p></li>
+</ul></li>
+<li><p><strong>Do students who live on campus (LiveOnCampus: on campus = 1, off campus = 0) have higher English scores than students who live off campus?</strong></p>
+<ul>
+<li><p>Should you use a one-tailed or two-tailed hypothesis? <select class='solveme' data-answer='["one-tailed"]'> <option></option> <option>one-tailed</option> <option>two-tailed</option></select></p></li>
+<li><p>Which statistic should you use based on your assumptions? <select class='solveme' data-answer='["Welch&apos;s t-test"]'> <option></option> <option>independent t-test</option> <option>Welch’s t-test</option> <option>Mann Whitney U</option></select></p></li>
+<li><p>Does students who live on campus have higher English scores? <select class='solveme' data-answer='["no"]'> <option></option> <option>yes</option> <option>no</option></select></p></li>
+</ul></li>
+<li><p><strong>Does athletic status relate to math scores?</strong></p>
+<ul>
+<li><p>Should you use a one-tailed or two-tailed hypothesis? <select class='solveme' data-answer='["two-tailed"]'> <option></option> <option>one-tailed</option> <option>two-tailed</option></select></p></li>
+<li><p>Which statistic should you use based on your assumptions? <select class='solveme' data-answer='["independent t-test"]'> <option></option> <option>independent t-test</option> <option>Welch’s t-test</option> <option>Mann Whitney U</option></select></p></li>
+<li><p>Does athletic status relate to math scores? <select class='solveme' data-answer='["yes"]'> <option></option> <option>yes</option> <option>no</option></select></p></li>
+</ul></li>
+</ol>
+
 </div>
-
-
-
 </div>
 <div class="psyteachr_footer">
   
@@ -441,7 +485,7 @@ window.onload = function() {
         </div>
       </div>
 <a href="introduction.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="dependent-t-test.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

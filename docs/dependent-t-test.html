@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 3 Dependent t-test | Statistics with jamovi</title>
+  <meta name="description" content="This is the website for PSYC 290 and PSYC 790 at the University of Wisconsin-Stout, taught by Dana Wanzer." />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 3 Dependent t-test | Statistics with jamovi" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is the website for PSYC 290 and PSYC 790 at the University of Wisconsin-Stout, taught by Dana Wanzer." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 3 Dependent t-test | Statistics with jamovi" />
+  
+  <meta name="twitter:description" content="This is the website for PSYC 290 and PSYC 790 at the University of Wisconsin-Stout, taught by Dana Wanzer." />
+  
+
+<meta name="author" content="Dana Wanzer" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="independent-t-test.html"/>
+<link rel="next" href="references.html"/>
+<script src="libs/header-attrs-2.5/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+
+
+
+<link rel="stylesheet" href="include/psyteachr.css" type="text/css" />
+<link rel="stylesheet" href="include/style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Stats with jamovi</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a></li>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#quiz-questions"><i class="fa fa-check"></i><b>1.1</b> Quiz Questions</a></li>
+<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#errors-and-mistakes"><i class="fa fa-check"></i><b>1.2</b> Errors and mistakes</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="independent-t-test.html"><a href="independent-t-test.html"><i class="fa fa-check"></i><b>2</b> Independent t-test</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="independent-t-test.html"><a href="independent-t-test.html#what-is-the-independent-t-test"><i class="fa fa-check"></i><b>2.1</b> What is the independent t-test?</a></li>
+<li class="chapter" data-level="2.2" data-path="independent-t-test.html"><a href="independent-t-test.html#data-set-up"><i class="fa fa-check"></i><b>2.2</b> Data set-up</a></li>
+<li class="chapter" data-level="2.3" data-path="independent-t-test.html"><a href="independent-t-test.html#the-math-behind-the-independent-t-test"><i class="fa fa-check"></i><b>2.3</b> The math behind the independent t-test</a></li>
+<li class="chapter" data-level="2.4" data-path="independent-t-test.html"><a href="independent-t-test.html#assumptions"><i class="fa fa-check"></i><b>2.4</b> Assumptions</a></li>
+<li class="chapter" data-level="2.5" data-path="independent-t-test.html"><a href="independent-t-test.html#in-jamovi"><i class="fa fa-check"></i><b>2.5</b> In jamovi</a>
+<ul>
+<li class="chapter" data-level="2.5.1" data-path="independent-t-test.html"><a href="independent-t-test.html#checking-assumptions-in-jamovi"><i class="fa fa-check"></i><b>2.5.1</b> Checking assumptions in jamovi</a></li>
+<li class="chapter" data-level="2.5.2" data-path="independent-t-test.html"><a href="independent-t-test.html#interpreting-results"><i class="fa fa-check"></i><b>2.5.2</b> Interpreting results</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="independent-t-test.html"><a href="independent-t-test.html#additional-information-about-the-independent-t-test"><i class="fa fa-check"></i><b>2.6</b> Additional information about the independent t-test</a>
+<ul>
+<li class="chapter" data-level="2.6.1" data-path="independent-t-test.html"><a href="independent-t-test.html#positive-and-negative-t-values"><i class="fa fa-check"></i><b>2.6.1</b> Positive and negative t values</a></li>
+<li class="chapter" data-level="2.6.2" data-path="independent-t-test.html"><a href="independent-t-test.html#what-if-i-violated-assumptions"><i class="fa fa-check"></i><b>2.6.2</b> What if I violated assumptions?</a></li>
+</ul></li>
+<li class="chapter" data-level="2.7" data-path="independent-t-test.html"><a href="independent-t-test.html#your-turn"><i class="fa fa-check"></i><b>2.7</b> Your turn!</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="dependent-t-test.html"><a href="dependent-t-test.html"><i class="fa fa-check"></i><b>3</b> Dependent t-test</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="dependent-t-test.html"><a href="dependent-t-test.html#what-is-the-dependent-t-test"><i class="fa fa-check"></i><b>3.1</b> What is the dependent t-test?</a></li>
+<li class="chapter" data-level="3.2" data-path="dependent-t-test.html"><a href="dependent-t-test.html#data-set-up-1"><i class="fa fa-check"></i><b>3.2</b> Data set-up</a></li>
+<li class="chapter" data-level="3.3" data-path="dependent-t-test.html"><a href="dependent-t-test.html#the-math-behind-the-independent-t-test-1"><i class="fa fa-check"></i><b>3.3</b> The math behind the independent t-test</a></li>
+<li class="chapter" data-level="3.4" data-path="dependent-t-test.html"><a href="dependent-t-test.html#assumptions-1"><i class="fa fa-check"></i><b>3.4</b> Assumptions</a></li>
+<li class="chapter" data-level="3.5" data-path="dependent-t-test.html"><a href="dependent-t-test.html#in-jamovi-1"><i class="fa fa-check"></i><b>3.5</b> In jamovi</a>
+<ul>
+<li class="chapter" data-level="3.5.1" data-path="dependent-t-test.html"><a href="dependent-t-test.html#checking-assumptions-in-jamovi-1"><i class="fa fa-check"></i><b>3.5.1</b> Checking assumptions in jamovi</a></li>
+<li class="chapter" data-level="3.5.2" data-path="dependent-t-test.html"><a href="dependent-t-test.html#interpreting-results-1"><i class="fa fa-check"></i><b>3.5.2</b> Interpreting results</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="dependent-t-test.html"><a href="dependent-t-test.html#what-if-i-violated-assumptions-1"><i class="fa fa-check"></i><b>3.6</b> What if I violated assumptions?</a></li>
+<li class="chapter" data-level="3.7" data-path="dependent-t-test.html"><a href="dependent-t-test.html#your-turn-1"><i class="fa fa-check"></i><b>3.7</b> Your turn!</a></li>
+</ul></li>
+<li class="appendix"><span><b>Appendices</b></span></li>
+<li class="chapter" data-level="A" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>A</b> References</a></li>
+<li class="divider"></li>
+<li><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/" 
+    target="blank"><img alt="Creative Commons License" 
+    style="border-width:0" 
+    src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Statistics with jamovi</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="dependent-t-test" class="section level1" number="3">
+<h1><span class="header-section-number">Chapter 3</span> Dependent t-test</h1>
+<div id="what-is-the-dependent-t-test" class="section level2" number="3.1">
+<h2><span class="header-section-number">3.1</span> What is the dependent t-test?</h2>
+<p>The dependent t-test is used to test the difference in our dependent variable between two categories in which participants are the <em>same</em> across categories. Our category variable is our independent variable. In other words, we use the independent t-test when we have a research question with a <strong>continuous dependent variable</strong> and a <strong>categorical independent variable with two categories in which the same participants are in each category</strong>.</p>
+<p>The dependent t-test is also called a dependent samples t-test or paired samples t-test.</p>
+</div>
+<div id="data-set-up-1" class="section level2" number="3.2">
+<h2><span class="header-section-number">3.2</span> Data set-up</h2>
+<p>To conduct the dependent t-test, we first need to ensure our data is set-up properly in our dataset. This requires having two columns: one is our dependent variable score for the participant in one category and the other column is our dependent variable score for the participant in the other category. Each row is a unique participant or unit of analysis. Here’s what example data may look like if we were testing for differences in test scores across the same participants in the fall and spring:</p>
+<table>
+<caption>Example data for the dependent t-test</caption>
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">ID</th>
+<th align="left">TestScore_Fall</th>
+<th align="right">TestScore_Spring</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">1</td>
+<td align="left">75</td>
+<td align="right">86</td>
+</tr>
+<tr class="even">
+<td align="left">2</td>
+<td align="left">79</td>
+<td align="right">80</td>
+</tr>
+<tr class="odd">
+<td align="left">3</td>
+<td align="left">65</td>
+<td align="right">75</td>
+</tr>
+<tr class="even">
+<td align="left">4</td>
+<td align="left">81</td>
+<td align="right">79</td>
+</tr>
+<tr class="odd">
+<td align="left">5</td>
+<td align="left">73</td>
+<td align="right">82</td>
+</tr>
+<tr class="even">
+<td align="left">6</td>
+<td align="left">72</td>
+<td align="right">84</td>
+</tr>
+<tr class="odd">
+<td align="left">7</td>
+<td align="left">69</td>
+<td align="right">90</td>
+</tr>
+<tr class="even">
+<td align="left">8</td>
+<td align="left">60</td>
+<td align="right">72</td>
+</tr>
+<tr class="odd">
+<td align="left">9</td>
+<td align="left">75</td>
+<td align="right">75</td>
+</tr>
+<tr class="even">
+<td align="left">10</td>
+<td align="left">74</td>
+<td align="right">81</td>
+</tr>
+</tbody>
+</table>
+<p>In the example data above, what is your <strong>independent variable</strong>? <select class='solveme' data-answer='["Semester"]'> <option></option> <option>ID</option> <option>Semester</option> <option>TestScore</option></select></p>
+<p>In the example data above, what is your <strong>dependent variable</strong>? <select class='solveme' data-answer='["Test Score"]'> <option></option> <option>ID</option> <option>Semester</option> <option>Test Score</option></select></p>
+</div>
+<div id="the-math-behind-the-independent-t-test-1" class="section level2" number="3.3">
+<h2><span class="header-section-number">3.3</span> The math behind the independent t-test</h2>
+<p>The basic math of the dependent t-test is the mean difference divided by the standard error, which is estimated based on the standard deviation and sample size (N).</p>
+<p><span class="math inline">\(t = \frac{\bar{X}_1 - \bar{X}_2}{s_d/ \sqrt{N}}\)</span></p>
+</div>
+<div id="assumptions-1" class="section level2" number="3.4">
+<h2><span class="header-section-number">3.4</span> Assumptions</h2>
+<p>As a parametric test, the independent t-test has the same assumptions as other parametric tests minus the homogeneity of variance assumption because we are dealing with the same people across categories</p>
+<ol style="list-style-type: decimal">
+<li><p>The <em>differences in scores</em> in the dependent variable are <strong>normally distributed</strong></p></li>
+<li><p>The dependent variable is <strong>interval or ratio</strong> (i.e., continuous)</p></li>
+<li><p>Scores are <strong>independent</strong> across participants</p></li>
+</ol>
+<p>We cannot <u>test</u> the second and third assumptions; rather, those are based on knowing your data.</p>
+<p>However, we can and should test for the first assumption. Fortunately, the dependent samples t-test in jamovi has two check boxes under “Assumption Checks” that lets us test normality.</p>
+</div>
+<div id="in-jamovi-1" class="section level2" number="3.5">
+<h2><span class="header-section-number">3.5</span> In jamovi</h2>
+<p>Let’s run an example with data from lsj-data. Open data from your Data Library in “lsj-data.” Select and open “Chico.” This dataset is hypothetical data from Dr. Chico’s class in which students took two tests: one early in the semester and one later in the semester. Dr. Chico thinks that the first test is a “wake up call” for students. When they realise how hard her class really is, they’ll work harder for the second test and get a better mark. Is she right? Let’s test it!</p>
+<ol style="list-style-type: decimal">
+<li><p>To perform an dependent t-test in jamovi, go to the Analyses tab, click the T-Tests button, and choose “Paired Samples T-Test.”</p></li>
+<li><p>Move both measurements of your dependent variable (<code>grade_test1</code> and <code>grade_test2</code>) to the Paired Variables box.</p></li>
+<li><p>Under Tests, select <code>Student's</code></p></li>
+<li><p>Under Hypothesis, choose the correct hypothesis: <select class='solveme' data-answer='["Measure 1 < Measure 2"]'> <option></option> <option>Measure 1 is not equal to Measure 2</option> <option>Measure 1 &gt; Measure 2</option> <option>Measure 1 &lt; Measure 2</option></select></p></li>
+<li><p>Under Additional Statistics, select <code>Mean difference</code>, <code>Effect size</code>, and <code>Descriptives</code>.</p></li>
+<li><p>Under Assumption Checks, select both options: <code>Normality test</code> and <code>Q-Q plot</code>.</p></li>
+</ol>
+<p>When you are done, your setup should look like this</p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-1"></span>
+<img src="images/03_dependent_t-test/dependent_setup.png" alt="Dependent t-test setup in jamovi" width="80%" />
+<p class="caption">
+Figure 2.1: Dependent t-test setup in jamovi
+</p>
+</div>
+<div id="checking-assumptions-in-jamovi-1" class="section level3" number="3.5.1">
+<h3><span class="header-section-number">3.5.1</span> Checking assumptions in jamovi</h3>
+<div id="testing-normality-1" class="section level4" number="3.5.1.1">
+<h4><span class="header-section-number">3.5.1.1</span> Testing normality</h4>
+<p>We test for normality using the Shapiro-Wilk test and the Q-Q plot. The Shapiro-Wilk test was not statistically significant (W = .97, <em>p</em> = .678); therefore, this indicates the data is normally distributed. Furthermore, the lines are fairly close to the diagonal line in the Q-Q plot (although it’s a bit hard to tell because our sample size is small). We can conclude that we satisfy the assumption of normality.</p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-2"></span>
+<img src="images/03_dependent_t-test/dependent_normality.png" alt="Testing normality in jamovi" width="100%" />
+<p class="caption">
+Figure 2.2: Testing normality in jamovi
+</p>
+</div>
+</div>
+</div>
+<div id="interpreting-results-1" class="section level3" number="3.5.2">
+<h3><span class="header-section-number">3.5.2</span> Interpreting results</h3>
+<p>Once we are satisfied we have satisfied the assumptions for the dependent t-test, we can interpret our results.</p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-3"></span>
+<img src="images/03_dependent_t-test/dependent_results.png" alt="Dependent t-test results in jamovi" width="100%" />
+<p class="caption">
+Figure 2.3: Dependent t-test results in jamovi
+</p>
+</div>
+<p>Our p-value is less than .05, so our results are statistically significant. We can write up our results in APA something like this:</p>
+<blockquote>
+<p>The 20 students in Dr. Chico’s class performed worse on the first test (<em>M</em> = 56.98, <em>SD</em> = 6.62) than they did on the second test (<em>M</em> = 58.38, <em>SD</em> = 6.41), <em>t</em>(19) = -6.48, <em>p</em> &lt; .001, <em>d</em> = -1.45.</p>
+</blockquote>
+<p>Remember in the previous chapter that our t-test can be negative but we can always flip the interpretation. Here’s another example of how we could write-up our results in APA style:</p>
+<blockquote>
+<p>Dr. Chico’s hypothesis was correct in that her 20 students performed better on the second test (<em>M</em> = 58.38, <em>SD</em> = 6.41) than they did on the first test (<em>M</em> = 56.98, <em>SD</em> = 6.62), <em>t</em>(19) = 6.48, <em>p</em> &lt; .001, <em>d</em> = 1.45.</p>
+</blockquote>
+</div>
+</div>
+<div id="what-if-i-violated-assumptions-1" class="section level2" number="3.6">
+<h2><span class="header-section-number">3.6</span> What if I violated assumptions?</h2>
+<p>If you violated the assumption of normality and no transformation fixed your data, then you can perform the non-parametric version of the dependent t-test called the Wilcoxon Rank test. As a reminder, non-parametric tests do not make assumptions about the distribution of data because it deals with the <em>median</em> not the <em>mean</em>.</p>
+<p>Here is the output for both the dependent t-test and the Wilcoxon rank test:</p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-4"></span>
+<img src="images/03_dependent_t-test/dependent_results_full.png" alt="All independent t-test results in jamovi" width="100%" />
+<p class="caption">
+Figure 2.4: All independent t-test results in jamovi
+</p>
+</div>
+<div id="wilcoxon-rank-in-jamovi" class="section level4" number="3.6.0.1">
+<h4><span class="header-section-number">3.6.0.1</span> Wilcoxon rank in jamovi</h4>
+<p>To conduct this in jamovi, under Tests select <code>Wilcoxon rank</code>. You will interpret the results similarly to the dependent t-test:</p>
+<blockquote>
+<p>Using Wilcoxon rank test, students’ test scores were significantly higher at the second test (<em>Mdn</em> = 59.70) than at the first test (<em>Mdn</em> = 57.70), W = 2.00, <em>p</em> &lt; .001.</p>
+</blockquote>
+<p>The note about tied values is not necessary to discuss. It is just telling us one participant had identical values for both test1 and test2 (student15).</p>
+</div>
+</div>
+<div id="your-turn-1" class="section level2" number="3.7">
+<h2><span class="header-section-number">3.7</span> Your turn!</h2>
+<p>Open the <code>Sample_Dataset_2014.xlsx</code> file that we use for all Your Turn exercises.</p>
+<p>Perform dependent t-tests based on the following research questions. Think critically about whether you should be using a one-tailed or two-tailed hypothesis and check your assumptions so you know which test to use!</p>
+<p>To get the most out of these exercises, try to first find out the answer on your own and then use the drop-down menus to check your answer.</p>
+<p><strong>Note</strong>: Technically, none of our data is suitable for a dependent t-test in this dataset. We will pretend that the four test score variables (<code>English</code>, <code>Reading</code>, <code>Math</code>, and <code>Writing</code>) are really four measurements of the same underlying test. In reality, we would analyze this data using correlation.</p>
+<ol style="list-style-type: decimal">
+<li><p><strong>Do students perform better on the English test than they do the Writing test?</strong></p>
+<ul>
+<li><p>Should you use a one-tailed or two-tailed hypothesis? <select class='solveme' data-answer='["one-tailed"]'> <option></option> <option>one-tailed</option> <option>two-tailed</option></select></p></li>
+<li><p>Which statistic should you use based on your assumptions? <select class='solveme' data-answer='["dependent t-test"]'> <option></option> <option>dependent t-test</option> <option>Wilcoxon rank</option></select></p></li>
+<li><p>Do students perform better on the English test than they do the Writing test? <select class='solveme' data-answer='["yes"]'> <option></option> <option>yes</option> <option>no</option></select></p></li>
+</ul></li>
+<li><p><strong>Does students’ English scores relate to their Reading scores?</strong></p>
+<ul>
+<li><p>Should you use a one-tailed or two-tailed hypothesis? <select class='solveme' data-answer='["two-tailed"]'> <option></option> <option>one-tailed</option> <option>two-tailed</option></select></p></li>
+<li><p>Which statistic should you use based on your assumptions? <select class='solveme' data-answer='["dependent t-test"]'> <option></option> <option>dependent t-test</option> <option>Wilcoxon rank</option></select></p></li>
+<li><p>Does students’ English scores relate to their Reading scores? <select class='solveme' data-answer='["no"]'> <option></option> <option>yes</option> <option>no</option></select></p></li>
+</ul></li>
+</ol>
+
+</div>
+</div>
+
+
+
+</div>
+<div class="psyteachr_footer">
+  
+</div>
+<script>
+
+/* update total correct if #total_correct exists */
+update_total_correct = function() {
+  if (t = document.getElementById("total_correct")) {
+    t.innerHTML =
+      document.getElementsByClassName("correct").length + " of " +
+      document.getElementsByClassName("solveme").length + " correct";
+  }
+}
+
+/* solution button toggling function */
+b_func = function() {
+  var cl = this.parentElement.classList;
+  if (cl.contains('open')) {
+    cl.remove("open");
+  } else {
+    cl.add("open");
+  }
+}
+
+/* function for checking solveme answers */
+solveme_func = function(e) {
+  var real_answers = JSON.parse(this.dataset.answer);
+  var my_answer = this.value;
+  var cl = this.classList;
+  if (cl.contains("ignorecase")) {
+    my_answer = my_answer.toLowerCase();
+  }
+  if (cl.contains("nospaces")) {
+    my_answer = my_answer.replace(/ /g, "");
+  }
+  
+  if (my_answer !== "" & real_answers.includes(my_answer)) {
+    cl.add("correct");
+  } else {
+    cl.remove("correct");
+  }
+  update_total_correct();
+}
+
+window.onload = function() {
+  /* set up solution buttons */
+  var buttons = document.getElementsByTagName("button");
+
+  for (var i = 0; i < buttons.length; i++) {
+    if (buttons[i].parentElement.classList.contains('solution')) {
+      buttons[i].onclick = b_func;
+    }
+  }
+  
+  /* set up solveme inputs */
+  var solveme = document.getElementsByClassName("solveme");
+
+  for (var i = 0; i < solveme.length; i++) {
+    /* make sure input boxes don't auto-anything */
+    solveme[i].setAttribute("autocomplete","off");
+    solveme[i].setAttribute("autocorrect", "off");
+    solveme[i].setAttribute("autocapitalize", "off"); 
+    solveme[i].setAttribute("spellcheck", "false");
+    solveme[i].value = "";
+    
+    /* adjust answer for ignorecase or nospaces */
+    var cl = solveme[i].classList;
+    var real_answer = solveme[i].dataset.answer;
+    if (cl.contains("ignorecase")) {
+      real_answer = real_answer.toLowerCase();
+    }
+    if (cl.contains("nospaces")) {
+      real_answer = real_answer.replace(/ /g, "");
+    }
+    solveme[i].dataset.answer = real_answer;
+    
+    /* attach checking function */
+    solveme[i].onkeyup = solveme_func;
+    solveme[i].onchange = solveme_func;
+  }
+  
+  update_total_correct();
+}
+
+</script>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="independent-t-test.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"],
+"google": false
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": {},
+"toc": {
+"collapse": "section",
+"scroll_highlight": true
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
