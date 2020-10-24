@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 2 Independent t-test | Statistics with jamovi</title>
+  <meta name="description" content="This is the website for PSYC 290 and PSYC 790 at the University of Wisconsin-Stout, taught by Dana Wanzer." />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 2 Independent t-test | Statistics with jamovi" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is the website for PSYC 290 and PSYC 790 at the University of Wisconsin-Stout, taught by Dana Wanzer." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 2 Independent t-test | Statistics with jamovi" />
+  
+  <meta name="twitter:description" content="This is the website for PSYC 290 and PSYC 790 at the University of Wisconsin-Stout, taught by Dana Wanzer." />
+  
+
+<meta name="author" content="Dana Wanzer" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="introduction.html"/>
+<link rel="next" href="references.html"/>
+<script src="libs/header-attrs-2.5/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+
+
+
+<link rel="stylesheet" href="include/psyteachr.css" type="text/css" />
+<link rel="stylesheet" href="include/style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Stats with jamovi</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a></li>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#quiz-questions"><i class="fa fa-check"></i><b>1.1</b> Quiz Questions</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="independent-t-test.html"><a href="independent-t-test.html"><i class="fa fa-check"></i><b>2</b> Independent t-test</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="independent-t-test.html"><a href="independent-t-test.html#what-is-the-independent-t-test"><i class="fa fa-check"></i><b>2.1</b> What is the independent t-test?</a></li>
+<li class="chapter" data-level="2.2" data-path="independent-t-test.html"><a href="independent-t-test.html#data-set-up"><i class="fa fa-check"></i><b>2.2</b> Data set-up</a></li>
+<li class="chapter" data-level="2.3" data-path="independent-t-test.html"><a href="independent-t-test.html#the-math-behind-the-independent-t-test"><i class="fa fa-check"></i><b>2.3</b> The math behind the independent t-test</a></li>
+<li class="chapter" data-level="2.4" data-path="independent-t-test.html"><a href="independent-t-test.html#assumptions"><i class="fa fa-check"></i><b>2.4</b> Assumptions</a></li>
+<li class="chapter" data-level="2.5" data-path="independent-t-test.html"><a href="independent-t-test.html#in-jamovi"><i class="fa fa-check"></i><b>2.5</b> In jamovi</a>
+<ul>
+<li class="chapter" data-level="2.5.1" data-path="independent-t-test.html"><a href="independent-t-test.html#checking-assumptions-in-jamovi"><i class="fa fa-check"></i><b>2.5.1</b> Checking assumptions in jamovi</a></li>
+<li class="chapter" data-level="2.5.2" data-path="independent-t-test.html"><a href="independent-t-test.html#interpreting-results"><i class="fa fa-check"></i><b>2.5.2</b> Interpreting results</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="independent-t-test.html"><a href="independent-t-test.html#additional-information-about-the-independent-t-test"><i class="fa fa-check"></i><b>2.6</b> Additional information about the independent t-test</a>
+<ul>
+<li class="chapter" data-level="2.6.1" data-path="independent-t-test.html"><a href="independent-t-test.html#positive-and-negative-t-values"><i class="fa fa-check"></i><b>2.6.1</b> Positive and negative t values</a></li>
+<li class="chapter" data-level="2.6.2" data-path="independent-t-test.html"><a href="independent-t-test.html#what-if-i-violated-assumptions"><i class="fa fa-check"></i><b>2.6.2</b> What if I violated assumptions?</a></li>
+</ul></li>
+</ul></li>
+<li class="appendix"><span><b>Appendices</b></span></li>
+<li class="chapter" data-level="A" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>A</b> References</a></li>
+<li class="divider"></li>
+<li><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/" 
+    target="blank"><img alt="Creative Commons License" 
+    style="border-width:0" 
+    src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Statistics with jamovi</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="independent-t-test" class="section level1" number="2">
+<h1><span class="header-section-number">Chapter 2</span> Independent t-test</h1>
+<div id="what-is-the-independent-t-test" class="section level2" number="2.1">
+<h2><span class="header-section-number">2.1</span> What is the independent t-test?</h2>
+<p>The independent t-test is used to test the difference in our dependent variable between two different groups of observations. Our grouping variable is our independent variable. In other words, we use the independent t-test when we have a research question with a <strong>continuous dependent variable</strong> and a <strong>categorical independent variable with two categories in which different participants are in each category</strong>.</p>
+<p>The independent t-test is also the independent samples t-test and the Student’s t-test. I will use these terms interchangeably.</p>
+</div>
+<div id="data-set-up" class="section level2" number="2.2">
+<h2><span class="header-section-number">2.2</span> Data set-up</h2>
+<p>To conduct the independent t-test, we first need to ensure our data is set-up properly in our dataset. This requires having two columns: one with our continuous dependent variable and one indicating which group the participant is in. Each row is a unique participant or unit of analysis. Here’s what example data may look like if we were testing for differences in a test score by students in my fall or spring semesters of this course:</p>
+<table>
+<caption>Example data for the independent t-test</caption>
+<thead>
+<tr class="header">
+<th align="left">ID</th>
+<th align="left">Semester</th>
+<th align="right">TestScore</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">1</td>
+<td align="left">Fall</td>
+<td align="right">86</td>
+</tr>
+<tr class="even">
+<td align="left">2</td>
+<td align="left">Fall</td>
+<td align="right">80</td>
+</tr>
+<tr class="odd">
+<td align="left">3</td>
+<td align="left">Fall</td>
+<td align="right">75</td>
+</tr>
+<tr class="even">
+<td align="left">4</td>
+<td align="left">Fall</td>
+<td align="right">79</td>
+</tr>
+<tr class="odd">
+<td align="left">5</td>
+<td align="left">Fall</td>
+<td align="right">82</td>
+</tr>
+<tr class="even">
+<td align="left">6</td>
+<td align="left">Spring</td>
+<td align="right">84</td>
+</tr>
+<tr class="odd">
+<td align="left">7</td>
+<td align="left">Spring</td>
+<td align="right">90</td>
+</tr>
+<tr class="even">
+<td align="left">8</td>
+<td align="left">Spring</td>
+<td align="right">72</td>
+</tr>
+<tr class="odd">
+<td align="left">9</td>
+<td align="left">Spring</td>
+<td align="right">75</td>
+</tr>
+<tr class="even">
+<td align="left">10</td>
+<td align="left">Spring</td>
+<td align="right">81</td>
+</tr>
+</tbody>
+</table>
+<p>In the example data above, what is your <strong>independent variable</strong>? <select class='solveme' data-answer='["Semester"]'> <option></option> <option>ID</option> <option>Semester</option> <option>TestScore</option></select></p>
+<p>In the example data above, what is your <strong>dependent variable</strong>? <select class='solveme' data-answer='["TestScore"]'> <option></option> <option>ID</option> <option>Semester</option> <option>TestScore</option></select></p>
+</div>
+<div id="the-math-behind-the-independent-t-test" class="section level2" number="2.3">
+<h2><span class="header-section-number">2.3</span> The math behind the independent t-test</h2>
+<p>The basic math of the independent t-test the mean difference divided by the pooled standard error.</p>
+<p><span class="math inline">\(t = \frac{\bar{X}_1 - \bar{X}_2}{SE({\bar{X}_1 - \bar{X}_2})}\)</span></p>
+<p>The denominator of the equation is more difficult to calculate and depends on whether the sample size between groups is equal.</p>
+</div>
+<div id="assumptions" class="section level2" number="2.4">
+<h2><span class="header-section-number">2.4</span> Assumptions</h2>
+<p>As a parametric test, the independent t-test has the same assumptions as other parametric tests:</p>
+<ol style="list-style-type: decimal">
+<li><p>The dependent variable is <strong>normally distributed</strong></p></li>
+<li><p>Variances in the two groups are roughly equal (i.e., <strong>homogeneity of variances</strong>)</p></li>
+<li><p>The dependent variable is <strong>interval or ratio</strong> (i.e., continuous)</p></li>
+<li><p>Scores are <strong>independent</strong> between groups</p></li>
+</ol>
+<p>We cannot <u>test</u> the third and fourth assumptions; rather, those are based on knowing your data.</p>
+<p>However, we can and should test for the first two assumptions. Fortunately, the independent samples t-test in jamovi has two check boxes under “Assumption Checks” that lets us test for both assumptions.</p>
+</div>
+<div id="in-jamovi" class="section level2" number="2.5">
+<h2><span class="header-section-number">2.5</span> In jamovi</h2>
+<p>Let’s run an example with data from lsj-data. Open data from your Data Library in “lsj-data.” Select and open “Harpo.” This dataset is hypothetical data of 33 students taking Dr. Harpo’s statistics lectures. We have two tutors for the class, Anastasia (<em>n</em> = 15) and Bernadette (<em>n</em> = 18). Our research question is “Which tutor results in better student grades?” We don’t have a hypothesis that one does better than the other.</p>
+<ol style="list-style-type: decimal">
+<li><p>To perform an independent t-test in jamovi, go to the Analyses tab, click the T-Tests button, and choose “Independent Samples T-Test.”</p></li>
+<li><p>Move your dependent variable <code>grade</code> to the Dependent Variables box and your independent variable <code>tutor</code> to the Grouping Variable box.</p></li>
+<li><p>Under Tests, select <code>Student's</code></p></li>
+<li><p>Under Hypothesis, because we have a two-sided hypothesis select a two-sided hypothesis (Group 1 does not equal Group 2).</p></li>
+<li><p>Under Additional Statistics, select <code>Mean difference</code>, <code>Effect size</code>, and <code>Descriptives</code>.</p></li>
+<li><p>Under Assumption Checks, select all three options: <code>Homogeneity test</code>, <code>Normality test</code>, and <code>Q-Q plot</code>.</p></li>
+</ol>
+<p>When you are done, your setup should look like this</p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-1"></span>
+<img src="images/02-independent_t-test/independent_t-test_setup.png" alt="Independent t-test setup in jamovi" width="80%" />
+<p class="caption">
+Figure 2.1: Independent t-test setup in jamovi
+</p>
+</div>
+<div id="checking-assumptions-in-jamovi" class="section level3" number="2.5.1">
+<h3><span class="header-section-number">2.5.1</span> Checking assumptions in jamovi</h3>
+<div id="testing-normality" class="section level4" number="2.5.1.1">
+<h4><span class="header-section-number">2.5.1.1</span> Testing normality</h4>
+<p>We test for normality using the Shapiro-Wilk test and the Q-Q plot. The Shapiro-Wilk test was not statistically significant (W = .98, <em>p</em> = .827); therefore, this indicates the data is normally distributed. Furthermore, the lines are fairly close to the diagonal line in the Q-Q plot. We can conclude that we satisfy the assumption of normality.</p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-2"></span>
+<img src="images/02-independent_t-test/independent_t-test_normality.png" alt="Testing normality in jamovi" width="100%" />
+<p class="caption">
+Figure 2.2: Testing normality in jamovi
+</p>
+</div>
+</div>
+<div id="testing-homogeneity-of-variance" class="section level4" number="2.5.1.2">
+<h4><span class="header-section-number">2.5.1.2</span> Testing homogeneity of variance</h4>
+<p>We test for homogeneity of variance using the Levene’s test. The Levene’s test was not statistically significant (<em>F</em> [1, 31] = 2.49, <em>p</em> = .125); therefore, this indicates our data satisfies the assumption of homogeneity of variance. However, I would add a caveat that we have a small sample of data (<em>n</em> = 15 for Anastasia and <em>n</em> = 18 for Bernadette) and the standard deviations are quite different from one another (SD = 9.00 vs 5.77, respectively). We should have tried to collect more data.</p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-3"></span>
+<img src="images/02-independent_t-test/independent_t-test_homogeneity.png" alt="Testing homogeneity of variance in jamovi" width="100%" />
+<p class="caption">
+Figure 2.3: Testing homogeneity of variance in jamovi
+</p>
+</div>
+</div>
+</div>
+<div id="interpreting-results" class="section level3" number="2.5.2">
+<h3><span class="header-section-number">2.5.2</span> Interpreting results</h3>
+<p>Once we are satisfied we have satisfied the assumptions for the independent t-test, we can interpret our results.</p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-4"></span>
+<img src="images/02-independent_t-test/independent_t-test_ind-results.png" alt="Independent t-test results in jamovi" width="100%" />
+<p class="caption">
+Figure 2.4: Independent t-test results in jamovi
+</p>
+</div>
+<p>Our p-value is less than .05, so our results are statistically significant. We can write up our results in APA something like this:</p>
+<blockquote>
+<p>Anastasia’s students (<em>M</em> = 74.53, <em>SD</em> = 9.00, <em>n</em> = 15) had significantly higher grades than Bernadette’s students (<em>M</em> = 69.06, <em>SD</em> = 5.77, <em>n</em> = 18), <em>t</em> (31) = 2.12, <em>p</em> = .043, <em>d</em> = .74.</p>
+</blockquote>
+<p>Sometimes, people like to put the statistics inside a parentheses. In that case, you need to change the parentheses around the degrees of freedom as brackets. Here’s another example write-up of the results in APA style:</p>
+<blockquote>
+<p>I tested the difference in grades between Anastasia’s students (<em>M</em> = 74.53, <em>SD</em> = 9.00, <em>n</em> = 15) and Bernadette’s students (<em>M</em> = 69.06, <em>SD</em> = 5.77, <em>n</em> = 18). An independent samples t-test showed that the 5.48 mean difference between the tutor’s student was statistically significant (<em>t</em> [31] = 2.12, <em>p</em> = .043, <em>d</em> = .74).</p>
+</blockquote>
+</div>
+</div>
+<div id="additional-information-about-the-independent-t-test" class="section level2" number="2.6">
+<h2><span class="header-section-number">2.6</span> Additional information about the independent t-test</h2>
+<div id="positive-and-negative-t-values" class="section level3" number="2.6.1">
+<h3><span class="header-section-number">2.6.1</span> Positive and negative t values</h3>
+<p>Students often worry about positive or negative t-statistic values and are unsure how to interpret it. Positive or negative t-statistic values simply occur based on which group is listed first. Our t-statistic above is positive because we tested the difference between Anastasia and Bernadette: (Anastasia - Bernadette) = (74.53 - 69.06) = (5.48).</p>
+<p>However, if we flipped it and tested the difference between Bernadette and Anastasia, our mean difference would be -5.48 and our t-statistic would be -2.12.</p>
+<p>All that is to say, <em>your positive or negative t-statistic is arbitrary</em>. So do not fret!</p>
+<p>However, it is important the sign of your t-statistic matches what you report. For example, notice the difference:</p>
+<blockquote>
+<ol style="list-style-type: decimal">
+<li>Anastasia’s students had <strong>higher</strong> grades than Bernadette’s, <em>t</em> (31) = <strong>2.12</strong>, <em>p</em> = .043, <em>d</em> = .74.</li>
+<li>Bernadette’s students had <strong>lower</strong> grades than Anastasia’s, <em>t</em> (31) = <strong>-2.12</strong>, <em>p</em> = .043, <em>d</em> = .74.</li>
+</ol>
+</blockquote>
+<p>One last note: this positive or negative t-statistic is only relevant for the independent and dependent t-test. You will not get negative values for the F-statistic or chi-square tests!</p>
+</div>
+<div id="what-if-i-violated-assumptions" class="section level3" number="2.6.2">
+<h3><span class="header-section-number">2.6.2</span> What if I violated assumptions?</h3>
+<p>The great news is that jamovi includes the Welch’s t-statistic and the non-parametric version of the independent t-test (Mann-Whitney U)! The Welch’s t-test has three main differences from the independent samples t-test: (a) the standard error (SE) is not a pooled estimate, (b) the degrees of freedom are calculated very different (not <em>N</em> - 2), and (c) it does not have an assumption of homogeneity of variance. The Mann-Whitney U is not calculated based on the mean but rather the median and compares ranks of values across the two groups: it has no assumptions about the distribution of data or homogeneity of variances.</p>
+<p>Here’s what statistic you should choose based on satisfying assumptions:</p>
+<table>
+<colgroup>
+<col width="42%" />
+<col width="27%" />
+<col width="29%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th><strong>Normality: satisfied</strong></th>
+<th><strong>Normality: not satisfied</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Homogeneity of Variance: satisfied</strong></td>
+<td>independent samples t-test</td>
+<td>Mann-Whitney U</td>
+</tr>
+<tr class="even">
+<td><strong>Homogeneity of Variance: not satisfied</strong></td>
+<td>Welch’s t-test</td>
+<td>Mann-Whitney U</td>
+</tr>
+</tbody>
+</table>
+<p>Here is what the output for all three tests look like:</p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-5"></span>
+<img src="images/02-independent_t-test/independent_t-test_full-results.png" alt="All independent t-test results in jamovi" width="100%" />
+<p class="caption">
+Figure 2.5: All independent t-test results in jamovi
+</p>
+</div>
+<div id="welchs-t-test-in-jamovi" class="section level4" number="2.6.2.1">
+<h4><span class="header-section-number">2.6.2.1</span> Welch’s t-test in jamovi</h4>
+<p>To conduct this in jamovi, under Tests select <code>Welch's</code>. You will interpret the results similarly to the independent t-test:</p>
+<blockquote>
+<p>Using a Welch’s t-test, there was not a statistically significant difference in grades between Anastasia’s students (<em>M</em> = 74.53, <em>SD</em> = 9.00, <em>n</em> = 15) and Bernadette’s students (<em>M</em> = 69.06, <em>SD</em> = 5.77, <em>n</em> = 18), <em>t</em> (23.02) = 2.03, <em>p</em> = .054, <em>d</em> = .72.</p>
+</blockquote>
+<p>Why is it no longer statistically significant? Which result should you trust? In reality, the difference in <em>p</em>-values is likely due to chance. However, the independent t-test and Welch’s test have different strengths and weaknesses. If the two populations really do have equal variances, then the independent t-test is slightly more powerful (lower Type II error rate) than the Welch’s test. However, if they <em>don’t</em> have the same variances, then the assumptions of the independent t-test are violated and you may not be able to trust the results; you may end up with a higher Type I error rate. So it’s a trade-off.</p>
+<p>Which should you use? I tend to prefer always using Welch’s t-test because if the variances are equal, then there will be practically no difference between the independent and Welch’s t-test. But if the variances are not equal, then Welch’s t-test will outperform the independent t-test. For that reason, defaulting to the Welch’s t-test makes most sense to me.</p>
+</div>
+<div id="mann-whitney-u-test" class="section level4" number="2.6.2.2">
+<h4><span class="header-section-number">2.6.2.2</span> Mann-Whitney U test</h4>
+<p>If you do not satisfy the assumption of normality (regardless of whether you satisfy the assumption of homogeneity of variance), you should either try to transform your data to be normally distributed or you will need to use a non-parametric test. In this case, if you originally wanted to perform an independent t-test, the non-parametric equivalent test is the Mann-Whitney U test.</p>
+<p>I will not go into specifics, but the idea behind the Mann-Whitney U test is that you take all the values (regardless of group) and rank them. You then sum the ranks across groups and calculate your U statistic and p-value. You interpret the p-value like you normally would, but there are differences in how we report the results because this statistic is based on the <em>median</em> not the <em>mean</em>.</p>
+<blockquote>
+<p>Using the Mann-Whitney U test, there was a statistically significant difference in grades between Anastasia’s students (<em>Mdn</em> = 76, <em>n</em> = 15) and Bernadette’s students (<em>Mdn</em> = 69, <em>n</em> = 18), <em>t</em> (23.02) = 2.03, <em>p</em> = .054, <em>d</em> = .72.</p>
+</blockquote>
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+</div>
+<div class="psyteachr_footer">
+  
+</div>
+<script>
+
+/* update total correct if #total_correct exists */
+update_total_correct = function() {
+  if (t = document.getElementById("total_correct")) {
+    t.innerHTML =
+      document.getElementsByClassName("correct").length + " of " +
+      document.getElementsByClassName("solveme").length + " correct";
+  }
+}
+
+/* solution button toggling function */
+b_func = function() {
+  var cl = this.parentElement.classList;
+  if (cl.contains('open')) {
+    cl.remove("open");
+  } else {
+    cl.add("open");
+  }
+}
+
+/* function for checking solveme answers */
+solveme_func = function(e) {
+  var real_answers = JSON.parse(this.dataset.answer);
+  var my_answer = this.value;
+  var cl = this.classList;
+  if (cl.contains("ignorecase")) {
+    my_answer = my_answer.toLowerCase();
+  }
+  if (cl.contains("nospaces")) {
+    my_answer = my_answer.replace(/ /g, "");
+  }
+  
+  if (my_answer !== "" & real_answers.includes(my_answer)) {
+    cl.add("correct");
+  } else {
+    cl.remove("correct");
+  }
+  update_total_correct();
+}
+
+window.onload = function() {
+  /* set up solution buttons */
+  var buttons = document.getElementsByTagName("button");
+
+  for (var i = 0; i < buttons.length; i++) {
+    if (buttons[i].parentElement.classList.contains('solution')) {
+      buttons[i].onclick = b_func;
+    }
+  }
+  
+  /* set up solveme inputs */
+  var solveme = document.getElementsByClassName("solveme");
+
+  for (var i = 0; i < solveme.length; i++) {
+    /* make sure input boxes don't auto-anything */
+    solveme[i].setAttribute("autocomplete","off");
+    solveme[i].setAttribute("autocorrect", "off");
+    solveme[i].setAttribute("autocapitalize", "off"); 
+    solveme[i].setAttribute("spellcheck", "false");
+    solveme[i].value = "";
+    
+    /* adjust answer for ignorecase or nospaces */
+    var cl = solveme[i].classList;
+    var real_answer = solveme[i].dataset.answer;
+    if (cl.contains("ignorecase")) {
+      real_answer = real_answer.toLowerCase();
+    }
+    if (cl.contains("nospaces")) {
+      real_answer = real_answer.replace(/ /g, "");
+    }
+    solveme[i].dataset.answer = real_answer;
+    
+    /* attach checking function */
+    solveme[i].onkeyup = solveme_func;
+    solveme[i].onchange = solveme_func;
+  }
+  
+  update_total_correct();
+}
+
+</script>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="introduction.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"],
+"google": false
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": {},
+"toc": {
+"collapse": "section",
+"scroll_highlight": true
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
