@@ -12,29 +12,18 @@ The dependent t-test is also called a dependent samples t-test or paired samples
 
 To conduct the dependent t-test, we first need to ensure our data is set-up properly in our dataset. This requires having two columns: one is our dependent variable score for the participant in one category and the other column is our dependent variable score for the participant in the other category. Each row is a unique participant or unit of analysis. Here's what example data may look like if we were testing for differences in test scores across the same participants in the fall and spring:
 
-+-----------------------+-----------------------+----------------------+
-| ID                    | TestScore_Fall        | TestScore_Spring     |
-+:======================+:======================+=====================:+
-| 1                     | 75                    | 86                   |
-+-----------------------+-----------------------+----------------------+
-| 2                     | 79                    | 80                   |
-+-----------------------+-----------------------+----------------------+
-| 3                     | 65                    | 75                   |
-+-----------------------+-----------------------+----------------------+
-| 4                     | 81                    | 79                   |
-+-----------------------+-----------------------+----------------------+
-| 5                     | 73                    | 82                   |
-+-----------------------+-----------------------+----------------------+
-| 6                     | 72                    | 84                   |
-+-----------------------+-----------------------+----------------------+
-| 7                     | 69                    | 90                   |
-+-----------------------+-----------------------+----------------------+
-| 8                     | 60                    | 72                   |
-+-----------------------+-----------------------+----------------------+
-| 9                     | 75                    | 75                   |
-+-----------------------+-----------------------+----------------------+
-| 10                    | 74                    | 81                   |
-+-----------------------+-----------------------+----------------------+
+| ID  | TestScore_Fall | TestScore_Spring |
+|:----|:---------------|-----------------:|
+| 1   | 75             |               86 |
+| 2   | 79             |               80 |
+| 3   | 65             |               75 |
+| 4   | 81             |               79 |
+| 5   | 73             |               82 |
+| 6   | 72             |               84 |
+| 7   | 69             |               90 |
+| 8   | 60             |               72 |
+| 9   | 75             |               75 |
+| 10  | 74             |               81 |
 
 : Example data for the dependent t-test
 
@@ -80,10 +69,14 @@ Let's run an example with data from lsj-data. Open data from your Data Library i
 
 When you are done, your setup should look like this
 
-<div class="figure" style="text-align: center">
-<img src="images/03_dependent_t-test/dependent_setup.png" alt="Dependent t-test setup in jamovi" width="80%" />
-<p class="caption">(\#fig:unnamed-chunk-1)Dependent t-test setup in jamovi</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=0.8\linewidth]{images/03_dependent_t-test/dependent_setup} 
+
+}
+
+\caption{Dependent t-test setup in jamovi}(\#fig:unnamed-chunk-1)
+\end{figure}
 
 ### Checking assumptions in jamovi
 
@@ -91,19 +84,27 @@ When you are done, your setup should look like this
 
 We test for normality using the Shapiro-Wilk test and the Q-Q plot. The Shapiro-Wilk test was not statistically significant (W = .97, *p* = .678); therefore, this indicates the data is normally distributed. Furthermore, the lines are fairly close to the diagonal line in the Q-Q plot (although it's a bit hard to tell because our sample size is small). We can conclude that we satisfy the assumption of normality.
 
-<div class="figure" style="text-align: center">
-<img src="images/03_dependent_t-test/dependent_normality.png" alt="Testing normality in jamovi" width="100%" />
-<p class="caption">(\#fig:unnamed-chunk-2)Testing normality in jamovi</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{images/03_dependent_t-test/dependent_normality} 
+
+}
+
+\caption{Testing normality in jamovi}(\#fig:unnamed-chunk-2)
+\end{figure}
 
 ### Interpreting results
 
 Once we are satisfied we have satisfied the assumptions for the dependent t-test, we can interpret our results.
 
-<div class="figure" style="text-align: center">
-<img src="images/03_dependent_t-test/dependent_results.png" alt="Dependent t-test results in jamovi" width="100%" />
-<p class="caption">(\#fig:unnamed-chunk-3)Dependent t-test results in jamovi</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{images/03_dependent_t-test/dependent_results} 
+
+}
+
+\caption{Dependent t-test results in jamovi}(\#fig:unnamed-chunk-3)
+\end{figure}
 
 Our p-value is less than .05, so our results are statistically significant. We can write up our results in APA something like this:
 
@@ -119,10 +120,14 @@ If you violated the assumption of normality and no transformation fixed your dat
 
 Here is the output for both the dependent t-test and the Wilcoxon rank test:
 
-<div class="figure" style="text-align: center">
-<img src="images/03_dependent_t-test/dependent_results_full.png" alt="All independent t-test results in jamovi" width="100%" />
-<p class="caption">(\#fig:unnamed-chunk-4)All independent t-test results in jamovi</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{images/03_dependent_t-test/dependent_results_full} 
+
+}
+
+\caption{All independent t-test results in jamovi}(\#fig:unnamed-chunk-4)
+\end{figure}
 
 #### Wilcoxon rank in jamovi
 

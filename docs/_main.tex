@@ -109,7 +109,7 @@
 
 \title{Statistics with jamovi}
 \author{Dana Wanzer}
-\date{Last Update: 2020-10-24}
+\date{Last Update: 2020-10-31}
 
 \begin{document}
 \maketitle
@@ -487,95 +487,23 @@ To conduct the dependent t-test, we first need to ensure our data is set-up prop
 \begin{longtable}[]{@{}llr@{}}
 \caption{Example data for the dependent t-test}\tabularnewline
 \toprule
-\begin{minipage}[b]{0.30\columnwidth}\raggedright
-ID\strut
-\end{minipage} & \begin{minipage}[b]{0.30\columnwidth}\raggedright
-TestScore\_Fall\strut
-\end{minipage} & \begin{minipage}[b]{0.30\columnwidth}\raggedleft
-TestScore\_Spring\strut
-\end{minipage}\tabularnewline
+ID & TestScore\_Fall & TestScore\_Spring\tabularnewline
 \midrule
 \endfirsthead
 \toprule
-\begin{minipage}[b]{0.30\columnwidth}\raggedright
-ID\strut
-\end{minipage} & \begin{minipage}[b]{0.30\columnwidth}\raggedright
-TestScore\_Fall\strut
-\end{minipage} & \begin{minipage}[b]{0.30\columnwidth}\raggedleft
-TestScore\_Spring\strut
-\end{minipage}\tabularnewline
+ID & TestScore\_Fall & TestScore\_Spring\tabularnewline
 \midrule
 \endhead
-\begin{minipage}[t]{0.30\columnwidth}\raggedright
-1\strut
-\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedright
-75\strut
-\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedleft
-86\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.30\columnwidth}\raggedright
-2\strut
-\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedright
-79\strut
-\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedleft
-80\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.30\columnwidth}\raggedright
-3\strut
-\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedright
-65\strut
-\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedleft
-75\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.30\columnwidth}\raggedright
-4\strut
-\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedright
-81\strut
-\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedleft
-79\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.30\columnwidth}\raggedright
-5\strut
-\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedright
-73\strut
-\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedleft
-82\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.30\columnwidth}\raggedright
-6\strut
-\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedright
-72\strut
-\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedleft
-84\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.30\columnwidth}\raggedright
-7\strut
-\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedright
-69\strut
-\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedleft
-90\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.30\columnwidth}\raggedright
-8\strut
-\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedright
-60\strut
-\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedleft
-72\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.30\columnwidth}\raggedright
-9\strut
-\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedright
-75\strut
-\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedleft
-75\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.30\columnwidth}\raggedright
-10\strut
-\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedright
-74\strut
-\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedleft
-81\strut
-\end{minipage}\tabularnewline
+1 & 75 & 86\tabularnewline
+2 & 79 & 80\tabularnewline
+3 & 65 & 75\tabularnewline
+4 & 81 & 79\tabularnewline
+5 & 73 & 82\tabularnewline
+6 & 72 & 84\tabularnewline
+7 & 69 & 90\tabularnewline
+8 & 60 & 72\tabularnewline
+9 & 75 & 75\tabularnewline
+10 & 74 & 81\tabularnewline
 \bottomrule
 \end{longtable}
 
@@ -745,6 +673,705 @@ To get the most out of these exercises, try to first find out the answer on your
     Which statistic should you use based on your assumptions? dependent t-test Wilcoxon rank
   \item
     Does students' English scores relate to their Reading scores? yes no
+  \end{itemize}
+\end{enumerate}
+
+\hypertarget{one-way-anova}{%
+\chapter{One-way ANOVA}\label{one-way-anova}}
+
+\hypertarget{what-is-the-one-way-anova}{%
+\section{What is the one-way ANOVA?}\label{what-is-the-one-way-anova}}
+
+The one-way analysis of variance (ANOVA) is used to test the difference in our dependent variable between \underline{three or more} different groups of observations. Our grouping variable is our independent variable. In other words, we use the one-way ANOVA when we have a research question with a \textbf{continuous dependent variable} and a \textbf{categorical independent variable with three or more categories in which different participants are in each category}.
+
+The one-way ANOVA is also known as an independent factor ANOVA.
+
+One thing to keep in mind is the one-way ANOVA is an omnibus statistic that tests against the null hypothesis that the three or more means are the same. It does not tell us where the mean differences are (e.g., that 1 \textgreater{} 2); for that, we need planned contrasts or post-hoc procedures, which you'll learn about later.
+
+\hypertarget{data-set-up-2}{%
+\section{Data set-up}\label{data-set-up-2}}
+
+To conduct the independent t-test, we first need to ensure our data is set-up properly in our dataset. This requires having two columns: one with our continuous dependent variable and one indicating which group the participant is in. Each row is a unique participant or unit of analysis. Here's what example data may look like if we were testing for differences in a test score by students in my fall, spring, or summer semesters of my course
+
+\begin{longtable}[]{@{}llr@{}}
+\caption{Example data for the one-way ANOVA}\tabularnewline
+\toprule
+\begin{minipage}[b]{0.29\columnwidth}\raggedright
+ID\strut
+\end{minipage} & \begin{minipage}[b]{0.29\columnwidth}\raggedright
+Semester\strut
+\end{minipage} & \begin{minipage}[b]{0.30\columnwidth}\raggedleft
+TestScore\strut
+\end{minipage}\tabularnewline
+\midrule
+\endfirsthead
+\toprule
+\begin{minipage}[b]{0.29\columnwidth}\raggedright
+ID\strut
+\end{minipage} & \begin{minipage}[b]{0.29\columnwidth}\raggedright
+Semester\strut
+\end{minipage} & \begin{minipage}[b]{0.30\columnwidth}\raggedleft
+TestScore\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.29\columnwidth}\raggedright
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.29\columnwidth}\raggedright
+Fall\strut
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedleft
+86\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.29\columnwidth}\raggedright
+2\strut
+\end{minipage} & \begin{minipage}[t]{0.29\columnwidth}\raggedright
+Fall\strut
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedleft
+80\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.29\columnwidth}\raggedright
+3\strut
+\end{minipage} & \begin{minipage}[t]{0.29\columnwidth}\raggedright
+Fall\strut
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedleft
+75\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.29\columnwidth}\raggedright
+4\strut
+\end{minipage} & \begin{minipage}[t]{0.29\columnwidth}\raggedright
+Spring\strut
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedleft
+79\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.29\columnwidth}\raggedright
+5\strut
+\end{minipage} & \begin{minipage}[t]{0.29\columnwidth}\raggedright
+Spring\strut
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedleft
+82\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.29\columnwidth}\raggedright
+6\strut
+\end{minipage} & \begin{minipage}[t]{0.29\columnwidth}\raggedright
+Spring\strut
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedleft
+84\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.29\columnwidth}\raggedright
+7\strut
+\end{minipage} & \begin{minipage}[t]{0.29\columnwidth}\raggedright
+Summer\strut
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedleft
+90\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.29\columnwidth}\raggedright
+8\strut
+\end{minipage} & \begin{minipage}[t]{0.29\columnwidth}\raggedright
+Summer\strut
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedleft
+72\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.29\columnwidth}\raggedright
+9\strut
+\end{minipage} & \begin{minipage}[t]{0.29\columnwidth}\raggedright
+Summer\strut
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedleft
+75\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+In the example data above, what is your \textbf{independent variable}? ID Semester TestScore
+
+In the example data above, what is your \textbf{dependent variable}? ID Semester TestScore
+
+\hypertarget{why-not-multiple-t-tests}{%
+\section{Why not multiple t-tests?}\label{why-not-multiple-t-tests}}
+
+In the example above, we have three groups: fall, spring, and summer. We could just perform three separate t-tests: fall vs.~spring, fall vs.~summer, and spring vs.~summer.
+
+However, the reason we do not perform multiple t-tests is to reduce our Type I error rate. If I had performed three separate t-tests, set my alpha (Type I error rate) at 5\%, and knew for a fact the effects do not actually exist, then each test has a probability of a Type I error rate of 5\%. Because we are running three tests, our alpha rate actually becomes 1 - (.95\textsuperscript{3})= 1 - .857 = 14.3\%! So now our \emph{familywise} or \emph{experimentwise}~error rate is 14.3\%, not the 5\% we originally set alpha at.
+
+With three groups, that's not so bad, but let's see what happens with more tests we perform:
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{1 test}: 1 - (.95\textsuperscript{1})= 1 - .95 = \textbf{5\%}
+\item
+  \textbf{2 tests}: 1 - (.95\textsuperscript{2})= 1 - .9025 = \textbf{9.8\%}
+\item
+  \textbf{3 tests}: 1 - (.95\textsuperscript{3})= 1 - .857 = \textbf{14.3\%}
+\item
+  \textbf{4 tests}: 1 - (.95\textsuperscript{4})= 1 - .814 = \textbf{18.6\%}
+\item
+  \textbf{5 tests}: 1 - (.95\textsuperscript{5})= 1 - .774 = \textbf{22.6\%}
+\item
+  \textbf{10 tests}: 1 - (.95\textsuperscript{10})= 1 - .598 = \textbf{40.1\%}
+\item
+  \textbf{20 tests}: 1 - (.95\textsuperscript{20})= 1 - .358 = \textbf{64.1\%}
+\end{itemize}
+
+Ouch! 10 tests would have a Type I error rate of 40\%! That means that if we performed 10 statistical tests (assuming the effect does not exist), then 40\% of the results would be statistically significant by chance alone and would be a false positive. That's not good!
+
+Therefore, we use the one-way ANOVA as one test to see if there is a difference overall. We can also do things to control or limit our familywise error rate, which I'll get into later.
+
+\hypertarget{the-math-behind-the-one-way-anova}{%
+\section{The math behind the one-way ANOVA}\label{the-math-behind-the-one-way-anova}}
+
+The basic math of the one-way ANOVA is the between-group variance (mean squares - between groups) divided by the within-group variance (mean squares - within groups).
+
+\(F = \frac{BG \:variance}{WG \:variance} = \frac{MS_{BG}}{MS_{WG}} = \frac{\frac{SS_{BG}}{df_{BG}}}{\frac{SS_{WG}}{df_{WG}}}\)
+
+There are specific formulas for the between-group (also called the model) sum of squares (SS) and within-group (also called the residual) sum of squares. Keep in mind the following symbols:
+
+\begin{itemize}
+\tightlist
+\item
+  n/N = sample size (little n is per group, big N is the overall sample)
+\item
+  k = number of groups
+\item
+  X = mean
+\item
+  s = standard deviation
+\end{itemize}
+
+The between-group SS is the \emph{variation between group means}. The calculations you see below is to subtract the overall mean (\(\bar{X}_{grand}\)) from the group mean (\(\bar{X_k}\)), square that mean difference, multiply that by the sample size in that group (\(n_k\)), and then sum all the results of doing that per group.
+
+\(SS_{BG} = \sum{n_k}(\bar{X_k}-\bar{X}_{grand})^2\)
+
+\(df_{BG} = k - 1\)
+
+The within-group SS is the \emph{variation of scores within groups}. The calculations you see below is to take the sample size in that group (\(n_k\)) and subtract 1 from it, then multiply it by the group's variance (\(s_k^2\), which is standard deviation squared), and then sum all the results of doing that per group.
+
+\(SS_{WG} = \sum{s_k^2}(n_k - 1)\)
+
+\(df_{WG} = N - k\)
+
+In other words, the F-ratio is a ratio of the group or experimental effect by the individual differences in performance.
+
+For our F-ratio to be statistically significant, we want to \emph{maximize} the variance between groups (numerator) and \emph{minimize} the variance within groups (denominator). This is depicted in the image below. On the left (a) the arrows show the differences in the group means. On the right (b) the arrows highlight the variability within each group. You want to maximize (a) and minimize (b).
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.8\linewidth]{images/04_one-way-anova/anova graphic} 
+
+}
+
+\caption{Graphical illustration of the one-way ANOVA}\label{fig:unnamed-chunk-1}
+\end{figure}
+
+\hypertarget{an-example-with-the-math}{%
+\subsection{An example with the math}\label{an-example-with-the-math}}
+
+In case it's useful, read below. If your eyes are glazing over, just move to the next section.
+
+You can read the example dataset below. I've pulled the relevant data here so we can go through a hand calculation ourselves.
+
+\begin{longtable}[]{@{}llll@{}}
+\toprule
+\begin{minipage}[b]{0.17\columnwidth}\raggedright
+Drug\strut
+\end{minipage} & \begin{minipage}[b]{0.11\columnwidth}\raggedright
+N\strut
+\end{minipage} & \begin{minipage}[b]{0.16\columnwidth}\raggedright
+Mean\strut
+\end{minipage} & \begin{minipage}[b]{0.16\columnwidth}\raggedright
+Variance\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.17\columnwidth}\raggedright
+Anxifree\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\raggedright
+6\strut
+\end{minipage} & \begin{minipage}[t]{0.16\columnwidth}\raggedright
+0.7167\strut
+\end{minipage} & \begin{minipage}[t]{0.16\columnwidth}\raggedright
+.1537\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.17\columnwidth}\raggedright
+Joyzepam\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\raggedright
+6\strut
+\end{minipage} & \begin{minipage}[t]{0.16\columnwidth}\raggedright
+1.4833\strut
+\end{minipage} & \begin{minipage}[t]{0.16\columnwidth}\raggedright
+.0457\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.17\columnwidth}\raggedright
+Placebo\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\raggedright
+6\strut
+\end{minipage} & \begin{minipage}[t]{0.16\columnwidth}\raggedright
+0.4500\strut
+\end{minipage} & \begin{minipage}[t]{0.16\columnwidth}\raggedright
+.0790\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.17\columnwidth}\raggedright
+\textbf{Overall}\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\raggedright
+\textbf{18}\strut
+\end{minipage} & \begin{minipage}[t]{0.16\columnwidth}\raggedright
+\textbf{0.8833}\strut
+\end{minipage} & \begin{minipage}[t]{0.16\columnwidth}\raggedright
+\textbf{.28}\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+Let's start with the easy stuff! Let's calculate our degrees of freedom.
+
+\(df_{BG} = k - 1 = 3 -1 = 2\)
+
+\(df_{WG} = N - k = 18 - 3 = 15\)
+
+Now let's move to the more complicated ones.
+
+\(\begin{aligned} SS_{BG} &= \sum{n_k}(\bar{X_k}-\bar{X}_{grand})^2 \\ SS_{BG} &= 6(.7167-.8833)^2 + 6(1.4833-.8833)^2 + 6(.4500-.8833)^2 \\ SS_{BG} &= 6(-.1666)^2 + 6(.6)^2 + 6(-.4333)^2 \\ SS_{BG} &= 6(.0278) + 6(.36) + 6(.1877) \\ SS_{BG} &= .1665 + 2.16 + 1.1262 \\ SS_{BG} &= 3.453 \end{aligned}\)
+
+Then we can calculate our \(MS_{BG}\).
+
+\(MS_{BG} = \frac{SS_{BG}}{df_{BG}} = \frac{3.453}{2} = 1.727\)
+
+Let's move to our \(SS_{WG}\).
+
+\(\begin{aligned} SS_{WG} &= \sum{s_k^2}(n_k - 1) \\ SS_{WG} &= .1537(6-1) + .0457(6-1) + .0790(6-1) \\ SS_{WG} &= .1537(5) + .0457(5) + .0790(5) \\ SS_{WG} &= .7685 + .2285 + .3950 \\ SS_{WG} &= 1.392 \end{aligned}\)
+
+Now we can calculate our \(MS_{WG}\).
+
+\(MS_{WG} = \frac{SS_{WG}}{df_{WG}} = \frac{1.392}{15} = .0928\)
+
+Now all that's left is to calculate \(F\)!
+
+\(F = \frac{MS_{BG}}{MS_{WG}} = \frac{1.726}{.0928} = 18.60\)
+
+Compare to the \(F\), \(df_{WG}\), and \(df_{BG}\) in the output below in jamovi! Notice how close we are. Also notice how many decimals I retained throughout the analyses. I was a bit off when I first did this with only two decimals throughout. Retaining four decimals throughout got me only \textasciitilde one-hundredth of a decimal off from the actual results. Neat!
+
+\hypertarget{assumptions-2}{%
+\section{Assumptions}\label{assumptions-2}}
+
+As a parametric test, the one-way ANOVA has the same assumptions as other parametric tests:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  The dependent variable is \textbf{normally distributed}
+\item
+  Variances in the two groups are roughly equal (i.e., \textbf{homogeneity of variances})
+\item
+  The dependent variable is \textbf{interval or ratio} (i.e., continuous)
+\item
+  Scores are \textbf{independent} between groups
+\end{enumerate}
+
+We cannot \underline{test} the third and fourth assumptions; rather, those are based on knowing your data. However, we can and should test for the first two assumptions. Fortunately, the one-way ANOVA in jamovi has three check boxes under ``Assumption Checks'' that lets us test for both assumptions.
+
+\hypertarget{anova-is-robust-to-violations}{%
+\subsection{ANOVA is robust to violations}\label{anova-is-robust-to-violations}}
+
+Although we should meet the assumptions as much as possible, in general the F-statistic is \emph{robust} to violations of normality and homogeneity of variance. This means that you can still run the one-way ANOVA if you violate the assumptions, but \emph{only when group sizes are equal or nearly equal}. If you have vastly different variances (such as 2:1 ratio or greater) or vastly different group sizes (such as a 2:1 ratio or greater), and especially if one group is small (such as 10 or fewer cases), then your F-statistic is likely to be very wrong. For example, if your larger group has the larger variance, then your F-statistic is likely to be non-significant or smaller than it should be; however, if your larger group has smaller variance,then your F-statistic is likely to be significant or bigger than it should be!
+
+\hypertarget{in-jamovi-2}{%
+\section{In jamovi}\label{in-jamovi-2}}
+
+Let's run an example with data from lsj-data. Open data from your Data Library in ``lsj-data''. Select and open ``clinicaltrial''. This dataset is hypothetical data of a clinical trial in which you are testing a new antidepressant drug called \emph{Joyzepam}. In order to construct a fair test of the drug's effectiveness, the study involves three separate drugs to be administered. One is a placebo, and the other is an existing antidepressant / anti-anxiety drug called \emph{Anxifree}. A collection of 18 participants with moderate to severe depression are recruited for your initial testing. Because the drugs are sometimes administered in conjunction with psychological therapy, your study includes 9 people undergoing cognitive behavioral therapy (CBT) and 9 who are not. Participants are randomly assigned (doubly blinded, of course) a treatment, such that there are 3 CBT people and 3 no-therapy people assigned to each of the 3 drugs. A psychologist assesses the mood of each person after a 3 month run with each drug, and the overall improvement in each person's mood is assessed on a scale ranging from -5 to +5.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  To perform a one-way ANOVA in jamovi, go to the Analyses tab, click the ANOVA button, and choose ``ANOVA''. You might be asking why we aren't choosing ``One-Way ANOVA'' and that's because the options there are too limited.
+\item
+  Move your dependent variable \texttt{mood.gain} to the Dependent Variable box and your independent variable \texttt{drug} to the Fixed Factors box.
+\item
+  Select \(\omega^2\) for your effect size.
+\item
+  Ignore the Model drop-down menu. If you are doing more complicated ANOVAs you will need this. We will ignore it.
+\item
+  In the Assumption Checks drop-down menu, select all three options: \texttt{Homogeneity\ test}, \texttt{Normality\ test}, and \texttt{Q-Q\ plot}.
+\item
+  Ignore the Contrasts and Post Hoc Tests drop-down menus for now. See below for more information on them.
+\item
+  Ignore the Estimated Marginal Means drop-down menu.
+\end{enumerate}
+
+When you are done, your setup should look like this:
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.8\linewidth]{images/04_one-way-anova/one-way_setup} 
+
+}
+
+\caption{One-way ANOVA setup in jamovi}\label{fig:unnamed-chunk-2}
+\end{figure}
+
+\hypertarget{checking-assumptions-in-jamovi-2}{%
+\subsection{Checking assumptions in jamovi}\label{checking-assumptions-in-jamovi-2}}
+
+We test for normality using the Shapiro-Wilk test and the Q-Q plot. The Shapiro-Wilk test was not statistically significant (W = .96, \emph{p} = .605); therefore, this indicates the data is normally distributed. Furthermore, the lines are fairly close to the diagonal line in the Q-Q plot. We can conclude that we satisfy the assumption of normality.
+
+We test for homogeneity of variance using the Levene's test. The Levene's test was not statistically significant (\emph{F} {[}2, 15{]} = 1.45, \emph{p} = .266); therefore, this indicates our data satisfies the assumption of homogeneity of variance. However, I would add a caveat that we have a small sample of data (\emph{N} = 18); we should have tried to collect more data.
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{images/04_one-way-anova/one-way_assumptions1} 
+
+}
+
+\caption{Testing assumptions in jamovi}\label{fig:unnamed-chunk-3}
+\end{figure}
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{images/04_one-way-anova/one-way_assumptions2} 
+
+}
+
+\caption{**CAPTION THIS FIGURE!!**}\label{fig:unnamed-chunk-4}
+\end{figure}
+
+\hypertarget{interpreting-results-2}{%
+\section{Interpreting results}\label{interpreting-results-2}}
+
+Once we are satisfied we have satisfied the assumptions for the independent t-test, we can interpret our results.
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{images/04_one-way-anova/one-way_results} 
+
+}
+
+\caption{One-way ANOVA results in jamovi}\label{fig:unnamed-chunk-5}
+\end{figure}
+
+Our p-value is less than .05, so our results are statistically significant. We can write up our results in APA something like this:
+
+\begin{quote}
+There is a significant difference in mood gain across the three drug conditions, \emph{F} (2, 15) = 18.61, \emph{p} \textless{} .001, \(\omega^2\) = .66.
+\end{quote}
+
+Sometimes, people like to put the statistics inside a parentheses. In that case, you need to change the parentheses around the degrees of freedom as brackets. Here's another example write-up of the results in APA style:
+
+\begin{quote}
+There is a significant difference in mood gain across the three drug conditions (\emph{F} {[}2, 15{]} = 18.61, \emph{p} \textless{} .001, \(\omega^2\) = .66).
+\end{quote}
+
+\hypertarget{a-note-on-one-tailed-vs.-two-tailed-tests}{%
+\subsection{A note on one-tailed vs.~two-tailed tests}\label{a-note-on-one-tailed-vs.-two-tailed-tests}}
+
+Unlike a t-test, we would not halve the p-value in an F-ratio because it is an omnibus test. Our planned contrasts or post-hoc tests can tell us where differences are, and we can provide directional hypotheses there if we so choose.
+
+\hypertarget{what-if-i-violated-assumptions-2}{%
+\section{What if I violated assumptions?}\label{what-if-i-violated-assumptions-2}}
+
+The great news is that jamovi includes the Welch's F-statistic and the Kruskal-Wallis non-parametric test! The bad news is that you lose some functionality in jamovi when you use them. Just like with the Welch's t-statistic (for the independent t-test), it does not have the assumption of equal variances so it's appropriate to use if your data is normally distributed but does not have homogeneous variances. Similarly, the Kruskal-Wallis test is the non-parametric version of the one-way ANOVA and should be used if you do not satisfy the assumption of normality.
+
+Here's what statistic you should choose based on satisfying assumptions:
+
+\begin{longtable}[]{@{}lll@{}}
+\toprule
+\begin{minipage}[b]{0.40\columnwidth}\raggedright
+\strut
+\end{minipage} & \begin{minipage}[b]{0.24\columnwidth}\raggedright
+\textbf{Normality: satisfied}\strut
+\end{minipage} & \begin{minipage}[b]{0.27\columnwidth}\raggedright
+\textbf{Normality: not satisfied}\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.40\columnwidth}\raggedright
+\textbf{Homogeneity of Variance: satisfied}\strut
+\end{minipage} & \begin{minipage}[t]{0.24\columnwidth}\raggedright
+one-way ANOVA\strut
+\end{minipage} & \begin{minipage}[t]{0.27\columnwidth}\raggedright
+Kruskal-Wallis\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.40\columnwidth}\raggedright
+\textbf{Homogeneity of Variance: not satisfied}\strut
+\end{minipage} & \begin{minipage}[t]{0.24\columnwidth}\raggedright
+Welch's F-test\strut
+\end{minipage} & \begin{minipage}[t]{0.27\columnwidth}\raggedright
+Kruskal-Wallis\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+\hypertarget{welchs-f-test-in-jamovi}{%
+\subsubsection{Welch's F-test in jamovi}\label{welchs-f-test-in-jamovi}}
+
+To conduct this in jamovi, you will need to use the ``One-Way ANOVA'' test, not the ``ANOVA'' test. The unfortunate thing about this test is that it strangely does not provide effect sizes.
+
+In jamovi, under Variances select \texttt{Don\textquotesingle{}t\ assume\ equal\ (Welch\textquotesingle{}s)}. Move \texttt{mood.gain} to the Dependent Variable box and \texttt{drug} to your Grouping Variable box. You will interpret the results similarly to the one-way ANOVA:
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{images/04_one-way-anova/one-way_results_Welch} 
+
+}
+
+\caption{One-way ANOVA results in jamovi}\label{fig:unnamed-chunk-6}
+\end{figure}
+
+\begin{quote}
+Using a Welch's F-test, there is a significant difference in mood gain across the three drug conditions, \emph{F} (2, 9.49) = 26.32, \emph{p} \textless{} .001.
+\end{quote}
+
+\hypertarget{kruskal-wallis-test-in-jamovi}{%
+\subsubsection{Kruskal-Wallis test in jamovi}\label{kruskal-wallis-test-in-jamovi}}
+
+To perform the Kruskal-Wallis test in jamovi, you will need to select under the ANOVA button ``One-Way ANOVA, Kruskal Wallis'' towards the bottom of the list of options. Move \texttt{mood.gain} to the Dependent Variables box and \texttt{drug} to the Grouping Variable box. Select Effect size; if you need post hoc comparisons select DSCF pairwise comparisons (see section below on group differences). You will interpret the results similarly to the one-way ANOVA:
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{images/04_one-way-anova/one-way_results_Kruskal} 
+
+}
+
+\caption{Kruskal-Wallis results in jamovi}\label{fig:unnamed-chunk-7}
+\end{figure}
+
+\begin{quote}
+Using a Kruskal-Wallis test, there is a significant difference in mood gain across the three drug conditions, \(\chi^2\) (2) = 12.08, \emph{p} = .002, \(\epsilon^2\) = .71.
+\end{quote}
+
+Notice how in this case all three results converge and show there is a statistically significant difference in the results! The problem is\ldots{} differences in which groups?
+
+\hypertarget{finding-group-differences}{%
+\section{Finding Group Differences}\label{finding-group-differences}}
+
+Often, we're not interested in just \emph{whether} there is a difference (which the F-statistic can tell us), but \emph{where} the differences are between groups (which the F-statistic cannot tell us). For that, we use either \underline{planned contrasts} when you have specific hypotheses you want to test or \underline{post-hoc comparisons} when you have no specific hypotheses.
+
+\textbf{Note}: You \underline{do not} perform contrasts or post hoc comparisons if your overall \(F\) statistic is not statistically significant. You do not interpret group differences if you fail to reject the null hypothesis that there are no group differences!
+
+\hypertarget{planned-contrasts}{%
+\subsection{Planned Contrasts}\label{planned-contrasts}}
+
+If you have before-analysis hypotheses of group differences in your data, you will use planned contrasts. You can find the planned contrasts in the ANOVA (but not the one-way ANOVA) setup as a drop-down menu. Note that while I show all six contrasts that jamovi provides, you do not normally do multiple contrasts. These are just shown for illustrative purposes:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Deviation}: compares the effect of each category (except the first category) to the overall experimental effect. The order of categories is alphabetical or numerical order. Notice how anxifree is considered the first category.
+\end{enumerate}
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{images/04_one-way-anova/contrasts_deviation} 
+
+}
+
+\caption{**CAPTION THIS FIGURE!!**}\label{fig:unnamed-chunk-8}
+\end{figure}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  \textbf{Simple}: Each category is compared to the first category. The order of categories is alphabetical or numerical order. Notice how anxifree is considered the first category.
+\end{enumerate}
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{images/04_one-way-anova/contrasts_simple} 
+
+}
+
+\caption{**CAPTION THIS FIGURE!!**}\label{fig:unnamed-chunk-9}
+\end{figure}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  \textbf{Difference}: Each category (except the first) is compared to the mean effect of all previous categories.
+\end{enumerate}
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{images/04_one-way-anova/contrasts_difference} 
+
+}
+
+\caption{**CAPTION THIS FIGURE!!**}\label{fig:unnamed-chunk-10}
+\end{figure}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  \textbf{Helmert}: Each category (except the last) is compared to the mean effect of all subsequent categories.
+\end{enumerate}
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{images/04_one-way-anova/contrasts_helmert} 
+
+}
+
+\caption{**CAPTION THIS FIGURE!!**}\label{fig:unnamed-chunk-11}
+\end{figure}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{4}
+\tightlist
+\item
+  \textbf{Repeated}: Each category is compared to the last category.
+\end{enumerate}
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{images/04_one-way-anova/contrasts_repeated} 
+
+}
+
+\caption{**CAPTION THIS FIGURE!!**}\label{fig:unnamed-chunk-12}
+\end{figure}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{5}
+\tightlist
+\item
+  \textbf{Polynomial}: Tests trends in the data. It will examine the \emph{n-1}\textsuperscript{th} degree based on the number of groups. In this case, because we have 3 groups it is testing both a linear (\textsuperscript{1}) and quadratic (\textsuperscript{2}) trend. If we had 5 groups, it would test a linear (\textsuperscript{1}), quadratic (\textsuperscript{2}), cubic (\textsuperscript{3}), and quartic (\textsuperscript{4}) trend. Note that your factor levels must be ordinal for a polynomial contrast to make sense.
+\end{enumerate}
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{images/04_one-way-anova/contrasts_polynomial} 
+
+}
+
+\caption{**CAPTION THIS FIGURE!!**}\label{fig:unnamed-chunk-13}
+\end{figure}
+
+\textbf{Test yourself!} Which contrast would make \underline{most sense} to test given that we want to know how our drug compares to the other two drugs? deviation simple difference helmert repeated polynomial
+
+\hypertarget{writing-up-planned-contrasts}{%
+\subsubsection{Writing up planned contrasts}\label{writing-up-planned-contrasts}}
+
+Here's some example write-ups of the above results.
+
+\begin{quote}
+There is a significant difference in mood gain across the three drug conditions, \emph{F} (2, 15) = 18.61, \emph{p} \textless{} .001. Repeated contrasts showed that \emph{Joyzepam} (\emph{M} = 1.48, \emph{SD} = .21) outperformed both \emph{Anxifree} (\emph{M} = .72, \emph{SD} = .39; \emph{p} \textless{} .001) and the placebo condition (\emph{M} = .45, \emph{SD} = .28; \emph{p} \textless{} .001).
+
+(Note how this example makes no sense because our data is not ordinal) There is a significant difference in mood gain across the three drug conditions, \emph{F} (2, 15) = 18.61, \emph{p} \textless{} .001. There was not a significant linear trend across the drug conditions (\emph{p} = .150).
+\end{quote}
+
+\hypertarget{post-hoc-comparisons}{%
+\subsection{Post hoc comparisons}\label{post-hoc-comparisons}}
+
+Often, we do not have any \emph{a priori} (or planned) predictions or hypotheses about our group differences. In this case, we use post hoc procedures. These procedures do \underline{pairwise comparisons} among all of our groups, like t-tests across each of our groups. As we noted on the first page of this handout, this can be highly problematic for our Type I error rate! Therefore, we must perform corrections to control our familywise error rate.
+
+jamovi currently supports five types of post-hoc tests; I generally only use Tukey or Bonferonni:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{No correction}: This doesn't correct for a Type I error at all. Don't use this! I won't even show it. It's bad. Never use it. NEVER. You are warned!
+\item
+  \textbf{Tukey}: This is the post hoc test I use most often. It controls the Type I error rate well, but isn't as conservative of a control as the Bonferonni.
+\item
+  \textbf{Scheffe}: Honestly, I've never used it. I am not sure how it's calculated.
+\item
+  \textbf{Bonferroni}: This is the most conservative test. It's good if you only have a small number of comparisons to make or if you \emph{really} want to control your Type I error rate. If you have a lot of them to test , then you should use something else.
+\item
+  \textbf{Holm}: Honestly, I've never used it. I am not sure how it's calculated.
+\end{enumerate}
+
+Games-Howell for when you have unequal variances and Tukey for when you have equal variances. They will each calculate your p-values slightly differently but in a way to control for our Type I error rate as best it can. They are interpreted very similarly, so we will proceed with the Tukey's post hoc comparisons because we satisfied the assumption of equal variances.
+
+To request post hoc tests from the one-way ANOVA, open the collapsed menu at the bottom of the setup menu. Select \texttt{Tukey\ (equal\ variances} under Post-Hoc Test and select \texttt{Mean\ difference}, \texttt{Report\ significance}, and \texttt{Flag\ significant\ comparisons} under Statistics. Optionally, you can request the \texttt{Test\ results\ (t\ and\ df)} although this is not necessary.
+
+Below shows the post hoc test results for our one-way ANOVA. Notice the differences in p-values across the four post hoc tests and how all other values are the same. Notice how the Bonferroni is most conservative (i.e., has the largest p-values) and the Holm's is the least conservative (i.e., has the smallest p-values). Keep in mind you do not normally ask for multiple post hoc comparisons. Just pick one! Normally, I just pick Tukey's.
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{images/04_one-way-anova/one-way_results_post-hoc} 
+
+}
+
+\caption{Post hoc test results in jamovi}\label{fig:unnamed-chunk-14}
+\end{figure}
+
+\hypertarget{writing-up-post-hoc-results}{%
+\subsubsection{Writing up post hoc results}\label{writing-up-post-hoc-results}}
+
+The way we would write up each of the post hoc comparisons is very similar. Given that I usually use Tukey, here is a write-up for those results:
+
+\begin{quote}
+There is a significant difference in mood gain across the three drug conditions, \emph{F} (2, 15) = 18.61, \emph{p} \textless{} .001. Post hoc comparisons using Tukey's HSD revealed that our drug \emph{Joyzepam} (\emph{M} = 1.48, \emph{SD} = .21) outperformed both \emph{Anxifree} (\emph{M} = .72, \emph{SD} = .39; \emph{p} = .002) and the placebo condition (\emph{M} = .45, \emph{SD} = .28; \emph{p} \textless{} .001); there were no differences between \emph{Anxifree} and the placebo condition (\emph{p}
+\end{quote}
+
+\hypertarget{group-differences-with-violated-assumptions}{%
+\subsection{Group differences with violated assumptions}\label{group-differences-with-violated-assumptions}}
+
+If you are using Welch's F-test using the One-Way ANOVA in jamovi, you should select under Post-Hoc Tests \texttt{Games-Howell\ (unequal\ variances)}. These will be interpreted similarly to the post hoc comparisons above.
+
+If you are using the Kruskal-Wallis test, you will select the check-box for \texttt{DSCF\ pairwise\ comparisons}. This stands for the Dwass-Steel-Critchlow-Fligner test. All you need to know is that they, too, are interpreted similarly to the post hoc comparisons above.
+
+Unfortunately, you cannot perform contrasts with either the Welch's F-test or Kruskal-Wallis test.
+
+\hypertarget{tips-on-writing-up-results}{%
+\section{Tips on writing up results}\label{tips-on-writing-up-results}}
+
+Writing up results in APA style is both a science and an art. There's a science to what you need to report. For example, you always report the statistics exactly the same: \emph{F} (df\textsubscript{WG}, df\textsubscript{BG}) = X.XX, \emph{p} = .XXX. You also always report the group means (\emph{M}) and standard deviations (\emph{SD}), although you can report them in-text like I did above or in a descriptives table like you can ask from jamovi.
+
+However, there's also an art to it. Notice how I wrote that up in a way to summarize the findings as succinctly as possible. I could have said there was a difference between \emph{anxifree} and \emph{joyzepam} and a difference between \emph{joyzepam} and the placebo, but that's a lot more words and isn't written in a way to focus on what I'm hoping to see: that my drug \emph{joyzepam} performed better than the competitor \emph{anxifree} and a placebo condition.
+
+This is where you need to think creatively and be very critical in checking that what you say makes sense. Read your write-ups carefully! Have someone else read it. Can they understand what you mean?
+
+\hypertarget{your-turn-2}{%
+\section{Your turn!}\label{your-turn-2}}
+
+Open the \texttt{Sample\_Dataset\_2014.xlsx} file that we will be using for all Your Turn exercises.
+
+Perform one-way ANOVAs based on the following research questions. Check your assumptions and ensure you are using the correct tests.
+
+To get the most out of these exercises, try to first find out the answer on your own and then use the drop-down menus to check your answer.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \textbf{Does students differ on English scores by rank (i.e., freshmen, sophomore, junior, senior)?}
+
+  \begin{itemize}
+  \item
+    Do you satisfy the assumption of normality? yes no
+  \item
+    Do you satisfy the assumption of homogeneity of variance? yes no
+  \item
+    Which statistic should you use? one-way ANOVA Welch's F-test Kruskal-Wallis test
+  \item
+    Do students differ on English scores by rank? yes no
+  \item
+    Should you perform a planned contrast or post hoc comparison? yes no
+  \item
+    What are the results of the post hoc comparison? N/A - Don't perform Freshmen had higher English scores than sophomores, juniors, and seniors Freshmen and sophomores had higher English scores than juniors and seniors
+  \end{itemize}
+\item
+  \textbf{Does smoking status (Smoking: Nonsmoker = 0, Past smoker = 1, Current smoker = 2) relate to sprint time?}
+
+  \begin{itemize}
+  \item
+    Do you satisfy the assumption of normality? yes no
+  \item
+    Do you satisfy the assumption of homogeneity of variance? yes no
+  \item
+    Which statistic should you use? one-way ANOVA Welch's F-test Kruskal-Wallis test
+  \item
+    Does smoking status relate to sprint time? yes no
+  \item
+    Should you perform a planned contrast or post hoc comparison? yes no
+  \item
+    What are the results of the post hoc comparison? N/A - Don't perform Nonsmokers had significantly faster sprint times than current smokers Nonsmokers and past smokers had significantly faster spring times than current smokers Nonsmokers had significantly faster sprint times than both past and current smokers
   \end{itemize}
 \end{enumerate}
 

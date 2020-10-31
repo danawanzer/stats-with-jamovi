@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/W32TeX) (preloaded format=xelatex 2020.10.24)  24 OCT 2020 15:13
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/W32TeX) (preloaded format=xelatex 2020.10.24)  31 OCT 2020 18:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -491,6 +491,21 @@ LaTeX Warning: Label `fig:unnamed-chunk-3' multiply defined.
 
 LaTeX Warning: Label `fig:unnamed-chunk-4' multiply defined.
 
+
+LaTeX Warning: Label `fig:unnamed-chunk-1' multiply defined.
+
+
+LaTeX Warning: Label `fig:unnamed-chunk-2' multiply defined.
+
+
+LaTeX Warning: Label `fig:unnamed-chunk-3' multiply defined.
+
+
+LaTeX Warning: Label `fig:unnamed-chunk-4' multiply defined.
+
+
+LaTeX Warning: Label `fig:unnamed-chunk-5' multiply defined.
+
 )
 \openout1 = `_main.aux'.
 
@@ -851,13 +866,13 @@ LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
 (Font)              scaled to size 6.99925pt on input line 3.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
 (Font)              scaled to size 4.99947pt on input line 3.
-)
+[3])
 \tf@toc=\write4
 \openout4 = `_main.toc'.
 
-[3] [4
+[4] [5
 
-] [5] [6
+] [6
 
 ]
 Chapter 1.
@@ -907,22 +922,68 @@ bmp)
 [24] [25] [26
 
 ]
+Chapter 4.
+[27] [28] [29]
+File: images/04_one-way-anova/anova graphic.png Graphic file (type bmp)
+<images/04_one-way-anova/anova graphic.png>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[30] [31] [32]
+File: images/04_one-way-anova/one-way_setup.png Graphic file (type bmp)
+<images/04_one-way-anova/one-way_setup.png>
+[33]
+File: images/04_one-way-anova/one-way_assumptions1.png Graphic file (type bmp)
+<images/04_one-way-anova/one-way_assumptions1.png>
+File: images/04_one-way-anova/one-way_assumptions2.png Graphic file (type bmp)
+<images/04_one-way-anova/one-way_assumptions2.png>
+File: images/04_one-way-anova/one-way_results.png Graphic file (type bmp)
+<images/04_one-way-anova/one-way_results.png>
+[34] [35]
+File: images/04_one-way-anova/one-way_results_Welch.png Graphic file (type bmp)
+
+<images/04_one-way-anova/one-way_results_Welch.png>
+[36]
+File: images/04_one-way-anova/one-way_results_Kruskal.png Graphic file (type bm
+p)
+<images/04_one-way-anova/one-way_results_Kruskal.png>
+[37]
+File: images/04_one-way-anova/contrasts_deviation.png Graphic file (type bmp)
+<images/04_one-way-anova/contrasts_deviation.png>
+File: images/04_one-way-anova/contrasts_simple.png Graphic file (type bmp)
+<images/04_one-way-anova/contrasts_simple.png>
+File: images/04_one-way-anova/contrasts_difference.png Graphic file (type bmp)
+<images/04_one-way-anova/contrasts_difference.png>
+File: images/04_one-way-anova/contrasts_helmert.png Graphic file (type bmp)
+<images/04_one-way-anova/contrasts_helmert.png>
+File: images/04_one-way-anova/contrasts_repeated.png Graphic file (type bmp)
+<images/04_one-way-anova/contrasts_repeated.png>
+[38] [39]
+File: images/04_one-way-anova/contrasts_polynomial.png Graphic file (type bmp)
+<images/04_one-way-anova/contrasts_polynomial.png>
+[40]
+File: images/04_one-way-anova/one-way_results_post-hoc.png Graphic file (type b
+mp)
+<images/04_one-way-anova/one-way_results_post-hoc.png>
+[41] [42] [43] [44
+
+]
 Appendix A.
 No file _main.bbl.
-[27] (./_main.aux)
+[45] (./_main.aux)
 Package rerunfilecheck Info: File `_main.out' has not changed.
-(rerunfilecheck)             Checksum: ED6A8CA6392B804EA32E1EE172576218;3187.
+(rerunfilecheck)             Checksum: 1025CDA5304D07CF31E6F35E1BC505F3;5119.
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 16323 strings out of 479466
- 293381 string characters out of 5879904
- 751318 words of memory out of 5000000
- 35433 multiletter control sequences out of 15000+600000
- 539067 words of font info for 71 fonts, out of 8000000 for 9000
+ 16517 strings out of 479466
+ 301224 string characters out of 5879904
+ 757318 words of memory out of 5000000
+ 35610 multiletter control sequences out of 15000+600000
+ 539075 words of font info for 72 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 84i,6n,118p,656b,472s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 84i,8n,118p,1150b,472s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on _main.pdf (27 pages).
+Output written on _main.pdf (45 pages).

@@ -31,7 +31,7 @@
   
   
 <link rel="prev" href="independent-t-test.html"/>
-<link rel="next" href="references.html"/>
+<link rel="next" href="one-way-anova.html"/>
 <script src="libs/header-attrs-2.5/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -110,6 +110,37 @@
 <li class="chapter" data-level="3.6" data-path="dependent-t-test.html"><a href="dependent-t-test.html#what-if-i-violated-assumptions-1"><i class="fa fa-check"></i><b>3.6</b> What if I violated assumptions?</a></li>
 <li class="chapter" data-level="3.7" data-path="dependent-t-test.html"><a href="dependent-t-test.html#your-turn-1"><i class="fa fa-check"></i><b>3.7</b> Your turn!</a></li>
 </ul></li>
+<li class="chapter" data-level="4" data-path="one-way-anova.html"><a href="one-way-anova.html"><i class="fa fa-check"></i><b>4</b> One-way ANOVA</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="one-way-anova.html"><a href="one-way-anova.html#what-is-the-one-way-anova"><i class="fa fa-check"></i><b>4.1</b> What is the one-way ANOVA?</a></li>
+<li class="chapter" data-level="4.2" data-path="one-way-anova.html"><a href="one-way-anova.html#data-set-up-2"><i class="fa fa-check"></i><b>4.2</b> Data set-up</a></li>
+<li class="chapter" data-level="4.3" data-path="one-way-anova.html"><a href="one-way-anova.html#why-not-multiple-t-tests"><i class="fa fa-check"></i><b>4.3</b> Why not multiple t-tests?</a></li>
+<li class="chapter" data-level="4.4" data-path="one-way-anova.html"><a href="one-way-anova.html#the-math-behind-the-one-way-anova"><i class="fa fa-check"></i><b>4.4</b> The math behind the one-way ANOVA</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="one-way-anova.html"><a href="one-way-anova.html#an-example-with-the-math"><i class="fa fa-check"></i><b>4.4.1</b> An example with the math</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="one-way-anova.html"><a href="one-way-anova.html#assumptions-2"><i class="fa fa-check"></i><b>4.5</b> Assumptions</a>
+<ul>
+<li class="chapter" data-level="4.5.1" data-path="one-way-anova.html"><a href="one-way-anova.html#anova-is-robust-to-violations"><i class="fa fa-check"></i><b>4.5.1</b> ANOVA is robust to violations</a></li>
+</ul></li>
+<li class="chapter" data-level="4.6" data-path="one-way-anova.html"><a href="one-way-anova.html#in-jamovi-2"><i class="fa fa-check"></i><b>4.6</b> In jamovi</a>
+<ul>
+<li class="chapter" data-level="4.6.1" data-path="one-way-anova.html"><a href="one-way-anova.html#checking-assumptions-in-jamovi-2"><i class="fa fa-check"></i><b>4.6.1</b> Checking assumptions in jamovi</a></li>
+</ul></li>
+<li class="chapter" data-level="4.7" data-path="one-way-anova.html"><a href="one-way-anova.html#interpreting-results-2"><i class="fa fa-check"></i><b>4.7</b> Interpreting results</a>
+<ul>
+<li class="chapter" data-level="4.7.1" data-path="one-way-anova.html"><a href="one-way-anova.html#a-note-on-one-tailed-vs.-two-tailed-tests"><i class="fa fa-check"></i><b>4.7.1</b> A note on one-tailed vs. two-tailed tests</a></li>
+</ul></li>
+<li class="chapter" data-level="4.8" data-path="one-way-anova.html"><a href="one-way-anova.html#what-if-i-violated-assumptions-2"><i class="fa fa-check"></i><b>4.8</b> What if I violated assumptions?</a></li>
+<li class="chapter" data-level="4.9" data-path="one-way-anova.html"><a href="one-way-anova.html#finding-group-differences"><i class="fa fa-check"></i><b>4.9</b> Finding Group Differences</a>
+<ul>
+<li class="chapter" data-level="4.9.1" data-path="one-way-anova.html"><a href="one-way-anova.html#planned-contrasts"><i class="fa fa-check"></i><b>4.9.1</b> Planned Contrasts</a></li>
+<li class="chapter" data-level="4.9.2" data-path="one-way-anova.html"><a href="one-way-anova.html#post-hoc-comparisons"><i class="fa fa-check"></i><b>4.9.2</b> Post hoc comparisons</a></li>
+<li class="chapter" data-level="4.9.3" data-path="one-way-anova.html"><a href="one-way-anova.html#group-differences-with-violated-assumptions"><i class="fa fa-check"></i><b>4.9.3</b> Group differences with violated assumptions</a></li>
+</ul></li>
+<li class="chapter" data-level="4.10" data-path="one-way-anova.html"><a href="one-way-anova.html#tips-on-writing-up-results"><i class="fa fa-check"></i><b>4.10</b> Tips on writing up results</a></li>
+<li class="chapter" data-level="4.11" data-path="one-way-anova.html"><a href="one-way-anova.html#your-turn-2"><i class="fa fa-check"></i><b>4.11</b> Your turn!</a></li>
+</ul></li>
 <li class="appendix"><span><b>Appendices</b></span></li>
 <li class="chapter" data-level="A" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>A</b> References</a></li>
 <li class="divider"></li>
@@ -147,11 +178,6 @@
 <p>To conduct the dependent t-test, we first need to ensure our data is set-up properly in our dataset. This requires having two columns: one is our dependent variable score for the participant in one category and the other column is our dependent variable score for the participant in the other category. Each row is a unique participant or unit of analysis. Here’s what example data may look like if we were testing for differences in test scores across the same participants in the fall and spring:</p>
 <table>
 <caption>Example data for the dependent t-test</caption>
-<colgroup>
-<col width="33%" />
-<col width="33%" />
-<col width="33%" />
-</colgroup>
 <thead>
 <tr class="header">
 <th align="left">ID</th>
@@ -323,10 +349,6 @@ Figure 2.4: All independent t-test results in jamovi
 
 </div>
 </div>
-
-
-
-</div>
 <div class="psyteachr_footer">
   
 </div>
@@ -418,7 +440,7 @@ window.onload = function() {
         </div>
       </div>
 <a href="independent-t-test.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="one-way-anova.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

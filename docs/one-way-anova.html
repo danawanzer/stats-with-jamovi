@@ -119,14 +119,27 @@
 <ul>
 <li class="chapter" data-level="4.4.1" data-path="one-way-anova.html"><a href="one-way-anova.html#an-example-with-the-math"><i class="fa fa-check"></i><b>4.4.1</b> An example with the math</a></li>
 </ul></li>
-<li class="chapter" data-level="4.5" data-path="one-way-anova.html"><a href="one-way-anova.html#assumptions-2"><i class="fa fa-check"></i><b>4.5</b> Assumptions</a></li>
+<li class="chapter" data-level="4.5" data-path="one-way-anova.html"><a href="one-way-anova.html#assumptions-2"><i class="fa fa-check"></i><b>4.5</b> Assumptions</a>
+<ul>
+<li class="chapter" data-level="4.5.1" data-path="one-way-anova.html"><a href="one-way-anova.html#anova-is-robust-to-violations"><i class="fa fa-check"></i><b>4.5.1</b> ANOVA is robust to violations</a></li>
+</ul></li>
 <li class="chapter" data-level="4.6" data-path="one-way-anova.html"><a href="one-way-anova.html#in-jamovi-2"><i class="fa fa-check"></i><b>4.6</b> In jamovi</a>
 <ul>
 <li class="chapter" data-level="4.6.1" data-path="one-way-anova.html"><a href="one-way-anova.html#checking-assumptions-in-jamovi-2"><i class="fa fa-check"></i><b>4.6.1</b> Checking assumptions in jamovi</a></li>
 </ul></li>
-<li class="chapter" data-level="4.7" data-path="one-way-anova.html"><a href="one-way-anova.html#interpreting-results-2"><i class="fa fa-check"></i><b>4.7</b> Interpreting results</a></li>
+<li class="chapter" data-level="4.7" data-path="one-way-anova.html"><a href="one-way-anova.html#interpreting-results-2"><i class="fa fa-check"></i><b>4.7</b> Interpreting results</a>
+<ul>
+<li class="chapter" data-level="4.7.1" data-path="one-way-anova.html"><a href="one-way-anova.html#a-note-on-one-tailed-vs.-two-tailed-tests"><i class="fa fa-check"></i><b>4.7.1</b> A note on one-tailed vs. two-tailed tests</a></li>
+</ul></li>
 <li class="chapter" data-level="4.8" data-path="one-way-anova.html"><a href="one-way-anova.html#what-if-i-violated-assumptions-2"><i class="fa fa-check"></i><b>4.8</b> What if I violated assumptions?</a></li>
-<li class="chapter" data-level="4.9" data-path="one-way-anova.html"><a href="one-way-anova.html#your-turn-2"><i class="fa fa-check"></i><b>4.9</b> Your turn!</a></li>
+<li class="chapter" data-level="4.9" data-path="one-way-anova.html"><a href="one-way-anova.html#finding-group-differences"><i class="fa fa-check"></i><b>4.9</b> Finding Group Differences</a>
+<ul>
+<li class="chapter" data-level="4.9.1" data-path="one-way-anova.html"><a href="one-way-anova.html#planned-contrasts"><i class="fa fa-check"></i><b>4.9.1</b> Planned Contrasts</a></li>
+<li class="chapter" data-level="4.9.2" data-path="one-way-anova.html"><a href="one-way-anova.html#post-hoc-comparisons"><i class="fa fa-check"></i><b>4.9.2</b> Post hoc comparisons</a></li>
+<li class="chapter" data-level="4.9.3" data-path="one-way-anova.html"><a href="one-way-anova.html#group-differences-with-violated-assumptions"><i class="fa fa-check"></i><b>4.9.3</b> Group differences with violated assumptions</a></li>
+</ul></li>
+<li class="chapter" data-level="4.10" data-path="one-way-anova.html"><a href="one-way-anova.html#tips-on-writing-up-results"><i class="fa fa-check"></i><b>4.10</b> Tips on writing up results</a></li>
+<li class="chapter" data-level="4.11" data-path="one-way-anova.html"><a href="one-way-anova.html#your-turn-2"><i class="fa fa-check"></i><b>4.11</b> Your turn!</a></li>
 </ul></li>
 <li class="appendix"><span><b>Appendices</b></span></li>
 <li class="chapter" data-level="A" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>A</b> References</a></li>
@@ -262,19 +275,25 @@
 <p><span class="math inline">\(df_{BG} = k - 1\)</span></p>
 <p>The within-group SS is the <em>variation of scores within groups</em>. The calculations you see below is to take the sample size in that group (<span class="math inline">\(n_k\)</span>) and subtract 1 from it, then multiply it by the group’s variance (<span class="math inline">\(s_k^2\)</span>, which is standard deviation squared), and then sum all the results of doing that per group.</p>
 <p><span class="math inline">\(SS_{WG} = \sum{s_k^2}(n_k - 1)\)</span></p>
-<p><span class="math inline">\(df_{WG} = N - 1\)</span></p>
+<p><span class="math inline">\(df_{WG} = N - k\)</span></p>
 <p>In other words, the F-ratio is a ratio of the group or experimental effect by the individual differences in performance.</p>
-<p>For our F-ratio to be statistically significant, we want to <em>maximize</em> the variance between groups (numerator) and <em>minimize</em> the variance within groups (denominator).</p>
+<p>For our F-ratio to be statistically significant, we want to <em>maximize</em> the variance between groups (numerator) and <em>minimize</em> the variance within groups (denominator). This is depicted in the image below. On the left (a) the arrows show the differences in the group means. On the right (b) the arrows highlight the variability within each group. You want to maximize (a) and minimize (b).</p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-1"></span>
+<img src="images/04_one-way-anova/anova%20graphic.png" alt="Graphical illustration of the one-way ANOVA" width="80%" />
+<p class="caption">
+Figure 2.1: Graphical illustration of the one-way ANOVA
+</p>
+</div>
 <div id="an-example-with-the-math" class="section level3" number="4.4.1">
 <h3><span class="header-section-number">4.4.1</span> An example with the math</h3>
-<p>In case it’s useful, read below. If your eyes are glazing forward, just move to the next section.</p>
+<p>In case it’s useful, read below. If your eyes are glazing over, just move to the next section.</p>
 <p>You can read the example dataset below. I’ve pulled the relevant data here so we can go through a hand calculation ourselves.</p>
-<table style="width:62%;">
+<table style="width:68%;">
 <colgroup>
 <col width="19%" />
 <col width="12%" />
-<col width="15%" />
-<col width="15%" />
+<col width="18%" />
+<col width="18%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -288,38 +307,43 @@
 <tr class="odd">
 <td>Anxifree</td>
 <td>6</td>
-<td>0.72</td>
-<td>.15</td>
+<td>0.7167</td>
+<td>.1537</td>
 </tr>
 <tr class="even">
 <td>Joyzepam</td>
 <td>6</td>
-<td>1.48</td>
-<td>.05</td>
+<td>1.4833</td>
+<td>.0457</td>
 </tr>
 <tr class="odd">
 <td>Placebo</td>
 <td>6</td>
-<td>0.45</td>
-<td>.08</td>
+<td>0.4500</td>
+<td>.0790</td>
 </tr>
 <tr class="even">
 <td><strong>Overall</strong></td>
 <td><strong>18</strong></td>
-<td><strong>0.88</strong></td>
+<td><strong>0.8833</strong></td>
 <td><strong>.28</strong></td>
 </tr>
 </tbody>
 </table>
 <p>Let’s start with the easy stuff! Let’s calculate our degrees of freedom.</p>
 <p><span class="math inline">\(df_{BG} = k - 1 = 3 -1 = 2\)</span></p>
-<p><span class="math inline">\(df_{WG} = N - 1 = 18 - 1 = 17\)</span></p>
+<p><span class="math inline">\(df_{WG} = N - k = 18 - 3 = 15\)</span></p>
 <p>Now let’s move to the more complicated ones.</p>
-<p><span class="math inline">\(\begin{aligned} SS_{BG} = \sum{n_k}(\bar{X_k}-\bar{X}_{grand})^2 \\ SS_{BG} = 6(.72-.88)^2 + 6(1.48-.88)^2 + 6(.45-.88)^2 \\ SS_{BG} = 6(-.16)^2 + 6(.60)^2 + 6(-.43)^2 \\ SS_{BG} = 6(.0256) + 6(.36) + 6(.1849) \\ SS_{BG} = .1536 + 2.16 + 1.1094 \\ SS_{BG} = 3.423 \end{aligned}\)</span></p>
-<p>$$$$<br />
-\begin{aligned}</p>
-<p>SS_{BG} = \sum{n_k}(\bar{X_k}-\bar{X}_{grand})^2 = 6(.72-.88)^2 + 6(1.48-.88)^2 + 6<br />
-$$</p>
+<p><span class="math inline">\(\begin{aligned} SS_{BG} &amp;= \sum{n_k}(\bar{X_k}-\bar{X}_{grand})^2 \\ SS_{BG} &amp;= 6(.7167-.8833)^2 + 6(1.4833-.8833)^2 + 6(.4500-.8833)^2 \\ SS_{BG} &amp;= 6(-.1666)^2 + 6(.6)^2 + 6(-.4333)^2 \\ SS_{BG} &amp;= 6(.0278) + 6(.36) + 6(.1877) \\ SS_{BG} &amp;= .1665 + 2.16 + 1.1262 \\ SS_{BG} &amp;= 3.453 \end{aligned}\)</span></p>
+<p>Then we can calculate our <span class="math inline">\(MS_{BG}\)</span>.</p>
+<p><span class="math inline">\(MS_{BG} = \frac{SS_{BG}}{df_{BG}} = \frac{3.453}{2} = 1.727\)</span></p>
+<p>Let’s move to our <span class="math inline">\(SS_{WG}\)</span>.</p>
+<p><span class="math inline">\(\begin{aligned} SS_{WG} &amp;= \sum{s_k^2}(n_k - 1) \\ SS_{WG} &amp;= .1537(6-1) + .0457(6-1) + .0790(6-1) \\ SS_{WG} &amp;= .1537(5) + .0457(5) + .0790(5) \\ SS_{WG} &amp;= .7685 + .2285 + .3950 \\ SS_{WG} &amp;= 1.392 \end{aligned}\)</span></p>
+<p>Now we can calculate our <span class="math inline">\(MS_{WG}\)</span>.</p>
+<p><span class="math inline">\(MS_{WG} = \frac{SS_{WG}}{df_{WG}} = \frac{1.392}{15} = .0928\)</span></p>
+<p>Now all that’s left is to calculate <span class="math inline">\(F\)</span>!</p>
+<p><span class="math inline">\(F = \frac{MS_{BG}}{MS_{WG}} = \frac{1.726}{.0928} = 18.60\)</span></p>
+<p>Compare to the <span class="math inline">\(F\)</span>, <span class="math inline">\(df_{WG}\)</span>, and <span class="math inline">\(df_{BG}\)</span> in the output below in jamovi! Notice how close we are. Also notice how many decimals I retained throughout the analyses. I was a bit off when I first did this with only two decimals throughout. Retaining four decimals throughout got me only ~one-hundredth of a decimal off from the actual results. Neat!</p>
 </div>
 </div>
 <div id="assumptions-2" class="section level2" number="4.5">
@@ -331,40 +355,45 @@ $$</p>
 <li><p>The dependent variable is <strong>interval or ratio</strong> (i.e., continuous)</p></li>
 <li><p>Scores are <strong>independent</strong> between groups</p></li>
 </ol>
-<p>We cannot <u>test</u> the third and fourth assumptions; rather, those are based on knowing your data.</p>
-<p>However, we can and should test for the first two assumptions. Fortunately, the one-way ANOVA in jamovi has three check boxes under “Assumption Checks” that lets us test for both assumptions.</p>
+<p>We cannot <u>test</u> the third and fourth assumptions; rather, those are based on knowing your data. However, we can and should test for the first two assumptions. Fortunately, the one-way ANOVA in jamovi has three check boxes under “Assumption Checks” that lets us test for both assumptions.</p>
+<div id="anova-is-robust-to-violations" class="section level3" number="4.5.1">
+<h3><span class="header-section-number">4.5.1</span> ANOVA is robust to violations</h3>
+<p>Although we should meet the assumptions as much as possible, in general the F-statistic is <em>robust</em> to violations of normality and homogeneity of variance. This means that you can still run the one-way ANOVA if you violate the assumptions, but <em>only when group sizes are equal or nearly equal</em>. If you have vastly different variances (such as 2:1 ratio or greater) or vastly different group sizes (such as a 2:1 ratio or greater), and especially if one group is small (such as 10 or fewer cases), then your F-statistic is likely to be very wrong. For example, if your larger group has the larger variance, then your F-statistic is likely to be non-significant or smaller than it should be; however, if your larger group has smaller variance,then your F-statistic is likely to be significant or bigger than it should be!</p>
+</div>
 </div>
 <div id="in-jamovi-2" class="section level2" number="4.6">
 <h2><span class="header-section-number">4.6</span> In jamovi</h2>
 <p>Let’s run an example with data from lsj-data. Open data from your Data Library in “lsj-data.” Select and open “clinicaltrial.” This dataset is hypothetical data of a clinical trial in which you are testing a new antidepressant drug called <em>Joyzepam</em>. In order to construct a fair test of the drug’s effectiveness, the study involves three separate drugs to be administered. One is a placebo, and the other is an existing antidepressant / anti-anxiety drug called <em>Anxifree</em>. A collection of 18 participants with moderate to severe depression are recruited for your initial testing. Because the drugs are sometimes administered in conjunction with psychological therapy, your study includes 9 people undergoing cognitive behavioral therapy (CBT) and 9 who are not. Participants are randomly assigned (doubly blinded, of course) a treatment, such that there are 3 CBT people and 3 no-therapy people assigned to each of the 3 drugs. A psychologist assesses the mood of each person after a 3 month run with each drug, and the overall improvement in each person’s mood is assessed on a scale ranging from -5 to +5.</p>
 <ol style="list-style-type: decimal">
-<li><p>To perform a one-way ANOVA in jamovi, go to the Analyses tab, click the ANOVA button, and choose “One-Way ANOVA.”</p></li>
-<li><p>Move your dependent variable <code>mood.gain</code> to the Dependent Variables box and your independent variable <code>drug</code> to the Grouping Variable box.</p></li>
-<li><p>Under Variances, select <code>Assume equal (Fisher's)</code>; we’ll discuss later when you might select the first option.</p></li>
-<li><p>Under Additional Statistics, select <code>Descriptives table</code> and <code>Descriptives plots</code>.</p></li>
-<li><p>Under Assumption Checks, select all three options: <code>Homogeneity test</code>, <code>Normality test</code>, and <code>Q-Q plot</code>.</p></li>
+<li><p>To perform a one-way ANOVA in jamovi, go to the Analyses tab, click the ANOVA button, and choose “ANOVA.” You might be asking why we aren’t choosing “One-Way ANOVA” and that’s because the options there are too limited.</p></li>
+<li><p>Move your dependent variable <code>mood.gain</code> to the Dependent Variable box and your independent variable <code>drug</code> to the Fixed Factors box.</p></li>
+<li><p>Select <span class="math inline">\(\omega^2\)</span> for your effect size.</p></li>
+<li><p>Ignore the Model drop-down menu. If you are doing more complicated ANOVAs you will need this. We will ignore it.</p></li>
+<li><p>In the Assumption Checks drop-down menu, select all three options: <code>Homogeneity test</code>, <code>Normality test</code>, and <code>Q-Q plot</code>.</p></li>
+<li><p>Ignore the Contrasts and Post Hoc Tests drop-down menus for now. See below for more information on them.</p></li>
+<li><p>Ignore the Estimated Marginal Means drop-down menu.</p></li>
 </ol>
-<p>When you are done, your setup should look like this (we’ll discuss Post-Hoc Tests later):</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-1"></span>
-<img src="images/04_one-way-anova/one-way_setup.png" alt="Independent t-test setup in jamovi" width="80%" />
+<p>When you are done, your setup should look like this:</p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-2"></span>
+<img src="images/04_one-way-anova/one-way_setup.png" alt="One-way ANOVA setup in jamovi" width="80%" />
 <p class="caption">
-Figure 4.1: Independent t-test setup in jamovi
+Figure 2.2: One-way ANOVA setup in jamovi
 </p>
 </div>
 <div id="checking-assumptions-in-jamovi-2" class="section level3" number="4.6.1">
 <h3><span class="header-section-number">4.6.1</span> Checking assumptions in jamovi</h3>
 <p>We test for normality using the Shapiro-Wilk test and the Q-Q plot. The Shapiro-Wilk test was not statistically significant (W = .96, <em>p</em> = .605); therefore, this indicates the data is normally distributed. Furthermore, the lines are fairly close to the diagonal line in the Q-Q plot. We can conclude that we satisfy the assumption of normality.</p>
 <p>We test for homogeneity of variance using the Levene’s test. The Levene’s test was not statistically significant (<em>F</em> [2, 15] = 1.45, <em>p</em> = .266); therefore, this indicates our data satisfies the assumption of homogeneity of variance. However, I would add a caveat that we have a small sample of data (<em>N</em> = 18); we should have tried to collect more data.</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-2"></span>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-3"></span>
 <img src="images/04_one-way-anova/one-way_assumptions1.png" alt="Testing assumptions in jamovi" width="100%" />
 <p class="caption">
-Figure 4.2: Testing assumptions in jamovi
+Figure 2.3: Testing assumptions in jamovi
 </p>
 </div>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-3"></span>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-4"></span>
 <img src="images/04_one-way-anova/one-way_assumptions2.png" alt="**CAPTION THIS FIGURE!!**" width="100%" />
 <p class="caption">
-Figure 4.3: <strong>CAPTION THIS FIGURE!!</strong>
+Figure 2.4: <strong>CAPTION THIS FIGURE!!</strong>
 </p>
 </div>
 </div>
@@ -372,24 +401,28 @@ Figure 4.3: <strong>CAPTION THIS FIGURE!!</strong>
 <div id="interpreting-results-2" class="section level2" number="4.7">
 <h2><span class="header-section-number">4.7</span> Interpreting results</h2>
 <p>Once we are satisfied we have satisfied the assumptions for the independent t-test, we can interpret our results.</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-4"></span>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-5"></span>
 <img src="images/04_one-way-anova/one-way_results.png" alt="One-way ANOVA results in jamovi" width="100%" />
 <p class="caption">
-Figure 4.4: One-way ANOVA results in jamovi
+Figure 2.5: One-way ANOVA results in jamovi
 </p>
 </div>
 <p>Our p-value is less than .05, so our results are statistically significant. We can write up our results in APA something like this:</p>
 <blockquote>
-<p>There is a significant difference in mood gain across the three drug conditions, <em>F</em> (2, 15) = 18.61, <em>p</em> &lt; .001.</p>
+<p>There is a significant difference in mood gain across the three drug conditions, <em>F</em> (2, 15) = 18.61, <em>p</em> &lt; .001, <span class="math inline">\(\omega^2\)</span> = .66.</p>
 </blockquote>
 <p>Sometimes, people like to put the statistics inside a parentheses. In that case, you need to change the parentheses around the degrees of freedom as brackets. Here’s another example write-up of the results in APA style:</p>
 <blockquote>
-<p>There is a significant difference in mood gain across the three drug conditions (<em>F</em> [2, 15] = 18.61, <em>p</em> &lt; .001).</p>
+<p>There is a significant difference in mood gain across the three drug conditions (<em>F</em> [2, 15] = 18.61, <em>p</em> &lt; .001, <span class="math inline">\(\omega^2\)</span> = .66).</p>
 </blockquote>
+<div id="a-note-on-one-tailed-vs.-two-tailed-tests" class="section level3" number="4.7.1">
+<h3><span class="header-section-number">4.7.1</span> A note on one-tailed vs. two-tailed tests</h3>
+<p>Unlike a t-test, we would not halve the p-value in an F-ratio because it is an omnibus test. Our planned contrasts or post-hoc tests can tell us where differences are, and we can provide directional hypotheses there if we so choose.</p>
+</div>
 </div>
 <div id="what-if-i-violated-assumptions-2" class="section level2" number="4.8">
 <h2><span class="header-section-number">4.8</span> What if I violated assumptions?</h2>
-<p>The great news is that jamovi includes the Welch’s F-statistic and the Kruskal-Wallis non-parametric test! Just like with the Welch’s t-statistic (for the independent t-test), it does not have the assumption of equal variances so it’s appropriate to use if your data is normally distributed but does not have homogeneous variances. Similarly, the Kruskal-Wallis test is the non-parametric version of the one-way ANOVA and should be used if you do not satisfy the assumption of normality.</p>
+<p>The great news is that jamovi includes the Welch’s F-statistic and the Kruskal-Wallis non-parametric test! The bad news is that you lose some functionality in jamovi when you use them. Just like with the Welch’s t-statistic (for the independent t-test), it does not have the assumption of equal variances so it’s appropriate to use if your data is normally distributed but does not have homogeneous variances. Similarly, the Kruskal-Wallis test is the non-parametric version of the one-way ANOVA and should be used if you do not satisfy the assumption of normality.</p>
 <p>Here’s what statistic you should choose based on satisfying assumptions:</p>
 <table style="width:100%;">
 <colgroup>
@@ -419,11 +452,12 @@ Figure 4.4: One-way ANOVA results in jamovi
 </table>
 <div id="welchs-f-test-in-jamovi" class="section level4" number="4.8.0.1">
 <h4><span class="header-section-number">4.8.0.1</span> Welch’s F-test in jamovi</h4>
-<p>To conduct this in jamovi, under Variances select <code>Don't assume equal (Welch's)</code>. You will interpret the results similarly to the one-way ANOVA:</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-5"></span>
+<p>To conduct this in jamovi, you will need to use the “One-Way ANOVA” test, not the “ANOVA” test. The unfortunate thing about this test is that it strangely does not provide effect sizes.</p>
+<p>In jamovi, under Variances select <code>Don't assume equal (Welch's)</code>. Move <code>mood.gain</code> to the Dependent Variable box and <code>drug</code> to your Grouping Variable box. You will interpret the results similarly to the one-way ANOVA:</p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-6"></span>
 <img src="images/04_one-way-anova/one-way_results_Welch.png" alt="One-way ANOVA results in jamovi" width="100%" />
 <p class="caption">
-Figure 4.5: One-way ANOVA results in jamovi
+Figure 4.1: One-way ANOVA results in jamovi
 </p>
 </div>
 <blockquote>
@@ -432,53 +466,154 @@ Figure 4.5: One-way ANOVA results in jamovi
 </div>
 <div id="kruskal-wallis-test-in-jamovi" class="section level4" number="4.8.0.2">
 <h4><span class="header-section-number">4.8.0.2</span> Kruskal-Wallis test in jamovi</h4>
-<p>Unlike with the t-tests in which the non-parametric tests were located in the same statistical test window, you need to select under the ANOVA button “One-Way ANOVA, Kruskal Wallis” towards the bottom of the list of options. Move <code>mood.gain</code> to the Dependent Variables box and <code>drug</code> to the Grouping Variable box. Select Effect size. You will interpret the results similarly to the one-way ANOVA:</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-6"></span>
+<p>To perform the Kruskal-Wallis test in jamovi, you will need to select under the ANOVA button “One-Way ANOVA, Kruskal Wallis” towards the bottom of the list of options. Move <code>mood.gain</code> to the Dependent Variables box and <code>drug</code> to the Grouping Variable box. Select Effect size; if you need post hoc comparisons select DSCF pairwise comparisons (see section below on group differences). You will interpret the results similarly to the one-way ANOVA:</p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-7"></span>
 <img src="images/04_one-way-anova/one-way_results_Kruskal.png" alt="Kruskal-Wallis results in jamovi" width="100%" />
 <p class="caption">
-Figure 4.6: Kruskal-Wallis results in jamovi
+Figure 4.2: Kruskal-Wallis results in jamovi
 </p>
 </div>
 <blockquote>
 <p>Using a Kruskal-Wallis test, there is a significant difference in mood gain across the three drug conditions, <span class="math inline">\(\chi^2\)</span> (2) = 12.08, <em>p</em> = .002, <span class="math inline">\(\epsilon^2\)</span> = .71.</p>
 </blockquote>
 <p>Notice how in this case all three results converge and show there is a statistically significant difference in the results! The problem is… differences in which groups?</p>
-<p>1. Post-hoc tests (both one-way ANOVA and Kruskal-Wallis)</p>
-<p>2. Cover planned contrasts briefly</p>
-<p>3. What about effect sizes?</p>
-<p>4. Repeated-measures ANOVA</p>
-<p>5. Factorial ANOVA and ANCOVA (brief here)</p>
 </div>
 </div>
-<div id="your-turn-2" class="section level2" number="4.9">
-<h2><span class="header-section-number">4.9</span> Your turn!</h2>
+<div id="finding-group-differences" class="section level2" number="4.9">
+<h2><span class="header-section-number">4.9</span> Finding Group Differences</h2>
+<p>Often, we’re not interested in just <em>whether</em> there is a difference (which the F-statistic can tell us), but <em>where</em> the differences are between groups (which the F-statistic cannot tell us). For that, we use either <u>planned contrasts</u> when you have specific hypotheses you want to test or <u>post-hoc comparisons</u> when you have no specific hypotheses.</p>
+<p><strong>Note</strong>: You <u>do not</u> perform contrasts or post hoc comparisons if your overall <span class="math inline">\(F\)</span> statistic is not statistically significant. You do not interpret group differences if you fail to reject the null hypothesis that there are no group differences!</p>
+<div id="planned-contrasts" class="section level3" number="4.9.1">
+<h3><span class="header-section-number">4.9.1</span> Planned Contrasts</h3>
+<p>If you have before-analysis hypotheses of group differences in your data, you will use planned contrasts. You can find the planned contrasts in the ANOVA (but not the one-way ANOVA) setup as a drop-down menu. Note that while I show all six contrasts that jamovi provides, you do not normally do multiple contrasts. These are just shown for illustrative purposes:</p>
+<ol style="list-style-type: decimal">
+<li><strong>Deviation</strong>: compares the effect of each category (except the first category) to the overall experimental effect. The order of categories is alphabetical or numerical order. Notice how anxifree is considered the first category.</li>
+</ol>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-8"></span>
+<img src="images/04_one-way-anova/contrasts_deviation.png" alt="**CAPTION THIS FIGURE!!**" width="100%" />
+<p class="caption">
+Figure 4.3: <strong>CAPTION THIS FIGURE!!</strong>
+</p>
+</div>
+<ol start="2" style="list-style-type: decimal">
+<li><strong>Simple</strong>: Each category is compared to the first category. The order of categories is alphabetical or numerical order. Notice how anxifree is considered the first category.</li>
+</ol>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-9"></span>
+<img src="images/04_one-way-anova/contrasts_simple.png" alt="**CAPTION THIS FIGURE!!**" width="100%" />
+<p class="caption">
+Figure 4.4: <strong>CAPTION THIS FIGURE!!</strong>
+</p>
+</div>
+<ol start="3" style="list-style-type: decimal">
+<li><strong>Difference</strong>: Each category (except the first) is compared to the mean effect of all previous categories.</li>
+</ol>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-10"></span>
+<img src="images/04_one-way-anova/contrasts_difference.png" alt="**CAPTION THIS FIGURE!!**" width="100%" />
+<p class="caption">
+Figure 4.5: <strong>CAPTION THIS FIGURE!!</strong>
+</p>
+</div>
+<ol start="4" style="list-style-type: decimal">
+<li><strong>Helmert</strong>: Each category (except the last) is compared to the mean effect of all subsequent categories.</li>
+</ol>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-11"></span>
+<img src="images/04_one-way-anova/contrasts_helmert.png" alt="**CAPTION THIS FIGURE!!**" width="100%" />
+<p class="caption">
+Figure 4.6: <strong>CAPTION THIS FIGURE!!</strong>
+</p>
+</div>
+<ol start="5" style="list-style-type: decimal">
+<li><strong>Repeated</strong>: Each category is compared to the last category.</li>
+</ol>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-12"></span>
+<img src="images/04_one-way-anova/contrasts_repeated.png" alt="**CAPTION THIS FIGURE!!**" width="100%" />
+<p class="caption">
+Figure 4.7: <strong>CAPTION THIS FIGURE!!</strong>
+</p>
+</div>
+<ol start="6" style="list-style-type: decimal">
+<li><strong>Polynomial</strong>: Tests trends in the data. It will examine the <em>n-1</em><sup>th</sup> degree based on the number of groups. In this case, because we have 3 groups it is testing both a linear (<sup>1</sup>) and quadratic (<sup>2</sup>) trend. If we had 5 groups, it would test a linear (<sup>1</sup>), quadratic (<sup>2</sup>), cubic (<sup>3</sup>), and quartic (<sup>4</sup>) trend. Note that your factor levels must be ordinal for a polynomial contrast to make sense.</li>
+</ol>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-13"></span>
+<img src="images/04_one-way-anova/contrasts_polynomial.png" alt="**CAPTION THIS FIGURE!!**" width="100%" />
+<p class="caption">
+Figure 4.8: <strong>CAPTION THIS FIGURE!!</strong>
+</p>
+</div>
+<p><strong>Test yourself!</strong> Which contrast would make <u>most sense</u> to test given that we want to know how our drug compares to the other two drugs? <select class='solveme' data-answer='["repeated"]'> <option></option> <option>deviation</option> <option>simple</option> <option>difference</option> <option>helmert</option> <option>repeated</option> <option>polynomial</option></select></p>
+<div id="writing-up-planned-contrasts" class="section level4" number="4.9.1.1">
+<h4><span class="header-section-number">4.9.1.1</span> Writing up planned contrasts</h4>
+<p>Here’s some example write-ups of the above results.</p>
+<blockquote>
+<p>There is a significant difference in mood gain across the three drug conditions, <em>F</em> (2, 15) = 18.61, <em>p</em> &lt; .001. Repeated contrasts showed that <em>Joyzepam</em> (<em>M</em> = 1.48, <em>SD</em> = .21) outperformed both <em>Anxifree</em> (<em>M</em> = .72, <em>SD</em> = .39; <em>p</em> &lt; .001) and the placebo condition (<em>M</em> = .45, <em>SD</em> = .28; <em>p</em> &lt; .001).</p>
+<p>(Note how this example makes no sense because our data is not ordinal) There is a significant difference in mood gain across the three drug conditions, <em>F</em> (2, 15) = 18.61, <em>p</em> &lt; .001. There was not a significant linear trend across the drug conditions (<em>p</em> = .150).</p>
+</blockquote>
+</div>
+</div>
+<div id="post-hoc-comparisons" class="section level3" number="4.9.2">
+<h3><span class="header-section-number">4.9.2</span> Post hoc comparisons</h3>
+<p>Often, we do not have any <em>a priori</em> (or planned) predictions or hypotheses about our group differences. In this case, we use post hoc procedures. These procedures do <u>pairwise comparisons</u> among all of our groups, like t-tests across each of our groups. As we noted on the first page of this handout, this can be highly problematic for our Type I error rate! Therefore, we must perform corrections to control our familywise error rate.</p>
+<p>jamovi currently supports five types of post-hoc tests; I generally only use Tukey or Bonferonni:</p>
+<ol style="list-style-type: decimal">
+<li><strong>No correction</strong>: This doesn’t correct for a Type I error at all. Don’t use this! I won’t even show it. It’s bad. Never use it. NEVER. You are warned!</li>
+<li><strong>Tukey</strong>: This is the post hoc test I use most often. It controls the Type I error rate well, but isn’t as conservative of a control as the Bonferonni.</li>
+<li><strong>Scheffe</strong>: Honestly, I’ve never used it. I am not sure how it’s calculated.</li>
+<li><strong>Bonferroni</strong>: This is the most conservative test. It’s good if you only have a small number of comparisons to make or if you <em>really</em> want to control your Type I error rate. If you have a lot of them to test , then you should use something else.</li>
+<li><strong>Holm</strong>: Honestly, I’ve never used it. I am not sure how it’s calculated.</li>
+</ol>
+<p>Games-Howell for when you have unequal variances and Tukey for when you have equal variances. They will each calculate your p-values slightly differently but in a way to control for our Type I error rate as best it can. They are interpreted very similarly, so we will proceed with the Tukey’s post hoc comparisons because we satisfied the assumption of equal variances.</p>
+<p>To request post hoc tests from the one-way ANOVA, open the collapsed menu at the bottom of the setup menu. Select <code>Tukey (equal variances</code> under Post-Hoc Test and select <code>Mean difference</code>, <code>Report significance</code>, and <code>Flag significant comparisons</code> under Statistics. Optionally, you can request the <code>Test results (t and df)</code> although this is not necessary.</p>
+<p>Below shows the post hoc test results for our one-way ANOVA. Notice the differences in p-values across the four post hoc tests and how all other values are the same. Notice how the Bonferroni is most conservative (i.e., has the largest p-values) and the Holm’s is the least conservative (i.e., has the smallest p-values). Keep in mind you do not normally ask for multiple post hoc comparisons. Just pick one! Normally, I just pick Tukey’s.</p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-14"></span>
+<img src="images/04_one-way-anova/one-way_results_post-hoc.png" alt="Post hoc test results in jamovi" width="100%" />
+<p class="caption">
+Figure 4.9: Post hoc test results in jamovi
+</p>
+</div>
+<div id="writing-up-post-hoc-results" class="section level4" number="4.9.2.1">
+<h4><span class="header-section-number">4.9.2.1</span> Writing up post hoc results</h4>
+<p>The way we would write up each of the post hoc comparisons is very similar. Given that I usually use Tukey, here is a write-up for those results:</p>
+<blockquote>
+<p>There is a significant difference in mood gain across the three drug conditions, <em>F</em> (2, 15) = 18.61, <em>p</em> &lt; .001. Post hoc comparisons using Tukey’s HSD revealed that our drug <em>Joyzepam</em> (<em>M</em> = 1.48, <em>SD</em> = .21) outperformed both <em>Anxifree</em> (<em>M</em> = .72, <em>SD</em> = .39; <em>p</em> = .002) and the placebo condition (<em>M</em> = .45, <em>SD</em> = .28; <em>p</em> &lt; .001); there were no differences between <em>Anxifree</em> and the placebo condition (<em>p</em></p>
+</blockquote>
+</div>
+</div>
+<div id="group-differences-with-violated-assumptions" class="section level3" number="4.9.3">
+<h3><span class="header-section-number">4.9.3</span> Group differences with violated assumptions</h3>
+<p>If you are using Welch’s F-test using the One-Way ANOVA in jamovi, you should select under Post-Hoc Tests <code>Games-Howell (unequal variances)</code>. These will be interpreted similarly to the post hoc comparisons above.</p>
+<p>If you are using the Kruskal-Wallis test, you will select the check-box for <code>DSCF pairwise comparisons</code>. This stands for the Dwass-Steel-Critchlow-Fligner test. All you need to know is that they, too, are interpreted similarly to the post hoc comparisons above.</p>
+<p>Unfortunately, you cannot perform contrasts with either the Welch’s F-test or Kruskal-Wallis test.</p>
+</div>
+</div>
+<div id="tips-on-writing-up-results" class="section level2" number="4.10">
+<h2><span class="header-section-number">4.10</span> Tips on writing up results</h2>
+<p>Writing up results in APA style is both a science and an art. There’s a science to what you need to report. For example, you always report the statistics exactly the same: <em>F</em> (df<sub>WG</sub>, df<sub>BG</sub>) = X.XX, <em>p</em> = .XXX. You also always report the group means (<em>M</em>) and standard deviations (<em>SD</em>), although you can report them in-text like I did above or in a descriptives table like you can ask from jamovi.</p>
+<p>However, there’s also an art to it. Notice how I wrote that up in a way to summarize the findings as succinctly as possible. I could have said there was a difference between <em>anxifree</em> and <em>joyzepam</em> and a difference between <em>joyzepam</em> and the placebo, but that’s a lot more words and isn’t written in a way to focus on what I’m hoping to see: that my drug <em>joyzepam</em> performed better than the competitor <em>anxifree</em> and a placebo condition.</p>
+<p>This is where you need to think creatively and be very critical in checking that what you say makes sense. Read your write-ups carefully! Have someone else read it. Can they understand what you mean?</p>
+</div>
+<div id="your-turn-2" class="section level2" number="4.11">
+<h2><span class="header-section-number">4.11</span> Your turn!</h2>
 <p>Open the <code>Sample_Dataset_2014.xlsx</code> file that we will be using for all Your Turn exercises.</p>
-<p>Perform independent t-tests based on the following research questions. Think critically about whether you should be using a one-tailed or two-tailed hypothesis and check your assumptions so you know which test to use!</p>
+<p>Perform one-way ANOVAs based on the following research questions. Check your assumptions and ensure you are using the correct tests.</p>
 <p>To get the most out of these exercises, try to first find out the answer on your own and then use the drop-down menus to check your answer.</p>
 <ol style="list-style-type: decimal">
-<li><p><strong>Does height differ by gender (Gender: male = 0, female = 1)?</strong></p>
+<li><p><strong>Does students differ on English scores by rank (i.e., freshmen, sophomore, junior, senior)?</strong></p>
 <ul>
-<li><p>Should you use a one-tailed or two-tailed hypothesis? <select class='solveme' data-answer='["two-tailed"]'> <option></option> <option>one-tailed</option> <option>two-tailed</option></select></p></li>
-<li><p>Which statistic should you use based on your assumptions? <select class='solveme' data-answer='["Mann Whitney U"]'> <option></option> <option>independent t-test</option> <option>Welch’s t-test</option> <option>Mann Whitney U</option></select></p></li>
-<li><p>Does height differ by gender? <select class='solveme' data-answer='["yes"]'> <option></option> <option>yes</option> <option>no</option></select></p></li>
+<li><p>Do you satisfy the assumption of normality? <select class='solveme' data-answer='["yes"]'> <option></option> <option>yes</option> <option>no</option></select></p></li>
+<li><p>Do you satisfy the assumption of homogeneity of variance? <select class='solveme' data-answer='["yes"]'> <option></option> <option>yes</option> <option>no</option></select></p></li>
+<li><p>Which statistic should you use? <select class='solveme' data-answer='["one-way ANOVA"]'> <option></option> <option>one-way ANOVA</option> <option>Welch’s F-test</option> <option>Kruskal-Wallis test</option></select></p></li>
+<li><p>Do students differ on English scores by rank? <select class='solveme' data-answer='["no"]'> <option></option> <option>yes</option> <option>no</option></select></p></li>
+<li><p>Should you perform a planned contrast or post hoc comparison? <select class='solveme' data-answer='["no"]'> <option></option> <option>yes</option> <option>no</option></select></p></li>
+<li><p>What are the results of the post hoc comparison? <select class='solveme' data-answer='["N/A - Don&apos;t perform"]'> <option></option> <option>N/A - Don’t perform</option> <option>Freshmen had higher English scores than sophomores, juniors, and seniors</option> <option>Freshmen and sophomores had higher English scores than juniors and seniors</option></select></p></li>
 </ul></li>
-<li><p><strong>Do athletes (Athlete: athletes = 1, non-athlete = 0) have faster sprint times than non-athletes?</strong></p>
+<li><p><strong>Does smoking status (Smoking: Nonsmoker = 0, Past smoker = 1, Current smoker = 2) relate to sprint time?</strong></p>
 <ul>
-<li><p>Should you use a one-tailed or two-tailed hypothesis? <select class='solveme' data-answer='["one-tailed"]'> <option></option> <option>one-tailed</option> <option>two-tailed</option></select></p></li>
-<li><p>Which statistic should you use based on your assumptions? <select class='solveme' data-answer='["Mann Whitney U"]'> <option></option> <option>independent t-test</option> <option>Welch’s t-test</option> <option>Mann Whitney U</option></select></p></li>
-<li><p>Do athletes have faster sprint times than non-athletes? <select class='solveme' data-answer='["yes"]'> <option></option> <option>yes</option> <option>no</option></select></p></li>
-</ul></li>
-<li><p><strong>Do students who live on campus (LiveOnCampus: on campus = 1, off campus = 0) have higher English scores than students who live off campus?</strong></p>
-<ul>
-<li><p>Should you use a one-tailed or two-tailed hypothesis? <select class='solveme' data-answer='["one-tailed"]'> <option></option> <option>one-tailed</option> <option>two-tailed</option></select></p></li>
-<li><p>Which statistic should you use based on your assumptions? <select class='solveme' data-answer='["Welch&apos;s t-test"]'> <option></option> <option>independent t-test</option> <option>Welch’s t-test</option> <option>Mann Whitney U</option></select></p></li>
-<li><p>Does students who live on campus have higher English scores? <select class='solveme' data-answer='["no"]'> <option></option> <option>yes</option> <option>no</option></select></p></li>
-</ul></li>
-<li><p><strong>Does athletic status relate to math scores?</strong></p>
-<ul>
-<li><p>Should you use a one-tailed or two-tailed hypothesis? <select class='solveme' data-answer='["two-tailed"]'> <option></option> <option>one-tailed</option> <option>two-tailed</option></select></p></li>
-<li><p>Which statistic should you use based on your assumptions? <select class='solveme' data-answer='["independent t-test"]'> <option></option> <option>independent t-test</option> <option>Welch’s t-test</option> <option>Mann Whitney U</option></select></p></li>
-<li><p>Does athletic status relate to math scores? <select class='solveme' data-answer='["yes"]'> <option></option> <option>yes</option> <option>no</option></select></p></li>
+<li><p>Do you satisfy the assumption of normality? <select class='solveme' data-answer='["no"]'> <option></option> <option>yes</option> <option>no</option></select></p></li>
+<li><p>Do you satisfy the assumption of homogeneity of variance? <select class='solveme' data-answer='["yes"]'> <option></option> <option>yes</option> <option>no</option></select></p></li>
+<li><p>Which statistic should you use? <select class='solveme' data-answer='["Kruskal-Wallis test"]'> <option></option> <option>one-way ANOVA</option> <option>Welch’s F-test</option> <option>Kruskal-Wallis test</option></select></p></li>
+<li><p>Does smoking status relate to sprint time? <select class='solveme' data-answer='["yes"]'> <option></option> <option>yes</option> <option>no</option></select></p></li>
+<li><p>Should you perform a planned contrast or post hoc comparison? <select class='solveme' data-answer='["yes"]'> <option></option> <option>yes</option> <option>no</option></select></p></li>
+<li><p>What are the results of the post hoc comparison? <select class='solveme' data-answer='["Nonsmokers had significantly faster sprint times than current smokers"]'> <option></option> <option>N/A - Don’t perform</option> <option>Nonsmokers had significantly faster sprint times than current smokers</option> <option>Nonsmokers and past smokers had significantly faster spring times than current smokers</option> <option>Nonsmokers had significantly faster sprint times than both past and current smokers</option></select></p></li>
 </ul></li>
 </ol>
 
