@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 4 One-way ANOVA | Statistics with jamovi</title>
+  <meta name="description" content="This is the website for PSYC 290 and PSYC 790 at the University of Wisconsin-Stout, taught by Dana Wanzer." />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 4 One-way ANOVA | Statistics with jamovi" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is the website for PSYC 290 and PSYC 790 at the University of Wisconsin-Stout, taught by Dana Wanzer." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 4 One-way ANOVA | Statistics with jamovi" />
+  
+  <meta name="twitter:description" content="This is the website for PSYC 290 and PSYC 790 at the University of Wisconsin-Stout, taught by Dana Wanzer." />
+  
+
+<meta name="author" content="Dana Wanzer" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="dependent-t-test.html"/>
+<link rel="next" href="references.html"/>
+<script src="libs/header-attrs-2.5/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+
+
+
+<link rel="stylesheet" href="include/psyteachr.css" type="text/css" />
+<link rel="stylesheet" href="include/style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Stats with jamovi</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a></li>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#quiz-questions"><i class="fa fa-check"></i><b>1.1</b> Quiz Questions</a></li>
+<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#errors-and-mistakes"><i class="fa fa-check"></i><b>1.2</b> Errors and mistakes</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="independent-t-test.html"><a href="independent-t-test.html"><i class="fa fa-check"></i><b>2</b> Independent t-test</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="independent-t-test.html"><a href="independent-t-test.html#what-is-the-independent-t-test"><i class="fa fa-check"></i><b>2.1</b> What is the independent t-test?</a></li>
+<li class="chapter" data-level="2.2" data-path="independent-t-test.html"><a href="independent-t-test.html#data-set-up"><i class="fa fa-check"></i><b>2.2</b> Data set-up</a></li>
+<li class="chapter" data-level="2.3" data-path="independent-t-test.html"><a href="independent-t-test.html#the-math-behind-the-independent-t-test"><i class="fa fa-check"></i><b>2.3</b> The math behind the independent t-test</a></li>
+<li class="chapter" data-level="2.4" data-path="independent-t-test.html"><a href="independent-t-test.html#assumptions"><i class="fa fa-check"></i><b>2.4</b> Assumptions</a></li>
+<li class="chapter" data-level="2.5" data-path="independent-t-test.html"><a href="independent-t-test.html#in-jamovi"><i class="fa fa-check"></i><b>2.5</b> In jamovi</a>
+<ul>
+<li class="chapter" data-level="2.5.1" data-path="independent-t-test.html"><a href="independent-t-test.html#checking-assumptions-in-jamovi"><i class="fa fa-check"></i><b>2.5.1</b> Checking assumptions in jamovi</a></li>
+<li class="chapter" data-level="2.5.2" data-path="independent-t-test.html"><a href="independent-t-test.html#interpreting-results"><i class="fa fa-check"></i><b>2.5.2</b> Interpreting results</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="independent-t-test.html"><a href="independent-t-test.html#additional-information-about-the-independent-t-test"><i class="fa fa-check"></i><b>2.6</b> Additional information about the independent t-test</a>
+<ul>
+<li class="chapter" data-level="2.6.1" data-path="independent-t-test.html"><a href="independent-t-test.html#positive-and-negative-t-values"><i class="fa fa-check"></i><b>2.6.1</b> Positive and negative t values</a></li>
+<li class="chapter" data-level="2.6.2" data-path="independent-t-test.html"><a href="independent-t-test.html#what-if-i-violated-assumptions"><i class="fa fa-check"></i><b>2.6.2</b> What if I violated assumptions?</a></li>
+</ul></li>
+<li class="chapter" data-level="2.7" data-path="independent-t-test.html"><a href="independent-t-test.html#your-turn"><i class="fa fa-check"></i><b>2.7</b> Your turn!</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="dependent-t-test.html"><a href="dependent-t-test.html"><i class="fa fa-check"></i><b>3</b> Dependent t-test</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="dependent-t-test.html"><a href="dependent-t-test.html#what-is-the-dependent-t-test"><i class="fa fa-check"></i><b>3.1</b> What is the dependent t-test?</a></li>
+<li class="chapter" data-level="3.2" data-path="dependent-t-test.html"><a href="dependent-t-test.html#data-set-up-1"><i class="fa fa-check"></i><b>3.2</b> Data set-up</a></li>
+<li class="chapter" data-level="3.3" data-path="dependent-t-test.html"><a href="dependent-t-test.html#the-math-behind-the-independent-t-test-1"><i class="fa fa-check"></i><b>3.3</b> The math behind the independent t-test</a></li>
+<li class="chapter" data-level="3.4" data-path="dependent-t-test.html"><a href="dependent-t-test.html#assumptions-1"><i class="fa fa-check"></i><b>3.4</b> Assumptions</a></li>
+<li class="chapter" data-level="3.5" data-path="dependent-t-test.html"><a href="dependent-t-test.html#in-jamovi-1"><i class="fa fa-check"></i><b>3.5</b> In jamovi</a>
+<ul>
+<li class="chapter" data-level="3.5.1" data-path="dependent-t-test.html"><a href="dependent-t-test.html#checking-assumptions-in-jamovi-1"><i class="fa fa-check"></i><b>3.5.1</b> Checking assumptions in jamovi</a></li>
+<li class="chapter" data-level="3.5.2" data-path="dependent-t-test.html"><a href="dependent-t-test.html#interpreting-results-1"><i class="fa fa-check"></i><b>3.5.2</b> Interpreting results</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="dependent-t-test.html"><a href="dependent-t-test.html#what-if-i-violated-assumptions-1"><i class="fa fa-check"></i><b>3.6</b> What if I violated assumptions?</a></li>
+<li class="chapter" data-level="3.7" data-path="dependent-t-test.html"><a href="dependent-t-test.html#your-turn-1"><i class="fa fa-check"></i><b>3.7</b> Your turn!</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="one-way-anova.html"><a href="one-way-anova.html"><i class="fa fa-check"></i><b>4</b> One-way ANOVA</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="one-way-anova.html"><a href="one-way-anova.html#what-is-the-one-way-anova"><i class="fa fa-check"></i><b>4.1</b> What is the one-way ANOVA?</a></li>
+<li class="chapter" data-level="4.2" data-path="one-way-anova.html"><a href="one-way-anova.html#data-set-up-2"><i class="fa fa-check"></i><b>4.2</b> Data set-up</a></li>
+<li class="chapter" data-level="4.3" data-path="one-way-anova.html"><a href="one-way-anova.html#why-not-multiple-t-tests"><i class="fa fa-check"></i><b>4.3</b> Why not multiple t-tests?</a></li>
+<li class="chapter" data-level="4.4" data-path="one-way-anova.html"><a href="one-way-anova.html#the-math-behind-the-one-way-anova"><i class="fa fa-check"></i><b>4.4</b> The math behind the one-way ANOVA</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="one-way-anova.html"><a href="one-way-anova.html#an-example-with-the-math"><i class="fa fa-check"></i><b>4.4.1</b> An example with the math</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="one-way-anova.html"><a href="one-way-anova.html#assumptions-2"><i class="fa fa-check"></i><b>4.5</b> Assumptions</a></li>
+<li class="chapter" data-level="4.6" data-path="one-way-anova.html"><a href="one-way-anova.html#in-jamovi-2"><i class="fa fa-check"></i><b>4.6</b> In jamovi</a>
+<ul>
+<li class="chapter" data-level="4.6.1" data-path="one-way-anova.html"><a href="one-way-anova.html#checking-assumptions-in-jamovi-2"><i class="fa fa-check"></i><b>4.6.1</b> Checking assumptions in jamovi</a></li>
+</ul></li>
+<li class="chapter" data-level="4.7" data-path="one-way-anova.html"><a href="one-way-anova.html#interpreting-results-2"><i class="fa fa-check"></i><b>4.7</b> Interpreting results</a></li>
+<li class="chapter" data-level="4.8" data-path="one-way-anova.html"><a href="one-way-anova.html#what-if-i-violated-assumptions-2"><i class="fa fa-check"></i><b>4.8</b> What if I violated assumptions?</a></li>
+<li class="chapter" data-level="4.9" data-path="one-way-anova.html"><a href="one-way-anova.html#your-turn-2"><i class="fa fa-check"></i><b>4.9</b> Your turn!</a></li>
+</ul></li>
+<li class="appendix"><span><b>Appendices</b></span></li>
+<li class="chapter" data-level="A" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>A</b> References</a></li>
+<li class="divider"></li>
+<li><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/" 
+    target="blank"><img alt="Creative Commons License" 
+    style="border-width:0" 
+    src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Statistics with jamovi</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="one-way-anova" class="section level1" number="4">
+<h1><span class="header-section-number">Chapter 4</span> One-way ANOVA</h1>
+<div id="what-is-the-one-way-anova" class="section level2" number="4.1">
+<h2><span class="header-section-number">4.1</span> What is the one-way ANOVA?</h2>
+<p>The one-way analysis of variance (ANOVA) is used to test the difference in our dependent variable between <u>three or more</u> different groups of observations. Our grouping variable is our independent variable. In other words, we use the one-way ANOVA when we have a research question with a <strong>continuous dependent variable</strong> and a <strong>categorical independent variable with three or more categories in which different participants are in each category</strong>.</p>
+<p>The one-way ANOVA is also known as an independent factor ANOVA.</p>
+<p>One thing to keep in mind is the one-way ANOVA is an omnibus statistic that tests against the null hypothesis that the three or more means are the same. It does not tell us where the mean differences are (e.g., that 1 &gt; 2); for that, we need planned contrasts or post-hoc procedures, which you’ll learn about later.</p>
+</div>
+<div id="data-set-up-2" class="section level2" number="4.2">
+<h2><span class="header-section-number">4.2</span> Data set-up</h2>
+<p>To conduct the independent t-test, we first need to ensure our data is set-up properly in our dataset. This requires having two columns: one with our continuous dependent variable and one indicating which group the participant is in. Each row is a unique participant or unit of analysis. Here’s what example data may look like if we were testing for differences in a test score by students in my fall, spring, or summer semesters of my course</p>
+<table style="width:97%;">
+<caption>Example data for the one-way ANOVA</caption>
+<colgroup>
+<col width="31%" />
+<col width="31%" />
+<col width="33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">ID</th>
+<th align="left">Semester</th>
+<th align="right">TestScore</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">1</td>
+<td align="left">Fall</td>
+<td align="right">86</td>
+</tr>
+<tr class="even">
+<td align="left">2</td>
+<td align="left">Fall</td>
+<td align="right">80</td>
+</tr>
+<tr class="odd">
+<td align="left">3</td>
+<td align="left">Fall</td>
+<td align="right">75</td>
+</tr>
+<tr class="even">
+<td align="left">4</td>
+<td align="left">Spring</td>
+<td align="right">79</td>
+</tr>
+<tr class="odd">
+<td align="left">5</td>
+<td align="left">Spring</td>
+<td align="right">82</td>
+</tr>
+<tr class="even">
+<td align="left">6</td>
+<td align="left">Spring</td>
+<td align="right">84</td>
+</tr>
+<tr class="odd">
+<td align="left">7</td>
+<td align="left">Summer</td>
+<td align="right">90</td>
+</tr>
+<tr class="even">
+<td align="left">8</td>
+<td align="left">Summer</td>
+<td align="right">72</td>
+</tr>
+<tr class="odd">
+<td align="left">9</td>
+<td align="left">Summer</td>
+<td align="right">75</td>
+</tr>
+</tbody>
+</table>
+<p>In the example data above, what is your <strong>independent variable</strong>? <select class='solveme' data-answer='["Semester"]'> <option></option> <option>ID</option> <option>Semester</option> <option>TestScore</option></select></p>
+<p>In the example data above, what is your <strong>dependent variable</strong>? <select class='solveme' data-answer='["TestScore"]'> <option></option> <option>ID</option> <option>Semester</option> <option>TestScore</option></select></p>
+</div>
+<div id="why-not-multiple-t-tests" class="section level2" number="4.3">
+<h2><span class="header-section-number">4.3</span> Why not multiple t-tests?</h2>
+<p>In the example above, we have three groups: fall, spring, and summer. We could just perform three separate t-tests: fall vs. spring, fall vs. summer, and spring vs. summer.</p>
+<p>However, the reason we do not perform multiple t-tests is to reduce our Type I error rate. If I had performed three separate t-tests, set my alpha (Type I error rate) at 5%, and knew for a fact the effects do not actually exist, then each test has a probability of a Type I error rate of 5%. Because we are running three tests, our alpha rate actually becomes 1 - (.95<sup>3</sup>)= 1 - .857 = 14.3%! So now our <em>familywise</em> or <em>experimentwise</em> error rate is 14.3%, not the 5% we originally set alpha at.</p>
+<p>With three groups, that’s not so bad, but let’s see what happens with more tests we perform:</p>
+<ul>
+<li><strong>1 test</strong>: 1 - (.95<sup>1</sup>)= 1 - .95 = <strong>5%</strong></li>
+<li><strong>2 tests</strong>: 1 - (.95<sup>2</sup>)= 1 - .9025 = <strong>9.8%</strong></li>
+<li><strong>3 tests</strong>: 1 - (.95<sup>3</sup>)= 1 - .857 = <strong>14.3%</strong></li>
+<li><strong>4 tests</strong>: 1 - (.95<sup>4</sup>)= 1 - .814 = <strong>18.6%</strong></li>
+<li><strong>5 tests</strong>: 1 - (.95<sup>5</sup>)= 1 - .774 = <strong>22.6%</strong></li>
+<li><strong>10 tests</strong>: 1 - (.95<sup>10</sup>)= 1 - .598 = <strong>40.1%</strong></li>
+<li><strong>20 tests</strong>: 1 - (.95<sup>20</sup>)= 1 - .358 = <strong>64.1%</strong></li>
+</ul>
+<p>Ouch! 10 tests would have a Type I error rate of 40%! That means that if we performed 10 statistical tests (assuming the effect does not exist), then 40% of the results would be statistically significant by chance alone and would be a false positive. That’s not good!</p>
+<p>Therefore, we use the one-way ANOVA as one test to see if there is a difference overall. We can also do things to control or limit our familywise error rate, which I’ll get into later.</p>
+</div>
+<div id="the-math-behind-the-one-way-anova" class="section level2" number="4.4">
+<h2><span class="header-section-number">4.4</span> The math behind the one-way ANOVA</h2>
+<p>The basic math of the one-way ANOVA is the between-group variance (mean squares - between groups) divided by the within-group variance (mean squares - within groups).</p>
+<p><span class="math inline">\(F = \frac{BG \:variance}{WG \:variance} = \frac{MS_{BG}}{MS_{WG}} = \frac{\frac{SS_{BG}}{df_{BG}}}{\frac{SS_{WG}}{df_{WG}}}\)</span></p>
+<p>There are specific formulas for the between-group (also called the model) sum of squares (SS) and within-group (also called the residual) sum of squares. Keep in mind the following symbols:</p>
+<ul>
+<li>n/N = sample size (little n is per group, big N is the overall sample)</li>
+<li>k = number of groups</li>
+<li>X = mean</li>
+<li>s = standard deviation</li>
+</ul>
+<p>The between-group SS is the <em>variation between group means</em>. The calculations you see below is to subtract the overall mean (<span class="math inline">\(\bar{X}_{grand}\)</span>) from the group mean (<span class="math inline">\(\bar{X_k}\)</span>), square that mean difference, multiply that by the sample size in that group (<span class="math inline">\(n_k\)</span>), and then sum all the results of doing that per group.</p>
+<p><span class="math inline">\(SS_{BG} = \sum{n_k}(\bar{X_k}-\bar{X}_{grand})^2\)</span></p>
+<p><span class="math inline">\(df_{BG} = k - 1\)</span></p>
+<p>The within-group SS is the <em>variation of scores within groups</em>. The calculations you see below is to take the sample size in that group (<span class="math inline">\(n_k\)</span>) and subtract 1 from it, then multiply it by the group’s variance (<span class="math inline">\(s_k^2\)</span>, which is standard deviation squared), and then sum all the results of doing that per group.</p>
+<p><span class="math inline">\(SS_{WG} = \sum{s_k^2}(n_k - 1)\)</span></p>
+<p><span class="math inline">\(df_{WG} = N - 1\)</span></p>
+<p>In other words, the F-ratio is a ratio of the group or experimental effect by the individual differences in performance.</p>
+<p>For our F-ratio to be statistically significant, we want to <em>maximize</em> the variance between groups (numerator) and <em>minimize</em> the variance within groups (denominator).</p>
+<div id="an-example-with-the-math" class="section level3" number="4.4.1">
+<h3><span class="header-section-number">4.4.1</span> An example with the math</h3>
+<p>In case it’s useful, read below. If your eyes are glazing forward, just move to the next section.</p>
+<p>You can read the example dataset below. I’ve pulled the relevant data here so we can go through a hand calculation ourselves.</p>
+<table style="width:62%;">
+<colgroup>
+<col width="19%" />
+<col width="12%" />
+<col width="15%" />
+<col width="15%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Drug</th>
+<th>N</th>
+<th>Mean</th>
+<th>Variance</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Anxifree</td>
+<td>6</td>
+<td>0.72</td>
+<td>.15</td>
+</tr>
+<tr class="even">
+<td>Joyzepam</td>
+<td>6</td>
+<td>1.48</td>
+<td>.05</td>
+</tr>
+<tr class="odd">
+<td>Placebo</td>
+<td>6</td>
+<td>0.45</td>
+<td>.08</td>
+</tr>
+<tr class="even">
+<td><strong>Overall</strong></td>
+<td><strong>18</strong></td>
+<td><strong>0.88</strong></td>
+<td><strong>.28</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Let’s start with the easy stuff! Let’s calculate our degrees of freedom.</p>
+<p><span class="math inline">\(df_{BG} = k - 1 = 3 -1 = 2\)</span></p>
+<p><span class="math inline">\(df_{WG} = N - 1 = 18 - 1 = 17\)</span></p>
+<p>Now let’s move to the more complicated ones.</p>
+<p><span class="math inline">\(\begin{aligned} SS_{BG} = \sum{n_k}(\bar{X_k}-\bar{X}_{grand})^2 \\ SS_{BG} = 6(.72-.88)^2 + 6(1.48-.88)^2 + 6(.45-.88)^2 \\ SS_{BG} = 6(-.16)^2 + 6(.60)^2 + 6(-.43)^2 \\ SS_{BG} = 6(.0256) + 6(.36) + 6(.1849) \\ SS_{BG} = .1536 + 2.16 + 1.1094 \\ SS_{BG} = 3.423 \end{aligned}\)</span></p>
+<p>$$$$<br />
+\begin{aligned}</p>
+<p>SS_{BG} = \sum{n_k}(\bar{X_k}-\bar{X}_{grand})^2 = 6(.72-.88)^2 + 6(1.48-.88)^2 + 6<br />
+$$</p>
+</div>
+</div>
+<div id="assumptions-2" class="section level2" number="4.5">
+<h2><span class="header-section-number">4.5</span> Assumptions</h2>
+<p>As a parametric test, the one-way ANOVA has the same assumptions as other parametric tests:</p>
+<ol style="list-style-type: decimal">
+<li><p>The dependent variable is <strong>normally distributed</strong></p></li>
+<li><p>Variances in the two groups are roughly equal (i.e., <strong>homogeneity of variances</strong>)</p></li>
+<li><p>The dependent variable is <strong>interval or ratio</strong> (i.e., continuous)</p></li>
+<li><p>Scores are <strong>independent</strong> between groups</p></li>
+</ol>
+<p>We cannot <u>test</u> the third and fourth assumptions; rather, those are based on knowing your data.</p>
+<p>However, we can and should test for the first two assumptions. Fortunately, the one-way ANOVA in jamovi has three check boxes under “Assumption Checks” that lets us test for both assumptions.</p>
+</div>
+<div id="in-jamovi-2" class="section level2" number="4.6">
+<h2><span class="header-section-number">4.6</span> In jamovi</h2>
+<p>Let’s run an example with data from lsj-data. Open data from your Data Library in “lsj-data.” Select and open “clinicaltrial.” This dataset is hypothetical data of a clinical trial in which you are testing a new antidepressant drug called <em>Joyzepam</em>. In order to construct a fair test of the drug’s effectiveness, the study involves three separate drugs to be administered. One is a placebo, and the other is an existing antidepressant / anti-anxiety drug called <em>Anxifree</em>. A collection of 18 participants with moderate to severe depression are recruited for your initial testing. Because the drugs are sometimes administered in conjunction with psychological therapy, your study includes 9 people undergoing cognitive behavioral therapy (CBT) and 9 who are not. Participants are randomly assigned (doubly blinded, of course) a treatment, such that there are 3 CBT people and 3 no-therapy people assigned to each of the 3 drugs. A psychologist assesses the mood of each person after a 3 month run with each drug, and the overall improvement in each person’s mood is assessed on a scale ranging from -5 to +5.</p>
+<ol style="list-style-type: decimal">
+<li><p>To perform a one-way ANOVA in jamovi, go to the Analyses tab, click the ANOVA button, and choose “One-Way ANOVA.”</p></li>
+<li><p>Move your dependent variable <code>mood.gain</code> to the Dependent Variables box and your independent variable <code>drug</code> to the Grouping Variable box.</p></li>
+<li><p>Under Variances, select <code>Assume equal (Fisher's)</code>; we’ll discuss later when you might select the first option.</p></li>
+<li><p>Under Additional Statistics, select <code>Descriptives table</code> and <code>Descriptives plots</code>.</p></li>
+<li><p>Under Assumption Checks, select all three options: <code>Homogeneity test</code>, <code>Normality test</code>, and <code>Q-Q plot</code>.</p></li>
+</ol>
+<p>When you are done, your setup should look like this (we’ll discuss Post-Hoc Tests later):</p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-1"></span>
+<img src="images/04_one-way-anova/one-way_setup.png" alt="Independent t-test setup in jamovi" width="80%" />
+<p class="caption">
+Figure 4.1: Independent t-test setup in jamovi
+</p>
+</div>
+<div id="checking-assumptions-in-jamovi-2" class="section level3" number="4.6.1">
+<h3><span class="header-section-number">4.6.1</span> Checking assumptions in jamovi</h3>
+<p>We test for normality using the Shapiro-Wilk test and the Q-Q plot. The Shapiro-Wilk test was not statistically significant (W = .96, <em>p</em> = .605); therefore, this indicates the data is normally distributed. Furthermore, the lines are fairly close to the diagonal line in the Q-Q plot. We can conclude that we satisfy the assumption of normality.</p>
+<p>We test for homogeneity of variance using the Levene’s test. The Levene’s test was not statistically significant (<em>F</em> [2, 15] = 1.45, <em>p</em> = .266); therefore, this indicates our data satisfies the assumption of homogeneity of variance. However, I would add a caveat that we have a small sample of data (<em>N</em> = 18); we should have tried to collect more data.</p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-2"></span>
+<img src="images/04_one-way-anova/one-way_assumptions1.png" alt="Testing assumptions in jamovi" width="100%" />
+<p class="caption">
+Figure 4.2: Testing assumptions in jamovi
+</p>
+</div>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-3"></span>
+<img src="images/04_one-way-anova/one-way_assumptions2.png" alt="**CAPTION THIS FIGURE!!**" width="100%" />
+<p class="caption">
+Figure 4.3: <strong>CAPTION THIS FIGURE!!</strong>
+</p>
+</div>
+</div>
+</div>
+<div id="interpreting-results-2" class="section level2" number="4.7">
+<h2><span class="header-section-number">4.7</span> Interpreting results</h2>
+<p>Once we are satisfied we have satisfied the assumptions for the independent t-test, we can interpret our results.</p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-4"></span>
+<img src="images/04_one-way-anova/one-way_results.png" alt="One-way ANOVA results in jamovi" width="100%" />
+<p class="caption">
+Figure 4.4: One-way ANOVA results in jamovi
+</p>
+</div>
+<p>Our p-value is less than .05, so our results are statistically significant. We can write up our results in APA something like this:</p>
+<blockquote>
+<p>There is a significant difference in mood gain across the three drug conditions, <em>F</em> (2, 15) = 18.61, <em>p</em> &lt; .001.</p>
+</blockquote>
+<p>Sometimes, people like to put the statistics inside a parentheses. In that case, you need to change the parentheses around the degrees of freedom as brackets. Here’s another example write-up of the results in APA style:</p>
+<blockquote>
+<p>There is a significant difference in mood gain across the three drug conditions (<em>F</em> [2, 15] = 18.61, <em>p</em> &lt; .001).</p>
+</blockquote>
+</div>
+<div id="what-if-i-violated-assumptions-2" class="section level2" number="4.8">
+<h2><span class="header-section-number">4.8</span> What if I violated assumptions?</h2>
+<p>The great news is that jamovi includes the Welch’s F-statistic and the Kruskal-Wallis non-parametric test! Just like with the Welch’s t-statistic (for the independent t-test), it does not have the assumption of equal variances so it’s appropriate to use if your data is normally distributed but does not have homogeneous variances. Similarly, the Kruskal-Wallis test is the non-parametric version of the one-way ANOVA and should be used if you do not satisfy the assumption of normality.</p>
+<p>Here’s what statistic you should choose based on satisfying assumptions:</p>
+<table style="width:100%;">
+<colgroup>
+<col width="43%" />
+<col width="26%" />
+<col width="30%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th><strong>Normality: satisfied</strong></th>
+<th><strong>Normality: not satisfied</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Homogeneity of Variance: satisfied</strong></td>
+<td>one-way ANOVA</td>
+<td>Kruskal-Wallis</td>
+</tr>
+<tr class="even">
+<td><strong>Homogeneity of Variance: not satisfied</strong></td>
+<td>Welch’s F-test</td>
+<td>Kruskal-Wallis</td>
+</tr>
+</tbody>
+</table>
+<div id="welchs-f-test-in-jamovi" class="section level4" number="4.8.0.1">
+<h4><span class="header-section-number">4.8.0.1</span> Welch’s F-test in jamovi</h4>
+<p>To conduct this in jamovi, under Variances select <code>Don't assume equal (Welch's)</code>. You will interpret the results similarly to the one-way ANOVA:</p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-5"></span>
+<img src="images/04_one-way-anova/one-way_results_Welch.png" alt="One-way ANOVA results in jamovi" width="100%" />
+<p class="caption">
+Figure 4.5: One-way ANOVA results in jamovi
+</p>
+</div>
+<blockquote>
+<p>Using a Welch’s F-test, there is a significant difference in mood gain across the three drug conditions, <em>F</em> (2, 9.49) = 26.32, <em>p</em> &lt; .001.</p>
+</blockquote>
+</div>
+<div id="kruskal-wallis-test-in-jamovi" class="section level4" number="4.8.0.2">
+<h4><span class="header-section-number">4.8.0.2</span> Kruskal-Wallis test in jamovi</h4>
+<p>Unlike with the t-tests in which the non-parametric tests were located in the same statistical test window, you need to select under the ANOVA button “One-Way ANOVA, Kruskal Wallis” towards the bottom of the list of options. Move <code>mood.gain</code> to the Dependent Variables box and <code>drug</code> to the Grouping Variable box. Select Effect size. You will interpret the results similarly to the one-way ANOVA:</p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-6"></span>
+<img src="images/04_one-way-anova/one-way_results_Kruskal.png" alt="Kruskal-Wallis results in jamovi" width="100%" />
+<p class="caption">
+Figure 4.6: Kruskal-Wallis results in jamovi
+</p>
+</div>
+<blockquote>
+<p>Using a Kruskal-Wallis test, there is a significant difference in mood gain across the three drug conditions, <span class="math inline">\(\chi^2\)</span> (2) = 12.08, <em>p</em> = .002, <span class="math inline">\(\epsilon^2\)</span> = .71.</p>
+</blockquote>
+<p>Notice how in this case all three results converge and show there is a statistically significant difference in the results! The problem is… differences in which groups?</p>
+<p>1. Post-hoc tests (both one-way ANOVA and Kruskal-Wallis)</p>
+<p>2. Cover planned contrasts briefly</p>
+<p>3. What about effect sizes?</p>
+<p>4. Repeated-measures ANOVA</p>
+<p>5. Factorial ANOVA and ANCOVA (brief here)</p>
+</div>
+</div>
+<div id="your-turn-2" class="section level2" number="4.9">
+<h2><span class="header-section-number">4.9</span> Your turn!</h2>
+<p>Open the <code>Sample_Dataset_2014.xlsx</code> file that we will be using for all Your Turn exercises.</p>
+<p>Perform independent t-tests based on the following research questions. Think critically about whether you should be using a one-tailed or two-tailed hypothesis and check your assumptions so you know which test to use!</p>
+<p>To get the most out of these exercises, try to first find out the answer on your own and then use the drop-down menus to check your answer.</p>
+<ol style="list-style-type: decimal">
+<li><p><strong>Does height differ by gender (Gender: male = 0, female = 1)?</strong></p>
+<ul>
+<li><p>Should you use a one-tailed or two-tailed hypothesis? <select class='solveme' data-answer='["two-tailed"]'> <option></option> <option>one-tailed</option> <option>two-tailed</option></select></p></li>
+<li><p>Which statistic should you use based on your assumptions? <select class='solveme' data-answer='["Mann Whitney U"]'> <option></option> <option>independent t-test</option> <option>Welch’s t-test</option> <option>Mann Whitney U</option></select></p></li>
+<li><p>Does height differ by gender? <select class='solveme' data-answer='["yes"]'> <option></option> <option>yes</option> <option>no</option></select></p></li>
+</ul></li>
+<li><p><strong>Do athletes (Athlete: athletes = 1, non-athlete = 0) have faster sprint times than non-athletes?</strong></p>
+<ul>
+<li><p>Should you use a one-tailed or two-tailed hypothesis? <select class='solveme' data-answer='["one-tailed"]'> <option></option> <option>one-tailed</option> <option>two-tailed</option></select></p></li>
+<li><p>Which statistic should you use based on your assumptions? <select class='solveme' data-answer='["Mann Whitney U"]'> <option></option> <option>independent t-test</option> <option>Welch’s t-test</option> <option>Mann Whitney U</option></select></p></li>
+<li><p>Do athletes have faster sprint times than non-athletes? <select class='solveme' data-answer='["yes"]'> <option></option> <option>yes</option> <option>no</option></select></p></li>
+</ul></li>
+<li><p><strong>Do students who live on campus (LiveOnCampus: on campus = 1, off campus = 0) have higher English scores than students who live off campus?</strong></p>
+<ul>
+<li><p>Should you use a one-tailed or two-tailed hypothesis? <select class='solveme' data-answer='["one-tailed"]'> <option></option> <option>one-tailed</option> <option>two-tailed</option></select></p></li>
+<li><p>Which statistic should you use based on your assumptions? <select class='solveme' data-answer='["Welch&apos;s t-test"]'> <option></option> <option>independent t-test</option> <option>Welch’s t-test</option> <option>Mann Whitney U</option></select></p></li>
+<li><p>Does students who live on campus have higher English scores? <select class='solveme' data-answer='["no"]'> <option></option> <option>yes</option> <option>no</option></select></p></li>
+</ul></li>
+<li><p><strong>Does athletic status relate to math scores?</strong></p>
+<ul>
+<li><p>Should you use a one-tailed or two-tailed hypothesis? <select class='solveme' data-answer='["two-tailed"]'> <option></option> <option>one-tailed</option> <option>two-tailed</option></select></p></li>
+<li><p>Which statistic should you use based on your assumptions? <select class='solveme' data-answer='["independent t-test"]'> <option></option> <option>independent t-test</option> <option>Welch’s t-test</option> <option>Mann Whitney U</option></select></p></li>
+<li><p>Does athletic status relate to math scores? <select class='solveme' data-answer='["yes"]'> <option></option> <option>yes</option> <option>no</option></select></p></li>
+</ul></li>
+</ol>
+
+</div>
+</div>
+
+
+
+</div>
+<div class="psyteachr_footer">
+  
+</div>
+<script>
+
+/* update total correct if #total_correct exists */
+update_total_correct = function() {
+  if (t = document.getElementById("total_correct")) {
+    t.innerHTML =
+      document.getElementsByClassName("correct").length + " of " +
+      document.getElementsByClassName("solveme").length + " correct";
+  }
+}
+
+/* solution button toggling function */
+b_func = function() {
+  var cl = this.parentElement.classList;
+  if (cl.contains('open')) {
+    cl.remove("open");
+  } else {
+    cl.add("open");
+  }
+}
+
+/* function for checking solveme answers */
+solveme_func = function(e) {
+  var real_answers = JSON.parse(this.dataset.answer);
+  var my_answer = this.value;
+  var cl = this.classList;
+  if (cl.contains("ignorecase")) {
+    my_answer = my_answer.toLowerCase();
+  }
+  if (cl.contains("nospaces")) {
+    my_answer = my_answer.replace(/ /g, "");
+  }
+  
+  if (my_answer !== "" & real_answers.includes(my_answer)) {
+    cl.add("correct");
+  } else {
+    cl.remove("correct");
+  }
+  update_total_correct();
+}
+
+window.onload = function() {
+  /* set up solution buttons */
+  var buttons = document.getElementsByTagName("button");
+
+  for (var i = 0; i < buttons.length; i++) {
+    if (buttons[i].parentElement.classList.contains('solution')) {
+      buttons[i].onclick = b_func;
+    }
+  }
+  
+  /* set up solveme inputs */
+  var solveme = document.getElementsByClassName("solveme");
+
+  for (var i = 0; i < solveme.length; i++) {
+    /* make sure input boxes don't auto-anything */
+    solveme[i].setAttribute("autocomplete","off");
+    solveme[i].setAttribute("autocorrect", "off");
+    solveme[i].setAttribute("autocapitalize", "off"); 
+    solveme[i].setAttribute("spellcheck", "false");
+    solveme[i].value = "";
+    
+    /* adjust answer for ignorecase or nospaces */
+    var cl = solveme[i].classList;
+    var real_answer = solveme[i].dataset.answer;
+    if (cl.contains("ignorecase")) {
+      real_answer = real_answer.toLowerCase();
+    }
+    if (cl.contains("nospaces")) {
+      real_answer = real_answer.replace(/ /g, "");
+    }
+    solveme[i].dataset.answer = real_answer;
+    
+    /* attach checking function */
+    solveme[i].onkeyup = solveme_func;
+    solveme[i].onchange = solveme_func;
+  }
+  
+  update_total_correct();
+}
+
+</script>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="dependent-t-test.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"],
+"google": false
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": {},
+"toc": {
+"collapse": "section",
+"scroll_highlight": true
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

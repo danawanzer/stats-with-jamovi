@@ -73,14 +73,10 @@ Let's run an example with data from lsj-data. Open data from your Data Library i
 
 When you are done, your setup should look like this
 
-\begin{figure}
-
-{\centering \includegraphics[width=0.8\linewidth]{images/02-independent_t-test/independent_t-test_setup} 
-
-}
-
-\caption{Independent t-test setup in jamovi}(\#fig:unnamed-chunk-1)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="images/02-independent_t-test/independent_t-test_setup.png" alt="Independent t-test setup in jamovi" width="80%" />
+<p class="caption">(\#fig:unnamed-chunk-1)Independent t-test setup in jamovi</p>
+</div>
 
 ### Checking assumptions in jamovi
 
@@ -88,40 +84,28 @@ When you are done, your setup should look like this
 
 We test for normality using the Shapiro-Wilk test and the Q-Q plot. The Shapiro-Wilk test was not statistically significant (W = .98, *p* = .827); therefore, this indicates the data is normally distributed. Furthermore, the lines are fairly close to the diagonal line in the Q-Q plot. We can conclude that we satisfy the assumption of normality.
 
-\begin{figure}
-
-{\centering \includegraphics[width=1\linewidth]{images/02-independent_t-test/independent_t-test_normality} 
-
-}
-
-\caption{Testing normality in jamovi}(\#fig:unnamed-chunk-2)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="images/02-independent_t-test/independent_t-test_normality.png" alt="Testing normality in jamovi" width="100%" />
+<p class="caption">(\#fig:unnamed-chunk-2)Testing normality in jamovi</p>
+</div>
 
 #### Testing homogeneity of variance
 
 We test for homogeneity of variance using the Levene's test. The Levene's test was not statistically significant (*F* [1, 31] = 2.49, *p* = .125); therefore, this indicates our data satisfies the assumption of homogeneity of variance. However, I would add a caveat that we have a small sample of data (*n* = 15 for Anastasia and *n* = 18 for Bernadette) and the standard deviations are quite different from one another (SD = 9.00 vs 5.77, respectively). We should have tried to collect more data.
 
-\begin{figure}
-
-{\centering \includegraphics[width=1\linewidth]{images/02-independent_t-test/independent_t-test_homogeneity} 
-
-}
-
-\caption{Testing homogeneity of variance in jamovi}(\#fig:unnamed-chunk-3)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="images/02-independent_t-test/independent_t-test_homogeneity.png" alt="Testing homogeneity of variance in jamovi" width="100%" />
+<p class="caption">(\#fig:unnamed-chunk-3)Testing homogeneity of variance in jamovi</p>
+</div>
 
 ### Interpreting results
 
 Once we are satisfied we have satisfied the assumptions for the independent t-test, we can interpret our results.
 
-\begin{figure}
-
-{\centering \includegraphics[width=1\linewidth]{images/02-independent_t-test/independent_t-test_ind-results} 
-
-}
-
-\caption{Independent t-test results in jamovi}(\#fig:unnamed-chunk-4)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="images/02-independent_t-test/independent_t-test_ind-results.png" alt="Independent t-test results in jamovi" width="100%" />
+<p class="caption">(\#fig:unnamed-chunk-4)Independent t-test results in jamovi</p>
+</div>
 
 Our p-value is less than .05, so our results are statistically significant. We can write up our results in APA something like this:
 
@@ -164,14 +148,10 @@ Here's what statistic you should choose based on satisfying assumptions:
 
 Here is what the output for all three tests look like:
 
-\begin{figure}
-
-{\centering \includegraphics[width=1\linewidth]{images/02-independent_t-test/independent_t-test_full-results} 
-
-}
-
-\caption{All independent t-test results in jamovi}(\#fig:unnamed-chunk-5)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="images/02-independent_t-test/independent_t-test_full-results.png" alt="All independent t-test results in jamovi" width="100%" />
+<p class="caption">(\#fig:unnamed-chunk-5)All independent t-test results in jamovi</p>
+</div>
 
 #### Welch's t-test in jamovi
 

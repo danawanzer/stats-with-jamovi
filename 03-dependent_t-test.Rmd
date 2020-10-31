@@ -16,29 +16,18 @@ The dependent t-test is also called a dependent samples t-test or paired samples
 
 To conduct the dependent t-test, we first need to ensure our data is set-up properly in our dataset. This requires having two columns: one is our dependent variable score for the participant in one category and the other column is our dependent variable score for the participant in the other category. Each row is a unique participant or unit of analysis. Here's what example data may look like if we were testing for differences in test scores across the same participants in the fall and spring:
 
-+-----------------------+-----------------------+----------------------+
-| ID                    | TestScore_Fall        | TestScore_Spring     |
-+:======================+:======================+=====================:+
-| 1                     | 75                    | 86                   |
-+-----------------------+-----------------------+----------------------+
-| 2                     | 79                    | 80                   |
-+-----------------------+-----------------------+----------------------+
-| 3                     | 65                    | 75                   |
-+-----------------------+-----------------------+----------------------+
-| 4                     | 81                    | 79                   |
-+-----------------------+-----------------------+----------------------+
-| 5                     | 73                    | 82                   |
-+-----------------------+-----------------------+----------------------+
-| 6                     | 72                    | 84                   |
-+-----------------------+-----------------------+----------------------+
-| 7                     | 69                    | 90                   |
-+-----------------------+-----------------------+----------------------+
-| 8                     | 60                    | 72                   |
-+-----------------------+-----------------------+----------------------+
-| 9                     | 75                    | 75                   |
-+-----------------------+-----------------------+----------------------+
-| 10                    | 74                    | 81                   |
-+-----------------------+-----------------------+----------------------+
+| ID  | TestScore_Fall | TestScore_Spring |
+|:----|:---------------|-----------------:|
+| 1   | 75             |               86 |
+| 2   | 79             |               80 |
+| 3   | 65             |               75 |
+| 4   | 81             |               79 |
+| 5   | 73             |               82 |
+| 6   | 72             |               84 |
+| 7   | 69             |               90 |
+| 8   | 60             |               72 |
+| 9   | 75             |               75 |
+| 10  | 74             |               81 |
 
 : Example data for the dependent t-test
 
