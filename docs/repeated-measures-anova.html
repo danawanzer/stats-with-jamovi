@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 2 Independent t-test | Statistics with jamovi</title>
+  <title>Chapter 5 Repeated Measures ANOVA | Statistics with jamovi</title>
   <meta name="description" content="This is the website for PSYC 290 and PSYC 790 at the University of Wisconsin-Stout, taught by Dana Wanzer." />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 2 Independent t-test | Statistics with jamovi" />
+  <meta property="og:title" content="Chapter 5 Repeated Measures ANOVA | Statistics with jamovi" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 2 Independent t-test | Statistics with jamovi" />
+  <meta name="twitter:title" content="Chapter 5 Repeated Measures ANOVA | Statistics with jamovi" />
   
   <meta name="twitter:description" content="This is the website for PSYC 290 and PSYC 790 at the University of Wisconsin-Stout, taught by Dana Wanzer." />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="introduction.html"/>
-<link rel="next" href="dependent-t-test.html"/>
+<link rel="prev" href="one-way-anova.html"/>
+<link rel="next" href="factorial-anova.html"/>
 <script src="libs/header-attrs-2.5/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -195,260 +195,209 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="independent-t-test" class="section level1" number="2">
-<h1><span class="header-section-number">Chapter 2</span> Independent t-test</h1>
-<div id="what-is-the-independent-t-test" class="section level2" number="2.1">
-<h2><span class="header-section-number">2.1</span> What is the independent t-test?</h2>
-<p>The independent t-test is used to test the difference in our dependent variable between two different groups of observations. Our grouping variable is our independent variable. In other words, we use the independent t-test when we have a research question with a <strong>continuous dependent variable</strong> and a <strong>categorical independent variable with two categories in which different participants are in each category</strong>.</p>
-<p>The independent t-test is also the independent samples t-test and the Student’s t-test. I will use these terms interchangeably.</p>
+<div id="repeated-measures-anova" class="section level1" number="5">
+<h1><span class="header-section-number">Chapter 5</span> Repeated Measures ANOVA</h1>
+<div id="what-is-the-repeated-measures-anova" class="section level2" number="5.1">
+<h2><span class="header-section-number">5.1</span> What is the repeated measures ANOVA?</h2>
+<p>The repeated measures analysis of variance (ANOVA) is used to test the difference in our dependent variable between <u>three or more</u> groups of observations in which all participants participate in all groups or levels. Our grouping variable is our independent variable. In other words, we use the one-way ANOVA when we have a research question with a <strong>continuous dependent variable</strong> and a <strong>categorical independent variable with three or more categories in which the same participants are in each category</strong>.</p>
+<p>The repeated measures ANOVA is also sometimes called the one-way related ANOVA.</p>
+<p>There are two ways we could have the repeated measures ANOVA. Perhaps the same group of participants are measured in the same dependent variable at three or more time points. In this case, our independent variable is time and our dependent variable is whatever is measured at each time point.</p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-1"></span>
+<img src="images/05-repeated-measures-anova/Laerd1.png" alt="Repeated measures ANOVA by Time" width="80%" />
+<p class="caption">
+Figure 2.1: Repeated measures ANOVA by Time
+</p>
 </div>
-<div id="data-set-up" class="section level2" number="2.2">
-<h2><span class="header-section-number">2.2</span> Data set-up</h2>
-<p>To conduct the independent t-test, we first need to ensure our data is set-up properly in our dataset. This requires having two columns: one with our continuous dependent variable and one indicating which group the participant is in. Each row is a unique participant or unit of analysis. Here’s what example data may look like if we were testing for differences in a test score by students in my fall or spring semesters of this course:</p>
-<table>
-<caption>Example data for the independent t-test</caption>
+<p>The other way we might have the repeated measures ANOVA is if all our participants participate in all conditions of our study. In this case, our independent variable is the treatment or condition and the dependent variable is whatever is measured in each treatment or condition.</p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-2"></span>
+<img src="images/05-repeated-measures-anova/Laerd2.png" alt="Repeated measures ANOVA by Conditions" width="80%" />
+<p class="caption">
+Figure 2.2: Repeated measures ANOVA by Conditions
+</p>
+</div>
+</div>
+<div id="data-set-up-3" class="section level2" number="5.2">
+<h2><span class="header-section-number">5.2</span> Data set-up</h2>
+<p>To conduct the repeated measures ANOVA, we first need to ensure our data is set-up properly in our dataset. This requires having two columns: one with our continuous dependent variable and one indicating which group the participant is in. Each row is a unique participant or unit of analysis. Here’s what example data may look like if we were testing for differences in a test score by students in my fall, spring, or summer semesters of my course in which three participants are in each of my three courses.</p>
+<table style="width:46%;">
+<caption>Example data for the repeated measures ANOVA</caption>
+<colgroup>
+<col width="8%" />
+<col width="12%" />
+<col width="12%" />
+<col width="12%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th align="left">ID</th>
-<th align="left">Semester</th>
-<th align="right">TestScore</th>
+<th align="left">Fall</th>
+<th align="left">Spring</th>
+<th align="left">Summer</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left">1</td>
-<td align="left">Fall</td>
-<td align="right">86</td>
+<td align="left">86</td>
+<td align="left">79</td>
+<td align="left">90</td>
 </tr>
 <tr class="even">
 <td align="left">2</td>
-<td align="left">Fall</td>
-<td align="right">80</td>
+<td align="left">80</td>
+<td align="left">82</td>
+<td align="left">72</td>
 </tr>
 <tr class="odd">
 <td align="left">3</td>
-<td align="left">Fall</td>
-<td align="right">75</td>
-</tr>
-<tr class="even">
-<td align="left">4</td>
-<td align="left">Fall</td>
-<td align="right">79</td>
-</tr>
-<tr class="odd">
-<td align="left">5</td>
-<td align="left">Fall</td>
-<td align="right">82</td>
-</tr>
-<tr class="even">
-<td align="left">6</td>
-<td align="left">Spring</td>
-<td align="right">84</td>
-</tr>
-<tr class="odd">
-<td align="left">7</td>
-<td align="left">Spring</td>
-<td align="right">90</td>
-</tr>
-<tr class="even">
-<td align="left">8</td>
-<td align="left">Spring</td>
-<td align="right">72</td>
-</tr>
-<tr class="odd">
-<td align="left">9</td>
-<td align="left">Spring</td>
-<td align="right">75</td>
-</tr>
-<tr class="even">
-<td align="left">10</td>
-<td align="left">Spring</td>
-<td align="right">81</td>
+<td align="left">75</td>
+<td align="left">84</td>
+<td align="left">75</td>
 </tr>
 </tbody>
 </table>
 <p>In the example data above, what is your <strong>independent variable</strong>? <select class='solveme' data-answer='["Semester"]'> <option></option> <option>ID</option> <option>Semester</option> <option>TestScore</option></select></p>
 <p>In the example data above, what is your <strong>dependent variable</strong>? <select class='solveme' data-answer='["TestScore"]'> <option></option> <option>ID</option> <option>Semester</option> <option>TestScore</option></select></p>
 </div>
-<div id="the-math-behind-the-independent-t-test" class="section level2" number="2.3">
-<h2><span class="header-section-number">2.3</span> The math behind the independent t-test</h2>
-<p>The basic math of the independent t-test the mean difference divided by the pooled standard error.</p>
-<p><span class="math inline">\(t = \frac{\bar{X}_1 - \bar{X}_2}{SE({\bar{X}_1 - \bar{X}_2})}\)</span></p>
-<p>The denominator of the equation is more difficult to calculate and depends on whether the sample size between groups is equal.</p>
+<div id="the-math-behind-the-repeated-measures-anova" class="section level2" number="5.3">
+<h2><span class="header-section-number">5.3</span> The math behind the repeated measures ANOVA</h2>
+<p>The basic math of the repeated measures ANOVA is very similar to the one-way ANOVA except that the <span class="math inline">\(SS_{WG}\)</span> is partitioned into two parts. Since there are the same subjects in each group, we can remove the variability due to the individual differences between subjects from the within-groups variability.</p>
+<p><span class="math inline">\(F = \frac{BG \:variance}{WG \:variance} = \frac{MS_{BG}}{MS_{WG}} = \frac{\frac{SS_{BG}}{df_{BG}}}{\frac{SS_{WG}}{df_{WG}}}\)</span></p>
+<p>So whereas our denominator in the one-way ANOVA has <span class="math inline">\(SS_{WG}\)</span>, our denominator for the repeated measures ANOVA has <span class="math inline">\(SS_{WG}-SS_{subjects}\)</span>. You can see this in more detail in the figure below by Laerd Statistics. The one-way ANOVA (also known as the independent samples ANOVA) splits the total variability in scores by the between-group (conditions) variability and the within-groups (error) variability. The repeated measures anova takes that within-groups variability and splits out the subject variability from the error variability.</p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-3"></span>
+<img src="images/05-repeated-measures-anova/Laerd3.png" alt="Repeated measures ANOVA by Time" width="80%" />
+<p class="caption">
+Figure 2.3: Repeated measures ANOVA by Time
+</p>
 </div>
-<div id="assumptions" class="section level2" number="2.4">
-<h2><span class="header-section-number">2.4</span> Assumptions</h2>
-<p>As a parametric test, the independent t-test has the same assumptions as other parametric tests:</p>
+<p>I won’t go into any more detail on the math of the repeated measures ANOVA, but you can read more on Laerd Statistics <a href="https://statistics.laerd.com/statistical-guides/repeated-measures-anova-statistical-guide-2.php">guide for the repeated measures ANOVA</a>.</p>
+</div>
+<div id="assumptions-3" class="section level2" number="5.4">
+<h2><span class="header-section-number">5.4</span> Assumptions</h2>
+<p>As a parametric test, the repeated measures ANOVA has the same assumptions as other parametric tests:</p>
 <ol style="list-style-type: decimal">
 <li><p>The dependent variable is <strong>normally distributed</strong></p></li>
-<li><p>Variances in the two groups are roughly equal (i.e., <strong>homogeneity of variances</strong>)</p></li>
+<li><p>Variances in the two groups are roughly equal (i.e., <strong>homogeneity of variances</strong>); in repeated measures ANOVA this is called the assumption of <strong>sphericity</strong></p></li>
 <li><p>The dependent variable is <strong>interval or ratio</strong> (i.e., continuous)</p></li>
-<li><p>Scores are <strong>independent</strong> between groups</p></li>
+<li><p><del>Scores are <strong>independent</strong> between groups</del> (this assumption is not relevant because all participants participate in all conditions)</p></li>
 </ol>
-<p>We cannot <u>test</u> the third and fourth assumptions; rather, those are based on knowing your data.</p>
-<p>However, we can and should test for the first two assumptions. Fortunately, the independent samples t-test in jamovi has two check boxes under “Assumption Checks” that lets us test for both assumptions.</p>
+<p>We cannot <u>test</u> the third and fourth assumptions; rather, those are based on knowing your data. However, we can and should test for the first two assumptions. Fortunately, the one-way ANOVA in jamovi has three check boxes under “Assumption Checks” that lets us test for both assumptions.</p>
+<div id="sphericity-assumption" class="section level3" number="5.4.1">
+<h3><span class="header-section-number">5.4.1</span> Sphericity Assumption</h3>
+<p>The sphericity assumption is essentially the repeated measures ANOVA equivalent of homogeneity of variances. Sphericity means there is equality of variances of the <em>differences</em> between treatment levels. For example, if there are three groups, then the difference in all three pairs of differences (1-2, 1-3, 2-3) need to have approximately equal variances. You only need to care about sphericity when there are at least three conditions, which is why we did not talk about this with the dependent t-test.</p>
+<p>Fortunately, like the other assumption checks, testing for sphericity is as simple as a checkbox in jamovi.</p>
 </div>
-<div id="in-jamovi" class="section level2" number="2.5">
-<h2><span class="header-section-number">2.5</span> In jamovi</h2>
-<p>Let’s run an example with data from lsj-data. Open data from your Data Library in “lsj-data.” Select and open “Harpo.” This dataset is hypothetical data of 33 students taking Dr. Harpo’s statistics lectures. We have two tutors for the class, Anastasia (<em>n</em> = 15) and Bernadette (<em>n</em> = 18). Our research question is “Which tutor results in better student grades?” We don’t have a hypothesis that one does better than the other.</p>
+</div>
+<div id="in-jamovi-3" class="section level2" number="5.5">
+<h2><span class="header-section-number">5.5</span> In jamovi</h2>
+<p>Let’s run an example with data from lsj-data. Open data from your Data Library in “lsj-data.” Select and open “broca.”</p>
+<p>This dataset is hypothetical data in which six patients suffering from Broca’s Aphasia (a language deficit commonly experienced following a stroke) complete three word recognition tasks. On the first (speech production) task, patients were required to repeat single words read out aloud by the researcher. On the second (conceptual) task, designed to test word comprehension, patients were required to match a series of pictures with their correct name. On the third (syntax) task, designed to test knowledge of correct word order, patients were asked to reorder syntactically incorrect sentences. Each patient completed all three tasks. The order in which patients attempted the tasks was counterbalanced between participants. Each task consisted of a series of 10 attempts. The number of attempts successfully completed by each patient are provided in the dataset.</p>
 <ol style="list-style-type: decimal">
-<li><p>To perform an independent t-test in jamovi, go to the Analyses tab, click the T-Tests button, and choose “Independent Samples T-Test.”</p></li>
-<li><p>Move your dependent variable <code>grade</code> to the Dependent Variables box and your independent variable <code>tutor</code> to the Grouping Variable box.</p></li>
-<li><p>Under Tests, select <code>Student's</code></p></li>
-<li><p>Under Hypothesis, because we have a two-sided hypothesis select a two-sided hypothesis (Group 1 does not equal Group 2).</p></li>
-<li><p>Under Additional Statistics, select <code>Mean difference</code>, <code>Effect size</code>, and <code>Descriptives</code>.</p></li>
-<li><p>Under Assumption Checks, select all three options: <code>Homogeneity test</code>, <code>Normality test</code>, and <code>Q-Q plot</code>.</p></li>
+<li><p>To perform a one-way ANOVA in jamovi, go to the Analyses tab, click the ANOVA button, and choose “Repeated Measures ANOVA.”</p></li>
+<li><p>Under “Repeated Measures Factors” name your independent variable. In this case you can name it “Task.” Rename the three levels of Task: Speech, Conceptual, and Syntax.</p></li>
+<li><p>Under “Repeated Measures Cells” move the given variable into the correct level. For example, you’ll move Speech to the Speech cell.</p></li>
+<li><p>Select Generalised <span class="math inline">\(\eta^2\)</span> as your measure of effect size.</p></li>
+<li><p>In the Assumption Checks drop-down menu, select <code>Sphericity tests</code>. You’ll note that if you violate the assumption of sphericity, there are two corrections provided. These will be discussed later.</p></li>
+<li><p>In the Post Hoc Tests drop-down menu, select <code>Tukey</code>. Remember that we only interpret these if the overall <em>F</em> is statistically significant.</p></li>
+<li><p>In the Estimated Marginal Means drop-down menu, move Task to the Marginal Means box, select <code>Marginal means tables</code>, and select <code>Observed scores.</code></p></li>
 </ol>
-<p>When you are done, your setup should look like this</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-1"></span>
-<img src="images/02-independent_t-test/independent_t-test_setup.png" alt="Independent t-test setup in jamovi" width="80%" />
-<p class="caption">
-Figure 2.1: Independent t-test setup in jamovi
-</p>
-</div>
-<div id="checking-assumptions-in-jamovi" class="section level3" number="2.5.1">
-<h3><span class="header-section-number">2.5.1</span> Checking assumptions in jamovi</h3>
-<div id="testing-normality" class="section level4" number="2.5.1.1">
-<h4><span class="header-section-number">2.5.1.1</span> Testing normality</h4>
-<p>We test for normality using the Shapiro-Wilk test and the Q-Q plot. The Shapiro-Wilk test was not statistically significant (W = .98, <em>p</em> = .827); therefore, this indicates the data is normally distributed. Furthermore, the lines are fairly close to the diagonal line in the Q-Q plot. We can conclude that we satisfy the assumption of normality.</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-2"></span>
-<img src="images/02-independent_t-test/independent_t-test_normality.png" alt="Testing normality in jamovi" width="100%" />
-<p class="caption">
-Figure 2.2: Testing normality in jamovi
-</p>
-</div>
-</div>
-<div id="testing-homogeneity-of-variance" class="section level4" number="2.5.1.2">
-<h4><span class="header-section-number">2.5.1.2</span> Testing homogeneity of variance</h4>
-<p>We test for homogeneity of variance using the Levene’s test. The Levene’s test was not statistically significant (<em>F</em> [1, 31] = 2.49, <em>p</em> = .125); therefore, this indicates our data satisfies the assumption of homogeneity of variance. However, I would add a caveat that we have a small sample of data (<em>n</em> = 15 for Anastasia and <em>n</em> = 18 for Bernadette) and the standard deviations are quite different from one another (SD = 9.00 vs 5.77, respectively). We should have tried to collect more data.</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-3"></span>
-<img src="images/02-independent_t-test/independent_t-test_homogeneity.png" alt="Testing homogeneity of variance in jamovi" width="100%" />
-<p class="caption">
-Figure 2.3: Testing homogeneity of variance in jamovi
-</p>
-</div>
-</div>
-</div>
-<div id="interpreting-results" class="section level3" number="2.5.2">
-<h3><span class="header-section-number">2.5.2</span> Interpreting results</h3>
-<p>Once we are satisfied we have satisfied the assumptions for the independent t-test, we can interpret our results.</p>
+<p>When you are done, your setup should look like this:</p>
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-4"></span>
-<img src="images/02-independent_t-test/independent_t-test_ind-results.png" alt="Independent t-test results in jamovi" width="100%" />
+<img src="images/05-repeated-measures-anova/rm-anova_setup1.png" alt="Repeated Measures ANOVA setup in jamovi" width="80%" />
 <p class="caption">
-Figure 2.4: Independent t-test results in jamovi
+Figure 2.4: Repeated Measures ANOVA setup in jamovi
 </p>
 </div>
-<p>Our p-value is less than .05, so our results are statistically significant. We can write up our results in APA something like this:</p>
-<blockquote>
-<p>Anastasia’s students (<em>M</em> = 74.53, <em>SD</em> = 9.00, <em>n</em> = 15) had significantly higher grades than Bernadette’s students (<em>M</em> = 69.06, <em>SD</em> = 5.77, <em>n</em> = 18), <em>t</em> (31) = 2.12, <em>p</em> = .043, <em>d</em> = .74.</p>
-</blockquote>
-<p>Sometimes, people like to put the statistics inside a parentheses. In that case, you need to change the parentheses around the degrees of freedom as brackets. Here’s another example write-up of the results in APA style:</p>
-<blockquote>
-<p>I tested the difference in grades between Anastasia’s students (<em>M</em> = 74.53, <em>SD</em> = 9.00, <em>n</em> = 15) and Bernadette’s students (<em>M</em> = 69.06, <em>SD</em> = 5.77, <em>n</em> = 18). An independent samples t-test showed that the 5.48 mean difference between the tutor’s student was statistically significant (<em>t</em> [31] = 2.12, <em>p</em> = .043, <em>d</em> = .74).</p>
-</blockquote>
-</div>
-</div>
-<div id="additional-information-about-the-independent-t-test" class="section level2" number="2.6">
-<h2><span class="header-section-number">2.6</span> Additional information about the independent t-test</h2>
-<div id="positive-and-negative-t-values" class="section level3" number="2.6.1">
-<h3><span class="header-section-number">2.6.1</span> Positive and negative t values</h3>
-<p>Students often worry about positive or negative t-statistic values and are unsure how to interpret it. Positive or negative t-statistic values simply occur based on which group is listed first. Our t-statistic above is positive because we tested the difference between Anastasia and Bernadette: (Anastasia - Bernadette) = (74.53 - 69.06) = (5.48).</p>
-<p>However, if we flipped it and tested the difference between Bernadette and Anastasia, our mean difference would be -5.48 and our t-statistic would be -2.12.</p>
-<p>All that is to say, <em>your positive or negative t-statistic is arbitrary</em>. So do not fret!</p>
-<p>However, it is important the sign of your t-statistic matches what you report. For example, notice the difference:</p>
-<blockquote>
-<ol style="list-style-type: decimal">
-<li>Anastasia’s students had <strong>higher</strong> grades than Bernadette’s, <em>t</em> (31) = <strong>2.12</strong>, <em>p</em> = .043, <em>d</em> = .74.</li>
-<li>Bernadette’s students had <strong>lower</strong> grades than Anastasia’s, <em>t</em> (31) = <strong>-2.12</strong>, <em>p</em> = .043, <em>d</em> = .74.</li>
-</ol>
-</blockquote>
-<p>One last note: this positive or negative t-statistic is only relevant for the independent and dependent t-test. You will not get negative values for the F-statistic or chi-square tests!</p>
-</div>
-<div id="what-if-i-violated-assumptions" class="section level3" number="2.6.2">
-<h3><span class="header-section-number">2.6.2</span> What if I violated assumptions?</h3>
-<p>The great news is that jamovi includes the Welch’s t-statistic and the non-parametric version of the independent t-test (Mann-Whitney U)! The Welch’s t-test has three main differences from the independent samples t-test: (a) the standard error (SE) is not a pooled estimate, (b) the degrees of freedom are calculated very different (not <em>N</em> - 2), and (c) it does not have an assumption of homogeneity of variance. The Mann-Whitney U is not calculated based on the mean but rather the median and compares ranks of values across the two groups: it has no assumptions about the distribution of data or homogeneity of variances.</p>
-<p>Here’s what statistic you should choose based on satisfying assumptions:</p>
-<table>
-<colgroup>
-<col width="42%" />
-<col width="27%" />
-<col width="29%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th></th>
-<th><strong>Normality: satisfied</strong></th>
-<th><strong>Normality: not satisfied</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Homogeneity of Variance: satisfied</strong></td>
-<td>independent samples t-test</td>
-<td>Mann-Whitney U</td>
-</tr>
-<tr class="even">
-<td><strong>Homogeneity of Variance: not satisfied</strong></td>
-<td>Welch’s t-test</td>
-<td>Mann-Whitney U</td>
-</tr>
-</tbody>
-</table>
-<p>Here is what the output for all three tests look like:</p>
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-5"></span>
-<img src="images/02-independent_t-test/independent_t-test_full-results.png" alt="All independent t-test results in jamovi" width="100%" />
+<img src="images/05-repeated-measures-anova/rm-anova_setup2.png" alt="Repeated Measures ANOVA setup in jamovi" width="80%" />
 <p class="caption">
-Figure 2.5: All independent t-test results in jamovi
+Figure 2.5: Repeated Measures ANOVA setup in jamovi
 </p>
 </div>
-<div id="welchs-t-test-in-jamovi" class="section level4" number="2.6.2.1">
-<h4><span class="header-section-number">2.6.2.1</span> Welch’s t-test in jamovi</h4>
-<p>To conduct this in jamovi, under Tests select <code>Welch's</code>. You will interpret the results similarly to the independent t-test:</p>
+<div id="checking-assumptions-in-jamovi-3" class="section level3" number="5.5.1">
+<h3><span class="header-section-number">5.5.1</span> Checking assumptions in jamovi</h3>
+<p>You’ll notice there are no options to check for normality in the repeated measures ANOVA in jamovi. There’s an <a href="https://forum.jamovi.org/viewtopic.php?f=5&amp;t=1045">interesting conversation</a> on the topic in the jamovi forums. Suffice to say, it’s complicated and maybe someday they will implement it. For now, we just won’t worry about it for the repeated measures ANOVA.</p>
+<p>So what we need to worry about is testing our assumption of sphericity. You should have checked the box <code>Sphericity tests</code> under the Assumption Checks drop-down menu. That produces the following output:</p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-6"></span>
+<img src="images/05-repeated-measures-anova/rm-anova_sphericity.png" alt="Testing sphericity in jamovi" width="100%" />
+<p class="caption">
+Figure 4.1: Testing sphericity in jamovi
+</p>
+</div>
+<p>Mauchly’s test of sphericity tests the null hypothesis that the variances of the differences between the conditions are equal. Therefore, just like with our previous assumption checks, if Mauchly’s test is non-significant (i.e., <em>p</em> &gt; .05, as is the case in this analysis) then it is reasonable to conclude that the variances of the differences are not significantly different. This means we satisfy the assumption of sphericity and can conclude that the variances of the differences are roughly equal.</p>
+<p>If Mauchly’s test had been statistically significant (<em>p</em> &lt; .05), then we would conclude that the assumption had <em>not</em> been met. In this case, we should apply a correction to the <em>F</em>-value obtained in the repeated measures ANOVA:</p>
+<ul>
+<li>If the Greenhouse-Geisser value in the “Tests of Sphericity” table is &gt; .75 then you should use the Huynh-Feldt correction.</li>
+<li>If the Greenhouse-Geisser value is &lt; .75, then you should use the Greenhouse-Geisser correction.</li>
+</ul>
+<p>You can select these corrections in the Assumption Checks drop-down menu.</p>
+</div>
+</div>
+<div id="interpreting-results-3" class="section level2" number="5.6">
+<h2><span class="header-section-number">5.6</span> Interpreting results</h2>
+<p>Once we are satisfied we have satisfied the assumptions for the repeated measures, we can interpret our results.</p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-7"></span>
+<img src="images/05-repeated-measures-anova/rm-anova_results.png" alt="One-way ANOVA results in jamovi" width="100%" />
+<p class="caption">
+Figure 4.2: One-way ANOVA results in jamovi
+</p>
+</div>
+<p>You’ll notice that jamovi provides you both a Within Subjects Effects table and Between Subjects Effects table. However, we only have a within-subjects effect (Task). Why did it give us a between-subjects table? With the repeated-measures ANOVA (which only has within-subjects IVs), this is just our <span class="math inline">\(SS_{BG}\)</span>. However, because we don’t have one, it’s not calculating anything. We can ignore it. It is only useful if we are conducting a mixed factorial ANOVA with both between-subjects and within-subjects effects.</p>
+<p>Therefore, the Within Subjects Effects table is of most use to us. We can see that the overall effect of Task is statistically significant (<em>p</em> = .013). Therefore we can look at our Post Hoc Tests results.</p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-8"></span>
+<img src="images/05-repeated-measures-anova/rm-anova_tukey.png" alt="One-way ANOVA results in jamovi" width="100%" />
+<p class="caption">
+Figure 4.3: One-way ANOVA results in jamovi
+</p>
+</div>
+<p>The Tukey post hoc differences show that there was a significant difference between speech and syntax (<em>p</em> = .011), but not between conceptual and both speech and syntax. Last, we can look at the Estimated Marginal Means - Task table to see the group means for reporting purposes. This shows us that participants recognized significantly more words in the speech task than in the syntax task.</p>
+<p>We can write this up in APA style similar to the one-way ANOVA.</p>
 <blockquote>
-<p>Using a Welch’s t-test, there was not a statistically significant difference in grades between Anastasia’s students (<em>M</em> = 74.53, <em>SD</em> = 9.00, <em>n</em> = 15) and Bernadette’s students (<em>M</em> = 69.06, <em>SD</em> = 5.77, <em>n</em> = 18), <em>t</em> (23.02) = 2.03, <em>p</em> = .054, <em>d</em> = .72.</p>
+<p>A repeated measures ANOVA was performed examining how three tasks affected word recognition in patients suffering from Broca’s Aphasia. Task significantly affected word recall, <em>F</em> (2, 10) = 6.93, <em>p</em> = .013, <span class="math inline">\(\eta^2_G\)</span> = .41. Tukey’s post hoc difference tests indicated that participants recognized significantly more words in the speech task (<em>M</em> = 7.17, <em>SE</em> = .62) than participants in the syntax task (<em>M</em> = 4.33, <em>SE</em> = .62; <em>p</em> = .011). There were no differences between the conceptual task (<em>M</em> = 6.17, <em>SE</em> = .62) and both the speech and syntax tasks.</p>
 </blockquote>
-<p>Why is it no longer statistically significant? Which result should you trust? In reality, the difference in <em>p</em>-values is likely due to chance. However, the independent t-test and Welch’s test have different strengths and weaknesses. If the two populations really do have equal variances, then the independent t-test is slightly more powerful (lower Type II error rate) than the Welch’s test. However, if they <em>don’t</em> have the same variances, then the assumptions of the independent t-test are violated and you may not be able to trust the results; you may end up with a higher Type I error rate. So it’s a trade-off.</p>
-<p>Which should you use? I tend to prefer always using Welch’s t-test because if the variances are equal, then there will be practically no difference between the independent and Welch’s t-test. But if the variances are not equal, then Welch’s t-test will outperform the independent t-test. For that reason, defaulting to the Welch’s t-test makes most sense to me.</p>
 </div>
-<div id="mann-whitney-u-test" class="section level4" number="2.6.2.2">
-<h4><span class="header-section-number">2.6.2.2</span> Mann-Whitney U test</h4>
-<p>If you do not satisfy the assumption of normality (regardless of whether you satisfy the assumption of homogeneity of variance), you should either try to transform your data to be normally distributed or you will need to use a non-parametric test. In this case, if you originally wanted to perform an independent t-test, the non-parametric equivalent test is the Mann-Whitney U test.</p>
-<p>I will not go into specifics, but the idea behind the Mann-Whitney U test is that you take all the values (regardless of group) and rank them. You then sum the ranks across groups and calculate your U statistic and p-value. You interpret the p-value like you normally would, but there are differences in how we report the results because this statistic is based on the <em>median</em> not the <em>mean</em>.</p>
+<div id="what-if-i-violated-assumptions-3" class="section level2" number="5.7">
+<h2><span class="header-section-number">5.7</span> What if I violated assumptions?</h2>
+<p>We have already discussed what to do if you violate the assumption of sphericity above; you select one of the two sphericity corrections.</p>
+<p>If you violate the assumption of normality or if the dependent variable is ordinal, then you can use the Friedman test. You can select this using the Repeated Measures ANOVA - Friedman option under the ANOVA analysis.</p>
+<p>Friedman’s test can only examine one within-subjects variable, so you will move all three conditions (Speech, Conceptual, and Syntax) to the Measures box. Select <code>Pairwise comparisons (Durbin-Conover</code> for post hoc comparisons and <code>Descriptives</code> for the Means and Medians. Optionally, you can select to plot either the Means or Medians. The Setup is shown below.</p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-9"></span>
+<img src="images/05-repeated-measures-anova/rm-anova_friedman_setup.png" alt="Repeated Measures ANOVA setup in jamovi" width="80%" />
+<p class="caption">
+Figure 4.4: Repeated Measures ANOVA setup in jamovi
+</p>
+</div>
+<p>Once you’ve set-up the analysis, you can interpret the results. Overall, we continue to see a statistically significant result and that there is only a significant difference between speech and syntax.</p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-10"></span>
+<img src="images/05-repeated-measures-anova/rm-anova_friedman.png" alt="Repeated Measures ANOVA setup in jamovi" width="100%" />
+<p class="caption">
+Figure 4.5: Repeated Measures ANOVA setup in jamovi
+</p>
+</div>
+<p>We can write up the results similarly as before:</p>
 <blockquote>
-<p>Using the Mann-Whitney U test, there was a statistically significant difference in grades between Anastasia’s students (<em>Mdn</em> = 76, <em>n</em> = 15) and Bernadette’s students (<em>Mdn</em> = 69, <em>n</em> = 18), <em>t</em> (23.02) = 2.03, <em>p</em> = .054, <em>d</em> = .72.</p>
+<p>Friedman’s test was performed examining how three tasks affected word recognition in patients suffering from Broca’s Aphasia. Task significantly affected word recall, <span class="math inline">\(\chi^2\)</span> (2) = 6.64, <em>p</em> = .036. Pairwise comparisons using Durbin-Conover indicated that participants recognized significantly more words in the speech task (<em>M</em> = 7.17, <em>Mdn</em> = 7.50) than participants in the syntax task (<em>M</em> = 4.33, <em>Mdn</em> = 6.50; <em>p</em> = .006). There were no differences between the conceptual task (<em>M</em> = 6.17, <em>Mdn</em> = 6.50) and both the speech and syntax tasks.</p>
 </blockquote>
 </div>
+<div id="tips-on-writing-up-results-1" class="section level2" number="5.8">
+<h2><span class="header-section-number">5.8</span> Tips on writing up results</h2>
+<p>Writing up results in APA style is both a science and an art. There’s a science to what you need to report. For example, you always report the statistics exactly the same: <em>F</em> (df<sub>WG</sub>, df<sub>BG</sub>) = X.XX, <em>p</em> = .XXX. You also always report the group means (<em>M</em>) and standard deviations (<em>SD</em>), although you can report them in-text like I did above or in a descriptives table like you can ask from jamovi.</p>
+<p>However, there’s also an art to it. Notice how I wrote that up in a way to summarize the findings as succinctly as possible. I could have said there was a difference between <em>anxifree</em> and <em>joyzepam</em> and a difference between <em>joyzepam</em> and the placebo, but that’s a lot more words and isn’t written in a way to focus on what I’m hoping to see: that my drug <em>joyzepam</em> performed better than the competitor <em>anxifree</em> and a placebo condition.</p>
+<p>This is where you need to think creatively and be very critical in checking that what you say makes sense. Read your write-ups carefully! Have someone else read it. Can they understand what you mean?</p>
 </div>
-</div>
-<div id="your-turn" class="section level2" number="2.7">
-<h2><span class="header-section-number">2.7</span> Your turn!</h2>
+<div id="your-turn-3" class="section level2" number="5.9">
+<h2><span class="header-section-number">5.9</span> Your turn!</h2>
 <p>Open the <code>Sample_Dataset_2014.xlsx</code> file that we will be using for all Your Turn exercises.</p>
-<p>Perform independent t-tests based on the following research questions. Think critically about whether you should be using a one-tailed or two-tailed hypothesis and check your assumptions so you know which test to use!</p>
+<p>Perform a repeated measures ANOVA based on the following research questions. Check your assumptions and ensure you are using the correct tests.</p>
 <p>To get the most out of these exercises, try to first find out the answer on your own and then use the drop-down menus to check your answer.</p>
 <ol style="list-style-type: decimal">
-<li><p><strong>Does height differ by gender (Gender: male = 0, female = 1)?</strong></p>
+<li><p><strong>Does students differ on their test scores (English, Reading, Math, Writing)?</strong></p>
 <ul>
-<li><p>Should you use a one-tailed or two-tailed hypothesis? <select class='solveme' data-answer='["two-tailed"]'> <option></option> <option>one-tailed</option> <option>two-tailed</option></select></p></li>
-<li><p>Which statistic should you use based on your assumptions? <select class='solveme' data-answer='["Mann Whitney U"]'> <option></option> <option>independent t-test</option> <option>Welch’s t-test</option> <option>Mann Whitney U</option></select></p></li>
-<li><p>Does height differ by gender? <select class='solveme' data-answer='["yes"]'> <option></option> <option>yes</option> <option>no</option></select></p></li>
-</ul></li>
-<li><p><strong>Do athletes (Athlete: athletes = 1, non-athlete = 0) have faster sprint times than non-athletes?</strong></p>
-<ul>
-<li><p>Should you use a one-tailed or two-tailed hypothesis? <select class='solveme' data-answer='["one-tailed"]'> <option></option> <option>one-tailed</option> <option>two-tailed</option></select></p></li>
-<li><p>Which statistic should you use based on your assumptions? <select class='solveme' data-answer='["Mann Whitney U"]'> <option></option> <option>independent t-test</option> <option>Welch’s t-test</option> <option>Mann Whitney U</option></select></p></li>
-<li><p>Do athletes have faster sprint times than non-athletes? <select class='solveme' data-answer='["yes"]'> <option></option> <option>yes</option> <option>no</option></select></p></li>
-</ul></li>
-<li><p><strong>Do students who live on campus (LiveOnCampus: on campus = 1, off campus = 0) have higher English scores than students who live off campus?</strong></p>
-<ul>
-<li><p>Should you use a one-tailed or two-tailed hypothesis? <select class='solveme' data-answer='["one-tailed"]'> <option></option> <option>one-tailed</option> <option>two-tailed</option></select></p></li>
-<li><p>Which statistic should you use based on your assumptions? <select class='solveme' data-answer='["Welch&apos;s t-test"]'> <option></option> <option>independent t-test</option> <option>Welch’s t-test</option> <option>Mann Whitney U</option></select></p></li>
-<li><p>Does students who live on campus have higher English scores? <select class='solveme' data-answer='["no"]'> <option></option> <option>yes</option> <option>no</option></select></p></li>
-</ul></li>
-<li><p><strong>Does athletic status relate to math scores?</strong></p>
-<ul>
-<li><p>Should you use a one-tailed or two-tailed hypothesis? <select class='solveme' data-answer='["two-tailed"]'> <option></option> <option>one-tailed</option> <option>two-tailed</option></select></p></li>
-<li><p>Which statistic should you use based on your assumptions? <select class='solveme' data-answer='["independent t-test"]'> <option></option> <option>independent t-test</option> <option>Welch’s t-test</option> <option>Mann Whitney U</option></select></p></li>
-<li><p>Does athletic status relate to math scores? <select class='solveme' data-answer='["yes"]'> <option></option> <option>yes</option> <option>no</option></select></p></li>
+<li><p>Based on your understanding of the nature of the test scores, which statistic should you use? <select class='solveme' data-answer='["repeated measures ANOVA"]'> <option></option> <option>repeated measures ANOVA</option> <option>Friedman’s test</option></select></p></li>
+<li><p>Should you apply a sphericity correction? If so, which one? <select class='solveme' data-answer='["yes, Huynh-Feldt"]'> <option></option> <option>N/A - using Friedman’s test</option> <option>no, assumption satisfed</option> <option>yes, Greenhouse-Geisser</option> <option>yes, Huynh-Feldt</option></select></p></li>
+<li><p>Do students differ on their test scores? <select class='solveme' data-answer='["yes"]'> <option></option> <option>yes</option> <option>no</option></select></p></li>
+<li><p>Should you perform a planned contrast or post hoc comparison? <select class='solveme' data-answer='["yes"]'> <option></option> <option>yes</option> <option>no</option></select></p></li>
+<li><p>What are the results of the post hoc comparison? <select class='solveme' data-answer='["N/A - Don&apos;t perform"]'> <option></option> <option>N/A - Don’t perform</option> <option>All test scores were significantly different from one another</option> <option>All test scores were significantly different from one another except for English and Reading</option></select></p></li>
 </ul></li>
 </ol>
 
@@ -544,8 +493,8 @@ window.onload = function() {
           </div>
         </div>
       </div>
-<a href="introduction.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="dependent-t-test.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="one-way-anova.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="factorial-anova.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

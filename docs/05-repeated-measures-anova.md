@@ -1,10 +1,6 @@
 # Repeated Measures ANOVA
 
-```{r ind-t_setup, echo = FALSE, message=FALSE}
-library(tidyverse)
-library(webex)
-options(knitr.graphics.auto_pdf = TRUE)
-```
+
 
 ## What is the repeated measures ANOVA?
 
@@ -14,15 +10,25 @@ The repeated measures ANOVA is also sometimes called the one-way related ANOVA.
 
 There are two ways we could have the repeated measures ANOVA. Perhaps the same group of participants are measured in the same dependent variable at three or more time points. In this case, our independent variable is time and our dependent variable is whatever is measured at each time point.
 
-```{r echo = FALSE, fig.cap = "Repeated measures ANOVA by Time", out.width = "80%"}
-knitr::include_graphics("images/05-repeated-measures-anova/Laerd1.png")
-```
+\begin{figure}
+
+{\centering \includegraphics[width=0.8\linewidth]{images/05-repeated-measures-anova/Laerd1} 
+
+}
+
+\caption{Repeated measures ANOVA by Time}(\#fig:unnamed-chunk-1)
+\end{figure}
 
 The other way we might have the repeated measures ANOVA is if all our participants participate in all conditions of our study. In this case, our independent variable is the treatment or condition and the dependent variable is whatever is measured in each treatment or condition.
 
-```{r echo = FALSE, fig.cap = "Repeated measures ANOVA by Conditions", out.width = "80%"}
-knitr::include_graphics("images/05-repeated-measures-anova/Laerd2.png")
-```
+\begin{figure}
+
+{\centering \includegraphics[width=0.8\linewidth]{images/05-repeated-measures-anova/Laerd2} 
+
+}
+
+\caption{Repeated measures ANOVA by Conditions}(\#fig:unnamed-chunk-2)
+\end{figure}
 
 ## Data set-up
 
@@ -40,9 +46,9 @@ To conduct the repeated measures ANOVA, we first need to ensure our data is set-
 
 : Example data for the repeated measures ANOVA
 
-In the example data above, what is your **independent variable**? `r mcq(c("ID", answer = "Semester", "TestScore"))`
+In the example data above, what is your **independent variable**? <select class='solveme' data-answer='["Semester"]'> <option></option> <option>ID</option> <option>Semester</option> <option>TestScore</option></select>
 
-In the example data above, what is your **dependent variable**? `r mcq(c("ID", "Semester", answer = "TestScore"))`
+In the example data above, what is your **dependent variable**? <select class='solveme' data-answer='["TestScore"]'> <option></option> <option>ID</option> <option>Semester</option> <option>TestScore</option></select>
 
 ## The math behind the repeated measures ANOVA
 
@@ -52,9 +58,14 @@ $F = \frac{BG \:variance}{WG \:variance} = \frac{MS_{BG}}{MS_{WG}} = \frac{\frac
 
 So whereas our denominator in the one-way ANOVA has $SS_{WG}$, our denominator for the repeated measures ANOVA has $SS_{WG}-SS_{subjects}$. You can see this in more detail in the figure below by Laerd Statistics. The one-way ANOVA (also known as the independent samples ANOVA) splits the total variability in scores by the between-group (conditions) variability and the within-groups (error) variability. The repeated measures anova takes that within-groups variability and splits out the subject variability from the error variability.
 
-```{r echo = FALSE, fig.cap = "Repeated measures ANOVA by Time", out.width = "80%"}
-knitr::include_graphics("images/05-repeated-measures-anova/Laerd3.png")
-```
+\begin{figure}
+
+{\centering \includegraphics[width=0.8\linewidth]{images/05-repeated-measures-anova/Laerd3} 
+
+}
+
+\caption{Repeated measures ANOVA by Time}(\#fig:unnamed-chunk-3)
+\end{figure}
 
 I won't go into any more detail on the math of the repeated measures ANOVA, but you can read more on Laerd Statistics [guide for the repeated measures ANOVA](https://statistics.laerd.com/statistical-guides/repeated-measures-anova-statistical-guide-2.php).
 
@@ -100,13 +111,23 @@ This dataset is hypothetical data in which six patients suffering from Broca's A
 
 When you are done, your setup should look like this:
 
-```{r echo = FALSE, fig.cap = "Repeated Measures ANOVA setup in jamovi", out.width = "80%"}
-knitr::include_graphics("images/05-repeated-measures-anova/rm-anova_setup1.png")
-```
+\begin{figure}
 
-```{r echo = FALSE, fig.cap = "Repeated Measures ANOVA setup in jamovi", out.width = "80%"}
-knitr::include_graphics("images/05-repeated-measures-anova/rm-anova_setup2.png")
-```
+{\centering \includegraphics[width=0.8\linewidth]{images/05-repeated-measures-anova/rm-anova_setup1} 
+
+}
+
+\caption{Repeated Measures ANOVA setup in jamovi}(\#fig:unnamed-chunk-4)
+\end{figure}
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.8\linewidth]{images/05-repeated-measures-anova/rm-anova_setup2} 
+
+}
+
+\caption{Repeated Measures ANOVA setup in jamovi}(\#fig:unnamed-chunk-5)
+\end{figure}
 
 ### Checking assumptions in jamovi
 
@@ -114,9 +135,14 @@ You'll notice there are no options to check for normality in the repeated measur
 
 So what we need to worry about is testing our assumption of sphericity. You should have checked the box `Sphericity tests` under the Assumption Checks drop-down menu. That produces the following output:
 
-```{r echo = FALSE, fig.cap = "Testing sphericity in jamovi"}
-knitr::include_graphics("images/05-repeated-measures-anova/rm-anova_sphericity.png")
-```
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{images/05-repeated-measures-anova/rm-anova_sphericity} 
+
+}
+
+\caption{Testing sphericity in jamovi}(\#fig:unnamed-chunk-6)
+\end{figure}
 
 Mauchly's test of sphericity tests the null hypothesis that the variances of the differences between the conditions are equal. Therefore, just like with our previous assumption checks, if Mauchly's test is non-significant (i.e., *p* \> .05, as is the case in this analysis) then it is reasonable to conclude that the variances of the differences are not significantly different. This means we satisfy the assumption of sphericity and can conclude that the variances of the differences are roughly equal.
 
@@ -131,17 +157,27 @@ You can select these corrections in the Assumption Checks drop-down menu.
 
 Once we are satisfied we have satisfied the assumptions for the repeated measures, we can interpret our results.
 
-```{r echo = FALSE, fig.cap = "One-way ANOVA results in jamovi"}
-knitr::include_graphics("images/05-repeated-measures-anova/rm-anova_results.png")
-```
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{images/05-repeated-measures-anova/rm-anova_results} 
+
+}
+
+\caption{One-way ANOVA results in jamovi}(\#fig:unnamed-chunk-7)
+\end{figure}
 
 You'll notice that jamovi provides you both a Within Subjects Effects table and Between Subjects Effects table. However, we only have a within-subjects effect (Task). Why did it give us a between-subjects table? With the repeated-measures ANOVA (which only has within-subjects IVs), this is just our $SS_{BG}$. However, because we don't have one, it's not calculating anything. We can ignore it. It is only useful if we are conducting a mixed factorial ANOVA with both between-subjects and within-subjects effects.
 
 Therefore, the Within Subjects Effects table is of most use to us. We can see that the overall effect of Task is statistically significant (*p* = .013). Therefore we can look at our Post Hoc Tests results.
 
-```{r echo = FALSE, fig.cap = "One-way ANOVA results in jamovi"}
-knitr::include_graphics("images/05-repeated-measures-anova/rm-anova_tukey.png")
-```
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{images/05-repeated-measures-anova/rm-anova_tukey} 
+
+}
+
+\caption{One-way ANOVA results in jamovi}(\#fig:unnamed-chunk-8)
+\end{figure}
 
 The Tukey post hoc differences show that there was a significant difference between speech and syntax (*p* = .011), but not between conceptual and both speech and syntax. Last, we can look at the Estimated Marginal Means - Task table to see the group means for reporting purposes. This shows us that participants recognized significantly more words in the speech task than in the syntax task.
 
@@ -157,15 +193,25 @@ If you violate the assumption of normality or if the dependent variable is ordin
 
 Friedman's test can only examine one within-subjects variable, so you will move all three conditions (Speech, Conceptual, and Syntax) to the Measures box. Select `Pairwise comparisons (Durbin-Conover` for post hoc comparisons and `Descriptives` for the Means and Medians. Optionally, you can select to plot either the Means or Medians. The Setup is shown below.
 
-```{r echo = FALSE, fig.cap = "Repeated Measures ANOVA setup in jamovi", out.width = "80%"}
-knitr::include_graphics("images/05-repeated-measures-anova/rm-anova_friedman_setup.png")
-```
+\begin{figure}
+
+{\centering \includegraphics[width=0.8\linewidth]{images/05-repeated-measures-anova/rm-anova_friedman_setup} 
+
+}
+
+\caption{Repeated Measures ANOVA setup in jamovi}(\#fig:unnamed-chunk-9)
+\end{figure}
 
 Once you've set-up the analysis, you can interpret the results. Overall, we continue to see a statistically significant result and that there is only a significant difference between speech and syntax.
 
-```{r echo = FALSE, fig.cap = "Repeated Measures ANOVA setup in jamovi"}
-knitr::include_graphics("images/05-repeated-measures-anova/rm-anova_friedman.png")
-```
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{images/05-repeated-measures-anova/rm-anova_friedman} 
+
+}
+
+\caption{Repeated Measures ANOVA setup in jamovi}(\#fig:unnamed-chunk-10)
+\end{figure}
 
 We can write up the results similarly as before:
 
@@ -189,12 +235,12 @@ To get the most out of these exercises, try to first find out the answer on your
 
 1.  **Does students differ on their test scores (English, Reading, Math, Writing)?**
 
-    -   Based on your understanding of the nature of the test scores, which statistic should you use? `r mcq(c(answer = "repeated measures ANOVA", "Friedman's test"))`
+    -   Based on your understanding of the nature of the test scores, which statistic should you use? <select class='solveme' data-answer='["repeated measures ANOVA"]'> <option></option> <option>repeated measures ANOVA</option> <option>Friedman's test</option></select>
 
-    -   Should you apply a sphericity correction? If so, which one? `r mcq(c("N/A - using Friedman's test", "no, assumption satisfed", "yes, Greenhouse-Geisser", answer = "yes, Huynh-Feldt"))`
+    -   Should you apply a sphericity correction? If so, which one? <select class='solveme' data-answer='["yes, Huynh-Feldt"]'> <option></option> <option>N/A - using Friedman's test</option> <option>no, assumption satisfed</option> <option>yes, Greenhouse-Geisser</option> <option>yes, Huynh-Feldt</option></select>
 
-    -   Do students differ on their test scores? `r mcq(c(answer = "yes", "no"))`
+    -   Do students differ on their test scores? <select class='solveme' data-answer='["yes"]'> <option></option> <option>yes</option> <option>no</option></select>
 
-    -   Should you perform a planned contrast or post hoc comparison? `r mcq(c(answer = "yes", "no"))`
+    -   Should you perform a planned contrast or post hoc comparison? <select class='solveme' data-answer='["yes"]'> <option></option> <option>yes</option> <option>no</option></select>
 
-    -   What are the results of the post hoc comparison? `r mcq(c(answer = "N/A - Don't perform", "All test scores were significantly different from one another", "All test scores were significantly different from one another except for English and Reading"))`
+    -   What are the results of the post hoc comparison? <select class='solveme' data-answer='["N/A - Don&apos;t perform"]'> <option></option> <option>N/A - Don't perform</option> <option>All test scores were significantly different from one another</option> <option>All test scores were significantly different from one another except for English and Reading</option></select>

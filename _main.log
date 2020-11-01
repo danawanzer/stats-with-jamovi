@@ -1,11 +1,11 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/W32TeX) (preloaded format=xelatex 2020.10.24)  31 OCT 2020 18:18
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/W32TeX) (preloaded format=xelatex 2020.11.1)  1 NOV 2020 14:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **_main.tex
 (./_main.tex
-LaTeX2e <2020-10-01> patch level 1
-L3 programming layer <2020-10-05> xparse <2020-03-03>
+LaTeX2e <2020-10-01> patch level 2
+L3 programming layer <2020-10-27> xparse <2020-03-03>
 (c:/Users/dana and kurt/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/book.
 cls
 Document Class: book 2020/04/10 v1.4m Standard LaTeX document class
@@ -142,7 +142,7 @@ Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
 th/unicode-math.sty
 (c:/Users/dana and kurt/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3kernel/e
 xpl3.sty
-Package: expl3 2020-10-05 L3 programming layer (loader) 
+Package: expl3 2020-10-27 L3 programming layer (loader) 
 
 (c:/Users/dana and kurt/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3backend/
 l3backend-xetex.def
@@ -161,13 +161,13 @@ TeX
 
 (c:/Users/dana and kurt/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3packages
 /xparse/xparse.sty
-Package: xparse 2020-10-05 L3 Experimental document command parser
+Package: xparse 2020-10-27 L3 Experimental document command parser
 
 (c:/Users/dana and kurt/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3packages
 /xparse/xparse-generic.tex))
 (c:/Users/dana and kurt/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3packages
 /l3keys2e/l3keys2e.sty
-Package: l3keys2e 2020-10-05 LaTeX2e option processing using LaTeX3 keys
+Package: l3keys2e 2020-10-27 LaTeX2e option processing using LaTeX3 keys
 )
 (c:/Users/dana and kurt/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/fontspec/f
 ontspec.sty
@@ -471,13 +471,26 @@ Package graphics Info: Driver file: xetex.def on input line 105.
 \Gin@req@height=\dimen170
 \Gin@req@width=\dimen171
 )
+(c:/Users/dana and kurt/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/ulem/ule
+m.sty
+\UL@box=\box56
+\UL@hyphenbox=\box57
+\UL@skip=\skip57
+\UL@hook=\toks22
+\UL@height=\dimen172
+\UL@pe=\count297
+\UL@pixel=\dimen173
+\ULC@box=\box58
+Package: ulem 2019/11/18
+\ULdepth=\dimen174
+)
 (c:/Users/dana and kurt/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/natbib/nat
 bib.sty
 Package: natbib 2010/09/13 8.31b (PWD, AO)
-\bibhang=\skip57
-\bibsep=\skip58
+\bibhang=\skip58
+\bibsep=\skip59
 LaTeX Info: Redefining \cite on input line 694.
-\c@NAT@ctr=\count297
+\c@NAT@ctr=\count298
 ) (./_main.aux
 
 LaTeX Warning: Label `fig:unnamed-chunk-1' multiply defined.
@@ -506,43 +519,97 @@ LaTeX Warning: Label `fig:unnamed-chunk-4' multiply defined.
 
 LaTeX Warning: Label `fig:unnamed-chunk-5' multiply defined.
 
+
+LaTeX Warning: Label `fig:unnamed-chunk-1' multiply defined.
+
+
+LaTeX Warning: Label `fig:unnamed-chunk-2' multiply defined.
+
+
+LaTeX Warning: Label `fig:unnamed-chunk-3' multiply defined.
+
+
+LaTeX Warning: Label `fig:unnamed-chunk-4' multiply defined.
+
+
+LaTeX Warning: Label `fig:unnamed-chunk-5' multiply defined.
+
+
+LaTeX Warning: Label `fig:unnamed-chunk-6' multiply defined.
+
+
+LaTeX Warning: Label `fig:unnamed-chunk-7' multiply defined.
+
+
+LaTeX Warning: Label `fig:unnamed-chunk-8' multiply defined.
+
+
+LaTeX Warning: Label `fig:unnamed-chunk-9' multiply defined.
+
+
+LaTeX Warning: Label `fig:unnamed-chunk-10' multiply defined.
+
+
+LaTeX Warning: Label `fig:unnamed-chunk-1' multiply defined.
+
+
+LaTeX Warning: Label `fig:unnamed-chunk-2' multiply defined.
+
+
+LaTeX Warning: Label `fig:unnamed-chunk-3' multiply defined.
+
+
+LaTeX Warning: Label `fig:unnamed-chunk-4' multiply defined.
+
+
+LaTeX Warning: Label `fig:unnamed-chunk-5' multiply defined.
+
+
+LaTeX Warning: Label `fig:unnamed-chunk-6' multiply defined.
+
+
+LaTeX Warning: Label `fig:unnamed-chunk-7' multiply defined.
+
+
+LaTeX Warning: Label `fig:unnamed-chunk-8' multiply defined.
+
 )
 \openout1 = `_main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 114.
-LaTeX Font Info:    ... okay on input line 114.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 114.
-LaTeX Font Info:    ... okay on input line 114.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 114.
-LaTeX Font Info:    ... okay on input line 114.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 114.
-LaTeX Font Info:    ... okay on input line 114.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 114.
-LaTeX Font Info:    ... okay on input line 114.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 114.
-LaTeX Font Info:    ... okay on input line 114.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 114.
-LaTeX Font Info:    ... okay on input line 114.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 114.
-LaTeX Font Info:    ... okay on input line 114.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 114.
-LaTeX Font Info:    ... okay on input line 114.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 114.
-LaTeX Font Info:    ... okay on input line 114.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 117.
+LaTeX Font Info:    ... okay on input line 117.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 117.
+LaTeX Font Info:    ... okay on input line 117.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 117.
+LaTeX Font Info:    ... okay on input line 117.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 117.
+LaTeX Font Info:    ... okay on input line 117.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 117.
+LaTeX Font Info:    ... okay on input line 117.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 117.
+LaTeX Font Info:    ... okay on input line 117.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 117.
+LaTeX Font Info:    ... okay on input line 117.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 117.
+LaTeX Font Info:    ... okay on input line 117.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 117.
+LaTeX Font Info:    ... okay on input line 117.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 117.
+LaTeX Font Info:    ... okay on input line 117.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/lmr/m/n --> TU/lmr/m/n on input line 114.
+(Font)                  OT1/lmr/m/n --> TU/lmr/m/n on input line 117.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/lmr/m/it --> TU/lmr/m/it on input line 114.
+(Font)                  OT1/lmr/m/it --> TU/lmr/m/it on input line 117.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/lmr/bx/n --> TU/lmr/bx/n on input line 114.
+(Font)                  OT1/lmr/bx/n --> TU/lmr/bx/n on input line 117.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/lmss/m/n --> TU/lmss/m/n on input line 114.
+(Font)                  OT1/lmss/m/n --> TU/lmss/m/n on input line 117.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/lmss/bx/n --> TU/lmss/bx/n on input line 114.
+(Font)                  OT1/lmss/bx/n --> TU/lmss/bx/n on input line 117.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/lmtt/m/n --> TU/lmtt/m/n on input line 114.
+(Font)                  OT1/lmtt/m/n --> TU/lmtt/m/n on input line 117.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/lmtt/m/n --> TU/lmtt/bx/n on input line 114.
+(Font)                  OT1/lmtt/m/n --> TU/lmtt/bx/n on input line 117.
 
 Package fontspec Info: latinmodern-math scale = 0.9999964596882403.
 
@@ -571,7 +638,7 @@ pt=math;language=dflt;"
 (fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: 
 
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(0)/m/n' will be
-(Font)              scaled to size 10.0pt on input line 114.
+(Font)              scaled to size 10.0pt on input line 117.
 
 Package fontspec Info: latinmodern-math scale = 0.9999964596882403.
 
@@ -610,18 +677,18 @@ pt=math;language=dflt;"
 (fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: 
 
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 10.0pt on input line 114.
+(Font)              scaled to size 10.0pt on input line 117.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `normal' on input line 114.
+(Font)              `operators' in the math version `normal' on input line 117.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/lmr/m/n --> TU/latinmodern-math.otf(1)/m/n on input
- line 114.
+ line 117.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `bold' on input line 114.
+(Font)              `operators' in the math version `bold' on input line 117.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
 (Font)                  OT1/lmr/bx/n --> TU/latinmodern-math.otf(1)/b/n on inpu
-t line 114.
+t line 117.
 
 Package fontspec Info: latinmodern-math scale = 0.9999964596882403.
 
@@ -708,15 +775,15 @@ t=math;language=dflt;"
 (fontspec)             \fontdimen 21\font =0pt\relax 
 
 LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `normal' on input line 114.
+(Font)              `symbols' in the math version `normal' on input line 117.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
 (Font)                  OMS/lmsy/m/n --> TU/latinmodern-math.otf(2)/m/n on inpu
-t line 114.
+t line 117.
 LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `bold' on input line 114.
+(Font)              `symbols' in the math version `bold' on input line 117.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
 (Font)                  OMS/lmsy/b/n --> TU/latinmodern-math.otf(2)/b/n on inpu
-t line 114.
+t line 117.
 
 Package fontspec Info: latinmodern-math scale = 0.9999964596882403.
 
@@ -786,17 +853,17 @@ pt=math;language=dflt;"
 
 LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
 (Font)              `largesymbols' in the math version `normal' on input line 1
-14.
+17.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
 (Font)                  OMX/lmex/m/n --> TU/latinmodern-math.otf(3)/m/n on inpu
-t line 114.
+t line 117.
 LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
-(Font)              `largesymbols' in the math version `bold' on input line 114
+(Font)              `largesymbols' in the math version `bold' on input line 117
 .
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
 (Font)                  OMX/lmex/m/n --> TU/latinmodern-math.otf(3)/b/n on inpu
-t line 114.
-Package hyperref Info: Link coloring OFF on input line 114.
+t line 117.
+Package hyperref Info: Link coloring OFF on input line 117.
 
 (c:/Users/dana and kurt/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/n
 ameref.sty
@@ -810,40 +877,40 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 string/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count298
+\c@section@level=\count299
 )
-LaTeX Info: Redefining \ref on input line 114.
-LaTeX Info: Redefining \pageref on input line 114.
-LaTeX Info: Redefining \nameref on input line 114.
+LaTeX Info: Redefining \ref on input line 117.
+LaTeX Info: Redefining \pageref on input line 117.
+LaTeX Info: Redefining \nameref on input line 117.
 (./_main.out) (./_main.out)
 \@outlinefile=\write3
 \openout3 = `_main.out'.
 
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 12.0pt on input line 116.
+(Font)              scaled to size 12.0pt on input line 119.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 8.0pt on input line 116.
+(Font)              scaled to size 8.0pt on input line 119.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 6.0pt on input line 116.
+(Font)              scaled to size 6.0pt on input line 119.
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 1
-16.
+19.
 
 (c:/Users/dana and kurt/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omllmm.
 fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 12.0011pt on input line 116.
+(Font)              scaled to size 12.0011pt on input line 119.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 8.00073pt on input line 116.
+(Font)              scaled to size 8.00073pt on input line 119.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 6.00055pt on input line 116.
+(Font)              scaled to size 6.00055pt on input line 119.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 11.99872pt on input line 116.
+(Font)              scaled to size 11.99872pt on input line 119.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 7.99915pt on input line 116.
+(Font)              scaled to size 7.99915pt on input line 119.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 5.99936pt on input line 116.
+(Font)              scaled to size 5.99936pt on input line 119.
 [1
 
 
@@ -940,6 +1007,15 @@ File: images/04_one-way-anova/one-way_assumptions2.png Graphic file (type bmp)
 File: images/04_one-way-anova/one-way_results.png Graphic file (type bmp)
 <images/04_one-way-anova/one-way_results.png>
 [34] [35]
+Overfull \hbox (95.13004pt too wide) in alignment at lines 970--974
+ [] [] [] 
+ []
+
+
+Overfull \hbox (95.13004pt too wide) in alignment at lines 974--978
+ [] [] [] 
+ []
+
 File: images/04_one-way-anova/one-way_results_Welch.png Graphic file (type bmp)
 
 <images/04_one-way-anova/one-way_results_Welch.png>
@@ -965,25 +1041,117 @@ File: images/04_one-way-anova/contrasts_polynomial.png Graphic file (type bmp)
 File: images/04_one-way-anova/one-way_results_post-hoc.png Graphic file (type b
 mp)
 <images/04_one-way-anova/one-way_results_post-hoc.png>
-[41] [42] [43] [44
+[41] [42] [43] [44]
+Chapter 5.
+File: images/05-repeated-measures-anova/Laerd1.png Graphic file (type bmp)
+<images/05-repeated-measures-anova/Laerd1.png>
+File: images/05-repeated-measures-anova/Laerd2.png Graphic file (type bmp)
+<images/05-repeated-measures-anova/Laerd2.png>
+[45
+
+] [46]
+File: images/05-repeated-measures-anova/Laerd3.png Graphic file (type bmp)
+<images/05-repeated-measures-anova/Laerd3.png>
+[47] [48]
+File: images/05-repeated-measures-anova/rm-anova_setup1.png Graphic file (type 
+bmp)
+<images/05-repeated-measures-anova/rm-anova_setup1.png>
+File: images/05-repeated-measures-anova/rm-anova_setup2.png Graphic file (type 
+bmp)
+<images/05-repeated-measures-anova/rm-anova_setup2.png>
+[49] [50]
+File: images/05-repeated-measures-anova/rm-anova_sphericity.png Graphic file (t
+ype bmp)
+<images/05-repeated-measures-anova/rm-anova_sphericity.png>
+File: images/05-repeated-measures-anova/rm-anova_results.png Graphic file (type
+ bmp)
+<images/05-repeated-measures-anova/rm-anova_results.png>
+
+Underfull \vbox (badness 1845) has occurred while \output is active []
+
+[51]
+File: images/05-repeated-measures-anova/rm-anova_tukey.png Graphic file (type b
+mp)
+<images/05-repeated-measures-anova/rm-anova_tukey.png>
+[52]
+File: images/05-repeated-measures-anova/rm-anova_friedman_setup.png Graphic fil
+e (type bmp)
+<images/05-repeated-measures-anova/rm-anova_friedman_setup.png>
+File: images/05-repeated-measures-anova/rm-anova_friedman.png Graphic file (typ
+e bmp)
+<images/05-repeated-measures-anova/rm-anova_friedman.png>
+[53] [54] [55] [56]
+Chapter 6.
+
+Underfull \vbox (badness 2042) has occurred while \output is active []
+
+[57
 
 ]
+File: images/06-factorial-anova/independent-factorial_assumptions.png Graphic f
+ile (type bmp)
+<images/06-factorial-anova/independent-factorial_assumptions.png>
+[58]
+File: images/06-factorial-anova/independent-factorial_results.png Graphic file 
+(type bmp)
+<images/06-factorial-anova/independent-factorial_results.png>
+File: images/06-factorial-anova/independent-factorial_posthoc.png Graphic file 
+(type bmp)
+<images/06-factorial-anova/independent-factorial_posthoc.png>
+[59]
+File: images/06-factorial-anova/independent-factorial_plot.png Graphic file (ty
+pe bmp)
+<images/06-factorial-anova/independent-factorial_plot.png>
+[60]
+Overfull \hbox (9.90263pt too wide) in alignment at lines 1690--1709
+ [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (9.90263pt too wide) in alignment at lines 1709--1727
+ [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (9.90263pt too wide) in alignment at lines 1727--1879
+ [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \vbox (257.42578pt too high) has occurred while \output is active []
+
+[61]
+File: images/06-factorial-anova/rm-factorial_assumption.png Graphic file (type 
+bmp)
+<images/06-factorial-anova/rm-factorial_assumption.png>
+File: images/06-factorial-anova/rm-factorial_results.png Graphic file (type bmp
+)
+<images/06-factorial-anova/rm-factorial_results.png>
+File: images/06-factorial-anova/rm-factorial_tukey.png Graphic file (type bmp)
+<images/06-factorial-anova/rm-factorial_tukey.png>
+[62]
+File: images/06-factorial-anova/rm-factorial_interaction.pdf Graphic file (type
+ pdf)
+<use images/06-factorial-anova/rm-factorial_interaction.pdf>
+[63] [64]
 Appendix A.
 No file _main.bbl.
-[45] (./_main.aux)
+[65
+
+] (./_main.aux)
 Package rerunfilecheck Info: File `_main.out' has not changed.
-(rerunfilecheck)             Checksum: 1025CDA5304D07CF31E6F35E1BC505F3;5119.
+(rerunfilecheck)             Checksum: 9BF45F9DE8BE1CE439B2D1BF442056B5;7983.
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 16517 strings out of 479466
- 301224 string characters out of 5879904
- 757318 words of memory out of 5000000
- 35610 multiletter control sequences out of 15000+600000
- 539075 words of font info for 72 fonts, out of 8000000 for 9000
+ 16815 strings out of 479426
+ 312623 string characters out of 5878640
+ 751494 words of memory out of 5000000
+ 35925 multiletter control sequences out of 15000+600000
+ 539181 words of font info for 73 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 84i,8n,118p,1150b,472s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 94i,8n,118p,1514b,486s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on _main.pdf (45 pages).
+Output written on _main.pdf (65 pages).

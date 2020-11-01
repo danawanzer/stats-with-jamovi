@@ -12,29 +12,19 @@ One thing to keep in mind is the one-way ANOVA is an omnibus statistic that test
 
 ## Data set-up
 
-To conduct the independent t-test, we first need to ensure our data is set-up properly in our dataset. This requires having two columns: one with our continuous dependent variable and one indicating which group the participant is in. Each row is a unique participant or unit of analysis. Here's what example data may look like if we were testing for differences in a test score by students in my fall, spring, or summer semesters of my course
+To conduct the one-way ANOVA, we first need to ensure our data is set-up properly in our dataset. This requires having two columns: one with our continuous dependent variable and one indicating which group the participant is in. Each row is a unique participant or unit of analysis. Here's what example data may look like if we were testing for differences in a test score by students in my fall, spring, or summer semesters of my course
 
-+----------------------+----------------------+-----------------------+
-| ID                   | Semester             | TestScore             |
-+:=====================+:=====================+======================:+
-| 1                    | Fall                 | 86                    |
-+----------------------+----------------------+-----------------------+
-| 2                    | Fall                 | 80                    |
-+----------------------+----------------------+-----------------------+
-| 3                    | Fall                 | 75                    |
-+----------------------+----------------------+-----------------------+
-| 4                    | Spring               | 79                    |
-+----------------------+----------------------+-----------------------+
-| 5                    | Spring               | 82                    |
-+----------------------+----------------------+-----------------------+
-| 6                    | Spring               | 84                    |
-+----------------------+----------------------+-----------------------+
-| 7                    | Summer               | 90                    |
-+----------------------+----------------------+-----------------------+
-| 8                    | Summer               | 72                    |
-+----------------------+----------------------+-----------------------+
-| 9                    | Summer               | 75                    |
-+----------------------+----------------------+-----------------------+
+| ID  | Semester | TestScore |
+|:----|:---------|----------:|
+| 1   | Fall     |        86 |
+| 2   | Fall     |        80 |
+| 3   | Fall     |        75 |
+| 4   | Spring   |        79 |
+| 5   | Spring   |        82 |
+| 6   | Spring   |        84 |
+| 7   | Summer   |        90 |
+| 8   | Summer   |        72 |
+| 9   | Summer   |        75 |
 
 : Example data for the one-way ANOVA
 
@@ -106,17 +96,12 @@ In case it's useful, read below. If your eyes are glazing over, just move to the
 
 You can read the example dataset below. I've pulled the relevant data here so we can go through a hand calculation ourselves.
 
-+-------------+--------+------------+----------+
 | Drug        | N      | Mean       | Variance |
-+=============+========+============+==========+
+|-------------|--------|------------|----------|
 | Anxifree    | 6      | 0.7167     | .1537    |
-+-------------+--------+------------+----------+
 | Joyzepam    | 6      | 1.4833     | .0457    |
-+-------------+--------+------------+----------+
 | Placebo     | 6      | 0.4500     | .0790    |
-+-------------+--------+------------+----------+
 | **Overall** | **18** | **0.8833** | **.28**  |
-+-------------+--------+------------+----------+
 
 Let's start with the easy stuff! Let's calculate our degrees of freedom.
 
@@ -180,7 +165,7 @@ Let's run an example with data from lsj-data. Open data from your Data Library i
 
 6.  Ignore the Contrasts and Post Hoc Tests drop-down menus for now. See below for more information on them.
 
-7.  Ignore the Estimated Marginal Means drop-down menu.
+7.  In the Estimated Marginal Means drop-down menu, move your IV `drug` to the Marginal Means box and select `Marginal means plots`, `Marginal means tables`, and `Observed scores`, in addition to the pre-selected `Equal cell weights`.
 
 When you are done, your setup should look like this:
 
@@ -219,7 +204,7 @@ We test for homogeneity of variance using the Levene's test. The Levene's test w
 
 ## Interpreting results
 
-Once we are satisfied we have satisfied the assumptions for the independent t-test, we can interpret our results.
+Once we are satisfied we have satisfied the assumptions for the one-way ANOVA, we can interpret our results.
 
 \begin{figure}
 
@@ -248,13 +233,10 @@ The great news is that jamovi includes the Welch's F-statistic and the Kruskal-W
 
 Here's what statistic you should choose based on satisfying assumptions:
 
-+--------------------------------------------+--------------------------+------------------------------+
 |                                            | **Normality: satisfied** | **Normality: not satisfied** |
-+============================================+==========================+==============================+
+|--------------------------------------------|--------------------------|------------------------------|
 | **Homogeneity of Variance: satisfied**     | one-way ANOVA            | Kruskal-Wallis               |
-+--------------------------------------------+--------------------------+------------------------------+
 | **Homogeneity of Variance: not satisfied** | Welch's F-test           | Kruskal-Wallis               |
-+--------------------------------------------+--------------------------+------------------------------+
 
 #### Welch's F-test in jamovi
 
@@ -416,6 +398,16 @@ If you are using Welch's F-test using the One-Way ANOVA in jamovi, you should se
 If you are using the Kruskal-Wallis test, you will select the check-box for `DSCF pairwise comparisons`. This stands for the Dwass-Steel-Critchlow-Fligner test. All you need to know is that they, too, are interpreted similarly to the post hoc comparisons above.
 
 Unfortunately, you cannot perform contrasts with either the Welch's F-test or Kruskal-Wallis test.
+
+## Relationship between ANOVA and t-test
+
+An ANOVA with two groups is identical to the t-test. That means the F and t statistics are directly related, and you will get the same p-value. For example, imagine you run a t-test and get a t-statistic of *t* (16) = -1.31, *p* = .210. If you ran it as a one-way ANOVA, you would get an F-statistic of *F* (1, 16) = 1.71, *p* = .210.
+
+$F = t^2$
+
+$t = \sqrt{F}$
+
+Just a fun little bit of trivia! So if you accidentally do an F-test with two groups, no need to go back and redo the analyses (although you should if you are sharing your code for reproducibility). You can just convert your F to a t statistic easily!
 
 ## Tips on writing up results
 

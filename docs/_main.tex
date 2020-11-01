@@ -64,6 +64,9 @@
 \makeatletter
 \def\fps@figure{htbp}
 \makeatother
+\usepackage[normalem]{ulem}
+% Avoid problems with \sout in headers with hyperref
+\pdfstringdefDisableCommands{\renewcommand{\sout}{}}
 \setlength{\emergencystretch}{3em} % prevent overfull lines
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
@@ -109,7 +112,7 @@
 
 \title{Statistics with jamovi}
 \author{Dana Wanzer}
-\date{Last Update: 2020-10-31}
+\date{Last Update: 2020-11-01}
 
 \begin{document}
 \maketitle
@@ -691,93 +694,27 @@ One thing to keep in mind is the one-way ANOVA is an omnibus statistic that test
 \hypertarget{data-set-up-2}{%
 \section{Data set-up}\label{data-set-up-2}}
 
-To conduct the independent t-test, we first need to ensure our data is set-up properly in our dataset. This requires having two columns: one with our continuous dependent variable and one indicating which group the participant is in. Each row is a unique participant or unit of analysis. Here's what example data may look like if we were testing for differences in a test score by students in my fall, spring, or summer semesters of my course
+To conduct the one-way ANOVA, we first need to ensure our data is set-up properly in our dataset. This requires having two columns: one with our continuous dependent variable and one indicating which group the participant is in. Each row is a unique participant or unit of analysis. Here's what example data may look like if we were testing for differences in a test score by students in my fall, spring, or summer semesters of my course
 
 \begin{longtable}[]{@{}llr@{}}
 \caption{Example data for the one-way ANOVA}\tabularnewline
 \toprule
-\begin{minipage}[b]{0.29\columnwidth}\raggedright
-ID\strut
-\end{minipage} & \begin{minipage}[b]{0.29\columnwidth}\raggedright
-Semester\strut
-\end{minipage} & \begin{minipage}[b]{0.30\columnwidth}\raggedleft
-TestScore\strut
-\end{minipage}\tabularnewline
+ID & Semester & TestScore\tabularnewline
 \midrule
 \endfirsthead
 \toprule
-\begin{minipage}[b]{0.29\columnwidth}\raggedright
-ID\strut
-\end{minipage} & \begin{minipage}[b]{0.29\columnwidth}\raggedright
-Semester\strut
-\end{minipage} & \begin{minipage}[b]{0.30\columnwidth}\raggedleft
-TestScore\strut
-\end{minipage}\tabularnewline
+ID & Semester & TestScore\tabularnewline
 \midrule
 \endhead
-\begin{minipage}[t]{0.29\columnwidth}\raggedright
-1\strut
-\end{minipage} & \begin{minipage}[t]{0.29\columnwidth}\raggedright
-Fall\strut
-\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedleft
-86\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.29\columnwidth}\raggedright
-2\strut
-\end{minipage} & \begin{minipage}[t]{0.29\columnwidth}\raggedright
-Fall\strut
-\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedleft
-80\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.29\columnwidth}\raggedright
-3\strut
-\end{minipage} & \begin{minipage}[t]{0.29\columnwidth}\raggedright
-Fall\strut
-\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedleft
-75\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.29\columnwidth}\raggedright
-4\strut
-\end{minipage} & \begin{minipage}[t]{0.29\columnwidth}\raggedright
-Spring\strut
-\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedleft
-79\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.29\columnwidth}\raggedright
-5\strut
-\end{minipage} & \begin{minipage}[t]{0.29\columnwidth}\raggedright
-Spring\strut
-\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedleft
-82\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.29\columnwidth}\raggedright
-6\strut
-\end{minipage} & \begin{minipage}[t]{0.29\columnwidth}\raggedright
-Spring\strut
-\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedleft
-84\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.29\columnwidth}\raggedright
-7\strut
-\end{minipage} & \begin{minipage}[t]{0.29\columnwidth}\raggedright
-Summer\strut
-\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedleft
-90\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.29\columnwidth}\raggedright
-8\strut
-\end{minipage} & \begin{minipage}[t]{0.29\columnwidth}\raggedright
-Summer\strut
-\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedleft
-72\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.29\columnwidth}\raggedright
-9\strut
-\end{minipage} & \begin{minipage}[t]{0.29\columnwidth}\raggedright
-Summer\strut
-\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedleft
-75\strut
-\end{minipage}\tabularnewline
+1 & Fall & 86\tabularnewline
+2 & Fall & 80\tabularnewline
+3 & Fall & 75\tabularnewline
+4 & Spring & 79\tabularnewline
+5 & Spring & 82\tabularnewline
+6 & Spring & 84\tabularnewline
+7 & Summer & 90\tabularnewline
+8 & Summer & 72\tabularnewline
+9 & Summer & 75\tabularnewline
 \bottomrule
 \end{longtable}
 
@@ -871,53 +808,13 @@ You can read the example dataset below. I've pulled the relevant data here so we
 
 \begin{longtable}[]{@{}llll@{}}
 \toprule
-\begin{minipage}[b]{0.17\columnwidth}\raggedright
-Drug\strut
-\end{minipage} & \begin{minipage}[b]{0.11\columnwidth}\raggedright
-N\strut
-\end{minipage} & \begin{minipage}[b]{0.16\columnwidth}\raggedright
-Mean\strut
-\end{minipage} & \begin{minipage}[b]{0.16\columnwidth}\raggedright
-Variance\strut
-\end{minipage}\tabularnewline
+Drug & N & Mean & Variance\tabularnewline
 \midrule
 \endhead
-\begin{minipage}[t]{0.17\columnwidth}\raggedright
-Anxifree\strut
-\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\raggedright
-6\strut
-\end{minipage} & \begin{minipage}[t]{0.16\columnwidth}\raggedright
-0.7167\strut
-\end{minipage} & \begin{minipage}[t]{0.16\columnwidth}\raggedright
-.1537\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.17\columnwidth}\raggedright
-Joyzepam\strut
-\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\raggedright
-6\strut
-\end{minipage} & \begin{minipage}[t]{0.16\columnwidth}\raggedright
-1.4833\strut
-\end{minipage} & \begin{minipage}[t]{0.16\columnwidth}\raggedright
-.0457\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.17\columnwidth}\raggedright
-Placebo\strut
-\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\raggedright
-6\strut
-\end{minipage} & \begin{minipage}[t]{0.16\columnwidth}\raggedright
-0.4500\strut
-\end{minipage} & \begin{minipage}[t]{0.16\columnwidth}\raggedright
-.0790\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.17\columnwidth}\raggedright
-\textbf{Overall}\strut
-\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\raggedright
-\textbf{18}\strut
-\end{minipage} & \begin{minipage}[t]{0.16\columnwidth}\raggedright
-\textbf{0.8833}\strut
-\end{minipage} & \begin{minipage}[t]{0.16\columnwidth}\raggedright
-\textbf{.28}\strut
-\end{minipage}\tabularnewline
+Anxifree & 6 & 0.7167 & .1537\tabularnewline
+Joyzepam & 6 & 1.4833 & .0457\tabularnewline
+Placebo & 6 & 0.4500 & .0790\tabularnewline
+\textbf{Overall} & \textbf{18} & \textbf{0.8833} & \textbf{.28}\tabularnewline
 \bottomrule
 \end{longtable}
 
@@ -993,7 +890,7 @@ Let's run an example with data from lsj-data. Open data from your Data Library i
 \item
   Ignore the Contrasts and Post Hoc Tests drop-down menus for now. See below for more information on them.
 \item
-  Ignore the Estimated Marginal Means drop-down menu.
+  In the Estimated Marginal Means drop-down menu, move your IV \texttt{drug} to the Marginal Means box and select \texttt{Marginal\ means\ plots}, \texttt{Marginal\ means\ tables}, and \texttt{Observed\ scores}, in addition to the pre-selected \texttt{Equal\ cell\ weights}.
 \end{enumerate}
 
 When you are done, your setup should look like this:
@@ -1035,7 +932,7 @@ We test for homogeneity of variance using the Levene's test. The Levene's test w
 \hypertarget{interpreting-results-2}{%
 \section{Interpreting results}\label{interpreting-results-2}}
 
-Once we are satisfied we have satisfied the assumptions for the independent t-test, we can interpret our results.
+Once we are satisfied we have satisfied the assumptions for the one-way ANOVA, we can interpret our results.
 
 \begin{figure}
 
@@ -1072,29 +969,11 @@ Here's what statistic you should choose based on satisfying assumptions:
 
 \begin{longtable}[]{@{}lll@{}}
 \toprule
-\begin{minipage}[b]{0.40\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[b]{0.24\columnwidth}\raggedright
-\textbf{Normality: satisfied}\strut
-\end{minipage} & \begin{minipage}[b]{0.27\columnwidth}\raggedright
-\textbf{Normality: not satisfied}\strut
-\end{minipage}\tabularnewline
+& \textbf{Normality: satisfied} & \textbf{Normality: not satisfied}\tabularnewline
 \midrule
 \endhead
-\begin{minipage}[t]{0.40\columnwidth}\raggedright
-\textbf{Homogeneity of Variance: satisfied}\strut
-\end{minipage} & \begin{minipage}[t]{0.24\columnwidth}\raggedright
-one-way ANOVA\strut
-\end{minipage} & \begin{minipage}[t]{0.27\columnwidth}\raggedright
-Kruskal-Wallis\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.40\columnwidth}\raggedright
-\textbf{Homogeneity of Variance: not satisfied}\strut
-\end{minipage} & \begin{minipage}[t]{0.24\columnwidth}\raggedright
-Welch's F-test\strut
-\end{minipage} & \begin{minipage}[t]{0.27\columnwidth}\raggedright
-Kruskal-Wallis\strut
-\end{minipage}\tabularnewline
+\textbf{Homogeneity of Variance: satisfied} & one-way ANOVA & Kruskal-Wallis\tabularnewline
+\textbf{Homogeneity of Variance: not satisfied} & Welch's F-test & Kruskal-Wallis\tabularnewline
 \bottomrule
 \end{longtable}
 
@@ -1319,6 +1198,17 @@ If you are using the Kruskal-Wallis test, you will select the check-box for \tex
 
 Unfortunately, you cannot perform contrasts with either the Welch's F-test or Kruskal-Wallis test.
 
+\hypertarget{relationship-between-anova-and-t-test}{%
+\section{Relationship between ANOVA and t-test}\label{relationship-between-anova-and-t-test}}
+
+An ANOVA with two groups is identical to the t-test. That means the F and t statistics are directly related, and you will get the same p-value. For example, imagine you run a t-test and get a t-statistic of \emph{t} (16) = -1.31, \emph{p} = .210. If you ran it as a one-way ANOVA, you would get an F-statistic of \emph{F} (1, 16) = 1.71, \emph{p} = .210.
+
+\(F = t^2\)
+
+\(t = \sqrt{F}\)
+
+Just a fun little bit of trivia! So if you accidentally do an F-test with two groups, no need to go back and redo the analyses (although you should if you are sharing your code for reproducibility). You can just convert your F to a t statistic easily!
+
 \hypertarget{tips-on-writing-up-results}{%
 \section{Tips on writing up results}\label{tips-on-writing-up-results}}
 
@@ -1374,6 +1264,694 @@ To get the most out of these exercises, try to first find out the answer on your
     What are the results of the post hoc comparison? N/A - Don't perform Nonsmokers had significantly faster sprint times than current smokers Nonsmokers and past smokers had significantly faster spring times than current smokers Nonsmokers had significantly faster sprint times than both past and current smokers
   \end{itemize}
 \end{enumerate}
+
+\hypertarget{repeated-measures-anova}{%
+\chapter{Repeated Measures ANOVA}\label{repeated-measures-anova}}
+
+\hypertarget{what-is-the-repeated-measures-anova}{%
+\section{What is the repeated measures ANOVA?}\label{what-is-the-repeated-measures-anova}}
+
+The repeated measures analysis of variance (ANOVA) is used to test the difference in our dependent variable between \underline{three or more} groups of observations in which all participants participate in all groups or levels. Our grouping variable is our independent variable. In other words, we use the one-way ANOVA when we have a research question with a \textbf{continuous dependent variable} and a \textbf{categorical independent variable with three or more categories in which the same participants are in each category}.
+
+The repeated measures ANOVA is also sometimes called the one-way related ANOVA.
+
+There are two ways we could have the repeated measures ANOVA. Perhaps the same group of participants are measured in the same dependent variable at three or more time points. In this case, our independent variable is time and our dependent variable is whatever is measured at each time point.
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.8\linewidth]{images/05-repeated-measures-anova/Laerd1} 
+
+}
+
+\caption{Repeated measures ANOVA by Time}\label{fig:unnamed-chunk-1}
+\end{figure}
+
+The other way we might have the repeated measures ANOVA is if all our participants participate in all conditions of our study. In this case, our independent variable is the treatment or condition and the dependent variable is whatever is measured in each treatment or condition.
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.8\linewidth]{images/05-repeated-measures-anova/Laerd2} 
+
+}
+
+\caption{Repeated measures ANOVA by Conditions}\label{fig:unnamed-chunk-2}
+\end{figure}
+
+\hypertarget{data-set-up-3}{%
+\section{Data set-up}\label{data-set-up-3}}
+
+To conduct the repeated measures ANOVA, we first need to ensure our data is set-up properly in our dataset. This requires having two columns: one with our continuous dependent variable and one indicating which group the participant is in. Each row is a unique participant or unit of analysis. Here's what example data may look like if we were testing for differences in a test score by students in my fall, spring, or summer semesters of my course in which three participants are in each of my three courses.
+
+\begin{longtable}[]{@{}llll@{}}
+\caption{Example data for the repeated measures ANOVA}\tabularnewline
+\toprule
+\begin{minipage}[b]{0.07\columnwidth}\raggedright
+ID\strut
+\end{minipage} & \begin{minipage}[b]{0.11\columnwidth}\raggedright
+Fall\strut
+\end{minipage} & \begin{minipage}[b]{0.11\columnwidth}\raggedright
+Spring\strut
+\end{minipage} & \begin{minipage}[b]{0.11\columnwidth}\raggedright
+Summer\strut
+\end{minipage}\tabularnewline
+\midrule
+\endfirsthead
+\toprule
+\begin{minipage}[b]{0.07\columnwidth}\raggedright
+ID\strut
+\end{minipage} & \begin{minipage}[b]{0.11\columnwidth}\raggedright
+Fall\strut
+\end{minipage} & \begin{minipage}[b]{0.11\columnwidth}\raggedright
+Spring\strut
+\end{minipage} & \begin{minipage}[b]{0.11\columnwidth}\raggedright
+Summer\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.07\columnwidth}\raggedright
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\raggedright
+86\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\raggedright
+79\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\raggedright
+90\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.07\columnwidth}\raggedright
+2\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\raggedright
+80\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\raggedright
+82\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\raggedright
+72\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.07\columnwidth}\raggedright
+3\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\raggedright
+75\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\raggedright
+84\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\raggedright
+75\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+In the example data above, what is your \textbf{independent variable}? ID Semester TestScore
+
+In the example data above, what is your \textbf{dependent variable}? ID Semester TestScore
+
+\hypertarget{the-math-behind-the-repeated-measures-anova}{%
+\section{The math behind the repeated measures ANOVA}\label{the-math-behind-the-repeated-measures-anova}}
+
+The basic math of the repeated measures ANOVA is very similar to the one-way ANOVA except that the \(SS_{WG}\) is partitioned into two parts. Since there are the same subjects in each group, we can remove the variability due to the individual differences between subjects from the within-groups variability.
+
+\(F = \frac{BG \:variance}{WG \:variance} = \frac{MS_{BG}}{MS_{WG}} = \frac{\frac{SS_{BG}}{df_{BG}}}{\frac{SS_{WG}}{df_{WG}}}\)
+
+So whereas our denominator in the one-way ANOVA has \(SS_{WG}\), our denominator for the repeated measures ANOVA has \(SS_{WG}-SS_{subjects}\). You can see this in more detail in the figure below by Laerd Statistics. The one-way ANOVA (also known as the independent samples ANOVA) splits the total variability in scores by the between-group (conditions) variability and the within-groups (error) variability. The repeated measures anova takes that within-groups variability and splits out the subject variability from the error variability.
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.8\linewidth]{images/05-repeated-measures-anova/Laerd3} 
+
+}
+
+\caption{Repeated measures ANOVA by Time}\label{fig:unnamed-chunk-3}
+\end{figure}
+
+I won't go into any more detail on the math of the repeated measures ANOVA, but you can read more on Laerd Statistics \href{https://statistics.laerd.com/statistical-guides/repeated-measures-anova-statistical-guide-2.php}{guide for the repeated measures ANOVA}.
+
+\hypertarget{assumptions-3}{%
+\section{Assumptions}\label{assumptions-3}}
+
+As a parametric test, the repeated measures ANOVA has the same assumptions as other parametric tests:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  The dependent variable is \textbf{normally distributed}
+\item
+  Variances in the two groups are roughly equal (i.e., \textbf{homogeneity of variances}); in repeated measures ANOVA this is called the assumption of \textbf{sphericity}
+\item
+  The dependent variable is \textbf{interval or ratio} (i.e., continuous)
+\item
+  \sout{Scores are \textbf{independent} between groups} (this assumption is not relevant because all participants participate in all conditions)
+\end{enumerate}
+
+We cannot \underline{test} the third and fourth assumptions; rather, those are based on knowing your data. However, we can and should test for the first two assumptions. Fortunately, the one-way ANOVA in jamovi has three check boxes under ``Assumption Checks'' that lets us test for both assumptions.
+
+\hypertarget{sphericity-assumption}{%
+\subsection{Sphericity Assumption}\label{sphericity-assumption}}
+
+The sphericity assumption is essentially the repeated measures ANOVA equivalent of homogeneity of variances. Sphericity means there is equality of variances of the \emph{differences} between treatment levels. For example, if there are three groups, then the difference in all three pairs of differences (1-2, 1-3, 2-3) need to have approximately equal variances. You only need to care about sphericity when there are at least three conditions, which is why we did not talk about this with the dependent t-test.
+
+Fortunately, like the other assumption checks, testing for sphericity is as simple as a checkbox in jamovi.
+
+\hypertarget{in-jamovi-3}{%
+\section{In jamovi}\label{in-jamovi-3}}
+
+Let's run an example with data from lsj-data. Open data from your Data Library in ``lsj-data''. Select and open ``broca''.
+
+This dataset is hypothetical data in which six patients suffering from Broca's Aphasia (a language deficit commonly experienced following a stroke) complete three word recognition tasks. On the first (speech production) task, patients were required to repeat single words read out aloud by the researcher. On the second (conceptual) task, designed to test word comprehension, patients were required to match a series of pictures with their correct name. On the third (syntax) task, designed to test knowledge of correct word order, patients were asked to reorder syntactically incorrect sentences. Each patient completed all three tasks. The order in which patients attempted the tasks was counterbalanced between participants. Each task consisted of a series of 10 attempts. The number of attempts successfully completed by each patient are provided in the dataset.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  To perform a one-way ANOVA in jamovi, go to the Analyses tab, click the ANOVA button, and choose ``Repeated Measures ANOVA''.
+\item
+  Under ``Repeated Measures Factors'' name your independent variable. In this case you can name it ``Task''. Rename the three levels of Task: Speech, Conceptual, and Syntax.
+\item
+  Under ``Repeated Measures Cells'' move the given variable into the correct level. For example, you'll move Speech to the Speech cell.
+\item
+  Select Generalised \(\eta^2\) as your measure of effect size.
+\item
+  In the Assumption Checks drop-down menu, select \texttt{Sphericity\ tests}. You'll note that if you violate the assumption of sphericity, there are two corrections provided. These will be discussed later.
+\item
+  In the Post Hoc Tests drop-down menu, select \texttt{Tukey}. Remember that we only interpret these if the overall \emph{F} is statistically significant.
+\item
+  In the Estimated Marginal Means drop-down menu, move Task to the Marginal Means box, select \texttt{Marginal\ means\ tables}, and select \texttt{Observed\ scores.}
+\end{enumerate}
+
+When you are done, your setup should look like this:
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.8\linewidth]{images/05-repeated-measures-anova/rm-anova_setup1} 
+
+}
+
+\caption{Repeated Measures ANOVA setup in jamovi}\label{fig:unnamed-chunk-4}
+\end{figure}
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.8\linewidth]{images/05-repeated-measures-anova/rm-anova_setup2} 
+
+}
+
+\caption{Repeated Measures ANOVA setup in jamovi}\label{fig:unnamed-chunk-5}
+\end{figure}
+
+\hypertarget{checking-assumptions-in-jamovi-3}{%
+\subsection{Checking assumptions in jamovi}\label{checking-assumptions-in-jamovi-3}}
+
+You'll notice there are no options to check for normality in the repeated measures ANOVA in jamovi. There's an \href{https://forum.jamovi.org/viewtopic.php?f=5\&t=1045}{interesting conversation} on the topic in the jamovi forums. Suffice to say, it's complicated and maybe someday they will implement it. For now, we just won't worry about it for the repeated measures ANOVA.
+
+So what we need to worry about is testing our assumption of sphericity. You should have checked the box \texttt{Sphericity\ tests} under the Assumption Checks drop-down menu. That produces the following output:
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{images/05-repeated-measures-anova/rm-anova_sphericity} 
+
+}
+
+\caption{Testing sphericity in jamovi}\label{fig:unnamed-chunk-6}
+\end{figure}
+
+Mauchly's test of sphericity tests the null hypothesis that the variances of the differences between the conditions are equal. Therefore, just like with our previous assumption checks, if Mauchly's test is non-significant (i.e., \emph{p} \textgreater{} .05, as is the case in this analysis) then it is reasonable to conclude that the variances of the differences are not significantly different. This means we satisfy the assumption of sphericity and can conclude that the variances of the differences are roughly equal.
+
+If Mauchly's test had been statistically significant (\emph{p} \textless{} .05), then we would conclude that the assumption had \emph{not} been met. In this case, we should apply a correction to the \emph{F}-value obtained in the repeated measures ANOVA:
+
+\begin{itemize}
+\tightlist
+\item
+  If the Greenhouse-Geisser value in the ``Tests of Sphericity'' table is \textgreater{} .75 then you should use the Huynh-Feldt correction.
+\item
+  If the Greenhouse-Geisser value is \textless{} .75, then you should use the Greenhouse-Geisser correction.
+\end{itemize}
+
+You can select these corrections in the Assumption Checks drop-down menu.
+
+\hypertarget{interpreting-results-3}{%
+\section{Interpreting results}\label{interpreting-results-3}}
+
+Once we are satisfied we have satisfied the assumptions for the repeated measures, we can interpret our results.
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{images/05-repeated-measures-anova/rm-anova_results} 
+
+}
+
+\caption{One-way ANOVA results in jamovi}\label{fig:unnamed-chunk-7}
+\end{figure}
+
+You'll notice that jamovi provides you both a Within Subjects Effects table and Between Subjects Effects table. However, we only have a within-subjects effect (Task). Why did it give us a between-subjects table? With the repeated-measures ANOVA (which only has within-subjects IVs), this is just our \(SS_{BG}\). However, because we don't have one, it's not calculating anything. We can ignore it. It is only useful if we are conducting a mixed factorial ANOVA with both between-subjects and within-subjects effects.
+
+Therefore, the Within Subjects Effects table is of most use to us. We can see that the overall effect of Task is statistically significant (\emph{p} = .013). Therefore we can look at our Post Hoc Tests results.
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{images/05-repeated-measures-anova/rm-anova_tukey} 
+
+}
+
+\caption{One-way ANOVA results in jamovi}\label{fig:unnamed-chunk-8}
+\end{figure}
+
+The Tukey post hoc differences show that there was a significant difference between speech and syntax (\emph{p} = .011), but not between conceptual and both speech and syntax. Last, we can look at the Estimated Marginal Means - Task table to see the group means for reporting purposes. This shows us that participants recognized significantly more words in the speech task than in the syntax task.
+
+We can write this up in APA style similar to the one-way ANOVA.
+
+\begin{quote}
+A repeated measures ANOVA was performed examining how three tasks affected word recognition in patients suffering from Broca's Aphasia. Task significantly affected word recall, \emph{F} (2, 10) = 6.93, \emph{p} = .013, \(\eta^2_G\) = .41. Tukey's post hoc difference tests indicated that participants recognized significantly more words in the speech task (\emph{M} = 7.17, \emph{SE} = .62) than participants in the syntax task (\emph{M} = 4.33, \emph{SE} = .62; \emph{p}~= .011). There were no differences between the conceptual task (\emph{M} = 6.17, \emph{SE} = .62) and both the speech and syntax tasks.
+\end{quote}
+
+\hypertarget{what-if-i-violated-assumptions-3}{%
+\section{What if I violated assumptions?}\label{what-if-i-violated-assumptions-3}}
+
+We have already discussed what to do if you violate the assumption of sphericity above; you select one of the two sphericity corrections.
+
+If you violate the assumption of normality or if the dependent variable is ordinal, then you can use the Friedman test. You can select this using the Repeated Measures ANOVA - Friedman option under the ANOVA analysis.
+
+Friedman's test can only examine one within-subjects variable, so you will move all three conditions (Speech, Conceptual, and Syntax) to the Measures box. Select \texttt{Pairwise\ comparisons\ (Durbin-Conover} for post hoc comparisons and \texttt{Descriptives} for the Means and Medians. Optionally, you can select to plot either the Means or Medians. The Setup is shown below.
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.8\linewidth]{images/05-repeated-measures-anova/rm-anova_friedman_setup} 
+
+}
+
+\caption{Repeated Measures ANOVA setup in jamovi}\label{fig:unnamed-chunk-9}
+\end{figure}
+
+Once you've set-up the analysis, you can interpret the results. Overall, we continue to see a statistically significant result and that there is only a significant difference between speech and syntax.
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{images/05-repeated-measures-anova/rm-anova_friedman} 
+
+}
+
+\caption{Repeated Measures ANOVA setup in jamovi}\label{fig:unnamed-chunk-10}
+\end{figure}
+
+We can write up the results similarly as before:
+
+\begin{quote}
+Friedman's test was performed examining how three tasks affected word recognition in patients suffering from Broca's Aphasia. Task significantly affected word recall, \(\chi^2\) (2) = 6.64, \emph{p} = .036. Pairwise comparisons using Durbin-Conover indicated that participants recognized significantly more words in the speech task (\emph{M} = 7.17, \emph{Mdn} = 7.50) than participants in the syntax task (\emph{M} = 4.33, \emph{Mdn} = 6.50; \emph{p}~= .006). There were no differences between the conceptual task (\emph{M} = 6.17, \emph{Mdn} = 6.50) and both the speech and syntax tasks.
+\end{quote}
+
+\hypertarget{tips-on-writing-up-results-1}{%
+\section{Tips on writing up results}\label{tips-on-writing-up-results-1}}
+
+Writing up results in APA style is both a science and an art. There's a science to what you need to report. For example, you always report the statistics exactly the same: \emph{F} (df\textsubscript{WG}, df\textsubscript{BG}) = X.XX, \emph{p} = .XXX. You also always report the group means (\emph{M}) and standard deviations (\emph{SD}), although you can report them in-text like I did above or in a descriptives table like you can ask from jamovi.
+
+However, there's also an art to it. Notice how I wrote that up in a way to summarize the findings as succinctly as possible. I could have said there was a difference between \emph{anxifree} and \emph{joyzepam} and a difference between \emph{joyzepam} and the placebo, but that's a lot more words and isn't written in a way to focus on what I'm hoping to see: that my drug \emph{joyzepam} performed better than the competitor \emph{anxifree} and a placebo condition.
+
+This is where you need to think creatively and be very critical in checking that what you say makes sense. Read your write-ups carefully! Have someone else read it. Can they understand what you mean?
+
+\hypertarget{your-turn-3}{%
+\section{Your turn!}\label{your-turn-3}}
+
+Open the \texttt{Sample\_Dataset\_2014.xlsx} file that we will be using for all Your Turn exercises.
+
+Perform a repeated measures ANOVA based on the following research questions. Check your assumptions and ensure you are using the correct tests.
+
+To get the most out of these exercises, try to first find out the answer on your own and then use the drop-down menus to check your answer.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \textbf{Does students differ on their test scores (English, Reading, Math, Writing)?}
+
+  \begin{itemize}
+  \item
+    Based on your understanding of the nature of the test scores, which statistic should you use? repeated measures ANOVA Friedman's test
+  \item
+    Should you apply a sphericity correction? If so, which one? N/A - using Friedman's test no, assumption satisfed yes, Greenhouse-Geisser yes, Huynh-Feldt
+  \item
+    Do students differ on their test scores? yes no
+  \item
+    Should you perform a planned contrast or post hoc comparison? yes no
+  \item
+    What are the results of the post hoc comparison? N/A - Don't perform All test scores were significantly different from one another All test scores were significantly different from one another except for English and Reading
+  \end{itemize}
+\end{enumerate}
+
+\hypertarget{factorial-anova}{%
+\chapter{Factorial ANOVA}\label{factorial-anova}}
+
+\hypertarget{what-is-factorial-anova}{%
+\section{What is factorial ANOVA?}\label{what-is-factorial-anova}}
+
+Factorial ANOVA allows us to examine two or more independent variables (IVs) simultaneously. There are several types of factorial designs:
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Independent factorial design}: several between-group (independent) IVs
+\item
+  \textbf{Repeated measures factorial design}: several within-group (repeated-measures) IVs
+\item
+  \textbf{Mixed factorial design}: some between-group and some within-group IVs
+\end{itemize}
+
+Furthermore, you may read about ANOVAs referred to as ``one-way'', ``two-way'', ``three-way'' or greater. This simply refers to how many independent variables there are. Factorial ANOVAs are sometimes also referenced by how many groups per IV there are; for example, a 2 x 3 ANOVA is a factorial ANOVA in which the first IV has two conditions and the second IV has three conditions. You would also specify which IVs are between-group and which are within-group. For example, you might write that your design is a 2 (between-subjects: gender) x3 (within-subjects: task) mixed factorial.
+
+We won't be going into too much detail on the different factorial ANOVA designs. Instead, I will walk through illustrative cases so that if you want to apply them in the future you can mimic the procedures below.
+
+\hypertarget{independent-factorial-anova}{%
+\section{Independent Factorial ANOVA}\label{independent-factorial-anova}}
+
+The independent factorial ANOVA has multiple between-group IVs. Let's run an example with data from lsj-data. Open data from your Data Library in ``lsj-data''. Select and open ``rtfm''. This data has two IVs: attend (whether or not the student turned up to lectures) and reading (whether or not the student actually read the textbook). 1 = they did and 0 = they did not.
+
+Because we do not have a within-group IV, we will select the ANOVA analysis. Move grade to your Dependent Variable box and both attend and reading to your Fixed Factors. Select all the same options as you did for the one-way ANOVA (i.e., \(\omega^2\), assumption checks, Tukey's post hoc tests for the two variables attend and reading, estimated marginal means).
+
+Let's go through the output (check that your output matches!) and then discuss how to write up the results in APA format. First, we need to check assumptions. The Levene's test and Shapiro-Wilk's test are shown below. We can see that we meet the assumption of normality but fail to meet the assumption of homogeneity of variance. Unfortunately, we cannot perform a Welch's F-test with more than one independent factorial so we will note this failed assumption and move on.
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{images/06-factorial-anova/independent-factorial_assumptions} 
+
+}
+
+\caption{Assumption check results in jamovi}\label{fig:unnamed-chunk-1}
+\end{figure}
+
+Let's look at the main results next. We got three lines of results in addition to the typical residuals (error). The first two lines are our main effects of \texttt{attend} and \texttt{reading} on grades. The p-values for both are statistically significant indicating attend affects grades and reading affects grades. However, it also added an interaction term of \texttt{attend\ *\ reading}, which is not statistically significant. This means we do not have an interaction between attend and reading on grades. Interactions will be discussed in more detail in the next section.
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{images/06-factorial-anova/independent-factorial_results} 
+
+}
+
+\caption{Independent factorial ANOVA results in jamovi}\label{fig:unnamed-chunk-2}
+\end{figure}
+
+Although we could simply look at the means to know whether attending or reading had higher grades than not attending or not reading because there are only two conditions, we can also look at the post hoc tests and definitely need to look at them if we have three or more conditions per IV. These are shown below. Because the mean differences are negative, we can determine that the second group had higher means than the second group. We can confirm that with the estimated marginal means (not shown here).
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{images/06-factorial-anova/independent-factorial_posthoc} 
+
+}
+
+\caption{Post hoc results in jamovi}\label{fig:unnamed-chunk-3}
+\end{figure}
+
+Last, we can write-up our results!
+
+\begin{quote}
+We were interested in knowing how attendance and reading affected student grades. An independent factorial ANOVA showed that both attendance (\emph{F} {[}1, 4{]} = 18.25, \emph{p} = .013, \(\omega^2\) = .26) and reading (\emph{F} {[}1, 4{]} = 44.17, \emph{p} = .003, \(\omega^2\) = .64) affected student grades; there was no significant interaction between attendance and reading (\emph{F} {[}1, 4{]} = 8.00, \emph{p} = .660, \(\omega^2\) = -.01). Post hoc comparisons using Tukey's HSD show that students who attended lectures (\emph{M} = 75.50, \emph{SE} = 2.98) had higher grades than students who did not (\emph{M}~= 57.50, \emph{SE} = 2.98; \emph{p} = .003, \emph{d} = 4.70); furthermore, students who read (\emph{M} = 80.50, \emph{SE} = 2.98) had higher grades than students who did not (\emph{M} = 52.50, \emph{SE} = 2.98; \emph{p} = .013; \emph{d} = 3.02).
+\end{quote}
+
+\hypertarget{interactions}{%
+\subsection{Interactions}\label{interactions}}
+
+Interactions occur when the effect of one IV on the DV depends on the lvel of the other IV. If you did not want to test for interaction effects, you could remove them from the Model Terms in the Model drop-down menu.
+
+However, by default they will include them. If you have 2-3 IVs, it may be reasonable to look at these interactions. However, 3-variable interactions (e.g., IV1 * IV2 * IV3) are pushing it and 4-variable interactions are highly implausible. Be critical in which interaction terms you include!
+
+jamovi can provide a plot of your interaction, which can be helpful to help interpret your results. Below is the plot for our interaction of attendance on reading.
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{images/06-factorial-anova/independent-factorial_plot} 
+
+}
+
+\caption{Interaction plot in jamovi}\label{fig:unnamed-chunk-4}
+\end{figure}
+
+The parallel lines that are sloping upward tell me there is a significant main effect for both IVs but no interaction. How do I know that? With two variables, there are only so many interaction shapes possible. \href{https://courses.washington.edu/smartpsy/interactions.htm}{This website} does a fantastic time showing you all 8 combinations of the three effects (2 main effects and 1 interaction effect). Spend some time looking through it and familiarizing yourself with the plots!
+
+\hypertarget{repeated-measures-factorial-anova}{%
+\section{Repeated Measures Factorial ANOVA}\label{repeated-measures-factorial-anova}}
+
+This is also sometimes called the two-way (or three-way or n-way, depending on the \emph{n} of IVs you have) repeated measures ANOVA. Let's go through an example repeated measures factorial ANOVA. The dataset is courtesy of \href{https://www.real-statistics.com/anova-repeated-measures/two-within-subjects-factors/}{Real Statistics Using Excel}.
+
+\begin{quote}
+A company has created a new training program for their customer service staff. To test the effectiveness of the program they took a sample of 10 employees and assessed their performance in three areas: ~Product (knowledge of the company's products and services), Client (their ability to relate to the customer with politeness and empathy) and Action (their ability to take action to help the customer). They then had the same 10 employees take the training course and rated their performance after the program in the same three areas. -\href{A\%20company\%20has\%20created\%20a\%20new\%20training\%20program\%20for\%20their\%20customer\%20service\%20staff.\%20To\%20test\%20the\%20effectiveness\%20of\%20the\%20program\%20they\%20took\%20a\%20sample\%20of\%2010\%20employees\%20and\%20assessed\%20their\%20performance\%20in\%20three\%20areas:\%20Product\%20(knowledge\%20of\%20the\%20company’s\%20products\%20and\%20services),\%20Client\%20(their\%20ability\%20to\%20relate\%20to\%20the\%20customer\%20with\%20politeness\%20and\%20empathy)\%20and\%20Action\%20(their\%20ability\%20to\%20take\%20action\%20to\%20help\%20the\%20customer).\%20They\%20then\%20had\%20the\%20same\%2010\%20employees\%20take\%20the\%20training\%20course\%20and\%20rated\%20their\%20performance\%20after\%20the\%20program\%20in\%20the\%20same\%20three\%20areas.\%20Based\%20on\%20the\%20data\%20in\%20Figure\%201,\%20determine\%20whether\%20the\%20program\%20was\%20effective.}{Real Statistics Using Excel}
+\end{quote}
+
+\begin{longtable}[]{@{}lllllll@{}}
+\caption{Dataset for the repeated measures factorial ANOVA}\tabularnewline
+\toprule
+\begin{minipage}[b]{0.05\columnwidth}\raggedright
+ID\strut
+\end{minipage} & \begin{minipage}[b]{0.13\columnwidth}\raggedright
+Pre-Product\strut
+\end{minipage} & \begin{minipage}[b]{0.12\columnwidth}\raggedright
+Pre-Client\strut
+\end{minipage} & \begin{minipage}[b]{0.12\columnwidth}\raggedright
+Pre-Action\strut
+\end{minipage} & \begin{minipage}[b]{0.14\columnwidth}\raggedright
+Post-Product\strut
+\end{minipage} & \begin{minipage}[b]{0.13\columnwidth}\raggedright
+Post-Client\strut
+\end{minipage} & \begin{minipage}[b]{0.13\columnwidth}\raggedright
+Post-Action\strut
+\end{minipage}\tabularnewline
+\midrule
+\endfirsthead
+\toprule
+\begin{minipage}[b]{0.05\columnwidth}\raggedright
+ID\strut
+\end{minipage} & \begin{minipage}[b]{0.13\columnwidth}\raggedright
+Pre-Product\strut
+\end{minipage} & \begin{minipage}[b]{0.12\columnwidth}\raggedright
+Pre-Client\strut
+\end{minipage} & \begin{minipage}[b]{0.12\columnwidth}\raggedright
+Pre-Action\strut
+\end{minipage} & \begin{minipage}[b]{0.14\columnwidth}\raggedright
+Post-Product\strut
+\end{minipage} & \begin{minipage}[b]{0.13\columnwidth}\raggedright
+Post-Client\strut
+\end{minipage} & \begin{minipage}[b]{0.13\columnwidth}\raggedright
+Post-Action\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.05\columnwidth}\raggedright
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\raggedright
+13\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+12\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+17\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedright
+18\strut
+\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\raggedright
+30\strut
+\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\raggedright
+34\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.05\columnwidth}\raggedright
+2\strut
+\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\raggedright
+12\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+19\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+18\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedright
+6\strut
+\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\raggedright
+18\strut
+\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\raggedright
+30\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.05\columnwidth}\raggedright
+3\strut
+\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\raggedright
+17\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+19\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+24\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedright
+21\strut
+\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\raggedright
+31\strut
+\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\raggedright
+32\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.05\columnwidth}\raggedright
+4\strut
+\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\raggedright
+12\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+25\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+25\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedright
+18\strut
+\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\raggedright
+39\strut
+\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\raggedright
+40\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.05\columnwidth}\raggedright
+5\strut
+\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\raggedright
+19\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+27\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+19\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedright
+18\strut
+\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\raggedright
+28\strut
+\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\raggedright
+27\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.05\columnwidth}\raggedright
+6\strut
+\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\raggedright
+6\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+12\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+6\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedright
+6\strut
+\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\raggedright
+18\strut
+\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\raggedright
+23\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.05\columnwidth}\raggedright
+7\strut
+\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\raggedright
+17\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+18\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+30\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedright
+24\strut
+\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\raggedright
+36\strut
+\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\raggedright
+38\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.05\columnwidth}\raggedright
+8\strut
+\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\raggedright
+18\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+29\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+36\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedright
+22\strut
+\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\raggedright
+36\strut
+\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\raggedright
+40\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.05\columnwidth}\raggedright
+9\strut
+\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\raggedright
+23\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+30\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+24\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedright
+18\strut
+\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\raggedright
+38\strut
+\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\raggedright
+32\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.05\columnwidth}\raggedright
+10\strut
+\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\raggedright
+18\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+12\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+24\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedright
+24\strut
+\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\raggedright
+25\strut
+\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\raggedright
+34\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+You can copy-paste the table into Microsoft Excel, save as an .xlsx or .csv file, and import into jamovi to follow-along.
+
+In jamovi, select Repeated Measures ANOVA under the ANOVA analysis option. Here are the general steps:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  In Repeated Measures Factors, you'll need to name both factors. Rename \texttt{RM\ Factor\ 1} to Time and \texttt{RM\ Factor\ 2} to Area. Under Time, specify two levels: Pre and Post. Under Area, specify three levels: Product, Client, and Action.
+\item
+  In Repeated Measures Cells, you'll now have six cells with the combinations of the 6 columns you have. Drag the variable from the left into the correct cell on the right. Be careful here! For example, you need to put the Pre-Product variable into the cell ``Pre, Product''.
+\item
+  Name your dependent variable label ``Performance'' and select `Generalised \(\eta^2\).
+\item
+  Under Assumption Checks, select Sphericity tests
+\item
+  Under Post Hoc Tests, move Area and Time over and select Tukey.
+\item
+  Under Estimated Marginal Means, move Time over into Term 1, Area into Term 2, and both Time and Area into Term 3. Select plots and tables, Observed scores, and Equal cell weights.
+\end{enumerate}
+
+Now let's go over selected output. First, we need to check our assumption of sphericity. All the Mauchly's W's are not statistically significant so we satisfy the assumption of sphericity and do not need to apply any sphericity corrections.
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{images/06-factorial-anova/rm-factorial_assumption} 
+
+}
+
+\caption{Assumption testing in jamovi}\label{fig:unnamed-chunk-5}
+\end{figure}
+
+Next let's look at the within subjects effects table. Remember, we do not need to worry about the between subjects effects table because we do not have one; it will be used in the mixed factorial design below. Overall, we see a significant main effect of area, a significant main effect of time, and a significant interaction effect of both area and time. Neat!
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{images/06-factorial-anova/rm-factorial_results} 
+
+}
+
+\caption{Repeated measures ANOVA in jamovi}\label{fig:unnamed-chunk-6}
+\end{figure}
+
+Next, we can look at post hoc comparisons because the main effects were all statistically significant. For area, we can see that client and action had significantly higher means than product, but there was no difference between client and action. Furthermore, post-intervention performance was significantly higher than pre-intervention.
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{images/06-factorial-anova/rm-factorial_tukey} 
+
+}
+
+\caption{Post hoc tests in jamovi}\label{fig:unnamed-chunk-7}
+\end{figure}
+
+Last, let's look at the interaction to get a sense of what the interaction looks like. It appears that although there are no differences between pre- and post-intervention for product, there are significant differences from pre- to post-intervention for both client and action. To be more specific on where the statistically significant differences are, you can also ask for post hoc tests for the interaction term. This is where including a plot can be very helpful for your audience!
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{images/06-factorial-anova/rm-factorial_interaction} 
+
+}
+
+\caption{Interaction plot in jamovi}\label{fig:unnamed-chunk-8}
+\end{figure}
+
+Now we have everything we need (in addition to the estimated marginal means) and can write-up our results.
+
+\begin{quote}
+We tested a 2 (time: pre- and post-intervention) x 3 (area: product, client, action) repeated measures factorial design to examine how both time and area affected performance. We satisfied the assumption of sphericity for all effects. There was a significant main effect of time (\emph{F} {[}1, 9{]} = 33.85, \emph{p} \textless{} .001, \(\eta^2_G\) = .25) such that performance at post-intervention (\emph{M} = 26.80, \emph{SE} = 1.84) was higher than at pre-intervention (\emph{M} = 19.37, \emph{SE} = 1.84). There was also a significant main effect of area (\emph{F} {[}2, 18{]} = 26.96, \emph{p} \textless{} .001, \(\eta^2_G\) = .36) such that both client (\emph{M} = 25.10, \emph{SE} = 1.95) and action (\emph{M} = 27.65, \emph{SE}~= 19.5) performance was higher than product performance (\emph{M} = 16.50, \emph{SE} = 1.95), but there was no difference between client and action performance. Lastly, there was a significant interaction between time and area such that there were no differences in product performance from pre- to post-intervention but there was for client and action performance (see Figure 1).
+\end{quote}
+
+\hypertarget{mixed-factorial-anova}{%
+\section{Mixed Factorial ANOVA}\label{mixed-factorial-anova}}
+
+Under construction.
 
 \hypertarget{appendix-appendices}{%
 \appendix}
