@@ -1,3 +1,5 @@
+# (PART) t-tests {.unnumbered}
+
 # Independent t-test
 
 ```{r ind-t_setup, echo = FALSE, message=FALSE}
@@ -10,7 +12,24 @@ options(knitr.graphics.auto_pdf = TRUE)
 
 The independent t-test is used to test the difference in our dependent variable between two different groups of observations. Our grouping variable is our independent variable. In other words, we use the independent t-test when we have a research question with a **continuous dependent variable** and a **categorical independent variable with two categories in which different participants are in each category**.
 
-The independent t-test is also the independent samples t-test and the Student's t-test. I will use these terms interchangeably.
+The independent t-test is also called the independent samples t-test and the Student's t-test. I will use these terms interchangeably.
+
+There are three different types of alternative hypotheses we could have for the independent t-test:
+
+1.  **Two-tailed**
+
+    -   $H_1$: Group 1 has a different mean than Group 2.
+    -   $H_0$: There is no difference in means between the two groups.
+
+2.  **One-tailed**
+
+    -   $H_1$: Group 1 has a greater mean than Group 2.
+    -   $H_0$: The mean for Group 1 is less than or equal to the mean for Group 2.
+
+3.  **One-tailed**
+
+    -   $H_1$: Group 1 has a small mean than Group 2.
+    -   $H_0$: The mean for Group 1 is greater than or equal to the mean for Group 2.
 
 ## Data set-up
 
@@ -37,6 +56,10 @@ In the example data above, what is your **dependent variable**? `r mcq(c("ID", "
 
 ## The math behind the independent t-test
 
+```{block, type = "info"}
+If the math below makes your eyes glaze over, you can skip it. This is presented for those who find it useful to understand the math behind the statistics to help understand what's happening.
+```
+
 The basic math of the independent t-test the mean difference divided by the pooled standard error.
 
 $t = \frac{\bar{X}_1 - \bar{X}_2}{SE({\bar{X}_1 - \bar{X}_2})}$
@@ -59,7 +82,7 @@ We cannot [test]{.ul} the third and fourth assumptions; rather, those are based 
 
 However, we can and should test for the first two assumptions. Fortunately, the independent samples t-test in jamovi has two check boxes under "Assumption Checks" that lets us test for both assumptions.
 
-## In jamovi
+## Performing the independent t-test in jamovi
 
 Let's run an example with data from lsj-data. Open data from your Data Library in "lsj-data". Select and open "Harpo". This dataset is hypothetical data of 33 students taking Dr. Harpo's statistics lectures. We have two tutors for the class, Anastasia (*n* = 15) and Bernadette (*n* = 18). Our research question is "Which tutor results in better student grades?" We don't have a hypothesis that one does better than the other.
 
@@ -81,9 +104,9 @@ When you are done, your setup should look like this
 knitr::include_graphics("images/02-independent_t-test/independent_t-test_setup.png")
 ```
 
-### Checking assumptions in jamovi
+## Checking assumptions in jamovi
 
-#### Testing normality
+### Testing normality
 
 We test for normality using the Shapiro-Wilk test and the Q-Q plot. The Shapiro-Wilk test was not statistically significant (W = .98, *p* = .827); therefore, this indicates the data is normally distributed. Furthermore, the lines are fairly close to the diagonal line in the Q-Q plot. We can conclude that we satisfy the assumption of normality.
 
@@ -91,7 +114,9 @@ We test for normality using the Shapiro-Wilk test and the Q-Q plot. The Shapiro-
 knitr::include_graphics("images/02-independent_t-test/independent_t-test_normality.png")
 ```
 
-#### Testing homogeneity of variance
+Remember that we also test for normality by **looking at our data** (e.g., a histogram) and by examining **skew and kurtosis**. However, you will need to view them using Exploration --\> Descriptives, not in the t-tests menu.
+
+### Testing homogeneity of variance
 
 We test for homogeneity of variance using the Levene's test. The Levene's test was not statistically significant (*F* [1, 31] = 2.49, *p* = .125); therefore, this indicates our data satisfies the assumption of homogeneity of variance. However, I would add a caveat that we have a small sample of data (*n* = 15 for Anastasia and *n* = 18 for Bernadette) and the standard deviations are quite different from one another (SD = 9.00 vs 5.77, respectively). We should have tried to collect more data.
 
@@ -99,7 +124,7 @@ We test for homogeneity of variance using the Levene's test. The Levene's test w
 knitr::include_graphics("images/02-independent_t-test/independent_t-test_homogeneity.png")
 ```
 
-### Interpreting results
+## Interpreting results
 
 Once we are satisfied we have satisfied the assumptions for the independent t-test, we can interpret our results.
 
@@ -134,17 +159,18 @@ One last note: this positive or negative t-statistic is only relevant for the in
 
 ### What if I violated assumptions?
 
-The great news is that jamovi includes the Welch's t-statistic and the non-parametric version of the independent t-test (Mann-Whitney U)! The Welch's t-test has three main differences from the independent samples t-test: (a) the standard error (SE) is not a pooled estimate, (b) the degrees of freedom are calculated very different (not *N* - 2), and (c) it does not have an assumption of homogeneity of variance. The Mann-Whitney U is not calculated based on the mean but rather the median and compares ranks of values across the two groups: it has no assumptions about the distribution of data or homogeneity of variances.
+The great news is that jamovi includes the Welch's t-statistic and the non-parametric version of the independent t-test (Mann-Whitney U)!
+
+The Welch's t-test has three main differences from the independent samples t-test: (a) the standard error (SE) is not a pooled estimate, (b) the degrees of freedom are calculated very different (not *N* - 2), and (c) it does not have an assumption of homogeneity of variance. Note that Welch's t-test is not a non-parametric test because it still has the assumption of a normal distribution.
+
+The Mann-Whitney U is not calculated based on the mean but rather the median and compares ranks of values across the two groups: it has no assumptions about the distribution of data or homogeneity of variances.
 
 Here's what statistic you should choose based on satisfying assumptions:
 
-+--------------------------------------------+----------------------------+------------------------------+
 |                                            | **Normality: satisfied**   | **Normality: not satisfied** |
-+============================================+============================+==============================+
+|--------------------------------------------|----------------------------|------------------------------|
 | **Homogeneity of Variance: satisfied**     | independent samples t-test | Mann-Whitney U               |
-+--------------------------------------------+----------------------------+------------------------------+
 | **Homogeneity of Variance: not satisfied** | Welch's t-test             | Mann-Whitney U               |
-+--------------------------------------------+----------------------------+------------------------------+
 
 Here is what the output for all three tests look like:
 

@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 6 Factorial ANOVA | Statistics with jamovi</title>
+  <title>Chapter 7 ANCOVA | Statistics with jamovi</title>
   <meta name="description" content="This is the website for PSYC 290 and PSYC 790 at the University of Wisconsin-Stout, taught by Dana Wanzer." />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 6 Factorial ANOVA | Statistics with jamovi" />
+  <meta property="og:title" content="Chapter 7 ANCOVA | Statistics with jamovi" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 6 Factorial ANOVA | Statistics with jamovi" />
+  <meta name="twitter:title" content="Chapter 7 ANCOVA | Statistics with jamovi" />
   
   <meta name="twitter:description" content="This is the website for PSYC 290 and PSYC 790 at the University of Wisconsin-Stout, taught by Dana Wanzer." />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="repeated-measures-anova.html"/>
-<link rel="next" href="ancova.html"/>
+<link rel="prev" href="factorial-anova.html"/>
+<link rel="next" href="references.html"/>
 <script src="libs/header-attrs-2.5/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -204,24 +204,15 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="factorial-anova" class="section level1" number="6">
-<h1><span class="header-section-number">Chapter 6</span> Factorial ANOVA</h1>
-<div id="what-is-factorial-anova" class="section level2" number="6.1">
-<h2><span class="header-section-number">6.1</span> What is factorial ANOVA?</h2>
-<p>Factorial ANOVA allows us to examine two or more independent variables (IVs) simultaneously. There are several types of factorial designs:</p>
-<ul>
-<li><strong>Independent factorial design</strong>: several between-group (independent) IVs</li>
-<li><strong>Repeated measures factorial design</strong>: several within-group (repeated-measures) IVs</li>
-<li><strong>Mixed factorial design</strong>: some between-group and some within-group IVs</li>
-</ul>
-<p>Furthermore, you may read about ANOVAs referred to as “one-way,” “two-way,” “three-way” or greater. This simply refers to how many independent variables there are. Factorial ANOVAs are sometimes also referenced by how many groups per IV there are; for example, a 2 x 3 ANOVA is a factorial ANOVA in which the first IV has two conditions and the second IV has three conditions. You would also specify which IVs are between-group and which are within-group. For example, you might write that your design is a 2 (between-subjects: gender) x3 (within-subjects: task) mixed factorial.</p>
-<p>We won’t be going into too much detail on the different factorial ANOVA designs. Instead, I will walk through illustrative cases so that if you want to apply them in the future you can mimic the procedures below.</p>
+<div id="ancova" class="section level1" number="7">
+<h1><span class="header-section-number">Chapter 7</span> ANCOVA</h1>
+<div id="what-is-ancova" class="section level2" number="7.1">
+<h2><span class="header-section-number">7.1</span> What is ANCOVA?</h2>
+<p>Under Construction</p>
 </div>
-<div id="independent-factorial-anova" class="section level2" number="6.2">
-<h2><span class="header-section-number">6.2</span> Independent Factorial ANOVA</h2>
-<p>The independent factorial ANOVA has multiple between-group IVs. Let’s run an example with data from lsj-data. Open data from your Data Library in “lsj-data.” Select and open “rtfm.” This data has two IVs: attend (whether or not the student turned up to lectures) and reading (whether or not the student actually read the textbook). 1 = they did and 0 = they did not.</p>
-<p>Because we do not have a within-group IV, we will select the ANOVA analysis. Move grade to your Dependent Variable box and both attend and reading to your Fixed Factors. Select all the same options as you did for the one-way ANOVA (i.e., <span class="math inline">\(\omega^2\)</span>, assumption checks, Tukey’s post hoc tests for the two variables attend and reading, estimated marginal means).</p>
-<p>Let’s go through the output (check that your output matches!) and then discuss how to write up the results in APA format. First, we need to check assumptions. The Levene’s test and Shapiro-Wilk’s test are shown below. We can see that we meet the assumption of normality but fail to meet the assumption of homogeneity of variance. Unfortunately, we cannot perform a Welch’s F-test with more than one independent factorial so we will note this failed assumption and move on.</p>
+<div id="ancova-in-jamovi" class="section level2" number="7.2">
+<h2><span class="header-section-number">7.2</span> ANCOVA in jamovi</h2>
+<p>Under Construction</p>
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-1"></span>
 <img src="images/06-factorial-anova/independent-factorial_assumptions.png" alt="Assumption check results in jamovi" width="100%" />
 <p class="caption">
@@ -246,236 +237,12 @@ Figure 2.2: Post hoc results in jamovi
 <blockquote>
 <p>We were interested in knowing how attendance and reading affected student grades. An independent factorial ANOVA showed that both attendance (<em>F</em> [1, 4] = 18.25, <em>p</em> = .013, <span class="math inline">\(\omega^2\)</span> = .26) and reading (<em>F</em> [1, 4] = 44.17, <em>p</em> = .003, <span class="math inline">\(\omega^2\)</span> = .64) affected student grades; there was no significant interaction between attendance and reading (<em>F</em> [1, 4] = 8.00, <em>p</em> = .660, <span class="math inline">\(\omega^2\)</span> = -.01). Post hoc comparisons using Tukey’s HSD show that students who attended lectures (<em>M</em> = 75.50, <em>SE</em> = 2.98) had higher grades than students who did not (<em>M</em> = 57.50, <em>SE</em> = 2.98; <em>p</em> = .003, <em>d</em> = 4.70); furthermore, students who read (<em>M</em> = 80.50, <em>SE</em> = 2.98) had higher grades than students who did not (<em>M</em> = 52.50, <em>SE</em> = 2.98; <em>p</em> = .013; <em>d</em> = 3.02).</p>
 </blockquote>
-<div id="interactions" class="section level3" number="6.2.1">
-<h3><span class="header-section-number">6.2.1</span> Interactions</h3>
-<p>Interactions occur when the effect of one IV on the DV depends on the lvel of the other IV. If you did not want to test for interaction effects, you could remove them from the Model Terms in the Model drop-down menu.</p>
-<p>However, by default they will include them. If you have 2-3 IVs, it may be reasonable to look at these interactions. However, 3-variable interactions (e.g., IV1 * IV2 * IV3) are pushing it and 4-variable interactions are highly implausible. Be critical in which interaction terms you include!</p>
-<p>jamovi can provide a plot of your interaction, which can be helpful to help interpret your results. Below is the plot for our interaction of attendance on reading.</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-4"></span>
-<img src="images/06-factorial-anova/independent-factorial_plot.png" alt="Interaction plot in jamovi" width="100%" />
-<p class="caption">
-Figure 2.3: Interaction plot in jamovi
-</p>
-</div>
-<p>The parallel lines that are sloping upward tell me there is a significant main effect for both IVs but no interaction. How do I know that? With two variables, there are only so many interaction shapes possible. <a href="https://courses.washington.edu/smartpsy/interactions.htm">This website</a> does a fantastic time showing you all 8 combinations of the three effects (2 main effects and 1 interaction effect). Spend some time looking through it and familiarizing yourself with the plots!</p>
-</div>
-</div>
-<div id="repeated-measures-factorial-anova" class="section level2" number="6.3">
-<h2><span class="header-section-number">6.3</span> Repeated Measures Factorial ANOVA</h2>
-<p>This is also sometimes called the two-way (or three-way or n-way, depending on the <em>n</em> of IVs you have) repeated measures ANOVA. Let’s go through an example repeated measures factorial ANOVA. The dataset is courtesy of <a href="https://www.real-statistics.com/anova-repeated-measures/two-within-subjects-factors/">Real Statistics Using Excel</a>.</p>
-<blockquote>
-<p>A company has created a new training program for their customer service staff. To test the effectiveness of the program they took a sample of 10 employees and assessed their performance in three areas:  Product (knowledge of the company’s products and services), Client (their ability to relate to the customer with politeness and empathy) and Action (their ability to take action to help the customer). They then had the same 10 employees take the training course and rated their performance after the program in the same three areas. -<a href="A%20company%20has%20created%20a%20new%20training%20program%20for%20their%20customer%20service%20staff.%20To%20test%20the%20effectiveness%20of%20the%20program%20they%20took%20a%20sample%20of%2010%20employees%20and%20assessed%20their%20performance%20in%20three%20areas:%20Product%20(knowledge%20of%20the%20company’s%20products%20and%20services),%20Client%20(their%20ability%20to%20relate%20to%20the%20customer%20with%20politeness%20and%20empathy)%20and%20Action%20(their%20ability%20to%20take%20action%20to%20help%20the%20customer).%20They%20then%20had%20the%20same%2010%20employees%20take%20the%20training%20course%20and%20rated%20their%20performance%20after%20the%20program%20in%20the%20same%20three%20areas.%20Based%20on%20the%20data%20in%20Figure%201,%20determine%20whether%20the%20program%20was%20effective.">Real Statistics Using Excel</a></p>
-</blockquote>
-<table style="width:100%;">
-<caption>Dataset for the repeated measures factorial ANOVA</caption>
-<colgroup>
-<col width="5%" />
-<col width="15%" />
-<col width="14%" />
-<col width="14%" />
-<col width="17%" />
-<col width="15%" />
-<col width="15%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>ID</th>
-<th>Pre-Product</th>
-<th>Pre-Client</th>
-<th>Pre-Action</th>
-<th>Post-Product</th>
-<th>Post-Client</th>
-<th>Post-Action</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>1</td>
-<td>13</td>
-<td>12</td>
-<td>17</td>
-<td>18</td>
-<td>30</td>
-<td>34</td>
-</tr>
-<tr class="even">
-<td>2</td>
-<td>12</td>
-<td>19</td>
-<td>18</td>
-<td>6</td>
-<td>18</td>
-<td>30</td>
-</tr>
-<tr class="odd">
-<td>3</td>
-<td>17</td>
-<td>19</td>
-<td>24</td>
-<td>21</td>
-<td>31</td>
-<td>32</td>
-</tr>
-<tr class="even">
-<td>4</td>
-<td>12</td>
-<td>25</td>
-<td>25</td>
-<td>18</td>
-<td>39</td>
-<td>40</td>
-</tr>
-<tr class="odd">
-<td>5</td>
-<td>19</td>
-<td>27</td>
-<td>19</td>
-<td>18</td>
-<td>28</td>
-<td>27</td>
-</tr>
-<tr class="even">
-<td>6</td>
-<td>6</td>
-<td>12</td>
-<td>6</td>
-<td>6</td>
-<td>18</td>
-<td>23</td>
-</tr>
-<tr class="odd">
-<td>7</td>
-<td>17</td>
-<td>18</td>
-<td>30</td>
-<td>24</td>
-<td>36</td>
-<td>38</td>
-</tr>
-<tr class="even">
-<td>8</td>
-<td>18</td>
-<td>29</td>
-<td>36</td>
-<td>22</td>
-<td>36</td>
-<td>40</td>
-</tr>
-<tr class="odd">
-<td>9</td>
-<td>23</td>
-<td>30</td>
-<td>24</td>
-<td>18</td>
-<td>38</td>
-<td>32</td>
-</tr>
-<tr class="even">
-<td>10</td>
-<td>18</td>
-<td>12</td>
-<td>24</td>
-<td>24</td>
-<td>25</td>
-<td>34</td>
-</tr>
-</tbody>
-</table>
-<p>You can copy-paste the table into Microsoft Excel, save as an .xlsx or .csv file, and import into jamovi to follow-along.</p>
-<p>In jamovi, select Repeated Measures ANOVA under the ANOVA analysis option. Here are the general steps:</p>
-<ol style="list-style-type: decimal">
-<li><p>In Repeated Measures Factors, you’ll need to name both factors. Rename <code>RM Factor 1</code> to Time and <code>RM Factor 2</code> to Area. Under Time, specify two levels: Pre and Post. Under Area, specify three levels: Product, Client, and Action.</p></li>
-<li><p>In Repeated Measures Cells, you’ll now have six cells with the combinations of the 6 columns you have. Drag the variable from the left into the correct cell on the right. Be careful here! For example, you need to put the Pre-Product variable into the cell “Pre, Product.”</p></li>
-<li><p>Name your dependent variable label “Performance” and select `Generalised <span class="math inline">\(\eta^2\)</span>.</p></li>
-<li><p>Under Assumption Checks, select Sphericity tests</p></li>
-<li><p>Under Post Hoc Tests, move Area and Time over and select Tukey.</p></li>
-<li><p>Under Estimated Marginal Means, move Time over into Term 1, Area into Term 2, and both Time and Area into Term 3. Select plots and tables, Observed scores, and Equal cell weights.</p></li>
-</ol>
-<p>Now let’s go over selected output. First, we need to check our assumption of sphericity. All the Mauchly’s W’s are not statistically significant so we satisfy the assumption of sphericity and do not need to apply any sphericity corrections.</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-5"></span>
-<img src="images/06-factorial-anova/rm-factorial_assumption.png" alt="Assumption testing in jamovi" width="100%" />
-<p class="caption">
-Figure 2.4: Assumption testing in jamovi
-</p>
-</div>
-<p>Next let’s look at the within subjects effects table. Remember, we do not need to worry about the between subjects effects table because we do not have one; it will be used in the mixed factorial design below. Overall, we see a significant main effect of area, a significant main effect of time, and a significant interaction effect of both area and time. Neat!</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-6"></span>
-<img src="images/06-factorial-anova/rm-factorial_results.png" alt="Repeated measures ANOVA in jamovi" width="100%" />
-<p class="caption">
-Figure 2.5: Repeated measures ANOVA in jamovi
-</p>
-</div>
-<p>Next, we can look at post hoc comparisons because the main effects were all statistically significant. For area, we can see that client and action had significantly higher means than product, but there was no difference between client and action. Furthermore, post-intervention performance was significantly higher than pre-intervention.</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-7"></span>
-<img src="images/06-factorial-anova/rm-factorial_tukey.png" alt="Post hoc tests in jamovi" width="100%" />
-<p class="caption">
-Figure 4.1: Post hoc tests in jamovi
-</p>
-</div>
-<p>Last, let’s look at the interaction to get a sense of what the interaction looks like. It appears that although there are no differences between pre- and post-intervention for product, there are significant differences from pre- to post-intervention for both client and action. To be more specific on where the statistically significant differences are, you can also ask for post hoc tests for the interaction term. This is where including a plot can be very helpful for your audience!</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-8"></span>
-<img src="images/06-factorial-anova/rm-factorial_interaction.png" alt="Interaction plot in jamovi" width="100%" />
-<p class="caption">
-Figure 4.2: Interaction plot in jamovi
-</p>
-</div>
-<p>Now we have everything we need (in addition to the estimated marginal means) and can write-up our results.</p>
-<blockquote>
-<p>We tested a 2 (time: pre- and post-intervention) x 3 (area: product, client, action) repeated measures factorial design to examine how both time and area affected performance. We satisfied the assumption of sphericity for all effects. There was a significant main effect of time (<em>F</em> [1, 9] = 33.85, <em>p</em> &lt; .001, <span class="math inline">\(\eta^2_G\)</span> = .25) such that performance at post-intervention (<em>M</em> = 26.80, <em>SE</em> = 1.84) was higher than at pre-intervention (<em>M</em> = 19.37, <em>SE</em> = 1.84). There was also a significant main effect of area (<em>F</em> [2, 18] = 26.96, <em>p</em> &lt; .001, <span class="math inline">\(\eta^2_G\)</span> = .36) such that both client (<em>M</em> = 25.10, <em>SE</em> = 1.95) and action (<em>M</em> = 27.65, <em>SE</em> = 19.5) performance was higher than product performance (<em>M</em> = 16.50, <em>SE</em> = 1.95), but there was no difference between client and action performance. Lastly, there was a significant interaction between time and area such that there were no differences in product performance from pre- to post-intervention but there was for client and action performance (see Figure 1).</p>
-</blockquote>
-</div>
-<div id="mixed-factorial-anova" class="section level2" number="6.4">
-<h2><span class="header-section-number">6.4</span> Mixed Factorial ANOVA</h2>
-<p>Download the data for this analysis here:</p>
-<p>This dataset comes from a larger studying examining the effect of a delayed reward preference of three commodities (food, money, and music) on food cravings (as rated by the Food Craving Questionnaire [FCQ]) for each participant. Participants were in one of two conditions: the control condition did not do anything and the experimental condition had participants do the tasks while fasting.</p>
-<p>Therefore, this study is a 2 (between-subjects: condition [control or fasting]) x 3 (within-subjects: reward [food, money, and music]) mixed factorial design.</p>
-<p>To perform a mixed factorial ANOVA, we use the same procedures as the repeated measures ANOVA but we also need to add a between-subjects factor.</p>
-<ol style="list-style-type: decimal">
-<li><p>To perform a mixed factorial ANOVA in jamovi, go to the Analyses tab, click the ANOVA button, and choose “Repeated Measures ANOVA.”</p></li>
-<li><p>Under “Repeated Measures Factors” name your independent variable. In this case you can name it “Reward.” Rename the three levels of Task: Food, Money, and Music.</p></li>
-<li><p>Under “Repeated Measures Cells” move the given variable into the correct level. For example, you’ll move FQ_1 to Food, FQ_2 to Money, and FQ_3 to Music.</p></li>
-<li><p>Under “Between Subject Factors” add your between-subjects variable "condition.</p></li>
-<li><p>Select Generalised <span class="math inline">\(\eta^2\)</span> as your measure of effect size.</p></li>
-<li><p>In the Assumption Checks drop-down menu, select <code>Sphericity tests</code>.</p></li>
-<li><p>In the Post Hoc Tests drop-down menu, move your two independent variables over and select <code>Tukey</code>. Remember that we only interpret these if the overall <em>F</em> is statistically significant.</p></li>
-<li><p>In the Estimated Marginal Means drop-down menu, move Reward, Condition, and both reward and condition into the terms under Marginal Means. Select tables and plots, and select <code>Observed scores</code>. Uncheck <code>Equal cell weights</code>.</p></li>
-</ol>
-<p>Now let’s go through the output!</p>
-<p>First, as always we check our assumption of sphericity. Mauchly’s W is not statistically significant (<em>p</em> = .073) so we satisfy the assumption of sphericity. We do not need to apply a sphericity correction.</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-9"></span>
-<img src="images/06-factorial-anova/mixed_assumptions.png" alt="Assumption checking in jamovi" width="100%" />
-<p class="caption">
-Figure 4.3: Assumption checking in jamovi
-</p>
-</div>
-<p>Next, we interpret out output! This time we interpret both our within subjects effects and between subjects effects tables. In the within subjects effects table, our main effect of reward is statistically significant. In the between subjects effects table, our main effect of condition is statistically significant. However, in the within subjects effects table, there is no statistically significant interaction effect of reward on condition.</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-10"></span>
-<img src="images/06-factorial-anova/mixed_results.png" alt="Mixed factorial ANOVA in jamovi" width="100%" />
-<p class="caption">
-Figure 4.4: Mixed factorial ANOVA in jamovi
-</p>
-</div>
-<p>To understand where the differences lie between conditions or reward preferences, we look to our post hoc tests. For reward, it looks like there is only a significant difference between food and music (<em>p</em> = .009). For condition, it looks like cravings were higher in the fasting group than in the control group. We can look at the estimated marginal means tables to find the actual Means of the conditions and see the plots.</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-11"></span>
-<img src="images/06-factorial-anova/mixed_posthoc.png" alt="Post hoc tests in jamovi" width="100%" />
-<p class="caption">
-Figure 4.5: Post hoc tests in jamovi
-</p>
-</div>
-<p>We can look at the interaction plot, but notice that the lines are parallel which is a good indication that there is no significant interaction.</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-12"></span>
-<img src="images/06-factorial-anova/mixed_interaction.png" alt="Interaction plot in jamovi" width="100%" />
-<p class="caption">
-Figure 4.6: Interaction plot in jamovi
-</p>
-</div>
-<p>Lastly, we can write up the results in APA style!</p>
-<blockquote>
-<p>To test how both condition (control or fasting) and reward preference (food, money, and music) affected food cravings, we performed a mixed factorial ANOVA. There was a significant main effect of condition (<em>F</em> [2, 196] = 4.45, <em>p</em> = .013, <span class="math inline">\(\eta^2_G\)</span> = .00) and a significant main effect of reward (<em>F</em> [1, 98] = 82.44, <em>p</em> &lt; .001, <span class="math inline">\(\eta^2_G\)</span> = .43). However, there was no statistically significant interaction effect of reward on condition (<em>F</em> [2, 196] = .66, <em>p</em> = .519, <span class="math inline">\(\eta^2_G\)</span> = .00).</p>
-<p>For condition, participants who fasted (<em>M</em> = 3.81, <em>SE</em> = .11) reported significantly more food cravings than participants in the control condition (<em>M</em> = 2.33, <em>SE</em> = .11; <span class="math inline">\(p_{Tukey}\)</span> &lt; .001). For reward, the food reward (<em>M</em> = 3.14, <em>SE</em> = .09) led to significantly higher food cravings than the music reward (<em>M</em> = 3.00, <em>SE</em> = .09; <span class="math inline">\(p_{Tukey}\)</span> = .009), but there was no differences between the money reward (<em>M</em> = 3.07, <em>SE</em> = .09) and both food (<span class="math inline">\(p_{Tukey}\)</span> = .340) or music (<span class="math inline">\(p_{Tukey}\)</span> = .258).</p>
-</blockquote>
 
 </div>
+</div>
+
+
+
 </div>
 <div class="psyteachr_footer">
   
@@ -567,8 +334,8 @@ window.onload = function() {
           </div>
         </div>
       </div>
-<a href="repeated-measures-anova.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="ancova.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="factorial-anova.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

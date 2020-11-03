@@ -1,3 +1,5 @@
+# (PART) ANOVA {.unnumbered}
+
 # One-way ANOVA
 
 ```{r ind-t_setup, echo = FALSE, message=FALSE}
@@ -12,7 +14,10 @@ The one-way analysis of variance (ANOVA) is used to test the difference in our d
 
 The one-way ANOVA is also known as an independent factor ANOVA.
 
-One thing to keep in mind is the one-way ANOVA is an omnibus statistic that tests against the null hypothesis that the three or more means are the same. It does not tell us where the mean differences are (e.g., that 1 \> 2); for that, we need planned contrasts or post-hoc procedures, which you'll learn about later.
+One thing to keep in mind is the one-way ANOVA is an omnibus statistic that tests against the null hypothesis that the three or more means are the same. It does not tell us where the mean differences are (e.g., that 1 \> 2); for that, we need planned contrasts or post-hoc procedures, which you'll learn about later. Therefore, the null and alternative hypotheses for the one-way ANOVA are as follows:
+
+-   $H_0$: There is **no difference** in means between the groups. In other words, the means for the three or more groups are the **same**.
+-   $H_1$: There is **a difference** in means between the groups. In other words, the means for the three or more groups are **different**.
 
 ## Data set-up
 
