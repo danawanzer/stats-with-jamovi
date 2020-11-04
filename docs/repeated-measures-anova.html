@@ -123,7 +123,7 @@
 <ul>
 <li class="chapter" data-level="4.4.1" data-path="one-way-anova.html"><a href="one-way-anova.html#an-example-with-the-math"><i class="fa fa-check"></i><b>4.4.1</b> An example with the math</a></li>
 </ul></li>
-<li class="chapter" data-level="4.5" data-path="one-way-anova.html"><a href="one-way-anova.html#assumptions-2"><i class="fa fa-check"></i><b>4.5</b> Assumptions</a>
+<li class="chapter" data-level="4.5" data-path="one-way-anova.html"><a href="one-way-anova.html#anova-assumptions"><i class="fa fa-check"></i><b>4.5</b> Assumptions</a>
 <ul>
 <li class="chapter" data-level="4.5.1" data-path="one-way-anova.html"><a href="one-way-anova.html#anova-is-robust-to-violations"><i class="fa fa-check"></i><b>4.5.1</b> ANOVA is robust to violations</a></li>
 </ul></li>
@@ -151,7 +151,7 @@
 <li class="chapter" data-level="5.1" data-path="repeated-measures-anova.html"><a href="repeated-measures-anova.html#what-is-the-repeated-measures-anova"><i class="fa fa-check"></i><b>5.1</b> What is the repeated measures ANOVA?</a></li>
 <li class="chapter" data-level="5.2" data-path="repeated-measures-anova.html"><a href="repeated-measures-anova.html#data-set-up-3"><i class="fa fa-check"></i><b>5.2</b> Data set-up</a></li>
 <li class="chapter" data-level="5.3" data-path="repeated-measures-anova.html"><a href="repeated-measures-anova.html#the-math-behind-the-repeated-measures-anova"><i class="fa fa-check"></i><b>5.3</b> The math behind the repeated measures ANOVA</a></li>
-<li class="chapter" data-level="5.4" data-path="repeated-measures-anova.html"><a href="repeated-measures-anova.html#assumptions-3"><i class="fa fa-check"></i><b>5.4</b> Assumptions</a>
+<li class="chapter" data-level="5.4" data-path="repeated-measures-anova.html"><a href="repeated-measures-anova.html#assumptions-2"><i class="fa fa-check"></i><b>5.4</b> Assumptions</a>
 <ul>
 <li class="chapter" data-level="5.4.1" data-path="repeated-measures-anova.html"><a href="repeated-measures-anova.html#sphericity-assumption"><i class="fa fa-check"></i><b>5.4.1</b> Sphericity Assumption</a></li>
 </ul></li>
@@ -177,7 +177,8 @@
 <li class="chapter" data-level="7" data-path="ancova.html"><a href="ancova.html"><i class="fa fa-check"></i><b>7</b> ANCOVA</a>
 <ul>
 <li class="chapter" data-level="7.1" data-path="ancova.html"><a href="ancova.html#what-is-ancova"><i class="fa fa-check"></i><b>7.1</b> What is ANCOVA?</a></li>
-<li class="chapter" data-level="7.2" data-path="ancova.html"><a href="ancova.html#ancova-in-jamovi"><i class="fa fa-check"></i><b>7.2</b> ANCOVA in jamovi</a></li>
+<li class="chapter" data-level="7.2" data-path="ancova.html"><a href="ancova.html#assumptions-of-ancova"><i class="fa fa-check"></i><b>7.2</b> Assumptions of ANCOVA</a></li>
+<li class="chapter" data-level="7.3" data-path="ancova.html"><a href="ancova.html#ancova-in-jamovi"><i class="fa fa-check"></i><b>7.3</b> ANCOVA in jamovi</a></li>
 </ul></li>
 <li class="appendix"><span><b>Appendices</b></span></li>
 <li class="chapter" data-level="A" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>A</b> References</a></li>
@@ -228,14 +229,8 @@ Figure 2.1: Repeated measures ANOVA by Conditions
 <div id="data-set-up-3" class="section level2" number="5.2">
 <h2><span class="header-section-number">5.2</span> Data set-up</h2>
 <p>To conduct the repeated measures ANOVA, we first need to ensure our data is set-up properly in our dataset. This requires having two columns: one with our continuous dependent variable and one indicating which group the participant is in. Each row is a unique participant or unit of analysis. Here’s what example data may look like if we were testing for differences in a test score by students in my fall, spring, or summer semesters of my course in which three participants are in each of my three courses.</p>
-<table style="width:46%;">
+<table>
 <caption>Example data for the repeated measures ANOVA</caption>
-<colgroup>
-<col width="8%" />
-<col width="12%" />
-<col width="12%" />
-<col width="12%" />
-</colgroup>
 <thead>
 <tr class="header">
 <th align="left">ID</th>
@@ -281,7 +276,7 @@ Figure 2.2: Repeated measures ANOVA by Time
 </div>
 <p>I won’t go into any more detail on the math of the repeated measures ANOVA, but you can read more on Laerd Statistics <a href="https://statistics.laerd.com/statistical-guides/repeated-measures-anova-statistical-guide-2.php">guide for the repeated measures ANOVA</a>.</p>
 </div>
-<div id="assumptions-3" class="section level2" number="5.4">
+<div id="assumptions-2" class="section level2" number="5.4">
 <h2><span class="header-section-number">5.4</span> Assumptions</h2>
 <p>As a parametric test, the repeated measures ANOVA has the same assumptions as other parametric tests:</p>
 <ol style="list-style-type: decimal">

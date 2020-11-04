@@ -135,7 +135,7 @@ $F = \frac{MS_{BG}}{MS_{WG}} = \frac{1.726}{.0928} = 18.60$
 
 Compare to the $F$, $df_{WG}$, and $df_{BG}$ in the output below in jamovi! Notice how close we are. Also notice how many decimals I retained throughout the analyses. I was a bit off when I first did this with only two decimals throughout. Retaining four decimals throughout got me only \~one-hundredth of a decimal off from the actual results. Neat!
 
-## Assumptions
+## Assumptions  {#anova-assumptions}
 
 As a parametric test, the one-way ANOVA has the same assumptions as other parametric tests:
 

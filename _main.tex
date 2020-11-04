@@ -112,7 +112,7 @@
 
 \title{Statistics with jamovi}
 \author{Dana Wanzer}
-\date{Last Update: 2020-11-03}
+\date{Last Update: 2020-11-04}
 
 \begin{document}
 \maketitle
@@ -908,8 +908,8 @@ Now all that's left is to calculate \(F\)!
 
 Compare to the \(F\), \(df_{WG}\), and \(df_{BG}\) in the output below in jamovi! Notice how close we are. Also notice how many decimals I retained throughout the analyses. I was a bit off when I first did this with only two decimals throughout. Retaining four decimals throughout got me only \textasciitilde one-hundredth of a decimal off from the actual results. Neat!
 
-\hypertarget{assumptions-2}{%
-\section{Assumptions}\label{assumptions-2}}
+\hypertarget{anova-assumptions}{%
+\section{Assumptions}\label{anova-assumptions}}
 
 As a parametric test, the one-way ANOVA has the same assumptions as other parametric tests:
 
@@ -1367,56 +1367,16 @@ To conduct the repeated measures ANOVA, we first need to ensure our data is set-
 \begin{longtable}[]{@{}llll@{}}
 \caption{Example data for the repeated measures ANOVA}\tabularnewline
 \toprule
-\begin{minipage}[b]{0.07\columnwidth}\raggedright
-ID\strut
-\end{minipage} & \begin{minipage}[b]{0.11\columnwidth}\raggedright
-Fall\strut
-\end{minipage} & \begin{minipage}[b]{0.11\columnwidth}\raggedright
-Spring\strut
-\end{minipage} & \begin{minipage}[b]{0.11\columnwidth}\raggedright
-Summer\strut
-\end{minipage}\tabularnewline
+ID & Fall & Spring & Summer\tabularnewline
 \midrule
 \endfirsthead
 \toprule
-\begin{minipage}[b]{0.07\columnwidth}\raggedright
-ID\strut
-\end{minipage} & \begin{minipage}[b]{0.11\columnwidth}\raggedright
-Fall\strut
-\end{minipage} & \begin{minipage}[b]{0.11\columnwidth}\raggedright
-Spring\strut
-\end{minipage} & \begin{minipage}[b]{0.11\columnwidth}\raggedright
-Summer\strut
-\end{minipage}\tabularnewline
+ID & Fall & Spring & Summer\tabularnewline
 \midrule
 \endhead
-\begin{minipage}[t]{0.07\columnwidth}\raggedright
-1\strut
-\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\raggedright
-86\strut
-\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\raggedright
-79\strut
-\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\raggedright
-90\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.07\columnwidth}\raggedright
-2\strut
-\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\raggedright
-80\strut
-\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\raggedright
-82\strut
-\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\raggedright
-72\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.07\columnwidth}\raggedright
-3\strut
-\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\raggedright
-75\strut
-\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\raggedright
-84\strut
-\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\raggedright
-75\strut
-\end{minipage}\tabularnewline
+1 & 86 & 79 & 90\tabularnewline
+2 & 80 & 82 & 72\tabularnewline
+3 & 75 & 84 & 75\tabularnewline
 \bottomrule
 \end{longtable}
 
@@ -1444,8 +1404,8 @@ So whereas our denominator in the one-way ANOVA has \(SS_{WG}\), our denominator
 
 I won't go into any more detail on the math of the repeated measures ANOVA, but you can read more on Laerd Statistics \href{https://statistics.laerd.com/statistical-guides/repeated-measures-anova-statistical-guide-2.php}{guide for the repeated measures ANOVA}.
 
-\hypertarget{assumptions-3}{%
-\section{Assumptions}\label{assumptions-3}}
+\hypertarget{assumptions-2}{%
+\section{Assumptions}\label{assumptions-2}}
 
 As a parametric test, the repeated measures ANOVA has the same assumptions as other parametric tests:
 
@@ -2101,49 +2061,145 @@ For condition, participants who fasted (\emph{M} = 3.81, \emph{SE} = .11) report
 \hypertarget{what-is-ancova}{%
 \section{What is ANCOVA?}\label{what-is-ancova}}
 
-Under Construction
+\textbf{ANCOVA} (\textbf{AN}alysis of \textbf{COVA}riance) examines the difference in means between \underline{three or more} groups, while controlling for or partialling out the effect of one or more continuous confounds or covariates.
+
+\textbf{Some definitions}: A \emph{confounding} variable is a variable that affects or is related to both the independent and dependent variable. A \emph{covariate} variable is a variable that only affects or is only related to the dependent variable.
+
+There are two main reasons for including covariates:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \textbf{To reduce within-group error variance}: Remember that to get a larger F-statistic, we need to maximize between-groups variance and minimize within-groups variance. Adding covariates can sometimes minimize within-groups variance if that covariate helps \emph{explain} some of the within-group variance.
+\item
+  \textbf{Elimination of covariates}: Sometimes there are other variables that also explain our outcome variable. We want to look at the effect of another variable on the outcome while removing or eliminating the other variables (confounds) that also explain our outcome variable.
+\end{enumerate}
+
+\hypertarget{assumptions-of-ancova}{%
+\section{Assumptions of ANCOVA}\label{assumptions-of-ancova}}
+
+In addition to the same assumptions of the one-way ANOVA (see \ref{anova-assumptions}), the ANCOVA has two additional assumptions:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \textbf{Independence of the covariate and treatment effect}: When the covariate and treatment effect are related, then we can have incorrect F-statistic values. However, this is only important in experimental designs. In quasi-experimental designs, this is often violated and you just have to interpret results accordingly.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    If you do have an experimental manipulation with a covariate, you can test this assumption by running a one-way ANOVA but with your experimental manipulation as your IV or group variable and your covariate as your DV. If there is a significant F-ratio, then you have violated this assumption.
+  \end{itemize}
+\item
+  \textbf{Homogeneity of regression slopes}: The relationship between the covariate and the outcomes must be similar across groups.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    To test this assumption, add an interaction term between the covariate and each independent variable in jamovi under the Model drop-down menu. Add the interactions as model terms.
+  \end{itemize}
+\end{enumerate}
 
 \hypertarget{ancova-in-jamovi}{%
 \section{ANCOVA in jamovi}\label{ancova-in-jamovi}}
 
-Under Construction
+Let's run an example with data from lsj-data. Open data from your Data Library in ``lsj-data''. Select and open ``ancova''. This data is fictional data from a health psychologist who was interested in the effect of routine cycling (1 = driving, 2 = cycling) and stress (1 = high, 2 = low) on happiness levels, with age as a covariate. Notice how this is a 2x2 independent factorial design with a covariate!
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  To perform an ANCOVA in jamovi, select ANCOVA under the ANOVA analysis menu.
+\item
+  Move your dependent variable \texttt{happiness} to the Dependent Variable box, your independent variables \texttt{stress} and \texttt{commute} to the Fixed Factors box, and your covariate \texttt{age} to the Covariates box.
+\item
+  Select \(\omega^2\) as your effect size.
+\item
+  Under Assumption Checks, select all three assumption checks: \texttt{Homogeneity\ test}, \texttt{Normality\ test}, and \texttt{Q-Q\ Plot}.
+\item
+  Under Post Hoc Tests, move both of your independent variables over, select the \texttt{Tukey} correction and select \texttt{Cohen\textquotesingle{}s\ d} for your effect size.
+\item
+  Under Estimated Marginal Means, move each of your independent variables over into its own term box. Also include combinations of your independent variables if you have an interaction term in your model. Select both plots and tables, select \texttt{Observed\ scores}, and de-select \texttt{Equal\ cell\ weights}.
+\end{enumerate}
+
+First, let's check our assumptions in jamovi. Shapiro-Wilk's test was not statistically significant (\emph{p} = .735) and the Q-Q plot looks good; therefore, we've satisfied the assumption of normality. Levene's test was not statistically significant (\emph{p} = .925); therefore, we've satisfied the assumption of homogeneity of variance.
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{images/06-factorial-anova/independent-factorial_assumptions} 
+{\centering \includegraphics[width=1\linewidth]{images/07-ancova/ancova_assumptions} 
 
 }
 
 \caption{Assumption check results in jamovi}\label{fig:unnamed-chunk-1}
 \end{figure}
 
-Let's look at the main results next. We got three lines of results in addition to the typical residuals (error). The first two lines are our main effects of \texttt{attend} and \texttt{reading} on grades. The p-values for both are statistically significant indicating attend affects grades and reading affects grades. However, it also added an interaction term of \texttt{attend\ *\ reading}, which is not statistically significant. This means we do not have an interaction between attend and reading on grades. Interactions will be discussed in more detail in the next section.
+However, we have two additional assumptions we need to check. Let's check the assumption of independence of the covariate and treatment effect. For that, we need to perform another ANOVA (not an ANCOVA) with our independent variables predicting age. Our results indicate we violate this assumption: both \texttt{stress} and the interaction of \texttt{stress\ *\ commute} are related to age. This suggests age is in fact a \emph{confounding} variable, not a covariate. We should be performing a mediation, but because we want to illustrate the ANCOVA we will continue.
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{images/06-factorial-anova/independent-factorial_results} 
+{\centering \includegraphics[width=1\linewidth]{images/07-ancova/ancova_assumptions2} 
 
 }
 
-\caption{Independent factorial ANOVA results in jamovi}\label{fig:unnamed-chunk-2}
+\caption{Assumption check results in jamovi}\label{fig:unnamed-chunk-2}
 \end{figure}
 
-Although we could simply look at the means to know whether attending or reading had higher grades than not attending or not reading because there are only two conditions, we can also look at the post hoc tests and definitely need to look at them if we have three or more conditions per IV. These are shown below. Because the mean differences are negative, we can determine that the second group had higher means than the second group. We can confirm that with the estimated marginal means (not shown here).
+The second additional assumption is that the relationship between the covariate and the dependent variable is similar for all levels of the independent variable (homogeneity of regression slopes). We can test this by adding an interaction term between the covariate and each independent variable in jamovi under the Model drop-down menu. If the interaction effect is not significant it can be removed. If it is significant then a different and more advanced statistical technique might be appropriate (which is beyond the scope of this class). In our case, the interactions between each IV and our covariate are not statistically significant so we can remove the interaction terms and move on.
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{images/06-factorial-anova/independent-factorial_posthoc} 
+{\centering \includegraphics[width=1\linewidth]{images/07-ancova/ancova_assumptions3} 
 
 }
 
-\caption{Post hoc results in jamovi}\label{fig:unnamed-chunk-3}
+\caption{Assumption check results in jamovi}\label{fig:unnamed-chunk-3}
 \end{figure}
 
-Last, we can write-up our results!
+Now it's time to interpret the results! The ANCOVA table shows that both independent variables (\texttt{stress} and \texttt{commute}), the interaction term (\texttt{stress\ *\ commute*}), and the covariate (\texttt{age}) are statistically significant. Therefore, we can look at our post hoc tests to find where the differences are.
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{images/07-ancova/ancova_results} 
+
+}
+
+\caption{ANCOVA results in jamovi}\label{fig:unnamed-chunk-4}
+\end{figure}
+
+\begin{info}
+Technically, we don't need to look at the post hoc table much in this
+example. Because there are only two groups, we already know one group
+will have higher means than the other group if the F-test is
+significant. In fact, check this out: the square root of our F-statistic
+is equal to the t-statistic in our post hoc table. Neat!
+\end{info}
+
+Post hoc tests show that low stress had higher happiness than high stress, and that cycling had higher happiness than driving. We can also look to the estimated marginal means tables and plots for information for reporting.
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{images/07-ancova/ancova_tukey} 
+
+}
+
+\caption{Post hoc results in jamovi}\label{fig:unnamed-chunk-6}
+\end{figure}
+
+Last, we can write-up our results! Reporting ANCOVA is very similar to reporting an ANOVA test (in this case an independent factorial ANOVA) except that we also report the effect of the covariate, as well. Here's an example write-up:
 
 \begin{quote}
-We were interested in knowing how attendance and reading affected student grades. An independent factorial ANOVA showed that both attendance (\emph{F} {[}1, 4{]} = 18.25, \emph{p} = .013, \(\omega^2\) = .26) and reading (\emph{F} {[}1, 4{]} = 44.17, \emph{p} = .003, \(\omega^2\) = .64) affected student grades; there was no significant interaction between attendance and reading (\emph{F} {[}1, 4{]} = 8.00, \emph{p} = .660, \(\omega^2\) = -.01). Post hoc comparisons using Tukey's HSD show that students who attended lectures (\emph{M} = 75.50, \emph{SE} = 2.98) had higher grades than students who did not (\emph{M}~= 57.50, \emph{SE} = 2.98; \emph{p} = .003, \emph{d} = 4.70); furthermore, students who read (\emph{M} = 80.50, \emph{SE} = 2.98) had higher grades than students who did not (\emph{M} = 52.50, \emph{SE} = 2.98; \emph{p} = .013; \emph{d} = 3.02).
+We conducted a study examining how stress and commute affect happiness levels in a 2 (stress: high or low) x 2 (commute: cycling or driving) independent factorial design. Furthermore, we collected data on age as a covariate of our study. We satisfied all assumptions of the ANCOVA except that age was in fact a confounding variable in that it relates to our independent variable of stress. Despite failing to meet this assumption, we proceeded with the ANCOVA analysis.
+
+There was a significant main effect of stress on happiness such that participants in the low stress condition (\emph{M} = 68.45, \emph{SE} = 2.55) reported significantly greater happiness than participants in the high stress condition (\emph{M} = 39.85, \emph{SE} = 2.55), \emph{F} (1, 15) = 52.61, \emph{p} \textless{} .001, \(\omega^2\) = .39. There was also a significant main effect of commute on happiness such that participants who commuted via cycling (\emph{M} = 64.70, \emph{SE} = 2.29) reported significantly greater happiness than participants who commuted via driving (\emph{M} = 43.60, \emph{SE} = 2.29), \emph{F} (1, 15) = 42.33, \emph{p} \textless{} .001, \(\omega^2\) = .31. There was a significant interaction between stress and commute type such that happiness levels were similar in the low stress condition for both commute types, but happiness was significantly higher for participants who cycled versus those who drove in the high stress condition, \emph{F} (1, 15) = 14.15, \emph{p}~= .002, \(\omega^2\) = .10. Furthermore, age was a significant covariate of our dependent variable, \emph{F} (1, 15) = 6.39, \emph{p} = .023, \(\omega^2\) = .04.
 \end{quote}
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{images/07-ancova/ancova_interaction} 
+
+}
+
+\caption{Interaction in jamovi}\label{fig:unnamed-chunk-7}
+\end{figure}
 
 \hypertarget{appendix-appendices}{%
 \appendix}

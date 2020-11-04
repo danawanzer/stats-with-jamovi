@@ -34,15 +34,11 @@ The other way we might have the repeated measures ANOVA is if all our participan
 
 To conduct the repeated measures ANOVA, we first need to ensure our data is set-up properly in our dataset. This requires having two columns: one with our continuous dependent variable and one indicating which group the participant is in. Each row is a unique participant or unit of analysis. Here's what example data may look like if we were testing for differences in a test score by students in my fall, spring, or summer semesters of my course in which three participants are in each of my three courses.
 
-+-----+--------+--------+--------+
-| ID  | Fall   | Spring | Summer |
-+:====+:=======+:=======+:=======+
-| 1   | 86     | 79     | 90     |
-+-----+--------+--------+--------+
-| 2   | 80     | 82     | 72     |
-+-----+--------+--------+--------+
-| 3   | 75     | 84     | 75     |
-+-----+--------+--------+--------+
+| ID  | Fall | Spring | Summer |
+|:----|:-----|:-------|:-------|
+| 1   | 86   | 79     | 90     |
+| 2   | 80   | 82     | 72     |
+| 3   | 75   | 84     | 75     |
 
 : Example data for the repeated measures ANOVA
 
