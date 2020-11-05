@@ -112,7 +112,7 @@
 
 \title{Statistics with jamovi}
 \author{Dana Wanzer}
-\date{Last Update: 2020-11-04}
+\date{Last Update: 2020-11-05}
 
 \begin{document}
 \maketitle
@@ -163,6 +163,23 @@ I am human, therefore I err. If you find an error in the textbook or something y
 \hypertarget{independent-t-test}{%
 \chapter{Independent t-test}\label{independent-t-test}}
 
+\hypertarget{what-is-the-t-test}{%
+\section{What is the t-test?}\label{what-is-the-t-test}}
+
+The t-test looks at difference in means between two things (e.g., groups, time, observations). There are three different types of t-tests:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  The \textbf{one-sample t-test} tests how sample mean relates to the population mean.
+\item
+  The \textbf{independent t-test} has \emph{independent} groups. The participants or things in group 1 are \emph{not}~the same as the participants or things in group 2.
+\item
+  The \textbf{dependent t-test} has \emph{dependent} or \emph{paired} data. The dependent variable is measured at two different times or for two different conditions for all participants or things.
+\end{enumerate}
+
+This chapter will focus on the independent t-test and the next chapter will discuss the dependent t-test.
+
 \hypertarget{what-is-the-independent-t-test}{%
 \section{What is the independent t-test?}\label{what-is-the-independent-t-test}}
 
@@ -200,7 +217,7 @@ There are three different types of alternative hypotheses we could have for the 
   \begin{itemize}
   \tightlist
   \item
-    \(H_1\): Group 1 has a small mean than Group 2.
+    \(H_1\): Group 1 has a smaller mean than Group 2.
   \item
     \(H_0\): The mean for Group 1 is greater than or equal to the mean for Group 2.
   \end{itemize}
@@ -353,7 +370,9 @@ Once we are satisfied we have satisfied the assumptions for the independent t-te
 \caption{Independent t-test results in jamovi}\label{fig:unnamed-chunk-5}
 \end{figure}
 
-Our p-value is less than .05, so our results are statistically significant. We can write up our results in APA something like this:
+Our p-value is less than .05, so our results are statistically significant. Like most of the statistics we'll come across, the large the t-statistic (or F-statistic, or chi-square statistic\ldots), the smaller the p-value.
+
+We can write up our results in APA something like this:
 
 \begin{quote}
 Anastasia's students (\emph{M} = 74.53, \emph{SD} = 9.00, \emph{n} = 15) had significantly higher grades than Bernadette's students (\emph{M} = 69.06, \emph{SD} = 5.77, \emph{n}~= 18), \emph{t} (31) = 2.12, \emph{p} = .043, \emph{d} = .74.
@@ -469,7 +488,7 @@ Using the Mann-Whitney U test, there was a statistically significant difference 
 \hypertarget{your-turn}{%
 \section{Your turn!}\label{your-turn}}
 
-Open the \texttt{Sample\_Dataset\_2014.xlsx} file that we will be using for all Your Turn exercises.
+Open the \texttt{Sample\_Dataset\_2014.xlsx} file that we will be using for all Your Turn exercises. You can find the dataset here: \href{https://github.com/danawanzer/stats-with-jamovi/blob/master/data/Sample_Dataset_2014.xlsx}{Sample\_Dataset\_2014.xlsx Download}
 
 Perform independent t-tests based on the following research questions. Think critically about whether you should be using a one-tailed or two-tailed hypothesis and check your assumptions so you know which test to use!
 
@@ -529,9 +548,45 @@ To get the most out of these exercises, try to first find out the answer on your
 \hypertarget{what-is-the-dependent-t-test}{%
 \section{What is the dependent t-test?}\label{what-is-the-dependent-t-test}}
 
-The dependent t-test is used to test the difference in our dependent variable between two categories in which participants are the \emph{same} across categories. Our category variable is our independent variable. In other words, we use the independent t-test when we have a research question with a \textbf{continuous dependent variable} and a \textbf{categorical independent variable with two categories in which the same participants are in each category}.
+The dependent t-test is used to test the difference in our dependent variable between two categories in which participants are the \emph{same} across categories. Our category variable is our independent variable. In other words, we use the dependent t-test when we have a research question with a \textbf{continuous dependent variable} and a \textbf{categorical independent variable with two categories in which the same participants are in each category}.
 
 The dependent t-test is also called a dependent samples t-test or paired samples t-test.
+
+There are three different types of alternative hypotheses we could have for the dependent t-test:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \textbf{Two-tailed}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \(H_1\): There is a difference in means between the two time points or conditions.
+  \item
+    \(H_0\): There is no difference in means between the two time points or conditions.
+  \end{itemize}
+\item
+  \textbf{One-tailed}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \(H_1\): The mean at time 1 or condition 1 is greater than the mean at time 2 or condition 2.
+  \item
+    \(H_0\): The mean at time 1 or condition 1 is less than or equal to the mean at time 2 or condition 2.
+  \end{itemize}
+\item
+  \textbf{One-tailed}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \(H_1\): The mean at time 1 or condition 1 is smaller than the mean at time 2 or condition 2.
+  \item
+    \(H_0\): The mean at time 1 or condition 1 is greater than or equal to the mean at time 2 or condition 2.
+  \end{itemize}
+\end{enumerate}
 
 \hypertarget{data-set-up-1}{%
 \section{Data set-up}\label{data-set-up-1}}
@@ -565,8 +620,8 @@ In the example data above, what is your \textbf{independent variable}? ID Semest
 
 In the example data above, what is your \textbf{dependent variable}? ID Semester Test Score
 
-\hypertarget{the-math-behind-the-independent-t-test-1}{%
-\section{The math behind the independent t-test}\label{the-math-behind-the-independent-t-test-1}}
+\hypertarget{the-math-behind-the-dependent-t-test}{%
+\section{The math behind the dependent t-test}\label{the-math-behind-the-dependent-t-test}}
 
 The basic math of the dependent t-test is the mean difference divided by the standard error, which is estimated based on the standard deviation and sample size (N).
 
@@ -575,7 +630,7 @@ The basic math of the dependent t-test is the mean difference divided by the sta
 \hypertarget{assumptions-1}{%
 \section{Assumptions}\label{assumptions-1}}
 
-As a parametric test, the independent t-test has the same assumptions as other parametric tests minus the homogeneity of variance assumption because we are dealing with the same people across categories
+As a parametric test, the dependent t-test has the same assumptions as other parametric tests minus the homogeneity of variance assumption because we are dealing with the same people across categories
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -679,7 +734,7 @@ Here is the output for both the dependent t-test and the Wilcoxon rank test:
 
 }
 
-\caption{All independent t-test results in jamovi}\label{fig:unnamed-chunk-4}
+\caption{All dependent t-test results in jamovi}\label{fig:unnamed-chunk-4}
 \end{figure}
 
 \hypertarget{wilcoxon-rank-in-jamovi}{%
@@ -696,7 +751,7 @@ The note about tied values is not necessary to discuss. It is just telling us on
 \hypertarget{your-turn-1}{%
 \section{Your turn!}\label{your-turn-1}}
 
-Open the \texttt{Sample\_Dataset\_2014.xlsx} file that we use for all Your Turn exercises.
+Open the \texttt{Sample\_Dataset\_2014.xlsx} file that we will be using for all Your Turn exercises. You can find the dataset here: \href{https://github.com/danawanzer/stats-with-jamovi/blob/master/data/Sample_Dataset_2014.xlsx}{Sample\_Dataset\_2014.xlsx Download}
 
 Perform dependent t-tests based on the following research questions. Think critically about whether you should be using a one-tailed or two-tailed hypothesis and check your assumptions so you know which test to use!
 
@@ -735,6 +790,27 @@ To get the most out of these exercises, try to first find out the answer on your
 
 \hypertarget{one-way-anova}{%
 \chapter{One-way ANOVA}\label{one-way-anova}}
+
+\hypertarget{what-is-anova}{%
+\section{What is ANOVA?}\label{what-is-anova}}
+
+ANOVA stands for ANalysis Of VAriance. ANOVAs analyze the variation among and between groups. There are multiple types of ANOVAs based on the nature of the independent variable(s):
+
+\begin{longtable}[]{@{}ll@{}}
+\toprule
+\textbf{Nature of IV(s)} & \textbf{Type of ANOVA}\tabularnewline
+\midrule
+\endhead
+1 between-subjects IV & One-way ANOVA\tabularnewline
+1 within-subjects IV & Repeated-measures ANOVA\tabularnewline
+2+ between-subjects IVs & Independent factorial ANOVA\tabularnewline
+2+ within-subjects IVs & Repeated measures factorial ANOVA\tabularnewline
+2+ IVs mixed between/within & Mixed factorial ANOVA\tabularnewline
+1+ IV with a continuous covariate & ANCOVA\tabularnewline
+\bottomrule
+\end{longtable}
+
+Furthermore, there are ANOVAs for when there are multiple dependent variables (called the MANOVA or Multiple ANOVA) but we will not discuss it in this class.
 
 \hypertarget{what-is-the-one-way-anova}{%
 \section{What is the one-way ANOVA?}\label{what-is-the-one-way-anova}}
@@ -1283,7 +1359,7 @@ This is where you need to think creatively and be very critical in checking that
 \hypertarget{your-turn-2}{%
 \section{Your turn!}\label{your-turn-2}}
 
-Open the \texttt{Sample\_Dataset\_2014.xlsx} file that we will be using for all Your Turn exercises.
+Open the \texttt{Sample\_Dataset\_2014.xlsx} file that we will be using for all Your Turn exercises. You can find the dataset here: \href{https://github.com/danawanzer/stats-with-jamovi/blob/master/data/Sample_Dataset_2014.xlsx}{Sample\_Dataset\_2014.xlsx Download}
 
 Perform one-way ANOVAs based on the following research questions. Check your assumptions and ensure you are using the correct tests.
 
@@ -1587,7 +1663,7 @@ This is where you need to think creatively and be very critical in checking that
 \hypertarget{your-turn-3}{%
 \section{Your turn!}\label{your-turn-3}}
 
-Open the \texttt{Sample\_Dataset\_2014.xlsx} file that we will be using for all Your Turn exercises.
+Open the \texttt{Sample\_Dataset\_2014.xlsx} file that we will be using for all Your Turn exercises. You can find the dataset here: \href{https://github.com/danawanzer/stats-with-jamovi/blob/master/data/Sample_Dataset_2014.xlsx}{Sample\_Dataset\_2014.xlsx Download}
 
 Perform a repeated measures ANOVA based on the following research questions. Check your assumptions and ensure you are using the correct tests.
 
@@ -1709,198 +1785,7 @@ This is also sometimes called the two-way (or three-way or n-way, depending on t
 A company has created a new training program for their customer service staff. To test the effectiveness of the program they took a sample of 10 employees and assessed their performance in three areas: ~Product (knowledge of the company's products and services), Client (their ability to relate to the customer with politeness and empathy) and Action (their ability to take action to help the customer). They then had the same 10 employees take the training course and rated their performance after the program in the same three areas. -\href{A\%20company\%20has\%20created\%20a\%20new\%20training\%20program\%20for\%20their\%20customer\%20service\%20staff.\%20To\%20test\%20the\%20effectiveness\%20of\%20the\%20program\%20they\%20took\%20a\%20sample\%20of\%2010\%20employees\%20and\%20assessed\%20their\%20performance\%20in\%20three\%20areas:\%20Product\%20(knowledge\%20of\%20the\%20company’s\%20products\%20and\%20services),\%20Client\%20(their\%20ability\%20to\%20relate\%20to\%20the\%20customer\%20with\%20politeness\%20and\%20empathy)\%20and\%20Action\%20(their\%20ability\%20to\%20take\%20action\%20to\%20help\%20the\%20customer).\%20They\%20then\%20had\%20the\%20same\%2010\%20employees\%20take\%20the\%20training\%20course\%20and\%20rated\%20their\%20performance\%20after\%20the\%20program\%20in\%20the\%20same\%20three\%20areas.\%20Based\%20on\%20the\%20data\%20in\%20Figure\%201,\%20determine\%20whether\%20the\%20program\%20was\%20effective.}{Real Statistics Using Excel}
 \end{quote}
 
-\begin{longtable}[]{@{}lllllll@{}}
-\caption{Dataset for the repeated measures factorial ANOVA}\tabularnewline
-\toprule
-\begin{minipage}[b]{0.05\columnwidth}\raggedright
-ID\strut
-\end{minipage} & \begin{minipage}[b]{0.13\columnwidth}\raggedright
-Pre-Product\strut
-\end{minipage} & \begin{minipage}[b]{0.12\columnwidth}\raggedright
-Pre-Client\strut
-\end{minipage} & \begin{minipage}[b]{0.12\columnwidth}\raggedright
-Pre-Action\strut
-\end{minipage} & \begin{minipage}[b]{0.14\columnwidth}\raggedright
-Post-Product\strut
-\end{minipage} & \begin{minipage}[b]{0.13\columnwidth}\raggedright
-Post-Client\strut
-\end{minipage} & \begin{minipage}[b]{0.13\columnwidth}\raggedright
-Post-Action\strut
-\end{minipage}\tabularnewline
-\midrule
-\endfirsthead
-\toprule
-\begin{minipage}[b]{0.05\columnwidth}\raggedright
-ID\strut
-\end{minipage} & \begin{minipage}[b]{0.13\columnwidth}\raggedright
-Pre-Product\strut
-\end{minipage} & \begin{minipage}[b]{0.12\columnwidth}\raggedright
-Pre-Client\strut
-\end{minipage} & \begin{minipage}[b]{0.12\columnwidth}\raggedright
-Pre-Action\strut
-\end{minipage} & \begin{minipage}[b]{0.14\columnwidth}\raggedright
-Post-Product\strut
-\end{minipage} & \begin{minipage}[b]{0.13\columnwidth}\raggedright
-Post-Client\strut
-\end{minipage} & \begin{minipage}[b]{0.13\columnwidth}\raggedright
-Post-Action\strut
-\end{minipage}\tabularnewline
-\midrule
-\endhead
-\begin{minipage}[t]{0.05\columnwidth}\raggedright
-1\strut
-\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\raggedright
-13\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
-12\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
-17\strut
-\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedright
-18\strut
-\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\raggedright
-30\strut
-\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\raggedright
-34\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.05\columnwidth}\raggedright
-2\strut
-\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\raggedright
-12\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
-19\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
-18\strut
-\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedright
-6\strut
-\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\raggedright
-18\strut
-\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\raggedright
-30\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.05\columnwidth}\raggedright
-3\strut
-\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\raggedright
-17\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
-19\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
-24\strut
-\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedright
-21\strut
-\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\raggedright
-31\strut
-\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\raggedright
-32\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.05\columnwidth}\raggedright
-4\strut
-\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\raggedright
-12\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
-25\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
-25\strut
-\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedright
-18\strut
-\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\raggedright
-39\strut
-\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\raggedright
-40\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.05\columnwidth}\raggedright
-5\strut
-\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\raggedright
-19\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
-27\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
-19\strut
-\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedright
-18\strut
-\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\raggedright
-28\strut
-\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\raggedright
-27\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.05\columnwidth}\raggedright
-6\strut
-\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\raggedright
-6\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
-12\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
-6\strut
-\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedright
-6\strut
-\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\raggedright
-18\strut
-\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\raggedright
-23\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.05\columnwidth}\raggedright
-7\strut
-\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\raggedright
-17\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
-18\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
-30\strut
-\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedright
-24\strut
-\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\raggedright
-36\strut
-\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\raggedright
-38\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.05\columnwidth}\raggedright
-8\strut
-\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\raggedright
-18\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
-29\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
-36\strut
-\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedright
-22\strut
-\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\raggedright
-36\strut
-\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\raggedright
-40\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.05\columnwidth}\raggedright
-9\strut
-\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\raggedright
-23\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
-30\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
-24\strut
-\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedright
-18\strut
-\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\raggedright
-38\strut
-\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\raggedright
-32\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.05\columnwidth}\raggedright
-10\strut
-\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\raggedright
-18\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
-12\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
-24\strut
-\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedright
-24\strut
-\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\raggedright
-25\strut
-\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\raggedright
-34\strut
-\end{minipage}\tabularnewline
-\bottomrule
-\end{longtable}
-
-You can copy-paste the table into Microsoft Excel, save as an .xlsx or .csv file, and import into jamovi to follow-along.
+You can find the dataset here to follow along: \href{https://github.com/danawanzer/stats-with-jamovi/blob/master/data/Repeated-measures-factorial-ANOVA.xlsx}{Repeated-measures-factorial-ANOVA.xlsx Download}
 
 In jamovi, select Repeated Measures ANOVA under the ANOVA analysis option. Here are the general steps:
 
@@ -1973,7 +1858,7 @@ We tested a 2 (time: pre- and post-intervention) x 3 (area: product, client, act
 \hypertarget{mixed-factorial-anova}{%
 \section{Mixed Factorial ANOVA}\label{mixed-factorial-anova}}
 
-Download the data for this analysis here:
+You can find the dataset here to follow along: \href{https://github.com/danawanzer/stats-with-jamovi/blob/master/data/mixed-factorial.sav}{mixed-factorial.sav Download}
 
 This dataset comes from a larger studying examining the effect of a delayed reward preference of three commodities (food, money, and music) on food cravings (as rated by the Food Craving Questionnaire {[}FCQ{]}) for each participant. Participants were in one of two conditions: the control condition did not do anything and the experimental condition had participants do the tasks while fasting.
 

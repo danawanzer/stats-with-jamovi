@@ -1,7 +1,7 @@
 ---
 title: "Statistics with jamovi"
 author: "Dana Wanzer"
-date: "Last Update: 2020-11-04"
+date: "Last Update: 2020-11-05"
 site: bookdown::bookdown_site
 output:
   bookdown::pdf_book:
@@ -55,6 +55,18 @@ I am human, therefore I err. If you find an error in the textbook or something y
 
 
 
+## What is the t-test?
+
+The t-test looks at difference in means between two things (e.g., groups, time, observations). There are three different types of t-tests:
+
+1.  The **one-sample t-test** tests how sample mean relates to the population mean.
+
+2.  The **independent t-test** has *independent* groups. The participants or things in group 1 are *not* the same as the participants or things in group 2.
+
+3.  The **dependent t-test** has *dependent* or *paired* data. The dependent variable is measured at two different times or for two different conditions for all participants or things.
+
+This chapter will focus on the independent t-test and the next chapter will discuss the dependent t-test.
+
 ## What is the independent t-test?
 
 The independent t-test is used to test the difference in our dependent variable between two different groups of observations. Our grouping variable is our independent variable. In other words, we use the independent t-test when we have a research question with a **continuous dependent variable** and a **categorical independent variable with two categories in which different participants are in each category**.
@@ -75,7 +87,7 @@ There are three different types of alternative hypotheses we could have for the 
 
 3.  **One-tailed**
 
-    -   $H_1$: Group 1 has a small mean than Group 2.
+    -   $H_1$: Group 1 has a smaller mean than Group 2.
     -   $H_0$: The mean for Group 1 is greater than or equal to the mean for Group 2.
 
 ## Data set-up
@@ -201,7 +213,9 @@ Once we are satisfied we have satisfied the assumptions for the independent t-te
 \caption{Independent t-test results in jamovi}(\#fig:unnamed-chunk-5)
 \end{figure}
 
-Our p-value is less than .05, so our results are statistically significant. We can write up our results in APA something like this:
+Our p-value is less than .05, so our results are statistically significant. Like most of the statistics we'll come across, the large the t-statistic (or F-statistic, or chi-square statistic...), the smaller the p-value.
+
+We can write up our results in APA something like this:
 
 > Anastasia's students (*M* = 74.53, *SD* = 9.00, *n* = 15) had significantly higher grades than Bernadette's students (*M* = 69.06, *SD* = 5.77, *n* = 18), *t* (31) = 2.12, *p* = .043, *d* = .74.
 
@@ -236,10 +250,13 @@ The Mann-Whitney U is not calculated based on the mean but rather the median and
 
 Here's what statistic you should choose based on satisfying assumptions:
 
++--------------------------------------------+----------------------------+------------------------------+
 |                                            | **Normality: satisfied**   | **Normality: not satisfied** |
-|--------------------------------------------|----------------------------|------------------------------|
++============================================+============================+==============================+
 | **Homogeneity of Variance: satisfied**     | independent samples t-test | Mann-Whitney U               |
++--------------------------------------------+----------------------------+------------------------------+
 | **Homogeneity of Variance: not satisfied** | Welch's t-test             | Mann-Whitney U               |
++--------------------------------------------+----------------------------+------------------------------+
 
 Here is what the output for all three tests look like:
 
@@ -272,7 +289,7 @@ I will not go into specifics, but the idea behind the Mann-Whitney U test is tha
 
 ## Your turn!
 
-Open the `Sample_Dataset_2014.xlsx` file that we will be using for all Your Turn exercises.
+Open the `Sample_Dataset_2014.xlsx` file that we will be using for all Your Turn exercises. You can find the dataset here: [Sample_Dataset_2014.xlsx Download](https://github.com/danawanzer/stats-with-jamovi/blob/master/data/Sample_Dataset_2014.xlsx)
 
 Perform independent t-tests based on the following research questions. Think critically about whether you should be using a one-tailed or two-tailed hypothesis and check your assumptions so you know which test to use!
 
@@ -318,9 +335,26 @@ To get the most out of these exercises, try to first find out the answer on your
 
 ## What is the dependent t-test?
 
-The dependent t-test is used to test the difference in our dependent variable between two categories in which participants are the *same* across categories. Our category variable is our independent variable. In other words, we use the independent t-test when we have a research question with a **continuous dependent variable** and a **categorical independent variable with two categories in which the same participants are in each category**.
+The dependent t-test is used to test the difference in our dependent variable between two categories in which participants are the *same* across categories. Our category variable is our independent variable. In other words, we use the dependent t-test when we have a research question with a **continuous dependent variable** and a **categorical independent variable with two categories in which the same participants are in each category**.
 
 The dependent t-test is also called a dependent samples t-test or paired samples t-test.
+
+There are three different types of alternative hypotheses we could have for the dependent t-test:
+
+1.  **Two-tailed**
+
+    -   $H_1$: There is a difference in means between the two time points or conditions.
+    -   $H_0$: There is no difference in means between the two time points or conditions.
+
+2.  **One-tailed**
+
+    -   $H_1$: The mean at time 1 or condition 1 is greater than the mean at time 2 or condition 2.
+    -   $H_0$: The mean at time 1 or condition 1 is less than or equal to the mean at time 2 or condition 2.
+
+3.  **One-tailed**
+
+    -   $H_1$: The mean at time 1 or condition 1 is smaller than the mean at time 2 or condition 2.
+    -   $H_0$: The mean at time 1 or condition 1 is greater than or equal to the mean at time 2 or condition 2.
 
 ## Data set-up
 
@@ -345,7 +379,7 @@ In the example data above, what is your **independent variable**? <select class=
 
 In the example data above, what is your **dependent variable**? <select class='solveme' data-answer='["Test Score"]'> <option></option> <option>ID</option> <option>Semester</option> <option>Test Score</option></select>
 
-## The math behind the independent t-test
+## The math behind the dependent t-test
 
 The basic math of the dependent t-test is the mean difference divided by the standard error, which is estimated based on the standard deviation and sample size (N).
 
@@ -353,7 +387,7 @@ $t = \frac{\bar{X}_1 - \bar{X}_2}{s_d/ \sqrt{N}}$
 
 ## Assumptions
 
-As a parametric test, the independent t-test has the same assumptions as other parametric tests minus the homogeneity of variance assumption because we are dealing with the same people across categories
+As a parametric test, the dependent t-test has the same assumptions as other parametric tests minus the homogeneity of variance assumption because we are dealing with the same people across categories
 
 1.  The *differences in scores* in the dependent variable are **normally distributed**
 
@@ -440,7 +474,7 @@ Here is the output for both the dependent t-test and the Wilcoxon rank test:
 
 }
 
-\caption{All independent t-test results in jamovi}(\#fig:unnamed-chunk-4)
+\caption{All dependent t-test results in jamovi}(\#fig:unnamed-chunk-4)
 \end{figure}
 
 #### Wilcoxon rank in jamovi
@@ -453,7 +487,7 @@ The note about tied values is not necessary to discuss. It is just telling us on
 
 ## Your turn!
 
-Open the `Sample_Dataset_2014.xlsx` file that we use for all Your Turn exercises.
+Open the `Sample_Dataset_2014.xlsx` file that we will be using for all Your Turn exercises. You can find the dataset here: [Sample_Dataset_2014.xlsx Download](https://github.com/danawanzer/stats-with-jamovi/blob/master/data/Sample_Dataset_2014.xlsx)
 
 Perform dependent t-tests based on the following research questions. Think critically about whether you should be using a one-tailed or two-tailed hypothesis and check your assumptions so you know which test to use!
 
@@ -484,6 +518,21 @@ To get the most out of these exercises, try to first find out the answer on your
 # One-way ANOVA
 
 
+
+## What is ANOVA?
+
+ANOVA stands for ANalysis Of VAriance. ANOVAs analyze the variation among and between groups. There are multiple types of ANOVAs based on the nature of the independent variable(s):
+
+| **Nature of IV(s)**               | **Type of ANOVA**                 |
+|-----------------------------------|-----------------------------------|
+| 1 between-subjects IV             | One-way ANOVA                     |
+| 1 within-subjects IV              | Repeated-measures ANOVA           |
+| 2+ between-subjects IVs           | Independent factorial ANOVA       |
+| 2+ within-subjects IVs            | Repeated measures factorial ANOVA |
+| 2+ IVs mixed between/within       | Mixed factorial ANOVA             |
+| 1+ IV with a continuous covariate | ANCOVA                            |
+
+Furthermore, there are ANOVAs for when there are multiple dependent variables (called the MANOVA or Multiple ANOVA) but we will not discuss it in this class.
 
 ## What is the one-way ANOVA?
 
@@ -617,7 +666,7 @@ $F = \frac{MS_{BG}}{MS_{WG}} = \frac{1.726}{.0928} = 18.60$
 
 Compare to the $F$, $df_{WG}$, and $df_{BG}$ in the output below in jamovi! Notice how close we are. Also notice how many decimals I retained throughout the analyses. I was a bit off when I first did this with only two decimals throughout. Retaining four decimals throughout got me only \~one-hundredth of a decimal off from the actual results. Neat!
 
-## Assumptions  {#anova-assumptions}
+## Assumptions {#anova-assumptions}
 
 As a parametric test, the one-way ANOVA has the same assumptions as other parametric tests:
 
@@ -905,7 +954,7 @@ This is where you need to think creatively and be very critical in checking that
 
 ## Your turn!
 
-Open the `Sample_Dataset_2014.xlsx` file that we will be using for all Your Turn exercises.
+Open the `Sample_Dataset_2014.xlsx` file that we will be using for all Your Turn exercises. You can find the dataset here: [Sample_Dataset_2014.xlsx Download](https://github.com/danawanzer/stats-with-jamovi/blob/master/data/Sample_Dataset_2014.xlsx)
 
 Perform one-way ANOVAs based on the following research questions. Check your assumptions and ensure you are using the correct tests.
 
@@ -1166,7 +1215,7 @@ This is where you need to think creatively and be very critical in checking that
 
 ## Your turn!
 
-Open the `Sample_Dataset_2014.xlsx` file that we will be using for all Your Turn exercises.
+Open the `Sample_Dataset_2014.xlsx` file that we will be using for all Your Turn exercises. You can find the dataset here: [Sample_Dataset_2014.xlsx Download](https://github.com/danawanzer/stats-with-jamovi/blob/master/data/Sample_Dataset_2014.xlsx)
 
 Perform a repeated measures ANOVA based on the following research questions. Check your assumptions and ensure you are using the correct tests.
 
@@ -1270,33 +1319,7 @@ This is also sometimes called the two-way (or three-way or n-way, depending on t
 
 > A company has created a new training program for their customer service staff. To test the effectiveness of the program they took a sample of 10 employees and assessed their performance in three areas:  Product (knowledge of the company's products and services), Client (their ability to relate to the customer with politeness and empathy) and Action (their ability to take action to help the customer). They then had the same 10 employees take the training course and rated their performance after the program in the same three areas. -[Real Statistics Using Excel](A%20company%20has%20created%20a%20new%20training%20program%20for%20their%20customer%20service%20staff.%20To%20test%20the%20effectiveness%20of%20the%20program%20they%20took%20a%20sample%20of%2010%20employees%20and%20assessed%20their%20performance%20in%20three%20areas:%20Product%20(knowledge%20of%20the%20company’s%20products%20and%20services),%20Client%20(their%20ability%20to%20relate%20to%20the%20customer%20with%20politeness%20and%20empathy)%20and%20Action%20(their%20ability%20to%20take%20action%20to%20help%20the%20customer).%20They%20then%20had%20the%20same%2010%20employees%20take%20the%20training%20course%20and%20rated%20their%20performance%20after%20the%20program%20in%20the%20same%20three%20areas.%20Based%20on%20the%20data%20in%20Figure%201,%20determine%20whether%20the%20program%20was%20effective.)
 
-+----+-------------+------------+------------+--------------+-------------+-------------+
-| ID | Pre-Product | Pre-Client | Pre-Action | Post-Product | Post-Client | Post-Action |
-+====+=============+============+============+==============+=============+=============+
-| 1  | 13          | 12         | 17         | 18           | 30          | 34          |
-+----+-------------+------------+------------+--------------+-------------+-------------+
-| 2  | 12          | 19         | 18         | 6            | 18          | 30          |
-+----+-------------+------------+------------+--------------+-------------+-------------+
-| 3  | 17          | 19         | 24         | 21           | 31          | 32          |
-+----+-------------+------------+------------+--------------+-------------+-------------+
-| 4  | 12          | 25         | 25         | 18           | 39          | 40          |
-+----+-------------+------------+------------+--------------+-------------+-------------+
-| 5  | 19          | 27         | 19         | 18           | 28          | 27          |
-+----+-------------+------------+------------+--------------+-------------+-------------+
-| 6  | 6           | 12         | 6          | 6            | 18          | 23          |
-+----+-------------+------------+------------+--------------+-------------+-------------+
-| 7  | 17          | 18         | 30         | 24           | 36          | 38          |
-+----+-------------+------------+------------+--------------+-------------+-------------+
-| 8  | 18          | 29         | 36         | 22           | 36          | 40          |
-+----+-------------+------------+------------+--------------+-------------+-------------+
-| 9  | 23          | 30         | 24         | 18           | 38          | 32          |
-+----+-------------+------------+------------+--------------+-------------+-------------+
-| 10 | 18          | 12         | 24         | 24           | 25          | 34          |
-+----+-------------+------------+------------+--------------+-------------+-------------+
-
-: Dataset for the repeated measures factorial ANOVA
-
-You can copy-paste the table into Microsoft Excel, save as an .xlsx or .csv file, and import into jamovi to follow-along.
+You can find the dataset here to follow along: [Repeated-measures-factorial-ANOVA.xlsx Download](https://github.com/danawanzer/stats-with-jamovi/blob/master/data/Repeated-measures-factorial-ANOVA.xlsx)
 
 In jamovi, select Repeated Measures ANOVA under the ANOVA analysis option. Here are the general steps:
 
@@ -1362,7 +1385,7 @@ Now we have everything we need (in addition to the estimated marginal means) and
 
 ## Mixed Factorial ANOVA
 
-Download the data for this analysis here:
+You can find the dataset here to follow along: [mixed-factorial.sav Download](https://github.com/danawanzer/stats-with-jamovi/blob/master/data/mixed-factorial.sav)
 
 This dataset comes from a larger studying examining the effect of a delayed reward preference of three commodities (food, money, and music) on food cravings (as rated by the Food Craving Questionnaire [FCQ]) for each participant. Participants were in one of two conditions: the control condition did not do anything and the experimental condition had participants do the tasks while fasting.
 

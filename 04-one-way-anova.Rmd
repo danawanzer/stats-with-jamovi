@@ -8,6 +8,21 @@ library(webex)
 options(knitr.graphics.auto_pdf = TRUE)
 ```
 
+## What is ANOVA?
+
+ANOVA stands for ANalysis Of VAriance. ANOVAs analyze the variation among and between groups. There are multiple types of ANOVAs based on the nature of the independent variable(s):
+
+| **Nature of IV(s)**               | **Type of ANOVA**                 |
+|-----------------------------------|-----------------------------------|
+| 1 between-subjects IV             | One-way ANOVA                     |
+| 1 within-subjects IV              | Repeated-measures ANOVA           |
+| 2+ between-subjects IVs           | Independent factorial ANOVA       |
+| 2+ within-subjects IVs            | Repeated measures factorial ANOVA |
+| 2+ IVs mixed between/within       | Mixed factorial ANOVA             |
+| 1+ IV with a continuous covariate | ANCOVA                            |
+
+Furthermore, there are ANOVAs for when there are multiple dependent variables (called the MANOVA or Multiple ANOVA) but we will not discuss it in this class.
+
 ## What is the one-way ANOVA?
 
 The one-way analysis of variance (ANOVA) is used to test the difference in our dependent variable between [three or more]{.ul} different groups of observations. Our grouping variable is our independent variable. In other words, we use the one-way ANOVA when we have a research question with a **continuous dependent variable** and a **categorical independent variable with three or more categories in which different participants are in each category**.
@@ -135,7 +150,7 @@ $F = \frac{MS_{BG}}{MS_{WG}} = \frac{1.726}{.0928} = 18.60$
 
 Compare to the $F$, $df_{WG}$, and $df_{BG}$ in the output below in jamovi! Notice how close we are. Also notice how many decimals I retained throughout the analyses. I was a bit off when I first did this with only two decimals throughout. Retaining four decimals throughout got me only \~one-hundredth of a decimal off from the actual results. Neat!
 
-## Assumptions  {#anova-assumptions}
+## Assumptions {#anova-assumptions}
 
 As a parametric test, the one-way ANOVA has the same assumptions as other parametric tests:
 
@@ -358,7 +373,7 @@ This is where you need to think creatively and be very critical in checking that
 
 ## Your turn!
 
-Open the `Sample_Dataset_2014.xlsx` file that we will be using for all Your Turn exercises.
+Open the `Sample_Dataset_2014.xlsx` file that we will be using for all Your Turn exercises. You can find the dataset here: [Sample_Dataset_2014.xlsx Download](https://github.com/danawanzer/stats-with-jamovi/blob/master/data/Sample_Dataset_2014.xlsx)
 
 Perform one-way ANOVAs based on the following research questions. Check your assumptions and ensure you are using the correct tests.
 

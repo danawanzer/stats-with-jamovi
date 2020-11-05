@@ -8,6 +8,18 @@ library(webex)
 options(knitr.graphics.auto_pdf = TRUE)
 ```
 
+## What is the t-test?
+
+The t-test looks at difference in means between two things (e.g., groups, time, observations). There are three different types of t-tests:
+
+1.  The **one-sample t-test** tests how sample mean relates to the population mean.
+
+2.  The **independent t-test** has *independent* groups. The participants or things in group 1 are *not* the same as the participants or things in group 2.
+
+3.  The **dependent t-test** has *dependent* or *paired* data. The dependent variable is measured at two different times or for two different conditions for all participants or things.
+
+This chapter will focus on the independent t-test and the next chapter will discuss the dependent t-test.
+
 ## What is the independent t-test?
 
 The independent t-test is used to test the difference in our dependent variable between two different groups of observations. Our grouping variable is our independent variable. In other words, we use the independent t-test when we have a research question with a **continuous dependent variable** and a **categorical independent variable with two categories in which different participants are in each category**.
@@ -28,7 +40,7 @@ There are three different types of alternative hypotheses we could have for the 
 
 3.  **One-tailed**
 
-    -   $H_1$: Group 1 has a small mean than Group 2.
+    -   $H_1$: Group 1 has a smaller mean than Group 2.
     -   $H_0$: The mean for Group 1 is greater than or equal to the mean for Group 2.
 
 ## Data set-up
@@ -132,7 +144,9 @@ Once we are satisfied we have satisfied the assumptions for the independent t-te
 knitr::include_graphics("images/02-independent_t-test/independent_t-test_ind-results.png")
 ```
 
-Our p-value is less than .05, so our results are statistically significant. We can write up our results in APA something like this:
+Our p-value is less than .05, so our results are statistically significant. Like most of the statistics we'll come across, the large the t-statistic (or F-statistic, or chi-square statistic...), the smaller the p-value.
+
+We can write up our results in APA something like this:
 
 > Anastasia's students (*M* = 74.53, *SD* = 9.00, *n* = 15) had significantly higher grades than Bernadette's students (*M* = 69.06, *SD* = 5.77, *n* = 18), *t* (31) = 2.12, *p* = .043, *d* = .74.
 
@@ -167,10 +181,13 @@ The Mann-Whitney U is not calculated based on the mean but rather the median and
 
 Here's what statistic you should choose based on satisfying assumptions:
 
++--------------------------------------------+----------------------------+------------------------------+
 |                                            | **Normality: satisfied**   | **Normality: not satisfied** |
-|--------------------------------------------|----------------------------|------------------------------|
++============================================+============================+==============================+
 | **Homogeneity of Variance: satisfied**     | independent samples t-test | Mann-Whitney U               |
++--------------------------------------------+----------------------------+------------------------------+
 | **Homogeneity of Variance: not satisfied** | Welch's t-test             | Mann-Whitney U               |
++--------------------------------------------+----------------------------+------------------------------+
 
 Here is what the output for all three tests look like:
 
@@ -198,7 +215,7 @@ I will not go into specifics, but the idea behind the Mann-Whitney U test is tha
 
 ## Your turn!
 
-Open the `Sample_Dataset_2014.xlsx` file that we will be using for all Your Turn exercises.
+Open the `Sample_Dataset_2014.xlsx` file that we will be using for all Your Turn exercises. You can find the dataset here: [Sample_Dataset_2014.xlsx Download](https://github.com/danawanzer/stats-with-jamovi/blob/master/data/Sample_Dataset_2014.xlsx)
 
 Perform independent t-tests based on the following research questions. Think critically about whether you should be using a one-tailed or two-tailed hypothesis and check your assumptions so you know which test to use!
 

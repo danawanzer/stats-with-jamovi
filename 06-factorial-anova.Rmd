@@ -66,33 +66,7 @@ This is also sometimes called the two-way (or three-way or n-way, depending on t
 
 > A company has created a new training program for their customer service staff. To test the effectiveness of the program they took a sample of 10 employees and assessed their performance in three areas:  Product (knowledge of the company's products and services), Client (their ability to relate to the customer with politeness and empathy) and Action (their ability to take action to help the customer). They then had the same 10 employees take the training course and rated their performance after the program in the same three areas. -[Real Statistics Using Excel](A%20company%20has%20created%20a%20new%20training%20program%20for%20their%20customer%20service%20staff.%20To%20test%20the%20effectiveness%20of%20the%20program%20they%20took%20a%20sample%20of%2010%20employees%20and%20assessed%20their%20performance%20in%20three%20areas:%20Product%20(knowledge%20of%20the%20company’s%20products%20and%20services),%20Client%20(their%20ability%20to%20relate%20to%20the%20customer%20with%20politeness%20and%20empathy)%20and%20Action%20(their%20ability%20to%20take%20action%20to%20help%20the%20customer).%20They%20then%20had%20the%20same%2010%20employees%20take%20the%20training%20course%20and%20rated%20their%20performance%20after%20the%20program%20in%20the%20same%20three%20areas.%20Based%20on%20the%20data%20in%20Figure%201,%20determine%20whether%20the%20program%20was%20effective.)
 
-+----+-------------+------------+------------+--------------+-------------+-------------+
-| ID | Pre-Product | Pre-Client | Pre-Action | Post-Product | Post-Client | Post-Action |
-+====+=============+============+============+==============+=============+=============+
-| 1  | 13          | 12         | 17         | 18           | 30          | 34          |
-+----+-------------+------------+------------+--------------+-------------+-------------+
-| 2  | 12          | 19         | 18         | 6            | 18          | 30          |
-+----+-------------+------------+------------+--------------+-------------+-------------+
-| 3  | 17          | 19         | 24         | 21           | 31          | 32          |
-+----+-------------+------------+------------+--------------+-------------+-------------+
-| 4  | 12          | 25         | 25         | 18           | 39          | 40          |
-+----+-------------+------------+------------+--------------+-------------+-------------+
-| 5  | 19          | 27         | 19         | 18           | 28          | 27          |
-+----+-------------+------------+------------+--------------+-------------+-------------+
-| 6  | 6           | 12         | 6          | 6            | 18          | 23          |
-+----+-------------+------------+------------+--------------+-------------+-------------+
-| 7  | 17          | 18         | 30         | 24           | 36          | 38          |
-+----+-------------+------------+------------+--------------+-------------+-------------+
-| 8  | 18          | 29         | 36         | 22           | 36          | 40          |
-+----+-------------+------------+------------+--------------+-------------+-------------+
-| 9  | 23          | 30         | 24         | 18           | 38          | 32          |
-+----+-------------+------------+------------+--------------+-------------+-------------+
-| 10 | 18          | 12         | 24         | 24           | 25          | 34          |
-+----+-------------+------------+------------+--------------+-------------+-------------+
-
-: Dataset for the repeated measures factorial ANOVA
-
-You can copy-paste the table into Microsoft Excel, save as an .xlsx or .csv file, and import into jamovi to follow-along.
+You can find the dataset here to follow along: [Repeated-measures-factorial-ANOVA.xlsx Download](https://github.com/danawanzer/stats-with-jamovi/blob/master/data/Repeated-measures-factorial-ANOVA.xlsx)
 
 In jamovi, select Repeated Measures ANOVA under the ANOVA analysis option. Here are the general steps:
 
@@ -138,7 +112,7 @@ Now we have everything we need (in addition to the estimated marginal means) and
 
 ## Mixed Factorial ANOVA
 
-Download the data for this analysis here:
+You can find the dataset here to follow along: [mixed-factorial.sav Download](https://github.com/danawanzer/stats-with-jamovi/blob/master/data/mixed-factorial.sav)
 
 This dataset comes from a larger studying examining the effect of a delayed reward preference of three commodities (food, money, and music) on food cravings (as rated by the Food Craving Questionnaire [FCQ]) for each participant. Participants were in one of two conditions: the control condition did not do anything and the experimental condition had participants do the tasks while fasting.
 

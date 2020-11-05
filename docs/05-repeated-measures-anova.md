@@ -223,7 +223,7 @@ This is where you need to think creatively and be very critical in checking that
 
 ## Your turn!
 
-Open the `Sample_Dataset_2014.xlsx` file that we will be using for all Your Turn exercises.
+Open the `Sample_Dataset_2014.xlsx` file that we will be using for all Your Turn exercises. You can find the dataset here: [Sample_Dataset_2014.xlsx Download](https://github.com/danawanzer/stats-with-jamovi/blob/master/data/Sample_Dataset_2014.xlsx)
 
 Perform a repeated measures ANOVA based on the following research questions. Check your assumptions and ensure you are using the correct tests.
 

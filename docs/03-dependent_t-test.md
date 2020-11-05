@@ -4,9 +4,26 @@
 
 ## What is the dependent t-test?
 
-The dependent t-test is used to test the difference in our dependent variable between two categories in which participants are the *same* across categories. Our category variable is our independent variable. In other words, we use the independent t-test when we have a research question with a **continuous dependent variable** and a **categorical independent variable with two categories in which the same participants are in each category**.
+The dependent t-test is used to test the difference in our dependent variable between two categories in which participants are the *same* across categories. Our category variable is our independent variable. In other words, we use the dependent t-test when we have a research question with a **continuous dependent variable** and a **categorical independent variable with two categories in which the same participants are in each category**.
 
 The dependent t-test is also called a dependent samples t-test or paired samples t-test.
+
+There are three different types of alternative hypotheses we could have for the dependent t-test:
+
+1.  **Two-tailed**
+
+    -   $H_1$: There is a difference in means between the two time points or conditions.
+    -   $H_0$: There is no difference in means between the two time points or conditions.
+
+2.  **One-tailed**
+
+    -   $H_1$: The mean at time 1 or condition 1 is greater than the mean at time 2 or condition 2.
+    -   $H_0$: The mean at time 1 or condition 1 is less than or equal to the mean at time 2 or condition 2.
+
+3.  **One-tailed**
+
+    -   $H_1$: The mean at time 1 or condition 1 is smaller than the mean at time 2 or condition 2.
+    -   $H_0$: The mean at time 1 or condition 1 is greater than or equal to the mean at time 2 or condition 2.
 
 ## Data set-up
 
@@ -31,7 +48,7 @@ In the example data above, what is your **independent variable**? <select class=
 
 In the example data above, what is your **dependent variable**? <select class='solveme' data-answer='["Test Score"]'> <option></option> <option>ID</option> <option>Semester</option> <option>Test Score</option></select>
 
-## The math behind the independent t-test
+## The math behind the dependent t-test
 
 The basic math of the dependent t-test is the mean difference divided by the standard error, which is estimated based on the standard deviation and sample size (N).
 
@@ -39,7 +56,7 @@ $t = \frac{\bar{X}_1 - \bar{X}_2}{s_d/ \sqrt{N}}$
 
 ## Assumptions
 
-As a parametric test, the independent t-test has the same assumptions as other parametric tests minus the homogeneity of variance assumption because we are dealing with the same people across categories
+As a parametric test, the dependent t-test has the same assumptions as other parametric tests minus the homogeneity of variance assumption because we are dealing with the same people across categories
 
 1.  The *differences in scores* in the dependent variable are **normally distributed**
 
@@ -126,7 +143,7 @@ Here is the output for both the dependent t-test and the Wilcoxon rank test:
 
 }
 
-\caption{All independent t-test results in jamovi}(\#fig:unnamed-chunk-4)
+\caption{All dependent t-test results in jamovi}(\#fig:unnamed-chunk-4)
 \end{figure}
 
 #### Wilcoxon rank in jamovi
@@ -139,7 +156,7 @@ The note about tied values is not necessary to discuss. It is just telling us on
 
 ## Your turn!
 
-Open the `Sample_Dataset_2014.xlsx` file that we use for all Your Turn exercises.
+Open the `Sample_Dataset_2014.xlsx` file that we will be using for all Your Turn exercises. You can find the dataset here: [Sample_Dataset_2014.xlsx Download](https://github.com/danawanzer/stats-with-jamovi/blob/master/data/Sample_Dataset_2014.xlsx)
 
 Perform dependent t-tests based on the following research questions. Think critically about whether you should be using a one-tailed or two-tailed hypothesis and check your assumptions so you know which test to use!
 
