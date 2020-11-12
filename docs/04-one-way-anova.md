@@ -173,11 +173,16 @@ Although we should meet the assumptions as much as possible, in general the F-st
 
 Let's run an example with data from lsj-data. Open data from your Data Library in "lsj-data". Select and open "clinicaltrial". This dataset is hypothetical data of a clinical trial in which you are testing a new antidepressant drug called *Joyzepam*. In order to construct a fair test of the drug's effectiveness, the study involves three separate drugs to be administered. One is a placebo, and the other is an existing antidepressant / anti-anxiety drug called *Anxifree*. A collection of 18 participants with moderate to severe depression are recruited for your initial testing. Because the drugs are sometimes administered in conjunction with psychological therapy, your study includes 9 people undergoing cognitive behavioral therapy (CBT) and 9 who are not. Participants are randomly assigned (doubly blinded, of course) a treatment, such that there are 3 CBT people and 3 no-therapy people assigned to each of the 3 drugs. A psychologist assesses the mood of each person after a 3 month run with each drug, and the overall improvement in each person's mood is assessed on a scale ranging from -5 to +5.
 
-1.  To perform a one-way ANOVA in jamovi, go to the Analyses tab, click the ANOVA button, and choose "ANOVA". You might be asking why we aren't choosing "One-Way ANOVA" and that's because the options there are too limited.
+\begin{warning}
+Do not use the one-way ANOVA analysis in jamovi! The options there are
+too limited for our use. Instead, be sure you use ANOVA!
+\end{warning}
+
+1.  To perform a one-way ANOVA in jamovi, go to the Analyses tab, click the **ANOVA** button, and choose "ANOVA". You might be asking why we aren't choosing "One-Way ANOVA" and that's because the options there are too limited.
 
 2.  Move your dependent variable `mood.gain` to the Dependent Variable box and your independent variable `drug` to the Fixed Factors box.
 
-3.  Select $\omega^2$ for your effect size.
+3.  Select $\omega^2$ (omega-squared) for your effect size.
 
 4.  Ignore the Model drop-down menu. If you are doing more complicated ANOVAs you will need this. We will ignore it.
 
@@ -195,7 +200,7 @@ When you are done, your setup should look like this:
 
 }
 
-\caption{One-way ANOVA setup in jamovi}(\#fig:unnamed-chunk-2)
+\caption{One-way ANOVA setup in jamovi}(\#fig:unnamed-chunk-3)
 \end{figure}
 
 ### Checking assumptions in jamovi
@@ -210,7 +215,7 @@ We test for homogeneity of variance using the Levene's test. The Levene's test w
 
 }
 
-\caption{Testing assumptions in jamovi}(\#fig:unnamed-chunk-3)
+\caption{Testing assumptions in jamovi}(\#fig:unnamed-chunk-4)
 \end{figure}
 
 \begin{figure}
@@ -219,7 +224,7 @@ We test for homogeneity of variance using the Levene's test. The Levene's test w
 
 }
 
-\caption{**CAPTION THIS FIGURE!!**}(\#fig:unnamed-chunk-4)
+\caption{Testing assumptions in jamovi}(\#fig:unnamed-chunk-5)
 \end{figure}
 
 ## Interpreting results
@@ -232,7 +237,7 @@ Once we are satisfied we have satisfied the assumptions for the one-way ANOVA, w
 
 }
 
-\caption{One-way ANOVA results in jamovi}(\#fig:unnamed-chunk-5)
+\caption{One-way ANOVA results in jamovi}(\#fig:unnamed-chunk-6)
 \end{figure}
 
 Our p-value is less than .05, so our results are statistically significant. We can write up our results in APA something like this:
@@ -270,7 +275,7 @@ In jamovi, under Variances select `Don't assume equal (Welch's)`. Move `mood.gai
 
 }
 
-\caption{One-way ANOVA results in jamovi}(\#fig:unnamed-chunk-6)
+\caption{One-way ANOVA results in jamovi}(\#fig:unnamed-chunk-7)
 \end{figure}
 
 > Using a Welch's F-test, there is a significant difference in mood gain across the three drug conditions, *F* (2, 9.49) = 26.32, *p* \< .001.
@@ -285,7 +290,7 @@ To perform the Kruskal-Wallis test in jamovi, you will need to select under the 
 
 }
 
-\caption{Kruskal-Wallis results in jamovi}(\#fig:unnamed-chunk-7)
+\caption{Kruskal-Wallis results in jamovi}(\#fig:unnamed-chunk-8)
 \end{figure}
 
 > Using a Kruskal-Wallis test, there is a significant difference in mood gain across the three drug conditions, $\chi^2$ (2) = 12.08, *p* = .002, $\epsilon^2$ = .71.
@@ -310,7 +315,7 @@ If you have before-analysis hypotheses of group differences in your data, you wi
 
 }
 
-\caption{**CAPTION THIS FIGURE!!**}(\#fig:unnamed-chunk-8)
+\caption{Contrasts - Deviation}(\#fig:unnamed-chunk-9)
 \end{figure}
 
 2.  **Simple**: Each category is compared to the first category. The order of categories is alphabetical or numerical order. Notice how anxifree is considered the first category.
@@ -321,7 +326,7 @@ If you have before-analysis hypotheses of group differences in your data, you wi
 
 }
 
-\caption{**CAPTION THIS FIGURE!!**}(\#fig:unnamed-chunk-9)
+\caption{Contrasts - Simple}(\#fig:unnamed-chunk-10)
 \end{figure}
 
 3.  **Difference**: Each category (except the first) is compared to the mean effect of all previous categories.
@@ -332,7 +337,7 @@ If you have before-analysis hypotheses of group differences in your data, you wi
 
 }
 
-\caption{**CAPTION THIS FIGURE!!**}(\#fig:unnamed-chunk-10)
+\caption{Contrasts - Difference}(\#fig:unnamed-chunk-11)
 \end{figure}
 
 4.  **Helmert**: Each category (except the last) is compared to the mean effect of all subsequent categories.
@@ -343,7 +348,7 @@ If you have before-analysis hypotheses of group differences in your data, you wi
 
 }
 
-\caption{**CAPTION THIS FIGURE!!**}(\#fig:unnamed-chunk-11)
+\caption{Contrasts - Helmert}(\#fig:unnamed-chunk-12)
 \end{figure}
 
 5.  **Repeated**: Each category is compared to the last category.
@@ -354,7 +359,7 @@ If you have before-analysis hypotheses of group differences in your data, you wi
 
 }
 
-\caption{**CAPTION THIS FIGURE!!**}(\#fig:unnamed-chunk-12)
+\caption{Contrasts - Repeated}(\#fig:unnamed-chunk-13)
 \end{figure}
 
 6.  **Polynomial**: Tests trends in the data. It will examine the *n-1*^th^ degree based on the number of groups. In this case, because we have 3 groups it is testing both a linear (^1^) and quadratic (^2^) trend. If we had 5 groups, it would test a linear (^1^), quadratic (^2^), cubic (^3^), and quartic (^4^) trend. Note that your factor levels must be ordinal for a polynomial contrast to make sense.
@@ -365,7 +370,7 @@ If you have before-analysis hypotheses of group differences in your data, you wi
 
 }
 
-\caption{**CAPTION THIS FIGURE!!**}(\#fig:unnamed-chunk-13)
+\caption{Contrasts - Polynomial}(\#fig:unnamed-chunk-14)
 \end{figure}
 
 **Test yourself!** Which contrast would make [most sense]{.ul} to test given that we want to know how our drug compares to the other two drugs? <select class='solveme' data-answer='["repeated"]'> <option></option> <option>deviation</option> <option>simple</option> <option>difference</option> <option>helmert</option> <option>repeated</option> <option>polynomial</option></select>
@@ -402,7 +407,7 @@ Below shows the post hoc test results for our one-way ANOVA. Notice the differen
 
 }
 
-\caption{Post hoc test results in jamovi}(\#fig:unnamed-chunk-14)
+\caption{Post hoc test results in jamovi}(\#fig:unnamed-chunk-15)
 \end{figure}
 
 #### Writing up post hoc results

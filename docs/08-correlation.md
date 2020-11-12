@@ -192,11 +192,72 @@ We can write up our results in APA something like this:
 
 > Dan's grumpiness (*M* = 63.71, *SD* = 10.05) is negatively correlated with both Dan's quality of sleep (*M* = 6.97, *SD* = 1.02; *r* = -.90, *p* \< .001) and the baby's quality of sleep (*M* = 8.05, *SD* = 2.07; *r* = -.57, *p* \< .001). Furthermore, Dan's and the baby's quality of sleep are positively correlated (*r* = .63, *p* \< .001).
 
+## R-Squared
+
+The cool thing about the correlation is that we can square $r$ to get $r^2$, which is the percentage of variance overlap. It is the percentage of variance in one variable that is shared by the other. You simply square the $r$ correlation coefficient to find the $r^2$. For example, our correlation above between Dan's grumpiness and Dan's quality of sleep is $r$ = -.90; therefore, its $r^2$ = .81 or 81%. 81% of the variance in Dan's grumpiness can be explained by Dan's quality of sleep!
+
 ## What if I violate the assumptions?
 
 If you violate any of the three assumptions, you can choose to perform Spearman's rank correlation instead of a Pearson correlation. Both Spearman's rho and Kendall's tau are non-parametric statistics based on rank order. To perform Spearman's correlation, change the check mark in jamovi from Pearson to Spearman. You will interpret just the same; however, instead of using the letter *r* you can either use $r_s$, $r_{spearman}$, or $\rho$ (the Greek letter rho).
 
 What about Kendall's tau? It will likely give you the same results as Spearman's rho but it is interpreted slightly differently. We won't use it in this class.
+
+## Comparing strengths of correlations
+
+Sometimes you want to compare two correlations to find out if one correlation is significantly stronger than another. You can use this calculator to calculate the p-value: [www.psychometrica.de/correlation.html](www.psychometrica.de/correlation.html)
+
+Note that you use \#1 (Independent Samples) when the correlations come from different samples and \#2 (Dependent Samples) when the correlations come from the same sample. For example, to compare the correlation between English and Reading to the correlation between English and Writing, you would use \#2 (Dependent Samples). But to compare the correlations between English and Reading for men and women, you would use \#1 (Independent Samples).
+
+Let's try them both with our [Sample_Dataset_2014.xlsx](https://github.com/danawanzer/stats-with-jamovi/blob/master/data/Sample_Dataset_2014.xlsx).
+
+1.  **Comparison of correlations from independent samples**
+
+We want to test the correlations between English and Reading for men and women. We first need to gather those correlations in jamovi. We can do this through **filters**.
+
+Let's first find the correlation for men. Go to the Data tab in jamovi, click Filters, and enter in the $\int_x$ = Gender == 0. Next, go to the Analyses tab in jamovi, click Regression, and choose Correlation Matrix. Move our two variables over (`English` and `Reading`) and check the box for `N`. You should get *r* = .36, *p* \< .001, *n* = 181.
+
+Now let's find the correlation for women. Go back to the Data tab in jamovi, click Filters, and change the equation to $\int_x$ = Gender == 1. Your results should automatically update because the filter changed. For women, you should get *r* = .33, *p* \< .001, *n* = 210.
+
+Now we can compare the correlations in our [Testing the Significance of Correlations](https://www.psychometrica.de/correlation.html) webpage, \#1. In Correlation 1, put 181 in the n column and .36 in the r column. In Correlation 2, put 210 in the n column and .33 in the r column. The results are shown below. The z-score is not statistically significant (*p* = .369) so there is no significant difference in correlation strength.
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{images/08-correlation/compare-correlations-independent} 
+
+}
+
+\caption{Comparison of correlations from independent samples}(\#fig:unnamed-chunk-10)
+\end{figure}
+
+2.  **Comparison of correlations from dependent samples**
+
+Now let's test whether the correlation between English and Reading differs from the correlation between English and Writing.
+
+Notice how we have three tests we are comparing: (1) English, (2) Reading, and (3) Writing. We can't use this test if we are testing the correlation between variables A and B and the correlation between variables C and D. There needs to be overlap.
+
+If you still have your filter on in your dataset from the previous analysis, turn it off. Go to the Data tab, click Filters, and either select the X to delete it or toggle the active button so it's turned off. Return to your Correlation Matrix results and click on it to edit it. Add Writing to the box.
+
+However, we have a problem! The [Testing the Significance of Correlations](https://www.psychometrica.de/correlation.html) webpage (\#2) wants a single N, but our correlation matrix has different Ns because of missing data. What can we do? We need to chain filters! Go back to your Data tab, click Filters, and add three filters like below (note: this is how you can get *listwise deletion* in jamovi):
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{images/08-correlation/correlation-filters} 
+
+}
+
+\caption{Advanced filters}(\#fig:unnamed-chunk-11)
+\end{figure}
+
+Our correlation matrix should have automatically updated and all the N's equal 370. Great! We now have all the information we need to input into our [Testing the Significance of Correlations](https://www.psychometrica.de/correlation.html) webpage, \#2. For n we input 370. For $r_{12}$ we enter the correlation between (1) English and (2) Reading. For $r_{13}$ we enter the correlation between (1) English and (3) Writing. For $r_{23}$ we enter the correlation between (2) Reading and (3) Writing. Our z-score is not statistically significant (*p* = .213) so there is no significant difference in the correlation between English and Reading (*r* = .32) with the correlation between English and Writing (*r* = .37).
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{images/08-correlation/compare-correlations-dependent} 
+
+}
+
+\caption{Comparison of correlations from dependent samples}(\#fig:unnamed-chunk-12)
+\end{figure}
 
 ## Your turn!
 

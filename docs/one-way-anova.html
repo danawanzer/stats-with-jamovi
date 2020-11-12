@@ -196,8 +196,10 @@
 <li class="chapter" data-level="8.6.2" data-path="correlation.html"><a href="correlation.html#testing-linearity"><i class="fa fa-check"></i><b>8.6.2</b> Testing linearity</a></li>
 </ul></li>
 <li class="chapter" data-level="8.7" data-path="correlation.html"><a href="correlation.html#interpreting-results-4"><i class="fa fa-check"></i><b>8.7</b> Interpreting results</a></li>
-<li class="chapter" data-level="8.8" data-path="correlation.html"><a href="correlation.html#what-if-i-violate-the-assumptions"><i class="fa fa-check"></i><b>8.8</b> What if I violate the assumptions?</a></li>
-<li class="chapter" data-level="8.9" data-path="correlation.html"><a href="correlation.html#your-turn-4"><i class="fa fa-check"></i><b>8.9</b> Your turn!</a></li>
+<li class="chapter" data-level="8.8" data-path="correlation.html"><a href="correlation.html#r-squared"><i class="fa fa-check"></i><b>8.8</b> R-Squared</a></li>
+<li class="chapter" data-level="8.9" data-path="correlation.html"><a href="correlation.html#what-if-i-violate-the-assumptions"><i class="fa fa-check"></i><b>8.9</b> What if I violate the assumptions?</a></li>
+<li class="chapter" data-level="8.10" data-path="correlation.html"><a href="correlation.html#comparing-strengths-of-correlations"><i class="fa fa-check"></i><b>8.10</b> Comparing strengths of correlations</a></li>
+<li class="chapter" data-level="8.11" data-path="correlation.html"><a href="correlation.html#your-turn-4"><i class="fa fa-check"></i><b>8.11</b> Your turn!</a></li>
 </ul></li>
 <li class="appendix"><span><b>Appendices</b></span></li>
 <li class="chapter" data-level="A" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>A</b> References</a></li>
@@ -454,36 +456,41 @@ Figure 3.1: Graphical illustration of the one-way ANOVA
 <div id="in-jamovi-1" class="section level2" number="4.7">
 <h2><span class="header-section-number">4.7</span> In jamovi</h2>
 <p>Let’s run an example with data from lsj-data. Open data from your Data Library in “lsj-data.” Select and open “clinicaltrial.” This dataset is hypothetical data of a clinical trial in which you are testing a new antidepressant drug called <em>Joyzepam</em>. In order to construct a fair test of the drug’s effectiveness, the study involves three separate drugs to be administered. One is a placebo, and the other is an existing antidepressant / anti-anxiety drug called <em>Anxifree</em>. A collection of 18 participants with moderate to severe depression are recruited for your initial testing. Because the drugs are sometimes administered in conjunction with psychological therapy, your study includes 9 people undergoing cognitive behavioral therapy (CBT) and 9 who are not. Participants are randomly assigned (doubly blinded, of course) a treatment, such that there are 3 CBT people and 3 no-therapy people assigned to each of the 3 drugs. A psychologist assesses the mood of each person after a 3 month run with each drug, and the overall improvement in each person’s mood is assessed on a scale ranging from -5 to +5.</p>
+<div class="warning">
+<p>
+Do not use the one-way ANOVA analysis in jamovi! The options there are too limited for our use. Instead, be sure you use ANOVA!
+</p>
+</div>
 <ol style="list-style-type: decimal">
-<li><p>To perform a one-way ANOVA in jamovi, go to the Analyses tab, click the ANOVA button, and choose “ANOVA.” You might be asking why we aren’t choosing “One-Way ANOVA” and that’s because the options there are too limited.</p></li>
+<li><p>To perform a one-way ANOVA in jamovi, go to the Analyses tab, click the <strong>ANOVA</strong> button, and choose “ANOVA.” You might be asking why we aren’t choosing “One-Way ANOVA” and that’s because the options there are too limited.</p></li>
 <li><p>Move your dependent variable <code>mood.gain</code> to the Dependent Variable box and your independent variable <code>drug</code> to the Fixed Factors box.</p></li>
-<li><p>Select <span class="math inline">\(\omega^2\)</span> for your effect size.</p></li>
+<li><p>Select <span class="math inline">\(\omega^2\)</span> (omega-squared) for your effect size.</p></li>
 <li><p>Ignore the Model drop-down menu. If you are doing more complicated ANOVAs you will need this. We will ignore it.</p></li>
 <li><p>In the Assumption Checks drop-down menu, select all three options: <code>Homogeneity test</code>, <code>Normality test</code>, and <code>Q-Q plot</code>.</p></li>
 <li><p>Ignore the Contrasts and Post Hoc Tests drop-down menus for now. See below for more information on them.</p></li>
 <li><p>In the Estimated Marginal Means drop-down menu, move your IV <code>drug</code> to the Marginal Means box and select <code>Marginal means plots</code>, <code>Marginal means tables</code>, and <code>Observed scores</code>, in addition to the pre-selected <code>Equal cell weights</code>.</p></li>
 </ol>
 <p>When you are done, your setup should look like this:</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-2"></span>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-3"></span>
 <img src="images/04_one-way-anova/one-way_setup.png" alt="One-way ANOVA setup in jamovi" width="80%" />
 <p class="caption">
-Figure 2.1: One-way ANOVA setup in jamovi
+Figure 2.2: One-way ANOVA setup in jamovi
 </p>
 </div>
 <div id="checking-assumptions-in-jamovi-2" class="section level3" number="4.7.1">
 <h3><span class="header-section-number">4.7.1</span> Checking assumptions in jamovi</h3>
 <p>We test for normality using the Shapiro-Wilk test and the Q-Q plot. The Shapiro-Wilk test was not statistically significant (W = .96, <em>p</em> = .605); therefore, this indicates the data is normally distributed. Furthermore, the lines are fairly close to the diagonal line in the Q-Q plot. We can conclude that we satisfy the assumption of normality.</p>
 <p>We test for homogeneity of variance using the Levene’s test. The Levene’s test was not statistically significant (<em>F</em> [2, 15] = 1.45, <em>p</em> = .266); therefore, this indicates our data satisfies the assumption of homogeneity of variance. However, I would add a caveat that we have a small sample of data (<em>N</em> = 18); we should have tried to collect more data.</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-3"></span>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-4"></span>
 <img src="images/04_one-way-anova/one-way_assumptions1.png" alt="Testing assumptions in jamovi" width="100%" />
 <p class="caption">
-Figure 2.2: Testing assumptions in jamovi
+Figure 2.3: Testing assumptions in jamovi
 </p>
 </div>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-4"></span>
-<img src="images/04_one-way-anova/one-way_assumptions2.png" alt="**CAPTION THIS FIGURE!!**" width="100%" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-5"></span>
+<img src="images/04_one-way-anova/one-way_assumptions2.png" alt="Testing assumptions in jamovi" width="100%" />
 <p class="caption">
-Figure 2.3: <strong>CAPTION THIS FIGURE!!</strong>
+Figure 2.4: Testing assumptions in jamovi
 </p>
 </div>
 </div>
@@ -491,10 +498,10 @@ Figure 2.3: <strong>CAPTION THIS FIGURE!!</strong>
 <div id="interpreting-results-2" class="section level2" number="4.8">
 <h2><span class="header-section-number">4.8</span> Interpreting results</h2>
 <p>Once we are satisfied we have satisfied the assumptions for the one-way ANOVA, we can interpret our results.</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-5"></span>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-6"></span>
 <img src="images/04_one-way-anova/one-way_results.png" alt="One-way ANOVA results in jamovi" width="100%" />
 <p class="caption">
-Figure 2.4: One-way ANOVA results in jamovi
+Figure 2.5: One-way ANOVA results in jamovi
 </p>
 </div>
 <p>Our p-value is less than .05, so our results are statistically significant. We can write up our results in APA something like this:</p>
@@ -539,10 +546,10 @@ Figure 2.4: One-way ANOVA results in jamovi
 <h4><span class="header-section-number">4.9.0.1</span> Welch’s F-test in jamovi</h4>
 <p>To conduct this in jamovi, you will need to use the “One-Way ANOVA” test, not the “ANOVA” test. The unfortunate thing about this test is that it strangely does not provide effect sizes.</p>
 <p>In jamovi, under Variances select <code>Don't assume equal (Welch's)</code>. Move <code>mood.gain</code> to the Dependent Variable box and <code>drug</code> to your Grouping Variable box. You will interpret the results similarly to the one-way ANOVA:</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-6"></span>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-7"></span>
 <img src="images/04_one-way-anova/one-way_results_Welch.png" alt="One-way ANOVA results in jamovi" width="100%" />
 <p class="caption">
-Figure 2.5: One-way ANOVA results in jamovi
+Figure 4.1: One-way ANOVA results in jamovi
 </p>
 </div>
 <blockquote>
@@ -552,10 +559,10 @@ Figure 2.5: One-way ANOVA results in jamovi
 <div id="kruskal-wallis-test-in-jamovi" class="section level4" number="4.9.0.2">
 <h4><span class="header-section-number">4.9.0.2</span> Kruskal-Wallis test in jamovi</h4>
 <p>To perform the Kruskal-Wallis test in jamovi, you will need to select under the ANOVA button “One-Way ANOVA, Kruskal Wallis” towards the bottom of the list of options. Move <code>mood.gain</code> to the Dependent Variables box and <code>drug</code> to the Grouping Variable box. Select Effect size; if you need post hoc comparisons select DSCF pairwise comparisons (see section below on group differences). You will interpret the results similarly to the one-way ANOVA:</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-7"></span>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-8"></span>
 <img src="images/04_one-way-anova/one-way_results_Kruskal.png" alt="Kruskal-Wallis results in jamovi" width="100%" />
 <p class="caption">
-Figure 4.1: Kruskal-Wallis results in jamovi
+Figure 4.2: Kruskal-Wallis results in jamovi
 </p>
 </div>
 <blockquote>
@@ -574,55 +581,55 @@ Figure 4.1: Kruskal-Wallis results in jamovi
 <ol style="list-style-type: decimal">
 <li><strong>Deviation</strong>: compares the effect of each category (except the first category) to the overall experimental effect. The order of categories is alphabetical or numerical order. Notice how anxifree is considered the first category.</li>
 </ol>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-8"></span>
-<img src="images/04_one-way-anova/contrasts_deviation.png" alt="**CAPTION THIS FIGURE!!**" width="100%" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-9"></span>
+<img src="images/04_one-way-anova/contrasts_deviation.png" alt="Contrasts - Deviation" width="100%" />
 <p class="caption">
-Figure 4.2: <strong>CAPTION THIS FIGURE!!</strong>
+Figure 4.3: Contrasts - Deviation
 </p>
 </div>
 <ol start="2" style="list-style-type: decimal">
 <li><strong>Simple</strong>: Each category is compared to the first category. The order of categories is alphabetical or numerical order. Notice how anxifree is considered the first category.</li>
 </ol>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-9"></span>
-<img src="images/04_one-way-anova/contrasts_simple.png" alt="**CAPTION THIS FIGURE!!**" width="100%" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-10"></span>
+<img src="images/04_one-way-anova/contrasts_simple.png" alt="Contrasts - Simple" width="100%" />
 <p class="caption">
-Figure 4.3: <strong>CAPTION THIS FIGURE!!</strong>
+Figure 4.4: Contrasts - Simple
 </p>
 </div>
 <ol start="3" style="list-style-type: decimal">
 <li><strong>Difference</strong>: Each category (except the first) is compared to the mean effect of all previous categories.</li>
 </ol>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-10"></span>
-<img src="images/04_one-way-anova/contrasts_difference.png" alt="**CAPTION THIS FIGURE!!**" width="100%" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-11"></span>
+<img src="images/04_one-way-anova/contrasts_difference.png" alt="Contrasts - Difference" width="100%" />
 <p class="caption">
-Figure 4.4: <strong>CAPTION THIS FIGURE!!</strong>
+Figure 4.5: Contrasts - Difference
 </p>
 </div>
 <ol start="4" style="list-style-type: decimal">
 <li><strong>Helmert</strong>: Each category (except the last) is compared to the mean effect of all subsequent categories.</li>
 </ol>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-11"></span>
-<img src="images/04_one-way-anova/contrasts_helmert.png" alt="**CAPTION THIS FIGURE!!**" width="100%" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-12"></span>
+<img src="images/04_one-way-anova/contrasts_helmert.png" alt="Contrasts - Helmert" width="100%" />
 <p class="caption">
-Figure 4.5: <strong>CAPTION THIS FIGURE!!</strong>
+Figure 4.6: Contrasts - Helmert
 </p>
 </div>
 <ol start="5" style="list-style-type: decimal">
 <li><strong>Repeated</strong>: Each category is compared to the last category.</li>
 </ol>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-12"></span>
-<img src="images/04_one-way-anova/contrasts_repeated.png" alt="**CAPTION THIS FIGURE!!**" width="100%" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-13"></span>
+<img src="images/04_one-way-anova/contrasts_repeated.png" alt="Contrasts - Repeated" width="100%" />
 <p class="caption">
-Figure 4.6: <strong>CAPTION THIS FIGURE!!</strong>
+Figure 4.7: Contrasts - Repeated
 </p>
 </div>
 <ol start="6" style="list-style-type: decimal">
 <li><strong>Polynomial</strong>: Tests trends in the data. It will examine the <em>n-1</em><sup>th</sup> degree based on the number of groups. In this case, because we have 3 groups it is testing both a linear (<sup>1</sup>) and quadratic (<sup>2</sup>) trend. If we had 5 groups, it would test a linear (<sup>1</sup>), quadratic (<sup>2</sup>), cubic (<sup>3</sup>), and quartic (<sup>4</sup>) trend. Note that your factor levels must be ordinal for a polynomial contrast to make sense.</li>
 </ol>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-13"></span>
-<img src="images/04_one-way-anova/contrasts_polynomial.png" alt="**CAPTION THIS FIGURE!!**" width="100%" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-14"></span>
+<img src="images/04_one-way-anova/contrasts_polynomial.png" alt="Contrasts - Polynomial" width="100%" />
 <p class="caption">
-Figure 4.7: <strong>CAPTION THIS FIGURE!!</strong>
+Figure 4.8: Contrasts - Polynomial
 </p>
 </div>
 <p><strong>Test yourself!</strong> Which contrast would make <u>most sense</u> to test given that we want to know how our drug compares to the other two drugs? <select class='solveme' data-answer='["repeated"]'> <option></option> <option>deviation</option> <option>simple</option> <option>difference</option> <option>helmert</option> <option>repeated</option> <option>polynomial</option></select></p>
@@ -649,10 +656,10 @@ Figure 4.7: <strong>CAPTION THIS FIGURE!!</strong>
 <p>Games-Howell for when you have unequal variances and Tukey for when you have equal variances. They will each calculate your p-values slightly differently but in a way to control for our Type I error rate as best it can. They are interpreted very similarly, so we will proceed with the Tukey’s post hoc comparisons because we satisfied the assumption of equal variances.</p>
 <p>To request post hoc tests from the one-way ANOVA, open the collapsed menu at the bottom of the setup menu. Select <code>Tukey (equal variances</code> under Post-Hoc Test and select <code>Mean difference</code>, <code>Report significance</code>, and <code>Flag significant comparisons</code> under Statistics. Optionally, you can request the <code>Test results (t and df)</code> although this is not necessary.</p>
 <p>Below shows the post hoc test results for our one-way ANOVA. Notice the differences in p-values across the four post hoc tests and how all other values are the same. Notice how the Bonferroni is most conservative (i.e., has the largest p-values) and the Holm’s is the least conservative (i.e., has the smallest p-values). Keep in mind you do not normally ask for multiple post hoc comparisons. Just pick one! Normally, I just pick Tukey’s.</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-14"></span>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-15"></span>
 <img src="images/04_one-way-anova/one-way_results_post-hoc.png" alt="Post hoc test results in jamovi" width="100%" />
 <p class="caption">
-Figure 4.8: Post hoc test results in jamovi
+Figure 4.9: Post hoc test results in jamovi
 </p>
 </div>
 <div id="writing-up-post-hoc-results" class="section level4" number="4.10.2.1">

@@ -688,11 +688,16 @@ Although we should meet the assumptions as much as possible, in general the F-st
 
 Let's run an example with data from lsj-data. Open data from your Data Library in "lsj-data". Select and open "clinicaltrial". This dataset is hypothetical data of a clinical trial in which you are testing a new antidepressant drug called *Joyzepam*. In order to construct a fair test of the drug's effectiveness, the study involves three separate drugs to be administered. One is a placebo, and the other is an existing antidepressant / anti-anxiety drug called *Anxifree*. A collection of 18 participants with moderate to severe depression are recruited for your initial testing. Because the drugs are sometimes administered in conjunction with psychological therapy, your study includes 9 people undergoing cognitive behavioral therapy (CBT) and 9 who are not. Participants are randomly assigned (doubly blinded, of course) a treatment, such that there are 3 CBT people and 3 no-therapy people assigned to each of the 3 drugs. A psychologist assesses the mood of each person after a 3 month run with each drug, and the overall improvement in each person's mood is assessed on a scale ranging from -5 to +5.
 
-1.  To perform a one-way ANOVA in jamovi, go to the Analyses tab, click the ANOVA button, and choose "ANOVA". You might be asking why we aren't choosing "One-Way ANOVA" and that's because the options there are too limited.
+\begin{warning}
+Do not use the one-way ANOVA analysis in jamovi! The options there are
+too limited for our use. Instead, be sure you use ANOVA!
+\end{warning}
+
+1.  To perform a one-way ANOVA in jamovi, go to the Analyses tab, click the **ANOVA** button, and choose "ANOVA". You might be asking why we aren't choosing "One-Way ANOVA" and that's because the options there are too limited.
 
 2.  Move your dependent variable `mood.gain` to the Dependent Variable box and your independent variable `drug` to the Fixed Factors box.
 
-3.  Select $\omega^2$ for your effect size.
+3.  Select $\omega^2$ (omega-squared) for your effect size.
 
 4.  Ignore the Model drop-down menu. If you are doing more complicated ANOVAs you will need this. We will ignore it.
 
@@ -710,7 +715,7 @@ When you are done, your setup should look like this:
 
 }
 
-\caption{One-way ANOVA setup in jamovi}(\#fig:unnamed-chunk-2)
+\caption{One-way ANOVA setup in jamovi}(\#fig:unnamed-chunk-3)
 \end{figure}
 
 ### Checking assumptions in jamovi
@@ -725,7 +730,7 @@ We test for homogeneity of variance using the Levene's test. The Levene's test w
 
 }
 
-\caption{Testing assumptions in jamovi}(\#fig:unnamed-chunk-3)
+\caption{Testing assumptions in jamovi}(\#fig:unnamed-chunk-4)
 \end{figure}
 
 \begin{figure}
@@ -734,7 +739,7 @@ We test for homogeneity of variance using the Levene's test. The Levene's test w
 
 }
 
-\caption{**CAPTION THIS FIGURE!!**}(\#fig:unnamed-chunk-4)
+\caption{Testing assumptions in jamovi}(\#fig:unnamed-chunk-5)
 \end{figure}
 
 ## Interpreting results
@@ -747,7 +752,7 @@ Once we are satisfied we have satisfied the assumptions for the one-way ANOVA, w
 
 }
 
-\caption{One-way ANOVA results in jamovi}(\#fig:unnamed-chunk-5)
+\caption{One-way ANOVA results in jamovi}(\#fig:unnamed-chunk-6)
 \end{figure}
 
 Our p-value is less than .05, so our results are statistically significant. We can write up our results in APA something like this:
@@ -785,7 +790,7 @@ In jamovi, under Variances select `Don't assume equal (Welch's)`. Move `mood.gai
 
 }
 
-\caption{One-way ANOVA results in jamovi}(\#fig:unnamed-chunk-6)
+\caption{One-way ANOVA results in jamovi}(\#fig:unnamed-chunk-7)
 \end{figure}
 
 > Using a Welch's F-test, there is a significant difference in mood gain across the three drug conditions, *F* (2, 9.49) = 26.32, *p* \< .001.
@@ -800,7 +805,7 @@ To perform the Kruskal-Wallis test in jamovi, you will need to select under the 
 
 }
 
-\caption{Kruskal-Wallis results in jamovi}(\#fig:unnamed-chunk-7)
+\caption{Kruskal-Wallis results in jamovi}(\#fig:unnamed-chunk-8)
 \end{figure}
 
 > Using a Kruskal-Wallis test, there is a significant difference in mood gain across the three drug conditions, $\chi^2$ (2) = 12.08, *p* = .002, $\epsilon^2$ = .71.
@@ -825,7 +830,7 @@ If you have before-analysis hypotheses of group differences in your data, you wi
 
 }
 
-\caption{**CAPTION THIS FIGURE!!**}(\#fig:unnamed-chunk-8)
+\caption{Contrasts - Deviation}(\#fig:unnamed-chunk-9)
 \end{figure}
 
 2.  **Simple**: Each category is compared to the first category. The order of categories is alphabetical or numerical order. Notice how anxifree is considered the first category.
@@ -836,7 +841,7 @@ If you have before-analysis hypotheses of group differences in your data, you wi
 
 }
 
-\caption{**CAPTION THIS FIGURE!!**}(\#fig:unnamed-chunk-9)
+\caption{Contrasts - Simple}(\#fig:unnamed-chunk-10)
 \end{figure}
 
 3.  **Difference**: Each category (except the first) is compared to the mean effect of all previous categories.
@@ -847,7 +852,7 @@ If you have before-analysis hypotheses of group differences in your data, you wi
 
 }
 
-\caption{**CAPTION THIS FIGURE!!**}(\#fig:unnamed-chunk-10)
+\caption{Contrasts - Difference}(\#fig:unnamed-chunk-11)
 \end{figure}
 
 4.  **Helmert**: Each category (except the last) is compared to the mean effect of all subsequent categories.
@@ -858,7 +863,7 @@ If you have before-analysis hypotheses of group differences in your data, you wi
 
 }
 
-\caption{**CAPTION THIS FIGURE!!**}(\#fig:unnamed-chunk-11)
+\caption{Contrasts - Helmert}(\#fig:unnamed-chunk-12)
 \end{figure}
 
 5.  **Repeated**: Each category is compared to the last category.
@@ -869,7 +874,7 @@ If you have before-analysis hypotheses of group differences in your data, you wi
 
 }
 
-\caption{**CAPTION THIS FIGURE!!**}(\#fig:unnamed-chunk-12)
+\caption{Contrasts - Repeated}(\#fig:unnamed-chunk-13)
 \end{figure}
 
 6.  **Polynomial**: Tests trends in the data. It will examine the *n-1*^th^ degree based on the number of groups. In this case, because we have 3 groups it is testing both a linear (^1^) and quadratic (^2^) trend. If we had 5 groups, it would test a linear (^1^), quadratic (^2^), cubic (^3^), and quartic (^4^) trend. Note that your factor levels must be ordinal for a polynomial contrast to make sense.
@@ -880,7 +885,7 @@ If you have before-analysis hypotheses of group differences in your data, you wi
 
 }
 
-\caption{**CAPTION THIS FIGURE!!**}(\#fig:unnamed-chunk-13)
+\caption{Contrasts - Polynomial}(\#fig:unnamed-chunk-14)
 \end{figure}
 
 **Test yourself!** Which contrast would make [most sense]{.ul} to test given that we want to know how our drug compares to the other two drugs? <select class='solveme' data-answer='["repeated"]'> <option></option> <option>deviation</option> <option>simple</option> <option>difference</option> <option>helmert</option> <option>repeated</option> <option>polynomial</option></select>
@@ -917,7 +922,7 @@ Below shows the post hoc test results for our one-way ANOVA. Notice the differen
 
 }
 
-\caption{Post hoc test results in jamovi}(\#fig:unnamed-chunk-14)
+\caption{Post hoc test results in jamovi}(\#fig:unnamed-chunk-15)
 \end{figure}
 
 #### Writing up post hoc results
@@ -1781,11 +1786,72 @@ We can write up our results in APA something like this:
 
 > Dan's grumpiness (*M* = 63.71, *SD* = 10.05) is negatively correlated with both Dan's quality of sleep (*M* = 6.97, *SD* = 1.02; *r* = -.90, *p* \< .001) and the baby's quality of sleep (*M* = 8.05, *SD* = 2.07; *r* = -.57, *p* \< .001). Furthermore, Dan's and the baby's quality of sleep are positively correlated (*r* = .63, *p* \< .001).
 
+## R-Squared
+
+The cool thing about the correlation is that we can square $r$ to get $r^2$, which is the percentage of variance overlap. It is the percentage of variance in one variable that is shared by the other. You simply square the $r$ correlation coefficient to find the $r^2$. For example, our correlation above between Dan's grumpiness and Dan's quality of sleep is $r$ = -.90; therefore, its $r^2$ = .81 or 81%. 81% of the variance in Dan's grumpiness can be explained by Dan's quality of sleep!
+
 ## What if I violate the assumptions?
 
 If you violate any of the three assumptions, you can choose to perform Spearman's rank correlation instead of a Pearson correlation. Both Spearman's rho and Kendall's tau are non-parametric statistics based on rank order. To perform Spearman's correlation, change the check mark in jamovi from Pearson to Spearman. You will interpret just the same; however, instead of using the letter *r* you can either use $r_s$, $r_{spearman}$, or $\rho$ (the Greek letter rho).
 
 What about Kendall's tau? It will likely give you the same results as Spearman's rho but it is interpreted slightly differently. We won't use it in this class.
+
+## Comparing strengths of correlations
+
+Sometimes you want to compare two correlations to find out if one correlation is significantly stronger than another. You can use this calculator to calculate the p-value: [www.psychometrica.de/correlation.html](www.psychometrica.de/correlation.html)
+
+Note that you use \#1 (Independent Samples) when the correlations come from different samples and \#2 (Dependent Samples) when the correlations come from the same sample. For example, to compare the correlation between English and Reading to the correlation between English and Writing, you would use \#2 (Dependent Samples). But to compare the correlations between English and Reading for men and women, you would use \#1 (Independent Samples).
+
+Let's try them both with our [Sample_Dataset_2014.xlsx](https://github.com/danawanzer/stats-with-jamovi/blob/master/data/Sample_Dataset_2014.xlsx).
+
+1.  **Comparison of correlations from independent samples**
+
+We want to test the correlations between English and Reading for men and women. We first need to gather those correlations in jamovi. We can do this through **filters**.
+
+Let's first find the correlation for men. Go to the Data tab in jamovi, click Filters, and enter in the $\int_x$ = Gender == 0. Next, go to the Analyses tab in jamovi, click Regression, and choose Correlation Matrix. Move our two variables over (`English` and `Reading`) and check the box for `N`. You should get *r* = .36, *p* \< .001, *n* = 181.
+
+Now let's find the correlation for women. Go back to the Data tab in jamovi, click Filters, and change the equation to $\int_x$ = Gender == 1. Your results should automatically update because the filter changed. For women, you should get *r* = .33, *p* \< .001, *n* = 210.
+
+Now we can compare the correlations in our [Testing the Significance of Correlations](https://www.psychometrica.de/correlation.html) webpage, \#1. In Correlation 1, put 181 in the n column and .36 in the r column. In Correlation 2, put 210 in the n column and .33 in the r column. The results are shown below. The z-score is not statistically significant (*p* = .369) so there is no significant difference in correlation strength.
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{images/08-correlation/compare-correlations-independent} 
+
+}
+
+\caption{Comparison of correlations from independent samples}(\#fig:unnamed-chunk-10)
+\end{figure}
+
+2.  **Comparison of correlations from dependent samples**
+
+Now let's test whether the correlation between English and Reading differs from the correlation between English and Writing.
+
+Notice how we have three tests we are comparing: (1) English, (2) Reading, and (3) Writing. We can't use this test if we are testing the correlation between variables A and B and the correlation between variables C and D. There needs to be overlap.
+
+If you still have your filter on in your dataset from the previous analysis, turn it off. Go to the Data tab, click Filters, and either select the X to delete it or toggle the active button so it's turned off. Return to your Correlation Matrix results and click on it to edit it. Add Writing to the box.
+
+However, we have a problem! The [Testing the Significance of Correlations](https://www.psychometrica.de/correlation.html) webpage (\#2) wants a single N, but our correlation matrix has different Ns because of missing data. What can we do? We need to chain filters! Go back to your Data tab, click Filters, and add three filters like below (note: this is how you can get *listwise deletion* in jamovi):
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{images/08-correlation/correlation-filters} 
+
+}
+
+\caption{Advanced filters}(\#fig:unnamed-chunk-11)
+\end{figure}
+
+Our correlation matrix should have automatically updated and all the N's equal 370. Great! We now have all the information we need to input into our [Testing the Significance of Correlations](https://www.psychometrica.de/correlation.html) webpage, \#2. For n we input 370. For $r_{12}$ we enter the correlation between (1) English and (2) Reading. For $r_{13}$ we enter the correlation between (1) English and (3) Writing. For $r_{23}$ we enter the correlation between (2) Reading and (3) Writing. Our z-score is not statistically significant (*p* = .213) so there is no significant difference in the correlation between English and Reading (*r* = .32) with the correlation between English and Writing (*r* = .37).
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{images/08-correlation/compare-correlations-dependent} 
+
+}
+
+\caption{Comparison of correlations from dependent samples}(\#fig:unnamed-chunk-12)
+\end{figure}
 
 ## Your turn!
 

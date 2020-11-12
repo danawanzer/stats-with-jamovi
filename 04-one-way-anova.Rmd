@@ -172,11 +172,15 @@ Although we should meet the assumptions as much as possible, in general the F-st
 
 Let's run an example with data from lsj-data. Open data from your Data Library in "lsj-data". Select and open "clinicaltrial". This dataset is hypothetical data of a clinical trial in which you are testing a new antidepressant drug called *Joyzepam*. In order to construct a fair test of the drug's effectiveness, the study involves three separate drugs to be administered. One is a placebo, and the other is an existing antidepressant / anti-anxiety drug called *Anxifree*. A collection of 18 participants with moderate to severe depression are recruited for your initial testing. Because the drugs are sometimes administered in conjunction with psychological therapy, your study includes 9 people undergoing cognitive behavioral therapy (CBT) and 9 who are not. Participants are randomly assigned (doubly blinded, of course) a treatment, such that there are 3 CBT people and 3 no-therapy people assigned to each of the 3 drugs. A psychologist assesses the mood of each person after a 3 month run with each drug, and the overall improvement in each person's mood is assessed on a scale ranging from -5 to +5.
 
-1.  To perform a one-way ANOVA in jamovi, go to the Analyses tab, click the ANOVA button, and choose "ANOVA". You might be asking why we aren't choosing "One-Way ANOVA" and that's because the options there are too limited.
+```{block, type = "warning"}
+Do not use the one-way ANOVA analysis in jamovi! The options there are too limited for our use. Instead, be sure you use ANOVA!
+```
+
+1.  To perform a one-way ANOVA in jamovi, go to the Analyses tab, click the **ANOVA** button, and choose "ANOVA". You might be asking why we aren't choosing "One-Way ANOVA" and that's because the options there are too limited.
 
 2.  Move your dependent variable `mood.gain` to the Dependent Variable box and your independent variable `drug` to the Fixed Factors box.
 
-3.  Select $\omega^2$ for your effect size.
+3.  Select $\omega^2$ (omega-squared) for your effect size.
 
 4.  Ignore the Model drop-down menu. If you are doing more complicated ANOVAs you will need this. We will ignore it.
 
@@ -202,7 +206,7 @@ We test for homogeneity of variance using the Levene's test. The Levene's test w
 knitr::include_graphics("images/04_one-way-anova/one-way_assumptions1.png")
 ```
 
-```{r echo = FALSE}
+```{r echo = FALSE, fig.cap = "Testing assumptions in jamovi"}
 knitr::include_graphics("images/04_one-way-anova/one-way_assumptions2.png")
 ```
 
@@ -273,37 +277,37 @@ If you have before-analysis hypotheses of group differences in your data, you wi
 
 1.  **Deviation**: compares the effect of each category (except the first category) to the overall experimental effect. The order of categories is alphabetical or numerical order. Notice how anxifree is considered the first category.
 
-```{r echo = FALSE}
+```{r echo = FALSE, fig.cap = "Contrasts - Deviation"}
 knitr::include_graphics("images/04_one-way-anova/contrasts_deviation.png")
 ```
 
 2.  **Simple**: Each category is compared to the first category. The order of categories is alphabetical or numerical order. Notice how anxifree is considered the first category.
 
-```{r echo = FALSE}
+```{r echo = FALSE, fig.cap = "Contrasts - Simple"}
 knitr::include_graphics("images/04_one-way-anova/contrasts_simple.png")
 ```
 
 3.  **Difference**: Each category (except the first) is compared to the mean effect of all previous categories.
 
-```{r echo = FALSE}
+```{r echo = FALSE, fig.cap = "Contrasts - Difference"}
 knitr::include_graphics("images/04_one-way-anova/contrasts_difference.png")
 ```
 
 4.  **Helmert**: Each category (except the last) is compared to the mean effect of all subsequent categories.
 
-```{r echo = FALSE}
+```{r echo = FALSE, fig.cap = "Contrasts - Helmert"}
 knitr::include_graphics("images/04_one-way-anova/contrasts_helmert.png")
 ```
 
 5.  **Repeated**: Each category is compared to the last category.
 
-```{r echo = FALSE}
+```{r echo = FALSE, fig.cap = "Contrasts - Repeated"}
 knitr::include_graphics("images/04_one-way-anova/contrasts_repeated.png")
 ```
 
 6.  **Polynomial**: Tests trends in the data. It will examine the *n-1*^th^ degree based on the number of groups. In this case, because we have 3 groups it is testing both a linear (^1^) and quadratic (^2^) trend. If we had 5 groups, it would test a linear (^1^), quadratic (^2^), cubic (^3^), and quartic (^4^) trend. Note that your factor levels must be ordinal for a polynomial contrast to make sense.
 
-```{r echo = FALSE}
+```{r echo = FALSE, fig.cap = "Contrasts - Polynomial"}
 knitr::include_graphics("images/04_one-way-anova/contrasts_polynomial.png")
 ```
 

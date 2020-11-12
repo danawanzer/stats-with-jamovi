@@ -196,8 +196,10 @@
 <li class="chapter" data-level="8.6.2" data-path="correlation.html"><a href="correlation.html#testing-linearity"><i class="fa fa-check"></i><b>8.6.2</b> Testing linearity</a></li>
 </ul></li>
 <li class="chapter" data-level="8.7" data-path="correlation.html"><a href="correlation.html#interpreting-results-4"><i class="fa fa-check"></i><b>8.7</b> Interpreting results</a></li>
-<li class="chapter" data-level="8.8" data-path="correlation.html"><a href="correlation.html#what-if-i-violate-the-assumptions"><i class="fa fa-check"></i><b>8.8</b> What if I violate the assumptions?</a></li>
-<li class="chapter" data-level="8.9" data-path="correlation.html"><a href="correlation.html#your-turn-4"><i class="fa fa-check"></i><b>8.9</b> Your turn!</a></li>
+<li class="chapter" data-level="8.8" data-path="correlation.html"><a href="correlation.html#r-squared"><i class="fa fa-check"></i><b>8.8</b> R-Squared</a></li>
+<li class="chapter" data-level="8.9" data-path="correlation.html"><a href="correlation.html#what-if-i-violate-the-assumptions"><i class="fa fa-check"></i><b>8.9</b> What if I violate the assumptions?</a></li>
+<li class="chapter" data-level="8.10" data-path="correlation.html"><a href="correlation.html#comparing-strengths-of-correlations"><i class="fa fa-check"></i><b>8.10</b> Comparing strengths of correlations</a></li>
+<li class="chapter" data-level="8.11" data-path="correlation.html"><a href="correlation.html#your-turn-4"><i class="fa fa-check"></i><b>8.11</b> Your turn!</a></li>
 </ul></li>
 <li class="appendix"><span><b>Appendices</b></span></li>
 <li class="chapter" data-level="A" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>A</b> References</a></li>
@@ -413,13 +415,56 @@ Figure 4.3: Correlation results in jamovi
 <p>Dan’s grumpiness (<em>M</em> = 63.71, <em>SD</em> = 10.05) is negatively correlated with both Dan’s quality of sleep (<em>M</em> = 6.97, <em>SD</em> = 1.02; <em>r</em> = -.90, <em>p</em> &lt; .001) and the baby’s quality of sleep (<em>M</em> = 8.05, <em>SD</em> = 2.07; <em>r</em> = -.57, <em>p</em> &lt; .001). Furthermore, Dan’s and the baby’s quality of sleep are positively correlated (<em>r</em> = .63, <em>p</em> &lt; .001).</p>
 </blockquote>
 </div>
-<div id="what-if-i-violate-the-assumptions" class="section level2" number="8.8">
-<h2><span class="header-section-number">8.8</span> What if I violate the assumptions?</h2>
+<div id="r-squared" class="section level2" number="8.8">
+<h2><span class="header-section-number">8.8</span> R-Squared</h2>
+<p>The cool thing about the correlation is that we can square <span class="math inline">\(r\)</span> to get <span class="math inline">\(r^2\)</span>, which is the percentage of variance overlap. It is the percentage of variance in one variable that is shared by the other. You simply square the <span class="math inline">\(r\)</span> correlation coefficient to find the <span class="math inline">\(r^2\)</span>. For example, our correlation above between Dan’s grumpiness and Dan’s quality of sleep is <span class="math inline">\(r\)</span> = -.90; therefore, its <span class="math inline">\(r^2\)</span> = .81 or 81%. 81% of the variance in Dan’s grumpiness can be explained by Dan’s quality of sleep!</p>
+</div>
+<div id="what-if-i-violate-the-assumptions" class="section level2" number="8.9">
+<h2><span class="header-section-number">8.9</span> What if I violate the assumptions?</h2>
 <p>If you violate any of the three assumptions, you can choose to perform Spearman’s rank correlation instead of a Pearson correlation. Both Spearman’s rho and Kendall’s tau are non-parametric statistics based on rank order. To perform Spearman’s correlation, change the check mark in jamovi from Pearson to Spearman. You will interpret just the same; however, instead of using the letter <em>r</em> you can either use <span class="math inline">\(r_s\)</span>, <span class="math inline">\(r_{spearman}\)</span>, or <span class="math inline">\(\rho\)</span> (the Greek letter rho).</p>
 <p>What about Kendall’s tau? It will likely give you the same results as Spearman’s rho but it is interpreted slightly differently. We won’t use it in this class.</p>
 </div>
-<div id="your-turn-4" class="section level2" number="8.9">
-<h2><span class="header-section-number">8.9</span> Your turn!</h2>
+<div id="comparing-strengths-of-correlations" class="section level2" number="8.10">
+<h2><span class="header-section-number">8.10</span> Comparing strengths of correlations</h2>
+<p>Sometimes you want to compare two correlations to find out if one correlation is significantly stronger than another. You can use this calculator to calculate the p-value: <a href="www.psychometrica.de/correlation.html">www.psychometrica.de/correlation.html</a></p>
+<p>Note that you use #1 (Independent Samples) when the correlations come from different samples and #2 (Dependent Samples) when the correlations come from the same sample. For example, to compare the correlation between English and Reading to the correlation between English and Writing, you would use #2 (Dependent Samples). But to compare the correlations between English and Reading for men and women, you would use #1 (Independent Samples).</p>
+<p>Let’s try them both with our <a href="https://github.com/danawanzer/stats-with-jamovi/blob/master/data/Sample_Dataset_2014.xlsx">Sample_Dataset_2014.xlsx</a>.</p>
+<ol style="list-style-type: decimal">
+<li><strong>Comparison of correlations from independent samples</strong></li>
+</ol>
+<p>We want to test the correlations between English and Reading for men and women. We first need to gather those correlations in jamovi. We can do this through <strong>filters</strong>.</p>
+<p>Let’s first find the correlation for men. Go to the Data tab in jamovi, click Filters, and enter in the <span class="math inline">\(\int_x\)</span> = Gender == 0. Next, go to the Analyses tab in jamovi, click Regression, and choose Correlation Matrix. Move our two variables over (<code>English</code> and <code>Reading</code>) and check the box for <code>N</code>. You should get <em>r</em> = .36, <em>p</em> &lt; .001, <em>n</em> = 181.</p>
+<p>Now let’s find the correlation for women. Go back to the Data tab in jamovi, click Filters, and change the equation to <span class="math inline">\(\int_x\)</span> = Gender == 1. Your results should automatically update because the filter changed. For women, you should get <em>r</em> = .33, <em>p</em> &lt; .001, <em>n</em> = 210.</p>
+<p>Now we can compare the correlations in our <a href="https://www.psychometrica.de/correlation.html">Testing the Significance of Correlations</a> webpage, #1. In Correlation 1, put 181 in the n column and .36 in the r column. In Correlation 2, put 210 in the n column and .33 in the r column. The results are shown below. The z-score is not statistically significant (<em>p</em> = .369) so there is no significant difference in correlation strength.</p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-10"></span>
+<img src="images/08-correlation/compare-correlations-independent.png" alt="Comparison of correlations from independent samples" width="100%" />
+<p class="caption">
+Figure 4.4: Comparison of correlations from independent samples
+</p>
+</div>
+<ol start="2" style="list-style-type: decimal">
+<li><strong>Comparison of correlations from dependent samples</strong></li>
+</ol>
+<p>Now let’s test whether the correlation between English and Reading differs from the correlation between English and Writing.</p>
+<p>Notice how we have three tests we are comparing: (1) English, (2) Reading, and (3) Writing. We can’t use this test if we are testing the correlation between variables A and B and the correlation between variables C and D. There needs to be overlap.</p>
+<p>If you still have your filter on in your dataset from the previous analysis, turn it off. Go to the Data tab, click Filters, and either select the X to delete it or toggle the active button so it’s turned off. Return to your Correlation Matrix results and click on it to edit it. Add Writing to the box.</p>
+<p>However, we have a problem! The <a href="https://www.psychometrica.de/correlation.html">Testing the Significance of Correlations</a> webpage (#2) wants a single N, but our correlation matrix has different Ns because of missing data. What can we do? We need to chain filters! Go back to your Data tab, click Filters, and add three filters like below (note: this is how you can get <em>listwise deletion</em> in jamovi):</p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-11"></span>
+<img src="images/08-correlation/correlation-filters.png" alt="Advanced filters" width="100%" />
+<p class="caption">
+Figure 4.5: Advanced filters
+</p>
+</div>
+<p>Our correlation matrix should have automatically updated and all the N’s equal 370. Great! We now have all the information we need to input into our <a href="https://www.psychometrica.de/correlation.html">Testing the Significance of Correlations</a> webpage, #2. For n we input 370. For <span class="math inline">\(r_{12}\)</span> we enter the correlation between (1) English and (2) Reading. For <span class="math inline">\(r_{13}\)</span> we enter the correlation between (1) English and (3) Writing. For <span class="math inline">\(r_{23}\)</span> we enter the correlation between (2) Reading and (3) Writing. Our z-score is not statistically significant (<em>p</em> = .213) so there is no significant difference in the correlation between English and Reading (<em>r</em> = .32) with the correlation between English and Writing (<em>r</em> = .37).</p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-12"></span>
+<img src="images/08-correlation/compare-correlations-dependent.png" alt="Comparison of correlations from dependent samples" width="100%" />
+<p class="caption">
+Figure 4.6: Comparison of correlations from dependent samples
+</p>
+</div>
+</div>
+<div id="your-turn-4" class="section level2" number="8.11">
+<h2><span class="header-section-number">8.11</span> Your turn!</h2>
 <p>Open the <code>Sample_Dataset_2014.xlsx</code> file that we will be using for all Your Turn exercises. You can find the dataset here: <a href="https://github.com/danawanzer/stats-with-jamovi/blob/master/data/Sample_Dataset_2014.xlsx">Sample_Dataset_2014.xlsx Download</a></p>
 <p>Perform correlations based on the following research questions.</p>
 <p>To get the most out of these exercises, try to first find out the answer on your own and then use the drop-down menus to check your answer.</p>
