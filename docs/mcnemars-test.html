@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Statistics with jamovi</title>
+  <title>Chapter 12 McNemar’s Test | Statistics with jamovi</title>
   <meta name="description" content="This is the website for PSYC 290 and PSYC 790 at the University of Wisconsin-Stout, taught by Dana Wanzer." />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Statistics with jamovi" />
+  <meta property="og:title" content="Chapter 12 McNemar’s Test | Statistics with jamovi" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Statistics with jamovi" />
+  <meta name="twitter:title" content="Chapter 12 McNemar’s Test | Statistics with jamovi" />
   
   <meta name="twitter:description" content="This is the website for PSYC 290 and PSYC 790 at the University of Wisconsin-Stout, taught by Dana Wanzer." />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="introduction.html"/>
+<link rel="prev" href="chi-square-test-of-independence.html"/>
+<link rel="next" href="references.html"/>
 <script src="libs/header-attrs-2.5/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -327,16 +327,126 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Statistics with jamovi</h1>
-<p class="author"><em>Dana Wanzer</em></p>
-<p class="date"><em>Last Update: 2020-11-18</em></p>
+<div id="mcnemars-test" class="section level1" number="12">
+<h1><span class="header-section-number">Chapter 12</span> McNemar’s Test</h1>
+<div id="what-is-mcnemars-test" class="section level2" number="12.1">
+<h2><span class="header-section-number">12.1</span> What is McNemar’s test?</h2>
+<p>McNemar’s test is based on the <span class="math inline">\(\chi^2\)</span> (chi-square) test of independence (or association), but is used in a repeated measures or within-subjects design. Our hypotheses for the McNemar test is as follows:</p>
+<ul>
+<li><p><span class="math inline">\(H_0\)</span>: The observed frequencies match the expected frequencies.</p></li>
+<li><p><span class="math inline">\(H_1\)</span>: At least one observed frequency doesn’t match the expected frequency.</p></li>
+</ul>
+<p>For example, suppose we’re working with the <em>Australian Generic Political Party</em> (AGPP) and your job is to find out how effective AGPP political advertisements are. You gather 100 people and ask them to watch the AGPP ads. You ask participants before and after viewing ads whether they intend to vote for the AGPP.</p>
 </div>
-<div id="welcome" class="section level1 unnumbered">
-<h1>Welcome</h1>
-<p>This is the website for PSYC 290 and PSYC 790 at the University of Wisconsin-Stout, taught by Dana Wanzer. These resources are aimed at teaching you how to use jamovi and null hypothesis significance testing (NHST) to answer research questions.</p>
-<p>This website is <strong>free to use</strong> and is licensed under a Creative Commons BY-SA (CC BY-SA) license version 4.0. This means you are free to <strong>share</strong> (i.e., copy and redistribute the material in any medium or format) and <strong>adapt</strong> (i.e., remix, transform, and build upon the material for any purpose, even commercially), provided that you <strong>attribute</strong> these resources by citing me, indicating if changes were made and you <strong>share alike</strong> (i.e., if you adapt, you must distribute your contributes under the same license as the original).</p>
-<p>Portions of this book may have been adapted from “<a href="http://www.learnstatswithjamovi.com">Learning statistics with jamovi: A tutorial for psychology students and other beginners</a>” by Danielle J. Navarro and David R. Foxcroft, version 0.70. Furthermore, the template and style of this book is from <a href="https://psyteachr.github.io/book-template/setup.html">PsyTeachR</a>.</p>
+<div id="data-set-up-7" class="section level2" number="12.2">
+<h2><span class="header-section-number">12.2</span> Data set-up</h2>
+<p>Our data set-up for McNemar’s test is pretty simple. We just need two columns of nominal data, with one row per participant and each column being the same variable at two different time points. Here’s our data for our example we’ll be working with, which you can find in the lsj-data called <code>agpp</code>:</p>
+<table>
+<thead>
+<tr class="header">
+<th>ID</th>
+<th>response_before</th>
+<th>response_after</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>subj.1</td>
+<td>no</td>
+<td>yes</td>
+</tr>
+<tr class="even">
+<td>subj.2</td>
+<td>yes</td>
+<td>no</td>
+</tr>
+<tr class="odd">
+<td>subj.3</td>
+<td>yes</td>
+<td>no</td>
+</tr>
+<tr class="even">
+<td>subj.4</td>
+<td>yes</td>
+<td>no</td>
+</tr>
+<tr class="odd">
+<td>subj.5</td>
+<td>no</td>
+<td>no</td>
+</tr>
+<tr class="even">
+<td>subj.6</td>
+<td>no</td>
+<td>no</td>
+</tr>
+<tr class="odd">
+<td>subj.7</td>
+<td>no</td>
+<td>no</td>
+</tr>
+<tr class="even">
+<td>subj.8</td>
+<td>no</td>
+<td>yes</td>
+</tr>
+<tr class="odd">
+<td>subj.9</td>
+<td>no</td>
+<td>no</td>
+</tr>
+<tr class="even">
+<td>subj.10</td>
+<td>no</td>
+<td>no</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="the-math-behind-the-chi-square-test-of-independence-1" class="section level2" number="12.3">
+<h2><span class="header-section-number">12.3</span> The math behind the chi-square test of independence</h2>
+<div class="info">
+<p>
+If the math below makes your eyes glaze over, you can skip it. This is presented for those who find it useful to understand the math behind the statistics to help understand what’s happening.
+</p>
+</div>
+<p>I might add the math behind the test later. Otherwise, it’s similar to the <span class="math inline">\(\chi^2\)</span> test of independence with slightly different calculations.</p>
+</div>
+<div id="performing-mcnemars-test-in-jamovi" class="section level2" number="12.4">
+<h2><span class="header-section-number">12.4</span> Performing McNemar’s test in jamovi</h2>
+<p>Let’s run an example with data from lsj-data. Open data from your Data Library in “lsj-data.” Select and open “agpp.” This dataset indicates the ID number of the participant and whether they would vote for AGPP before and after viewing the ads.</p>
+<ol style="list-style-type: decimal">
+<li><p>From the ‘Analyses’ toolbar select ‘Frequencies’ - ‘Paired Samples - McNemar test.’</p></li>
+<li><p>Move <code>response_before</code> into rows and <code>response_after</code> into columns. Note that the placement in rows or columns doesn’t really matter.</p></li>
+<li><p>Under the Statistics tab, select <span class="math inline">\(\chi^2\)</span> under Tests.</p></li>
+<li><p>Optionally, you can request under to show the row and column percentages.</p></li>
+</ol>
+<p>When you are done, your setup should look like this</p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-2"></span>
+<img src="images/12-mcnemar/mcnemar_setup.png" alt="McNemar's test setup in jamovi" width="80%" />
+<p class="caption">
+Figure 2.1: McNemar’s test setup in jamovi
+</p>
+</div>
+</div>
+<div id="interpreting-results-7" class="section level2" number="12.5">
+<h2><span class="header-section-number">12.5</span> Interpreting results</h2>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-3"></span>
+<img src="images/12-mcnemar/mcnemar_results.png" alt="McNemar's test results in jamovi" width="100%" />
+<p class="caption">
+Figure 2.2: McNemar’s test results in jamovi
+</p>
+</div>
+<p>The first table shows us our observed frequencies. The second table gives us our results. Our p-value is less than .05 so we can reject the null hypothesis that the observed frequencies match our expected frequencies. Unfortunately, looking at our table it also shows that the ads had a negative effect: people were less likely to vote AGPP after seeing the ads.</p>
+<p>We can write up our results in APA something like this:</p>
+<blockquote>
+<p>McNemar’s test indicated that support for AGPP changed from before to after reviewing the AGPP advertisement, <span class="math inline">\(\chi^2\)</span> (1) = 13.33, <em>p</em> &lt; .001. Most participants continued to not vote for AGPP after the ad (<em>n</em> = 65) and a few continued to vote for AGPP after the ad (<em>n</em> = 5). However, many participants who originally stated they would vote for AGPP changed to no longer voting for AGPP after the ad (<em>n</em> = 25); only five people who originally would not vote for AGPP changed to vote for AGPP after the ad.</p>
+</blockquote>
+
+</div>
+</div>
+
+
 
 </div>
 <div class="psyteachr_footer">
@@ -429,8 +539,8 @@ window.onload = function() {
           </div>
         </div>
       </div>
-
-<a href="introduction.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="chi-square-test-of-independence.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

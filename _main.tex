@@ -42,6 +42,46 @@
   hidelinks,
   pdfcreator={LaTeX via pandoc}}
 \urlstyle{same} % disable monospaced font for URLs
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
 \usepackage{longtable,booktabs}
 % Correct order of tables after \paragraph or \subparagraph
 \usepackage{etoolbox}
@@ -112,7 +152,7 @@
 
 \title{Statistics with jamovi}
 \author{Dana Wanzer}
-\date{Last Update: 2020-11-12}
+\date{Last Update: 2020-11-18}
 
 \begin{document}
 \maketitle
@@ -2423,6 +2463,721 @@ To get the most out of these exercises, try to first find out the answer on your
     \end{itemize}
   \end{itemize}
 \end{enumerate}
+
+\hypertarget{part-categorical-data-analysis}{%
+\part{Categorical Data Analysis}\label{part-categorical-data-analysis}}
+
+\hypertarget{categorical-data-analysis}{%
+\chapter{Categorical Data Analysis}\label{categorical-data-analysis}}
+
+\hypertarget{what-is-categorical-data-analysis}{%
+\section{What is categorical data analysis?}\label{what-is-categorical-data-analysis}}
+
+Simply, categorical data analysis is data analysis with categorical data. It's usually nominal data, although there are a couple tests we may use with ordinal data.
+
+\hypertarget{assumptions-4}{%
+\section{Assumptions}\label{assumptions-4}}
+
+All of our categorical data analyses have the following assumptions:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \textbf{Expected frequencies are sufficiently large}, which is usually greater than 5. If you violate this assumption, you can use Fisher's exact test.
+\item
+  \textbf{Data are independent of one another}, meaning each case contributes to only one cell of the table. If you violate this assumption, you may be able to use the McNemar test.
+\end{enumerate}
+
+\hypertarget{what-types-of-categorical-data-analyses-are-there}{%
+\section{What types of categorical data analyses are there?}\label{what-types-of-categorical-data-analyses-are-there}}
+
+We're going to cover the following categorical data analyses (there are more, but these are all we'll focus on):
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \(\chi^2\) \textbf{goodness-of-fit}: used with one variable to find if the observed frequencies match the expected frequencies
+\item
+  \(\chi^2\) \textbf{test of independence (or association)}: used with two variables to find if the observed frequencies match the expected frequencies. In other words, are the two nominal variables independent or associated with one another?
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \item
+    \textbf{Fisher's exact test}: This is an alternative to the \(\chi^2\)test of independence that we use when our frequencies are small.
+  \item
+    \textbf{McNemar's test}: This is an alternative to the \(\chi^2\)test of independence that we have a 2x2 repeated-measures design. For example, perhaps we examine pass/fail rates before and after a training.
+  \end{enumerate}
+\end{enumerate}
+
+Notice how we don't have an assumption about a normal distribution. For that reason, these are all \emph{non-parametric statistics}.
+
+\hypertarget{what-is-the-effect-size-for-categorical-data-analysis}{%
+\section{What is the effect size for categorical data analysis?}\label{what-is-the-effect-size-for-categorical-data-analysis}}
+
+We typically report Cramer's V statistic. It's pretty simple to calculate, but jamovi will calculate it for us with the chi-square test of independence:
+
+\(V = \sqrt{\frac{\chi^2}{N(k-1)}}\)
+
+\hypertarget{chi-square-goodness-of-fit}{%
+\chapter{Chi-Square Goodness-of-Fit}\label{chi-square-goodness-of-fit}}
+
+\hypertarget{what-is-the-chi-square-goodness-of-fit-test}{%
+\section{What is the chi-square goodness-of-fit test?}\label{what-is-the-chi-square-goodness-of-fit-test}}
+
+The \(\chi^2\) (chi-square) goodness-of-fit tests whether an observed frequency distribution of a nominal variable matches an expected frequency distribution. Our hypotheses for the chi-square goodness-of-fit test is as follows:
+
+\begin{itemize}
+\item
+  \(H_0\): The observed frequencies match the expected frequencies.
+\item
+  \(H_1\): At least one observed frequency doesn't match the expected frequency.
+\end{itemize}
+
+For example, if we have a deck of cards and want to see if people don't choose cards randomly, the null hypothesis would be that there is a 25\% probability of getting each hearts, clubs, spades, and diamonds.
+
+\hypertarget{data-set-up-5}{%
+\section{Data set-up}\label{data-set-up-5}}
+
+Our data set-up for a chi-square goodness-of-fit test is pretty simple, We just need a single column with the nominal category that each participant is in.
+
+\hypertarget{assumptions-5}{%
+\section{Assumptions}\label{assumptions-5}}
+
+The chi-square goodness-of-fit test has the following assumptions:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \textbf{Expected frequencies are sufficiently large}, which is usually greater than 5. If you violate this assumption, you can use Fisher's exact test.
+\item
+  Data are independent of one another, meaning each case contributes to only one cell of the table. If you violate this assumption, you may be able to use the McNemar test.
+\end{enumerate}
+
+\hypertarget{the-math-behind-the-chi-square-goodness-of-fit-test}{%
+\section{The math behind the chi-square goodness of fit test}\label{the-math-behind-the-chi-square-goodness-of-fit-test}}
+
+\begin{info}
+If the math below makes your eyes glaze over, you can skip it. This is
+presented for those who find it useful to understand the math behind the
+statistics to help understand what's happening.
+\end{info}
+
+We're going to continue using the card deck example. This data comes from the lsj-data dataset named ``randomness''. If you perform descriptive statistics of \texttt{choice\_1} and ask for frequency tables, you get the \emph{observed} frequencies. We expect the frequencies to be 25\% for each choice (or \emph{n} = 50 because our total N is 200, so 200/4 = 50).
+
+\begin{longtable}[]{@{}llllll@{}}
+\toprule
+\begin{minipage}[b]{0.18\columnwidth}\raggedright
+\strut
+\end{minipage} & \begin{minipage}[b]{0.14\columnwidth}\raggedright
+\strut
+\end{minipage} & \begin{minipage}[b]{0.12\columnwidth}\raggedright
+\(\clubsuit\)\strut
+\end{minipage} & \begin{minipage}[b]{0.14\columnwidth}\raggedright
+\(\diamondsuit\)\strut
+\end{minipage} & \begin{minipage}[b]{0.13\columnwidth}\raggedright
+\(\heartsuit\)\strut
+\end{minipage} & \begin{minipage}[b]{0.13\columnwidth}\raggedright
+\(\spadesuit\)\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.18\columnwidth}\raggedright
+Observed frequency\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedright
+\(O_i\)\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+35\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedright
+51\strut
+\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\raggedright
+64\strut
+\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\raggedright
+50\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.18\columnwidth}\raggedright
+Expected frequency\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedright
+\(E_i\)\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+50\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedright
+50\strut
+\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\raggedright
+50\strut
+\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\raggedright
+50\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.18\columnwidth}\raggedright
+Difference score\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedright
+\(O_i-E_i\)\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+-15\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedright
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\raggedright
+14\strut
+\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\raggedright
+0\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.18\columnwidth}\raggedright
+Difference squared\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedright
+\((O_i-E_i)^2\)\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
+225\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedright
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\raggedright
+196\strut
+\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\raggedright
+0\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+The formula for the chi-square goodness-of-fit test is as follows:
+
+\(\chi^2 = \sum{\frac{(O_i-E_i)^2}{E_i}} = \frac{225 + 1 + 196 + 0}{50} = \frac{422}{50} = 8.44\)
+
+Up to this point, we've been working with the \emph{t} and \emph{F} distributions for our statistics. Now we move to the \(\chi^2\) distribution with \(k-1\) degrees of freedom (k = number of groups; in our card's example case it's 4-1 = 3). What is the chi-square distribution? It looks a little something like this:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(}\FunctionTok{data.frame}\NormalTok{(}\AttributeTok{x =} \FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{30}\NormalTok{)), }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ x)) }\SpecialCharTok{+}
+  \FunctionTok{stat\_function}\NormalTok{(}\AttributeTok{fun =}\NormalTok{ dchisq, }\AttributeTok{args =} \FunctionTok{list}\NormalTok{(}\AttributeTok{df =} \DecValTok{3}\NormalTok{), }\FunctionTok{aes}\NormalTok{(}\AttributeTok{colour =} \StringTok{"df = 03"}\NormalTok{)) }\SpecialCharTok{+}
+  \FunctionTok{stat\_function}\NormalTok{(}\AttributeTok{fun =}\NormalTok{ dchisq, }\AttributeTok{args =} \FunctionTok{list}\NormalTok{(}\AttributeTok{df =} \DecValTok{4}\NormalTok{), }\FunctionTok{aes}\NormalTok{(}\AttributeTok{colour =} \StringTok{"df = 04"}\NormalTok{)) }\SpecialCharTok{+}
+  \FunctionTok{stat\_function}\NormalTok{(}\AttributeTok{fun =}\NormalTok{ dchisq, }\AttributeTok{args =} \FunctionTok{list}\NormalTok{(}\AttributeTok{df =} \DecValTok{5}\NormalTok{), }\FunctionTok{aes}\NormalTok{(}\AttributeTok{colour =} \StringTok{"df = 05"}\NormalTok{)) }\SpecialCharTok{+}
+  \FunctionTok{stat\_function}\NormalTok{(}\AttributeTok{fun =}\NormalTok{ dchisq, }\AttributeTok{args =} \FunctionTok{list}\NormalTok{(}\AttributeTok{df =} \DecValTok{10}\NormalTok{), }\FunctionTok{aes}\NormalTok{(}\AttributeTok{colour =} \StringTok{"df = 10"}\NormalTok{)) }\SpecialCharTok{+}
+  \FunctionTok{stat\_function}\NormalTok{(}\AttributeTok{fun =}\NormalTok{ dchisq, }\AttributeTok{args =} \FunctionTok{list}\NormalTok{(}\AttributeTok{df =} \DecValTok{20}\NormalTok{), }\FunctionTok{aes}\NormalTok{(}\AttributeTok{colour =} \StringTok{"df = 20"}\NormalTok{)) }\SpecialCharTok{+}
+  \FunctionTok{scale\_color\_viridis}\NormalTok{(}\AttributeTok{discrete =} \ConstantTok{TRUE}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{theme\_classic}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{ylab}\NormalTok{(}\FunctionTok{element\_blank}\NormalTok{()) }\SpecialCharTok{+}
+  \FunctionTok{xlab}\NormalTok{(}\AttributeTok{label =} \StringTok{"Value"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{10-goodness-of-fit_files/figure-latex/unnamed-chunk-2-1} 
+
+}
+
+\caption{**CAPTION THIS FIGURE!!**}\label{fig:unnamed-chunk-2}
+\end{figure}
+
+In our case, we have a degrees of freedom of 3. Just like we did early in the semester, we can look up our critical-\(\chi^2\) value in a table to find that our critical value for df = 3 is 7.815. The figure below shows our critical-\(\chi^2\) value in red and calculated-\(\chi^2\) value in black. Because our calculated-\(\chi^2\) value is in the critical region, we can reject the null hypothesis that all four suits are chosen with equal probability.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(}\FunctionTok{data.frame}\NormalTok{(}\AttributeTok{x =} \FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{20}\NormalTok{)), }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ x)) }\SpecialCharTok{+}
+  \FunctionTok{stat\_function}\NormalTok{(}\AttributeTok{fun =}\NormalTok{ dchisq, }\AttributeTok{args =} \FunctionTok{list}\NormalTok{(}\AttributeTok{df =} \DecValTok{3}\NormalTok{)) }\SpecialCharTok{+}
+  \FunctionTok{stat\_function}\NormalTok{(}\AttributeTok{fun =}\NormalTok{ dchisq, }\AttributeTok{args =} \FunctionTok{list}\NormalTok{(}\AttributeTok{df =} \DecValTok{3}\NormalTok{), }
+                \AttributeTok{xlim =} \FunctionTok{c}\NormalTok{(}\FloatTok{7.815}\NormalTok{, }\DecValTok{20}\NormalTok{), }\AttributeTok{geom =} \StringTok{"area"}\NormalTok{, }\AttributeTok{fill =} \StringTok{"darkred"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{geom\_vline}\NormalTok{(}\AttributeTok{xintercept =} \FloatTok{7.815}\NormalTok{, }\AttributeTok{colour =} \StringTok{"darkred"}\NormalTok{) }\SpecialCharTok{+} 
+  \FunctionTok{geom\_text}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =} \FloatTok{7.4}\NormalTok{, }\AttributeTok{y =}\NormalTok{ .}\DecValTok{15}\NormalTok{, }\AttributeTok{label =} \StringTok{"Critical{-}value = 7.815"}\NormalTok{), }
+            \AttributeTok{angle =} \DecValTok{90}\NormalTok{, }\AttributeTok{color =} \StringTok{"darkred"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{geom\_text}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =} \FloatTok{8.8}\NormalTok{, }\AttributeTok{y =}\NormalTok{ .}\DecValTok{15}\NormalTok{, }\AttributeTok{label =} \StringTok{"Calculated{-}value = 8.44"}\NormalTok{), }
+            \AttributeTok{angle =} \DecValTok{90}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{geom\_vline}\NormalTok{(}\AttributeTok{xintercept =} \FloatTok{8.44}\NormalTok{) }\SpecialCharTok{+} 
+  \FunctionTok{theme\_classic}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{scale\_color\_viridis}\NormalTok{(}\AttributeTok{discrete =} \ConstantTok{TRUE}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{ylab}\NormalTok{(}\FunctionTok{element\_blank}\NormalTok{()) }\SpecialCharTok{+}
+  \FunctionTok{xlab}\NormalTok{(}\AttributeTok{label =} \StringTok{"Value of the goodness{-}of{-}fit statistic"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{10-goodness-of-fit_files/figure-latex/unnamed-chunk-3-1} 
+
+}
+
+\caption{**CAPTION THIS FIGURE!!**}\label{fig:unnamed-chunk-3}
+\end{figure}
+
+\hypertarget{performing-the-chi-square-goodness-of-fit-test-in-jamovi}{%
+\section{Performing the chi-square goodness-of-fit test in jamovi}\label{performing-the-chi-square-goodness-of-fit-test-in-jamovi}}
+
+Let's run an example with data from lsj-data. Open data from your Data Library in ``lsj-data''. Select and open ``randomness''. This dataset has participants pull two cards from a deck. For now, let's just work with \texttt{choice\_1}.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  From the `Analyses' toolbar select `Frequences' - `One sample proportion tests - N outcomes'.
+\item
+  Move \texttt{choice\_1} into the Variable box.
+\item
+  Select \texttt{Expected\ counts}.
+\end{enumerate}
+
+When you are done, your setup should look like this
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.8\linewidth]{images/09-chi-square/chi-square_setup} 
+
+}
+
+\caption{Chi-square goodness-of-fit setup in jamovi}\label{fig:unnamed-chunk-4}
+\end{figure}
+
+\hypertarget{interpreting-results-5}{%
+\section{Interpreting results}\label{interpreting-results-5}}
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{images/09-chi-square/chi-square_results} 
+
+}
+
+\caption{Chi-square goodness-of-fit results in jamovi}\label{fig:unnamed-chunk-5}
+\end{figure}
+
+The first table shows us our observed frequencies (our data) and expected frequencies (N/k = 200/4 = 50). The second table gives us our results. Our p-value is less than .05 so we can reject the null hypothesis that the observed frequencies match our expected frequencies.
+
+We can write up our results in APA something like this:
+
+\begin{quote}
+Of the 200 participants in the experiment, 64 selected hearts for their first choice, 51selected diamonds, 50 selected spades, and 35 selected clubs. A chi-square goodness-of-fit test was conducted to test whether the choice probabilities were identical for all four suits. The results were statistically significant (\(\chi^2\) (3) = 8.44; \emph{p} = .038), suggesting that people did not select suits purely at random.
+\end{quote}
+
+\hypertarget{different-expected-frequencies}{%
+\section{Different Expected Frequencies}\label{different-expected-frequencies}}
+
+As you can tell, jamovi automatically assumed equal proportions of frequencies. However, perhaps we think our deck is loaded or we have the actual population frequencies and want to see if our distribution matches the population distribution. We can use the \texttt{Expected\ Proportions} in the setup to specify different expected frequencies.
+
+For example, maybe we think our deck is a little stacked in favor of red cards--or we think our participants are more likely to choose red cards than black cards. We can specify our expected proportions and then interpret the results. In this case, participants do not seem more likely to choose red cards based on the expected frequencies we provided.
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{images/09-chi-square/chi-square_results2} 
+
+}
+
+\caption{Chi-square goodness-of-fit - Different expected proportions}\label{fig:unnamed-chunk-6}
+\end{figure}
+
+\hypertarget{your-turn-5}{%
+\section{Your turn!}\label{your-turn-5}}
+
+Open the \texttt{Sample\_Dataset\_2014.xlsx} file that we will be using for all Your Turn exercises. You can find the dataset here: \href{https://github.com/danawanzer/stats-with-jamovi/blob/master/data/Sample_Dataset_2014.xlsx}{Sample\_Dataset\_2014.xlsx Download}
+
+To get the most out of these exercises, try to first find out the answer on your own and then use the drop-down menus to check your answer.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \textbf{Are there equal numbers of athletes and non-athletes?} (\texttt{Athlete} variable)
+
+  \begin{itemize}
+  \item
+    Do you meet the assumptions? yes no, expected frequencies are too small no, data are not independent
+  \item
+    Are the observed frequencies similar to the expected frequencies? yes no
+  \item
+    What is your chi-square value, rounded to two decimal places:
+  \end{itemize}
+\item
+  \textbf{I happen to know the school this data comes from has 40\% athletes and 60\% non-athletes. Does our data match the school population?}
+
+  \begin{itemize}
+  \item
+    Change your Expected Proportions ratio to .6 for non-athletes and .4 for athletes.
+  \item
+    Are the observed frequencies similar to the expected frequencies? yes no
+  \item
+    What is your chi-square value, rounded to two decimal places:
+  \end{itemize}
+\item
+  \textbf{Are there equal numbers of freshmen, sophomores, juniors, and seniors?} (\texttt{Rank} variable)
+
+  \begin{itemize}
+  \item
+    Do you meet the assumptions? yes no, expected frequencies are too small no, data are not independent
+  \item
+    Are the observed frequencies similar to the expected frequencies? yes no
+  \item
+    What is your chi-square value, rounded to two decimal places:
+  \end{itemize}
+\end{enumerate}
+
+\hypertarget{chi-square-test-of-independence}{%
+\chapter{Chi-Square Test of Independence}\label{chi-square-test-of-independence}}
+
+\hypertarget{what-is-the-chi-square-test-of-independence}{%
+\section{What is the chi-square test of independence?}\label{what-is-the-chi-square-test-of-independence}}
+
+The \(\chi^2\) (chi-square) test of independence (or association) tests whether an observed frequency distribution of a nominal variable matches an expected frequency distribution, but unlike the goodness of fit test we are looking at the relationship, independence, or association between two variables. Our hypotheses for the chi-square goodness-of-fit test is as follows:
+
+\begin{itemize}
+\item
+  \(H_0\): The observed frequencies match the expected frequencies.
+\item
+  \(H_1\): At least one observed frequency doesn't match the expected frequency.
+\end{itemize}
+
+For example, imagine we are watching a show about the planet \emph{Chapek 9}. On this planet, for someone to gain access to their capital city they must prove they're a robot, not a human. In order to determine whether or not a visitor is human, the natives ask whether the visitor prefers puppies, flowers, or large, properly formatted data files. Our alternative hypothesis would be that humans and robots have different preferences and our null is that they have the same preferences.
+
+\hypertarget{data-set-up-6}{%
+\section{Data set-up}\label{data-set-up-6}}
+
+Our data set-up for a chi-square test of independence is pretty simple, We just need two columns of nominal data, with one row per participant. Here's our data for our example we'll be working with, which you can find in the lsj-data called \texttt{chapek9}:
+
+\begin{longtable}[]{@{}lll@{}}
+\toprule
+ID & species & choice\tabularnewline
+\midrule
+\endhead
+1 & robot & flower\tabularnewline
+2 & human & data\tabularnewline
+3 & human & data\tabularnewline
+4 & human & data\tabularnewline
+5 & robot & data\tabularnewline
+6 & human & flower\tabularnewline
+7 & human & data\tabularnewline
+8 & robot & data\tabularnewline
+9 & human & puppy\tabularnewline
+10 & robot & flower\tabularnewline
+\bottomrule
+\end{longtable}
+
+\hypertarget{the-math-behind-the-chi-square-test-of-independence}{%
+\section{The math behind the chi-square test of independence}\label{the-math-behind-the-chi-square-test-of-independence}}
+
+\begin{info}
+If the math below makes your eyes glaze over, you can skip it. This is
+presented for those who find it useful to understand the math behind the
+statistics to help understand what's happening.
+\end{info}
+
+We're going to continue using the Chapek 9 example. This data comes from the lsj-data dataset named ``chapek9''. If you perform descriptive statistics of \texttt{choice} by \texttt{species} and ask for frequency tables, you get the \emph{observed} frequencies below. I've added row, column, and table totals on the right column and bottom row.
+
+\begin{longtable}[]{@{}llll@{}}
+\toprule
+\emph{Observed Frequencies} & Robot & Human & Total\tabularnewline
+\midrule
+\endhead
+Puppy & 13 & 15 & \textbf{28}\tabularnewline
+Flower & 30 & 13 & \textbf{43}\tabularnewline
+Data & 44 & 65 & \textbf{109}\tabularnewline
+\textbf{Total} & \textbf{87} & \textbf{93} & \textbf{180}\tabularnewline
+\bottomrule
+\end{longtable}
+
+Next, we need to calculate our \emph{expected} frequencies based on our data. Our expected frequencies for each cell by multiplying the row total by the column total and dividing by the total sample size:
+
+\(Expected frequencies = \frac{C_j * P_i}{N}\)
+
+\begin{longtable}[]{@{}llll@{}}
+\toprule
+\begin{minipage}[b]{0.25\columnwidth}\raggedright
+\emph{Expected Frequencies}\strut
+\end{minipage} & \begin{minipage}[b]{0.26\columnwidth}\raggedright
+Robot\strut
+\end{minipage} & \begin{minipage}[b]{0.27\columnwidth}\raggedright
+Human\strut
+\end{minipage} & \begin{minipage}[b]{0.10\columnwidth}\raggedright
+Total\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.25\columnwidth}\raggedright
+Puppy\strut
+\end{minipage} & \begin{minipage}[t]{0.26\columnwidth}\raggedright
+(28 * 87)/180 = 13.533\strut
+\end{minipage} & \begin{minipage}[t]{0.27\columnwidth}\raggedright
+(28 * 93)/180 =14.467\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+\textbf{28}\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.25\columnwidth}\raggedright
+Flower\strut
+\end{minipage} & \begin{minipage}[t]{0.26\columnwidth}\raggedright
+(43 * 87)/180 =20.783\strut
+\end{minipage} & \begin{minipage}[t]{0.27\columnwidth}\raggedright
+(43 * 93)/180 = 22.217\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+\textbf{43}\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.25\columnwidth}\raggedright
+Data\strut
+\end{minipage} & \begin{minipage}[t]{0.26\columnwidth}\raggedright
+(109 * 87)/180 =52.683\strut
+\end{minipage} & \begin{minipage}[t]{0.27\columnwidth}\raggedright
+(109 * 93)/180 = 56.317\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+\textbf{109}\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.25\columnwidth}\raggedright
+\textbf{Total}\strut
+\end{minipage} & \begin{minipage}[t]{0.26\columnwidth}\raggedright
+\textbf{87}\strut
+\end{minipage} & \begin{minipage}[t]{0.27\columnwidth}\raggedright
+\textbf{93}\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+\textbf{180}\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+We then need to calculate the squared differences of observed minus expected frequencies:
+
+\begin{longtable}[]{@{}llll@{}}
+\toprule
+\begin{minipage}[b]{0.24\columnwidth}\raggedright
+\emph{Squared differences}\strut
+\end{minipage} & \begin{minipage}[b]{0.27\columnwidth}\raggedright
+Robot\strut
+\end{minipage} & \begin{minipage}[b]{0.27\columnwidth}\raggedright
+Human\strut
+\end{minipage} & \begin{minipage}[b]{0.10\columnwidth}\raggedright
+Total\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.24\columnwidth}\raggedright
+Puppy\strut
+\end{minipage} & \begin{minipage}[t]{0.27\columnwidth}\raggedright
+\((13-13.533)^2 = .284\)\strut
+\end{minipage} & \begin{minipage}[t]{0.27\columnwidth}\raggedright
+\((15-14.467)^2 = .284\)\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+\textbf{28}\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.24\columnwidth}\raggedright
+Flower\strut
+\end{minipage} & \begin{minipage}[t]{0.27\columnwidth}\raggedright
+\((30-20.783)^2 = 84.953\)\strut
+\end{minipage} & \begin{minipage}[t]{0.27\columnwidth}\raggedright
+\((13-22.217)^2 = 84.953\)\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+\textbf{43}\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.24\columnwidth}\raggedright
+Data\strut
+\end{minipage} & \begin{minipage}[t]{0.27\columnwidth}\raggedright
+\((44-52.683)^2 = 75.394\)\strut
+\end{minipage} & \begin{minipage}[t]{0.27\columnwidth}\raggedright
+\((65-56.317)^2 = 75.394\)\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+\textbf{109}\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.24\columnwidth}\raggedright
+\textbf{Total}\strut
+\end{minipage} & \begin{minipage}[t]{0.27\columnwidth}\raggedright
+\textbf{87}\strut
+\end{minipage} & \begin{minipage}[t]{0.27\columnwidth}\raggedright
+\textbf{93}\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+\textbf{180}\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+The formula for the chi-square test of independence is the very similar to the chi-square goodness of fit test:
+
+\(\chi^2 = \sum{\frac{(O_i-E_i)^2}{E_i}} = \frac{.284}{13.533} + \frac{.284}{14.467} + \frac{84.953}{20.783} + \frac{84.953}{22.217} + \frac{75.394}{52.683} + \frac{75.394}{56.317}\)
+
+\(\chi^2 = .021 + .020 + 4.070 + 3.834 + 1.431 + 1.339 = 10.72\)
+
+Our degrees of freedom equals \((r-1)(c-1)\) where \emph{r} is the number of rows and \emph{c} is the number of columns. Our dataset has 3 rows and 2 columns: \((r-1)(c-1) = (3-1)(2-1) = (2)(1) = 2\) degrees of freedom.
+
+\hypertarget{performing-the-chi-square-test-of-independence-in-jamovi}{%
+\section{Performing the chi-square test of independence in jamovi}\label{performing-the-chi-square-test-of-independence-in-jamovi}}
+
+Let's run an example with data from lsj-data. Open data from your Data Library in ``lsj-data''. Select and open ``chapek9''. This dataset indicates the ID number of the participant, the species (robot or human), and their preference of the three things (puppy, flower, or data).
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  From the `Analyses' toolbar select `Frequencies' - `Independent Samples - \(\chi^2\) test of association'.
+\item
+  Move \texttt{choice} into rows and \texttt{species} into columns. Note that the placement in rows or columns doesn't really matter, but because we typically work with portrait pages I tend to prefer putting in rows whatever variable has more levels. In this case, choice has 3 levels and species only 2 so I like to put choice in rows and species in columns.
+\item
+  Under the Statistics tab, select \(\chi^2\) under Tests and \texttt{Phi\ and\ Cramer\textquotesingle{}s\ V} under Nominal.
+\item
+  Optionally, you can request under the Cells tab to show the expected counts and the row, column, and total percentages.
+\end{enumerate}
+
+When you are done, your setup should look like this
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.8\linewidth]{images/11-independence/independence_setup} 
+
+}
+
+\caption{Chi-square test of independence setup in jamovi}\label{fig:unnamed-chunk-2}
+\end{figure}
+
+\hypertarget{interpreting-results-6}{%
+\section{Interpreting results}\label{interpreting-results-6}}
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{images/11-independence/independence_results} 
+
+}
+
+\caption{Chi-square test of independence results in jamovi}\label{fig:unnamed-chunk-3}
+\end{figure}
+
+The first table shows us our observed frequencies. The second table gives us our results. Our p-value is less than .05 so we can reject the null hypothesis that the observed frequencies match our expected frequencies. jamovi also gives us our Cramer's V value.
+
+We can write up our results in APA something like this:
+
+\begin{quote}
+Pearson's \(\chi^2\) test of independence showed a significant association between species and choice, \(\chi^2\) (2) = 10.72, \emph{p} = .005. Robots appeared to be more likely to say they prefer flowers and humans appeared to be more likely to say they prefer data.
+\end{quote}
+
+I would either write-up the observed frequencies above or, ideally, I would share the contingency table with my observed frequencies.
+
+\hypertarget{fishers-exact-test}{%
+\section{Fisher's exact test}\label{fishers-exact-test}}
+
+If you violate the assumption that there your expected frequencies are sufficiently large and you have a 2x2 table, you can still perform the \(\chi^2\) test of independence but instead of selecting \(\chi^2\)you'll select \texttt{Fisher\textquotesingle{}s\ exact\ test}. You'll interpret your results exactly the same but specify you used the Fisher's exact test.
+
+\hypertarget{ordinal-variables}{%
+\section{Ordinal variable(s)}\label{ordinal-variables}}
+
+If either of your variables are ordinal, instead of selecting \texttt{Phi\ and\ Cramer\textquotesingle{}s\ V} you should select \texttt{Gamma} or \texttt{Kendall\textquotesingle{}s\ tau-b}. Which do you choose? \texttt{Kendall\textquotesingle{}s\ tau-b} should only be chosen if you have a square table (e.g., 3x3, 4x4, 5x5) whereas \texttt{Gamma} can be done with any size table. \texttt{Kendall\textquotesingle{}s\ tau-b} will be a slightly more conservative estimate compared to \texttt{Gamma}.
+
+\hypertarget{your-turn-6}{%
+\section{Your turn!}\label{your-turn-6}}
+
+Open the \texttt{Sample\_Dataset\_2014.xlsx} file that we will be using for all Your Turn exercises. You can find the dataset here: \href{https://github.com/danawanzer/stats-with-jamovi/blob/master/data/Sample_Dataset_2014.xlsx}{Sample\_Dataset\_2014.xlsx Download}
+
+To get the most out of these exercises, try to first find out the answer on your own and then use the drop-down menus to check your answer.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \textbf{Is Athlete related to Gender?}
+
+  \begin{itemize}
+  \item
+    Do you meet the assumptions? yes no, expected frequencies are too small no, data are not independent
+  \item
+    Which test should you perform? Chi-square Fisher's exact test
+  \item
+    Are the observed frequencies similar to the expected frequencies? yes no
+  \item
+    What is your chi-square value, rounded to two decimal places:
+  \end{itemize}
+\item
+  \textbf{Is Gender related to Rank?}
+
+  \begin{itemize}
+  \item
+    Do you meet the assumptions? yes no, expected frequencies are too small no, data are not independent
+  \item
+    Which test should you perform? Chi-square Fisher's exact test
+  \item
+    Are the observed frequencies similar to the expected frequencies? yes no
+  \item
+    What is your chi-square value, rounded to two decimal places:
+  \end{itemize}
+\end{enumerate}
+
+\hypertarget{mcnemars-test}{%
+\chapter{McNemar's Test}\label{mcnemars-test}}
+
+\hypertarget{what-is-mcnemars-test}{%
+\section{What is McNemar's test?}\label{what-is-mcnemars-test}}
+
+McNemar's test is based on the \(\chi^2\) (chi-square) test of independence (or association), but is used in a repeated measures or within-subjects design. Our hypotheses for the McNemar test is as follows:
+
+\begin{itemize}
+\item
+  \(H_0\): The observed frequencies match the expected frequencies.
+\item
+  \(H_1\): At least one observed frequency doesn't match the expected frequency.
+\end{itemize}
+
+For example, suppose we're working with the \emph{Australian Generic Political Party} (AGPP) and your job is to find out how effective AGPP political advertisements are. You gather 100 people and ask them to watch the AGPP ads. You ask participants before and after viewing ads whether they intend to vote for the AGPP.
+
+\hypertarget{data-set-up-7}{%
+\section{Data set-up}\label{data-set-up-7}}
+
+Our data set-up for McNemar's test is pretty simple. We just need two columns of nominal data, with one row per participant and each column being the same variable at two different time points. Here's our data for our example we'll be working with, which you can find in the lsj-data called \texttt{agpp}:
+
+\begin{longtable}[]{@{}lll@{}}
+\toprule
+ID & response\_before & response\_after\tabularnewline
+\midrule
+\endhead
+subj.1 & no & yes\tabularnewline
+subj.2 & yes & no\tabularnewline
+subj.3 & yes & no\tabularnewline
+subj.4 & yes & no\tabularnewline
+subj.5 & no & no\tabularnewline
+subj.6 & no & no\tabularnewline
+subj.7 & no & no\tabularnewline
+subj.8 & no & yes\tabularnewline
+subj.9 & no & no\tabularnewline
+subj.10 & no & no\tabularnewline
+\bottomrule
+\end{longtable}
+
+\hypertarget{the-math-behind-the-chi-square-test-of-independence-1}{%
+\section{The math behind the chi-square test of independence}\label{the-math-behind-the-chi-square-test-of-independence-1}}
+
+\begin{info}
+If the math below makes your eyes glaze over, you can skip it. This is
+presented for those who find it useful to understand the math behind the
+statistics to help understand what's happening.
+\end{info}
+
+I might add the math behind the test later. Otherwise, it's similar to the \(\chi^2\) test of independence with slightly different calculations.
+
+\hypertarget{performing-mcnemars-test-in-jamovi}{%
+\section{Performing McNemar's test in jamovi}\label{performing-mcnemars-test-in-jamovi}}
+
+Let's run an example with data from lsj-data. Open data from your Data Library in ``lsj-data''. Select and open ``agpp''. This dataset indicates the ID number of the participant and whether they would vote for AGPP before and after viewing the ads.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  From the `Analyses' toolbar select `Frequencies' - `Paired Samples - McNemar test'.
+\item
+  Move \texttt{response\_before} into rows and \texttt{response\_after} into columns. Note that the placement in rows or columns doesn't really matter.
+\item
+  Under the Statistics tab, select \(\chi^2\) under Tests.
+\item
+  Optionally, you can request under to show the row and column percentages.
+\end{enumerate}
+
+When you are done, your setup should look like this
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.8\linewidth]{images/12-mcnemar/mcnemar_setup} 
+
+}
+
+\caption{McNemar's test setup in jamovi}\label{fig:unnamed-chunk-2}
+\end{figure}
+
+\hypertarget{interpreting-results-7}{%
+\section{Interpreting results}\label{interpreting-results-7}}
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{images/12-mcnemar/mcnemar_results} 
+
+}
+
+\caption{McNemar's test results in jamovi}\label{fig:unnamed-chunk-3}
+\end{figure}
+
+The first table shows us our observed frequencies. The second table gives us our results. Our p-value is less than .05 so we can reject the null hypothesis that the observed frequencies match our expected frequencies. Unfortunately, looking at our table it also shows that the ads had a negative effect: people were less likely to vote AGPP after seeing the ads.
+
+We can write up our results in APA something like this:
+
+\begin{quote}
+McNemar's test indicated that support for AGPP changed from before to after reviewing the AGPP advertisement, \(\chi^2\) (1) = 13.33, \emph{p} \textless{} .001. Most participants continued to not vote for AGPP after the ad (\emph{n} = 65) and a few continued to vote for AGPP after the ad (\emph{n} = 5). However, many participants who originally stated they would vote for AGPP changed to no longer voting for AGPP after the ad (\emph{n} = 25); only five people who originally would not vote for AGPP changed to vote for AGPP after the ad.
+\end{quote}
 
 \hypertarget{appendix-appendices}{%
 \appendix}

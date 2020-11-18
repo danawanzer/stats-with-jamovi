@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Statistics with jamovi</title>
+  <title>Chapter 10 Chi-Square Goodness-of-Fit | Statistics with jamovi</title>
   <meta name="description" content="This is the website for PSYC 290 and PSYC 790 at the University of Wisconsin-Stout, taught by Dana Wanzer." />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Statistics with jamovi" />
+  <meta property="og:title" content="Chapter 10 Chi-Square Goodness-of-Fit | Statistics with jamovi" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Statistics with jamovi" />
+  <meta name="twitter:title" content="Chapter 10 Chi-Square Goodness-of-Fit | Statistics with jamovi" />
   
   <meta name="twitter:description" content="This is the website for PSYC 290 and PSYC 790 at the University of Wisconsin-Stout, taught by Dana Wanzer." />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="introduction.html"/>
+<link rel="prev" href="categorical-data-analysis.html"/>
+<link rel="next" href="chi-square-test-of-independence.html"/>
 <script src="libs/header-attrs-2.5/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -327,17 +327,199 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Statistics with jamovi</h1>
-<p class="author"><em>Dana Wanzer</em></p>
-<p class="date"><em>Last Update: 2020-11-18</em></p>
+<div id="chi-square-goodness-of-fit" class="section level1" number="10">
+<h1><span class="header-section-number">Chapter 10</span> Chi-Square Goodness-of-Fit</h1>
+<div id="what-is-the-chi-square-goodness-of-fit-test" class="section level2" number="10.1">
+<h2><span class="header-section-number">10.1</span> What is the chi-square goodness-of-fit test?</h2>
+<p>The <span class="math inline">\(\chi^2\)</span> (chi-square) goodness-of-fit tests whether an observed frequency distribution of a nominal variable matches an expected frequency distribution. Our hypotheses for the chi-square goodness-of-fit test is as follows:</p>
+<ul>
+<li><p><span class="math inline">\(H_0\)</span>: The observed frequencies match the expected frequencies.</p></li>
+<li><p><span class="math inline">\(H_1\)</span>: At least one observed frequency doesn’t match the expected frequency.</p></li>
+</ul>
+<p>For example, if we have a deck of cards and want to see if people don’t choose cards randomly, the null hypothesis would be that there is a 25% probability of getting each hearts, clubs, spades, and diamonds.</p>
 </div>
-<div id="welcome" class="section level1 unnumbered">
-<h1>Welcome</h1>
-<p>This is the website for PSYC 290 and PSYC 790 at the University of Wisconsin-Stout, taught by Dana Wanzer. These resources are aimed at teaching you how to use jamovi and null hypothesis significance testing (NHST) to answer research questions.</p>
-<p>This website is <strong>free to use</strong> and is licensed under a Creative Commons BY-SA (CC BY-SA) license version 4.0. This means you are free to <strong>share</strong> (i.e., copy and redistribute the material in any medium or format) and <strong>adapt</strong> (i.e., remix, transform, and build upon the material for any purpose, even commercially), provided that you <strong>attribute</strong> these resources by citing me, indicating if changes were made and you <strong>share alike</strong> (i.e., if you adapt, you must distribute your contributes under the same license as the original).</p>
-<p>Portions of this book may have been adapted from “<a href="http://www.learnstatswithjamovi.com">Learning statistics with jamovi: A tutorial for psychology students and other beginners</a>” by Danielle J. Navarro and David R. Foxcroft, version 0.70. Furthermore, the template and style of this book is from <a href="https://psyteachr.github.io/book-template/setup.html">PsyTeachR</a>.</p>
+<div id="data-set-up-5" class="section level2" number="10.2">
+<h2><span class="header-section-number">10.2</span> Data set-up</h2>
+<p>Our data set-up for a chi-square goodness-of-fit test is pretty simple, We just need a single column with the nominal category that each participant is in.</p>
+</div>
+<div id="assumptions-5" class="section level2" number="10.3">
+<h2><span class="header-section-number">10.3</span> Assumptions</h2>
+<p>The chi-square goodness-of-fit test has the following assumptions:</p>
+<ol style="list-style-type: decimal">
+<li><p><strong>Expected frequencies are sufficiently large</strong>, which is usually greater than 5. If you violate this assumption, you can use Fisher’s exact test.</p></li>
+<li><p>Data are independent of one another, meaning each case contributes to only one cell of the table. If you violate this assumption, you may be able to use the McNemar test.</p></li>
+</ol>
+</div>
+<div id="the-math-behind-the-chi-square-goodness-of-fit-test" class="section level2" number="10.4">
+<h2><span class="header-section-number">10.4</span> The math behind the chi-square goodness of fit test</h2>
+<div class="info">
+<p>
+If the math below makes your eyes glaze over, you can skip it. This is presented for those who find it useful to understand the math behind the statistics to help understand what’s happening.
+</p>
+</div>
+<p>We’re going to continue using the card deck example. This data comes from the lsj-data dataset named “randomness.” If you perform descriptive statistics of <code>choice_1</code> and ask for frequency tables, you get the <em>observed</em> frequencies. We expect the frequencies to be 25% for each choice (or <em>n</em> = 50 because our total N is 200, so 200/4 = 50).</p>
+<table>
+<colgroup>
+<col width="21%" />
+<col width="16%" />
+<col width="14%" />
+<col width="17%" />
+<col width="15%" />
+<col width="15%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th></th>
+<th><span class="math inline">\(\clubsuit\)</span></th>
+<th><span class="math inline">\(\diamondsuit\)</span></th>
+<th><span class="math inline">\(\heartsuit\)</span></th>
+<th><span class="math inline">\(\spadesuit\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Observed frequency</td>
+<td><span class="math inline">\(O_i\)</span></td>
+<td>35</td>
+<td>51</td>
+<td>64</td>
+<td>50</td>
+</tr>
+<tr class="even">
+<td>Expected frequency</td>
+<td><span class="math inline">\(E_i\)</span></td>
+<td>50</td>
+<td>50</td>
+<td>50</td>
+<td>50</td>
+</tr>
+<tr class="odd">
+<td>Difference score</td>
+<td><span class="math inline">\(O_i-E_i\)</span></td>
+<td>-15</td>
+<td>1</td>
+<td>14</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>Difference squared</td>
+<td><span class="math inline">\((O_i-E_i)^2\)</span></td>
+<td>225</td>
+<td>1</td>
+<td>196</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p>The formula for the chi-square goodness-of-fit test is as follows:</p>
+<p><span class="math inline">\(\chi^2 = \sum{\frac{(O_i-E_i)^2}{E_i}} = \frac{225 + 1 + 196 + 0}{50} = \frac{422}{50} = 8.44\)</span></p>
+<p>Up to this point, we’ve been working with the <em>t</em> and <em>F</em> distributions for our statistics. Now we move to the <span class="math inline">\(\chi^2\)</span> distribution with <span class="math inline">\(k-1\)</span> degrees of freedom (k = number of groups; in our card’s example case it’s 4-1 = 3). What is the chi-square distribution? It looks a little something like this:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="chi-square-goodness-of-fit.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">data.frame</span>(<span class="at">x =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">30</span>)), <span class="fu">aes</span>(<span class="at">x =</span> x)) <span class="sc">+</span></span>
+<span id="cb1-2"><a href="chi-square-goodness-of-fit.html#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_function</span>(<span class="at">fun =</span> dchisq, <span class="at">args =</span> <span class="fu">list</span>(<span class="at">df =</span> <span class="dv">3</span>), <span class="fu">aes</span>(<span class="at">colour =</span> <span class="st">&quot;df = 03&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb1-3"><a href="chi-square-goodness-of-fit.html#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_function</span>(<span class="at">fun =</span> dchisq, <span class="at">args =</span> <span class="fu">list</span>(<span class="at">df =</span> <span class="dv">4</span>), <span class="fu">aes</span>(<span class="at">colour =</span> <span class="st">&quot;df = 04&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb1-4"><a href="chi-square-goodness-of-fit.html#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_function</span>(<span class="at">fun =</span> dchisq, <span class="at">args =</span> <span class="fu">list</span>(<span class="at">df =</span> <span class="dv">5</span>), <span class="fu">aes</span>(<span class="at">colour =</span> <span class="st">&quot;df = 05&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb1-5"><a href="chi-square-goodness-of-fit.html#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_function</span>(<span class="at">fun =</span> dchisq, <span class="at">args =</span> <span class="fu">list</span>(<span class="at">df =</span> <span class="dv">10</span>), <span class="fu">aes</span>(<span class="at">colour =</span> <span class="st">&quot;df = 10&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb1-6"><a href="chi-square-goodness-of-fit.html#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_function</span>(<span class="at">fun =</span> dchisq, <span class="at">args =</span> <span class="fu">list</span>(<span class="at">df =</span> <span class="dv">20</span>), <span class="fu">aes</span>(<span class="at">colour =</span> <span class="st">&quot;df = 20&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb1-7"><a href="chi-square-goodness-of-fit.html#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_viridis</span>(<span class="at">discrete =</span> <span class="cn">TRUE</span>) <span class="sc">+</span></span>
+<span id="cb1-8"><a href="chi-square-goodness-of-fit.html#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>() <span class="sc">+</span></span>
+<span id="cb1-9"><a href="chi-square-goodness-of-fit.html#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="fu">element_blank</span>()) <span class="sc">+</span></span>
+<span id="cb1-10"><a href="chi-square-goodness-of-fit.html#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="at">label =</span> <span class="st">&quot;Value&quot;</span>)</span></code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-2"></span>
+<img src="10-goodness-of-fit_files/figure-html/unnamed-chunk-2-1.png" alt="**CAPTION THIS FIGURE!!**" width="100%" />
+<p class="caption">
+Figure 2.1: <strong>CAPTION THIS FIGURE!!</strong>
+</p>
+</div>
+<p>In our case, we have a degrees of freedom of 3. Just like we did early in the semester, we can look up our critical-<span class="math inline">\(\chi^2\)</span> value in a table to find that our critical value for df = 3 is 7.815. The figure below shows our critical-<span class="math inline">\(\chi^2\)</span> value in red and calculated-<span class="math inline">\(\chi^2\)</span> value in black. Because our calculated-<span class="math inline">\(\chi^2\)</span> value is in the critical region, we can reject the null hypothesis that all four suits are chosen with equal probability.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="chi-square-goodness-of-fit.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">data.frame</span>(<span class="at">x =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">20</span>)), <span class="fu">aes</span>(<span class="at">x =</span> x)) <span class="sc">+</span></span>
+<span id="cb2-2"><a href="chi-square-goodness-of-fit.html#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_function</span>(<span class="at">fun =</span> dchisq, <span class="at">args =</span> <span class="fu">list</span>(<span class="at">df =</span> <span class="dv">3</span>)) <span class="sc">+</span></span>
+<span id="cb2-3"><a href="chi-square-goodness-of-fit.html#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_function</span>(<span class="at">fun =</span> dchisq, <span class="at">args =</span> <span class="fu">list</span>(<span class="at">df =</span> <span class="dv">3</span>), </span>
+<span id="cb2-4"><a href="chi-square-goodness-of-fit.html#cb2-4" aria-hidden="true" tabindex="-1"></a>                <span class="at">xlim =</span> <span class="fu">c</span>(<span class="fl">7.815</span>, <span class="dv">20</span>), <span class="at">geom =</span> <span class="st">&quot;area&quot;</span>, <span class="at">fill =</span> <span class="st">&quot;darkred&quot;</span>) <span class="sc">+</span></span>
+<span id="cb2-5"><a href="chi-square-goodness-of-fit.html#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fl">7.815</span>, <span class="at">colour =</span> <span class="st">&quot;darkred&quot;</span>) <span class="sc">+</span> </span>
+<span id="cb2-6"><a href="chi-square-goodness-of-fit.html#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fl">7.4</span>, <span class="at">y =</span> .<span class="dv">15</span>, <span class="at">label =</span> <span class="st">&quot;Critical-value = 7.815&quot;</span>), </span>
+<span id="cb2-7"><a href="chi-square-goodness-of-fit.html#cb2-7" aria-hidden="true" tabindex="-1"></a>            <span class="at">angle =</span> <span class="dv">90</span>, <span class="at">color =</span> <span class="st">&quot;darkred&quot;</span>) <span class="sc">+</span></span>
+<span id="cb2-8"><a href="chi-square-goodness-of-fit.html#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fl">8.8</span>, <span class="at">y =</span> .<span class="dv">15</span>, <span class="at">label =</span> <span class="st">&quot;Calculated-value = 8.44&quot;</span>), </span>
+<span id="cb2-9"><a href="chi-square-goodness-of-fit.html#cb2-9" aria-hidden="true" tabindex="-1"></a>            <span class="at">angle =</span> <span class="dv">90</span>) <span class="sc">+</span></span>
+<span id="cb2-10"><a href="chi-square-goodness-of-fit.html#cb2-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fl">8.44</span>) <span class="sc">+</span> </span>
+<span id="cb2-11"><a href="chi-square-goodness-of-fit.html#cb2-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>() <span class="sc">+</span></span>
+<span id="cb2-12"><a href="chi-square-goodness-of-fit.html#cb2-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_viridis</span>(<span class="at">discrete =</span> <span class="cn">TRUE</span>) <span class="sc">+</span></span>
+<span id="cb2-13"><a href="chi-square-goodness-of-fit.html#cb2-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="fu">element_blank</span>()) <span class="sc">+</span></span>
+<span id="cb2-14"><a href="chi-square-goodness-of-fit.html#cb2-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="at">label =</span> <span class="st">&quot;Value of the goodness-of-fit statistic&quot;</span>)</span></code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-3"></span>
+<img src="10-goodness-of-fit_files/figure-html/unnamed-chunk-3-1.png" alt="**CAPTION THIS FIGURE!!**" width="100%" />
+<p class="caption">
+Figure 2.2: <strong>CAPTION THIS FIGURE!!</strong>
+</p>
+</div>
+</div>
+<div id="performing-the-chi-square-goodness-of-fit-test-in-jamovi" class="section level2" number="10.5">
+<h2><span class="header-section-number">10.5</span> Performing the chi-square goodness-of-fit test in jamovi</h2>
+<p>Let’s run an example with data from lsj-data. Open data from your Data Library in “lsj-data.” Select and open “randomness.” This dataset has participants pull two cards from a deck. For now, let’s just work with <code>choice_1</code>.</p>
+<ol style="list-style-type: decimal">
+<li><p>From the ‘Analyses’ toolbar select ‘Frequences’ - ‘One sample proportion tests - N outcomes.’</p></li>
+<li><p>Move <code>choice_1</code> into the Variable box.</p></li>
+<li><p>Select <code>Expected counts</code>.</p></li>
+</ol>
+<p>When you are done, your setup should look like this</p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-4"></span>
+<img src="images/09-chi-square/chi-square_setup.png" alt="Chi-square goodness-of-fit setup in jamovi" width="80%" />
+<p class="caption">
+Figure 2.3: Chi-square goodness-of-fit setup in jamovi
+</p>
+</div>
+</div>
+<div id="interpreting-results-5" class="section level2" number="10.6">
+<h2><span class="header-section-number">10.6</span> Interpreting results</h2>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-5"></span>
+<img src="images/09-chi-square/chi-square_results.png" alt="Chi-square goodness-of-fit results in jamovi" width="100%" />
+<p class="caption">
+Figure 2.4: Chi-square goodness-of-fit results in jamovi
+</p>
+</div>
+<p>The first table shows us our observed frequencies (our data) and expected frequencies (N/k = 200/4 = 50). The second table gives us our results. Our p-value is less than .05 so we can reject the null hypothesis that the observed frequencies match our expected frequencies.</p>
+<p>We can write up our results in APA something like this:</p>
+<blockquote>
+<p>Of the 200 participants in the experiment, 64 selected hearts for their first choice, 51selected diamonds, 50 selected spades, and 35 selected clubs. A chi-square goodness-of-fit test was conducted to test whether the choice probabilities were identical for all four suits. The results were statistically significant (<span class="math inline">\(\chi^2\)</span> (3) = 8.44; <em>p</em> = .038), suggesting that people did not select suits purely at random.</p>
+</blockquote>
+</div>
+<div id="different-expected-frequencies" class="section level2" number="10.7">
+<h2><span class="header-section-number">10.7</span> Different Expected Frequencies</h2>
+<p>As you can tell, jamovi automatically assumed equal proportions of frequencies. However, perhaps we think our deck is loaded or we have the actual population frequencies and want to see if our distribution matches the population distribution. We can use the <code>Expected Proportions</code> in the setup to specify different expected frequencies.</p>
+<p>For example, maybe we think our deck is a little stacked in favor of red cards–or we think our participants are more likely to choose red cards than black cards. We can specify our expected proportions and then interpret the results. In this case, participants do not seem more likely to choose red cards based on the expected frequencies we provided.</p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-6"></span>
+<img src="images/09-chi-square/chi-square_results2.png" alt="Chi-square goodness-of-fit - Different expected proportions" width="100%" />
+<p class="caption">
+Figure 2.5: Chi-square goodness-of-fit - Different expected proportions
+</p>
+</div>
+</div>
+<div id="your-turn-5" class="section level2" number="10.8">
+<h2><span class="header-section-number">10.8</span> Your turn!</h2>
+<p>Open the <code>Sample_Dataset_2014.xlsx</code> file that we will be using for all Your Turn exercises. You can find the dataset here: <a href="https://github.com/danawanzer/stats-with-jamovi/blob/master/data/Sample_Dataset_2014.xlsx">Sample_Dataset_2014.xlsx Download</a></p>
+<p>To get the most out of these exercises, try to first find out the answer on your own and then use the drop-down menus to check your answer.</p>
+<ol style="list-style-type: decimal">
+<li><p><strong>Are there equal numbers of athletes and non-athletes?</strong> (<code>Athlete</code> variable)</p>
+<ul>
+<li><p>Do you meet the assumptions? <select class='solveme' data-answer='["yes"]'> <option></option> <option>yes</option> <option>no, expected frequencies are too small</option> <option>no, data are not independent</option></select></p></li>
+<li><p>Are the observed frequencies similar to the expected frequencies? <select class='solveme' data-answer='["no"]'> <option></option> <option>yes</option> <option>no</option></select></p></li>
+<li><p>What is your chi-square value, rounded to two decimal places: <input class='solveme nospaces' size='5' data-answer='["10.32"]'/></p></li>
+</ul></li>
+<li><p><strong>I happen to know the school this data comes from has 40% athletes and 60% non-athletes. Does our data match the school population?</strong></p>
+<ul>
+<li><p>Change your Expected Proportions ratio to .6 for non-athletes and .4 for athletes.</p></li>
+<li><p>Are the observed frequencies similar to the expected frequencies? <select class='solveme' data-answer='["yes"]'> <option></option> <option>yes</option> <option>no</option></select></p></li>
+<li><p>What is your chi-square value, rounded to two decimal places: <input class='solveme nospaces' size='4' data-answer='["0.96"]'/></p></li>
+</ul></li>
+<li><p><strong>Are there equal numbers of freshmen, sophomores, juniors, and seniors?</strong> (<code>Rank</code> variable)</p>
+<ul>
+<li><p>Do you meet the assumptions? <select class='solveme' data-answer='["yes"]'> <option></option> <option>yes</option> <option>no, expected frequencies are too small</option> <option>no, data are not independent</option></select></p></li>
+<li><p>Are the observed frequencies similar to the expected frequencies? <select class='solveme' data-answer='["no"]'> <option></option> <option>yes</option> <option>no</option></select></p></li>
+<li><p>What is your chi-square value, rounded to two decimal places: <input class='solveme nospaces' size='5' data-answer='["33.94"]'/></p></li>
+</ul></li>
+</ol>
 
+</div>
 </div>
 <div class="psyteachr_footer">
   
@@ -429,8 +611,8 @@ window.onload = function() {
           </div>
         </div>
       </div>
-
-<a href="introduction.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="categorical-data-analysis.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="chi-square-test-of-independence.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

@@ -1,7 +1,7 @@
 ---
 title: "Statistics with jamovi"
 author: "Dana Wanzer"
-date: "Last Update: 2020-11-12"
+date: "Last Update: 2020-11-18"
 site: bookdown::bookdown_site
 output:
   bookdown::pdf_book:
@@ -1878,6 +1878,484 @@ To get the most out of these exercises, try to first find out the answer on your
         -   What is the correlation between writing and English? <input class='solveme nospaces' size='3' data-answer='[".37"]'/>
 
 <!--chapter:end:08-correlation.Rmd-->
+
+# (PART) Categorical Data Analysis {.unnumbered}
+
+# Categorical Data Analysis
+
+
+
+## What is categorical data analysis?
+
+Simply, categorical data analysis is data analysis with categorical data. It's usually nominal data, although there are a couple tests we may use with ordinal data.
+
+## Assumptions
+
+All of our categorical data analyses have the following assumptions:
+
+1.  **Expected frequencies are sufficiently large**, which is usually greater than 5. If you violate this assumption, you can use Fisher's exact test.
+
+2.  **Data are independent of one another**, meaning each case contributes to only one cell of the table. If you violate this assumption, you may be able to use the McNemar test.
+
+## What types of categorical data analyses are there?
+
+We're going to cover the following categorical data analyses (there are more, but these are all we'll focus on):
+
+1.  $\chi^2$ **goodness-of-fit**: used with one variable to find if the observed frequencies match the expected frequencies
+
+2.  $\chi^2$ **test of independence (or association)**: used with two variables to find if the observed frequencies match the expected frequencies. In other words, are the two nominal variables independent or associated with one another?
+
+    1.  **Fisher's exact test**: This is an alternative to the $\chi^2$test of independence that we use when our frequencies are small.
+
+    2.  **McNemar's test**: This is an alternative to the $\chi^2$test of independence that we have a 2x2 repeated-measures design. For example, perhaps we examine pass/fail rates before and after a training.
+
+Notice how we don't have an assumption about a normal distribution. For that reason, these are all *non-parametric statistics*.
+
+## What is the effect size for categorical data analysis?
+
+We typically report Cramer's V statistic. It's pretty simple to calculate, but jamovi will calculate it for us with the chi-square test of independence:
+
+$V = \sqrt{\frac{\chi^2}{N(k-1)}}$
+
+<!--chapter:end:09-categorical.Rmd-->
+
+# Chi-Square Goodness-of-Fit
+
+
+
+## What is the chi-square goodness-of-fit test?
+
+The $\chi^2$ (chi-square) goodness-of-fit tests whether an observed frequency distribution of a nominal variable matches an expected frequency distribution. Our hypotheses for the chi-square goodness-of-fit test is as follows:
+
+-   $H_0$: The observed frequencies match the expected frequencies.
+
+-   $H_1$: At least one observed frequency doesn't match the expected frequency.
+
+For example, if we have a deck of cards and want to see if people don't choose cards randomly, the null hypothesis would be that there is a 25% probability of getting each hearts, clubs, spades, and diamonds.
+
+## Data set-up
+
+Our data set-up for a chi-square goodness-of-fit test is pretty simple, We just need a single column with the nominal category that each participant is in.
+
+## Assumptions
+
+The chi-square goodness-of-fit test has the following assumptions:
+
+1.  **Expected frequencies are sufficiently large**, which is usually greater than 5. If you violate this assumption, you can use Fisher's exact test.
+
+2.  Data are independent of one another, meaning each case contributes to only one cell of the table. If you violate this assumption, you may be able to use the McNemar test.
+
+## The math behind the chi-square goodness of fit test
+
+\begin{info}
+If the math below makes your eyes glaze over, you can skip it. This is
+presented for those who find it useful to understand the math behind the
+statistics to help understand what's happening.
+\end{info}
+
+We're going to continue using the card deck example. This data comes from the lsj-data dataset named "randomness". If you perform descriptive statistics of `choice_1` and ask for frequency tables, you get the *observed* frequencies. We expect the frequencies to be 25% for each choice (or *n* = 50 because our total N is 200, so 200/4 = 50).
+
++--------------------+---------------+-------------+----------------+--------------+--------------+
+|                    |               | $\clubsuit$ | $\diamondsuit$ | $\heartsuit$ | $\spadesuit$ |
++====================+===============+=============+================+==============+==============+
+| Observed frequency | $O_i$         | 35          | 51             | 64           | 50           |
++--------------------+---------------+-------------+----------------+--------------+--------------+
+| Expected frequency | $E_i$         | 50          | 50             | 50           | 50           |
++--------------------+---------------+-------------+----------------+--------------+--------------+
+| Difference score   | $O_i-E_i$     | -15         | 1              | 14           | 0            |
++--------------------+---------------+-------------+----------------+--------------+--------------+
+| Difference squared | $(O_i-E_i)^2$ | 225         | 1              | 196          | 0            |
++--------------------+---------------+-------------+----------------+--------------+--------------+
+
+The formula for the chi-square goodness-of-fit test is as follows:
+
+$\chi^2 = \sum{\frac{(O_i-E_i)^2}{E_i}} = \frac{225 + 1 + 196 + 0}{50} = \frac{422}{50} = 8.44$
+
+Up to this point, we've been working with the *t* and *F* distributions for our statistics. Now we move to the $\chi^2$ distribution with $k-1$ degrees of freedom (k = number of groups; in our card's example case it's 4-1 = 3). What is the chi-square distribution? It looks a little something like this:
+
+
+```r
+ggplot(data.frame(x = c(0, 30)), aes(x = x)) +
+  stat_function(fun = dchisq, args = list(df = 3), aes(colour = "df = 03")) +
+  stat_function(fun = dchisq, args = list(df = 4), aes(colour = "df = 04")) +
+  stat_function(fun = dchisq, args = list(df = 5), aes(colour = "df = 05")) +
+  stat_function(fun = dchisq, args = list(df = 10), aes(colour = "df = 10")) +
+  stat_function(fun = dchisq, args = list(df = 20), aes(colour = "df = 20")) +
+  scale_color_viridis(discrete = TRUE) +
+  theme_classic() +
+  ylab(element_blank()) +
+  xlab(label = "Value")
+```
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{10-goodness-of-fit_files/figure-latex/unnamed-chunk-2-1} 
+
+}
+
+\caption{**CAPTION THIS FIGURE!!**}(\#fig:unnamed-chunk-2)
+\end{figure}
+
+In our case, we have a degrees of freedom of 3. Just like we did early in the semester, we can look up our critical-$\chi^2$ value in a table to find that our critical value for df = 3 is 7.815. The figure below shows our critical-$\chi^2$ value in red and calculated-$\chi^2$ value in black. Because our calculated-$\chi^2$ value is in the critical region, we can reject the null hypothesis that all four suits are chosen with equal probability.
+
+
+```r
+ggplot(data.frame(x = c(0, 20)), aes(x = x)) +
+  stat_function(fun = dchisq, args = list(df = 3)) +
+  stat_function(fun = dchisq, args = list(df = 3), 
+                xlim = c(7.815, 20), geom = "area", fill = "darkred") +
+  geom_vline(xintercept = 7.815, colour = "darkred") + 
+  geom_text(aes(x = 7.4, y = .15, label = "Critical-value = 7.815"), 
+            angle = 90, color = "darkred") +
+  geom_text(aes(x = 8.8, y = .15, label = "Calculated-value = 8.44"), 
+            angle = 90) +
+  geom_vline(xintercept = 8.44) + 
+  theme_classic() +
+  scale_color_viridis(discrete = TRUE) +
+  ylab(element_blank()) +
+  xlab(label = "Value of the goodness-of-fit statistic")
+```
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{10-goodness-of-fit_files/figure-latex/unnamed-chunk-3-1} 
+
+}
+
+\caption{**CAPTION THIS FIGURE!!**}(\#fig:unnamed-chunk-3)
+\end{figure}
+
+## Performing the chi-square goodness-of-fit test in jamovi
+
+Let's run an example with data from lsj-data. Open data from your Data Library in "lsj-data". Select and open "randomness". This dataset has participants pull two cards from a deck. For now, let's just work with `choice_1`.
+
+1.  From the 'Analyses' toolbar select 'Frequences' - 'One sample proportion tests - N outcomes'.
+
+2.  Move `choice_1` into the Variable box.
+
+3.  Select `Expected counts`.
+
+When you are done, your setup should look like this
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.8\linewidth]{images/09-chi-square/chi-square_setup} 
+
+}
+
+\caption{Chi-square goodness-of-fit setup in jamovi}(\#fig:unnamed-chunk-4)
+\end{figure}
+
+## Interpreting results
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{images/09-chi-square/chi-square_results} 
+
+}
+
+\caption{Chi-square goodness-of-fit results in jamovi}(\#fig:unnamed-chunk-5)
+\end{figure}
+
+The first table shows us our observed frequencies (our data) and expected frequencies (N/k = 200/4 = 50). The second table gives us our results. Our p-value is less than .05 so we can reject the null hypothesis that the observed frequencies match our expected frequencies.
+
+We can write up our results in APA something like this:
+
+> Of the 200 participants in the experiment, 64 selected hearts for their first choice, 51selected diamonds, 50 selected spades, and 35 selected clubs. A chi-square goodness-of-fit test was conducted to test whether the choice probabilities were identical for all four suits. The results were statistically significant ($\chi^2$ (3) = 8.44; *p* = .038), suggesting that people did not select suits purely at random.
+
+## Different Expected Frequencies
+
+As you can tell, jamovi automatically assumed equal proportions of frequencies. However, perhaps we think our deck is loaded or we have the actual population frequencies and want to see if our distribution matches the population distribution. We can use the `Expected Proportions` in the setup to specify different expected frequencies.
+
+For example, maybe we think our deck is a little stacked in favor of red cards--or we think our participants are more likely to choose red cards than black cards. We can specify our expected proportions and then interpret the results. In this case, participants do not seem more likely to choose red cards based on the expected frequencies we provided.
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{images/09-chi-square/chi-square_results2} 
+
+}
+
+\caption{Chi-square goodness-of-fit - Different expected proportions}(\#fig:unnamed-chunk-6)
+\end{figure}
+
+## Your turn!
+
+Open the `Sample_Dataset_2014.xlsx` file that we will be using for all Your Turn exercises. You can find the dataset here: [Sample_Dataset_2014.xlsx Download](https://github.com/danawanzer/stats-with-jamovi/blob/master/data/Sample_Dataset_2014.xlsx)
+
+To get the most out of these exercises, try to first find out the answer on your own and then use the drop-down menus to check your answer.
+
+1.  **Are there equal numbers of athletes and non-athletes?** (`Athlete` variable)
+
+    -   Do you meet the assumptions? <select class='solveme' data-answer='["yes"]'> <option></option> <option>yes</option> <option>no, expected frequencies are too small</option> <option>no, data are not independent</option></select>
+
+    -   Are the observed frequencies similar to the expected frequencies? <select class='solveme' data-answer='["no"]'> <option></option> <option>yes</option> <option>no</option></select>
+
+    -   What is your chi-square value, rounded to two decimal places: <input class='solveme nospaces' size='5' data-answer='["10.32"]'/>
+
+2.  **I happen to know the school this data comes from has 40% athletes and 60% non-athletes. Does our data match the school population?**
+
+    -   Change your Expected Proportions ratio to .6 for non-athletes and .4 for athletes.
+
+    -   Are the observed frequencies similar to the expected frequencies? <select class='solveme' data-answer='["yes"]'> <option></option> <option>yes</option> <option>no</option></select>
+
+    -   What is your chi-square value, rounded to two decimal places: <input class='solveme nospaces' size='4' data-answer='["0.96"]'/>
+
+3.  **Are there equal numbers of freshmen, sophomores, juniors, and seniors?** (`Rank` variable)
+
+    -   Do you meet the assumptions? <select class='solveme' data-answer='["yes"]'> <option></option> <option>yes</option> <option>no, expected frequencies are too small</option> <option>no, data are not independent</option></select>
+
+    -   Are the observed frequencies similar to the expected frequencies? <select class='solveme' data-answer='["no"]'> <option></option> <option>yes</option> <option>no</option></select>
+
+    -   What is your chi-square value, rounded to two decimal places: <input class='solveme nospaces' size='5' data-answer='["33.94"]'/>
+
+<!--chapter:end:10-goodness-of-fit.Rmd-->
+
+# Chi-Square Test of Independence
+
+
+
+## What is the chi-square test of independence?
+
+The $\chi^2$ (chi-square) test of independence (or association) tests whether an observed frequency distribution of a nominal variable matches an expected frequency distribution, but unlike the goodness of fit test we are looking at the relationship, independence, or association between two variables. Our hypotheses for the chi-square goodness-of-fit test is as follows:
+
+-   $H_0$: The observed frequencies match the expected frequencies.
+
+-   $H_1$: At least one observed frequency doesn't match the expected frequency.
+
+For example, imagine we are watching a show about the planet *Chapek 9*. On this planet, for someone to gain access to their capital city they must prove they're a robot, not a human. In order to determine whether or not a visitor is human, the natives ask whether the visitor prefers puppies, flowers, or large, properly formatted data files. Our alternative hypothesis would be that humans and robots have different preferences and our null is that they have the same preferences.
+
+## Data set-up
+
+Our data set-up for a chi-square test of independence is pretty simple, We just need two columns of nominal data, with one row per participant. Here's our data for our example we'll be working with, which you can find in the lsj-data called `chapek9`:
+
+| ID  | species | choice |
+|-----|---------|--------|
+| 1   | robot   | flower |
+| 2   | human   | data   |
+| 3   | human   | data   |
+| 4   | human   | data   |
+| 5   | robot   | data   |
+| 6   | human   | flower |
+| 7   | human   | data   |
+| 8   | robot   | data   |
+| 9   | human   | puppy  |
+| 10  | robot   | flower |
+
+## The math behind the chi-square test of independence
+
+\begin{info}
+If the math below makes your eyes glaze over, you can skip it. This is
+presented for those who find it useful to understand the math behind the
+statistics to help understand what's happening.
+\end{info}
+
+We're going to continue using the Chapek 9 example. This data comes from the lsj-data dataset named "chapek9". If you perform descriptive statistics of `choice` by `species` and ask for frequency tables, you get the *observed* frequencies below. I've added row, column, and table totals on the right column and bottom row.
+
+| *Observed Frequencies* | Robot  | Human  | Total   |
+|------------------------|--------|--------|---------|
+| Puppy                  | 13     | 15     | **28**  |
+| Flower                 | 30     | 13     | **43**  |
+| Data                   | 44     | 65     | **109** |
+| **Total**              | **87** | **93** | **180** |
+
+Next, we need to calculate our *expected* frequencies based on our data. Our expected frequencies for each cell by multiplying the row total by the column total and dividing by the total sample size:
+
+$Expected frequencies = \frac{C_j * P_i}{N}$
+
++------------------------+-------------------------+--------------------------+---------+
+| *Expected Frequencies* | Robot                   | Human                    | Total   |
++========================+=========================+==========================+=========+
+| Puppy                  | (28 \* 87)/180 = 13.533 | (28 \* 93)/180 =14.467   | **28**  |
++------------------------+-------------------------+--------------------------+---------+
+| Flower                 | (43 \* 87)/180 =20.783  | (43 \* 93)/180 = 22.217  | **43**  |
++------------------------+-------------------------+--------------------------+---------+
+| Data                   | (109 \* 87)/180 =52.683 | (109 \* 93)/180 = 56.317 | **109** |
++------------------------+-------------------------+--------------------------+---------+
+| **Total**              | **87**                  | **93**                   | **180** |
++------------------------+-------------------------+--------------------------+---------+
+
+We then need to calculate the squared differences of observed minus expected frequencies:
+
++-----------------------+--------------------------+--------------------------+---------+
+| *Squared differences* | Robot                    | Human                    | Total   |
++=======================+==========================+==========================+=========+
+| Puppy                 | $(13-13.533)^2 = .284$   | $(15-14.467)^2 = .284$   | **28**  |
++-----------------------+--------------------------+--------------------------+---------+
+| Flower                | $(30-20.783)^2 = 84.953$ | $(13-22.217)^2 = 84.953$ | **43**  |
++-----------------------+--------------------------+--------------------------+---------+
+| Data                  | $(44-52.683)^2 = 75.394$ | $(65-56.317)^2 = 75.394$ | **109** |
++-----------------------+--------------------------+--------------------------+---------+
+| **Total**             | **87**                   | **93**                   | **180** |
++-----------------------+--------------------------+--------------------------+---------+
+
+The formula for the chi-square test of independence is the very similar to the chi-square goodness of fit test:
+
+$\chi^2 = \sum{\frac{(O_i-E_i)^2}{E_i}} = \frac{.284}{13.533} + \frac{.284}{14.467} + \frac{84.953}{20.783} + \frac{84.953}{22.217} + \frac{75.394}{52.683} + \frac{75.394}{56.317}$
+
+$\chi^2 = .021 + .020 + 4.070 + 3.834 + 1.431 + 1.339 = 10.72$
+
+Our degrees of freedom equals $(r-1)(c-1)$ where *r* is the number of rows and *c* is the number of columns. Our dataset has 3 rows and 2 columns: $(r-1)(c-1) = (3-1)(2-1) = (2)(1) = 2$ degrees of freedom.
+
+## Performing the chi-square test of independence in jamovi
+
+Let's run an example with data from lsj-data. Open data from your Data Library in "lsj-data". Select and open "chapek9". This dataset indicates the ID number of the participant, the species (robot or human), and their preference of the three things (puppy, flower, or data).
+
+1.  From the 'Analyses' toolbar select 'Frequencies' - 'Independent Samples - $\chi^2$ test of association'.
+
+2.  Move `choice` into rows and `species` into columns. Note that the placement in rows or columns doesn't really matter, but because we typically work with portrait pages I tend to prefer putting in rows whatever variable has more levels. In this case, choice has 3 levels and species only 2 so I like to put choice in rows and species in columns.
+
+3.  Under the Statistics tab, select $\chi^2$ under Tests and `Phi and Cramer's V` under Nominal.
+
+4.  Optionally, you can request under the Cells tab to show the expected counts and the row, column, and total percentages.
+
+When you are done, your setup should look like this
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.8\linewidth]{images/11-independence/independence_setup} 
+
+}
+
+\caption{Chi-square test of independence setup in jamovi}(\#fig:unnamed-chunk-2)
+\end{figure}
+
+## Interpreting results
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{images/11-independence/independence_results} 
+
+}
+
+\caption{Chi-square test of independence results in jamovi}(\#fig:unnamed-chunk-3)
+\end{figure}
+
+The first table shows us our observed frequencies. The second table gives us our results. Our p-value is less than .05 so we can reject the null hypothesis that the observed frequencies match our expected frequencies. jamovi also gives us our Cramer's V value.
+
+We can write up our results in APA something like this:
+
+> Pearson's $\chi^2$ test of independence showed a significant association between species and choice, $\chi^2$ (2) = 10.72, *p* = .005. Robots appeared to be more likely to say they prefer flowers and humans appeared to be more likely to say they prefer data.
+
+I would either write-up the observed frequencies above or, ideally, I would share the contingency table with my observed frequencies.
+
+## Fisher's exact test
+
+If you violate the assumption that there your expected frequencies are sufficiently large and you have a 2x2 table, you can still perform the $\chi^2$ test of independence but instead of selecting $\chi^2$you'll select `Fisher's exact test`. You'll interpret your results exactly the same but specify you used the Fisher's exact test.
+
+## Ordinal variable(s)
+
+If either of your variables are ordinal, instead of selecting `Phi and Cramer's V` you should select `Gamma` or `Kendall's tau-b`. Which do you choose? `Kendall's tau-b` should only be chosen if you have a square table (e.g., 3x3, 4x4, 5x5) whereas `Gamma` can be done with any size table. `Kendall's tau-b` will be a slightly more conservative estimate compared to `Gamma`.
+
+## Your turn!
+
+Open the `Sample_Dataset_2014.xlsx` file that we will be using for all Your Turn exercises. You can find the dataset here: [Sample_Dataset_2014.xlsx Download](https://github.com/danawanzer/stats-with-jamovi/blob/master/data/Sample_Dataset_2014.xlsx)
+
+To get the most out of these exercises, try to first find out the answer on your own and then use the drop-down menus to check your answer.
+
+1.  **Is Athlete related to Gender?**
+
+    -   Do you meet the assumptions? <select class='solveme' data-answer='["yes"]'> <option></option> <option>yes</option> <option>no, expected frequencies are too small</option> <option>no, data are not independent</option></select>
+
+    -   Which test should you perform? <select class='solveme' data-answer='["Chi-square"]'> <option></option> <option>Chi-square</option> <option>Fisher's exact test</option></select>
+
+    -   Are the observed frequencies similar to the expected frequencies? <select class='solveme' data-answer='["no"]'> <option></option> <option>yes</option> <option>no</option></select>
+
+    -   What is your chi-square value, rounded to two decimal places: <input class='solveme nospaces' size='4' data-answer='["8.45"]'/>
+
+2.  **Is Gender related to Rank?**
+
+    -   Do you meet the assumptions? <select class='solveme' data-answer='["yes"]'> <option></option> <option>yes</option> <option>no, expected frequencies are too small</option> <option>no, data are not independent</option></select>
+
+    -   Which test should you perform? <select class='solveme' data-answer='["Chi-square"]'> <option></option> <option>Chi-square</option> <option>Fisher's exact test</option></select>
+
+    -   Are the observed frequencies similar to the expected frequencies? <select class='solveme' data-answer='["yes"]'> <option></option> <option>yes</option> <option>no</option></select>
+
+    -   What is your chi-square value, rounded to two decimal places: <input class='solveme nospaces' size='4' data-answer='["0.61"]'/>
+
+<!--chapter:end:11-independence.Rmd-->
+
+# McNemar's Test
+
+
+
+## What is McNemar's test?
+
+McNemar's test is based on the $\chi^2$ (chi-square) test of independence (or association), but is used in a repeated measures or within-subjects design. Our hypotheses for the McNemar test is as follows:
+
+-   $H_0$: The observed frequencies match the expected frequencies.
+
+-   $H_1$: At least one observed frequency doesn't match the expected frequency.
+
+For example, suppose we're working with the *Australian Generic Political Party* (AGPP) and your job is to find out how effective AGPP political advertisements are. You gather 100 people and ask them to watch the AGPP ads. You ask participants before and after viewing ads whether they intend to vote for the AGPP.
+
+## Data set-up
+
+Our data set-up for McNemar's test is pretty simple. We just need two columns of nominal data, with one row per participant and each column being the same variable at two different time points. Here's our data for our example we'll be working with, which you can find in the lsj-data called `agpp`:
+
+| ID      | response_before | response_after |
+|---------|-----------------|----------------|
+| subj.1  | no              | yes            |
+| subj.2  | yes             | no             |
+| subj.3  | yes             | no             |
+| subj.4  | yes             | no             |
+| subj.5  | no              | no             |
+| subj.6  | no              | no             |
+| subj.7  | no              | no             |
+| subj.8  | no              | yes            |
+| subj.9  | no              | no             |
+| subj.10 | no              | no             |
+
+## The math behind the chi-square test of independence
+
+\begin{info}
+If the math below makes your eyes glaze over, you can skip it. This is
+presented for those who find it useful to understand the math behind the
+statistics to help understand what's happening.
+\end{info}
+
+I might add the math behind the test later. Otherwise, it's similar to the $\chi^2$ test of independence with slightly different calculations.
+
+## Performing McNemar's test in jamovi
+
+Let's run an example with data from lsj-data. Open data from your Data Library in "lsj-data". Select and open "agpp". This dataset indicates the ID number of the participant and whether they would vote for AGPP before and after viewing the ads.
+
+1.  From the 'Analyses' toolbar select 'Frequencies' - 'Paired Samples - McNemar test'.
+
+2.  Move `response_before` into rows and `response_after` into columns. Note that the placement in rows or columns doesn't really matter.
+
+3.  Under the Statistics tab, select $\chi^2$ under Tests.
+
+4.  Optionally, you can request under to show the row and column percentages.
+
+When you are done, your setup should look like this
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.8\linewidth]{images/12-mcnemar/mcnemar_setup} 
+
+}
+
+\caption{McNemar's test setup in jamovi}(\#fig:unnamed-chunk-2)
+\end{figure}
+
+## Interpreting results
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{images/12-mcnemar/mcnemar_results} 
+
+}
+
+\caption{McNemar's test results in jamovi}(\#fig:unnamed-chunk-3)
+\end{figure}
+
+The first table shows us our observed frequencies. The second table gives us our results. Our p-value is less than .05 so we can reject the null hypothesis that the observed frequencies match our expected frequencies. Unfortunately, looking at our table it also shows that the ads had a negative effect: people were less likely to vote AGPP after seeing the ads.
+
+We can write up our results in APA something like this:
+
+> McNemar's test indicated that support for AGPP changed from before to after reviewing the AGPP advertisement, $\chi^2$ (1) = 13.33, *p* \< .001. Most participants continued to not vote for AGPP after the ad (*n* = 65) and a few continued to vote for AGPP after the ad (*n* = 5). However, many participants who originally stated they would vote for AGPP changed to no longer voting for AGPP after the ad (*n* = 25); only five people who originally would not vote for AGPP changed to vote for AGPP after the ad.
+
+<!--chapter:end:12-mcnemar.Rmd-->
 
 # (APPENDIX) Appendices {-} 
 
