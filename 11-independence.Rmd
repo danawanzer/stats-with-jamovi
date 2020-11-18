@@ -53,6 +53,7 @@ Next, we need to calculate our *expected* frequencies based on our data. Our exp
 
 $Expected frequencies = \frac{C_j * P_i}{N}$
 
+<<<<<<< HEAD
 +------------------------+-------------------------+--------------------------+---------+
 | *Expected Frequencies* | Robot                   | Human                    | Total   |
 +========================+=========================+==========================+=========+
@@ -78,6 +79,23 @@ We then need to calculate the squared differences of observed minus expected fre
 +-----------------------+--------------------------+--------------------------+---------+
 | **Total**             | **87**                   | **93**                   | **180** |
 +-----------------------+--------------------------+--------------------------+---------+
+=======
+| *Expected Frequencies* | Robot                   | Human                    | Total   |
+|------------------------|-------------------------|--------------------------|---------|
+| Puppy                  | (28 \* 87)/180 = 13.533 | (28 \* 93)/180 =14.467   | **28**  |
+| Flower                 | (43 \* 87)/180 =20.783  | (43 \* 93)/180 = 22.217  | **43**  |
+| Data                   | (109 \* 87)/180 =52.683 | (109 \* 93)/180 = 56.317 | **109** |
+| **Total**              | **87**                  | **93**                   | **180** |
+
+We then need to calculate the squared differences of observed minus expected frequencies:
+
+| *Squared differences* | Robot                    | Human                    | Total   |
+|-----------------------|--------------------------|--------------------------|---------|
+| Puppy                 | $(13-13.533)^2 = .284$   | $(15-14.467)^2 = .284$   | **28**  |
+| Flower                | $(30-20.783)^2 = 84.953$ | $(13-22.217)^2 = 84.953$ | **43**  |
+| Data                  | $(44-52.683)^2 = 75.394$ | $(65-56.317)^2 = 75.394$ | **109** |
+| **Total**             | **87**                   | **93**                   | **180** |
+>>>>>>> 66306ca0d7acd82110bbda4742c158777d2e08d2
 
 The formula for the chi-square test of independence is the very similar to the chi-square goodness of fit test:
 
@@ -135,7 +153,11 @@ To get the most out of these exercises, try to first find out the answer on your
 
 1.  **Is Athlete related to Gender?**
 
+<<<<<<< HEAD
     -   Do you meet the assumptions? `r mcq(c(answer = "yes", "no, expected frequencies are too small", "no, data are not independent"))`
+=======
+    -   Do you meet the assumptions? `r mcq(c(answer = "yes", "no, expected frequencies are too small", "no, data are not independent))`
+>>>>>>> 66306ca0d7acd82110bbda4742c158777d2e08d2
 
     -   Which test should you perform? `r mcq(c(answer = "Chi-square", "Fisher's exact test"))`
 
@@ -145,7 +167,11 @@ To get the most out of these exercises, try to first find out the answer on your
 
 2.  **Is Gender related to Rank?**
 
+<<<<<<< HEAD
     -   Do you meet the assumptions? `r mcq(c(answer = "yes", "no, expected frequencies are too small", "no, data are not independent"))`
+=======
+    -   Do you meet the assumptions? `r mcq(c(answer = "yes", "no, expected frequencies are too small", "no, data are not independent))`
+>>>>>>> 66306ca0d7acd82110bbda4742c158777d2e08d2
 
     -   Which test should you perform? `r mcq(c(answer = "Chi-square", "Fisher's exact test"))`
 

@@ -1,11 +1,6 @@
 # Chi-Square Goodness-of-Fit
 
-```{r ind-t_setup, echo = FALSE, message=FALSE}
-library(tidyverse)
-library(webex)
-library(viridis)
-options(knitr.graphics.auto_pdf = TRUE)
-```
+
 
 ## What is the chi-square goodness-of-fit test?
 
@@ -31,9 +26,9 @@ The chi-square goodness-of-fit test has the following assumptions:
 
 ## The math behind the chi-square goodness of fit test
 
-```{block, type = "info"}
-If the math below makes your eyes glaze over, you can skip it. This is presented for those who find it useful to understand the math behind the statistics to help understand what's happening.
-```
+<div class="info">
+<p>If the math below makes your eyes glaze over, you can skip it. This is presented for those who find it useful to understand the math behind the statistics to help understand what’s happening.</p>
+</div>
 
 We're going to continue using the card deck example. This data comes from the lsj-data dataset named "randomness". If you perform descriptive statistics of `choice_1` and ask for frequency tables, you get the *observed* frequencies. We expect the frequencies to be 25% for each choice (or *n* = 50 because our total N is 200, so 200/4 = 50).
 
@@ -55,7 +50,8 @@ $\chi^2 = \sum{\frac{(O_i-E_i)^2}{E_i}} = \frac{225 + 1 + 196 + 0}{50} = \frac{4
 
 Up to this point, we've been working with the *t* and *F* distributions for our statistics. Now we move to the $\chi^2$ distribution with $k-1$ degrees of freedom (k = number of groups; in our card's example case it's 4-1 = 3). What is the chi-square distribution? It looks a little something like this:
 
-```{r}
+
+```r
 ggplot(data.frame(x = c(0, 30)), aes(x = x)) +
   stat_function(fun = dchisq, args = list(df = 3), aes(colour = "df = 03")) +
   stat_function(fun = dchisq, args = list(df = 4), aes(colour = "df = 04")) +
@@ -68,9 +64,15 @@ ggplot(data.frame(x = c(0, 30)), aes(x = x)) +
   xlab(label = "Value")
 ```
 
+<div class="figure" style="text-align: center">
+<img src="10-goodness-of-fit_files/figure-html/unnamed-chunk-2-1.png" alt="**CAPTION THIS FIGURE!!**" width="100%" />
+<p class="caption">(\#fig:unnamed-chunk-2)**CAPTION THIS FIGURE!!**</p>
+</div>
+
 In our case, we have a degrees of freedom of 3. Just like we did early in the semester, we can look up our critical-$\chi^2$ value in a table to find that our critical value for df = 3 is 7.815. The figure below shows our critical-$\chi^2$ value in red and calculated-$\chi^2$ value in black. Because our calculated-$\chi^2$ value is in the critical region, we can reject the null hypothesis that all four suits are chosen with equal probability.
 
-```{r}
+
+```r
 ggplot(data.frame(x = c(0, 20)), aes(x = x)) +
   stat_function(fun = dchisq, args = list(df = 3)) +
   stat_function(fun = dchisq, args = list(df = 3), 
@@ -87,6 +89,11 @@ ggplot(data.frame(x = c(0, 20)), aes(x = x)) +
   xlab(label = "Value of the goodness-of-fit statistic")
 ```
 
+<div class="figure" style="text-align: center">
+<img src="10-goodness-of-fit_files/figure-html/unnamed-chunk-3-1.png" alt="**CAPTION THIS FIGURE!!**" width="100%" />
+<p class="caption">(\#fig:unnamed-chunk-3)**CAPTION THIS FIGURE!!**</p>
+</div>
+
 ## Performing the chi-square goodness-of-fit test in jamovi
 
 Let's run an example with data from lsj-data. Open data from your Data Library in "lsj-data". Select and open "randomness". This dataset has participants pull two cards from a deck. For now, let's just work with `choice_1`.
@@ -99,15 +106,17 @@ Let's run an example with data from lsj-data. Open data from your Data Library i
 
 When you are done, your setup should look like this
 
-```{r echo = FALSE, fig.cap = "Chi-square goodness-of-fit setup in jamovi", out.width = "80%"}
-knitr::include_graphics("images/09-chi-square/chi-square_setup.png")
-```
+<div class="figure" style="text-align: center">
+<img src="images/09-chi-square/chi-square_setup.png" alt="Chi-square goodness-of-fit setup in jamovi" width="80%" />
+<p class="caption">(\#fig:unnamed-chunk-4)Chi-square goodness-of-fit setup in jamovi</p>
+</div>
 
 ## Interpreting results
 
-```{r echo = FALSE, fig.cap = "Chi-square goodness-of-fit results in jamovi"}
-knitr::include_graphics("images/09-chi-square/chi-square_results.png")
-```
+<div class="figure" style="text-align: center">
+<img src="images/09-chi-square/chi-square_results.png" alt="Chi-square goodness-of-fit results in jamovi" width="100%" />
+<p class="caption">(\#fig:unnamed-chunk-5)Chi-square goodness-of-fit results in jamovi</p>
+</div>
 
 The first table shows us our observed frequencies (our data) and expected frequencies (N/k = 200/4 = 50). The second table gives us our results. Our p-value is less than .05 so we can reject the null hypothesis that the observed frequencies match our expected frequencies.
 
@@ -121,44 +130,8 @@ As you can tell, jamovi automatically assumed equal proportions of frequencies. 
 
 For example, maybe we think our deck is a little stacked in favor of red cards--or we think our participants are more likely to choose red cards than black cards. We can specify our expected proportions and then interpret the results. In this case, participants do not seem more likely to choose red cards based on the expected frequencies we provided.
 
-```{r echo = FALSE, fig.cap = "Chi-square goodness-of-fit - Different expected proportions"}
-knitr::include_graphics("images/09-chi-square/chi-square_results2.png")
-```
+<div class="figure" style="text-align: center">
+<img src="images/09-chi-square/chi-square_results2.png" alt="Chi-square goodness-of-fit - Different expected proportions" width="100%" />
+<p class="caption">(\#fig:unnamed-chunk-6)Chi-square goodness-of-fit - Different expected proportions</p>
+</div>
 
-## Your turn!
-
-Open the `Sample_Dataset_2014.xlsx` file that we will be using for all Your Turn exercises. You can find the dataset here: [Sample_Dataset_2014.xlsx Download](https://github.com/danawanzer/stats-with-jamovi/blob/master/data/Sample_Dataset_2014.xlsx)
-
-To get the most out of these exercises, try to first find out the answer on your own and then use the drop-down menus to check your answer.
-
-1.  **Are there equal numbers of athletes and non-athletes?** (`Athlete` variable)
-
-<<<<<<< HEAD
-    -   Do you meet the assumptions? `r mcq(c(answer = "yes", "no, expected frequencies are too small", "no, data are not independent"))`
-=======
-    -   Do you meet the assumptions? `r mcq(c(answer = "yes", "no, expected frequencies are too small", "no, data are not independent))`
->>>>>>> 66306ca0d7acd82110bbda4742c158777d2e08d2
-
-    -   Are the observed frequencies similar to the expected frequencies? `r mcq(c("yes", answer = "no"))`
-
-    -   What is your chi-square value, rounded to two decimal places: `r fitb("10.32")`
-
-2.  **I happen to know the school this data comes from has 40% athletes and 60% non-athletes. Does our data match the school population?**
-
-    -   Change your Expected Proportions ratio to .6 for non-athletes and .4 for athletes.
-
-    -   Are the observed frequencies similar to the expected frequencies? `r mcq(c(answer = "yes", "no"))`
-
-    -   What is your chi-square value, rounded to two decimal places: `r fitb("0.96")`
-
-3.  **Are there equal numbers of freshmen, sophomores, juniors, and seniors?** (`Rank` variable)
-
-<<<<<<< HEAD
-    -   Do you meet the assumptions? `r mcq(c(answer = "yes", "no, expected frequencies are too small", "no, data are not independent"))`
-=======
-    -   Do you meet the assumptions? `r mcq(c(answer = "yes", "no, expected frequencies are too small", "no, data are not independent))`
->>>>>>> 66306ca0d7acd82110bbda4742c158777d2e08d2
-
-    -   Are the observed frequencies similar to the expected frequencies? `r mcq(c("yes", answer = "no"))`
-
-    -   What is your chi-square value, rounded to two decimal places: `r fitb("33.94")`
