@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 13 Regression | Statistics with jamovi</title>
+  <meta name="description" content="This is the website for PSYC 290 and PSYC 790 at the University of Wisconsin-Stout, taught by Dana Wanzer." />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 13 Regression | Statistics with jamovi" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is the website for PSYC 290 and PSYC 790 at the University of Wisconsin-Stout, taught by Dana Wanzer." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 13 Regression | Statistics with jamovi" />
+  
+  <meta name="twitter:description" content="This is the website for PSYC 290 and PSYC 790 at the University of Wisconsin-Stout, taught by Dana Wanzer." />
+  
+
+<meta name="author" content="Dana Wanzer" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="mcnemars-test.html"/>
+<link rel="next" href="everything-is-regression.html"/>
+<script src="libs/header-attrs-2.5/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="include/psyteachr.css" type="text/css" />
+<link rel="stylesheet" href="include/style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Stats with jamovi</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a></li>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#quiz-questions"><i class="fa fa-check"></i><b>1.1</b> Quiz Questions</a></li>
+<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#errors-and-mistakes"><i class="fa fa-check"></i><b>1.2</b> Errors and mistakes</a></li>
+</ul></li>
+<li class="part"><span><b>I t-tests</b></span></li>
+<li class="chapter" data-level="2" data-path="independent-t-test.html"><a href="independent-t-test.html"><i class="fa fa-check"></i><b>2</b> Independent t-test</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="independent-t-test.html"><a href="independent-t-test.html#what-is-the-t-test"><i class="fa fa-check"></i><b>2.1</b> What is the t-test?</a></li>
+<li class="chapter" data-level="2.2" data-path="independent-t-test.html"><a href="independent-t-test.html#what-is-the-independent-t-test"><i class="fa fa-check"></i><b>2.2</b> What is the independent t-test?</a></li>
+<li class="chapter" data-level="2.3" data-path="independent-t-test.html"><a href="independent-t-test.html#data-set-up"><i class="fa fa-check"></i><b>2.3</b> Data set-up</a></li>
+<li class="chapter" data-level="2.4" data-path="independent-t-test.html"><a href="independent-t-test.html#the-math-behind-the-independent-t-test"><i class="fa fa-check"></i><b>2.4</b> The math behind the independent t-test</a></li>
+<li class="chapter" data-level="2.5" data-path="independent-t-test.html"><a href="independent-t-test.html#assumptions"><i class="fa fa-check"></i><b>2.5</b> Assumptions</a></li>
+<li class="chapter" data-level="2.6" data-path="independent-t-test.html"><a href="independent-t-test.html#performing-the-independent-t-test-in-jamovi"><i class="fa fa-check"></i><b>2.6</b> Performing the independent t-test in jamovi</a></li>
+<li class="chapter" data-level="2.7" data-path="independent-t-test.html"><a href="independent-t-test.html#checking-assumptions-in-jamovi"><i class="fa fa-check"></i><b>2.7</b> Checking assumptions in jamovi</a>
+<ul>
+<li class="chapter" data-level="2.7.1" data-path="independent-t-test.html"><a href="independent-t-test.html#testing-normality"><i class="fa fa-check"></i><b>2.7.1</b> Testing normality</a></li>
+<li class="chapter" data-level="2.7.2" data-path="independent-t-test.html"><a href="independent-t-test.html#testing-homogeneity-of-variance"><i class="fa fa-check"></i><b>2.7.2</b> Testing homogeneity of variance</a></li>
+</ul></li>
+<li class="chapter" data-level="2.8" data-path="independent-t-test.html"><a href="independent-t-test.html#interpreting-results"><i class="fa fa-check"></i><b>2.8</b> Interpreting results</a></li>
+<li class="chapter" data-level="2.9" data-path="independent-t-test.html"><a href="independent-t-test.html#additional-information-about-the-independent-t-test"><i class="fa fa-check"></i><b>2.9</b> Additional information about the independent t-test</a>
+<ul>
+<li class="chapter" data-level="2.9.1" data-path="independent-t-test.html"><a href="independent-t-test.html#positive-and-negative-t-values"><i class="fa fa-check"></i><b>2.9.1</b> Positive and negative t values</a></li>
+<li class="chapter" data-level="2.9.2" data-path="independent-t-test.html"><a href="independent-t-test.html#what-if-i-violated-assumptions"><i class="fa fa-check"></i><b>2.9.2</b> What if I violated assumptions?</a></li>
+</ul></li>
+<li class="chapter" data-level="2.10" data-path="independent-t-test.html"><a href="independent-t-test.html#your-turn"><i class="fa fa-check"></i><b>2.10</b> Your turn!</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="dependent-t-test.html"><a href="dependent-t-test.html"><i class="fa fa-check"></i><b>3</b> Dependent t-test</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="dependent-t-test.html"><a href="dependent-t-test.html#what-is-the-dependent-t-test"><i class="fa fa-check"></i><b>3.1</b> What is the dependent t-test?</a></li>
+<li class="chapter" data-level="3.2" data-path="dependent-t-test.html"><a href="dependent-t-test.html#data-set-up-1"><i class="fa fa-check"></i><b>3.2</b> Data set-up</a></li>
+<li class="chapter" data-level="3.3" data-path="dependent-t-test.html"><a href="dependent-t-test.html#the-math-behind-the-dependent-t-test"><i class="fa fa-check"></i><b>3.3</b> The math behind the dependent t-test</a></li>
+<li class="chapter" data-level="3.4" data-path="dependent-t-test.html"><a href="dependent-t-test.html#assumptions-1"><i class="fa fa-check"></i><b>3.4</b> Assumptions</a></li>
+<li class="chapter" data-level="3.5" data-path="dependent-t-test.html"><a href="dependent-t-test.html#in-jamovi"><i class="fa fa-check"></i><b>3.5</b> In jamovi</a>
+<ul>
+<li class="chapter" data-level="3.5.1" data-path="dependent-t-test.html"><a href="dependent-t-test.html#checking-assumptions-in-jamovi-1"><i class="fa fa-check"></i><b>3.5.1</b> Checking assumptions in jamovi</a></li>
+<li class="chapter" data-level="3.5.2" data-path="dependent-t-test.html"><a href="dependent-t-test.html#interpreting-results-1"><i class="fa fa-check"></i><b>3.5.2</b> Interpreting results</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="dependent-t-test.html"><a href="dependent-t-test.html#what-if-i-violated-assumptions-1"><i class="fa fa-check"></i><b>3.6</b> What if I violated assumptions?</a></li>
+<li class="chapter" data-level="3.7" data-path="dependent-t-test.html"><a href="dependent-t-test.html#your-turn-1"><i class="fa fa-check"></i><b>3.7</b> Your turn!</a></li>
+</ul></li>
+<li class="part"><span><b>II ANOVA</b></span></li>
+<li class="chapter" data-level="4" data-path="one-way-anova.html"><a href="one-way-anova.html"><i class="fa fa-check"></i><b>4</b> One-way ANOVA</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="one-way-anova.html"><a href="one-way-anova.html#what-is-anova"><i class="fa fa-check"></i><b>4.1</b> What is ANOVA?</a></li>
+<li class="chapter" data-level="4.2" data-path="one-way-anova.html"><a href="one-way-anova.html#what-is-the-one-way-anova"><i class="fa fa-check"></i><b>4.2</b> What is the one-way ANOVA?</a></li>
+<li class="chapter" data-level="4.3" data-path="one-way-anova.html"><a href="one-way-anova.html#data-set-up-2"><i class="fa fa-check"></i><b>4.3</b> Data set-up</a></li>
+<li class="chapter" data-level="4.4" data-path="one-way-anova.html"><a href="one-way-anova.html#why-not-multiple-t-tests"><i class="fa fa-check"></i><b>4.4</b> Why not multiple t-tests?</a></li>
+<li class="chapter" data-level="4.5" data-path="one-way-anova.html"><a href="one-way-anova.html#the-math-behind-the-one-way-anova"><i class="fa fa-check"></i><b>4.5</b> The math behind the one-way ANOVA</a>
+<ul>
+<li class="chapter" data-level="4.5.1" data-path="one-way-anova.html"><a href="one-way-anova.html#an-example-with-the-math"><i class="fa fa-check"></i><b>4.5.1</b> An example with the math</a></li>
+</ul></li>
+<li class="chapter" data-level="4.6" data-path="one-way-anova.html"><a href="one-way-anova.html#anova-assumptions"><i class="fa fa-check"></i><b>4.6</b> Assumptions</a>
+<ul>
+<li class="chapter" data-level="4.6.1" data-path="one-way-anova.html"><a href="one-way-anova.html#anova-is-robust-to-violations"><i class="fa fa-check"></i><b>4.6.1</b> ANOVA is robust to violations</a></li>
+</ul></li>
+<li class="chapter" data-level="4.7" data-path="one-way-anova.html"><a href="one-way-anova.html#in-jamovi-1"><i class="fa fa-check"></i><b>4.7</b> In jamovi</a>
+<ul>
+<li class="chapter" data-level="4.7.1" data-path="one-way-anova.html"><a href="one-way-anova.html#checking-assumptions-in-jamovi-2"><i class="fa fa-check"></i><b>4.7.1</b> Checking assumptions in jamovi</a></li>
+</ul></li>
+<li class="chapter" data-level="4.8" data-path="one-way-anova.html"><a href="one-way-anova.html#interpreting-results-2"><i class="fa fa-check"></i><b>4.8</b> Interpreting results</a>
+<ul>
+<li class="chapter" data-level="4.8.1" data-path="one-way-anova.html"><a href="one-way-anova.html#a-note-on-one-tailed-vs.-two-tailed-tests"><i class="fa fa-check"></i><b>4.8.1</b> A note on one-tailed vs. two-tailed tests</a></li>
+</ul></li>
+<li class="chapter" data-level="4.9" data-path="one-way-anova.html"><a href="one-way-anova.html#what-if-i-violated-assumptions-2"><i class="fa fa-check"></i><b>4.9</b> What if I violated assumptions?</a></li>
+<li class="chapter" data-level="4.10" data-path="one-way-anova.html"><a href="one-way-anova.html#finding-group-differences"><i class="fa fa-check"></i><b>4.10</b> Finding Group Differences</a>
+<ul>
+<li class="chapter" data-level="4.10.1" data-path="one-way-anova.html"><a href="one-way-anova.html#planned-contrasts"><i class="fa fa-check"></i><b>4.10.1</b> Planned Contrasts</a></li>
+<li class="chapter" data-level="4.10.2" data-path="one-way-anova.html"><a href="one-way-anova.html#post-hoc-comparisons"><i class="fa fa-check"></i><b>4.10.2</b> Post hoc comparisons</a></li>
+<li class="chapter" data-level="4.10.3" data-path="one-way-anova.html"><a href="one-way-anova.html#group-differences-with-violated-assumptions"><i class="fa fa-check"></i><b>4.10.3</b> Group differences with violated assumptions</a></li>
+</ul></li>
+<li class="chapter" data-level="4.11" data-path="one-way-anova.html"><a href="one-way-anova.html#relationship-between-anova-and-t-test"><i class="fa fa-check"></i><b>4.11</b> Relationship between ANOVA and t-test</a></li>
+<li class="chapter" data-level="4.12" data-path="one-way-anova.html"><a href="one-way-anova.html#tips-on-writing-up-results"><i class="fa fa-check"></i><b>4.12</b> Tips on writing up results</a></li>
+<li class="chapter" data-level="4.13" data-path="one-way-anova.html"><a href="one-way-anova.html#your-turn-2"><i class="fa fa-check"></i><b>4.13</b> Your turn!</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="repeated-measures-anova.html"><a href="repeated-measures-anova.html"><i class="fa fa-check"></i><b>5</b> Repeated Measures ANOVA</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="repeated-measures-anova.html"><a href="repeated-measures-anova.html#what-is-the-repeated-measures-anova"><i class="fa fa-check"></i><b>5.1</b> What is the repeated measures ANOVA?</a></li>
+<li class="chapter" data-level="5.2" data-path="repeated-measures-anova.html"><a href="repeated-measures-anova.html#data-set-up-3"><i class="fa fa-check"></i><b>5.2</b> Data set-up</a></li>
+<li class="chapter" data-level="5.3" data-path="repeated-measures-anova.html"><a href="repeated-measures-anova.html#the-math-behind-the-repeated-measures-anova"><i class="fa fa-check"></i><b>5.3</b> The math behind the repeated measures ANOVA</a></li>
+<li class="chapter" data-level="5.4" data-path="repeated-measures-anova.html"><a href="repeated-measures-anova.html#assumptions-2"><i class="fa fa-check"></i><b>5.4</b> Assumptions</a>
+<ul>
+<li class="chapter" data-level="5.4.1" data-path="repeated-measures-anova.html"><a href="repeated-measures-anova.html#sphericity-assumption"><i class="fa fa-check"></i><b>5.4.1</b> Sphericity Assumption</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="repeated-measures-anova.html"><a href="repeated-measures-anova.html#in-jamovi-2"><i class="fa fa-check"></i><b>5.5</b> In jamovi</a>
+<ul>
+<li class="chapter" data-level="5.5.1" data-path="repeated-measures-anova.html"><a href="repeated-measures-anova.html#checking-assumptions-in-jamovi-3"><i class="fa fa-check"></i><b>5.5.1</b> Checking assumptions in jamovi</a></li>
+</ul></li>
+<li class="chapter" data-level="5.6" data-path="repeated-measures-anova.html"><a href="repeated-measures-anova.html#interpreting-results-3"><i class="fa fa-check"></i><b>5.6</b> Interpreting results</a></li>
+<li class="chapter" data-level="5.7" data-path="repeated-measures-anova.html"><a href="repeated-measures-anova.html#what-if-i-violated-assumptions-3"><i class="fa fa-check"></i><b>5.7</b> What if I violated assumptions?</a></li>
+<li class="chapter" data-level="5.8" data-path="repeated-measures-anova.html"><a href="repeated-measures-anova.html#tips-on-writing-up-results-1"><i class="fa fa-check"></i><b>5.8</b> Tips on writing up results</a></li>
+<li class="chapter" data-level="5.9" data-path="repeated-measures-anova.html"><a href="repeated-measures-anova.html#your-turn-3"><i class="fa fa-check"></i><b>5.9</b> Your turn!</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="factorial-anova.html"><a href="factorial-anova.html"><i class="fa fa-check"></i><b>6</b> Factorial ANOVA</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="factorial-anova.html"><a href="factorial-anova.html#what-is-factorial-anova"><i class="fa fa-check"></i><b>6.1</b> What is factorial ANOVA?</a></li>
+<li class="chapter" data-level="6.2" data-path="factorial-anova.html"><a href="factorial-anova.html#independent-factorial-anova"><i class="fa fa-check"></i><b>6.2</b> Independent Factorial ANOVA</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="factorial-anova.html"><a href="factorial-anova.html#interactions"><i class="fa fa-check"></i><b>6.2.1</b> Interactions</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="factorial-anova.html"><a href="factorial-anova.html#repeated-measures-factorial-anova"><i class="fa fa-check"></i><b>6.3</b> Repeated Measures Factorial ANOVA</a></li>
+<li class="chapter" data-level="6.4" data-path="factorial-anova.html"><a href="factorial-anova.html#mixed-factorial-anova"><i class="fa fa-check"></i><b>6.4</b> Mixed Factorial ANOVA</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="ancova.html"><a href="ancova.html"><i class="fa fa-check"></i><b>7</b> ANCOVA</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="ancova.html"><a href="ancova.html#what-is-ancova"><i class="fa fa-check"></i><b>7.1</b> What is ANCOVA?</a></li>
+<li class="chapter" data-level="7.2" data-path="ancova.html"><a href="ancova.html#assumptions-of-ancova"><i class="fa fa-check"></i><b>7.2</b> Assumptions of ANCOVA</a></li>
+<li class="chapter" data-level="7.3" data-path="ancova.html"><a href="ancova.html#ancova-in-jamovi"><i class="fa fa-check"></i><b>7.3</b> ANCOVA in jamovi</a></li>
+</ul></li>
+<li class="part"><span><b>III Correlation</b></span></li>
+<li class="chapter" data-level="8" data-path="correlation.html"><a href="correlation.html"><i class="fa fa-check"></i><b>8</b> Correlation</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="correlation.html"><a href="correlation.html#what-is-correlation"><i class="fa fa-check"></i><b>8.1</b> What is correlation?</a></li>
+<li class="chapter" data-level="8.2" data-path="correlation.html"><a href="correlation.html#data-set-up-4"><i class="fa fa-check"></i><b>8.2</b> Data set-up</a></li>
+<li class="chapter" data-level="8.3" data-path="correlation.html"><a href="correlation.html#the-math-behind-the-correlation"><i class="fa fa-check"></i><b>8.3</b> The math behind the correlation</a></li>
+<li class="chapter" data-level="8.4" data-path="correlation.html"><a href="correlation.html#assumptions-3"><i class="fa fa-check"></i><b>8.4</b> Assumptions</a></li>
+<li class="chapter" data-level="8.5" data-path="correlation.html"><a href="correlation.html#performing-the-correlation-in-jamovi"><i class="fa fa-check"></i><b>8.5</b> Performing the correlation in jamovi</a></li>
+<li class="chapter" data-level="8.6" data-path="correlation.html"><a href="correlation.html#checking-assumptions-in-jamovi-4"><i class="fa fa-check"></i><b>8.6</b> Checking assumptions in jamovi</a>
+<ul>
+<li class="chapter" data-level="8.6.1" data-path="correlation.html"><a href="correlation.html#testing-normality-2"><i class="fa fa-check"></i><b>8.6.1</b> Testing normality</a></li>
+<li class="chapter" data-level="8.6.2" data-path="correlation.html"><a href="correlation.html#testing-linearity"><i class="fa fa-check"></i><b>8.6.2</b> Testing linearity</a></li>
+</ul></li>
+<li class="chapter" data-level="8.7" data-path="correlation.html"><a href="correlation.html#interpreting-results-4"><i class="fa fa-check"></i><b>8.7</b> Interpreting results</a></li>
+<li class="chapter" data-level="8.8" data-path="correlation.html"><a href="correlation.html#r-squared"><i class="fa fa-check"></i><b>8.8</b> R-Squared</a></li>
+<li class="chapter" data-level="8.9" data-path="correlation.html"><a href="correlation.html#what-if-i-violate-the-assumptions"><i class="fa fa-check"></i><b>8.9</b> What if I violate the assumptions?</a></li>
+<li class="chapter" data-level="8.10" data-path="correlation.html"><a href="correlation.html#comparing-strengths-of-correlations"><i class="fa fa-check"></i><b>8.10</b> Comparing strengths of correlations</a></li>
+<li class="chapter" data-level="8.11" data-path="correlation.html"><a href="correlation.html#your-turn-4"><i class="fa fa-check"></i><b>8.11</b> Your turn!</a></li>
+</ul></li>
+<li class="part"><span><b>IV Categorical Data Analysis</b></span></li>
+<li class="chapter" data-level="9" data-path="categorical-data-analysis.html"><a href="categorical-data-analysis.html"><i class="fa fa-check"></i><b>9</b> Categorical Data Analysis</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="categorical-data-analysis.html"><a href="categorical-data-analysis.html#what-is-categorical-data-analysis"><i class="fa fa-check"></i><b>9.1</b> What is categorical data analysis?</a></li>
+<li class="chapter" data-level="9.2" data-path="categorical-data-analysis.html"><a href="categorical-data-analysis.html#assumptions-4"><i class="fa fa-check"></i><b>9.2</b> Assumptions</a></li>
+<li class="chapter" data-level="9.3" data-path="categorical-data-analysis.html"><a href="categorical-data-analysis.html#what-types-of-categorical-data-analyses-are-there"><i class="fa fa-check"></i><b>9.3</b> What types of categorical data analyses are there?</a></li>
+<li class="chapter" data-level="9.4" data-path="categorical-data-analysis.html"><a href="categorical-data-analysis.html#what-is-the-effect-size-for-categorical-data-analysis"><i class="fa fa-check"></i><b>9.4</b> What is the effect size for categorical data analysis?</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="chi-square-goodness-of-fit.html"><a href="chi-square-goodness-of-fit.html"><i class="fa fa-check"></i><b>10</b> Chi-Square Goodness-of-Fit</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="chi-square-goodness-of-fit.html"><a href="chi-square-goodness-of-fit.html#what-is-the-chi-square-goodness-of-fit-test"><i class="fa fa-check"></i><b>10.1</b> What is the chi-square goodness-of-fit test?</a></li>
+<li class="chapter" data-level="10.2" data-path="chi-square-goodness-of-fit.html"><a href="chi-square-goodness-of-fit.html#data-set-up-5"><i class="fa fa-check"></i><b>10.2</b> Data set-up</a></li>
+<li class="chapter" data-level="10.3" data-path="chi-square-goodness-of-fit.html"><a href="chi-square-goodness-of-fit.html#assumptions-5"><i class="fa fa-check"></i><b>10.3</b> Assumptions</a></li>
+<li class="chapter" data-level="10.4" data-path="chi-square-goodness-of-fit.html"><a href="chi-square-goodness-of-fit.html#the-math-behind-the-chi-square-goodness-of-fit-test"><i class="fa fa-check"></i><b>10.4</b> The math behind the chi-square goodness of fit test</a></li>
+<li class="chapter" data-level="10.5" data-path="chi-square-goodness-of-fit.html"><a href="chi-square-goodness-of-fit.html#performing-the-chi-square-goodness-of-fit-test-in-jamovi"><i class="fa fa-check"></i><b>10.5</b> Performing the chi-square goodness-of-fit test in jamovi</a></li>
+<li class="chapter" data-level="10.6" data-path="chi-square-goodness-of-fit.html"><a href="chi-square-goodness-of-fit.html#interpreting-results-5"><i class="fa fa-check"></i><b>10.6</b> Interpreting results</a></li>
+<li class="chapter" data-level="10.7" data-path="chi-square-goodness-of-fit.html"><a href="chi-square-goodness-of-fit.html#different-expected-frequencies"><i class="fa fa-check"></i><b>10.7</b> Different Expected Frequencies</a></li>
+<li class="chapter" data-level="10.8" data-path="chi-square-goodness-of-fit.html"><a href="chi-square-goodness-of-fit.html#your-turn-5"><i class="fa fa-check"></i><b>10.8</b> Your turn!</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="chi-square-test-of-independence.html"><a href="chi-square-test-of-independence.html"><i class="fa fa-check"></i><b>11</b> Chi-Square Test of Independence</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="chi-square-test-of-independence.html"><a href="chi-square-test-of-independence.html#what-is-the-chi-square-test-of-independence"><i class="fa fa-check"></i><b>11.1</b> What is the chi-square test of independence?</a></li>
+<li class="chapter" data-level="11.2" data-path="chi-square-test-of-independence.html"><a href="chi-square-test-of-independence.html#data-set-up-6"><i class="fa fa-check"></i><b>11.2</b> Data set-up</a></li>
+<li class="chapter" data-level="11.3" data-path="chi-square-test-of-independence.html"><a href="chi-square-test-of-independence.html#the-math-behind-the-chi-square-test-of-independence"><i class="fa fa-check"></i><b>11.3</b> The math behind the chi-square test of independence</a></li>
+<li class="chapter" data-level="11.4" data-path="chi-square-test-of-independence.html"><a href="chi-square-test-of-independence.html#performing-the-chi-square-test-of-independence-in-jamovi"><i class="fa fa-check"></i><b>11.4</b> Performing the chi-square test of independence in jamovi</a></li>
+<li class="chapter" data-level="11.5" data-path="chi-square-test-of-independence.html"><a href="chi-square-test-of-independence.html#interpreting-results-6"><i class="fa fa-check"></i><b>11.5</b> Interpreting results</a></li>
+<li class="chapter" data-level="11.6" data-path="chi-square-test-of-independence.html"><a href="chi-square-test-of-independence.html#fishers-exact-test"><i class="fa fa-check"></i><b>11.6</b> Fisher’s exact test</a></li>
+<li class="chapter" data-level="11.7" data-path="chi-square-test-of-independence.html"><a href="chi-square-test-of-independence.html#ordinal-variables"><i class="fa fa-check"></i><b>11.7</b> Ordinal variable(s)</a></li>
+<li class="chapter" data-level="11.8" data-path="chi-square-test-of-independence.html"><a href="chi-square-test-of-independence.html#your-turn-6"><i class="fa fa-check"></i><b>11.8</b> Your turn!</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="mcnemars-test.html"><a href="mcnemars-test.html"><i class="fa fa-check"></i><b>12</b> McNemar’s Test</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="mcnemars-test.html"><a href="mcnemars-test.html#what-is-mcnemars-test"><i class="fa fa-check"></i><b>12.1</b> What is McNemar’s test?</a></li>
+<li class="chapter" data-level="12.2" data-path="mcnemars-test.html"><a href="mcnemars-test.html#data-set-up-7"><i class="fa fa-check"></i><b>12.2</b> Data set-up</a></li>
+<li class="chapter" data-level="12.3" data-path="mcnemars-test.html"><a href="mcnemars-test.html#the-math-behind-the-chi-square-test-of-independence-1"><i class="fa fa-check"></i><b>12.3</b> The math behind the chi-square test of independence</a></li>
+<li class="chapter" data-level="12.4" data-path="mcnemars-test.html"><a href="mcnemars-test.html#performing-mcnemars-test-in-jamovi"><i class="fa fa-check"></i><b>12.4</b> Performing McNemar’s test in jamovi</a></li>
+<li class="chapter" data-level="12.5" data-path="mcnemars-test.html"><a href="mcnemars-test.html#interpreting-results-7"><i class="fa fa-check"></i><b>12.5</b> Interpreting results</a></li>
+</ul></li>
+<li class="part"><span><b>V Regression</b></span></li>
+<li class="chapter" data-level="13" data-path="regression.html"><a href="regression.html"><i class="fa fa-check"></i><b>13</b> Regression</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="regression.html"><a href="regression.html#what-is-regression"><i class="fa fa-check"></i><b>13.1</b> What is regression?</a></li>
+<li class="chapter" data-level="13.2" data-path="regression.html"><a href="regression.html#data-set-up-8"><i class="fa fa-check"></i><b>13.2</b> Data set-up</a></li>
+<li class="chapter" data-level="13.3" data-path="regression.html"><a href="regression.html#assumptions-6"><i class="fa fa-check"></i><b>13.3</b> Assumptions</a></li>
+<li class="chapter" data-level="13.4" data-path="regression.html"><a href="regression.html#understanding-regression"><i class="fa fa-check"></i><b>13.4</b> Understanding regression</a></li>
+<li class="chapter" data-level="13.5" data-path="regression.html"><a href="regression.html#performing-a-multiple-regression-in-jamovi"><i class="fa fa-check"></i><b>13.5</b> Performing a multiple regression in jamovi</a></li>
+<li class="chapter" data-level="13.6" data-path="regression.html"><a href="regression.html#checking-assumptions"><i class="fa fa-check"></i><b>13.6</b> Checking Assumptions</a>
+<ul>
+<li class="chapter" data-level="13.6.1" data-path="regression.html"><a href="regression.html#outliers"><i class="fa fa-check"></i><b>13.6.1</b> Outliers</a></li>
+<li class="chapter" data-level="13.6.2" data-path="regression.html"><a href="regression.html#normality-of-the-residuals"><i class="fa fa-check"></i><b>13.6.2</b> Normality of the residuals</a></li>
+<li class="chapter" data-level="13.6.3" data-path="regression.html"><a href="regression.html#linearity-homoscedasticity"><i class="fa fa-check"></i><b>13.6.3</b> Linearity &amp; homoscedasticity</a></li>
+<li class="chapter" data-level="13.6.4" data-path="regression.html"><a href="regression.html#independence-of-residuals"><i class="fa fa-check"></i><b>13.6.4</b> Independence of residuals</a></li>
+<li class="chapter" data-level="13.6.5" data-path="regression.html"><a href="regression.html#multicollinearity"><i class="fa fa-check"></i><b>13.6.5</b> Multicollinearity</a></li>
+</ul></li>
+<li class="chapter" data-level="13.7" data-path="regression.html"><a href="regression.html#interpreting-results-8"><i class="fa fa-check"></i><b>13.7</b> Interpreting results</a></li>
+<li class="chapter" data-level="13.8" data-path="regression.html"><a href="regression.html#hierarchical-regression"><i class="fa fa-check"></i><b>13.8</b> Hierarchical regression</a></li>
+<li class="chapter" data-level="13.9" data-path="regression.html"><a href="regression.html#categorical-predictors"><i class="fa fa-check"></i><b>13.9</b> Categorical Predictors</a></li>
+<li class="chapter" data-level="13.10" data-path="regression.html"><a href="regression.html#your-turn-7"><i class="fa fa-check"></i><b>13.10</b> Your turn!</a></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="everything-is-regression.html"><a href="everything-is-regression.html"><i class="fa fa-check"></i><b>14</b> Everything is Regression</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="everything-is-regression.html"><a href="everything-is-regression.html#everything-is-regression-1"><i class="fa fa-check"></i><b>14.1</b> Everything is Regression</a></li>
+<li class="chapter" data-level="14.2" data-path="everything-is-regression.html"><a href="everything-is-regression.html#correlation-as-a-regression"><i class="fa fa-check"></i><b>14.2</b> Correlation as a regression</a></li>
+<li class="chapter" data-level="14.3" data-path="everything-is-regression.html"><a href="everything-is-regression.html#independent-t-test-as-a-regression"><i class="fa fa-check"></i><b>14.3</b> Independent t-test as a regression</a></li>
+<li class="chapter" data-level="14.4" data-path="everything-is-regression.html"><a href="everything-is-regression.html#dependent-t-test-as-a-regression"><i class="fa fa-check"></i><b>14.4</b> Dependent t-test as a regression</a></li>
+<li class="chapter" data-level="14.5" data-path="everything-is-regression.html"><a href="everything-is-regression.html#one-way-anova-as-a-regression"><i class="fa fa-check"></i><b>14.5</b> One-way ANOVA as a regression</a></li>
+</ul></li>
+<li class="appendix"><span><b>Appendices</b></span></li>
+<li class="chapter" data-level="A" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>A</b> References</a></li>
+<li class="divider"></li>
+<li><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/" 
+    target="blank"><img alt="Creative Commons License" 
+    style="border-width:0" 
+    src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Statistics with jamovi</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="regression" class="section level1" number="13">
+<h1><span class="header-section-number">Chapter 13</span> Regression</h1>
+<div id="what-is-regression" class="section level2" number="13.1">
+<h2><span class="header-section-number">13.1</span> What is regression?</h2>
+<p>Regression can examine multiple predictor variables simultaneously. Whereas the factorial ANOVA can only handle categorical variables (i.e., nominal or ordinal), regression can handle all types of predictor variables including both categorical and continuous.</p>
+<p>There are three types of regression in general:</p>
+<ol style="list-style-type: decimal">
+<li><p><u>Linear regression</u>: this looks at the effect of a single predictor (IV) on a single outcome (DV). This is equivalent to a t-test (dichotomous predictor), one-way ANOVA (ordinal predictor), or correlation (scale predictor).</p></li>
+<li><p><u>Multiple regression</u>: this looks at the effect of multiple predictors (IVs) on a single outcome (DV).</p></li>
+<li><p><u>Hierarchical regression</u>: this looks at the effect of multiple predictors (IVs) on a single outcome (DV), but there are multiple “blocks” or “steps” so that you can check the added predictability of new variables.</p></li>
+</ol>
+<p>Note that the linear regression is actually equivalent to a lot of the statistics we’ve learned. For example, the linear regression will produce the same results as a t-test when we have a dichotomous predictor, a one-way ANOVA when we have an ordinal predictor, and a correlation when we have a continuous predictor. We’ll learn more about this at the end of the textbook when we wrap everything up.</p>
+</div>
+<div id="data-set-up-8" class="section level2" number="13.2">
+<h2><span class="header-section-number">13.2</span> Data set-up</h2>
+<p>Our data set-up for regression depends on the type of regression and type of data, but in general we’ll have one column of our continuous DV and one or more columns of our IV(s).</p>
+<p>For this chapter, we’re going to return to the <code>parenthood</code> dataset from lsj-data. Remember that this dataset includes the sleep quality of both Dan and Dan’s baby, Dan’s grumpiness, and the day of the data collection from 1-100.</p>
+</div>
+<div id="assumptions-6" class="section level2" number="13.3">
+<h2><span class="header-section-number">13.3</span> Assumptions</h2>
+<p>The regression has a lot of assumptions.</p>
+<p>Some require no testing:</p>
+<ol style="list-style-type: decimal">
+<li><p><strong>Variable types</strong>: The DV is continuous and the IVs are either continuous, dichotomous, or ordinal.</p></li>
+<li><p><strong>Independence</strong>: All the outcome variable values are independent (e.g., come from a separate entity).</p></li>
+</ol>
+<p>Other assumptions require testing:</p>
+<ol style="list-style-type: decimal">
+<li><p><strong>No outliers</strong>: There shouldn’t be any data in the dataset that is an outlier which would strongly influence your results.</p></li>
+<li><p><strong>Normality of the <em>residuals</em></strong>: Up to this point, we’ve examined the normality of the outcome variables. With regression, our variables can be non-normal as long as the residuals (i.e., error) are normally distributed.</p></li>
+<li><p><strong>Linearity</strong>: The relationship between each IV and DV is linear. Sometimes you may expect a curvilinear relationship between an IV and DV, in which case we square or cube the IV and use that variable as our predictor variable in the regression.</p></li>
+<li><p><strong>Homogeneity of variance (homoscedasticity)</strong>: At each level of the predictor variables, the variance of the residual terms should be constant.</p></li>
+<li><p><strong>Independent residuals</strong>: For any two observations, the residual terms should be uncorrelated (or independent). Our errors must be normally distributed <em>and</em> uncorrelated.</p></li>
+<li><p><strong>No multicollinearity</strong>: There should be no perfect or near-perfect linear relationship between two or more of the predictors in your regression model. For example, you would not include “heigh_cm” and “heigh_in” in your model because they would be perfectly related to one another. We’ll learn how to test for this.</p></li>
+</ol>
+</div>
+<div id="understanding-regression" class="section level2" number="13.4">
+<h2><span class="header-section-number">13.4</span> Understanding regression</h2>
+<div class="info">
+<p>
+This math section is actually not too mathy! There’s also fun images in it. I encourage you all to read it, especially since all of you should have familiarity with line equations like y = mx + b.
+</p>
+</div>
+<p>A linear regression model is basically a linear line, which many of us learned as y = mx + b, where y is our predicted outcome score, x is the IV, b is the intercept (the score in y when x = 0), and m is the slope (when you increase x-value by 1 unit, the y-value goes up by m units).</p>
+<p>Let’s imagine we have a dataset of dragons with a categorical predictor (whether they are spotted or striped) and a continuous predictor (height) and a continuous dependent variable (weight). We want to use this dataset to be able to predict the weight of future dragons. First, let’s learn how to interpret the coefficients for our two predictor variables (images from <a href="https://github.com/allisonhorst/stats-illustrations#multiple-linear-regression-dragons-thread">Allison Horst</a>).</p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-2"></span>
+<img src="images/13-regression/dragon_categorical.png" alt="Regression lines and residuals" width="49%" /><img src="images/13-regression/dragons_continuous.png" alt="Regression lines and residuals" width="49%" />
+<p class="caption">
+Figure 2.1: Regression lines and residuals
+</p>
+</div>
+<p>We determine our line equation from the scatterplot of scores by figuring out the line that fits closest to all data points. The regression line is the line with the <em>smallest</em> residuals between the line and data points.</p>
+<p>Let’s visualize the regression line for how Dan’s sleepiness affect Dan’s grumpiness. On the left, we see the regression line (in purple) is very close to the data points and the residuals (the grey lines between the purple line and the data points) are smalle. On the right, we see the regression line is far from a lot of the data points and the residuals are larger.</p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-3"></span>
+<img src="images/13-regression/good-regression-line.jpg" alt="Regression lines and residuals" width="49%" /><img src="images/13-regression/bad-regression-line.jpg" alt="Regression lines and residuals" width="49%" />
+<p class="caption">
+Figure 2.2: Regression lines and residuals
+</p>
+</div>
+<p>Let’s go back to our dragon example and input one of our dragons into the model to find out how residuals work. On the left, based on our dataset and the fact that our dragon is striped (spotted = 0) and has a height of 5.1 feet, we would expect our dragon to weigh 3.9 tons. However, when we actually weigh him, he weighs 4.2 tons! Therefore, the residual in this case would be .3 tons.</p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-4"></span>
+<img src="images/13-regression/dragon_predict_mlr.png" alt="Regression lines and residuals" width="49%" /><img src="images/13-regression/dragon_residual.png" alt="Regression lines and residuals" width="49%" />
+<p class="caption">
+Figure 2.3: Regression lines and residuals
+</p>
+</div>
+<p>One of our assumption checks is that our residuals are normally distributed, so we would take all our residuals and examine those for normality.</p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-5"></span>
+<img src="images/13-regression/dragon_residual_distribution.png" alt="Regression lines and residuals" width="49%" />
+<p class="caption">
+Figure 2.4: Regression lines and residuals
+</p>
+</div>
+<p>There is more math to regression, which is needed to calculate the <em>F</em>-test you get for the overall model test and the t-tests you get for your model coefficients, but we won’t get into that detail.</p>
+</div>
+<div id="performing-a-multiple-regression-in-jamovi" class="section level2" number="13.5">
+<h2><span class="header-section-number">13.5</span> Performing a multiple regression in jamovi</h2>
+<p>Let’s run an example with data from lsj-data. Open data from your Data Library in “lsj-data.” Select and open <code>parenthood</code>. This dataset includes the sleep quality of both Dan and Dan’s baby, Dan’s grumpiness, and the day of the data collection from 1-100.</p>
+<ol style="list-style-type: decimal">
+<li><p>From the ‘Analyses’ toolbar select ‘Regression’ - ‘Linear regression.’ Note that we select this option regardless of whether we are performing a linear regression, multiple regression, or hierarchical regression.</p></li>
+<li><p>Move your dependent variable <code>dan.grump</code> into the Dependent Variable box and all your independent variables into either Covariates (if they are continuous variables) or Factors (if they are categorical variables). In this case, all our variables are continuous so move both <code>dan.sleep</code> and <code>baby.sleep</code> to the Covariates box.</p></li>
+<li><p>If you are performing a hierarchical regression, you will use the Model Builder drop-down menu. More information on hierarchical regression will be discussed later.</p></li>
+<li><p>If you have categorical predictors with more than two levels, you will use the Reference Levels drop-down menu to specify what you want your reference level to be and whether you want the intercept to be the reference level or the grand man. More information on categorical predictors will be discussed later.</p></li>
+<li><p>Under Assumption Checks, check <em>all</em> the boxes!</p></li>
+<li><p>Under Model Fit, select <code>R</code>, <code>R-squared</code>, <code>Adjusted R-squared</code>, and <code>F test</code>. The other options (AIC, BIC, RMSE) are more useful when we are comparing models and will be discussed later in the Hierarchical regression section.</p></li>
+<li><p>Under Model Coefficients, select <code>Standardized estimate</code>.</p></li>
+<li><p>Optionally, you can ask for plots and tables of the estimated marginal means.</p></li>
+</ol>
+<p>I’m not going to show the set-up figure here because there’s just too much to show.</p>
+</div>
+<div id="checking-assumptions" class="section level2" number="13.6">
+<h2><span class="header-section-number">13.6</span> Checking Assumptions</h2>
+<div id="outliers" class="section level3" number="13.6.1">
+<h3><span class="header-section-number">13.6.1</span> Outliers</h3>
+<p>Under Data Summary, you should have a table with Cook’s distance. This is one way we can check for <em>multivariate outliers</em>. This examines whether any one <em>line</em> of data is an outlier, not just one data <em>point</em>. In general, Cook’s distances greater than 1 indicate a multivariate outlier. Our Cook’s distances are very small, so we do not have a problem with outliers.</p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-6"></span>
+<img src="images/13-regression/regression-cooks.png" alt="Checking for multivariate outliers in jamovi" width="100%" />
+<p class="caption">
+Figure 2.5: Checking for multivariate outliers in jamovi
+</p>
+</div>
+</div>
+<div id="normality-of-the-residuals" class="section level3" number="13.6.2">
+<h3><span class="header-section-number">13.6.2</span> Normality of the residuals</h3>
+<p>The regression analysis in jamovi allows us to check normality with the Shapiro-Wilk’s test and the Q-Q plot of our residuals. We’ve seen this multiple times, so by now it should be well-ingrained that because Shapiro-Wilk’s is not statistically significant and our data points fall along the diagonal line that we satisfy the assumption of normally distributed residuals.</p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-7"></span>
+<img src="images/13-regression/regression-normality.png" alt="Checking the normality of residuals in jamovi" width="100%" />
+<p class="caption">
+Figure 4.1: Checking the normality of residuals in jamovi
+</p>
+</div>
+</div>
+<div id="linearity-homoscedasticity" class="section level3" number="13.6.3">
+<h3><span class="header-section-number">13.6.3</span> Linearity &amp; homoscedasticity</h3>
+<p>To examine linearity and homoscedasticity, two of the assumptions of regression, we examine the Residuals Plots. You will get one plot of the overall model (Fitted) and one for each of your variables (DV and IV(s)). I’ve displayed the residuals plot for the Fitted values against the residuals below. In these plots, we want our data to look like a random scattering of dots even dispersed around zero on the y-axis.</p>
+<p><strong>Linearity</strong>: If the data points seem to have a curve in the graph, then that suggests you have failed the assumption of linearity. Our data doesn’t seem to have any curve to it, so we satisfy the assumption of linearity.</p>
+<p><strong>Homoscedasticity</strong>: If the graph seems to funnel (e.g., widely dispersed on one end of the x-axis and narrowly dispersed on the other end), then that suggests you fail the assumption of homoscedasticity. Our data doesn’t seem to be wider at any point, so we satisfy the assumption of homoscedasticity.</p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-8"></span>
+<img src="images/13-regression/regression-residuals.png" alt="Checking linearity and homoscedasticity residuals in jamovi" width="49%" /><img src="images/13-regression/regression-residuals2.png" alt="Checking linearity and homoscedasticity residuals in jamovi" width="49%" /><img src="images/13-regression/regression-residuals3.png" alt="Checking linearity and homoscedasticity residuals in jamovi" width="49%" /><img src="images/13-regression/regression-residuals4.png" alt="Checking linearity and homoscedasticity residuals in jamovi" width="49%" />
+<p class="caption">
+Figure 4.2: Checking linearity and homoscedasticity residuals in jamovi
+</p>
+</div>
+</div>
+<div id="independence-of-residuals" class="section level3" number="13.6.4">
+<h3><span class="header-section-number">13.6.4</span> Independence of residuals</h3>
+<p>The Durbin-Watson test for autocorrelction tests for independence of residuals. We want the Durbin-Watson value to be as close to 2 as possible. Values less than 1 or greater than 3 are problematic and indicate we are violating this assumption. In our case, the DW test statistic is 2.12 and so very close to 2. Furthermore, they provide a p-value and the p-value is greater than .05 so the test statistic is not statistically significant, further supporting that we meet the assumption that our residuals are independent.</p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-9"></span>
+<img src="images/13-regression/regression-durbinwatson.png" alt="Checking independence of residuals in jamovi" width="100%" />
+<p class="caption">
+Figure 4.3: Checking independence of residuals in jamovi
+</p>
+</div>
+</div>
+<div id="multicollinearity" class="section level3" number="13.6.5">
+<h3><span class="header-section-number">13.6.5</span> Multicollinearity</h3>
+<p>Multicollinearity is a problem for three reasons:</p>
+<ol style="list-style-type: decimal">
+<li><strong>Untrustworthy <em>B</em>s</strong>: As multicollinearity increases, so do the standard errors of the <em>B</em> coefficient. We want smaller standard errors, so this is problematic.</li>
+<li><strong>Limits the size of R</strong>, and therefore the size of R<sup>2</sup>, and we want to have the largest R or R<sup>2</sup> possible, given our data.</li>
+<li><strong>Importance of predictors</strong>: When two predictors are highly correlated, it is very hard to determine which variable is more important than the other.</li>
+</ol>
+<p>Multicollinearity is simply that multiple variables are correlated. We can first just look for general <em>collinearity</em>, or the correlations between all our predictors, using the correlation matrix in jamovi. Any correlations greater than .8 or .9 are problematic. You would either need to drop one variable or combine them into a mean composite variable.</p>
+<p>However, to test for <em>multicollinearity</em>, we examine the VIF and Tolerance values. VIF is actually a transformation of Tolerance (Tolerance = 1/VIF and VIF = 1/Tolerance). In general, we want values 10 or lower, which corresponds to Tolerance values greater than .2.</p>
+<p>In our data, our VIF is 1.65 and Tolerance is .61, so we satisfy the assumption of no multicollinearity.</p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-10"></span>
+<img src="images/13-regression/regression-multicollinearity.png" alt="Checking multicollinearity in jamovi" width="100%" />
+<p class="caption">
+Figure 4.4: Checking multicollinearity in jamovi
+</p>
+</div>
+<p>Now that we met all the assumptions, we can interpret our results!</p>
+</div>
+</div>
+<div id="interpreting-results-8" class="section level2" number="13.7">
+<h2><span class="header-section-number">13.7</span> Interpreting results</h2>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-11"></span>
+<img src="images/13-regression/regression-results.png" alt="Regression results in jamovi" width="100%" />
+<p class="caption">
+Figure 4.5: Regression results in jamovi
+</p>
+</div>
+<p>The first table shows us our overall model results.</p>
+<p><strong>R, R-squared, and adjusted R-squared</strong>: We get our R and R-squared values (R-squared literally being R squared). Remember back to correlation: R-squared is the <em>proportion</em> of variance in the dependent variable that can be accounted for by the predictor(s). In this case, Dan and the baby’s sleep quality predict 82% of the variance in Dan’s grumpiness.</p>
+<p>However, more commonly we report the adjusted R-squared value, which adjusts the R-squared value based on the number of predictors in the model. Adding more predictors to the model will <em>always</em> cause R-squared to increase (or at least not decrease) so it’s important that we control for that using an adjustment. It’s interpreted basically the same, just adjusted for biased. I encourage you to use the adjusted R-squared, <em>especially</em> if you have lots of predictors in your model.</p>
+<p><strong>Overall Model Test</strong>: We also get an <em>F</em>-test for the overall model. If you want, you can get the full ANOVA test by selected ANOVA test under Model Coefficients. This is how we know if the overall model is statistically significant. In our case, our <em>F</em>-test is statistically significant so we know that the set of predictors significantly predicts our dependent variable.</p>
+<p><strong>Model coefficients</strong>: Just like in ANOVA, we first examine if the model is significant (overall model test) and then look at individual factors, in this case being individual variables in our regression model. Each variable–our intercept and both independent variables–have an associated <em>t</em>-test. We also asked for standardized estimates, which we get in the last column. In this case, Dan’s sleep significantly predicts Dan’s grumpiness, but the baby’s sleep does not.</p>
+<p><em>What about the intercept?</em> You might be wondering what we do with the intercept. Typically, nothing. We only use it to create our equation so that we can predict Dan’s grumpiness based on Dan’s sleep and the baby’s sleep. For example, our equation from our data is such:</p>
+<p><span class="math inline">\(y = 125.97 - 8.95(dan.sleep) + .01(baby.sleep)\)</span></p>
+<p>If Dan’s sleep was 5 and baby’s sleep was 8, then we’d expect Dan’s grumpiness to be:</p>
+<p><span class="math inline">\(y = 125.97 - 8.95(5) + .01(8) = 125.97 - 44.75 + .08 = 81.3\)</span></p>
+<p><strong>APA Write-up</strong>: We can write up our results in APA something like this:</p>
+<blockquote>
+<p>Dan collected data on how many hours of sleep Dan and Dan’s baby got, as well as Dan’s grumpiness, for 100 days. Dan tested how the hours of sleep both Dan and the baby got affected Dan’s grumpiness using a multiple regression. The combination of predictors were significantly related to Dan’s grumpiness, <em>F</em> (2, 97) = 215.24, <em>p</em> &lt; .001, adjusted <span class="math inline">\(R^2\)</span> = .81. The number of hours of sleep Dan got significantly predicted Dan’s grumpiness, <span class="math inline">\(\beta\)</span> = -.90, <em>t</em> (97)= -16.17, <em>SE</em> = .55, <em>p</em> &lt; .001. However, the number of hours of sleep the baby got did not significantly relate to Dan’s grumpiness, <span class="math inline">\(\beta\)</span> = 0.00, <em>t</em> (97)= .04, <em>SE</em> = .27, <em>p</em> = .969.</p>
+</blockquote>
+<p>Note that in many of these write-ups I did not include anything about assumption checking. I normally write up that information as part of my analytic plan in my methods section (e.g., “I checked for multivariate outliers using Cook’s distance.”). Included in this section, I explain what I will do if I do not meet various assumptions. Then, if I don’t meet the assumption in the results section I explain that I did not meet the assumption, explain the results if necessary, explain what I did, and then give the results. In this case, we met all the assumptions (that presumably I described in my methods section) and therefore went straight to the results.</p>
+</div>
+<div id="hierarchical-regression" class="section level2" number="13.8">
+<h2><span class="header-section-number">13.8</span> Hierarchical regression</h2>
+<p>Hierarchical regression is exactly the same as multiple regression but now we have multiple models or blocks. You can specify hierarchical regression using the Model Builder drop-down menu in jamovi. Let’s try an example where we have <code>baby.sleep</code> as Block 1 and <code>dan.sleep</code> as Block 2. In addition, using the Model Fit drop-down menu you should check <code>AIC</code> and <code>BIC</code> in addition to the previously selected options. Your setup should look something like this:</p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-12"></span>
+<img src="images/13-regression/hierarchical-setup.png" alt="Hierarchical regression setup in jamovi" width="100%" />
+<p class="caption">
+Figure 4.6: Hierarchical regression setup in jamovi
+</p>
+</div>
+<p>Our model results now change. We now have two lines for the Model Fit Measures and a Model Comparisons table. In addition, under Model Specific Results, we have a drop-down menu to specify which model we want to examine.</p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-13"></span>
+<img src="images/13-regression/hierarchical-results.png" alt="Hierarchical regression results in jamovi" width="100%" />
+<p class="caption">
+Figure 4.7: Hierarchical regression results in jamovi
+</p>
+</div>
+<p>Let’s interpret. Our first model (with just <code>baby.sleep</code> is significant), <em>F</em> (1, 98) = 46.18, <em>p</em> &lt; .001, <em>adjusted</em> <span class="math inline">\(R^2\)</span> = .31. So is our second model (that has both <code>baby.sleep</code> and <code>dan.sleep</code>), <em>F</em> (2, 97) = 215.24, <em>p</em> &lt; .001, <em>adjusted</em> <span class="math inline">\(R^2\)</span> = .81. There was a significant improvement between model 1 and model 2, <span class="math inline">\(F_{change}\)</span> (1, 97) = 261.52, <em>p</em> &lt; .001, <span class="math inline">\(\Delta R^2\)</span> = .50. The significant improvement means that the predictors added to model 2 significantly predict our DV <em>above and beyond</em> the predictors in model 1.</p>
+<p>We might write-up these results as such:</p>
+<blockquote>
+<p>Dan collected data on how many hours of sleep Dan and Dan’s baby got, as well as Dan’s grumpiness, for 100 days. Dan tested how the hours of sleep both Dan and the baby got affected Dan’s grumpiness using hierarchical regression to find out how Dan’s sleep predicted Dan’s grumpiness above and beyond the baby’s sleep.</p>
+<p>First, the baby’s sleep significantly predicted Dan’s grumpiness<em>, F</em> (1, 98) = 46.18, <em>p</em> &lt; .001, <em>adjusted</em> <span class="math inline">\(R^2\)</span> = .31. As the baby’s hours of sleep increased, Dan’s grumpiness decreased, <em>t</em> (98) = -6.80, <em>SE</em> = .40, <em>p</em> &lt; .001, <span class="math inline">\(\beta\)</span> = -.57.</p>
+<p>A second model was tested that added Dan’s sleep. This model–comprised of both baby’s sleep and Dan’s sleep–significantly predicted Dan’s grumpiness, <em>F</em> (2, 97) = 215.24, <em>p</em> &lt; .001, <em>adjusted</em> <span class="math inline">\(R^2\)</span> = .81. There was a significant improvement between model 1 and model 2, <span class="math inline">\(F_{change}\)</span> (1, 97) = 261.52, <em>p</em> &lt; .001, <span class="math inline">\(\Delta R^2\)</span> = .50. In the second model, as Dan’s sleep increased, Dan’s grumpiness decreased, <em>t</em> (97) = -16.17, <em>SE</em> = .55, <em>p</em> &lt; .001, <span class="math inline">\(\beta\)</span> = -.90. However, the baby’s sleep did not significantly relate to Dan’s grumpiness when controlling for Dan’s sleep, <em>t</em> (97) = .04, <em>SE</em> = .27, <em>p</em> = .969, <span class="math inline">\(\beta\)</span> = .00.</p>
+</blockquote>
+</div>
+<div id="categorical-predictors" class="section level2" number="13.9">
+<h2><span class="header-section-number">13.9</span> Categorical Predictors</h2>
+<p>Dummy coded variables (with values 0 or 1) are pretty easy to interpret in regression. If the Beta is positive, then the value of 1 would have a higher mean on the DV than the value of 0. If the Beta is negative, then the value of 0 would have a higher mean on the DV than the value of 1.</p>
+<p>However, if we have a nominal variable with more than two categories, then we need to dummy code the data to analyze in a regression. Fortunately, jamovi can do this automatically for us!</p>
+<p>The dataset we’re using doesn’t currently have a categorical variable, so I’m going to manually create one for demonstration purposes. I’m going to transform the <code>day</code> variable, which is the day of the data collection from 1 to 100, into a new variable that indicates whether the day is 1-32, 33-65, or 66-100, which is roughly 3 equal groups. You can see the transformation here:</p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-14"></span>
+<img src="images/13-regression/transform.png" alt="Transforming day into a categorical variable in jamovi" width="100%" />
+<p class="caption">
+Figure 4.8: Transforming day into a categorical variable in jamovi
+</p>
+</div>
+<p>Let’s add that to our regression model and just make it a simple multiple regression model. Three independent variables (<code>dan.sleep</code>, <code>baby.sleep</code>, and our new <code>day_3groups</code> variable) all in one block.</p>
+<p>Now we need to go to the Reference Levels drop-down menu. We have two options:</p>
+<ol style="list-style-type: decimal">
+<li><strong>Reference level (dummy coding)</strong>: We can have our intercept be the mean of our reference level group, meaning that if all other variables were set to 0 this is the mean of our dependent variable for that group. For example, if we set day = 1 to be our reference level, then the intercept is the value of Dan’s grumpiness when Dan’s sleep is 0 and baby’s sleep is 0 for the first 32 days. <em>This is the option I normally choose.</em></li>
+<li><strong>Grand mean (simple coding)</strong>: Alternatively, we can have our intercept be the grand mean, or the overall mean when all other variables were set to 0 and we ignored day. <em>I am not sure when I would use this option, to be honest</em>.</li>
+</ol>
+<p>The other option you have is what is considered your reference level. It will default to your first level in your dataset (in this case, day_3Groups = 1) but you can change to any other level in your variable. I set my reference level to be 1, the default, and I know that because the day variable compares both levels 2 and 3 to 1. Our intercept (126.02) then is the value of grumpiness if Dan and the baby slept 0 hours in the first 32 days of our data collection.</p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-15"></span>
+<img src="images/13-regression/regression-categorical.png" alt="Regression with a categorical predictor results in jamovi" width="100%" />
+<p class="caption">
+Figure 4.9: Regression with a categorical predictor results in jamovi
+</p>
+</div>
+<p>The first line of day - 3_Groups (2 – 1) is then the difference in Dan’s grumpiness between the second 1/3 of days (days 33-65) and the first 1/3 of days (days 1-32). It is not statistically significant, so there is no difference in Dan’s grumpiness between the first and second 1/3 of days. Because the estimate is negative, that indicates that the first 1/3 of days have a higher estimated mean of Dan’s grumpiness, but again it’s not statistically significant.</p>
+<p>The second line of day - 3_Groups (3 – 1) is the difference in Dan’s grumpiness between the third 1/3 of days (days 66-100) and the first 1/3 of days (days 1-32). It is not statistically significant, so there is no difference in Dan’s grumpiness between the first and third 1/3 of days, either.</p>
+<p>In this case, the Estimated Marginal Means can be very helpful for us to interpret the model coefficients. We can get the estimated marginal means of each group on the DV at the average levels of the other two variables.</p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-16"></span>
+<img src="images/13-regression/regression-categorical-EMM.png" alt="Regression with a categorical predictor results in jamovi" width="100%" />
+<p class="caption">
+Figure 13.1: Regression with a categorical predictor results in jamovi
+</p>
+</div>
+</div>
+<div id="your-turn-7" class="section level2" number="13.10">
+<h2><span class="header-section-number">13.10</span> Your turn!</h2>
+<p>Open the <code>Sample_Dataset_2014.xlsx</code> file that we will be using for all Your Turn exercises. You can find the dataset here: <a href="https://github.com/danawanzer/stats-with-jamovi/blob/master/data/Sample_Dataset_2014.xlsx">Sample_Dataset_2014.xlsx Download</a></p>
+<p>To get the most out of these exercises, try to first find out the answer on your own and then use the drop-down menus to check your answer.</p>
+<ol style="list-style-type: decimal">
+<li><p><strong>Perform a multiple regression examining how <code>English</code></strong>, <strong><code>Reading</code> and <code>Writing</code>, as well as <code>Gender</code> relate to the dependent variable <code>Math</code>.</strong></p>
+<ul>
+<li><p>Do you have any significant outliers? <select class='solveme' data-answer='["no"]'> <option></option> <option>yes</option> <option>no</option></select></p></li>
+<li><p>Are your residuals normally distributed? <select class='solveme' data-answer='["yes"]'> <option></option> <option>yes</option> <option>no</option></select></p></li>
+<li><p>Do you satisfy the assumption of linearity and homoscedasticity of your residuals (just check the Fitted residual plot)? <select class='solveme' data-answer='["yes"]'> <option></option> <option>yes</option> <option>no</option></select></p></li>
+<li><p>Do you meet the assumption of independent residuals? <select class='solveme' data-answer='["yes"]'> <option></option> <option>yes</option> <option>no</option></select></p></li>
+<li><p>Do you meet the assumption of no multicollinearity? <select class='solveme' data-answer='["yes"]'> <option></option> <option>yes</option> <option>no</option></select></p></li>
+<li><p>Can you perform a regression with this data? <select class='solveme' data-answer='["yes"]'> <option></option> <option>yes</option> <option>no</option></select></p></li>
+<li><p>What is your adjusted R-squared, rounded to two decimal places: <input class='solveme nospaces' size='3' data-answer='[".31"]'/></p></li>
+<li><p>Is the overall model statistically significant? <select class='solveme' data-answer='["yes"]'> <option></option> <option>yes</option> <option>no</option></select></p></li>
+<li><p>Is <code>English</code> statistically significant? <select class='solveme' data-answer='["no"]'> <option></option> <option>yes</option> <option>no</option></select></p></li>
+<li><p>Is <code>Reading</code> statistically significant? <select class='solveme' data-answer='["yes"]'> <option></option> <option>yes</option> <option>no</option></select></p></li>
+<li><p>Is <code>Writing</code> statistically significant? <select class='solveme' data-answer='["yes"]'> <option></option> <option>yes</option> <option>no</option></select></p></li>
+<li><p>Is <code>Gender</code> statistically significant? <select class='solveme' data-answer='["yes"]'> <option></option> <option>yes</option> <option>no</option></select></p></li>
+<li><p>For <code>Gender</code>, do male (Gender = 0) or female (Gender = 1) students have higher math scores? <select class='solveme' data-answer='["male"]'> <option></option> <option>male</option> <option>female</option></select></p></li>
+</ul></li>
+</ol>
+
+</div>
+</div>
+<div class="psyteachr_footer">
+  
+</div>
+<script>
+
+/* update total correct if #total_correct exists */
+update_total_correct = function() {
+  if (t = document.getElementById("total_correct")) {
+    t.innerHTML =
+      document.getElementsByClassName("correct").length + " of " +
+      document.getElementsByClassName("solveme").length + " correct";
+  }
+}
+
+/* solution button toggling function */
+b_func = function() {
+  var cl = this.parentElement.classList;
+  if (cl.contains('open')) {
+    cl.remove("open");
+  } else {
+    cl.add("open");
+  }
+}
+
+/* function for checking solveme answers */
+solveme_func = function(e) {
+  var real_answers = JSON.parse(this.dataset.answer);
+  var my_answer = this.value;
+  var cl = this.classList;
+  if (cl.contains("ignorecase")) {
+    my_answer = my_answer.toLowerCase();
+  }
+  if (cl.contains("nospaces")) {
+    my_answer = my_answer.replace(/ /g, "");
+  }
+  
+  if (my_answer !== "" & real_answers.includes(my_answer)) {
+    cl.add("correct");
+  } else {
+    cl.remove("correct");
+  }
+  update_total_correct();
+}
+
+window.onload = function() {
+  /* set up solution buttons */
+  var buttons = document.getElementsByTagName("button");
+
+  for (var i = 0; i < buttons.length; i++) {
+    if (buttons[i].parentElement.classList.contains('solution')) {
+      buttons[i].onclick = b_func;
+    }
+  }
+  
+  /* set up solveme inputs */
+  var solveme = document.getElementsByClassName("solveme");
+
+  for (var i = 0; i < solveme.length; i++) {
+    /* make sure input boxes don't auto-anything */
+    solveme[i].setAttribute("autocomplete","off");
+    solveme[i].setAttribute("autocorrect", "off");
+    solveme[i].setAttribute("autocapitalize", "off"); 
+    solveme[i].setAttribute("spellcheck", "false");
+    solveme[i].value = "";
+    
+    /* adjust answer for ignorecase or nospaces */
+    var cl = solveme[i].classList;
+    var real_answer = solveme[i].dataset.answer;
+    if (cl.contains("ignorecase")) {
+      real_answer = real_answer.toLowerCase();
+    }
+    if (cl.contains("nospaces")) {
+      real_answer = real_answer.replace(/ /g, "");
+    }
+    solveme[i].dataset.answer = real_answer;
+    
+    /* attach checking function */
+    solveme[i].onkeyup = solveme_func;
+    solveme[i].onchange = solveme_func;
+  }
+  
+  update_total_correct();
+}
+
+</script>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="mcnemars-test.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="everything-is-regression.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"],
+"google": false
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": {},
+"toc": {
+"collapse": "section",
+"scroll_highlight": true
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
