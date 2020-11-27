@@ -152,7 +152,7 @@
 
 \title{Statistics with jamovi}
 \author{Dana Wanzer}
-\date{Last Update: 2020-11-18}
+\date{Last Update: 2020-11-27}
 
 \begin{document}
 \maketitle
@@ -2566,73 +2566,13 @@ We're going to continue using the card deck example. This data comes from the ls
 
 \begin{longtable}[]{@{}llllll@{}}
 \toprule
-\begin{minipage}[b]{0.18\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[b]{0.14\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[b]{0.12\columnwidth}\raggedright
-\(\clubsuit\)\strut
-\end{minipage} & \begin{minipage}[b]{0.14\columnwidth}\raggedright
-\(\diamondsuit\)\strut
-\end{minipage} & \begin{minipage}[b]{0.13\columnwidth}\raggedright
-\(\heartsuit\)\strut
-\end{minipage} & \begin{minipage}[b]{0.13\columnwidth}\raggedright
-\(\spadesuit\)\strut
-\end{minipage}\tabularnewline
+& & \(\clubsuit\) & \(\diamondsuit\) & \(\heartsuit\) & \(\spadesuit\)\tabularnewline
 \midrule
 \endhead
-\begin{minipage}[t]{0.18\columnwidth}\raggedright
-Observed frequency\strut
-\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedright
-\(O_i\)\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
-35\strut
-\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedright
-51\strut
-\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\raggedright
-64\strut
-\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\raggedright
-50\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.18\columnwidth}\raggedright
-Expected frequency\strut
-\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedright
-\(E_i\)\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
-50\strut
-\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedright
-50\strut
-\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\raggedright
-50\strut
-\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\raggedright
-50\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.18\columnwidth}\raggedright
-Difference score\strut
-\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedright
-\(O_i-E_i\)\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
--15\strut
-\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedright
-1\strut
-\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\raggedright
-14\strut
-\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\raggedright
-0\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.18\columnwidth}\raggedright
-Difference squared\strut
-\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedright
-\((O_i-E_i)^2\)\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright
-225\strut
-\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedright
-1\strut
-\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\raggedright
-196\strut
-\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\raggedright
-0\strut
-\end{minipage}\tabularnewline
+Observed frequency & \(O_i\) & 35 & 51 & 64 & 50\tabularnewline
+Expected frequency & \(E_i\) & 50 & 50 & 50 & 50\tabularnewline
+Difference score & \(O_i-E_i\) & -15 & 1 & 14 & 0\tabularnewline
+Difference squared & \((O_i-E_i)^2\) & 225 & 1 & 196 & 0\tabularnewline
 \bottomrule
 \end{longtable}
 
@@ -2869,57 +2809,18 @@ Next, we need to calculate our \emph{expected} frequencies based on our data. Ou
 
 \(Expected frequencies = \frac{C_j * P_i}{N}\)
 
-\begin{longtable}[]{@{}llll@{}}
-\toprule
-\begin{minipage}[b]{0.25\columnwidth}\raggedright
-\emph{Expected Frequencies}\strut
-\end{minipage} & \begin{minipage}[b]{0.26\columnwidth}\raggedright
-Robot\strut
-\end{minipage} & \begin{minipage}[b]{0.27\columnwidth}\raggedright
-Human\strut
-\end{minipage} & \begin{minipage}[b]{0.10\columnwidth}\raggedright
-Total\strut
-\end{minipage}\tabularnewline
-\midrule
-\endhead
-\begin{minipage}[t]{0.25\columnwidth}\raggedright
-Puppy\strut
-\end{minipage} & \begin{minipage}[t]{0.26\columnwidth}\raggedright
-(28 * 87)/180 = 13.533\strut
-\end{minipage} & \begin{minipage}[t]{0.27\columnwidth}\raggedright
-(28 * 93)/180 =14.467\strut
-\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
-\textbf{28}\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.25\columnwidth}\raggedright
-Flower\strut
-\end{minipage} & \begin{minipage}[t]{0.26\columnwidth}\raggedright
-(43 * 87)/180 =20.783\strut
-\end{minipage} & \begin{minipage}[t]{0.27\columnwidth}\raggedright
-(43 * 93)/180 = 22.217\strut
-\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
-\textbf{43}\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.25\columnwidth}\raggedright
-Data\strut
-\end{minipage} & \begin{minipage}[t]{0.26\columnwidth}\raggedright
-(109 * 87)/180 =52.683\strut
-\end{minipage} & \begin{minipage}[t]{0.27\columnwidth}\raggedright
-(109 * 93)/180 = 56.317\strut
-\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
-\textbf{109}\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.25\columnwidth}\raggedright
-\textbf{Total}\strut
-\end{minipage} & \begin{minipage}[t]{0.26\columnwidth}\raggedright
-\textbf{87}\strut
-\end{minipage} & \begin{minipage}[t]{0.27\columnwidth}\raggedright
-\textbf{93}\strut
-\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
-\textbf{180}\strut
-\end{minipage}\tabularnewline
-\bottomrule
-\end{longtable}
+\textless\textless\textless\textless\textless\textless\textless{} HEAD
++------------------------+-------------------------+--------------------------+---------+
+\textbar{} \emph{Expected Frequencies} \textbar{} Robot \textbar{} Human \textbar{} Total \textbar{}
++========================+=========================+==========================+=========+
+\textbar{} Puppy \textbar{} (28 * 87)/180 = 13.533 \textbar{} (28 * 93)/180 =14.467 \textbar{} \textbf{28} \textbar{}
++------------------------+-------------------------+--------------------------+---------+
+\textbar{} Flower \textbar{} (43 * 87)/180 =20.783 \textbar{} (43 * 93)/180 = 22.217 \textbar{} \textbf{43} \textbar{}
++------------------------+-------------------------+--------------------------+---------+
+\textbar{} Data \textbar{} (109 * 87)/180 =52.683 \textbar{} (109 * 93)/180 = 56.317 \textbar{} \textbf{109} \textbar{}
++------------------------+-------------------------+--------------------------+---------+
+\textbar{} \textbf{Total} \textbar{} \textbf{87} \textbar{} \textbf{93} \textbar{} \textbf{180} \textbar{}
++------------------------+-------------------------+--------------------------+---------+
 
 We then need to calculate the squared differences of observed minus expected frequencies:
 
@@ -2974,6 +2875,44 @@ Data\strut
 \end{minipage}\tabularnewline
 \bottomrule
 \end{longtable}
+
+=======
+\textbar{} \emph{Expected Frequencies} \textbar{} Robot \textbar{} Human \textbar{} Total \textbar{}
+\textbar------------------------\textbar-------------------------\textbar--------------------------\textbar---------\textbar{}
+\textbar{} Puppy \textbar{} (28 * 87)/180 = 13.533 \textbar{} (28 * 93)/180 =14.467 \textbar{} \textbf{28} \textbar{}
+\textbar{} Flower \textbar{} (43 * 87)/180 =20.783 \textbar{} (43 * 93)/180 = 22.217 \textbar{} \textbf{43} \textbar{}
+\textbar{} Data \textbar{} (109 * 87)/180 =52.683 \textbar{} (109 * 93)/180 = 56.317 \textbar{} \textbf{109} \textbar{}
+\textbar{} \textbf{Total} \textbar{} \textbf{87} \textbar{} \textbf{93} \textbar{} \textbf{180} \textbar{}
+
+We then need to calculate the squared differences of observed minus expected frequencies:
+
+\begin{longtable}[]{@{}llll@{}}
+\toprule
+\emph{Squared differences} & Robot & Human & Total\tabularnewline
+\midrule
+\endhead
+Puppy & \((13-13.533)^2 = .284\) & \((15-14.467)^2 = .284\) & \textbf{28}\tabularnewline
+Flower & \((30-20.783)^2 = 84.953\) & \((13-22.217)^2 = 84.953\) & \textbf{43}\tabularnewline
+Data & \((44-52.683)^2 = 75.394\) & \((65-56.317)^2 = 75.394\) & \textbf{109}\tabularnewline
+\textbf{Total} & \textbf{87} & \textbf{93} & \textbf{180}\tabularnewline
+\bottomrule
+\end{longtable}
+
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+66306ca0d7acd82110bbda4742c158777d2e08d2
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
 
 The formula for the chi-square test of independence is the very similar to the chi-square goodness of fit test:
 
@@ -3178,6 +3117,497 @@ We can write up our results in APA something like this:
 \begin{quote}
 McNemar's test indicated that support for AGPP changed from before to after reviewing the AGPP advertisement, \(\chi^2\) (1) = 13.33, \emph{p} \textless{} .001. Most participants continued to not vote for AGPP after the ad (\emph{n} = 65) and a few continued to vote for AGPP after the ad (\emph{n} = 5). However, many participants who originally stated they would vote for AGPP changed to no longer voting for AGPP after the ad (\emph{n} = 25); only five people who originally would not vote for AGPP changed to vote for AGPP after the ad.
 \end{quote}
+
+\hypertarget{part-regression}{%
+\part{Regression}\label{part-regression}}
+
+\hypertarget{regression}{%
+\chapter{Regression}\label{regression}}
+
+\hypertarget{what-is-regression}{%
+\section{What is regression?}\label{what-is-regression}}
+
+Regression can examine multiple predictor variables simultaneously. Whereas the factorial ANOVA can only handle categorical variables (i.e., nominal or ordinal), regression can handle all types of predictor variables including both categorical and continuous.
+
+There are three types of regression in general:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \underline{Linear regression}: this looks at the effect of a single predictor (IV) on a single outcome (DV). This is equivalent to a t-test (dichotomous predictor), one-way ANOVA (ordinal predictor), or correlation (scale predictor).
+\item
+  \underline{Multiple regression}: this looks at the effect of multiple predictors (IVs) on a single outcome (DV).
+\item
+  \underline{Hierarchical regression}: this looks at the effect of multiple predictors (IVs) on a single outcome (DV), but there are multiple ``blocks'' or ``steps'' so that you can check the added predictability of new variables.
+\end{enumerate}
+
+Note that the linear regression is actually equivalent to a lot of the statistics we've learned. For example, the linear regression will produce the same results as a t-test when we have a dichotomous predictor, a one-way ANOVA when we have an ordinal predictor, and a correlation when we have a continuous predictor. We'll learn more about this at the end of the textbook when we wrap everything up.
+
+\hypertarget{data-set-up-8}{%
+\section{Data set-up}\label{data-set-up-8}}
+
+Our data set-up for regression depends on the type of regression and type of data, but in general we'll have one column of our continuous DV and one or more columns of our IV(s).
+
+For this chapter, we're going to return to the \texttt{parenthood} dataset from lsj-data. Remember that this dataset includes the sleep quality of both Dan and Dan's baby, Dan's grumpiness, and the day of the data collection from 1-100.
+
+\hypertarget{assumptions-6}{%
+\section{Assumptions}\label{assumptions-6}}
+
+The regression has a lot of assumptions.
+
+Some require no testing:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \textbf{Variable types}: The DV is continuous and the IVs are either continuous, dichotomous, or ordinal.
+\item
+  \textbf{Independence}: All the outcome variable values are independent (e.g., come from a separate entity).
+\end{enumerate}
+
+Other assumptions require testing:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \textbf{No outliers}: There shouldn't be any data in the dataset that is an outlier which would strongly influence your results.
+\item
+  \textbf{Normality of the \emph{residuals}}: Up to this point, we've examined the normality of the outcome variables. With regression, our variables can be non-normal as long as the residuals (i.e., error) are normally distributed.
+\item
+  \textbf{Linearity}: The relationship between each IV and DV is linear. Sometimes you may expect a curvilinear relationship between an IV and DV, in which case we square or cube the IV and use that variable as our predictor variable in the regression.
+\item
+  \textbf{Homogeneity of variance (homoscedasticity)}: At each level of the predictor variables, the variance of the residual terms should be constant.
+\item
+  \textbf{Independent residuals}: For any two observations, the residual terms should be uncorrelated (or independent). Our errors must be normally distributed \emph{and} uncorrelated.
+\item
+  \textbf{No multicollinearity}: There should be no perfect or near-perfect linear relationship between two or more of the predictors in your regression model. For example, you would not include ``heigh\_cm'' and ``heigh\_in'' in your model because they would be perfectly related to one another. We'll learn how to test for this.
+\end{enumerate}
+
+\hypertarget{understanding-regression}{%
+\section{Understanding regression}\label{understanding-regression}}
+
+\begin{info}
+This math section is actually not too mathy! There's also fun images in
+it. I encourage you all to read it, especially since all of you should
+have familiarity with line equations like y = mx + b.
+\end{info}
+
+A linear regression model is basically a linear line, which many of us learned as y = mx + b, where y is our predicted outcome score, x is the IV, b is the intercept (the score in y when x = 0), and m is the slope (when you increase x-value by 1 unit, the y-value goes up by m units).
+
+Let's imagine we have a dataset of dragons with a categorical predictor (whether they are spotted or striped) and a continuous predictor (height) and a continuous dependent variable (weight). We want to use this dataset to be able to predict the weight of future dragons. First, let's learn how to interpret the coefficients for our two predictor variables (images from \href{https://github.com/allisonhorst/stats-illustrations\#multiple-linear-regression-dragons-thread}{Allison Horst}).
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.49\linewidth]{images/13-regression/dragon_categorical} \includegraphics[width=0.49\linewidth]{images/13-regression/dragons_continuous} 
+
+}
+
+\caption{Regression lines and residuals}\label{fig:unnamed-chunk-2}
+\end{figure}
+
+We determine our line equation from the scatterplot of scores by figuring out the line that fits closest to all data points. The regression line is the line with the \emph{smallest} residuals between the line and data points.
+
+Let's visualize the regression line for how Dan's sleepiness affect Dan's grumpiness. On the left, we see the regression line (in purple) is very close to the data points and the residuals (the grey lines between the purple line and the data points) are smalle. On the right, we see the regression line is far from a lot of the data points and the residuals are larger.
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.49\linewidth]{images/13-regression/good-regression-line} \includegraphics[width=0.49\linewidth]{images/13-regression/bad-regression-line} 
+
+}
+
+\caption{Regression lines and residuals}\label{fig:unnamed-chunk-3}
+\end{figure}
+
+Let's go back to our dragon example and input one of our dragons into the model to find out how residuals work. On the left, based on our dataset and the fact that our dragon is striped (spotted = 0) and has a height of 5.1 feet, we would expect our dragon to weigh 3.9 tons. However, when we actually weigh him, he weighs 4.2 tons! Therefore, the residual in this case would be .3 tons.
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.49\linewidth]{images/13-regression/dragon_predict_mlr} \includegraphics[width=0.49\linewidth]{images/13-regression/dragon_residual} 
+
+}
+
+\caption{Regression lines and residuals}\label{fig:unnamed-chunk-4}
+\end{figure}
+
+One of our assumption checks is that our residuals are normally distributed, so we would take all our residuals and examine those for normality.
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.49\linewidth]{images/13-regression/dragon_residual_distribution} 
+
+}
+
+\caption{Regression lines and residuals}\label{fig:unnamed-chunk-5}
+\end{figure}
+
+There is more math to regression, which is needed to calculate the \emph{F}-test you get for the overall model test and the t-tests you get for your model coefficients, but we won't get into that detail.
+
+\hypertarget{performing-a-multiple-regression-in-jamovi}{%
+\section{Performing a multiple regression in jamovi}\label{performing-a-multiple-regression-in-jamovi}}
+
+Let's run an example with data from lsj-data. Open data from your Data Library in ``lsj-data''. Select and open \texttt{parenthood}. This dataset includes the sleep quality of both Dan and Dan's baby, Dan's grumpiness, and the day of the data collection from 1-100.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  From the `Analyses' toolbar select `Regression' - `Linear regression'. Note that we select this option regardless of whether we are performing a linear regression, multiple regression, or hierarchical regression.
+\item
+  Move your dependent variable \texttt{dan.grump} into the Dependent Variable box and all your independent variables into either Covariates (if they are continuous variables) or Factors (if they are categorical variables). In this case, all our variables are continuous so move both \texttt{dan.sleep} and \texttt{baby.sleep} to the Covariates box.
+\item
+  If you are performing a hierarchical regression, you will use the Model Builder drop-down menu. More information on hierarchical regression will be discussed later.
+\item
+  If you have categorical predictors with more than two levels, you will use the Reference Levels drop-down menu to specify what you want your reference level to be and whether you want the intercept to be the reference level or the grand man. More information on categorical predictors will be discussed later.
+\item
+  Under Assumption Checks, check \emph{all} the boxes!
+\item
+  Under Model Fit, select \texttt{R}, \texttt{R-squared}, \texttt{Adjusted\ R-squared}, and \texttt{F\ test}. The other options (AIC, BIC, RMSE) are more useful when we are comparing models and will be discussed later in the Hierarchical regression section.
+\item
+  Under Model Coefficients, select \texttt{Standardized\ estimate}.
+\item
+  Optionally, you can ask for plots and tables of the estimated marginal means.
+\end{enumerate}
+
+I'm not going to show the set-up figure here because there's just too much to show.
+
+\hypertarget{checking-assumptions}{%
+\section{Checking Assumptions}\label{checking-assumptions}}
+
+\hypertarget{outliers}{%
+\subsection{Outliers}\label{outliers}}
+
+Under Data Summary, you should have a table with Cook's distance. This is one way we can check for \emph{multivariate outliers}. This examines whether any one \emph{line}~of data is an outlier, not just one data \emph{point}. In general, Cook's distances greater than 1 indicate a multivariate outlier. Our Cook's distances are very small, so we do not have a problem with outliers.
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{images/13-regression/regression-cooks} 
+
+}
+
+\caption{Checking for multivariate outliers in jamovi}\label{fig:unnamed-chunk-6}
+\end{figure}
+
+\hypertarget{normality-of-the-residuals}{%
+\subsection{Normality of the residuals}\label{normality-of-the-residuals}}
+
+The regression analysis in jamovi allows us to check normality with the Shapiro-Wilk's test and the Q-Q plot of our residuals. We've seen this multiple times, so by now it should be well-ingrained that because Shapiro-Wilk's is not statistically significant and our data points fall along the diagonal line that we satisfy the assumption of normally distributed residuals.
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{images/13-regression/regression-normality} 
+
+}
+
+\caption{Checking the normality of residuals in jamovi}\label{fig:unnamed-chunk-7}
+\end{figure}
+
+\hypertarget{linearity-homoscedasticity}{%
+\subsection{Linearity \& homoscedasticity}\label{linearity-homoscedasticity}}
+
+To examine linearity and homoscedasticity, two of the assumptions of regression, we examine the Residuals Plots. You will get one plot of the overall model (Fitted) and one for each of your variables (DV and IV(s)). I've displayed the residuals plot for the Fitted values against the residuals below. In these plots, we want our data to look like a random scattering of dots even dispersed around zero on the y-axis.
+
+\textbf{Linearity}: If the data points seem to have a curve in the graph, then that suggests you have failed the assumption of linearity. Our data doesn't seem to have any curve to it, so we satisfy the assumption of linearity.
+
+\textbf{Homoscedasticity}: If the graph seems to funnel (e.g., widely dispersed on one end of the x-axis and narrowly dispersed on the other end), then that suggests you fail the assumption of homoscedasticity. Our data doesn't seem to be wider at any point, so we satisfy the assumption of homoscedasticity.
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.49\linewidth]{images/13-regression/regression-residuals.pngimages/13-regression/regression-residuals3} \includegraphics[width=0.49\linewidth]{images/13-regression/regression-residuals2.pngimages/13-regression/regression-residuals4} 
+
+}
+
+\caption{Checking linearity and homoscedasticity residuals in jamovi}\label{fig:unnamed-chunk-8}
+\end{figure}
+
+\hypertarget{independence-of-residuals}{%
+\subsection{Independence of residuals}\label{independence-of-residuals}}
+
+The Durbin-Watson test for autocorrelction tests for independence of residuals. We want the Durbin-Watson value to be as close to 2 as possible. Values less than 1 or greater than 3 are problematic and indicate we are violating this assumption. In our case, the DW test statistic is 2.12 and so very close to 2. Furthermore, they provide a p-value and the p-value is greater than .05 so the test statistic is not statistically significant, further supporting that we meet the assumption that our residuals are independent.
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{images/13-regression/regression-durbinwatson} 
+
+}
+
+\caption{Checking independence of residuals in jamovi}\label{fig:unnamed-chunk-9}
+\end{figure}
+
+\hypertarget{multicollinearity}{%
+\subsection{Multicollinearity}\label{multicollinearity}}
+
+Multicollinearity is a problem for three reasons:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Untrustworthy \emph{B}s}: As multicollinearity increases, so do the standard errors of the \emph{B} coefficient. We want smaller standard errors, so this is problematic.
+\item
+  \textbf{Limits the size of R}, and therefore the size of R\textsuperscript{2}, and we want to have the largest R or R\textsuperscript{2} possible, given our data.
+\item
+  \textbf{Importance of predictors}: When two predictors are highly correlated, it is very hard to determine which variable is more important than the other.
+\end{enumerate}
+
+Multicollinearity is simply that multiple variables are correlated. We can first just look for general \emph{collinearity}, or the correlations between all our predictors, using the correlation matrix in jamovi. Any correlations greater than .8 or .9 are problematic. You would either need to drop one variable or combine them into a mean composite variable.
+
+However, to test for \emph{multicollinearity}, we examine the VIF and Tolerance values. VIF is actually a transformation of Tolerance (Tolerance = 1/VIF and VIF = 1/Tolerance). In general, we want values 10 or lower, which corresponds to Tolerance values greater than .2.
+
+In our data, our VIF is 1.65 and Tolerance is .61, so we satisfy the assumption of no multicollinearity.
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{images/13-regression/regression-multicollinearity} 
+
+}
+
+\caption{Checking multicollinearity in jamovi}\label{fig:unnamed-chunk-10}
+\end{figure}
+
+Now that we met all the assumptions, we can interpret our results!
+
+\hypertarget{interpreting-results-8}{%
+\section{Interpreting results}\label{interpreting-results-8}}
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{images/13-regression/regression-results} 
+
+}
+
+\caption{Regression results in jamovi}\label{fig:unnamed-chunk-11}
+\end{figure}
+
+The first table shows us our overall model results.
+
+\textbf{R, R-squared, and adjusted R-squared}: We get our R and R-squared values (R-squared literally being R squared). Remember back to correlation: R-squared is the \emph{proportion} of variance in the dependent variable that can be accounted for by the predictor(s). In this case, Dan and the baby's sleep quality predict 82\% of the variance in Dan's grumpiness.
+
+However, more commonly we report the adjusted R-squared value, which adjusts the R-squared value based on the number of predictors in the model. Adding more predictors to the model will \emph{always} cause R-squared to increase (or at least not decrease) so it's important that we control for that using an adjustment. It's interpreted basically the same, just adjusted for biased. I encourage you to use the adjusted R-squared, \emph{especially} if you have lots of predictors in your model.
+
+\textbf{Overall Model Test}: We also get an \emph{F}-test for the overall model. If you want, you can get the full ANOVA test by selected ANOVA test under Model Coefficients. This is how we know if the overall model is statistically significant. In our case, our \emph{F}-test is statistically significant so we know that the set of predictors significantly predicts our dependent variable.
+
+\textbf{Model coefficients}: Just like in ANOVA, we first examine if the model is significant (overall model test) and then look at individual factors, in this case being individual variables in our regression model. Each variable--our intercept and both independent variables--have an associated \emph{t}-test. We also asked for standardized estimates, which we get in the last column. In this case, Dan's sleep significantly predicts Dan's grumpiness, but the baby's sleep does not.
+
+\emph{What about the intercept?} You might be wondering what we do with the intercept. Typically, nothing. We only use it to create our equation so that we can predict Dan's grumpiness based on Dan's sleep and the baby's sleep. For example, our equation from our data is such:
+
+\(y = 125.97 - 8.95(dan.sleep) + .01(baby.sleep)\)
+
+If Dan's sleep was 5 and baby's sleep was 8, then we'd expect Dan's grumpiness to be:
+
+\(y = 125.97 - 8.95(5) + .01(8) = 125.97 - 44.75 + .08 = 81.3\)
+
+\textbf{APA Write-up}: We can write up our results in APA something like this:
+
+\begin{quote}
+Dan collected data on how many hours of sleep Dan and Dan's baby got, as well as Dan's grumpiness, for 100 days. Dan tested how the hours of sleep both Dan and the baby got affected Dan's grumpiness using a multiple regression. The combination of predictors were significantly related to Dan's grumpiness, \emph{F} (2, 97) = 215.24, \emph{p} \textless{} .001, adjusted \(R^2\) = .81. The number of hours of sleep Dan got significantly predicted Dan's grumpiness, \(\beta\) = -.90, \emph{t} (97)= -16.17, \emph{SE} = .55, \emph{p} \textless{} .001. However, the number of hours of sleep the baby got did not significantly relate to Dan's grumpiness, \(\beta\) = 0.00, \emph{t} (97)= .04, \emph{SE} = .27, \emph{p} = .969.
+\end{quote}
+
+Note that in many of these write-ups I did not include anything about assumption checking. I normally write up that information as part of my analytic plan in my methods section (e.g., ``I checked for multivariate outliers using Cook's distance.''). Included in this section, I explain what I will do if I do not meet various assumptions. Then, if I don't meet the assumption in the results section I explain that I did not meet the assumption, explain the results if necessary, explain what I did, and then give the results. In this case, we met all the assumptions (that presumably I described in my methods section) and therefore went straight to the results.
+
+\hypertarget{hierarchical-regression}{%
+\section{Hierarchical regression}\label{hierarchical-regression}}
+
+Hierarchical regression is exactly the same as multiple regression but now we have multiple models or blocks. You can specify hierarchical regression using the Model Builder drop-down menu in jamovi. Let's try an example where we have \texttt{baby.sleep} as Block 1 and \texttt{dan.sleep} as Block 2. In addition, using the Model Fit drop-down menu you should check \texttt{AIC} and \texttt{BIC} in addition to the previously selected options. Your setup should look something like this:
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{images/13-regression/hierarchical-setup} 
+
+}
+
+\caption{Hierarchical regression setup in jamovi}\label{fig:unnamed-chunk-12}
+\end{figure}
+
+Our model results now change. We now have two lines for the Model Fit Measures and a Model Comparisons table. In addition, under Model Specific Results, we have a drop-down menu to specify which model we want to examine.
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{images/13-regression/hierarchical-results} 
+
+}
+
+\caption{Hierarchical regression results in jamovi}\label{fig:unnamed-chunk-13}
+\end{figure}
+
+Let's interpret. Our first model (with just \texttt{baby.sleep} is significant), \emph{F} (1, 98) = 46.18, \emph{p} \textless{} .001, \emph{adjusted} \(R^2\) = .31. So is our second model (that has both \texttt{baby.sleep} and \texttt{dan.sleep}),~\emph{F} (2, 97) = 215.24, \emph{p} \textless{} .001, \emph{adjusted} \(R^2\) = .81. There was a significant improvement between model 1 and model 2, \(F_{change}\) (1, 97) = 261.52, \emph{p} \textless{} .001, \(\Delta R^2\) = .50. The significant improvement means that the predictors added to model 2 significantly predict our DV \emph{above and beyond} the predictors in model 1.
+
+We might write-up these results as such:
+
+\begin{quote}
+Dan collected data on how many hours of sleep Dan and Dan's baby got, as well as Dan's grumpiness, for 100 days. Dan tested how the hours of sleep both Dan and the baby got affected Dan's grumpiness using hierarchical regression to find out how Dan's sleep predicted Dan's grumpiness above and beyond the baby's sleep.
+
+First, the baby's sleep significantly predicted Dan's grumpiness\emph{, F} (1, 98) = 46.18, \emph{p} \textless{} .001, \emph{adjusted} \(R^2\) = .31. As the baby's hours of sleep increased, Dan's grumpiness decreased, \emph{t} (98) = -6.80, \emph{SE} = .40, \emph{p} \textless{} .001, \(\beta\) = -.57.
+
+A second model was tested that added Dan's sleep. This model--comprised of both baby's sleep and Dan's sleep--significantly predicted Dan's grumpiness, \emph{F} (2, 97) = 215.24, \emph{p} \textless{} .001, \emph{adjusted} \(R^2\) = .81. There was a significant improvement between model 1 and model 2, \(F_{change}\) (1, 97) = 261.52, \emph{p} \textless{} .001, \(\Delta R^2\) = .50. In the second model, as Dan's sleep increased, Dan's grumpiness decreased, \emph{t} (97) = -16.17, \emph{SE} = .55, \emph{p} \textless{} .001, \(\beta\) = -.90. However, the baby's sleep did not significantly relate to Dan's grumpiness when controlling for Dan's sleep, \emph{t} (97) = .04, \emph{SE} = .27, \emph{p} = .969, \(\beta\) = .00.
+\end{quote}
+
+\hypertarget{categorical-predictors}{%
+\section{Categorical Predictors}\label{categorical-predictors}}
+
+Dummy coded variables (with values 0 or 1) are pretty easy to interpret in regression. If the Beta is positive, then the value of 1 would have a higher mean on the DV than the value of 0. If the Beta is negative, then the value of 0 would have a higher mean on the DV than the value of 1.
+
+However, if we have a nominal variable with more than two categories, then we need to dummy code the data to analyze in a regression. Fortunately, jamovi can do this automatically for us!
+
+The dataset we're using doesn't currently have a categorical variable, so I'm going to manually create one for demonstration purposes. I'm going to transform the \texttt{day} variable, which is the day of the data collection from 1 to 100, into a new variable that indicates whether the day is 1-32, 33-65, or 66-100, which is roughly 3 equal groups. You can see the transformation here:
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{images/13-regression/transform} 
+
+}
+
+\caption{Transforming day into a categorical variable in jamovi}\label{fig:unnamed-chunk-14}
+\end{figure}
+
+Let's add that to our regression model and just make it a simple multiple regression model. Three independent variables (\texttt{dan.sleep}, \texttt{baby.sleep}, and our new \texttt{day\_3groups} variable) all in one block.
+
+Now we need to go to the Reference Levels drop-down menu. We have two options:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Reference level (dummy coding)}: We can have our intercept be the mean of our reference level group, meaning that if all other variables were set to 0 this is the mean of our dependent variable for that group. For example, if we set day = 1 to be our reference level, then the intercept is the value of Dan's grumpiness when Dan's sleep is 0 and baby's sleep is 0 for the first 32 days. \emph{This is the option I normally choose.}
+\item
+  \textbf{Grand mean (simple coding)}: Alternatively, we can have our intercept be the grand mean, or the overall mean when all other variables were set to 0 and we ignored day. \emph{I am not sure when I would use this option, to be honest}.
+\end{enumerate}
+
+The other option you have is what is considered your reference level. It will default to your first level in your dataset (in this case, day\_3Groups = 1) but you can change to any other level in your variable. I set my reference level to be 1, the default, and I know that because the day variable compares both levels 2 and 3 to 1. Our intercept (126.02) then is the value of grumpiness if Dan and the baby slept 0 hours in the first 32 days of our data collection.
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{images/13-regression/regression-categorical} 
+
+}
+
+\caption{Regression with a categorical predictor results in jamovi}\label{fig:unnamed-chunk-15}
+\end{figure}
+
+The first line of day - 3\_Groups (2 -- 1) is then the difference in Dan's grumpiness between the second 1/3 of days (days 33-65) and the first 1/3 of days (days 1-32). It is not statistically significant, so there is no difference in Dan's grumpiness between the first and second 1/3 of days. Because the estimate is negative, that indicates that the first 1/3 of days have a higher estimated mean of Dan's grumpiness, but again it's not statistically significant.
+
+The second line of day - 3\_Groups (3 -- 1) is the difference in Dan's grumpiness between the third 1/3 of days (days 66-100) and the first 1/3 of days (days 1-32). It is not statistically significant, so there is no difference in Dan's grumpiness between the first and third 1/3 of days, either.
+
+In this case, the Estimated Marginal Means can be very helpful for us to interpret the model coefficients. We can get the estimated marginal means of each group on the DV at the average levels of the other two variables.
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{images/13-regression/regression-categorical-EMM} 
+
+}
+
+\caption{Regression with a categorical predictor results in jamovi}\label{fig:unnamed-chunk-16}
+\end{figure}
+
+\hypertarget{your-turn-7}{%
+\section{Your turn!}\label{your-turn-7}}
+
+Open the \texttt{Sample\_Dataset\_2014.xlsx} file that we will be using for all Your Turn exercises. You can find the dataset here: \href{https://github.com/danawanzer/stats-with-jamovi/blob/master/data/Sample_Dataset_2014.xlsx}{Sample\_Dataset\_2014.xlsx Download}
+
+To get the most out of these exercises, try to first find out the answer on your own and then use the drop-down menus to check your answer.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \textbf{Perform a multiple regression examining how \texttt{English}}, \textbf{\texttt{Reading} and \texttt{Writing}, as well as \texttt{Gender} relate to the dependent variable \texttt{Math}.}
+
+  \begin{itemize}
+  \item
+    Do you have any significant outliers? yes no
+  \item
+    Are your residuals normally distributed? yes no
+  \item
+    Do you satisfy the assumption of linearity and homoscedasticity of your residuals (just check the Fitted residual plot)? yes no
+  \item
+    Do you meet the assumption of independent residuals? yes no
+  \item
+    Do you meet the assumption of no multicollinearity? yes no
+  \item
+    Can you perform a regression with this data? yes no
+  \item
+    What is your adjusted R-squared, rounded to two decimal places:
+  \item
+    Is the overall model statistically significant? yes no
+  \item
+    Is \texttt{English} statistically significant? yes no
+  \item
+    Is \texttt{Reading} statistically significant? yes no
+  \item
+    Is \texttt{Writing} statistically significant? yes no
+  \item
+    Is \texttt{Gender} statistically significant? yes no
+  \item
+    For \texttt{Gender}, do male (Gender = 0) or female (Gender = 1) students have higher math scores? male female
+  \end{itemize}
+\end{enumerate}
+
+\hypertarget{everything-is-regression}{%
+\chapter{Everything is Regression}\label{everything-is-regression}}
+
+\hypertarget{everything-is-regression-1}{%
+\section{Everything is Regression}\label{everything-is-regression-1}}
+
+The regression is a General Linear Model (GLM). Everything we've learned up to this point is also a general linear model. Pretty much everything we've learned in this class \emph{could} be performed as simple a regression. You may wonder why we have not just taught regression and none of the others. There are some who are indeed proponents of that! However, I believe teaching ``simpler'' statistics like the t-test and correlation first is easiest to understand. Most of the statistics you will perform from here on out---including in your careers---will be what we have already learned (i.e., t-test, ANOVA, chi-square, correlation). However, I present this information so you may begin to see how all of this is related.
+
+Note that for all these examples I am using the Sample\_Dataset\_2014.sav dataset and I am only presenting the relevant output. I am also only going to cover the correlation, t-tests, and one-way ANOVA because they are the simplest to compare. You can run these yourself! You can find the dataset here: \href{https://github.com/danawanzer/stats-with-jamovi/blob/master/data/Sample_Dataset_2014.xlsx}{Sample\_Dataset\_2014.xlsx Download}
+
+\hypertarget{correlation-as-a-regression}{%
+\section{Correlation as a regression}\label{correlation-as-a-regression}}
+
+Imagine we want to see how English and Reading are related. We would do a Pearson correlation, as seen on the top. However, we could also run a simple regression with English predicting Reading or vice versa, as seen on the bottom.
+
+Notice how the Beta coefficient in the regression output is the \emph{standardized coefficient} and that the correlation is the \emph{standardized covariance}. Therefore, their values (and p-values) match identically!
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{images/14-regression-wrap-up/correlation} 
+
+}
+
+\caption{Correlation as regression}\label{fig:unnamed-chunk-1}
+\end{figure}
+
+\hypertarget{independent-t-test-as-a-regression}{%
+\section{Independent t-test as a regression}\label{independent-t-test-as-a-regression}}
+
+Next let's look at how gender is related to reading scores. First, our t-statistic and p-value match directly from the independent t-test to the linear regression coefficient. Second, our unstandardized estimate in the regression \emph{is exactly the mean difference between the two genders}!
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{images/14-regression-wrap-up/t-test} 
+
+}
+
+\caption{Independent t-test as regression}\label{fig:unnamed-chunk-2}
+\end{figure}
+
+\hypertarget{dependent-t-test-as-a-regression}{%
+\section{Dependent t-test as a regression}\label{dependent-t-test-as-a-regression}}
+
+The dependent t-test can't be performed as a regression in the base jamovi, but it can if we run it in the Rj editor using the stats package. The regression formula for a dependent t-test is \(y_1 -y_0 = 1\) and jamovi doesn't like it if there are not IVs, just an intercept. However, the stats package doesn't mind! Notice that our t-statistic, df, and p-value are exactly the same, and that the intercept estimate and SE match the mean difference in the paired samples t-test.
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{images/14-regression-wrap-up/dependent_t-test} 
+
+}
+
+\caption{Dependent t-test as regression}\label{fig:unnamed-chunk-3}
+\end{figure}
+
+\hypertarget{one-way-anova-as-a-regression}{%
+\section{One-way ANOVA as a regression}\label{one-way-anova-as-a-regression}}
+
+The one-way ANOVA is the same as regression, too. Let's examine how rank (an ordinal variable from 1-4) relates to English scores. In the linear regression, we asked for the ANOVA test under Model Coefficients; notice how it directly matches the ANOVA table.
+
+Although I did not directly ask for them, the estimated marginal means for the linear regression match that of the one-way ANOVA. However, I want to call attention to how the coefficients directly match. The intercept is the average English score when Rank = 1 (freshman). However, the estimate for 2 -- 1 is .68, but 81.93 + .68 = 82.61; it's not exact due to rounding errors, but it matches the mean for group 2 because in the linear equation if you set that value to 1 you are saying the other values are 0 so the group membership is Rank = 2 (sophomore). You can do this for all the groups and see how they match.
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.49\linewidth]{images/14-regression-wrap-up/anova1} \includegraphics[width=0.49\linewidth]{images/14-regression-wrap-up/anova2} 
+
+}
+
+\caption{One-way ANOVA as a regression}\label{fig:unnamed-chunk-4}
+\end{figure}
 
 \hypertarget{appendix-appendices}{%
 \appendix}

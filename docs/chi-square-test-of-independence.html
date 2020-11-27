@@ -302,6 +302,35 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="12.4" data-path="mcnemars-test.html"><a href="mcnemars-test.html#performing-mcnemars-test-in-jamovi"><i class="fa fa-check"></i><b>12.4</b> Performing McNemar’s test in jamovi</a></li>
 <li class="chapter" data-level="12.5" data-path="mcnemars-test.html"><a href="mcnemars-test.html#interpreting-results-7"><i class="fa fa-check"></i><b>12.5</b> Interpreting results</a></li>
 </ul></li>
+<li class="part"><span><b>V Regression</b></span></li>
+<li class="chapter" data-level="13" data-path="regression.html"><a href="regression.html"><i class="fa fa-check"></i><b>13</b> Regression</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="regression.html"><a href="regression.html#what-is-regression"><i class="fa fa-check"></i><b>13.1</b> What is regression?</a></li>
+<li class="chapter" data-level="13.2" data-path="regression.html"><a href="regression.html#data-set-up-8"><i class="fa fa-check"></i><b>13.2</b> Data set-up</a></li>
+<li class="chapter" data-level="13.3" data-path="regression.html"><a href="regression.html#assumptions-6"><i class="fa fa-check"></i><b>13.3</b> Assumptions</a></li>
+<li class="chapter" data-level="13.4" data-path="regression.html"><a href="regression.html#understanding-regression"><i class="fa fa-check"></i><b>13.4</b> Understanding regression</a></li>
+<li class="chapter" data-level="13.5" data-path="regression.html"><a href="regression.html#performing-a-multiple-regression-in-jamovi"><i class="fa fa-check"></i><b>13.5</b> Performing a multiple regression in jamovi</a></li>
+<li class="chapter" data-level="13.6" data-path="regression.html"><a href="regression.html#checking-assumptions"><i class="fa fa-check"></i><b>13.6</b> Checking Assumptions</a>
+<ul>
+<li class="chapter" data-level="13.6.1" data-path="regression.html"><a href="regression.html#outliers"><i class="fa fa-check"></i><b>13.6.1</b> Outliers</a></li>
+<li class="chapter" data-level="13.6.2" data-path="regression.html"><a href="regression.html#normality-of-the-residuals"><i class="fa fa-check"></i><b>13.6.2</b> Normality of the residuals</a></li>
+<li class="chapter" data-level="13.6.3" data-path="regression.html"><a href="regression.html#linearity-homoscedasticity"><i class="fa fa-check"></i><b>13.6.3</b> Linearity &amp; homoscedasticity</a></li>
+<li class="chapter" data-level="13.6.4" data-path="regression.html"><a href="regression.html#independence-of-residuals"><i class="fa fa-check"></i><b>13.6.4</b> Independence of residuals</a></li>
+<li class="chapter" data-level="13.6.5" data-path="regression.html"><a href="regression.html#multicollinearity"><i class="fa fa-check"></i><b>13.6.5</b> Multicollinearity</a></li>
+</ul></li>
+<li class="chapter" data-level="13.7" data-path="regression.html"><a href="regression.html#interpreting-results-8"><i class="fa fa-check"></i><b>13.7</b> Interpreting results</a></li>
+<li class="chapter" data-level="13.8" data-path="regression.html"><a href="regression.html#hierarchical-regression"><i class="fa fa-check"></i><b>13.8</b> Hierarchical regression</a></li>
+<li class="chapter" data-level="13.9" data-path="regression.html"><a href="regression.html#categorical-predictors"><i class="fa fa-check"></i><b>13.9</b> Categorical Predictors</a></li>
+<li class="chapter" data-level="13.10" data-path="regression.html"><a href="regression.html#your-turn-7"><i class="fa fa-check"></i><b>13.10</b> Your turn!</a></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="everything-is-regression.html"><a href="everything-is-regression.html"><i class="fa fa-check"></i><b>14</b> Everything is Regression</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="everything-is-regression.html"><a href="everything-is-regression.html#everything-is-regression-1"><i class="fa fa-check"></i><b>14.1</b> Everything is Regression</a></li>
+<li class="chapter" data-level="14.2" data-path="everything-is-regression.html"><a href="everything-is-regression.html#correlation-as-a-regression"><i class="fa fa-check"></i><b>14.2</b> Correlation as a regression</a></li>
+<li class="chapter" data-level="14.3" data-path="everything-is-regression.html"><a href="everything-is-regression.html#independent-t-test-as-a-regression"><i class="fa fa-check"></i><b>14.3</b> Independent t-test as a regression</a></li>
+<li class="chapter" data-level="14.4" data-path="everything-is-regression.html"><a href="everything-is-regression.html#dependent-t-test-as-a-regression"><i class="fa fa-check"></i><b>14.4</b> Dependent t-test as a regression</a></li>
+<li class="chapter" data-level="14.5" data-path="everything-is-regression.html"><a href="everything-is-regression.html#one-way-anova-as-a-regression"><i class="fa fa-check"></i><b>14.5</b> One-way ANOVA as a regression</a></li>
+</ul></li>
 <li class="appendix"><span><b>Appendices</b></span></li>
 <li class="chapter" data-level="A" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>A</b> References</a></li>
 <li class="divider"></li>
@@ -449,48 +478,18 @@ If the math below makes your eyes glaze over, you can skip it. This is presented
 </table>
 <p>Next, we need to calculate our <em>expected</em> frequencies based on our data. Our expected frequencies for each cell by multiplying the row total by the column total and dividing by the total sample size:</p>
 <p><span class="math inline">\(Expected frequencies = \frac{C_j * P_i}{N}\)</span></p>
-<table>
-<colgroup>
-<col width="28%" />
-<col width="29%" />
-<col width="30%" />
-<col width="11%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th><em>Expected Frequencies</em></th>
-<th>Robot</th>
-<th>Human</th>
-<th>Total</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Puppy</td>
-<td>(28 * 87)/180 = 13.533</td>
-<td>(28 * 93)/180 =14.467</td>
-<td><strong>28</strong></td>
-</tr>
-<tr class="even">
-<td>Flower</td>
-<td>(43 * 87)/180 =20.783</td>
-<td>(43 * 93)/180 = 22.217</td>
-<td><strong>43</strong></td>
-</tr>
-<tr class="odd">
-<td>Data</td>
-<td>(109 * 87)/180 =52.683</td>
-<td>(109 * 93)/180 = 56.317</td>
-<td><strong>109</strong></td>
-</tr>
-<tr class="even">
-<td><strong>Total</strong></td>
-<td><strong>87</strong></td>
-<td><strong>93</strong></td>
-<td><strong>180</strong></td>
-</tr>
-</tbody>
-</table>
+<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
++————————+————————-+————————–+———+
+| <em>Expected Frequencies</em> | Robot | Human | Total |
++========================+=========================+==========================+=========+
+| Puppy | (28 * 87)/180 = 13.533 | (28 * 93)/180 =14.467 | <strong>28</strong> |
++————————+————————-+————————–+———+
+| Flower | (43 * 87)/180 =20.783 | (43 * 93)/180 = 22.217 | <strong>43</strong> |
++————————+————————-+————————–+———+
+| Data | (109 * 87)/180 =52.683 | (109 * 93)/180 = 56.317 | <strong>109</strong> |
++————————+————————-+————————–+———+
+| <strong>Total</strong> | <strong>87</strong> | <strong>93</strong> | <strong>180</strong> |
++————————+————————-+————————–+———+</p>
 <p>We then need to calculate the squared differences of observed minus expected frequencies:</p>
 <table>
 <colgroup>
@@ -534,6 +533,65 @@ If the math below makes your eyes glaze over, you can skip it. This is presented
 </tr>
 </tbody>
 </table>
+<p>=======
+| <em>Expected Frequencies</em> | Robot | Human | Total |
+|————————|————————-|————————–|———|
+| Puppy | (28 * 87)/180 = 13.533 | (28 * 93)/180 =14.467 | <strong>28</strong> |
+| Flower | (43 * 87)/180 =20.783 | (43 * 93)/180 = 22.217 | <strong>43</strong> |
+| Data | (109 * 87)/180 =52.683 | (109 * 93)/180 = 56.317 | <strong>109</strong> |
+| <strong>Total</strong> | <strong>87</strong> | <strong>93</strong> | <strong>180</strong> |</p>
+<p>We then need to calculate the squared differences of observed minus expected frequencies:</p>
+<table>
+<thead>
+<tr class="header">
+<th><em>Squared differences</em></th>
+<th>Robot</th>
+<th>Human</th>
+<th>Total</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Puppy</td>
+<td><span class="math inline">\((13-13.533)^2 = .284\)</span></td>
+<td><span class="math inline">\((15-14.467)^2 = .284\)</span></td>
+<td><strong>28</strong></td>
+</tr>
+<tr class="even">
+<td>Flower</td>
+<td><span class="math inline">\((30-20.783)^2 = 84.953\)</span></td>
+<td><span class="math inline">\((13-22.217)^2 = 84.953\)</span></td>
+<td><strong>43</strong></td>
+</tr>
+<tr class="odd">
+<td>Data</td>
+<td><span class="math inline">\((44-52.683)^2 = 75.394\)</span></td>
+<td><span class="math inline">\((65-56.317)^2 = 75.394\)</span></td>
+<td><strong>109</strong></td>
+</tr>
+<tr class="even">
+<td><strong>Total</strong></td>
+<td><strong>87</strong></td>
+<td><strong>93</strong></td>
+<td><strong>180</strong></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>66306ca0d7acd82110bbda4742c158777d2e08d2</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
 <p>The formula for the chi-square test of independence is the very similar to the chi-square goodness of fit test:</p>
 <p><span class="math inline">\(\chi^2 = \sum{\frac{(O_i-E_i)^2}{E_i}} = \frac{.284}{13.533} + \frac{.284}{14.467} + \frac{84.953}{20.783} + \frac{84.953}{22.217} + \frac{75.394}{52.683} + \frac{75.394}{56.317}\)</span></p>
 <p><span class="math inline">\(\chi^2 = .021 + .020 + 4.070 + 3.834 + 1.431 + 1.339 = 10.72\)</span></p>
