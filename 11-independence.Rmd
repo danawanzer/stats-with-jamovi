@@ -153,11 +153,7 @@ To get the most out of these exercises, try to first find out the answer on your
 
 1.  **Is Athlete related to Gender?**
 
-<<<<<<< HEAD
     -   Do you meet the assumptions? `r mcq(c(answer = "yes", "no, expected frequencies are too small", "no, data are not independent"))`
-=======
-    -   Do you meet the assumptions? `r mcq(c(answer = "yes", "no, expected frequencies are too small", "no, data are not independent))`
->>>>>>> 66306ca0d7acd82110bbda4742c158777d2e08d2
 
     -   Which test should you perform? `r mcq(c(answer = "Chi-square", "Fisher's exact test"))`
 
@@ -167,11 +163,7 @@ To get the most out of these exercises, try to first find out the answer on your
 
 2.  **Is Gender related to Rank?**
 
-<<<<<<< HEAD
     -   Do you meet the assumptions? `r mcq(c(answer = "yes", "no, expected frequencies are too small", "no, data are not independent"))`
-=======
-    -   Do you meet the assumptions? `r mcq(c(answer = "yes", "no, expected frequencies are too small", "no, data are not independent))`
->>>>>>> 66306ca0d7acd82110bbda4742c158777d2e08d2
 
     -   Which test should you perform? `r mcq(c(answer = "Chi-square", "Fisher's exact test"))`
 

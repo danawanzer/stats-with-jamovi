@@ -26,11 +26,9 @@ The chi-square goodness-of-fit test has the following assumptions:
 
 ## The math behind the chi-square goodness of fit test
 
-\begin{info}
-If the math below makes your eyes glaze over, you can skip it. This is
-presented for those who find it useful to understand the math behind the
-statistics to help understand what's happening.
-\end{info}
+<div class="info">
+<p>If the math below makes your eyes glaze over, you can skip it. This is presented for those who find it useful to understand the math behind the statistics to help understand what’s happening.</p>
+</div>
 
 We're going to continue using the card deck example. This data comes from the lsj-data dataset named "randomness". If you perform descriptive statistics of `choice_1` and ask for frequency tables, you get the *observed* frequencies. We expect the frequencies to be 25% for each choice (or *n* = 50 because our total N is 200, so 200/4 = 50).
 
@@ -66,14 +64,10 @@ ggplot(data.frame(x = c(0, 30)), aes(x = x)) +
   xlab(label = "Value")
 ```
 
-\begin{figure}
-
-{\centering \includegraphics[width=1\linewidth]{10-goodness-of-fit_files/figure-latex/unnamed-chunk-2-1} 
-
-}
-
-\caption{**CAPTION THIS FIGURE!!**}(\#fig:unnamed-chunk-2)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="10-goodness-of-fit_files/figure-html/unnamed-chunk-2-1.png" alt="**CAPTION THIS FIGURE!!**" width="100%" />
+<p class="caption">(\#fig:unnamed-chunk-2)**CAPTION THIS FIGURE!!**</p>
+</div>
 
 In our case, we have a degrees of freedom of 3. Just like we did early in the semester, we can look up our critical-$\chi^2$ value in a table to find that our critical value for df = 3 is 7.815. The figure below shows our critical-$\chi^2$ value in red and calculated-$\chi^2$ value in black. Because our calculated-$\chi^2$ value is in the critical region, we can reject the null hypothesis that all four suits are chosen with equal probability.
 
@@ -95,14 +89,10 @@ ggplot(data.frame(x = c(0, 20)), aes(x = x)) +
   xlab(label = "Value of the goodness-of-fit statistic")
 ```
 
-\begin{figure}
-
-{\centering \includegraphics[width=1\linewidth]{10-goodness-of-fit_files/figure-latex/unnamed-chunk-3-1} 
-
-}
-
-\caption{**CAPTION THIS FIGURE!!**}(\#fig:unnamed-chunk-3)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="10-goodness-of-fit_files/figure-html/unnamed-chunk-3-1.png" alt="**CAPTION THIS FIGURE!!**" width="100%" />
+<p class="caption">(\#fig:unnamed-chunk-3)**CAPTION THIS FIGURE!!**</p>
+</div>
 
 ## Performing the chi-square goodness-of-fit test in jamovi
 
@@ -116,25 +106,17 @@ Let's run an example with data from lsj-data. Open data from your Data Library i
 
 When you are done, your setup should look like this
 
-\begin{figure}
-
-{\centering \includegraphics[width=0.8\linewidth]{images/09-chi-square/chi-square_setup} 
-
-}
-
-\caption{Chi-square goodness-of-fit setup in jamovi}(\#fig:unnamed-chunk-4)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="images/09-chi-square/chi-square_setup.png" alt="Chi-square goodness-of-fit setup in jamovi" width="80%" />
+<p class="caption">(\#fig:unnamed-chunk-4)Chi-square goodness-of-fit setup in jamovi</p>
+</div>
 
 ## Interpreting results
 
-\begin{figure}
-
-{\centering \includegraphics[width=1\linewidth]{images/09-chi-square/chi-square_results} 
-
-}
-
-\caption{Chi-square goodness-of-fit results in jamovi}(\#fig:unnamed-chunk-5)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="images/09-chi-square/chi-square_results.png" alt="Chi-square goodness-of-fit results in jamovi" width="100%" />
+<p class="caption">(\#fig:unnamed-chunk-5)Chi-square goodness-of-fit results in jamovi</p>
+</div>
 
 The first table shows us our observed frequencies (our data) and expected frequencies (N/k = 200/4 = 50). The second table gives us our results. Our p-value is less than .05 so we can reject the null hypothesis that the observed frequencies match our expected frequencies.
 
@@ -148,14 +130,10 @@ As you can tell, jamovi automatically assumed equal proportions of frequencies. 
 
 For example, maybe we think our deck is a little stacked in favor of red cards--or we think our participants are more likely to choose red cards than black cards. We can specify our expected proportions and then interpret the results. In this case, participants do not seem more likely to choose red cards based on the expected frequencies we provided.
 
-\begin{figure}
-
-{\centering \includegraphics[width=1\linewidth]{images/09-chi-square/chi-square_results2} 
-
-}
-
-\caption{Chi-square goodness-of-fit - Different expected proportions}(\#fig:unnamed-chunk-6)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="images/09-chi-square/chi-square_results2.png" alt="Chi-square goodness-of-fit - Different expected proportions" width="100%" />
+<p class="caption">(\#fig:unnamed-chunk-6)Chi-square goodness-of-fit - Different expected proportions</p>
+</div>
 
 ## Your turn!
 
@@ -164,7 +142,6 @@ Open the `Sample_Dataset_2014.xlsx` file that we will be using for all Your Turn
 To get the most out of these exercises, try to first find out the answer on your own and then use the drop-down menus to check your answer.
 
 1.  **Are there equal numbers of athletes and non-athletes?** (`Athlete` variable)
-
     -   Do you meet the assumptions? <select class='solveme' data-answer='["yes"]'> <option></option> <option>yes</option> <option>no, expected frequencies are too small</option> <option>no, data are not independent</option></select>
 
     -   Are the observed frequencies similar to the expected frequencies? <select class='solveme' data-answer='["no"]'> <option></option> <option>yes</option> <option>no</option></select>

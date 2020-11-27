@@ -37,17 +37,12 @@ If the math below makes your eyes glaze over, you can skip it. This is presented
 
 We're going to continue using the card deck example. This data comes from the lsj-data dataset named "randomness". If you perform descriptive statistics of `choice_1` and ask for frequency tables, you get the *observed* frequencies. We expect the frequencies to be 25% for each choice (or *n* = 50 because our total N is 200, so 200/4 = 50).
 
-+--------------------+---------------+-------------+----------------+--------------+--------------+
 |                    |               | $\clubsuit$ | $\diamondsuit$ | $\heartsuit$ | $\spadesuit$ |
-+====================+===============+=============+================+==============+==============+
+|--------------------|---------------|-------------|----------------|--------------|--------------|
 | Observed frequency | $O_i$         | 35          | 51             | 64           | 50           |
-+--------------------+---------------+-------------+----------------+--------------+--------------+
 | Expected frequency | $E_i$         | 50          | 50             | 50           | 50           |
-+--------------------+---------------+-------------+----------------+--------------+--------------+
 | Difference score   | $O_i-E_i$     | -15         | 1              | 14           | 0            |
-+--------------------+---------------+-------------+----------------+--------------+--------------+
 | Difference squared | $(O_i-E_i)^2$ | 225         | 1              | 196          | 0            |
-+--------------------+---------------+-------------+----------------+--------------+--------------+
 
 The formula for the chi-square goodness-of-fit test is as follows:
 
@@ -133,11 +128,7 @@ To get the most out of these exercises, try to first find out the answer on your
 
 1.  **Are there equal numbers of athletes and non-athletes?** (`Athlete` variable)
 
-<<<<<<< HEAD
     -   Do you meet the assumptions? `r mcq(c(answer = "yes", "no, expected frequencies are too small", "no, data are not independent"))`
-=======
-    -   Do you meet the assumptions? `r mcq(c(answer = "yes", "no, expected frequencies are too small", "no, data are not independent))`
->>>>>>> 66306ca0d7acd82110bbda4742c158777d2e08d2
 
     -   Are the observed frequencies similar to the expected frequencies? `r mcq(c("yes", answer = "no"))`
 
@@ -153,11 +144,7 @@ To get the most out of these exercises, try to first find out the answer on your
 
 3.  **Are there equal numbers of freshmen, sophomores, juniors, and seniors?** (`Rank` variable)
 
-<<<<<<< HEAD
     -   Do you meet the assumptions? `r mcq(c(answer = "yes", "no, expected frequencies are too small", "no, data are not independent"))`
-=======
-    -   Do you meet the assumptions? `r mcq(c(answer = "yes", "no, expected frequencies are too small", "no, data are not independent))`
->>>>>>> 66306ca0d7acd82110bbda4742c158777d2e08d2
 
     -   Are the observed frequencies similar to the expected frequencies? `r mcq(c("yes", answer = "no"))`
 
