@@ -152,7 +152,7 @@
 
 \title{Statistics with jamovi}
 \author{Dana Wanzer}
-\date{Last Update: 2020-11-27}
+\date{Last Update: 2020-11-30}
 
 \begin{document}
 \maketitle
@@ -2809,80 +2809,17 @@ Next, we need to calculate our \emph{expected} frequencies based on our data. Ou
 
 \(Expected frequencies = \frac{C_j * P_i}{N}\)
 
-\textless\textless\textless\textless\textless\textless\textless{} HEAD
-+------------------------+-------------------------+--------------------------+---------+
-\textbar{} \emph{Expected Frequencies} \textbar{} Robot \textbar{} Human \textbar{} Total \textbar{}
-+========================+=========================+==========================+=========+
-\textbar{} Puppy \textbar{} (28 * 87)/180 = 13.533 \textbar{} (28 * 93)/180 =14.467 \textbar{} \textbf{28} \textbar{}
-+------------------------+-------------------------+--------------------------+---------+
-\textbar{} Flower \textbar{} (43 * 87)/180 =20.783 \textbar{} (43 * 93)/180 = 22.217 \textbar{} \textbf{43} \textbar{}
-+------------------------+-------------------------+--------------------------+---------+
-\textbar{} Data \textbar{} (109 * 87)/180 =52.683 \textbar{} (109 * 93)/180 = 56.317 \textbar{} \textbf{109} \textbar{}
-+------------------------+-------------------------+--------------------------+---------+
-\textbar{} \textbf{Total} \textbar{} \textbf{87} \textbar{} \textbf{93} \textbar{} \textbf{180} \textbar{}
-+------------------------+-------------------------+--------------------------+---------+
-
-We then need to calculate the squared differences of observed minus expected frequencies:
-
 \begin{longtable}[]{@{}llll@{}}
 \toprule
-\begin{minipage}[b]{0.24\columnwidth}\raggedright
-\emph{Squared differences}\strut
-\end{minipage} & \begin{minipage}[b]{0.27\columnwidth}\raggedright
-Robot\strut
-\end{minipage} & \begin{minipage}[b]{0.27\columnwidth}\raggedright
-Human\strut
-\end{minipage} & \begin{minipage}[b]{0.10\columnwidth}\raggedright
-Total\strut
-\end{minipage}\tabularnewline
+\emph{Expected Frequencies} & Robot & Human & Total\tabularnewline
 \midrule
 \endhead
-\begin{minipage}[t]{0.24\columnwidth}\raggedright
-Puppy\strut
-\end{minipage} & \begin{minipage}[t]{0.27\columnwidth}\raggedright
-\((13-13.533)^2 = .284\)\strut
-\end{minipage} & \begin{minipage}[t]{0.27\columnwidth}\raggedright
-\((15-14.467)^2 = .284\)\strut
-\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
-\textbf{28}\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.24\columnwidth}\raggedright
-Flower\strut
-\end{minipage} & \begin{minipage}[t]{0.27\columnwidth}\raggedright
-\((30-20.783)^2 = 84.953\)\strut
-\end{minipage} & \begin{minipage}[t]{0.27\columnwidth}\raggedright
-\((13-22.217)^2 = 84.953\)\strut
-\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
-\textbf{43}\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.24\columnwidth}\raggedright
-Data\strut
-\end{minipage} & \begin{minipage}[t]{0.27\columnwidth}\raggedright
-\((44-52.683)^2 = 75.394\)\strut
-\end{minipage} & \begin{minipage}[t]{0.27\columnwidth}\raggedright
-\((65-56.317)^2 = 75.394\)\strut
-\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
-\textbf{109}\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.24\columnwidth}\raggedright
-\textbf{Total}\strut
-\end{minipage} & \begin{minipage}[t]{0.27\columnwidth}\raggedright
-\textbf{87}\strut
-\end{minipage} & \begin{minipage}[t]{0.27\columnwidth}\raggedright
-\textbf{93}\strut
-\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
-\textbf{180}\strut
-\end{minipage}\tabularnewline
+Puppy & (28 * 87)/180 = 13.533 & (28 * 93)/180 =14.467 & \textbf{28}\tabularnewline
+Flower & (43 * 87)/180 =20.783 & (43 * 93)/180 = 22.217 & \textbf{43}\tabularnewline
+Data & (109 * 87)/180 =52.683 & (109 * 93)/180 = 56.317 & \textbf{109}\tabularnewline
+\textbf{Total} & \textbf{87} & \textbf{93} & \textbf{180}\tabularnewline
 \bottomrule
 \end{longtable}
-
-=======
-\textbar{} \emph{Expected Frequencies} \textbar{} Robot \textbar{} Human \textbar{} Total \textbar{}
-\textbar------------------------\textbar-------------------------\textbar--------------------------\textbar---------\textbar{}
-\textbar{} Puppy \textbar{} (28 * 87)/180 = 13.533 \textbar{} (28 * 93)/180 =14.467 \textbar{} \textbf{28} \textbar{}
-\textbar{} Flower \textbar{} (43 * 87)/180 =20.783 \textbar{} (43 * 93)/180 = 22.217 \textbar{} \textbf{43} \textbar{}
-\textbar{} Data \textbar{} (109 * 87)/180 =52.683 \textbar{} (109 * 93)/180 = 56.317 \textbar{} \textbf{109} \textbar{}
-\textbar{} \textbf{Total} \textbar{} \textbf{87} \textbar{} \textbf{93} \textbar{} \textbf{180} \textbar{}
 
 We then need to calculate the squared differences of observed minus expected frequencies:
 
@@ -2897,22 +2834,6 @@ Data & \((44-52.683)^2 = 75.394\) & \((65-56.317)^2 = 75.394\) & \textbf{109}\ta
 \textbf{Total} & \textbf{87} & \textbf{93} & \textbf{180}\tabularnewline
 \bottomrule
 \end{longtable}
-
-\begin{quote}
-\begin{quote}
-\begin{quote}
-\begin{quote}
-\begin{quote}
-\begin{quote}
-\begin{quote}
-66306ca0d7acd82110bbda4742c158777d2e08d2
-\end{quote}
-\end{quote}
-\end{quote}
-\end{quote}
-\end{quote}
-\end{quote}
-\end{quote}
 
 The formula for the chi-square test of independence is the very similar to the chi-square goodness of fit test:
 
@@ -3389,7 +3310,9 @@ However, more commonly we report the adjusted R-squared value, which adjusts the
 
 \textbf{Overall Model Test}: We also get an \emph{F}-test for the overall model. If you want, you can get the full ANOVA test by selected ANOVA test under Model Coefficients. This is how we know if the overall model is statistically significant. In our case, our \emph{F}-test is statistically significant so we know that the set of predictors significantly predicts our dependent variable.
 
-\textbf{Model coefficients}: Just like in ANOVA, we first examine if the model is significant (overall model test) and then look at individual factors, in this case being individual variables in our regression model. Each variable--our intercept and both independent variables--have an associated \emph{t}-test. We also asked for standardized estimates, which we get in the last column. In this case, Dan's sleep significantly predicts Dan's grumpiness, but the baby's sleep does not.
+\textbf{Model coefficients}: Just like in ANOVA, we first examine if the model is significant (overall model test) and then look at individual factors, in this case being individual variables in our regression model. Each variable--our intercept and both independent variables--have an associated \emph{t}-test. In this case, Dan's sleep significantly predicts Dan's grumpiness, but the baby's sleep does not.
+
+\textbf{Standardized coefficients}: We also asked for standardized estimates, which we get in the last column of our model coefficients table. These are \emph{standardized} so that we can compare them to other variables. They give us an idea of the \emph{strength} of the relationship between that IV on the DV. Larger values = bigger effects. The standardized estimate is called Beta (\(\beta\)) whereas the unstandardized estimate is just called that or B (the letter B, not Beta). We use the standardized estimates to compare the strength of the estimate to other IVs and we use unstandardized estimates to write our linear equations and predict the DV given values of the IV.
 
 \emph{What about the intercept?} You might be wondering what we do with the intercept. Typically, nothing. We only use it to create our equation so that we can predict Dan's grumpiness based on Dan's sleep and the baby's sleep. For example, our equation from our data is such:
 

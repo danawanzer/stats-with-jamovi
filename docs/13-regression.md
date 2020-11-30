@@ -1,6 +1,6 @@
----
+------------------------------------------------------------------------
 
----
+------------------------------------------------------------------------
 
 # (PART) Regression {.unnumbered}
 
@@ -234,7 +234,9 @@ However, more commonly we report the adjusted R-squared value, which adjusts the
 
 **Overall Model Test**: We also get an *F*-test for the overall model. If you want, you can get the full ANOVA test by selected ANOVA test under Model Coefficients. This is how we know if the overall model is statistically significant. In our case, our *F*-test is statistically significant so we know that the set of predictors significantly predicts our dependent variable.
 
-**Model coefficients**: Just like in ANOVA, we first examine if the model is significant (overall model test) and then look at individual factors, in this case being individual variables in our regression model. Each variable--our intercept and both independent variables--have an associated *t*-test. We also asked for standardized estimates, which we get in the last column. In this case, Dan's sleep significantly predicts Dan's grumpiness, but the baby's sleep does not.
+**Model coefficients**: Just like in ANOVA, we first examine if the model is significant (overall model test) and then look at individual factors, in this case being individual variables in our regression model. Each variable--our intercept and both independent variables--have an associated *t*-test. In this case, Dan's sleep significantly predicts Dan's grumpiness, but the baby's sleep does not.
+
+**Standardized coefficients**: We also asked for standardized estimates, which we get in the last column of our model coefficients table. These are *standardized* so that we can compare them to other variables. They give us an idea of the *strength* of the relationship between that IV on the DV. Larger values = bigger effects. The standardized estimate is called Beta ($\beta$) whereas the unstandardized estimate is just called that or B (the letter B, not Beta). We use the standardized estimates to compare the strength of the estimate to other IVs and we use unstandardized estimates to write our linear equations and predict the DV given values of the IV.
 
 *What about the intercept?* You might be wondering what we do with the intercept. Typically, nothing. We only use it to create our equation so that we can predict Dan's grumpiness based on Dan's sleep and the baby's sleep. For example, our equation from our data is such:
 

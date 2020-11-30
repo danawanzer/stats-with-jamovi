@@ -478,29 +478,10 @@ If the math below makes your eyes glaze over, you can skip it. This is presented
 </table>
 <p>Next, we need to calculate our <em>expected</em> frequencies based on our data. Our expected frequencies for each cell by multiplying the row total by the column total and dividing by the total sample size:</p>
 <p><span class="math inline">\(Expected frequencies = \frac{C_j * P_i}{N}\)</span></p>
-<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
-+————————+————————-+————————–+———+
-| <em>Expected Frequencies</em> | Robot | Human | Total |
-+========================+=========================+==========================+=========+
-| Puppy | (28 * 87)/180 = 13.533 | (28 * 93)/180 =14.467 | <strong>28</strong> |
-+————————+————————-+————————–+———+
-| Flower | (43 * 87)/180 =20.783 | (43 * 93)/180 = 22.217 | <strong>43</strong> |
-+————————+————————-+————————–+———+
-| Data | (109 * 87)/180 =52.683 | (109 * 93)/180 = 56.317 | <strong>109</strong> |
-+————————+————————-+————————–+———+
-| <strong>Total</strong> | <strong>87</strong> | <strong>93</strong> | <strong>180</strong> |
-+————————+————————-+————————–+———+</p>
-<p>We then need to calculate the squared differences of observed minus expected frequencies:</p>
 <table>
-<colgroup>
-<col width="27%" />
-<col width="30%" />
-<col width="30%" />
-<col width="11%" />
-</colgroup>
 <thead>
 <tr class="header">
-<th><em>Squared differences</em></th>
+<th><em>Expected Frequencies</em></th>
 <th>Robot</th>
 <th>Human</th>
 <th>Total</th>
@@ -509,20 +490,20 @@ If the math below makes your eyes glaze over, you can skip it. This is presented
 <tbody>
 <tr class="odd">
 <td>Puppy</td>
-<td><span class="math inline">\((13-13.533)^2 = .284\)</span></td>
-<td><span class="math inline">\((15-14.467)^2 = .284\)</span></td>
+<td>(28 * 87)/180 = 13.533</td>
+<td>(28 * 93)/180 =14.467</td>
 <td><strong>28</strong></td>
 </tr>
 <tr class="even">
 <td>Flower</td>
-<td><span class="math inline">\((30-20.783)^2 = 84.953\)</span></td>
-<td><span class="math inline">\((13-22.217)^2 = 84.953\)</span></td>
+<td>(43 * 87)/180 =20.783</td>
+<td>(43 * 93)/180 = 22.217</td>
 <td><strong>43</strong></td>
 </tr>
 <tr class="odd">
 <td>Data</td>
-<td><span class="math inline">\((44-52.683)^2 = 75.394\)</span></td>
-<td><span class="math inline">\((65-56.317)^2 = 75.394\)</span></td>
+<td>(109 * 87)/180 =52.683</td>
+<td>(109 * 93)/180 = 56.317</td>
 <td><strong>109</strong></td>
 </tr>
 <tr class="even">
@@ -533,13 +514,6 @@ If the math below makes your eyes glaze over, you can skip it. This is presented
 </tr>
 </tbody>
 </table>
-<p>=======
-| <em>Expected Frequencies</em> | Robot | Human | Total |
-|————————|————————-|————————–|———|
-| Puppy | (28 * 87)/180 = 13.533 | (28 * 93)/180 =14.467 | <strong>28</strong> |
-| Flower | (43 * 87)/180 =20.783 | (43 * 93)/180 = 22.217 | <strong>43</strong> |
-| Data | (109 * 87)/180 =52.683 | (109 * 93)/180 = 56.317 | <strong>109</strong> |
-| <strong>Total</strong> | <strong>87</strong> | <strong>93</strong> | <strong>180</strong> |</p>
 <p>We then need to calculate the squared differences of observed minus expected frequencies:</p>
 <table>
 <thead>
@@ -577,21 +551,6 @@ If the math below makes your eyes glaze over, you can skip it. This is presented
 </tr>
 </tbody>
 </table>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>66306ca0d7acd82110bbda4742c158777d2e08d2</p>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
 <p>The formula for the chi-square test of independence is the very similar to the chi-square goodness of fit test:</p>
 <p><span class="math inline">\(\chi^2 = \sum{\frac{(O_i-E_i)^2}{E_i}} = \frac{.284}{13.533} + \frac{.284}{14.467} + \frac{84.953}{20.783} + \frac{84.953}{22.217} + \frac{75.394}{52.683} + \frac{75.394}{56.317}\)</span></p>
 <p><span class="math inline">\(\chi^2 = .021 + .020 + 4.070 + 3.834 + 1.431 + 1.339 = 10.72\)</span></p>
