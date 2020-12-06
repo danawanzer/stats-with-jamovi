@@ -73,7 +73,7 @@ knitr::include_graphics(c("images/13-regression/dragon_categorical.png", "images
 
 We determine our line equation from the scatterplot of scores by figuring out the line that fits closest to all data points. The regression line is the line with the *smallest* residuals between the line and data points.
 
-Let's visualize the regression line for how Dan's sleepiness affect Dan's grumpiness. On the left, we see the regression line (in purple) is very close to the data points and the residuals (the grey lines between the purple line and the data points) are smalle. On the right, we see the regression line is far from a lot of the data points and the residuals are larger.
+Let's visualize the regression line for how Dan's sleepiness affect Dan's grumpiness. On the left, we see the regression line (in purple) is very close to the data points and the residuals (the grey lines between the purple line and the data points) are smaller. On the right, we see the regression line is far from a lot of the data points and the residuals are larger.
 
 ```{r echo = FALSE, fig.cap = "Regression lines and residuals", fig.show='hold',fig.align='center', out.width = "49%"}
 knitr::include_graphics(c("images/13-regression/good-regression-line.jpg", "images/13-regression/bad-regression-line.jpg"))

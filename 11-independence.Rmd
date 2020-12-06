@@ -105,7 +105,7 @@ The first table shows us our observed frequencies. The second table gives us our
 
 We can write up our results in APA something like this:
 
-> Pearson's $\chi^2$ test of independence showed a significant association between species and choice, $\chi^2$ (2) = 10.72, *p* = .005. Robots appeared to be more likely to say they prefer flowers and humans appeared to be more likely to say they prefer data.
+> Pearson's $\chi^2$ test of independence showed a significant association between species and choice, $\chi^2$ (2) = 10.72, *p* = .005, Cramer's V = .24. Robots appeared to be more likely to say they prefer flowers and humans appeared to be more likely to say they prefer data.
 
 I would either write-up the observed frequencies above or, ideally, I would share the contingency table with my observed frequencies.
 

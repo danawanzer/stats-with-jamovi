@@ -185,7 +185,7 @@ The scatterplots above do not suggest a non-linear relationship, so we meet the 
 
 ## Interpreting results
 
-Once we are satisfied we have satisfied the assumptions for the independent t-test, we can interpret our results.
+Once we are satisfied we have satisfied the assumptions for the correlation, we can interpret our results.
 
 ```{r echo = FALSE, fig.cap = "Correlation results in jamovi"}
 knitr::include_graphics("images/08-correlation/correlation-matrix.png")
@@ -209,7 +209,7 @@ What about Kendall's tau? It will likely give you the same results as Spearman's
 
 ## Comparing strengths of correlations
 
-Sometimes you want to compare two correlations to find out if one correlation is significantly stronger than another. You can use this calculator to calculate the p-value: [www.psychometrica.de/correlation.html](www.psychometrica.de/correlation.html)
+Sometimes you want to compare two correlations to find out if one correlation is significantly stronger than another. You can use this calculator to calculate the p-value: [Testing the Significance of Correlations](https://www.psychometrica.de/correlation.html)
 
 Note that you use \#1 (Independent Samples) when the correlations come from different samples and \#2 (Dependent Samples) when the correlations come from the same sample. For example, to compare the correlation between English and Reading to the correlation between English and Writing, you would use \#2 (Dependent Samples). But to compare the correlations between English and Reading for men and women, you would use \#1 (Independent Samples).
 
@@ -223,7 +223,7 @@ Let's first find the correlation for men. Go to the Data tab in jamovi, click Fi
 
 Now let's find the correlation for women. Go back to the Data tab in jamovi, click Filters, and change the equation to $\int_x$ = Gender == 1. Your results should automatically update because the filter changed. For women, you should get *r* = .33, *p* \< .001, *n* = 210.
 
-Now we can compare the correlations in our [Testing the Significance of Correlations](https://www.psychometrica.de/correlation.html) webpage, \#1. In Correlation 1, put 181 in the n column and .36 in the r column. In Correlation 2, put 210 in the n column and .33 in the r column. The results are shown below. The z-score is not statistically significant (*p* = .369) so there is no significant difference in correlation strength.
+Now we can compare the correlations in [Testing the Significance of Correlations - Independent Samples](https://www.psychometrica.de/correlation.html#independent). In Correlation 1, put 181 in the n column and .36 in the r column. In Correlation 2, put 210 in the n column and .33 in the r column. The results are shown below. The z-score is not statistically significant (*p* = .369) so there is no significant difference in correlation strength.
 
 ```{r echo = FALSE, fig.cap = "Comparison of correlations from independent samples"}
 knitr::include_graphics("images/08-correlation/compare-correlations-independent.png")
@@ -237,7 +237,7 @@ Notice how we have three tests we are comparing: (1) English, (2) Reading, and (
 
 If you still have your filter on in your dataset from the previous analysis, turn it off. Go to the Data tab, click Filters, and either select the X to delete it or toggle the active button so it's turned off. Return to your Correlation Matrix results and click on it to edit it. Add Writing to the box.
 
-However, we have a problem! The [Testing the Significance of Correlations](https://www.psychometrica.de/correlation.html) webpage (\#2) wants a single N, but our correlation matrix has different Ns because of missing data. What can we do? We need to chain filters! Go back to your Data tab, click Filters, and add three filters like below (note: this is how you can get *listwise deletion* in jamovi):
+However, we have a problem! The [Testing the Significance of Correlations - Dependent Samples](https://www.psychometrica.de/correlation.html#dependent) webpage (\#2) wants a single N, but our correlation matrix has different Ns because of missing data. What can we do? We need to chain filters! Go back to your Data tab, click Filters, and add three filters like below (note: this is how you can get *listwise deletion* in jamovi):
 
 ```{r echo = FALSE, fig.cap = "Advanced filters"}
 knitr::include_graphics("images/08-correlation/correlation-filters.png")
