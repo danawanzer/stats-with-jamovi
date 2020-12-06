@@ -1,7 +1,7 @@
 ---
 title: "Statistics with jamovi"
 author: "Dana Wanzer"
-date: "Last Update: 2020-11-30"
+date: "Last Update: 2020-12-06"
 site: bookdown::bookdown_site
 output:
   bookdown::pdf_book:

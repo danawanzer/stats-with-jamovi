@@ -1,9 +1,3 @@
-------------------------------------------------------------------------
-
-------------------------------------------------------------------------
-
-# (PART) Regression {.unnumbered}
-
 # Regression
 
 
@@ -75,7 +69,7 @@ Let's imagine we have a dataset of dragons with a categorical predictor (whether
 
 We determine our line equation from the scatterplot of scores by figuring out the line that fits closest to all data points. The regression line is the line with the *smallest* residuals between the line and data points.
 
-Let's visualize the regression line for how Dan's sleepiness affect Dan's grumpiness. On the left, we see the regression line (in purple) is very close to the data points and the residuals (the grey lines between the purple line and the data points) are smalle. On the right, we see the regression line is far from a lot of the data points and the residuals are larger.
+Let's visualize the regression line for how Dan's sleepiness affect Dan's grumpiness. On the left, we see the regression line (in purple) is very close to the data points and the residuals (the grey lines between the purple line and the data points) are smaller. On the right, we see the regression line is far from a lot of the data points and the residuals are larger.
 
 \begin{figure}
 
@@ -170,7 +164,7 @@ To examine linearity and homoscedasticity, two of the assumptions of regression,
 
 \begin{figure}
 
-{\centering \includegraphics[width=0.49\linewidth]{images/13-regression/regression-residuals} \includegraphics[width=0.49\linewidth]{images/13-regression/regression-residuals2} \includegraphics[width=0.49\linewidth]{images/13-regression/regression-residuals3} \includegraphics[width=0.49\linewidth]{images/13-regression/regression-residuals4} 
+{\centering \includegraphics[width=0.49\linewidth]{images/13-regression/regression-residuals.pngimages/13-regression/regression-residuals3} \includegraphics[width=0.49\linewidth]{images/13-regression/regression-residuals2.pngimages/13-regression/regression-residuals4} 
 
 }
 

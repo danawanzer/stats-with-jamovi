@@ -302,7 +302,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="12.4" data-path="mcnemars-test.html"><a href="mcnemars-test.html#performing-mcnemars-test-in-jamovi"><i class="fa fa-check"></i><b>12.4</b> Performing McNemar’s test in jamovi</a></li>
 <li class="chapter" data-level="12.5" data-path="mcnemars-test.html"><a href="mcnemars-test.html#interpreting-results-7"><i class="fa fa-check"></i><b>12.5</b> Interpreting results</a></li>
 </ul></li>
-<li class="part"><span><b>V Regression</b></span></li>
 <li class="chapter" data-level="13" data-path="regression.html"><a href="regression.html"><i class="fa fa-check"></i><b>13</b> Regression</a>
 <ul>
 <li class="chapter" data-level="13.1" data-path="regression.html"><a href="regression.html#what-is-regression"><i class="fa fa-check"></i><b>13.1</b> What is regression?</a></li>
@@ -532,7 +531,7 @@ Figure 4.2: Testing linearity in jamovi
 </div>
 <div id="interpreting-results-4" class="section level2" number="8.7">
 <h2><span class="header-section-number">8.7</span> Interpreting results</h2>
-<p>Once we are satisfied we have satisfied the assumptions for the independent t-test, we can interpret our results.</p>
+<p>Once we are satisfied we have satisfied the assumptions for the correlation, we can interpret our results.</p>
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-9"></span>
 <img src="images/08-correlation/correlation-matrix.png" alt="Correlation results in jamovi" width="100%" />
 <p class="caption">
@@ -556,7 +555,7 @@ Figure 4.3: Correlation results in jamovi
 </div>
 <div id="comparing-strengths-of-correlations" class="section level2" number="8.10">
 <h2><span class="header-section-number">8.10</span> Comparing strengths of correlations</h2>
-<p>Sometimes you want to compare two correlations to find out if one correlation is significantly stronger than another. You can use this calculator to calculate the p-value: <a href="www.psychometrica.de/correlation.html">www.psychometrica.de/correlation.html</a></p>
+<p>Sometimes you want to compare two correlations to find out if one correlation is significantly stronger than another. You can use this calculator to calculate the p-value: <a href="https://www.psychometrica.de/correlation.html">Testing the Significance of Correlations</a></p>
 <p>Note that you use #1 (Independent Samples) when the correlations come from different samples and #2 (Dependent Samples) when the correlations come from the same sample. For example, to compare the correlation between English and Reading to the correlation between English and Writing, you would use #2 (Dependent Samples). But to compare the correlations between English and Reading for men and women, you would use #1 (Independent Samples).</p>
 <p>Let’s try them both with our <a href="https://github.com/danawanzer/stats-with-jamovi/blob/master/data/Sample_Dataset_2014.xlsx">Sample_Dataset_2014.xlsx</a>.</p>
 <ol style="list-style-type: decimal">
@@ -565,7 +564,7 @@ Figure 4.3: Correlation results in jamovi
 <p>We want to test the correlations between English and Reading for men and women. We first need to gather those correlations in jamovi. We can do this through <strong>filters</strong>.</p>
 <p>Let’s first find the correlation for men. Go to the Data tab in jamovi, click Filters, and enter in the <span class="math inline">\(\int_x\)</span> = Gender == 0. Next, go to the Analyses tab in jamovi, click Regression, and choose Correlation Matrix. Move our two variables over (<code>English</code> and <code>Reading</code>) and check the box for <code>N</code>. You should get <em>r</em> = .36, <em>p</em> &lt; .001, <em>n</em> = 181.</p>
 <p>Now let’s find the correlation for women. Go back to the Data tab in jamovi, click Filters, and change the equation to <span class="math inline">\(\int_x\)</span> = Gender == 1. Your results should automatically update because the filter changed. For women, you should get <em>r</em> = .33, <em>p</em> &lt; .001, <em>n</em> = 210.</p>
-<p>Now we can compare the correlations in our <a href="https://www.psychometrica.de/correlation.html">Testing the Significance of Correlations</a> webpage, #1. In Correlation 1, put 181 in the n column and .36 in the r column. In Correlation 2, put 210 in the n column and .33 in the r column. The results are shown below. The z-score is not statistically significant (<em>p</em> = .369) so there is no significant difference in correlation strength.</p>
+<p>Now we can compare the correlations in <a href="https://www.psychometrica.de/correlation.html#independent">Testing the Significance of Correlations - Independent Samples</a>. In Correlation 1, put 181 in the n column and .36 in the r column. In Correlation 2, put 210 in the n column and .33 in the r column. The results are shown below. The z-score is not statistically significant (<em>p</em> = .369) so there is no significant difference in correlation strength.</p>
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-10"></span>
 <img src="images/08-correlation/compare-correlations-independent.png" alt="Comparison of correlations from independent samples" width="100%" />
 <p class="caption">
@@ -578,7 +577,7 @@ Figure 4.4: Comparison of correlations from independent samples
 <p>Now let’s test whether the correlation between English and Reading differs from the correlation between English and Writing.</p>
 <p>Notice how we have three tests we are comparing: (1) English, (2) Reading, and (3) Writing. We can’t use this test if we are testing the correlation between variables A and B and the correlation between variables C and D. There needs to be overlap.</p>
 <p>If you still have your filter on in your dataset from the previous analysis, turn it off. Go to the Data tab, click Filters, and either select the X to delete it or toggle the active button so it’s turned off. Return to your Correlation Matrix results and click on it to edit it. Add Writing to the box.</p>
-<p>However, we have a problem! The <a href="https://www.psychometrica.de/correlation.html">Testing the Significance of Correlations</a> webpage (#2) wants a single N, but our correlation matrix has different Ns because of missing data. What can we do? We need to chain filters! Go back to your Data tab, click Filters, and add three filters like below (note: this is how you can get <em>listwise deletion</em> in jamovi):</p>
+<p>However, we have a problem! The <a href="https://www.psychometrica.de/correlation.html#dependent">Testing the Significance of Correlations - Dependent Samples</a> webpage (#2) wants a single N, but our correlation matrix has different Ns because of missing data. What can we do? We need to chain filters! Go back to your Data tab, click Filters, and add three filters like below (note: this is how you can get <em>listwise deletion</em> in jamovi):</p>
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-11"></span>
 <img src="images/08-correlation/correlation-filters.png" alt="Advanced filters" width="100%" />
 <p class="caption">

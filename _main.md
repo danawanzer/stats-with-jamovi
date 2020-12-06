@@ -1,7 +1,7 @@
 ---
 title: "Statistics with jamovi"
 author: "Dana Wanzer"
-date: "Last Update: 2020-11-30"
+date: "Last Update: 2020-12-06"
 site: bookdown::bookdown_site
 output:
   bookdown::pdf_book:
@@ -1766,7 +1766,7 @@ The scatterplots above do not suggest a non-linear relationship, so we meet the 
 
 ## Interpreting results
 
-Once we are satisfied we have satisfied the assumptions for the independent t-test, we can interpret our results.
+Once we are satisfied we have satisfied the assumptions for the correlation, we can interpret our results.
 
 \begin{figure}
 
@@ -1795,7 +1795,7 @@ What about Kendall's tau? It will likely give you the same results as Spearman's
 
 ## Comparing strengths of correlations
 
-Sometimes you want to compare two correlations to find out if one correlation is significantly stronger than another. You can use this calculator to calculate the p-value: [www.psychometrica.de/correlation.html](www.psychometrica.de/correlation.html)
+Sometimes you want to compare two correlations to find out if one correlation is significantly stronger than another. You can use this calculator to calculate the p-value: [Testing the Significance of Correlations](https://www.psychometrica.de/correlation.html)
 
 Note that you use \#1 (Independent Samples) when the correlations come from different samples and \#2 (Dependent Samples) when the correlations come from the same sample. For example, to compare the correlation between English and Reading to the correlation between English and Writing, you would use \#2 (Dependent Samples). But to compare the correlations between English and Reading for men and women, you would use \#1 (Independent Samples).
 
@@ -1809,7 +1809,7 @@ Let's first find the correlation for men. Go to the Data tab in jamovi, click Fi
 
 Now let's find the correlation for women. Go back to the Data tab in jamovi, click Filters, and change the equation to $\int_x$ = Gender == 1. Your results should automatically update because the filter changed. For women, you should get *r* = .33, *p* \< .001, *n* = 210.
 
-Now we can compare the correlations in our [Testing the Significance of Correlations](https://www.psychometrica.de/correlation.html) webpage, \#1. In Correlation 1, put 181 in the n column and .36 in the r column. In Correlation 2, put 210 in the n column and .33 in the r column. The results are shown below. The z-score is not statistically significant (*p* = .369) so there is no significant difference in correlation strength.
+Now we can compare the correlations in [Testing the Significance of Correlations - Independent Samples](https://www.psychometrica.de/correlation.html#independent). In Correlation 1, put 181 in the n column and .36 in the r column. In Correlation 2, put 210 in the n column and .33 in the r column. The results are shown below. The z-score is not statistically significant (*p* = .369) so there is no significant difference in correlation strength.
 
 \begin{figure}
 
@@ -1828,7 +1828,7 @@ Notice how we have three tests we are comparing: (1) English, (2) Reading, and (
 
 If you still have your filter on in your dataset from the previous analysis, turn it off. Go to the Data tab, click Filters, and either select the X to delete it or toggle the active button so it's turned off. Return to your Correlation Matrix results and click on it to edit it. Add Writing to the box.
 
-However, we have a problem! The [Testing the Significance of Correlations](https://www.psychometrica.de/correlation.html) webpage (\#2) wants a single N, but our correlation matrix has different Ns because of missing data. What can we do? We need to chain filters! Go back to your Data tab, click Filters, and add three filters like below (note: this is how you can get *listwise deletion* in jamovi):
+However, we have a problem! The [Testing the Significance of Correlations - Dependent Samples](https://www.psychometrica.de/correlation.html#dependent) webpage (\#2) wants a single N, but our correlation matrix has different Ns because of missing data. What can we do? We need to chain filters! Go back to your Data tab, click Filters, and add three filters like below (note: this is how you can get *listwise deletion* in jamovi):
 
 \begin{figure}
 
@@ -2216,7 +2216,7 @@ The first table shows us our observed frequencies. The second table gives us our
 
 We can write up our results in APA something like this:
 
-> Pearson's $\chi^2$ test of independence showed a significant association between species and choice, $\chi^2$ (2) = 10.72, *p* = .005. Robots appeared to be more likely to say they prefer flowers and humans appeared to be more likely to say they prefer data.
+> Pearson's $\chi^2$ test of independence showed a significant association between species and choice, $\chi^2$ (2) = 10.72, *p* = .005, Cramer's V = .24. Robots appeared to be more likely to say they prefer flowers and humans appeared to be more likely to say they prefer data.
 
 I would either write-up the observed frequencies above or, ideally, I would share the contingency table with my observed frequencies.
 
@@ -2339,12 +2339,6 @@ We can write up our results in APA something like this:
 
 <!--chapter:end:12-mcnemar.Rmd-->
 
-------------------------------------------------------------------------
-
-------------------------------------------------------------------------
-
-# (PART) Regression {.unnumbered}
-
 # Regression
 
 
@@ -2416,7 +2410,7 @@ Let's imagine we have a dataset of dragons with a categorical predictor (whether
 
 We determine our line equation from the scatterplot of scores by figuring out the line that fits closest to all data points. The regression line is the line with the *smallest* residuals between the line and data points.
 
-Let's visualize the regression line for how Dan's sleepiness affect Dan's grumpiness. On the left, we see the regression line (in purple) is very close to the data points and the residuals (the grey lines between the purple line and the data points) are smalle. On the right, we see the regression line is far from a lot of the data points and the residuals are larger.
+Let's visualize the regression line for how Dan's sleepiness affect Dan's grumpiness. On the left, we see the regression line (in purple) is very close to the data points and the residuals (the grey lines between the purple line and the data points) are smaller. On the right, we see the regression line is far from a lot of the data points and the residuals are larger.
 
 \begin{figure}
 
@@ -2511,7 +2505,7 @@ To examine linearity and homoscedasticity, two of the assumptions of regression,
 
 \begin{figure}
 
-{\centering \includegraphics[width=0.49\linewidth]{images/13-regression/regression-residuals} \includegraphics[width=0.49\linewidth]{images/13-regression/regression-residuals2} \includegraphics[width=0.49\linewidth]{images/13-regression/regression-residuals3} \includegraphics[width=0.49\linewidth]{images/13-regression/regression-residuals4} 
+{\centering \includegraphics[width=0.49\linewidth]{images/13-regression/regression-residuals.pngimages/13-regression/regression-residuals3} \includegraphics[width=0.49\linewidth]{images/13-regression/regression-residuals2.pngimages/13-regression/regression-residuals4} 
 
 }
 
