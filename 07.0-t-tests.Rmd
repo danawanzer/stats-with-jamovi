@@ -1,0 +1,15 @@
+# Independent t-test
+
+```{r ind-t_setup, echo = FALSE, message=FALSE}
+library(tidyverse)
+library(webex)
+options(knitr.graphics.auto_pdf = TRUE)
+```
+
+The t-test looks at difference in means between two things (e.g., groups, time, observations). There are three different types of t-tests:
+
+1.  The **one-sample t-test** tests how the sample mean relates to the population mean.
+
+2.  The **independent t-test** has *independent* groups. The participants or things in group 1 are *not* the same as the participants or things in group 2.
+
+3.  The **dependent t-test** has *dependent* or *paired* data. The dependent variable is measured at two different times or for two different conditions for all participants or things.
