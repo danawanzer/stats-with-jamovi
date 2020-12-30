@@ -1,0 +1,77 @@
+## The math behind the correlation
+
+```{block, type = "info"}
+If the math below makes your eyes glaze over, you can skip it. This is presented for those who find it useful to understand the math behind the statistics to help understand what's happening.
+```
+
+Remember back to our equation for variance ($s^2$):
+
+$variance (x) = \frac{\sum(x_i-\bar{x})^2}{N - 1} = \frac{\sum(x_i-\bar{x})(x_i-\bar{x})}{N - 1}$
+
+The variance is for a single variance, whereas the covariance is for two variables (co-variance). Therefore, we can modify our equation slightly to get to our covariance (cov):
+
+$cov(x,y) = \frac{\sum(x_i-\bar{x})(y_i-\bar{y})}{N - 1}$
+
+Let's visualize our example data above. The horizontal line is our mean for each of the variables ($\bar{x}$ and $\bar{y}$) and the vertical lines are our deviations (($x_i - \bar{x}$) and ($y_i - \bar{y}$).
+
+```{r echo = FALSE}
+correlation <- 
+  data.frame(
+    ID = c(1L, 2L, 3L, 4L, 5L, 6L, 7L, 8L, 9L, 10L),
+    SAT = c(1347L,957L,1247L,975L,1304L,
+            1169L,930L,1038L,990L,1043L),
+    ACT = c(34L, 8L, 31L, 11L, 33L, 16L, 8L, 13L, 12L, 14L))
+
+corr_long <-
+  correlation %>%
+  pivot_longer(-ID) %>%
+  rename(Score = value,
+         Person = ID) %>%
+  group_by(name) %>%
+  mutate(ymean = mean(Score)) %>%
+  ungroup()
+
+corr_mean <- 
+  corr_long %>%
+  group_by(name) %>%
+  mutate(ymean = mean(Score))
+
+corr_long %>%
+  ggplot(aes(Person, Score)) +
+  geom_point() +
+  scale_x_continuous(limits = c(1,10), breaks = 1:10) + 
+  geom_hline(aes(yintercept = ymean)) +
+  geom_segment(aes(x = Person, xend = Person, 
+                      y = Score, yend = ymean),
+              linetype = "dotted",
+              color = "red") +
+  facet_grid(rows = vars(name), scales = "free_y") +
+  theme_classic() +
+  theme(panel.border = element_rect(linetype = "solid", fill = NA))
+```
+
+We can then calculate our covariance:
+
+$cov(SAT,ACT) = \frac{\sum(x_i-\bar{x})(y_i-\bar{y})}{N - 1}$
+
+$cov(SAT,ACT) = \frac{(1347-1100)(34-18) + (957-1100)(8-18) + \ldots + (990-1100)(12-18)(1043-1100)(14-18)}{10 - 1}$
+
+$cov(SAT,ACT) = \frac{(247)(16) + (-143)(-10) + \ldots + (-110)(-6) + (-57)(-4)}{9}$
+
+$cov(SAT,ACT) = \frac{3452 + 1430 + \ldots + 660 + 228}{9} \frac{13988}{9} = 1554.222$
+
+The problem with the covariance is that it depends on the scales of measurement used. It's not a *standardized* scale. To standardize our covariance into our correlation, we need to divide our covariance by the product of our standard deviations ($s_{SAT}$ = 153.898, $s_{ACT}$ = 10.435):
+
+$r = \frac{cov_{xy}}{s_x s_y} = \frac{1554.222}{153.898 *10.435} = .968$
+
+Therefore, we can see there is a strong, positive correlation between SAT and ACT scores in our sample.
+
+You might be asking, "But what's the p-value?" For that, we need to convert our *r* into a *t*-score:
+
+$t_r = \frac{r \sqrt{N-2}}{\sqrt{1-r^2}} = \frac{.968 \sqrt{8}}{\sqrt{1-.9409}} = \frac{2.737}{.243} = 11.26$
+
+We can then look up our *t*-score on our critical *t* table to find our p-value based on df = N-2.
+
+**Practice**: Is the correlation coefficient of .5 with N=30 statistically significant? `r mcq(c(answer = "yes", "no"))`[^correlation-1]
+
+[^correlation-1]: If you do your calculation correctly, you should get a $t_r$ = 3.06. In the *t* table for a two-tailed *p*-value of .05 and degrees of freedom of 28 (N-2), the critical *t* value is 2.048. Our *t*-value of 3.06 is greater than the critical *t*-value of 2.048, so we can say it is statistically significant (*p* \< .05).

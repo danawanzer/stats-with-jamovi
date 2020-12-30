@@ -1,0 +1,217 @@
+## One-way ANOVA
+
+```{r ind-t_setup, echo = FALSE, message=FALSE}
+library(tidyverse)
+library(webex)
+options(knitr.graphics.auto_pdf = TRUE)
+```
+
+### Overview
+
+The one-way analysis of variance (ANOVA) is used to test the difference in our dependent variable between [three or more]{.ul} different groups of observations. Our grouping variable is our independent variable. In other words, we use the one-way ANOVA when we have a research question with a **continuous dependent variable** and a **categorical independent variable with three or more categories in which different participants are in each category**.
+
+The one-way ANOVA is also known as an independent factor ANOVA.
+
+One thing to keep in mind is the one-way ANOVA is an omnibus statistic that tests against the null hypothesis that the three or more means are the same. It does not tell us where the mean differences are (e.g., that 1 \> 2); for that, we need planned contrasts or post-hoc procedures, which you'll learn about later. Therefore, the null and alternative hypotheses for the one-way ANOVA are as follows:
+
+-   $H_0$: There is **no difference** in means between the groups. In other words, the means for the three or more groups are the **same**.
+-   $H_1$: There is **a difference** in means between the groups. In other words, the means for the three or more groups are **different**.
+
+#### Why not multiple t-tests?
+
+In the example above, we have three groups: fall, spring, and summer. We could just perform three separate t-tests: fall vs. spring, fall vs. summer, and spring vs. summer.
+
+However, the reason we do not perform multiple t-tests is to reduce our Type I error rate. If I had performed three separate t-tests, set my alpha (Type I error rate) at 5%, and knew for a fact the effects do not actually exist, then each test has a probability of a Type I error rate of 5%. Because we are running three tests, our alpha rate actually becomes 1 - (.95^3^)= 1 - .857 = 14.3%! So now our *familywise* or *experimentwise* error rate is 14.3%, not the 5% we originally set alpha at.
+
+With three groups, that's not so bad, but let's see what happens with more tests we perform:
+
+-   **1 test**: 1 - (.95^1^)= 1 - .95 = **5%**
+-   **2 tests**: 1 - (.95^2^)= 1 - .9025 = **9.8%**
+-   **3 tests**: 1 - (.95^3^)= 1 - .857 = **14.3%**
+-   **4 tests**: 1 - (.95^4^)= 1 - .814 = **18.6%**
+-   **5 tests**: 1 - (.95^5^)= 1 - .774 = **22.6%**
+-   **10 tests**: 1 - (.95^10^)= 1 - .598 = **40.1%**
+-   **20 tests**: 1 - (.95^20^)= 1 - .358 = **64.1%**
+
+Ouch! 10 tests would have a Type I error rate of 40%! That means that if we performed 10 statistical tests (assuming the effect does not exist), then 40% of the results would be statistically significant by chance alone and would be a false positive. That's not good!
+
+Therefore, we use the one-way ANOVA as one test to see if there is a difference overall. We can also do things to control or limit our familywise error rate, which I'll get into later.
+
+### Look at the data
+
+DATASET INFO
+
+#### Data set-up
+
+To conduct the one-way ANOVA, we first need to ensure our data is set-up properly in our dataset. This requires having two columns: one with our continuous dependent variable and one indicating which group the participant is in. Each row is a unique participant or unit of analysis.
+
+INCLUDE DATASET HERE
+
+In the data above, what is your **independent variable**? `r mcq(c("ID", answer = "Semester", "TestScore"))`
+
+In the data above, what is your **dependent variable**? `r mcq(c("ID", "Semester", answer = "TestScore"))`
+
+#### Describe the data
+
+### Check assumptions {#anova-assumptions}
+
+#### Assumptions
+
+As a parametric test, the one-way ANOVA has the same assumptions as other parametric tests:
+
+1.  The dependent variable is **normally distributed**
+
+2.  Variances in the two groups are roughly equal (i.e., **homogeneity of variances**)
+
+3.  The dependent variable is **interval or ratio** (i.e., continuous)
+
+4.  Scores are **independent** between groups
+
+We cannot *test* the third and fourth assumptions; rather, those are based on knowing your data. 
+
+However, we can and should test for the first two assumptions. Fortunately, the one-way ANOVA in jamovi has three check boxes under "Assumption Checks" that lets us test for both assumptions.
+
+#### ANOVA is robust to violations
+
+Although we should meet the assumptions as much as possible, in general the F-statistic is *robust* to violations of normality and homogeneity of variance. This means that you can still run the one-way ANOVA if you violate the assumptions, but *only when group sizes are equal or nearly equal*. If you have vastly different variances (such as 2:1 ratio or greater) or vastly different group sizes (such as a 2:1 ratio or greater), and especially if one group is small (such as 10 or fewer cases), then your F-statistic is likely to be very wrong. For example, if your larger group has the larger variance, then your F-statistic is likely to be non-significant or smaller than it should be; however, if your larger group has smaller variance,then your F-statistic is likely to be significant or bigger than it should be!
+
+#### Checking assumptions
+
+We test for normality using the Shapiro-Wilk test and the Q-Q plot. The Shapiro-Wilk test was not statistically significant (W = .96, *p* = .605); therefore, this indicates the data is normally distributed. Furthermore, the lines are fairly close to the diagonal line in the Q-Q plot. We can conclude that we satisfy the assumption of normality.
+
+We test for homogeneity of variance using the Levene's test. The Levene's test was not statistically significant (*F* [2, 15] = 1.45, *p* = .266); therefore, this indicates our data satisfies the assumption of homogeneity of variance. However, I would add a caveat that we have a small sample of data (*N* = 18); we should have tried to collect more data.
+
+```{r echo = FALSE, fig.cap = "Testing assumptions in jamovi"}
+knitr::include_graphics("images/04_one-way-anova/one-way_assumptions1.png")
+```
+
+```{r echo = FALSE, fig.cap = "Testing assumptions in jamovi"}
+knitr::include_graphics("images/04_one-way-anova/one-way_assumptions2.png")
+```
+
+### Perform the test
+
+Let's run an example with data from lsj-data. Open data from your Data Library in "lsj-data". Select and open "clinicaltrial". This dataset is hypothetical data of a clinical trial in which you are testing a new antidepressant drug called *Joyzepam*. In order to construct a fair test of the drug's effectiveness, the study involves three separate drugs to be administered. One is a placebo, and the other is an existing antidepressant / anti-anxiety drug called *Anxifree*. A collection of 18 participants with moderate to severe depression are recruited for your initial testing. Because the drugs are sometimes administered in conjunction with psychological therapy, your study includes 9 people undergoing cognitive behavioral therapy (CBT) and 9 who are not. Participants are randomly assigned (doubly blinded, of course) a treatment, such that there are 3 CBT people and 3 no-therapy people assigned to each of the 3 drugs. A psychologist assesses the mood of each person after a 3 month run with each drug, and the overall improvement in each person's mood is assessed on a scale ranging from -5 to +5.
+
+**Note**: Do not use the one-way ANOVA analysis in jamovi! The options there are too limited for our use. Instead, be sure you use ANOVA!
+
+1.  To perform a one-way ANOVA in jamovi, go to the Analyses tab, click the **ANOVA** button, and choose "ANOVA". You might be asking why we aren't choosing "One-Way ANOVA" and that's because the options there are too limited.
+
+2.  Move your dependent variable `mood.gain` to the Dependent Variable box and your independent variable `drug` to the Fixed Factors box.
+
+3.  Select $\omega^2$ (omega-squared) for your effect size.
+
+4.  Ignore the Model drop-down menu. If you are doing more complicated ANOVAs you will need this. We will ignore it.
+
+5.  In the Assumption Checks drop-down menu, select all three options: `Homogeneity test`, `Normality test`, and `Q-Q plot`.
+
+6.  Ignore the Contrasts and Post Hoc Tests drop-down menus for now. See below for more information on them.
+
+7.  In the Estimated Marginal Means drop-down menu, move your IV `drug` to the Marginal Means box and select `Marginal means plots`, `Marginal means tables`, and `Observed scores`, in addition to the pre-selected `Equal cell weights`.
+
+When you are done, your setup should look like this:
+
+```{r echo = FALSE, fig.cap = "One-way ANOVA setup in jamovi", out.width = "80%"}
+knitr::include_graphics("images/04_one-way-anova/one-way_setup.png")
+```
+
+### Interpret results
+
+Once we are satisfied we have satisfied the assumptions for the one-way ANOVA, we can interpret our results.
+
+```{r echo = FALSE, fig.cap = "One-way ANOVA results in jamovi"}
+knitr::include_graphics("images/04_one-way-anova/one-way_results.png")
+```
+
+Our p-value is less than .05, so our results are statistically significant. 
+
+#### Write up the results in APA style
+
+We can write up our results in APA something like this:
+
+> There is a significant difference in mood gain across the three drug conditions, *F* (2, 15) = 18.61, *p* \< .001, $\omega^2$ = .66.
+
+Sometimes, people like to put the statistics inside a parentheses. In that case, you need to change the parentheses around the degrees of freedom as brackets. Here's another example write-up of the results in APA style:
+
+> There is a significant difference in mood gain across the three drug conditions (*F* [2, 15] = 18.61, *p* \< .001, $\omega^2$ = .66).
+
+#### Visualize the results
+
+### In case of violated assumptions
+
+The great news is that jamovi includes the Welch's F-statistic and the Kruskal-Wallis non-parametric test! The bad news is that you lose some functionality in jamovi when you use them. Just like with the Welch's t-statistic (for the independent t-test), it does not have the assumption of equal variances so it's appropriate to use if your data is normally distributed but does not have homogeneous variances. Similarly, the Kruskal-Wallis test is the non-parametric version of the one-way ANOVA and should be used if you do not satisfy the assumption of normality.
+
+Here's what statistic you should choose based on satisfying assumptions:
+
+|                                            | **Normality: satisfied** | **Normality: not satisfied** |
+|--------------------------------------------|--------------------------|------------------------------|
+| **Homogeneity of Variance: satisfied**     | one-way ANOVA            | Kruskal-Wallis               |
+| **Homogeneity of Variance: not satisfied** | Welch's F-test           | Kruskal-Wallis               |
+
+#### Welch's F-test
+
+To conduct this in jamovi, you will need to use the "One-Way ANOVA" test, not the "ANOVA" test. The unfortunate thing about this test is that it strangely does not provide effect sizes.
+
+In jamovi, under Variances select `Don't assume equal (Welch's)`. Move `mood.gain` to the Dependent Variable box and `drug` to your Grouping Variable box. You will interpret the results similarly to the one-way ANOVA:
+
+```{r echo = FALSE, fig.cap = "One-way ANOVA results in jamovi"}
+knitr::include_graphics("images/04_one-way-anova/one-way_results_Welch.png")
+```
+
+> Using a Welch's F-test, there is a significant difference in mood gain across the three drug conditions, *F* (2, 9.49) = 26.32, *p* \< .001.
+
+#### Kruskal-Wallis test
+
+To perform the Kruskal-Wallis test in jamovi, you will need to select under the ANOVA button "One-Way ANOVA, Kruskal Wallis" towards the bottom of the list of options. Move `mood.gain` to the Dependent Variables box and `drug` to the Grouping Variable box. Select Effect size; if you need post hoc comparisons select DSCF pairwise comparisons (see section below on group differences). You will interpret the results similarly to the one-way ANOVA:
+
+```{r echo = FALSE, fig.cap = "Kruskal-Wallis results in jamovi"}
+knitr::include_graphics("images/04_one-way-anova/one-way_results_Kruskal.png")
+```
+
+> Using a Kruskal-Wallis test, there is a significant difference in mood gain across the three drug conditions, $\chi^2$ (2) = 12.08, *p* = .002, $\epsilon^2$ = .71.
+
+Notice how in this case all three results converge and show there is a statistically significant difference in the results! The problem is... differences in which groups?
+
+### Additional information
+
+#### Relationship between ANOVA and t-test
+
+An ANOVA with two groups is identical to the t-test. That means the F and t statistics are directly related, and you will get the same p-value. For example, imagine you run a t-test and get a t-statistic of *t* (16) = -1.31, *p* = .210. If you ran it as a one-way ANOVA, you would get an F-statistic of *F* (1, 16) = 1.71, *p* = .210.
+
+$F = t^2$
+
+$t = \sqrt{F}$
+
+Just a fun little bit of trivia! So if you accidentally do an F-test with two groups, no need to go back and redo the analyses (although you should if you are sharing your code for reproducibility). You can just convert your F to a t statistic easily!
+
+#### A note on one-tailed vs. two-tailed tests
+
+Unlike a t-test, we would not halve the p-value in an F-ratio because it is an omnibus test. Our planned contrasts or post-hoc tests can tell us where differences are, and we can provide directional hypotheses there if we so choose.
+
+### Your turn!
+
+Open the `Sample_Dataset_2014.xlsx` file that we will be using for all Your Turn exercises. You can find the dataset here: [Sample_Dataset_2014.xlsx Download](https://github.com/danawanzer/stats-with-jamovi/blob/master/data/Sample_Dataset_2014.xlsx)
+
+Perform one-way ANOVAs based on the following research questions. Check your assumptions and ensure you are using the correct tests.
+
+To get the most out of these exercises, try to first find out the answer on your own and then use the drop-down menus to check your answer.
+
+1.  **Does students differ on English scores by rank (i.e., freshmen, sophomore, junior, senior)?**
+
+    -   Do you satisfy the assumption of normality? `r mcq(c(answer = "yes", "no"))`
+
+    -   Do you satisfy the assumption of homogeneity of variance? `r mcq(c(answer = "yes", "no"))`
+
+    -   Which statistic should you use? `r mcq(c(answer = "one-way ANOVA", "Welch's F-test", "Kruskal-Wallis test"))`
+
+    -   Do students differ on English scores by rank? `r mcq(c("yes", answer = "no"))`
+
+2.  **Does smoking status (Smoking: Nonsmoker = 0, Past smoker = 1, Current smoker = 2) relate to sprint time?**
+
+    -   Do you satisfy the assumption of normality? `r mcq(c("yes", answer = "no"))`
+
+    -   Do you satisfy the assumption of homogeneity of variance? `r mcq(c(answer = "yes", "no"))`
+
+    -   Which statistic should you use? `r mcq(c("one-way ANOVA", "Welch's F-test", answer = "Kruskal-Wallis test"))`
+
+    -   Does smoking status relate to sprint time? `r mcq(c(answer = "yes", "no"))`

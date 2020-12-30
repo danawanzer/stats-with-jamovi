@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>7.9 What if I violated assumptions? | Statistics with jamovi</title>
+  <meta name="description" content="This is the website for PSYC 290 and PSYC 790 at the University of Wisconsin-Stout, taught by Dana Wanzer." />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="7.9 What if I violated assumptions? | Statistics with jamovi" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is the website for PSYC 290 and PSYC 790 at the University of Wisconsin-Stout, taught by Dana Wanzer." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="7.9 What if I violated assumptions? | Statistics with jamovi" />
+  
+  <meta name="twitter:description" content="This is the website for PSYC 290 and PSYC 790 at the University of Wisconsin-Stout, taught by Dana Wanzer." />
+  
+
+<meta name="author" content="Dana Wanzer" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="interpreting-results-4.html"/>
+<link rel="next" href="finding-group-differences.html"/>
+<script src="libs/header-attrs-2.6/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="include/psyteachr.css" type="text/css" />
+<link rel="stylesheet" href="include/style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Stats with jamovi</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a></li>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="navigating-the-book.html"><a href="navigating-the-book.html"><i class="fa fa-check"></i><b>1.1</b> Navigating the book</a></li>
+<li class="chapter" data-level="1.2" data-path="quiz-questions.html"><a href="quiz-questions.html"><i class="fa fa-check"></i><b>1.2</b> Quiz questions</a></li>
+<li class="chapter" data-level="1.3" data-path="errors-and-mistakes.html"><a href="errors-and-mistakes.html"><i class="fa fa-check"></i><b>1.3</b> Errors and mistakes</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="t-tests.html"><a href="t-tests.html"><i class="fa fa-check"></i><b>2</b> t-tests</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="one-sample-t-test.html"><a href="one-sample-t-test.html"><i class="fa fa-check"></i><b>2.1</b> One sample t-test</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="one-sample-t-test.html"><a href="one-sample-t-test.html#overview"><i class="fa fa-check"></i><b>2.1.1</b> Overview</a></li>
+<li class="chapter" data-level="2.1.2" data-path="one-sample-t-test.html"><a href="one-sample-t-test.html#look-at-the-data"><i class="fa fa-check"></i><b>2.1.2</b> Look at the data</a></li>
+<li class="chapter" data-level="2.1.3" data-path="one-sample-t-test.html"><a href="one-sample-t-test.html#check-assumptions"><i class="fa fa-check"></i><b>2.1.3</b> Check assumptions</a></li>
+<li class="chapter" data-level="2.1.4" data-path="one-sample-t-test.html"><a href="one-sample-t-test.html#perform-the-test"><i class="fa fa-check"></i><b>2.1.4</b> Perform the test</a></li>
+<li class="chapter" data-level="2.1.5" data-path="one-sample-t-test.html"><a href="one-sample-t-test.html#interpret-results"><i class="fa fa-check"></i><b>2.1.5</b> Interpret results</a></li>
+<li class="chapter" data-level="2.1.6" data-path="one-sample-t-test.html"><a href="one-sample-t-test.html#in-case-of-violated-assumptions"><i class="fa fa-check"></i><b>2.1.6</b> In case of violated assumptions</a></li>
+<li class="chapter" data-level="2.1.7" data-path="one-sample-t-test.html"><a href="one-sample-t-test.html#additional-information"><i class="fa fa-check"></i><b>2.1.7</b> Additional information</a></li>
+<li class="chapter" data-level="2.1.8" data-path="one-sample-t-test.html"><a href="one-sample-t-test.html#your-turn"><i class="fa fa-check"></i><b>2.1.8</b> Your turn!</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="independent-t-test.html"><a href="independent-t-test.html"><i class="fa fa-check"></i><b>2.2</b> Independent t-test</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="independent-t-test.html"><a href="independent-t-test.html#overview-1"><i class="fa fa-check"></i><b>2.2.1</b> Overview</a></li>
+<li class="chapter" data-level="2.2.2" data-path="independent-t-test.html"><a href="independent-t-test.html#look-at-the-data-1"><i class="fa fa-check"></i><b>2.2.2</b> Look at the data</a></li>
+<li class="chapter" data-level="2.2.3" data-path="independent-t-test.html"><a href="independent-t-test.html#check-assumptions-1"><i class="fa fa-check"></i><b>2.2.3</b> Check assumptions</a></li>
+<li class="chapter" data-level="2.2.4" data-path="independent-t-test.html"><a href="independent-t-test.html#perform-the-test-1"><i class="fa fa-check"></i><b>2.2.4</b> Perform the test</a></li>
+<li class="chapter" data-level="2.2.5" data-path="independent-t-test.html"><a href="independent-t-test.html#interpret-results-1"><i class="fa fa-check"></i><b>2.2.5</b> Interpret results</a></li>
+<li class="chapter" data-level="2.2.6" data-path="independent-t-test.html"><a href="independent-t-test.html#in-case-of-violated-assumptions-1"><i class="fa fa-check"></i><b>2.2.6</b> In case of violated assumptions</a></li>
+<li class="chapter" data-level="2.2.7" data-path="independent-t-test.html"><a href="independent-t-test.html#your-turn-1"><i class="fa fa-check"></i><b>2.2.7</b> Your turn!</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="dependent-t-test.html"><a href="dependent-t-test.html"><i class="fa fa-check"></i><b>2.3</b> Dependent t-test</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="dependent-t-test.html"><a href="dependent-t-test.html#overview-2"><i class="fa fa-check"></i><b>2.3.1</b> Overview</a></li>
+<li class="chapter" data-level="2.3.2" data-path="dependent-t-test.html"><a href="dependent-t-test.html#look-at-the-data-2"><i class="fa fa-check"></i><b>2.3.2</b> Look at the data</a></li>
+<li class="chapter" data-level="2.3.3" data-path="dependent-t-test.html"><a href="dependent-t-test.html#check-assumptions-2"><i class="fa fa-check"></i><b>2.3.3</b> Check assumptions</a></li>
+<li class="chapter" data-level="2.3.4" data-path="dependent-t-test.html"><a href="dependent-t-test.html#perform-the-test-2"><i class="fa fa-check"></i><b>2.3.4</b> Perform the test</a></li>
+<li class="chapter" data-level="2.3.5" data-path="dependent-t-test.html"><a href="dependent-t-test.html#interpreting-results"><i class="fa fa-check"></i><b>2.3.5</b> Interpreting results</a></li>
+<li class="chapter" data-level="2.3.6" data-path="dependent-t-test.html"><a href="dependent-t-test.html#in-case-of-violated-assumptions-2"><i class="fa fa-check"></i><b>2.3.6</b> In case of violated assumptions</a></li>
+<li class="chapter" data-level="2.3.7" data-path="dependent-t-test.html"><a href="dependent-t-test.html#your-turn-2"><i class="fa fa-check"></i><b>2.3.7</b> Your turn!</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>I Categorical Data Analysis</b></span></li>
+<li class="chapter" data-level="3" data-path="categorical-data-analysis.html"><a href="categorical-data-analysis.html"><i class="fa fa-check"></i><b>3</b> Categorical Data Analysis</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="what-is-categorical-data-analysis.html"><a href="what-is-categorical-data-analysis.html"><i class="fa fa-check"></i><b>3.1</b> What is categorical data analysis?</a></li>
+<li class="chapter" data-level="3.2" data-path="assumptions.html"><a href="assumptions.html"><i class="fa fa-check"></i><b>3.2</b> Assumptions</a></li>
+<li class="chapter" data-level="3.3" data-path="what-types-of-categorical-data-analyses-are-there.html"><a href="what-types-of-categorical-data-analyses-are-there.html"><i class="fa fa-check"></i><b>3.3</b> What types of categorical data analyses are there?</a></li>
+<li class="chapter" data-level="3.4" data-path="what-is-the-effect-size-for-categorical-data-analysis.html"><a href="what-is-the-effect-size-for-categorical-data-analysis.html"><i class="fa fa-check"></i><b>3.4</b> What is the effect size for categorical data analysis?</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="chi-square-goodness-of-fit.html"><a href="chi-square-goodness-of-fit.html"><i class="fa fa-check"></i><b>4</b> Chi-Square Goodness-of-Fit</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="what-is-the-chi-square-goodness-of-fit-test.html"><a href="what-is-the-chi-square-goodness-of-fit-test.html"><i class="fa fa-check"></i><b>4.1</b> What is the chi-square goodness-of-fit test?</a></li>
+<li class="chapter" data-level="4.2" data-path="data-set-up-3.html"><a href="data-set-up-3.html"><i class="fa fa-check"></i><b>4.2</b> Data set-up</a></li>
+<li class="chapter" data-level="4.3" data-path="assumptions-1.html"><a href="assumptions-1.html"><i class="fa fa-check"></i><b>4.3</b> Assumptions</a></li>
+<li class="chapter" data-level="4.4" data-path="performing-the-chi-square-goodness-of-fit-test-in-jamovi.html"><a href="performing-the-chi-square-goodness-of-fit-test-in-jamovi.html"><i class="fa fa-check"></i><b>4.4</b> Performing the chi-square goodness-of-fit test in jamovi</a></li>
+<li class="chapter" data-level="4.5" data-path="interpreting-results-1.html"><a href="interpreting-results-1.html"><i class="fa fa-check"></i><b>4.5</b> Interpreting results</a></li>
+<li class="chapter" data-level="4.6" data-path="different-expected-frequencies.html"><a href="different-expected-frequencies.html"><i class="fa fa-check"></i><b>4.6</b> Different Expected Frequencies</a></li>
+<li class="chapter" data-level="4.7" data-path="your-turn-3.html"><a href="your-turn-3.html"><i class="fa fa-check"></i><b>4.7</b> Your turn!</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="chi-square-test-of-independence.html"><a href="chi-square-test-of-independence.html"><i class="fa fa-check"></i><b>5</b> Chi-Square Test of Independence</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="what-is-the-chi-square-test-of-independence.html"><a href="what-is-the-chi-square-test-of-independence.html"><i class="fa fa-check"></i><b>5.1</b> What is the chi-square test of independence?</a></li>
+<li class="chapter" data-level="5.2" data-path="data-set-up-4.html"><a href="data-set-up-4.html"><i class="fa fa-check"></i><b>5.2</b> Data set-up</a></li>
+<li class="chapter" data-level="5.3" data-path="performing-the-chi-square-test-of-independence-in-jamovi.html"><a href="performing-the-chi-square-test-of-independence-in-jamovi.html"><i class="fa fa-check"></i><b>5.3</b> Performing the chi-square test of independence in jamovi</a></li>
+<li class="chapter" data-level="5.4" data-path="interpreting-results-2.html"><a href="interpreting-results-2.html"><i class="fa fa-check"></i><b>5.4</b> Interpreting results</a></li>
+<li class="chapter" data-level="5.5" data-path="fishers-exact-test.html"><a href="fishers-exact-test.html"><i class="fa fa-check"></i><b>5.5</b> Fisher’s exact test</a></li>
+<li class="chapter" data-level="5.6" data-path="ordinal-variables.html"><a href="ordinal-variables.html"><i class="fa fa-check"></i><b>5.6</b> Ordinal variable(s)</a></li>
+<li class="chapter" data-level="5.7" data-path="your-turn-4.html"><a href="your-turn-4.html"><i class="fa fa-check"></i><b>5.7</b> Your turn!</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="mcnemars-test.html"><a href="mcnemars-test.html"><i class="fa fa-check"></i><b>6</b> McNemar’s Test</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="what-is-mcnemars-test.html"><a href="what-is-mcnemars-test.html"><i class="fa fa-check"></i><b>6.1</b> What is McNemar’s test?</a></li>
+<li class="chapter" data-level="6.2" data-path="data-set-up-5.html"><a href="data-set-up-5.html"><i class="fa fa-check"></i><b>6.2</b> Data set-up</a></li>
+<li class="chapter" data-level="6.3" data-path="performing-mcnemars-test-in-jamovi.html"><a href="performing-mcnemars-test-in-jamovi.html"><i class="fa fa-check"></i><b>6.3</b> Performing McNemar’s test in jamovi</a></li>
+<li class="chapter" data-level="6.4" data-path="interpreting-results-3.html"><a href="interpreting-results-3.html"><i class="fa fa-check"></i><b>6.4</b> Interpreting results</a></li>
+</ul></li>
+<li class="part"><span><b>II ANOVA</b></span></li>
+<li class="chapter" data-level="7" data-path="one-way-anova.html"><a href="one-way-anova.html"><i class="fa fa-check"></i><b>7</b> One-way ANOVA</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="what-is-anova.html"><a href="what-is-anova.html"><i class="fa fa-check"></i><b>7.1</b> What is ANOVA?</a></li>
+<li class="chapter" data-level="7.2" data-path="what-is-the-one-way-anova.html"><a href="what-is-the-one-way-anova.html"><i class="fa fa-check"></i><b>7.2</b> What is the one-way ANOVA?</a></li>
+<li class="chapter" data-level="7.3" data-path="data-set-up-6.html"><a href="data-set-up-6.html"><i class="fa fa-check"></i><b>7.3</b> Data set-up</a></li>
+<li class="chapter" data-level="7.4" data-path="why-not-multiple-t-tests.html"><a href="why-not-multiple-t-tests.html"><i class="fa fa-check"></i><b>7.4</b> Why not multiple t-tests?</a></li>
+<li class="chapter" data-level="7.5" data-path="the-math-behind-the-one-way-anova.html"><a href="the-math-behind-the-one-way-anova.html"><i class="fa fa-check"></i><b>7.5</b> The math behind the one-way ANOVA</a></li>
+<li class="chapter" data-level="7.6" data-path="anova-assumptions.html"><a href="anova-assumptions.html"><i class="fa fa-check"></i><b>7.6</b> Assumptions</a>
+<ul>
+<li class="chapter" data-level="7.6.1" data-path="anova-assumptions.html"><a href="anova-assumptions.html#anova-is-robust-to-violations"><i class="fa fa-check"></i><b>7.6.1</b> ANOVA is robust to violations</a></li>
+</ul></li>
+<li class="chapter" data-level="7.7" data-path="in-jamovi.html"><a href="in-jamovi.html"><i class="fa fa-check"></i><b>7.7</b> In jamovi</a>
+<ul>
+<li class="chapter" data-level="7.7.1" data-path="in-jamovi.html"><a href="in-jamovi.html#checking-assumptions-in-jamovi-3"><i class="fa fa-check"></i><b>7.7.1</b> Checking assumptions in jamovi</a></li>
+</ul></li>
+<li class="chapter" data-level="7.8" data-path="interpreting-results-4.html"><a href="interpreting-results-4.html"><i class="fa fa-check"></i><b>7.8</b> Interpreting results</a>
+<ul>
+<li class="chapter" data-level="7.8.1" data-path="interpreting-results-4.html"><a href="interpreting-results-4.html#a-note-on-one-tailed-vs.-two-tailed-tests"><i class="fa fa-check"></i><b>7.8.1</b> A note on one-tailed vs. two-tailed tests</a></li>
+</ul></li>
+<li class="chapter" data-level="7.9" data-path="what-if-i-violated-assumptions.html"><a href="what-if-i-violated-assumptions.html"><i class="fa fa-check"></i><b>7.9</b> What if I violated assumptions?</a></li>
+<li class="chapter" data-level="7.10" data-path="finding-group-differences.html"><a href="finding-group-differences.html"><i class="fa fa-check"></i><b>7.10</b> Finding Group Differences</a>
+<ul>
+<li class="chapter" data-level="7.10.1" data-path="finding-group-differences.html"><a href="finding-group-differences.html#planned-contrasts"><i class="fa fa-check"></i><b>7.10.1</b> Planned Contrasts</a></li>
+<li class="chapter" data-level="7.10.2" data-path="finding-group-differences.html"><a href="finding-group-differences.html#post-hoc-comparisons"><i class="fa fa-check"></i><b>7.10.2</b> Post hoc comparisons</a></li>
+<li class="chapter" data-level="7.10.3" data-path="finding-group-differences.html"><a href="finding-group-differences.html#group-differences-with-violated-assumptions"><i class="fa fa-check"></i><b>7.10.3</b> Group differences with violated assumptions</a></li>
+</ul></li>
+<li class="chapter" data-level="7.11" data-path="relationship-between-anova-and-t-test.html"><a href="relationship-between-anova-and-t-test.html"><i class="fa fa-check"></i><b>7.11</b> Relationship between ANOVA and t-test</a></li>
+<li class="chapter" data-level="7.12" data-path="tips-on-writing-up-results.html"><a href="tips-on-writing-up-results.html"><i class="fa fa-check"></i><b>7.12</b> Tips on writing up results</a></li>
+<li class="chapter" data-level="7.13" data-path="your-turn-5.html"><a href="your-turn-5.html"><i class="fa fa-check"></i><b>7.13</b> Your turn!</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="repeated-measures-anova.html"><a href="repeated-measures-anova.html"><i class="fa fa-check"></i><b>8</b> Repeated Measures ANOVA</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="what-is-the-repeated-measures-anova.html"><a href="what-is-the-repeated-measures-anova.html"><i class="fa fa-check"></i><b>8.1</b> What is the repeated measures ANOVA?</a></li>
+<li class="chapter" data-level="8.2" data-path="data-set-up-7.html"><a href="data-set-up-7.html"><i class="fa fa-check"></i><b>8.2</b> Data set-up</a></li>
+<li class="chapter" data-level="8.3" data-path="the-math-behind-the-repeated-measures-anova.html"><a href="the-math-behind-the-repeated-measures-anova.html"><i class="fa fa-check"></i><b>8.3</b> The math behind the repeated measures ANOVA</a></li>
+<li class="chapter" data-level="8.4" data-path="assumptions-2.html"><a href="assumptions-2.html"><i class="fa fa-check"></i><b>8.4</b> Assumptions</a>
+<ul>
+<li class="chapter" data-level="8.4.1" data-path="assumptions-2.html"><a href="assumptions-2.html#sphericity-assumption"><i class="fa fa-check"></i><b>8.4.1</b> Sphericity Assumption</a></li>
+</ul></li>
+<li class="chapter" data-level="8.5" data-path="in-jamovi-1.html"><a href="in-jamovi-1.html"><i class="fa fa-check"></i><b>8.5</b> In jamovi</a>
+<ul>
+<li class="chapter" data-level="8.5.1" data-path="in-jamovi-1.html"><a href="in-jamovi-1.html#checking-assumptions-in-jamovi-4"><i class="fa fa-check"></i><b>8.5.1</b> Checking assumptions in jamovi</a></li>
+</ul></li>
+<li class="chapter" data-level="8.6" data-path="interpreting-results-5.html"><a href="interpreting-results-5.html"><i class="fa fa-check"></i><b>8.6</b> Interpreting results</a></li>
+<li class="chapter" data-level="8.7" data-path="what-if-i-violated-assumptions-1.html"><a href="what-if-i-violated-assumptions-1.html"><i class="fa fa-check"></i><b>8.7</b> What if I violated assumptions?</a></li>
+<li class="chapter" data-level="8.8" data-path="tips-on-writing-up-results-1.html"><a href="tips-on-writing-up-results-1.html"><i class="fa fa-check"></i><b>8.8</b> Tips on writing up results</a></li>
+<li class="chapter" data-level="8.9" data-path="your-turn-6.html"><a href="your-turn-6.html"><i class="fa fa-check"></i><b>8.9</b> Your turn!</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="factorial-anova.html"><a href="factorial-anova.html"><i class="fa fa-check"></i><b>9</b> Factorial ANOVA</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="what-is-factorial-anova.html"><a href="what-is-factorial-anova.html"><i class="fa fa-check"></i><b>9.1</b> What is factorial ANOVA?</a></li>
+<li class="chapter" data-level="9.2" data-path="independent-factorial-anova.html"><a href="independent-factorial-anova.html"><i class="fa fa-check"></i><b>9.2</b> Independent Factorial ANOVA</a>
+<ul>
+<li class="chapter" data-level="9.2.1" data-path="independent-factorial-anova.html"><a href="independent-factorial-anova.html#interactions"><i class="fa fa-check"></i><b>9.2.1</b> Interactions</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="repeated-measures-factorial-anova.html"><a href="repeated-measures-factorial-anova.html"><i class="fa fa-check"></i><b>9.3</b> Repeated Measures Factorial ANOVA</a></li>
+<li class="chapter" data-level="9.4" data-path="mixed-factorial-anova.html"><a href="mixed-factorial-anova.html"><i class="fa fa-check"></i><b>9.4</b> Mixed Factorial ANOVA</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="ancova.html"><a href="ancova.html"><i class="fa fa-check"></i><b>10</b> ANCOVA</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="what-is-ancova.html"><a href="what-is-ancova.html"><i class="fa fa-check"></i><b>10.1</b> What is ANCOVA?</a></li>
+<li class="chapter" data-level="10.2" data-path="assumptions-of-ancova.html"><a href="assumptions-of-ancova.html"><i class="fa fa-check"></i><b>10.2</b> Assumptions of ANCOVA</a></li>
+<li class="chapter" data-level="10.3" data-path="ancova-in-jamovi.html"><a href="ancova-in-jamovi.html"><i class="fa fa-check"></i><b>10.3</b> ANCOVA in jamovi</a></li>
+</ul></li>
+<li class="part"><span><b>III Correlation</b></span></li>
+<li class="chapter" data-level="11" data-path="correlation.html"><a href="correlation.html"><i class="fa fa-check"></i><b>11</b> Correlation</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="what-is-correlation.html"><a href="what-is-correlation.html"><i class="fa fa-check"></i><b>11.1</b> What is correlation?</a></li>
+<li class="chapter" data-level="11.2" data-path="data-set-up-8.html"><a href="data-set-up-8.html"><i class="fa fa-check"></i><b>11.2</b> Data set-up</a></li>
+<li class="chapter" data-level="11.3" data-path="assumptions-3.html"><a href="assumptions-3.html"><i class="fa fa-check"></i><b>11.3</b> Assumptions</a></li>
+<li class="chapter" data-level="11.4" data-path="performing-the-correlation-in-jamovi.html"><a href="performing-the-correlation-in-jamovi.html"><i class="fa fa-check"></i><b>11.4</b> Performing the correlation in jamovi</a></li>
+<li class="chapter" data-level="11.5" data-path="checking-assumptions-in-jamovi-5.html"><a href="checking-assumptions-in-jamovi-5.html"><i class="fa fa-check"></i><b>11.5</b> Checking assumptions in jamovi</a>
+<ul>
+<li class="chapter" data-level="11.5.1" data-path="checking-assumptions-in-jamovi-5.html"><a href="checking-assumptions-in-jamovi-5.html#testing-normality-3"><i class="fa fa-check"></i><b>11.5.1</b> Testing normality</a></li>
+<li class="chapter" data-level="11.5.2" data-path="checking-assumptions-in-jamovi-5.html"><a href="checking-assumptions-in-jamovi-5.html#testing-linearity"><i class="fa fa-check"></i><b>11.5.2</b> Testing linearity</a></li>
+</ul></li>
+<li class="chapter" data-level="11.6" data-path="interpreting-results-6.html"><a href="interpreting-results-6.html"><i class="fa fa-check"></i><b>11.6</b> Interpreting results</a></li>
+<li class="chapter" data-level="11.7" data-path="r-squared.html"><a href="r-squared.html"><i class="fa fa-check"></i><b>11.7</b> R-Squared</a></li>
+<li class="chapter" data-level="11.8" data-path="what-if-i-violate-the-assumptions.html"><a href="what-if-i-violate-the-assumptions.html"><i class="fa fa-check"></i><b>11.8</b> What if I violate the assumptions?</a></li>
+<li class="chapter" data-level="11.9" data-path="comparing-strengths-of-correlations.html"><a href="comparing-strengths-of-correlations.html"><i class="fa fa-check"></i><b>11.9</b> Comparing strengths of correlations</a></li>
+<li class="chapter" data-level="11.10" data-path="your-turn-7.html"><a href="your-turn-7.html"><i class="fa fa-check"></i><b>11.10</b> Your turn!</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="regression.html"><a href="regression.html"><i class="fa fa-check"></i><b>12</b> Regression</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="what-is-regression.html"><a href="what-is-regression.html"><i class="fa fa-check"></i><b>12.1</b> What is regression?</a></li>
+<li class="chapter" data-level="12.2" data-path="data-set-up-9.html"><a href="data-set-up-9.html"><i class="fa fa-check"></i><b>12.2</b> Data set-up</a></li>
+<li class="chapter" data-level="12.3" data-path="assumptions-4.html"><a href="assumptions-4.html"><i class="fa fa-check"></i><b>12.3</b> Assumptions</a></li>
+<li class="chapter" data-level="12.4" data-path="understanding-regression.html"><a href="understanding-regression.html"><i class="fa fa-check"></i><b>12.4</b> Understanding regression</a></li>
+<li class="chapter" data-level="12.5" data-path="performing-a-multiple-regression-in-jamovi.html"><a href="performing-a-multiple-regression-in-jamovi.html"><i class="fa fa-check"></i><b>12.5</b> Performing a multiple regression in jamovi</a></li>
+<li class="chapter" data-level="12.6" data-path="checking-assumptions.html"><a href="checking-assumptions.html"><i class="fa fa-check"></i><b>12.6</b> Checking Assumptions</a>
+<ul>
+<li class="chapter" data-level="12.6.1" data-path="checking-assumptions.html"><a href="checking-assumptions.html#outliers"><i class="fa fa-check"></i><b>12.6.1</b> Outliers</a></li>
+<li class="chapter" data-level="12.6.2" data-path="checking-assumptions.html"><a href="checking-assumptions.html#normality-of-the-residuals"><i class="fa fa-check"></i><b>12.6.2</b> Normality of the residuals</a></li>
+<li class="chapter" data-level="12.6.3" data-path="checking-assumptions.html"><a href="checking-assumptions.html#linearity-homoscedasticity"><i class="fa fa-check"></i><b>12.6.3</b> Linearity &amp; homoscedasticity</a></li>
+<li class="chapter" data-level="12.6.4" data-path="checking-assumptions.html"><a href="checking-assumptions.html#independence-of-residuals"><i class="fa fa-check"></i><b>12.6.4</b> Independence of residuals</a></li>
+<li class="chapter" data-level="12.6.5" data-path="checking-assumptions.html"><a href="checking-assumptions.html#multicollinearity"><i class="fa fa-check"></i><b>12.6.5</b> Multicollinearity</a></li>
+</ul></li>
+<li class="chapter" data-level="12.7" data-path="interpreting-results-7.html"><a href="interpreting-results-7.html"><i class="fa fa-check"></i><b>12.7</b> Interpreting results</a></li>
+<li class="chapter" data-level="12.8" data-path="hierarchical-regression.html"><a href="hierarchical-regression.html"><i class="fa fa-check"></i><b>12.8</b> Hierarchical regression</a></li>
+<li class="chapter" data-level="12.9" data-path="categorical-predictors.html"><a href="categorical-predictors.html"><i class="fa fa-check"></i><b>12.9</b> Categorical Predictors</a></li>
+<li class="chapter" data-level="12.10" data-path="your-turn-8.html"><a href="your-turn-8.html"><i class="fa fa-check"></i><b>12.10</b> Your turn!</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="everything-is-regression.html"><a href="everything-is-regression.html"><i class="fa fa-check"></i><b>13</b> Everything is Regression</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="everything-is-regression-1.html"><a href="everything-is-regression-1.html"><i class="fa fa-check"></i><b>13.1</b> Everything is Regression</a></li>
+<li class="chapter" data-level="13.2" data-path="correlation-as-a-regression.html"><a href="correlation-as-a-regression.html"><i class="fa fa-check"></i><b>13.2</b> Correlation as a regression</a></li>
+<li class="chapter" data-level="13.3" data-path="independent-t-test-as-a-regression.html"><a href="independent-t-test-as-a-regression.html"><i class="fa fa-check"></i><b>13.3</b> Independent t-test as a regression</a></li>
+<li class="chapter" data-level="13.4" data-path="dependent-t-test-as-a-regression.html"><a href="dependent-t-test-as-a-regression.html"><i class="fa fa-check"></i><b>13.4</b> Dependent t-test as a regression</a></li>
+<li class="chapter" data-level="13.5" data-path="one-way-anova-as-a-regression.html"><a href="one-way-anova-as-a-regression.html"><i class="fa fa-check"></i><b>13.5</b> One-way ANOVA as a regression</a></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>14</b> References</a></li>
+<li class="divider"></li>
+<li><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/" 
+    target="blank"><img alt="Creative Commons License" 
+    style="border-width:0" 
+    src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Statistics with jamovi</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="what-if-i-violated-assumptions" class="section level2" number="7.9">
+<h2><span class="header-section-number">7.9</span> What if I violated assumptions?</h2>
+<p>The great news is that jamovi includes the Welch’s F-statistic and the Kruskal-Wallis non-parametric test! The bad news is that you lose some functionality in jamovi when you use them. Just like with the Welch’s t-statistic (for the independent t-test), it does not have the assumption of equal variances so it’s appropriate to use if your data is normally distributed but does not have homogeneous variances. Similarly, the Kruskal-Wallis test is the non-parametric version of the one-way ANOVA and should be used if you do not satisfy the assumption of normality.</p>
+<p>Here’s what statistic you should choose based on satisfying assumptions:</p>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th><strong>Normality: satisfied</strong></th>
+<th><strong>Normality: not satisfied</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Homogeneity of Variance: satisfied</strong></td>
+<td>one-way ANOVA</td>
+<td>Kruskal-Wallis</td>
+</tr>
+<tr class="even">
+<td><strong>Homogeneity of Variance: not satisfied</strong></td>
+<td>Welch’s F-test</td>
+<td>Kruskal-Wallis</td>
+</tr>
+</tbody>
+</table>
+<div id="welchs-f-test-in-jamovi" class="section level4" number="7.9.0.1">
+<h4><span class="header-section-number">7.9.0.1</span> Welch’s F-test in jamovi</h4>
+<p>To conduct this in jamovi, you will need to use the “One-Way ANOVA” test, not the “ANOVA” test. The unfortunate thing about this test is that it strangely does not provide effect sizes.</p>
+<p>In jamovi, under Variances select <code>Don't assume equal (Welch's)</code>. Move <code>mood.gain</code> to the Dependent Variable box and <code>drug</code> to your Grouping Variable box. You will interpret the results similarly to the one-way ANOVA:</p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-6"></span>
+<img src="images/04_one-way-anova/one-way_results_Welch.png" alt="One-way ANOVA results in jamovi" width="100%" />
+<p class="caption">
+Figure 2.6: One-way ANOVA results in jamovi
+</p>
+</div>
+<blockquote>
+<p>Using a Welch’s F-test, there is a significant difference in mood gain across the three drug conditions, <em>F</em> (2, 9.49) = 26.32, <em>p</em> &lt; .001.</p>
+</blockquote>
+</div>
+<div id="kruskal-wallis-test-in-jamovi" class="section level4" number="7.9.0.2">
+<h4><span class="header-section-number">7.9.0.2</span> Kruskal-Wallis test in jamovi</h4>
+<p>To perform the Kruskal-Wallis test in jamovi, you will need to select under the ANOVA button “One-Way ANOVA, Kruskal Wallis” towards the bottom of the list of options. Move <code>mood.gain</code> to the Dependent Variables box and <code>drug</code> to the Grouping Variable box. Select Effect size; if you need post hoc comparisons select DSCF pairwise comparisons (see section below on group differences). You will interpret the results similarly to the one-way ANOVA:</p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-7"></span>
+<img src="images/04_one-way-anova/one-way_results_Kruskal.png" alt="Kruskal-Wallis results in jamovi" width="100%" />
+<p class="caption">
+Figure 2.7: Kruskal-Wallis results in jamovi
+</p>
+</div>
+<blockquote>
+<p>Using a Kruskal-Wallis test, there is a significant difference in mood gain across the three drug conditions, <span class="math inline">\(\chi^2\)</span> (2) = 12.08, <em>p</em> = .002, <span class="math inline">\(\epsilon^2\)</span> = .71.</p>
+</blockquote>
+<p>Notice how in this case all three results converge and show there is a statistically significant difference in the results! The problem is… differences in which groups?</p>
+</div>
+</div>
+<div class="psyteachr_footer">
+  
+</div>
+<script>
+
+/* update total correct if #total_correct exists */
+update_total_correct = function() {
+  if (t = document.getElementById("total_correct")) {
+    t.innerHTML =
+      document.getElementsByClassName("correct").length + " of " +
+      document.getElementsByClassName("solveme").length + " correct";
+  }
+}
+
+/* solution button toggling function */
+b_func = function() {
+  var cl = this.parentElement.classList;
+  if (cl.contains('open')) {
+    cl.remove("open");
+  } else {
+    cl.add("open");
+  }
+}
+
+/* function for checking solveme answers */
+solveme_func = function(e) {
+  var real_answers = JSON.parse(this.dataset.answer);
+  var my_answer = this.value;
+  var cl = this.classList;
+  if (cl.contains("ignorecase")) {
+    my_answer = my_answer.toLowerCase();
+  }
+  if (cl.contains("nospaces")) {
+    my_answer = my_answer.replace(/ /g, "");
+  }
+  
+  if (my_answer !== "" & real_answers.includes(my_answer)) {
+    cl.add("correct");
+  } else {
+    cl.remove("correct");
+  }
+  update_total_correct();
+}
+
+window.onload = function() {
+  /* set up solution buttons */
+  var buttons = document.getElementsByTagName("button");
+
+  for (var i = 0; i < buttons.length; i++) {
+    if (buttons[i].parentElement.classList.contains('solution')) {
+      buttons[i].onclick = b_func;
+    }
+  }
+  
+  /* set up solveme inputs */
+  var solveme = document.getElementsByClassName("solveme");
+
+  for (var i = 0; i < solveme.length; i++) {
+    /* make sure input boxes don't auto-anything */
+    solveme[i].setAttribute("autocomplete","off");
+    solveme[i].setAttribute("autocorrect", "off");
+    solveme[i].setAttribute("autocapitalize", "off"); 
+    solveme[i].setAttribute("spellcheck", "false");
+    solveme[i].value = "";
+    
+    /* adjust answer for ignorecase or nospaces */
+    var cl = solveme[i].classList;
+    var real_answer = solveme[i].dataset.answer;
+    if (cl.contains("ignorecase")) {
+      real_answer = real_answer.toLowerCase();
+    }
+    if (cl.contains("nospaces")) {
+      real_answer = real_answer.replace(/ /g, "");
+    }
+    solveme[i].dataset.answer = real_answer;
+    
+    /* attach checking function */
+    solveme[i].onkeyup = solveme_func;
+    solveme[i].onchange = solveme_func;
+  }
+  
+  update_total_correct();
+}
+
+</script>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="interpreting-results-4.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="finding-group-differences.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"],
+"google": false
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": {},
+"toc": {
+"collapse": "section",
+"scroll_highlight": true
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

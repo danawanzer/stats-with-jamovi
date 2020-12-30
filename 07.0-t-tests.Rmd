@@ -1,4 +1,5 @@
-# Independent t-test
+# t-tests
+
 
 ```{r ind-t_setup, echo = FALSE, message=FALSE}
 library(tidyverse)

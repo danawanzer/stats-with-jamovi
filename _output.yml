@@ -29,6 +29,7 @@ bookdown::gitbook:
       instapaper: no
       vk: no
       all: ['facebook', 'google', 'twitter', 'linkedin', 'weibo', 'instapaper']
+  split_by: section
 bookdown::pdf_book:
   includes:
     in_header: preamble.tex

@@ -7,11 +7,11 @@ library(webex)
 
 This chapter will walk you through how this website/book works.
 
-## Navigating the book
+### Navigating the book
 
 https://bookdown.org/yihui/bookdown/html.html#gitbook-style
 
-## Quiz questions
+### Quiz questions
 
 Throughout this website, there will be questions to help you test your knowledge. When you type in or select the correct answer, the dashed box will change color and become solid.
 
@@ -23,6 +23,6 @@ For example:
 
 -   True or false: Statistics is awesome. `r torf(TRUE)`
 
-## Errors and mistakes
+### Errors and mistakes
 
 I am human, therefore I err. If you find an error in the textbook or something you think might be a mistake, please let me know ASAP so I can update this for everyone else. Let me know which section you find the error or mistake in and what the error or mistake is. For example, if there was an error here you could say, "There was an error in 1.2 that the first sentence should really be 'To err is human.'"
