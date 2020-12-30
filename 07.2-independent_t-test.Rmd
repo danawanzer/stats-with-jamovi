@@ -8,9 +8,9 @@ options(knitr.graphics.auto_pdf = TRUE)
 
 ## Overview
 
-The independent t-test is used to test the difference in our dependent variable between two different groups of observations. Our grouping variable is our independent variable. In other words, we use the independent t-test when we have a research question with a **continuous dependent variable** and a **categorical independent variable with two categories in which different participants are in each category**.
+The independent t-test is used to test the difference in our dependent variable between two different groups of observations. Our grouping variable is our independent variable. In other words, we use the independent t-test when we have a research question with a **continuous dependent variable** and a **categorical independent variable with two categories in which [different]{.ul} participants are in each category**.
 
-The independent t-test is also called the independent samples t-test and the Student's t-test. I will use these terms interchangeably.
+The independent t-test is also called the independent samples t-test and the Student's t-test.
 
 There are three different types of alternative hypotheses we could have for the independent t-test:
 
@@ -185,15 +185,12 @@ Oftentimes, people display results in a simple bar chart, often adding error bar
 
 ## In case of violated assumptions
 
-If you fail to meet one or both of the assumptions of normality and homogeneity of variances, jamovi has the alternative statistics easily built in. Here's what statistic you should choose based on satisfying assumptions:
+If you fail to meet one or both of the assumptions of normality (and no transformations fixed your data) and homogeneity of variances, jamovi has the alternative statistics easily built in. Here's what statistic you should choose based on satisfying assumptions:
 
-+--------------------------------------------+--------------------------+------------------------------+
 |                                            | **Normality: satisfied** | **Normality: not satisfied** |
-+============================================+==========================+==============================+
+|--------------------------------------------|--------------------------|------------------------------|
 | **Homogeneity of Variance: satisfied**     | Student's t-test         | Mann-Whitney U               |
-+--------------------------------------------+--------------------------+------------------------------+
 | **Homogeneity of Variance: not satisfied** | Welch's t-test           | Mann-Whitney U               |
-+--------------------------------------------+--------------------------+------------------------------+
 
 : Independent t-test to perform based on assumptions
 

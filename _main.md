@@ -1,7 +1,7 @@
 ---
 title: "Statistics with jamovi"
 author: "Dana Wanzer"
-date: "Last Update: 2020-12-06"
+date: "Last Update: 2020-12-29"
 site: bookdown::bookdown_site
 output:
   bookdown::pdf_book:
@@ -31,7 +31,11 @@ Portions of this book may have been adapted from "[Learning statistics with jamo
 
 This chapter will walk you through how this website/book works.
 
-## Quiz Questions
+## Navigating the book
+
+https://bookdown.org/yihui/bookdown/html.html#gitbook-style
+
+## Quiz questions
 
 Throughout this website, there will be questions to help you test your knowledge. When you type in or select the correct answer, the dashed box will change color and become solid.
 
@@ -49,29 +53,29 @@ I am human, therefore I err. If you find an error in the textbook or something y
 
 <!--chapter:end:01-intro.Rmd-->
 
-# (PART) t-tests {.unnumbered}
+# Independent t-test
+
+
+
+The t-test looks at difference in means between two things (e.g., groups, time, observations). There are three different types of t-tests:
+
+1.  The **one-sample t-test** tests how the sample mean relates to the population mean.
+
+2.  The **independent t-test** has *independent* groups. The participants or things in group 1 are *not* the same as the participants or things in group 2.
+
+3.  The **dependent t-test** has *dependent* or *paired* data. The dependent variable is measured at two different times or for two different conditions for all participants or things.
+
+<!--chapter:end:07.0-t-tests.Rmd-->
 
 # Independent t-test
 
 
 
-## What is the t-test?
+## Overview
 
-The t-test looks at difference in means between two things (e.g., groups, time, observations). There are three different types of t-tests:
+The independent t-test is used to test the difference in our dependent variable between two different groups of observations. Our grouping variable is our independent variable. In other words, we use the independent t-test when we have a research question with a **continuous dependent variable** and a **categorical independent variable with two categories in which [different]{.ul} participants are in each category**.
 
-1.  The **one-sample t-test** tests how sample mean relates to the population mean.
-
-2.  The **independent t-test** has *independent* groups. The participants or things in group 1 are *not* the same as the participants or things in group 2.
-
-3.  The **dependent t-test** has *dependent* or *paired* data. The dependent variable is measured at two different times or for two different conditions for all participants or things.
-
-This chapter will focus on the independent t-test and the next chapter will discuss the dependent t-test.
-
-## What is the independent t-test?
-
-The independent t-test is used to test the difference in our dependent variable between two different groups of observations. Our grouping variable is our independent variable. In other words, we use the independent t-test when we have a research question with a **continuous dependent variable** and a **categorical independent variable with two categories in which different participants are in each category**.
-
-The independent t-test is also called the independent samples t-test and the Student's t-test. I will use these terms interchangeably.
+The independent t-test is also called the independent samples t-test and the Student's t-test.
 
 There are three different types of alternative hypotheses we could have for the independent t-test:
 
@@ -90,44 +94,57 @@ There are three different types of alternative hypotheses we could have for the 
     -   $H_1$: Group 1 has a smaller mean than Group 2.
     -   $H_0$: The mean for Group 1 is greater than or equal to the mean for Group 2.
 
-## Data set-up
+## Look at the data
 
-To conduct the independent t-test, we first need to ensure our data is set-up properly in our dataset. This requires having two columns: one with our continuous dependent variable and one indicating which group the participant is in. Each row is a unique participant or unit of analysis. Here's what example data may look like if we were testing for differences in a test score by students in my fall or spring semesters of this course:
+For this chapter, we're going to work with data from lsj-data. Open data from your Data Library in "lsj-data". Select and open "Harpo".This dataset is hypothetical data of 33 students taking Dr. Harpo's statistics lectures. We have two tutors for the class, Anastasia (*n* = 15) and Bernadette (*n* = 18). Our research question is "Which tutor results in better student grades?" We don't have a hypothesis that one does better than the other. Therefore our hypotheses can be written up as such:
 
-| ID  | Semester | TestScore |
-|:----|:---------|----------:|
-| 1   | Fall     |        86 |
-| 2   | Fall     |        80 |
-| 3   | Fall     |        75 |
-| 4   | Fall     |        79 |
-| 5   | Fall     |        82 |
-| 6   | Spring   |        84 |
-| 7   | Spring   |        90 |
-| 8   | Spring   |        72 |
-| 9   | Spring   |        75 |
-| 10  | Spring   |        81 |
+-   $H_1$: There is a difference in student grades between Anastasia's and Bernadette's classes.
+-   $H_0$: There is no difference in student grades between Anastasia's and Bernadette's classes.
 
-: Example data for the independent t-test
+### Data set-up
 
-In the example data above, what is your **independent variable**? <select class='solveme' data-answer='["Semester"]'> <option></option> <option>ID</option> <option>Semester</option> <option>TestScore</option></select>
+To conduct the independent t-test, we first need to ensure our data is set-up properly in our dataset. This requires having two columns: one with our continuous dependent variable and one indicating which group the participant is in. Each row is a unique participant or unit of analysis.
 
-In the example data above, what is your **dependent variable**? <select class='solveme' data-answer='["TestScore"]'> <option></option> <option>ID</option> <option>Semester</option> <option>TestScore</option></select>
+Below is the first ten rows of our data from the Harpo dataset.
 
-## The math behind the independent t-test
+\begin{figure}
 
-\begin{info}
-If the math below makes your eyes glaze over, you can skip it. This is
-presented for those who find it useful to understand the math behind the
-statistics to help understand what's happening.
-\end{info}
+{\centering \includegraphics[width=0.8\linewidth]{images/02-independent_t-test/independent_t-test_data} 
 
-The basic math of the independent t-test the mean difference divided by the pooled standard error.
+}
 
-$t = \frac{\bar{X}_1 - \bar{X}_2}{SE({\bar{X}_1 - \bar{X}_2})}$
+\caption{Independent t-test data in jamovi}(\#fig:unnamed-chunk-1)
+\end{figure}
 
-The denominator of the equation is more difficult to calculate and depends on whether the sample size between groups is equal.
+In the data above, what is your **independent variable**? <select class='solveme' data-answer='["tutor"]'> <option></option> <option>ID</option> <option>grade</option> <option>tutor</option></select>
 
-## Assumptions
+In the data above, what is your **dependent variable**? <select class='solveme' data-answer='["grade"]'> <option></option> <option>ID</option> <option>grade</option> <option>tutor</option></select>
+
+### Describe your data
+
+Once we confirm our data is setup correctly in jamovi, we should look at our data using descriptive statistics and graphs. First, our descriptive statistics are shown below. Our overall data consists of 33 cases and the students in our dataset have a mean grade of 71.55 (SD = 7.80). The minimum and maximum values look accurate; theoretically, student grades should range from 0-100. Lastly, the distribution of data looks nice and normally distributed. Although we have a pretty small sample size, especially within each group, we can proceed with our analyses. First, though, we need to check our assumptions.
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.8\linewidth]{images/02-independent_t-test/independent_t-test_descriptives_all} 
+
+}
+
+\caption{Descriptive statistics}(\#fig:unnamed-chunk-2)
+\end{figure}
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.8\linewidth]{images/02-independent_t-test/independent_t-test_plot_all} 
+
+}
+
+\caption{Plot of the data}(\#fig:unnamed-chunk-3)
+\end{figure}
+
+## Check assumptions
+
+### Assumptions of the independent t-test
 
 As a parametric test, the independent t-test has the same assumptions as other parametric tests:
 
@@ -139,42 +156,17 @@ As a parametric test, the independent t-test has the same assumptions as other p
 
 4.  Scores are **independent** between groups
 
-We cannot [test]{.ul} the third and fourth assumptions; rather, those are based on knowing your data.
+We cannot test the third and fourth assumptions; rather, those are based on knowing your data.
 
 However, we can and should test for the first two assumptions. Fortunately, the independent samples t-test in jamovi has two check boxes under "Assumption Checks" that lets us test for both assumptions.
 
-## Performing the independent t-test in jamovi
+### Checking assumptions in jamovi
 
-Let's run an example with data from lsj-data. Open data from your Data Library in "lsj-data". Select and open "Harpo". This dataset is hypothetical data of 33 students taking Dr. Harpo's statistics lectures. We have two tutors for the class, Anastasia (*n* = 15) and Bernadette (*n* = 18). Our research question is "Which tutor results in better student grades?" We don't have a hypothesis that one does better than the other.
-
-1.  To perform an independent t-test in jamovi, go to the Analyses tab, click the T-Tests button, and choose "Independent Samples T-Test".
-
-2.  Move your dependent variable `grade` to the Dependent Variables box and your independent variable `tutor` to the Grouping Variable box.
-
-3.  Under Tests, select `Student's`
-
-4.  Under Hypothesis, because we have a two-sided hypothesis select a two-sided hypothesis (Group 1 does not equal Group 2).
-
-5.  Under Additional Statistics, select `Mean difference`, `Effect size`, and `Descriptives`.
-
-6.  Under Assumption Checks, select all three options: `Homogeneity test`, `Normality test`, and `Q-Q plot`.
-
-When you are done, your setup should look like this
-
-\begin{figure}
-
-{\centering \includegraphics[width=0.8\linewidth]{images/02-independent_t-test/independent_t-test_setup} 
-
-}
-
-\caption{Independent t-test setup in jamovi}(\#fig:unnamed-chunk-2)
-\end{figure}
-
-## Checking assumptions in jamovi
+One thing to keep in mind in all statistical software is that we often check assumptions simultaneously to performing the statistical test. However, we should always check assumptions first before looking at and interpreting our results. Therefore, whereas the instructions for performing the test are below, we discuss checking assumptions here first to help ingrain the importance of always checking assumptions for interpreting results.
 
 ### Testing normality
 
-We test for normality using the Shapiro-Wilk test and the Q-Q plot. The Shapiro-Wilk test was not statistically significant (W = .98, *p* = .827); therefore, this indicates the data is normally distributed. Furthermore, the lines are fairly close to the diagonal line in the Q-Q plot. We can conclude that we satisfy the assumption of normality.
+jamovi easily allows us to check for normality using the Shapiro-Wilk test and the Q-Q plot. The Shapiro-Wilk test was not statistically significant (W = .98, *p* = .827); therefore, this indicates the data is normally distributed. Furthermore, the lines are fairly close to the diagonal line in the Q-Q plot. We can conclude that we satisfy the assumption of normality.
 
 \begin{figure}
 
@@ -182,10 +174,25 @@ We test for normality using the Shapiro-Wilk test and the Q-Q plot. The Shapiro-
 
 }
 
-\caption{Testing normality in jamovi}(\#fig:unnamed-chunk-3)
+\caption{Testing normality in jamovi}(\#fig:unnamed-chunk-4)
 \end{figure}
 
-Remember that we also test for normality by **looking at our data** (e.g., a histogram) and by examining **skew and kurtosis**. However, you will need to view them using Exploration --\> Descriptives, not in the t-tests menu.
+Remember that we can also test for normality by **looking at our data** (e.g., a histogram or density plot, which you can see above) and by examining **skew and kurtosis**. However, you will need to view them using Exploration --\> Descriptives, not in the t-tests menu. Here is our skew and kurtosis:
+
+-   **Skew**: $.06/.41 = .15$
+
+-   **Kurtosis**: $.33/.80 = .41$
+
+Remember that we divide the value by its standard error to determine the z-score. If the absolute value of it is below 1.96 then we assume it is normally distributed. Both skew and kurtosis meet the assumption of normality. In addition, so did all our other pieces of evidence of normality: Shapiro-Wilk's, visual examination of the distribution, and the Q-Q plot. Therefore we can assume we met the assumption of normality.
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.8\linewidth]{images/02-independent_t-test/independent_t-test_skewkurtosis} 
+
+}
+
+\caption{Plot of the data}(\#fig:unnamed-chunk-5)
+\end{figure}
 
 ### Testing homogeneity of variance
 
@@ -197,10 +204,37 @@ We test for homogeneity of variance using the Levene's test. The Levene's test w
 
 }
 
-\caption{Testing homogeneity of variance in jamovi}(\#fig:unnamed-chunk-4)
+\caption{Testing homogeneity of variance in jamovi}(\#fig:unnamed-chunk-6)
 \end{figure}
 
-## Interpreting results
+## Perform the test
+
+Now that we've satisfied the assumptions, we can perform the independent t-test. Here are the steps for doing so in jamovi:
+
+1.  Go to the Analyses tab, click the T-Tests button, and choose "Independent Samples T-Test".
+
+2.  Move your dependent variable `grade` to the Dependent Variables box and your independent variable `tutor` to the Grouping Variable box.
+
+3.  Under Tests, select `Student's`. We'll learn about Welch's and Mann-Whitney U under the violated assumptions section.
+
+4.  Under Hypothesis, select the hypothesis that matches your research question. In our case, select `Group 1 ≠ Group 2` because we have a two-sided hypothesis.
+
+5.  Under Additional Statistics, select `Mean difference`, `Effect size`, `Descriptives`, and (optionally) `Descriptives plots`.
+
+6.  Under Assumption Checks, select all three options: `Homogeneity test`, `Normality test`, and `Q-Q plot`.
+
+When you are done, your setup should look like this
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.8\linewidth]{images/02-independent_t-test/independent_t-test_setup} 
+
+}
+
+\caption{Independent t-test setup in jamovi}(\#fig:unnamed-chunk-7)
+\end{figure}
+
+## Interpret results
 
 Once we are satisfied we have satisfied the assumptions for the independent t-test, we can interpret our results.
 
@@ -210,52 +244,74 @@ Once we are satisfied we have satisfied the assumptions for the independent t-te
 
 }
 
-\caption{Independent t-test results in jamovi}(\#fig:unnamed-chunk-5)
+\caption{Independent t-test results in jamovi}(\#fig:unnamed-chunk-8)
 \end{figure}
 
-Our p-value is less than .05, so our results are statistically significant. Like most of the statistics we'll come across, the large the t-statistic (or F-statistic, or chi-square statistic...), the smaller the p-value.
+Our p-value is less than .05, so our results are statistically significant. Like most of the statistics we'll come across, the larger the t-statistic (or F-statistic, or chi-square statistic...), the smaller the p-value will be. Therefore, we reject our null hypothesis that there is no difference between the two groups.
+
+### Write up the results in APA style
+
+When writing up the results of a statistical test, we should always include the following information:
+
+1.  Description of your research question.
+2.  Description of your data. If you fail to meet assumptions, you should specify that and describe what test you chose to perform as a result.
+3.  The results of the inferential test, including what test was performed, the test value and degrees of freedom, p-value, and effect size.
+4.  Interpretation of the results, including any other information as needed.
 
 We can write up our results in APA something like this:
 
-> Anastasia's students (*M* = 74.53, *SD* = 9.00, *n* = 15) had significantly higher grades than Bernadette's students (*M* = 69.06, *SD* = 5.77, *n* = 18), *t* (31) = 2.12, *p* = .043, *d* = .74.
+> The research question was whether there was a difference in student grades between Anastasia's and Bernadette's classes. Anastasia's students (*M* = 74.53, *SD* = 9.00, *n* = 15) had significantly higher grades than Bernadette's students (*M* = 69.06, *SD* = 5.77, *n* = 18), *t* (31) = 2.12, *p* = .043, *d* = .74.
+
+Let's analyze that against the 4 things we need to report:
+
+> **\#1:** The research question was whether there was a difference in student grades between Anastasia's and Bernadette's classes. **\#4** Anastasia's students **\#2** (*M* = 74.53, *SD* = 9.00, *n* = 15) had significantly higher grades than Bernadette's students **\#2** (*M* = 69.06, *SD* = 5.77, *n* = 18), **\#3** *t* (31) = 2.12, *p* = .043, *d* = .74.
 
 Sometimes, people like to put the statistics inside a parentheses. In that case, you need to change the parentheses around the degrees of freedom as brackets. Here's another example write-up of the results in APA style:
 
-> I tested the difference in grades between Anastasia's students (*M* = 74.53, *SD* = 9.00, *n* = 15) and Bernadette's students (*M* = 69.06, *SD* = 5.77, *n* = 18). An independent samples t-test showed that the 5.48 mean difference between the tutor's student was statistically significant (*t* [31] = 2.12, *p* = .043, *d* = .74).
+> **\#1** I tested the difference in grades between Anastasia's students **\#2** (*M* = 74.53, *SD* = 9.00, *n* = 15) and Bernadette's students (*M* = 69.06, *SD* = 5.77, *n* = 18). **\#3** An independent samples t-test showed that the 5.48 mean difference between the tutor's student was statistically significant (*t* [31] = 2.12, *p* = .043, *d* = .74). **\#4** Therefore, we reject the null hypothesis that there is no difference in grades between the two classes.
 
-## Additional information about the independent t-test
+Note that these are not the only way we can write up the results in APA format. The key is that we include all four pieces of information as specified above.
 
-### Positive and negative t values
+### Visualizing the results
 
-Students often worry about positive or negative t-statistic values and are unsure how to interpret it. Positive or negative t-statistic values simply occur based on which group is listed first. Our t-statistic above is positive because we tested the difference between Anastasia and Bernadette: (Anastasia - Bernadette) = (74.53 - 69.06) = (5.48).
+By selecting `Descriptives plots` in the setup, you get the figure below. Personally, I don't think this is a very good plot. It's not very informative. It just provides the mean (circle), 95% confidence interval (blue bars), and the median.
 
-However, if we flipped it and tested the difference between Bernadette and Anastasia, our mean difference would be -5.48 and our t-statistic would be -2.12.
+\begin{figure}
 
-All that is to say, *your positive or negative t-statistic is arbitrary*. So do not fret!
+{\centering \includegraphics[width=1\linewidth]{images/02-independent_t-test/independent_t-test_plot2} 
 
-However, it is important the sign of your t-statistic matches what you report. For example, notice the difference:
+}
 
-> 1.  Anastasia's students had **higher** grades than Bernadette's, *t* (31) = **2.12**, *p* = .043, *d* = .74.
-> 2.  Bernadette's students had **lower** grades than Anastasia's, *t* (31) = **-2.12**, *p* = .043, *d* = .74.
+\caption{Independent t-test descriptives plot}(\#fig:unnamed-chunk-9)
+\end{figure}
 
-One last note: this positive or negative t-statistic is only relevant for the independent and dependent t-test. You will not get negative values for the F-statistic or chi-square tests!
+Another default option in jamovi is via the Descriptives analysis. You can ask for the boxplot, violin plot, and data of your dependent variable split by your independent variable. This is a much better option. Not only does it show us our mean (black bars) and interquartile range (via the boxplot), but it also shows our distribution (violin plot) and data points (grey dots). This is much more informative.
 
-### What if I violated assumptions?
+\begin{figure}
 
-The great news is that jamovi includes the Welch's t-statistic and the non-parametric version of the independent t-test (Mann-Whitney U)!
+{\centering \includegraphics[width=1\linewidth]{images/02-independent_t-test/independent_t-test_plot} 
 
-The Welch's t-test has three main differences from the independent samples t-test: (a) the standard error (SE) is not a pooled estimate, (b) the degrees of freedom are calculated very different (not *N* - 2), and (c) it does not have an assumption of homogeneity of variance. Note that Welch's t-test is not a non-parametric test because it still has the assumption of a normal distribution.
+}
 
-The Mann-Whitney U is not calculated based on the mean but rather the median and compares ranks of values across the two groups: it has no assumptions about the distribution of data or homogeneity of variances.
+\caption{Independent t-test descriptives plot}(\#fig:unnamed-chunk-10)
+\end{figure}
 
-Here's what statistic you should choose based on satisfying assumptions:
+Oftentimes, people display results in a simple bar chart, often adding error bars (either 95% CI or SE error bars). But this is also not a great chart because it lacks information about the underlying distribution of data. Therefore, for the independent t-test I recommend the visualization shown above.
 
-|                                            | **Normality: satisfied**   | **Normality: not satisfied** |
-|--------------------------------------------|----------------------------|------------------------------|
-| **Homogeneity of Variance: satisfied**     | independent samples t-test | Mann-Whitney U               |
-| **Homogeneity of Variance: not satisfied** | Welch's t-test             | Mann-Whitney U               |
+## In case of violated assumptions
 
-Here is what the output for all three tests look like:
+If you fail to meet one or both of the assumptions of normality (and no transformations fixed your data) and homogeneity of variances, jamovi has the alternative statistics easily built in. Here's what statistic you should choose based on satisfying assumptions:
+
+|                                            | **Normality: satisfied** | **Normality: not satisfied** |
+|--------------------------------------------|--------------------------|------------------------------|
+| **Homogeneity of Variance: satisfied**     | Student's t-test         | Mann-Whitney U               |
+| **Homogeneity of Variance: not satisfied** | Welch's t-test           | Mann-Whitney U               |
+
+: Independent t-test to perform based on assumptions
+
+The Welch's t-test has three main differences from the independent samples t-test: (a) the standard error (SE) is not a pooled estimate, (b) the degrees of freedom are calculated very different (not *N* - 2), and (c) it does not have an assumption of homogeneity of variance. Note that Welch's t-test is *not* a non-parametric test because it still has the assumption of a normal distribution.
+
+The Mann-Whitney U is not calculated based on the mean but rather the median and compares ranks of values across the two groups: it has no assumptions about the distribution of data or homogeneity of variances. Therefore, it is a non-parametric test. Here is what the output for all three tests look like:
 
 \begin{figure}
 
@@ -263,7 +319,7 @@ Here is what the output for all three tests look like:
 
 }
 
-\caption{All independent t-test results in jamovi}(\#fig:unnamed-chunk-6)
+\caption{All independent t-test results in jamovi}(\#fig:unnamed-chunk-11)
 \end{figure}
 
 #### Welch's t-test in jamovi
@@ -282,7 +338,24 @@ If you do not satisfy the assumption of normality (regardless of whether you sat
 
 I will not go into specifics, but the idea behind the Mann-Whitney U test is that you take all the values (regardless of group) and rank them. You then sum the ranks across groups and calculate your U statistic and p-value. You interpret the p-value like you normally would, but there are differences in how we report the results because this statistic is based on the *median* not the *mean*.
 
-> Using the Mann-Whitney U test, there was a statistically significant difference in grades between Anastasia's students (*Mdn* = 76, *n* = 15) and Bernadette's students (*Mdn* = 69, *n* = 18), *t* (23.02) = 2.03, *p* = .054, *d* = .72.
+> Using the Mann-Whitney U test, there was a statistically significant difference in grades between Anastasia's students (*Mdn* = 76, *n* = 15) and Bernadette's students (*Mdn* = 69, *n* = 18), *U = 79.50*, *p* = .054, $r_{pb}$ = .41.
+
+## Additional information
+
+### Positive and negative t values
+
+Students often worry about positive or negative t-statistic values and are unsure how to interpret it. Positive or negative t-statistic values simply occur based on which group is listed first. Our t-statistic above is positive because we tested the difference between Anastasia and Bernadette: (Anastasia - Bernadette) = (74.53 - 69.06) = (5.48).
+
+However, if we flipped it and tested the difference between Bernadette and Anastasia, our mean difference would be -5.48 and our t-statistic would be -2.12.
+
+All that is to say, *your positive or negative t-statistic is arbitrary*. So do not fret!
+
+However, it is important the sign of your t-statistic matches what you report. For example, notice the difference:
+
+> 1.  Anastasia's students had **higher** grades than Bernadette's, *t* (31) = **2.12**, *p* = .043, *d* = **.74**.
+> 2.  Bernadette's students had **lower** grades than Anastasia's, *t* (31) = **-2.12**, *p* = .043, *d* = **-.74**.
+
+One last note: this positive or negative t-statistic is only relevant for the independent and dependent t-test. You will not get negative values for the F-statistic or chi-square tests!
 
 ## Your turn!
 
@@ -324,15 +397,15 @@ To get the most out of these exercises, try to first find out the answer on your
 
     -   Does athletic status relate to math scores? <select class='solveme' data-answer='["yes"]'> <option></option> <option>yes</option> <option>no</option></select>
 
-<!--chapter:end:02-independent_t-test.Rmd-->
+<!--chapter:end:07.2-independent_t-test.Rmd-->
 
 # Dependent t-test
 
 
 
-## What is the dependent t-test?
+## Overview
 
-The dependent t-test is used to test the difference in our dependent variable between two categories in which participants are the *same* across categories. Our category variable is our independent variable. In other words, we use the dependent t-test when we have a research question with a **continuous dependent variable** and a **categorical independent variable with two categories in which the same participants are in each category**.
+The dependent t-test is used to test the difference in our dependent variable between two categories in which participants are the *same* across categories. Our category variable is our independent variable. In other words, we use the dependent t-test when we have a research question with a **continuous dependent variable** and a **categorical independent variable with two categories in which the [same]{.ul} participants are in each category**.
 
 The dependent t-test is also called a dependent samples t-test or paired samples t-test.
 
@@ -353,36 +426,63 @@ There are three different types of alternative hypotheses we could have for the 
     -   $H_1$: The mean at time 1 or condition 1 is smaller than the mean at time 2 or condition 2.
     -   $H_0$: The mean at time 1 or condition 1 is greater than or equal to the mean at time 2 or condition 2.
 
-## Data set-up
+## Look at the data
 
-To conduct the dependent t-test, we first need to ensure our data is set-up properly in our dataset. This requires having two columns: one is our dependent variable score for the participant in one category and the other column is our dependent variable score for the participant in the other category. Each row is a unique participant or unit of analysis. Here's what example data may look like if we were testing for differences in test scores across the same participants in the fall and spring:
+For this chapter, we're going to work with data from lsj-data. Open data from your Data Library in "lsj-data". Select and open "Chico". This dataset is hypothetical data from Dr. Chico's class in which students took two tests: one early in the semester and one later in the semester. Dr. Chico thinks that the first test is a "wake up call" for students. When they realise how hard her class really is, they'll work harder for the second test and get a better mark. Is she right? First, let's determine our hypotheses:
 
-| ID  | TestScore_Fall | TestScore_Spring |
-|:----|:---------------|-----------------:|
-| 1   | 75             |               86 |
-| 2   | 79             |               80 |
-| 3   | 65             |               75 |
-| 4   | 81             |               79 |
-| 5   | 73             |               82 |
-| 6   | 72             |               84 |
-| 7   | 69             |               90 |
-| 8   | 60             |               72 |
-| 9   | 75             |               75 |
-| 10  | 74             |               81 |
+What is Dr. Chico's alternative hypothesis? <select class='solveme' data-answer='["test 1 scores are less than test 2 scores"]'> <option></option> <option>test 1 scores are different from test 2 scores</option> <option>test 1 scores are greater than test 2 scores</option> <option>test 1 scores are less than test 2 scores</option></select>
 
-: Example data for the dependent t-test
+### Data set-up
 
-In the example data above, what is your **independent variable**? <select class='solveme' data-answer='["Semester"]'> <option></option> <option>ID</option> <option>Semester</option> <option>TestScore</option></select>
+To conduct the dependent t-test, we first need to ensure our data is set-up properly in our dataset. This requires having two columns: one is our dependent variable score for the participant in one category and the other column is our dependent variable score for the participant in the other category. Each row is a unique participant or unit of analysis.
 
-In the example data above, what is your **dependent variable**? <select class='solveme' data-answer='["Test Score"]'> <option></option> <option>ID</option> <option>Semester</option> <option>Test Score</option></select>
+\begin{figure}
 
-## The math behind the dependent t-test
+{\centering \includegraphics[width=0.8\linewidth]{images/03_dependent_t-test/dependent_data} 
 
-The basic math of the dependent t-test is the mean difference divided by the standard error, which is estimated based on the standard deviation and sample size (N).
+}
 
-$t = \frac{\bar{X}_1 - \bar{X}_2}{s_d/ \sqrt{N}}$
+\caption{Dependent t-test data in jamovi}(\#fig:unnamed-chunk-1)
+\end{figure}
 
-## Assumptions
+In the data above, what is your **independent variable**? <select class='solveme' data-answer='["grade"]'> <option></option> <option>id</option> <option>grade</option> <option>test score</option> <option>grade_test1</option> <option>grade_test2</option></select>
+
+In the data above, what is your **dependent variable**? <select class='solveme' data-answer='["test score"]'> <option></option> <option>id</option> <option>grade</option> <option>test score</option> <option>grade_test1</option> <option>grade_test2</option></select>
+
+### Describe your data
+
+Once we confirm our data is setup correctly in jamovi, we should look at our data using descriptive statistics and graphs. First, our descriptive statistics are shown below. Our overall data consists of 20 cases (students) and the average grade is 56.98 (*SD* = 6.62) at the first test and 58.38 (*SD* = 6.41) at the second test. We have no missing cases, and our minimum and maximum values look accurate; theoretically, student grades should range from 0-100. Lastly, the distribution of data looks fairly normally distributed, although I'm personally a little worried about our small sample size. Before we can proceed with our analyses, we'll need to check our assumptions.
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.8\linewidth]{images/03_dependent_t-test/dependent_descriptives} 
+
+}
+
+\caption{Descriptive statistics}(\#fig:unnamed-chunk-2)
+\end{figure}
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.8\linewidth]{images/03_dependent_t-test/dependent_descriptives} 
+
+}
+
+\caption{Descriptive statistics}(\#fig:unnamed-chunk-3)
+\end{figure}
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.49\linewidth]{images/03_dependent_t-test/dependent_plot1} \includegraphics[width=0.49\linewidth]{images/03_dependent_t-test/dependent_plot2} 
+
+}
+
+\caption{Plots of the data}(\#fig:unnamed-chunk-4)
+\end{figure}
+
+## Check assumptions
+
+### Assumptions of the dependent t-test
 
 As a parametric test, the dependent t-test has the same assumptions as other parametric tests minus the homogeneity of variance assumption because we are dealing with the same people across categories
 
@@ -390,27 +490,44 @@ As a parametric test, the dependent t-test has the same assumptions as other par
 
 2.  The dependent variable is **interval or ratio** (i.e., continuous)
 
-3.  Scores are **independent** across participants
+3.  Scores are **independent** *across participants*
 
-We cannot [test]{.ul} the second and third assumptions; rather, those are based on knowing your data.
+We cannot *test* the second and third assumptions; rather, those are based on knowing your data.
 
 However, we can and should test for the first assumption. Fortunately, the dependent samples t-test in jamovi has two check boxes under "Assumption Checks" that lets us test normality.
 
-## In jamovi
+### Checking assumptions in jamovi
 
-Let's run an example with data from lsj-data. Open data from your Data Library in "lsj-data". Select and open "Chico". This dataset is hypothetical data from Dr. Chico's class in which students took two tests: one early in the semester and one later in the semester. Dr. Chico thinks that the first test is a "wake up call" for students. When they realise how hard her class really is, they'll work harder for the second test and get a better mark. Is she right? Let's test it!
+One thing to keep in mind in all statistical software is that we often check assumptions simultaneously to performing the statistical test. However, we should always check assumptions first before looking at and interpreting our results. Therefore, whereas the instructions for performing the test are below, we discuss checking assumptions here first to help ingrain the importance of always checking assumptions for interpreting results.
 
-1.  To perform an dependent t-test in jamovi, go to the Analyses tab, click the T-Tests button, and choose "Paired Samples T-Test".
+### Testing normality
+
+Notice how our dependent variable is really the difference in scores, and therefore that is what we are testing for normality. We test for normality using the Shapiro-Wilk test and the Q-Q plot. The Shapiro-Wilk test was not statistically significant (W = .97, *p* = .678); therefore, this indicates the data is normally distributed. Furthermore, the lines are fairly close to the diagonal line in the Q-Q plot (although it's a bit hard to tell because our sample size is small). We can conclude that we satisfy the assumption of normality.
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{images/03_dependent_t-test/dependent_normality} 
+
+}
+
+\caption{Testing normality in jamovi}(\#fig:unnamed-chunk-5)
+\end{figure}
+
+## Perform the test
+
+Now that we've satisfied the assumptions, we can perform the dependent t-test. Here are the steps for doing so in jamovi:
+
+1.  Go to the Analyses tab, click the T-Tests button, and choose "Paired Samples T-Test".
 
 2.  Move both measurements of your dependent variable (`grade_test1` and `grade_test2`) to the Paired Variables box.
 
-3.  Under Tests, select `Student's`
+3.  Under Tests, select `Student's`. We'll learn more about the Wilcoxon rank option, which is an option if you fail to meet the assumption of normality.
 
 4.  Under Hypothesis, choose the correct hypothesis: <select class='solveme' data-answer='["Measure 1 < Measure 2"]'> <option></option> <option>Measure 1 is not equal to Measure 2</option> <option>Measure 1 > Measure 2</option> <option>Measure 1 < Measure 2</option></select>
 
-5.  Under Additional Statistics, select `Mean difference`, `Effect size`, and `Descriptives`.
+5.  Under Additional Statistics, select `Mean difference`, `Effect size`, `Descriptives`, and (optionally) `Descriptives plots`.
 
-6.  Under Assumption Checks, select both options: `Normality test` and `Q-Q plot`.
+6.  Under Assumption Checks, select both options: `Normality test` and `Q-Q plot`. You'll check these assumptions first, which is discussed above.
 
 When you are done, your setup should look like this
 
@@ -420,25 +537,10 @@ When you are done, your setup should look like this
 
 }
 
-\caption{Dependent t-test setup in jamovi}(\#fig:unnamed-chunk-1)
+\caption{Dependent t-test setup in jamovi}(\#fig:unnamed-chunk-6)
 \end{figure}
 
-### Checking assumptions in jamovi
-
-#### Testing normality
-
-We test for normality using the Shapiro-Wilk test and the Q-Q plot. The Shapiro-Wilk test was not statistically significant (W = .97, *p* = .678); therefore, this indicates the data is normally distributed. Furthermore, the lines are fairly close to the diagonal line in the Q-Q plot (although it's a bit hard to tell because our sample size is small). We can conclude that we satisfy the assumption of normality.
-
-\begin{figure}
-
-{\centering \includegraphics[width=1\linewidth]{images/03_dependent_t-test/dependent_normality} 
-
-}
-
-\caption{Testing normality in jamovi}(\#fig:unnamed-chunk-2)
-\end{figure}
-
-### Interpreting results
+## Interpreting results
 
 Once we are satisfied we have satisfied the assumptions for the dependent t-test, we can interpret our results.
 
@@ -448,18 +550,71 @@ Once we are satisfied we have satisfied the assumptions for the dependent t-test
 
 }
 
-\caption{Dependent t-test results in jamovi}(\#fig:unnamed-chunk-3)
+\caption{Dependent t-test results in jamovi}(\#fig:unnamed-chunk-7)
 \end{figure}
 
-Our p-value is less than .05, so our results are statistically significant. We can write up our results in APA something like this:
+Our p-value is less than .05, so our results are statistically significant. Therefore, we reject the null hypothesis that there is no difference between the two groups.
 
-> The 20 students in Dr. Chico's class performed worse on the first test (*M* = 56.98, *SD* = 6.62) than they did on the second test (*M* = 58.38, *SD* = 6.41), *t*(19) = -6.48, *p* \< .001, *d* = -1.45.
+### Write up the results in APA style
 
-Remember in the previous chapter that our t-test can be negative but we can always flip the interpretation. Here's another example of how we could write-up our results in APA style:
+When writing up the results of a statistical test, we should always include the following information:
 
-> Dr. Chico's hypothesis was correct in that her 20 students performed better on the second test (*M* = 58.38, *SD* = 6.41) than they did on the first test (*M* = 56.98, *SD* = 6.62), *t*(19) = 6.48, *p* \< .001, *d* = 1.45.
+1.  Description of your research question.
+2.  Description of your data. If you fail to meet assumptions, you should specify that and describe what test you chose to perform as a result.
+3.  The results of the inferential test, including what test was performed, the test value and degrees of freedom, p-value, and effect size.
+4.  Interpretation of the results, including any other information as needed.
 
-## What if I violated assumptions?
+We can write up our results in APA something like this:
+
+> Dr. Chico tested whether students performed better on the second test compared to the first test. The 20 students in performed better on the second test (*M* = 58.38, *SD* = 6.41) than they did on the first test (*M* = 56.98, *SD* = 6.62), *t*(19) = 6.48, *p* \< .001, *d* = 1.45.
+
+Remember in the previous chapter that our t-test can be negative but we can always flip the interpretation.
+
+### Visualizing the results
+
+By selecting `Descriptives plots` in the setup, you get the figure below. Personally, I don't think this is a very good plot. It's not very informative. It just provides the mean (circle), 95% confidence interval (blue bars), and the median.
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{images/03_dependent_t-test/dependent_results_plot} 
+
+}
+
+\caption{Dependent t-test descriptives plot}(\#fig:unnamed-chunk-8)
+\end{figure}
+
+Another option is to use the Descriptives plots available in jamovi, which we see above in the Look at the data section above. I wish there were a way to combine them into one graph, but unfortunately there isn't within jamovi. Instead, you'll have to go into the Rj editor and use R code to reshape the data from wide format to long format and then call the descriptives syntax to produce the plot. You *could* copy-paste the data into a new dataset, but I always try to avoid manual work when doing analyses because something *always* goes wrong.
+
+Here's what this looks like in jamovi:
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{images/03_dependent_t-test/dependent_results_plot2} 
+
+}
+
+\caption{Revised plot using the Rj editor}(\#fig:unnamed-chunk-9)
+\end{figure}
+
+To make our lives a bit easier, here is the code in the Rj editor that you can copy-paste (that kind of copy-pasting I allow!) into your own jamovi. You'll need to edit things like the list of names in line 3, the name of your DV (line 4), the name of your IV (line 5), and re-specify those names in line 9.
+
+
+```r
+long <- reshape(data, 
+                direction = "long", 
+                varying = list(names(data)[2:3]),
+                v.names = "Test Score",
+                timevar = "Test Time")
+
+
+jmv::descriptives(data = long,
+                  formula = `Test Score` ~ `Test Time`,
+                  box = TRUE,
+                  violin = TRUE,
+                  dot = TRUE)
+```
+
+## In case of violated assumptions
 
 If you violated the assumption of normality and no transformation fixed your data, then you can perform the non-parametric version of the dependent t-test called the Wilcoxon Rank test. As a reminder, non-parametric tests do not make assumptions about the distribution of data because it deals with the *median* not the *mean*.
 
@@ -471,7 +626,7 @@ Here is the output for both the dependent t-test and the Wilcoxon rank test:
 
 }
 
-\caption{All dependent t-test results in jamovi}(\#fig:unnamed-chunk-4)
+\caption{All dependent t-test results in jamovi}(\#fig:unnamed-chunk-11)
 \end{figure}
 
 #### Wilcoxon rank in jamovi
@@ -480,7 +635,7 @@ To conduct this in jamovi, under Tests select `Wilcoxon rank`. You will interpre
 
 > Using Wilcoxon rank test, students' test scores were significantly higher at the second test (*Mdn* = 59.70) than at the first test (*Mdn* = 57.70), W = 2.00, *p* \< .001.
 
-The note about tied values is not necessary to discuss. It is just telling us one participant had identical values for both test1 and test2 (student15).
+The note about tied values is not necessary to discuss. It is just telling us one participant had identical values for both test1 and test2 (student15). You can check this yourself in the dataset
 
 ## Your turn!
 
@@ -508,7 +663,470 @@ To get the most out of these exercises, try to first find out the answer on your
 
     -   Does students' English scores relate to their Reading scores? <select class='solveme' data-answer='["no"]'> <option></option> <option>yes</option> <option>no</option></select>
 
-<!--chapter:end:03-dependent_t-test.Rmd-->
+<!--chapter:end:07.3-dependent_t-test.Rmd-->
+
+# (PART) Categorical Data Analysis {.unnumbered}
+
+# Categorical Data Analysis
+
+
+
+## What is categorical data analysis?
+
+Simply, categorical data analysis is data analysis with categorical data. It's usually nominal data, although there are a couple tests we may use with ordinal data.
+
+## Assumptions
+
+All of our categorical data analyses have the following assumptions:
+
+1.  **Expected frequencies are sufficiently large**, which is usually greater than 5. If you violate this assumption, you can use Fisher's exact test.
+
+2.  **Data are independent of one another**, meaning each case contributes to only one cell of the table. If you violate this assumption, you may be able to use the McNemar test.
+
+## What types of categorical data analyses are there?
+
+We're going to cover the following categorical data analyses (there are more, but these are all we'll focus on):
+
+1.  $\chi^2$ **goodness-of-fit**: used with one variable to find if the observed frequencies match the expected frequencies
+
+2.  $\chi^2$ **test of independence (or association)**: used with two variables to find if the observed frequencies match the expected frequencies. In other words, are the two nominal variables independent or associated with one another?
+
+    1.  **Fisher's exact test**: This is an alternative to the $\chi^2$test of independence that we use when our frequencies are small.
+
+    2.  **McNemar's test**: This is an alternative to the $\chi^2$test of independence that we have a 2x2 repeated-measures design. For example, perhaps we examine pass/fail rates before and after a training.
+
+Notice how we don't have an assumption about a normal distribution. For that reason, these are all *non-parametric statistics*.
+
+## What is the effect size for categorical data analysis?
+
+We typically report Cramer's V statistic. It's pretty simple to calculate, but jamovi will calculate it for us with the chi-square test of independence:
+
+$V = \sqrt{\frac{\chi^2}{N(k-1)}}$
+
+<!--chapter:end:08.0-categorical.Rmd-->
+
+# Chi-Square Goodness-of-Fit
+
+
+
+## What is the chi-square goodness-of-fit test?
+
+The $\chi^2$ (chi-square) goodness-of-fit tests whether an observed frequency distribution of a nominal variable matches an expected frequency distribution. Our hypotheses for the chi-square goodness-of-fit test is as follows:
+
+-   $H_0$: The observed frequencies match the expected frequencies.
+
+-   $H_1$: At least one observed frequency doesn't match the expected frequency.
+
+For example, if we have a deck of cards and want to see if people don't choose cards randomly, the null hypothesis would be that there is a 25% probability of getting each hearts, clubs, spades, and diamonds.
+
+## Data set-up
+
+Our data set-up for a chi-square goodness-of-fit test is pretty simple, We just need a single column with the nominal category that each participant is in.
+
+## Assumptions
+
+The chi-square goodness-of-fit test has the following assumptions:
+
+1.  **Expected frequencies are sufficiently large**, which is usually greater than 5. If you violate this assumption, you can use Fisher's exact test.
+
+2.  Data are independent of one another, meaning each case contributes to only one cell of the table. If you violate this assumption, you may be able to use the McNemar test.
+
+## The math behind the chi-square goodness of fit test
+
+\begin{info}
+If the math below makes your eyes glaze over, you can skip it. This is
+presented for those who find it useful to understand the math behind the
+statistics to help understand what's happening.
+\end{info}
+
+We're going to continue using the card deck example. This data comes from the lsj-data dataset named "randomness". If you perform descriptive statistics of `choice_1` and ask for frequency tables, you get the *observed* frequencies. We expect the frequencies to be 25% for each choice (or *n* = 50 because our total N is 200, so 200/4 = 50).
+
+|                    |               | $\clubsuit$ | $\diamondsuit$ | $\heartsuit$ | $\spadesuit$ |
+|--------------------|---------------|-------------|----------------|--------------|--------------|
+| Observed frequency | $O_i$         | 35          | 51             | 64           | 50           |
+| Expected frequency | $E_i$         | 50          | 50             | 50           | 50           |
+| Difference score   | $O_i-E_i$     | -15         | 1              | 14           | 0            |
+| Difference squared | $(O_i-E_i)^2$ | 225         | 1              | 196          | 0            |
+
+The formula for the chi-square goodness-of-fit test is as follows:
+
+$\chi^2 = \sum{\frac{(O_i-E_i)^2}{E_i}} = \frac{225 + 1 + 196 + 0}{50} = \frac{422}{50} = 8.44$
+
+Up to this point, we've been working with the *t* and *F* distributions for our statistics. Now we move to the $\chi^2$ distribution with $k-1$ degrees of freedom (k = number of groups; in our card's example case it's 4-1 = 3). What is the chi-square distribution? It looks a little something like this:
+
+
+```r
+ggplot(data.frame(x = c(0, 30)), aes(x = x)) +
+  stat_function(fun = dchisq, args = list(df = 3), aes(colour = "df = 03")) +
+  stat_function(fun = dchisq, args = list(df = 4), aes(colour = "df = 04")) +
+  stat_function(fun = dchisq, args = list(df = 5), aes(colour = "df = 05")) +
+  stat_function(fun = dchisq, args = list(df = 10), aes(colour = "df = 10")) +
+  stat_function(fun = dchisq, args = list(df = 20), aes(colour = "df = 20")) +
+  scale_color_viridis(discrete = TRUE) +
+  theme_classic() +
+  ylab(element_blank()) +
+  xlab(label = "Value")
+```
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{08.1-goodness-of-fit_files/figure-latex/unnamed-chunk-2-1} 
+
+}
+
+\caption{**CAPTION THIS FIGURE!!**}(\#fig:unnamed-chunk-2)
+\end{figure}
+
+In our case, we have a degrees of freedom of 3. Just like we did early in the semester, we can look up our critical-$\chi^2$ value in a table to find that our critical value for df = 3 is 7.815. The figure below shows our critical-$\chi^2$ value in red and calculated-$\chi^2$ value in black. Because our calculated-$\chi^2$ value is in the critical region, we can reject the null hypothesis that all four suits are chosen with equal probability.
+
+
+```r
+ggplot(data.frame(x = c(0, 20)), aes(x = x)) +
+  stat_function(fun = dchisq, args = list(df = 3)) +
+  stat_function(fun = dchisq, args = list(df = 3), 
+                xlim = c(7.815, 20), geom = "area", fill = "darkred") +
+  geom_vline(xintercept = 7.815, colour = "darkred") + 
+  geom_text(aes(x = 7.4, y = .15, label = "Critical-value = 7.815"), 
+            angle = 90, color = "darkred") +
+  geom_text(aes(x = 8.8, y = .15, label = "Calculated-value = 8.44"), 
+            angle = 90) +
+  geom_vline(xintercept = 8.44) + 
+  theme_classic() +
+  scale_color_viridis(discrete = TRUE) +
+  ylab(element_blank()) +
+  xlab(label = "Value of the goodness-of-fit statistic")
+```
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{08.1-goodness-of-fit_files/figure-latex/unnamed-chunk-3-1} 
+
+}
+
+\caption{**CAPTION THIS FIGURE!!**}(\#fig:unnamed-chunk-3)
+\end{figure}
+
+## Performing the chi-square goodness-of-fit test in jamovi
+
+Let's run an example with data from lsj-data. Open data from your Data Library in "lsj-data". Select and open "randomness". This dataset has participants pull two cards from a deck. For now, let's just work with `choice_1`.
+
+1.  From the 'Analyses' toolbar select 'Frequences' - 'One sample proportion tests - N outcomes'.
+
+2.  Move `choice_1` into the Variable box.
+
+3.  Select `Expected counts`.
+
+When you are done, your setup should look like this
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.8\linewidth]{images/09-chi-square/chi-square_setup} 
+
+}
+
+\caption{Chi-square goodness-of-fit setup in jamovi}(\#fig:unnamed-chunk-4)
+\end{figure}
+
+## Interpreting results
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{images/09-chi-square/chi-square_results} 
+
+}
+
+\caption{Chi-square goodness-of-fit results in jamovi}(\#fig:unnamed-chunk-5)
+\end{figure}
+
+The first table shows us our observed frequencies (our data) and expected frequencies (N/k = 200/4 = 50). The second table gives us our results. Our p-value is less than .05 so we can reject the null hypothesis that the observed frequencies match our expected frequencies.
+
+We can write up our results in APA something like this:
+
+> Of the 200 participants in the experiment, 64 selected hearts for their first choice, 51selected diamonds, 50 selected spades, and 35 selected clubs. A chi-square goodness-of-fit test was conducted to test whether the choice probabilities were identical for all four suits. The results were statistically significant ($\chi^2$ (3) = 8.44; *p* = .038), suggesting that people did not select suits purely at random.
+
+## Different Expected Frequencies
+
+As you can tell, jamovi automatically assumed equal proportions of frequencies. However, perhaps we think our deck is loaded or we have the actual population frequencies and want to see if our distribution matches the population distribution. We can use the `Expected Proportions` in the setup to specify different expected frequencies.
+
+For example, maybe we think our deck is a little stacked in favor of red cards--or we think our participants are more likely to choose red cards than black cards. We can specify our expected proportions and then interpret the results. In this case, participants do not seem more likely to choose red cards based on the expected frequencies we provided.
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{images/09-chi-square/chi-square_results2} 
+
+}
+
+\caption{Chi-square goodness-of-fit - Different expected proportions}(\#fig:unnamed-chunk-6)
+\end{figure}
+
+## Your turn!
+
+Open the `Sample_Dataset_2014.xlsx` file that we will be using for all Your Turn exercises. You can find the dataset here: [Sample_Dataset_2014.xlsx Download](https://github.com/danawanzer/stats-with-jamovi/blob/master/data/Sample_Dataset_2014.xlsx)
+
+To get the most out of these exercises, try to first find out the answer on your own and then use the drop-down menus to check your answer.
+
+1.  **Are there equal numbers of athletes and non-athletes?** (`Athlete` variable)
+
+    -   Do you meet the assumptions? <select class='solveme' data-answer='["yes"]'> <option></option> <option>yes</option> <option>no, expected frequencies are too small</option> <option>no, data are not independent</option></select>
+
+    -   Are the observed frequencies similar to the expected frequencies? <select class='solveme' data-answer='["no"]'> <option></option> <option>yes</option> <option>no</option></select>
+
+    -   What is your chi-square value, rounded to two decimal places: <input class='solveme nospaces' size='5' data-answer='["10.32"]'/>
+
+2.  **I happen to know the school this data comes from has 40% athletes and 60% non-athletes. Does our data match the school population?**
+
+    -   Change your Expected Proportions ratio to .6 for non-athletes and .4 for athletes.
+
+    -   Are the observed frequencies similar to the expected frequencies? <select class='solveme' data-answer='["yes"]'> <option></option> <option>yes</option> <option>no</option></select>
+
+    -   What is your chi-square value, rounded to two decimal places: <input class='solveme nospaces' size='4' data-answer='["0.96"]'/>
+
+3.  **Are there equal numbers of freshmen, sophomores, juniors, and seniors?** (`Rank` variable)
+
+    -   Do you meet the assumptions? <select class='solveme' data-answer='["yes"]'> <option></option> <option>yes</option> <option>no, expected frequencies are too small</option> <option>no, data are not independent</option></select>
+
+    -   Are the observed frequencies similar to the expected frequencies? <select class='solveme' data-answer='["no"]'> <option></option> <option>yes</option> <option>no</option></select>
+
+    -   What is your chi-square value, rounded to two decimal places: <input class='solveme nospaces' size='5' data-answer='["33.94"]'/>
+
+<!--chapter:end:08.1-goodness-of-fit.Rmd-->
+
+# Chi-Square Test of Independence
+
+
+
+## What is the chi-square test of independence?
+
+The $\chi^2$ (chi-square) test of independence (or association) tests whether an observed frequency distribution of a nominal variable matches an expected frequency distribution, but unlike the goodness of fit test we are looking at the relationship, independence, or association between two variables. Our hypotheses for the chi-square goodness-of-fit test is as follows:
+
+-   $H_0$: The observed frequencies match the expected frequencies.
+
+-   $H_1$: At least one observed frequency doesn't match the expected frequency.
+
+For example, imagine we are watching a show about the planet *Chapek 9*. On this planet, for someone to gain access to their capital city they must prove they're a robot, not a human. In order to determine whether or not a visitor is human, the natives ask whether the visitor prefers puppies, flowers, or large, properly formatted data files. Our alternative hypothesis would be that humans and robots have different preferences and our null is that they have the same preferences.
+
+## Data set-up
+
+Our data set-up for a chi-square test of independence is pretty simple, We just need two columns of nominal data, with one row per participant. Here's our data for our example we'll be working with, which you can find in the lsj-data called `chapek9`:
+
+| ID  | species | choice |
+|-----|---------|--------|
+| 1   | robot   | flower |
+| 2   | human   | data   |
+| 3   | human   | data   |
+| 4   | human   | data   |
+| 5   | robot   | data   |
+| 6   | human   | flower |
+| 7   | human   | data   |
+| 8   | robot   | data   |
+| 9   | human   | puppy  |
+| 10  | robot   | flower |
+
+## The math behind the chi-square test of independence
+
+\begin{info}
+If the math below makes your eyes glaze over, you can skip it. This is
+presented for those who find it useful to understand the math behind the
+statistics to help understand what's happening.
+\end{info}
+
+We're going to continue using the Chapek 9 example. This data comes from the lsj-data dataset named "chapek9". If you perform descriptive statistics of `choice` by `species` and ask for frequency tables, you get the *observed* frequencies below. I've added row, column, and table totals on the right column and bottom row.
+
+| *Observed Frequencies* | Robot  | Human  | Total   |
+|------------------------|--------|--------|---------|
+| Puppy                  | 13     | 15     | **28**  |
+| Flower                 | 30     | 13     | **43**  |
+| Data                   | 44     | 65     | **109** |
+| **Total**              | **87** | **93** | **180** |
+
+Next, we need to calculate our *expected* frequencies based on our data. Our expected frequencies for each cell by multiplying the row total by the column total and dividing by the total sample size:
+
+$Expected frequencies = \frac{C_j * P_i}{N}$
+
+| *Expected Frequencies* | Robot                   | Human                    | Total   |
+|------------------------|-------------------------|--------------------------|---------|
+| Puppy                  | (28 \* 87)/180 = 13.533 | (28 \* 93)/180 =14.467   | **28**  |
+| Flower                 | (43 \* 87)/180 =20.783  | (43 \* 93)/180 = 22.217  | **43**  |
+| Data                   | (109 \* 87)/180 =52.683 | (109 \* 93)/180 = 56.317 | **109** |
+| **Total**              | **87**                  | **93**                   | **180** |
+
+We then need to calculate the squared differences of observed minus expected frequencies:
+
+| *Squared differences* | Robot                    | Human                    | Total   |
+|-----------------------|--------------------------|--------------------------|---------|
+| Puppy                 | $(13-13.533)^2 = .284$   | $(15-14.467)^2 = .284$   | **28**  |
+| Flower                | $(30-20.783)^2 = 84.953$ | $(13-22.217)^2 = 84.953$ | **43**  |
+| Data                  | $(44-52.683)^2 = 75.394$ | $(65-56.317)^2 = 75.394$ | **109** |
+| **Total**             | **87**                   | **93**                   | **180** |
+
+The formula for the chi-square test of independence is the very similar to the chi-square goodness of fit test:
+
+$\chi^2 = \sum{\frac{(O_i-E_i)^2}{E_i}} = \frac{.284}{13.533} + \frac{.284}{14.467} + \frac{84.953}{20.783} + \frac{84.953}{22.217} + \frac{75.394}{52.683} + \frac{75.394}{56.317}$
+
+$\chi^2 = .021 + .020 + 4.070 + 3.834 + 1.431 + 1.339 = 10.72$
+
+Our degrees of freedom equals $(r-1)(c-1)$ where *r* is the number of rows and *c* is the number of columns. Our dataset has 3 rows and 2 columns: $(r-1)(c-1) = (3-1)(2-1) = (2)(1) = 2$ degrees of freedom.
+
+## Performing the chi-square test of independence in jamovi
+
+Let's run an example with data from lsj-data. Open data from your Data Library in "lsj-data". Select and open "chapek9". This dataset indicates the ID number of the participant, the species (robot or human), and their preference of the three things (puppy, flower, or data).
+
+1.  From the 'Analyses' toolbar select 'Frequencies' - 'Independent Samples - $\chi^2$ test of association'.
+
+2.  Move `choice` into rows and `species` into columns. Note that the placement in rows or columns doesn't really matter, but because we typically work with portrait pages I tend to prefer putting in rows whatever variable has more levels. In this case, choice has 3 levels and species only 2 so I like to put choice in rows and species in columns.
+
+3.  Under the Statistics tab, select $\chi^2$ under Tests and `Phi and Cramer's V` under Nominal.
+
+4.  Optionally, you can request under the Cells tab to show the expected counts and the row, column, and total percentages.
+
+When you are done, your setup should look like this
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.8\linewidth]{images/11-independence/independence_setup} 
+
+}
+
+\caption{Chi-square test of independence setup in jamovi}(\#fig:unnamed-chunk-2)
+\end{figure}
+
+## Interpreting results
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{images/11-independence/independence_results} 
+
+}
+
+\caption{Chi-square test of independence results in jamovi}(\#fig:unnamed-chunk-3)
+\end{figure}
+
+The first table shows us our observed frequencies. The second table gives us our results. Our p-value is less than .05 so we can reject the null hypothesis that the observed frequencies match our expected frequencies. jamovi also gives us our Cramer's V value.
+
+We can write up our results in APA something like this:
+
+> Pearson's $\chi^2$ test of independence showed a significant association between species and choice, $\chi^2$ (2) = 10.72, *p* = .005, Cramer's V = .24. Robots appeared to be more likely to say they prefer flowers and humans appeared to be more likely to say they prefer data.
+
+I would either write-up the observed frequencies above or, ideally, I would share the contingency table with my observed frequencies.
+
+## Fisher's exact test
+
+If you violate the assumption that there your expected frequencies are sufficiently large and you have a 2x2 table, you can still perform the $\chi^2$ test of independence but instead of selecting $\chi^2$you'll select `Fisher's exact test`. You'll interpret your results exactly the same but specify you used the Fisher's exact test.
+
+## Ordinal variable(s)
+
+If either of your variables are ordinal, instead of selecting `Phi and Cramer's V` you should select `Gamma` or `Kendall's tau-b`. Which do you choose? `Kendall's tau-b` should only be chosen if you have a square table (e.g., 3x3, 4x4, 5x5) whereas `Gamma` can be done with any size table. `Kendall's tau-b` will be a slightly more conservative estimate compared to `Gamma`.
+
+## Your turn!
+
+Open the `Sample_Dataset_2014.xlsx` file that we will be using for all Your Turn exercises. You can find the dataset here: [Sample_Dataset_2014.xlsx Download](https://github.com/danawanzer/stats-with-jamovi/blob/master/data/Sample_Dataset_2014.xlsx)
+
+To get the most out of these exercises, try to first find out the answer on your own and then use the drop-down menus to check your answer.
+
+1.  **Is Athlete related to Gender?**
+
+    -   Do you meet the assumptions? <select class='solveme' data-answer='["yes"]'> <option></option> <option>yes</option> <option>no, expected frequencies are too small</option> <option>no, data are not independent</option></select>
+
+    -   Which test should you perform? <select class='solveme' data-answer='["Chi-square"]'> <option></option> <option>Chi-square</option> <option>Fisher's exact test</option></select>
+
+    -   Are the observed frequencies similar to the expected frequencies? <select class='solveme' data-answer='["no"]'> <option></option> <option>yes</option> <option>no</option></select>
+
+    -   What is your chi-square value, rounded to two decimal places: <input class='solveme nospaces' size='4' data-answer='["8.45"]'/>
+
+2.  **Is Gender related to Rank?**
+
+    -   Do you meet the assumptions? <select class='solveme' data-answer='["yes"]'> <option></option> <option>yes</option> <option>no, expected frequencies are too small</option> <option>no, data are not independent</option></select>
+
+    -   Which test should you perform? <select class='solveme' data-answer='["Chi-square"]'> <option></option> <option>Chi-square</option> <option>Fisher's exact test</option></select>
+
+    -   Are the observed frequencies similar to the expected frequencies? <select class='solveme' data-answer='["yes"]'> <option></option> <option>yes</option> <option>no</option></select>
+
+    -   What is your chi-square value, rounded to two decimal places: <input class='solveme nospaces' size='4' data-answer='["0.61"]'/>
+
+<!--chapter:end:08.2-independence.Rmd-->
+
+# McNemar's Test
+
+
+
+## What is McNemar's test?
+
+McNemar's test is based on the $\chi^2$ (chi-square) test of independence (or association), but is used in a repeated measures or within-subjects design. Our hypotheses for the McNemar test is as follows:
+
+-   $H_0$: The observed frequencies match the expected frequencies.
+
+-   $H_1$: At least one observed frequency doesn't match the expected frequency.
+
+For example, suppose we're working with the *Australian Generic Political Party* (AGPP) and your job is to find out how effective AGPP political advertisements are. You gather 100 people and ask them to watch the AGPP ads. You ask participants before and after viewing ads whether they intend to vote for the AGPP.
+
+## Data set-up
+
+Our data set-up for McNemar's test is pretty simple. We just need two columns of nominal data, with one row per participant and each column being the same variable at two different time points. Here's our data for our example we'll be working with, which you can find in the lsj-data called `agpp`:
+
+| ID      | response_before | response_after |
+|---------|-----------------|----------------|
+| subj.1  | no              | yes            |
+| subj.2  | yes             | no             |
+| subj.3  | yes             | no             |
+| subj.4  | yes             | no             |
+| subj.5  | no              | no             |
+| subj.6  | no              | no             |
+| subj.7  | no              | no             |
+| subj.8  | no              | yes            |
+| subj.9  | no              | no             |
+| subj.10 | no              | no             |
+
+## The math behind the chi-square test of independence
+
+\begin{info}
+If the math below makes your eyes glaze over, you can skip it. This is
+presented for those who find it useful to understand the math behind the
+statistics to help understand what's happening.
+\end{info}
+
+I might add the math behind the test later. Otherwise, it's similar to the $\chi^2$ test of independence with slightly different calculations.
+
+## Performing McNemar's test in jamovi
+
+Let's run an example with data from lsj-data. Open data from your Data Library in "lsj-data". Select and open "agpp". This dataset indicates the ID number of the participant and whether they would vote for AGPP before and after viewing the ads.
+
+1.  From the 'Analyses' toolbar select 'Frequencies' - 'Paired Samples - McNemar test'.
+
+2.  Move `response_before` into rows and `response_after` into columns. Note that the placement in rows or columns doesn't really matter.
+
+3.  Under the Statistics tab, select $\chi^2$ under Tests.
+
+4.  Optionally, you can request under to show the row and column percentages.
+
+When you are done, your setup should look like this
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.8\linewidth]{images/12-mcnemar/mcnemar_setup} 
+
+}
+
+\caption{McNemar's test setup in jamovi}(\#fig:unnamed-chunk-2)
+\end{figure}
+
+## Interpreting results
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{images/12-mcnemar/mcnemar_results} 
+
+}
+
+\caption{McNemar's test results in jamovi}(\#fig:unnamed-chunk-3)
+\end{figure}
+
+The first table shows us our observed frequencies. The second table gives us our results. Our p-value is less than .05 so we can reject the null hypothesis that the observed frequencies match our expected frequencies. Unfortunately, looking at our table it also shows that the ads had a negative effect: people were less likely to vote AGPP after seeing the ads.
+
+We can write up our results in APA something like this:
+
+> McNemar's test indicated that support for AGPP changed from before to after reviewing the AGPP advertisement, $\chi^2$ (1) = 13.33, *p* \< .001. Most participants continued to not vote for AGPP after the ad (*n* = 65) and a few continued to vote for AGPP after the ad (*n* = 5). However, many participants who originally stated they would vote for AGPP changed to no longer voting for AGPP after the ad (*n* = 25); only five people who originally would not vote for AGPP changed to vote for AGPP after the ad.
+
+<!--chapter:end:08.3-mcnemar.Rmd-->
 
 # (PART) ANOVA {.unnumbered}
 
@@ -990,7 +1608,7 @@ To get the most out of these exercises, try to first find out the answer on your
 
     -   What are the results of the post hoc comparison? <select class='solveme' data-answer='["Nonsmokers had significantly faster sprint times than current smokers"]'> <option></option> <option>N/A - Don't perform</option> <option>Nonsmokers had significantly faster sprint times than current smokers</option> <option>Nonsmokers and past smokers had significantly faster spring times than current smokers</option> <option>Nonsmokers had significantly faster sprint times than both past and current smokers</option></select>
 
-<!--chapter:end:04-one-way-anova.Rmd-->
+<!--chapter:end:10.1-one-way-anova.Rmd-->
 
 # Repeated Measures ANOVA
 
@@ -1235,7 +1853,7 @@ To get the most out of these exercises, try to first find out the answer on your
 
     -   What are the results of the post hoc comparison? <select class='solveme' data-answer='["N/A - Don&apos;t perform"]'> <option></option> <option>N/A - Don't perform</option> <option>All test scores were significantly different from one another</option> <option>All test scores were significantly different from one another except for English and Reading</option></select>
 
-<!--chapter:end:05-repeated-measures-anova.Rmd-->
+<!--chapter:end:10.2-repeated-measures-anova.Rmd-->
 
 # Factorial ANOVA
 
@@ -1463,7 +2081,7 @@ Lastly, we can write up the results in APA style!
 >
 > For condition, participants who fasted (*M* = 3.81, *SE* = .11) reported significantly more food cravings than participants in the control condition (*M* = 2.33, *SE* = .11; $p_{Tukey}$ \< .001). For reward, the food reward (*M* = 3.14, *SE* = .09) led to significantly higher food cravings than the music reward (*M* = 3.00, *SE* = .09; $p_{Tukey}$ = .009), but there was no differences between the money reward (*M* = 3.07, *SE* = .09) and both food ($p_{Tukey}$ = .340) or music ($p_{Tukey}$ = .258).
 
-<!--chapter:end:06-factorial-anova.Rmd-->
+<!--chapter:end:10.3-factorial-anova.Rmd-->
 
 # ANCOVA
 
@@ -1587,7 +2205,7 @@ Last, we can write-up our results! Reporting ANCOVA is very similar to reporting
 \caption{Interaction in jamovi}(\#fig:unnamed-chunk-7)
 \end{figure}
 
-<!--chapter:end:07-ancova.Rmd-->
+<!--chapter:end:10.4-ancova.Rmd-->
 
 # (PART) Correlation {.unnumbered}
 
@@ -1667,7 +2285,7 @@ Let's visualize our example data above. The horizontal line is our mean for each
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{08-correlation_files/figure-latex/unnamed-chunk-6-1} 
+{\centering \includegraphics[width=1\linewidth]{11.1-correlation_files/figure-latex/unnamed-chunk-6-1} 
 
 }
 
@@ -1874,470 +2492,7 @@ To get the most out of these exercises, try to first find out the answer on your
 
         -   What is the correlation between writing and English? <input class='solveme nospaces' size='3' data-answer='[".37"]'/>
 
-<!--chapter:end:08-correlation.Rmd-->
-
-# (PART) Categorical Data Analysis {.unnumbered}
-
-# Categorical Data Analysis
-
-
-
-## What is categorical data analysis?
-
-Simply, categorical data analysis is data analysis with categorical data. It's usually nominal data, although there are a couple tests we may use with ordinal data.
-
-## Assumptions
-
-All of our categorical data analyses have the following assumptions:
-
-1.  **Expected frequencies are sufficiently large**, which is usually greater than 5. If you violate this assumption, you can use Fisher's exact test.
-
-2.  **Data are independent of one another**, meaning each case contributes to only one cell of the table. If you violate this assumption, you may be able to use the McNemar test.
-
-## What types of categorical data analyses are there?
-
-We're going to cover the following categorical data analyses (there are more, but these are all we'll focus on):
-
-1.  $\chi^2$ **goodness-of-fit**: used with one variable to find if the observed frequencies match the expected frequencies
-
-2.  $\chi^2$ **test of independence (or association)**: used with two variables to find if the observed frequencies match the expected frequencies. In other words, are the two nominal variables independent or associated with one another?
-
-    1.  **Fisher's exact test**: This is an alternative to the $\chi^2$test of independence that we use when our frequencies are small.
-
-    2.  **McNemar's test**: This is an alternative to the $\chi^2$test of independence that we have a 2x2 repeated-measures design. For example, perhaps we examine pass/fail rates before and after a training.
-
-Notice how we don't have an assumption about a normal distribution. For that reason, these are all *non-parametric statistics*.
-
-## What is the effect size for categorical data analysis?
-
-We typically report Cramer's V statistic. It's pretty simple to calculate, but jamovi will calculate it for us with the chi-square test of independence:
-
-$V = \sqrt{\frac{\chi^2}{N(k-1)}}$
-
-<!--chapter:end:09-categorical.Rmd-->
-
-# Chi-Square Goodness-of-Fit
-
-
-
-## What is the chi-square goodness-of-fit test?
-
-The $\chi^2$ (chi-square) goodness-of-fit tests whether an observed frequency distribution of a nominal variable matches an expected frequency distribution. Our hypotheses for the chi-square goodness-of-fit test is as follows:
-
--   $H_0$: The observed frequencies match the expected frequencies.
-
--   $H_1$: At least one observed frequency doesn't match the expected frequency.
-
-For example, if we have a deck of cards and want to see if people don't choose cards randomly, the null hypothesis would be that there is a 25% probability of getting each hearts, clubs, spades, and diamonds.
-
-## Data set-up
-
-Our data set-up for a chi-square goodness-of-fit test is pretty simple, We just need a single column with the nominal category that each participant is in.
-
-## Assumptions
-
-The chi-square goodness-of-fit test has the following assumptions:
-
-1.  **Expected frequencies are sufficiently large**, which is usually greater than 5. If you violate this assumption, you can use Fisher's exact test.
-
-2.  Data are independent of one another, meaning each case contributes to only one cell of the table. If you violate this assumption, you may be able to use the McNemar test.
-
-## The math behind the chi-square goodness of fit test
-
-\begin{info}
-If the math below makes your eyes glaze over, you can skip it. This is
-presented for those who find it useful to understand the math behind the
-statistics to help understand what's happening.
-\end{info}
-
-We're going to continue using the card deck example. This data comes from the lsj-data dataset named "randomness". If you perform descriptive statistics of `choice_1` and ask for frequency tables, you get the *observed* frequencies. We expect the frequencies to be 25% for each choice (or *n* = 50 because our total N is 200, so 200/4 = 50).
-
-|                    |               | $\clubsuit$ | $\diamondsuit$ | $\heartsuit$ | $\spadesuit$ |
-|--------------------|---------------|-------------|----------------|--------------|--------------|
-| Observed frequency | $O_i$         | 35          | 51             | 64           | 50           |
-| Expected frequency | $E_i$         | 50          | 50             | 50           | 50           |
-| Difference score   | $O_i-E_i$     | -15         | 1              | 14           | 0            |
-| Difference squared | $(O_i-E_i)^2$ | 225         | 1              | 196          | 0            |
-
-The formula for the chi-square goodness-of-fit test is as follows:
-
-$\chi^2 = \sum{\frac{(O_i-E_i)^2}{E_i}} = \frac{225 + 1 + 196 + 0}{50} = \frac{422}{50} = 8.44$
-
-Up to this point, we've been working with the *t* and *F* distributions for our statistics. Now we move to the $\chi^2$ distribution with $k-1$ degrees of freedom (k = number of groups; in our card's example case it's 4-1 = 3). What is the chi-square distribution? It looks a little something like this:
-
-
-```r
-ggplot(data.frame(x = c(0, 30)), aes(x = x)) +
-  stat_function(fun = dchisq, args = list(df = 3), aes(colour = "df = 03")) +
-  stat_function(fun = dchisq, args = list(df = 4), aes(colour = "df = 04")) +
-  stat_function(fun = dchisq, args = list(df = 5), aes(colour = "df = 05")) +
-  stat_function(fun = dchisq, args = list(df = 10), aes(colour = "df = 10")) +
-  stat_function(fun = dchisq, args = list(df = 20), aes(colour = "df = 20")) +
-  scale_color_viridis(discrete = TRUE) +
-  theme_classic() +
-  ylab(element_blank()) +
-  xlab(label = "Value")
-```
-
-\begin{figure}
-
-{\centering \includegraphics[width=1\linewidth]{10-goodness-of-fit_files/figure-latex/unnamed-chunk-2-1} 
-
-}
-
-\caption{**CAPTION THIS FIGURE!!**}(\#fig:unnamed-chunk-2)
-\end{figure}
-
-In our case, we have a degrees of freedom of 3. Just like we did early in the semester, we can look up our critical-$\chi^2$ value in a table to find that our critical value for df = 3 is 7.815. The figure below shows our critical-$\chi^2$ value in red and calculated-$\chi^2$ value in black. Because our calculated-$\chi^2$ value is in the critical region, we can reject the null hypothesis that all four suits are chosen with equal probability.
-
-
-```r
-ggplot(data.frame(x = c(0, 20)), aes(x = x)) +
-  stat_function(fun = dchisq, args = list(df = 3)) +
-  stat_function(fun = dchisq, args = list(df = 3), 
-                xlim = c(7.815, 20), geom = "area", fill = "darkred") +
-  geom_vline(xintercept = 7.815, colour = "darkred") + 
-  geom_text(aes(x = 7.4, y = .15, label = "Critical-value = 7.815"), 
-            angle = 90, color = "darkred") +
-  geom_text(aes(x = 8.8, y = .15, label = "Calculated-value = 8.44"), 
-            angle = 90) +
-  geom_vline(xintercept = 8.44) + 
-  theme_classic() +
-  scale_color_viridis(discrete = TRUE) +
-  ylab(element_blank()) +
-  xlab(label = "Value of the goodness-of-fit statistic")
-```
-
-\begin{figure}
-
-{\centering \includegraphics[width=1\linewidth]{10-goodness-of-fit_files/figure-latex/unnamed-chunk-3-1} 
-
-}
-
-\caption{**CAPTION THIS FIGURE!!**}(\#fig:unnamed-chunk-3)
-\end{figure}
-
-## Performing the chi-square goodness-of-fit test in jamovi
-
-Let's run an example with data from lsj-data. Open data from your Data Library in "lsj-data". Select and open "randomness". This dataset has participants pull two cards from a deck. For now, let's just work with `choice_1`.
-
-1.  From the 'Analyses' toolbar select 'Frequences' - 'One sample proportion tests - N outcomes'.
-
-2.  Move `choice_1` into the Variable box.
-
-3.  Select `Expected counts`.
-
-When you are done, your setup should look like this
-
-\begin{figure}
-
-{\centering \includegraphics[width=0.8\linewidth]{images/09-chi-square/chi-square_setup} 
-
-}
-
-\caption{Chi-square goodness-of-fit setup in jamovi}(\#fig:unnamed-chunk-4)
-\end{figure}
-
-## Interpreting results
-
-\begin{figure}
-
-{\centering \includegraphics[width=1\linewidth]{images/09-chi-square/chi-square_results} 
-
-}
-
-\caption{Chi-square goodness-of-fit results in jamovi}(\#fig:unnamed-chunk-5)
-\end{figure}
-
-The first table shows us our observed frequencies (our data) and expected frequencies (N/k = 200/4 = 50). The second table gives us our results. Our p-value is less than .05 so we can reject the null hypothesis that the observed frequencies match our expected frequencies.
-
-We can write up our results in APA something like this:
-
-> Of the 200 participants in the experiment, 64 selected hearts for their first choice, 51selected diamonds, 50 selected spades, and 35 selected clubs. A chi-square goodness-of-fit test was conducted to test whether the choice probabilities were identical for all four suits. The results were statistically significant ($\chi^2$ (3) = 8.44; *p* = .038), suggesting that people did not select suits purely at random.
-
-## Different Expected Frequencies
-
-As you can tell, jamovi automatically assumed equal proportions of frequencies. However, perhaps we think our deck is loaded or we have the actual population frequencies and want to see if our distribution matches the population distribution. We can use the `Expected Proportions` in the setup to specify different expected frequencies.
-
-For example, maybe we think our deck is a little stacked in favor of red cards--or we think our participants are more likely to choose red cards than black cards. We can specify our expected proportions and then interpret the results. In this case, participants do not seem more likely to choose red cards based on the expected frequencies we provided.
-
-\begin{figure}
-
-{\centering \includegraphics[width=1\linewidth]{images/09-chi-square/chi-square_results2} 
-
-}
-
-\caption{Chi-square goodness-of-fit - Different expected proportions}(\#fig:unnamed-chunk-6)
-\end{figure}
-
-## Your turn!
-
-Open the `Sample_Dataset_2014.xlsx` file that we will be using for all Your Turn exercises. You can find the dataset here: [Sample_Dataset_2014.xlsx Download](https://github.com/danawanzer/stats-with-jamovi/blob/master/data/Sample_Dataset_2014.xlsx)
-
-To get the most out of these exercises, try to first find out the answer on your own and then use the drop-down menus to check your answer.
-
-1.  **Are there equal numbers of athletes and non-athletes?** (`Athlete` variable)
-
-    -   Do you meet the assumptions? <select class='solveme' data-answer='["yes"]'> <option></option> <option>yes</option> <option>no, expected frequencies are too small</option> <option>no, data are not independent</option></select>
-
-    -   Are the observed frequencies similar to the expected frequencies? <select class='solveme' data-answer='["no"]'> <option></option> <option>yes</option> <option>no</option></select>
-
-    -   What is your chi-square value, rounded to two decimal places: <input class='solveme nospaces' size='5' data-answer='["10.32"]'/>
-
-2.  **I happen to know the school this data comes from has 40% athletes and 60% non-athletes. Does our data match the school population?**
-
-    -   Change your Expected Proportions ratio to .6 for non-athletes and .4 for athletes.
-
-    -   Are the observed frequencies similar to the expected frequencies? <select class='solveme' data-answer='["yes"]'> <option></option> <option>yes</option> <option>no</option></select>
-
-    -   What is your chi-square value, rounded to two decimal places: <input class='solveme nospaces' size='4' data-answer='["0.96"]'/>
-
-3.  **Are there equal numbers of freshmen, sophomores, juniors, and seniors?** (`Rank` variable)
-
-    -   Do you meet the assumptions? <select class='solveme' data-answer='["yes"]'> <option></option> <option>yes</option> <option>no, expected frequencies are too small</option> <option>no, data are not independent</option></select>
-
-    -   Are the observed frequencies similar to the expected frequencies? <select class='solveme' data-answer='["no"]'> <option></option> <option>yes</option> <option>no</option></select>
-
-    -   What is your chi-square value, rounded to two decimal places: <input class='solveme nospaces' size='5' data-answer='["33.94"]'/>
-
-<!--chapter:end:10-goodness-of-fit.Rmd-->
-
-# Chi-Square Test of Independence
-
-
-
-## What is the chi-square test of independence?
-
-The $\chi^2$ (chi-square) test of independence (or association) tests whether an observed frequency distribution of a nominal variable matches an expected frequency distribution, but unlike the goodness of fit test we are looking at the relationship, independence, or association between two variables. Our hypotheses for the chi-square goodness-of-fit test is as follows:
-
--   $H_0$: The observed frequencies match the expected frequencies.
-
--   $H_1$: At least one observed frequency doesn't match the expected frequency.
-
-For example, imagine we are watching a show about the planet *Chapek 9*. On this planet, for someone to gain access to their capital city they must prove they're a robot, not a human. In order to determine whether or not a visitor is human, the natives ask whether the visitor prefers puppies, flowers, or large, properly formatted data files. Our alternative hypothesis would be that humans and robots have different preferences and our null is that they have the same preferences.
-
-## Data set-up
-
-Our data set-up for a chi-square test of independence is pretty simple, We just need two columns of nominal data, with one row per participant. Here's our data for our example we'll be working with, which you can find in the lsj-data called `chapek9`:
-
-| ID  | species | choice |
-|-----|---------|--------|
-| 1   | robot   | flower |
-| 2   | human   | data   |
-| 3   | human   | data   |
-| 4   | human   | data   |
-| 5   | robot   | data   |
-| 6   | human   | flower |
-| 7   | human   | data   |
-| 8   | robot   | data   |
-| 9   | human   | puppy  |
-| 10  | robot   | flower |
-
-## The math behind the chi-square test of independence
-
-\begin{info}
-If the math below makes your eyes glaze over, you can skip it. This is
-presented for those who find it useful to understand the math behind the
-statistics to help understand what's happening.
-\end{info}
-
-We're going to continue using the Chapek 9 example. This data comes from the lsj-data dataset named "chapek9". If you perform descriptive statistics of `choice` by `species` and ask for frequency tables, you get the *observed* frequencies below. I've added row, column, and table totals on the right column and bottom row.
-
-| *Observed Frequencies* | Robot  | Human  | Total   |
-|------------------------|--------|--------|---------|
-| Puppy                  | 13     | 15     | **28**  |
-| Flower                 | 30     | 13     | **43**  |
-| Data                   | 44     | 65     | **109** |
-| **Total**              | **87** | **93** | **180** |
-
-Next, we need to calculate our *expected* frequencies based on our data. Our expected frequencies for each cell by multiplying the row total by the column total and dividing by the total sample size:
-
-$Expected frequencies = \frac{C_j * P_i}{N}$
-
-| *Expected Frequencies* | Robot                   | Human                    | Total   |
-|------------------------|-------------------------|--------------------------|---------|
-| Puppy                  | (28 \* 87)/180 = 13.533 | (28 \* 93)/180 =14.467   | **28**  |
-| Flower                 | (43 \* 87)/180 =20.783  | (43 \* 93)/180 = 22.217  | **43**  |
-| Data                   | (109 \* 87)/180 =52.683 | (109 \* 93)/180 = 56.317 | **109** |
-| **Total**              | **87**                  | **93**                   | **180** |
-
-We then need to calculate the squared differences of observed minus expected frequencies:
-
-| *Squared differences* | Robot                    | Human                    | Total   |
-|-----------------------|--------------------------|--------------------------|---------|
-| Puppy                 | $(13-13.533)^2 = .284$   | $(15-14.467)^2 = .284$   | **28**  |
-| Flower                | $(30-20.783)^2 = 84.953$ | $(13-22.217)^2 = 84.953$ | **43**  |
-| Data                  | $(44-52.683)^2 = 75.394$ | $(65-56.317)^2 = 75.394$ | **109** |
-| **Total**             | **87**                   | **93**                   | **180** |
-
-The formula for the chi-square test of independence is the very similar to the chi-square goodness of fit test:
-
-$\chi^2 = \sum{\frac{(O_i-E_i)^2}{E_i}} = \frac{.284}{13.533} + \frac{.284}{14.467} + \frac{84.953}{20.783} + \frac{84.953}{22.217} + \frac{75.394}{52.683} + \frac{75.394}{56.317}$
-
-$\chi^2 = .021 + .020 + 4.070 + 3.834 + 1.431 + 1.339 = 10.72$
-
-Our degrees of freedom equals $(r-1)(c-1)$ where *r* is the number of rows and *c* is the number of columns. Our dataset has 3 rows and 2 columns: $(r-1)(c-1) = (3-1)(2-1) = (2)(1) = 2$ degrees of freedom.
-
-## Performing the chi-square test of independence in jamovi
-
-Let's run an example with data from lsj-data. Open data from your Data Library in "lsj-data". Select and open "chapek9". This dataset indicates the ID number of the participant, the species (robot or human), and their preference of the three things (puppy, flower, or data).
-
-1.  From the 'Analyses' toolbar select 'Frequencies' - 'Independent Samples - $\chi^2$ test of association'.
-
-2.  Move `choice` into rows and `species` into columns. Note that the placement in rows or columns doesn't really matter, but because we typically work with portrait pages I tend to prefer putting in rows whatever variable has more levels. In this case, choice has 3 levels and species only 2 so I like to put choice in rows and species in columns.
-
-3.  Under the Statistics tab, select $\chi^2$ under Tests and `Phi and Cramer's V` under Nominal.
-
-4.  Optionally, you can request under the Cells tab to show the expected counts and the row, column, and total percentages.
-
-When you are done, your setup should look like this
-
-\begin{figure}
-
-{\centering \includegraphics[width=0.8\linewidth]{images/11-independence/independence_setup} 
-
-}
-
-\caption{Chi-square test of independence setup in jamovi}(\#fig:unnamed-chunk-2)
-\end{figure}
-
-## Interpreting results
-
-\begin{figure}
-
-{\centering \includegraphics[width=1\linewidth]{images/11-independence/independence_results} 
-
-}
-
-\caption{Chi-square test of independence results in jamovi}(\#fig:unnamed-chunk-3)
-\end{figure}
-
-The first table shows us our observed frequencies. The second table gives us our results. Our p-value is less than .05 so we can reject the null hypothesis that the observed frequencies match our expected frequencies. jamovi also gives us our Cramer's V value.
-
-We can write up our results in APA something like this:
-
-> Pearson's $\chi^2$ test of independence showed a significant association between species and choice, $\chi^2$ (2) = 10.72, *p* = .005, Cramer's V = .24. Robots appeared to be more likely to say they prefer flowers and humans appeared to be more likely to say they prefer data.
-
-I would either write-up the observed frequencies above or, ideally, I would share the contingency table with my observed frequencies.
-
-## Fisher's exact test
-
-If you violate the assumption that there your expected frequencies are sufficiently large and you have a 2x2 table, you can still perform the $\chi^2$ test of independence but instead of selecting $\chi^2$you'll select `Fisher's exact test`. You'll interpret your results exactly the same but specify you used the Fisher's exact test.
-
-## Ordinal variable(s)
-
-If either of your variables are ordinal, instead of selecting `Phi and Cramer's V` you should select `Gamma` or `Kendall's tau-b`. Which do you choose? `Kendall's tau-b` should only be chosen if you have a square table (e.g., 3x3, 4x4, 5x5) whereas `Gamma` can be done with any size table. `Kendall's tau-b` will be a slightly more conservative estimate compared to `Gamma`.
-
-## Your turn!
-
-Open the `Sample_Dataset_2014.xlsx` file that we will be using for all Your Turn exercises. You can find the dataset here: [Sample_Dataset_2014.xlsx Download](https://github.com/danawanzer/stats-with-jamovi/blob/master/data/Sample_Dataset_2014.xlsx)
-
-To get the most out of these exercises, try to first find out the answer on your own and then use the drop-down menus to check your answer.
-
-1.  **Is Athlete related to Gender?**
-
-    -   Do you meet the assumptions? <select class='solveme' data-answer='["yes"]'> <option></option> <option>yes</option> <option>no, expected frequencies are too small</option> <option>no, data are not independent</option></select>
-
-    -   Which test should you perform? <select class='solveme' data-answer='["Chi-square"]'> <option></option> <option>Chi-square</option> <option>Fisher's exact test</option></select>
-
-    -   Are the observed frequencies similar to the expected frequencies? <select class='solveme' data-answer='["no"]'> <option></option> <option>yes</option> <option>no</option></select>
-
-    -   What is your chi-square value, rounded to two decimal places: <input class='solveme nospaces' size='4' data-answer='["8.45"]'/>
-
-2.  **Is Gender related to Rank?**
-
-    -   Do you meet the assumptions? <select class='solveme' data-answer='["yes"]'> <option></option> <option>yes</option> <option>no, expected frequencies are too small</option> <option>no, data are not independent</option></select>
-
-    -   Which test should you perform? <select class='solveme' data-answer='["Chi-square"]'> <option></option> <option>Chi-square</option> <option>Fisher's exact test</option></select>
-
-    -   Are the observed frequencies similar to the expected frequencies? <select class='solveme' data-answer='["yes"]'> <option></option> <option>yes</option> <option>no</option></select>
-
-    -   What is your chi-square value, rounded to two decimal places: <input class='solveme nospaces' size='4' data-answer='["0.61"]'/>
-
-<!--chapter:end:11-independence.Rmd-->
-
-# McNemar's Test
-
-
-
-## What is McNemar's test?
-
-McNemar's test is based on the $\chi^2$ (chi-square) test of independence (or association), but is used in a repeated measures or within-subjects design. Our hypotheses for the McNemar test is as follows:
-
--   $H_0$: The observed frequencies match the expected frequencies.
-
--   $H_1$: At least one observed frequency doesn't match the expected frequency.
-
-For example, suppose we're working with the *Australian Generic Political Party* (AGPP) and your job is to find out how effective AGPP political advertisements are. You gather 100 people and ask them to watch the AGPP ads. You ask participants before and after viewing ads whether they intend to vote for the AGPP.
-
-## Data set-up
-
-Our data set-up for McNemar's test is pretty simple. We just need two columns of nominal data, with one row per participant and each column being the same variable at two different time points. Here's our data for our example we'll be working with, which you can find in the lsj-data called `agpp`:
-
-| ID      | response_before | response_after |
-|---------|-----------------|----------------|
-| subj.1  | no              | yes            |
-| subj.2  | yes             | no             |
-| subj.3  | yes             | no             |
-| subj.4  | yes             | no             |
-| subj.5  | no              | no             |
-| subj.6  | no              | no             |
-| subj.7  | no              | no             |
-| subj.8  | no              | yes            |
-| subj.9  | no              | no             |
-| subj.10 | no              | no             |
-
-## The math behind the chi-square test of independence
-
-\begin{info}
-If the math below makes your eyes glaze over, you can skip it. This is
-presented for those who find it useful to understand the math behind the
-statistics to help understand what's happening.
-\end{info}
-
-I might add the math behind the test later. Otherwise, it's similar to the $\chi^2$ test of independence with slightly different calculations.
-
-## Performing McNemar's test in jamovi
-
-Let's run an example with data from lsj-data. Open data from your Data Library in "lsj-data". Select and open "agpp". This dataset indicates the ID number of the participant and whether they would vote for AGPP before and after viewing the ads.
-
-1.  From the 'Analyses' toolbar select 'Frequencies' - 'Paired Samples - McNemar test'.
-
-2.  Move `response_before` into rows and `response_after` into columns. Note that the placement in rows or columns doesn't really matter.
-
-3.  Under the Statistics tab, select $\chi^2$ under Tests.
-
-4.  Optionally, you can request under to show the row and column percentages.
-
-When you are done, your setup should look like this
-
-\begin{figure}
-
-{\centering \includegraphics[width=0.8\linewidth]{images/12-mcnemar/mcnemar_setup} 
-
-}
-
-\caption{McNemar's test setup in jamovi}(\#fig:unnamed-chunk-2)
-\end{figure}
-
-## Interpreting results
-
-\begin{figure}
-
-{\centering \includegraphics[width=1\linewidth]{images/12-mcnemar/mcnemar_results} 
-
-}
-
-\caption{McNemar's test results in jamovi}(\#fig:unnamed-chunk-3)
-\end{figure}
-
-The first table shows us our observed frequencies. The second table gives us our results. Our p-value is less than .05 so we can reject the null hypothesis that the observed frequencies match our expected frequencies. Unfortunately, looking at our table it also shows that the ads had a negative effect: people were less likely to vote AGPP after seeing the ads.
-
-We can write up our results in APA something like this:
-
-> McNemar's test indicated that support for AGPP changed from before to after reviewing the AGPP advertisement, $\chi^2$ (1) = 13.33, *p* \< .001. Most participants continued to not vote for AGPP after the ad (*n* = 65) and a few continued to vote for AGPP after the ad (*n* = 5). However, many participants who originally stated they would vote for AGPP changed to no longer voting for AGPP after the ad (*n* = 25); only five people who originally would not vote for AGPP changed to vote for AGPP after the ad.
-
-<!--chapter:end:12-mcnemar.Rmd-->
+<!--chapter:end:11.1-correlation.Rmd-->
 
 # Regression
 
@@ -2705,7 +2860,7 @@ To get the most out of these exercises, try to first find out the answer on your
 
     -   For `Gender`, do male (Gender = 0) or female (Gender = 1) students have higher math scores? <select class='solveme' data-answer='["male"]'> <option></option> <option>male</option> <option>female</option></select>
 
-<!--chapter:end:13-regression.Rmd-->
+<!--chapter:end:11.2-regression.Rmd-->
 
 # Everything is Regression
 
@@ -2773,11 +2928,32 @@ Although I did not directly ask for them, the estimated marginal means for the l
 \caption{One-way ANOVA as a regression}(\#fig:unnamed-chunk-4)
 \end{figure}
 
-<!--chapter:end:14-regression-wrap-up.Rmd-->
+<!--chapter:end:12-regression-wrap-up.Rmd-->
 
 # (APPENDIX) Appendices {-} 
 
 <!--chapter:end:appendix-0.Rmd-->
+
+# The math behind the independent t-test
+
+{block, type = "info"}
+If the math below makes your eyes glaze over, you can skip it. This is presented for those who find it useful to understand the math behind the statistics to help understand what's happening.
+
+The basic math of the independent t-test the mean difference divided by the pooled standard error.
+
+$t = \frac{\bar{X}_1 - \bar{X}_2}{SE({\bar{X}_1 - \bar{X}_2})}$
+
+The denominator of the equation is more difficult to calculate and depends on whether the sample size between groups is equal.
+
+<!--chapter:end:appendix-a_independent_t-test_math.Rmd-->
+
+# The math behind the dependent t-test
+
+The basic math of the dependent t-test is the mean difference divided by the standard error, which is estimated based on the standard deviation and sample size (N).
+
+$t = \frac{\bar{X}_1 - \bar{X}_2}{s_d/ \sqrt{N}}$
+
+<!--chapter:end:appendix-b_dependent_t-test_math.Rmd-->
 
 # References
 

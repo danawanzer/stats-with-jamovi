@@ -4,7 +4,11 @@
 
 This chapter will walk you through how this website/book works.
 
-## Quiz Questions
+## Navigating the book
+
+https://bookdown.org/yihui/bookdown/html.html#gitbook-style
+
+## Quiz questions
 
 Throughout this website, there will be questions to help you test your knowledge. When you type in or select the correct answer, the dashed box will change color and become solid.
 

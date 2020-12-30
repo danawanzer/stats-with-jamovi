@@ -1,0 +1,10 @@
+# The math behind the independent t-test
+
+{block, type = "info"}
+If the math below makes your eyes glaze over, you can skip it. This is presented for those who find it useful to understand the math behind the statistics to help understand what's happening.
+
+The basic math of the independent t-test the mean difference divided by the pooled standard error.
+
+$t = \frac{\bar{X}_1 - \bar{X}_2}{SE({\bar{X}_1 - \bar{X}_2})}$
+
+The denominator of the equation is more difficult to calculate and depends on whether the sample size between groups is equal.

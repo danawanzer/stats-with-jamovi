@@ -1,0 +1,5 @@
+# The math behind the dependent t-test
+
+The basic math of the dependent t-test is the mean difference divided by the standard error, which is estimated based on the standard deviation and sample size (N).
+
+$t = \frac{\bar{X}_1 - \bar{X}_2}{s_d/ \sqrt{N}}$
