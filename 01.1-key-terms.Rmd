@@ -93,8 +93,7 @@ There are also various **levels of measurement** that we will refresh ourselves 
         -   **Content validity**: experts using their judgment that something measures what it is supposed to measure
         -   **Convergent validity**: correlations among two theoretically related constructs (or measurements) are strong and positive
         -   **Divergent validity**: correlations among two theoretically not-related constructs (or measurements) are zero/null
-        -   **Criterion validity**: content on one test (predictor) correlates with performance on relevant
-            criterion measures (outcome)
+        -   **Criterion validity**: content on one test (predictor) correlates with performance on relevant criterion measures (outcome)
 
     -   **Statistical validity**: validity of inferences about the correlation between treatment and outcome
 
