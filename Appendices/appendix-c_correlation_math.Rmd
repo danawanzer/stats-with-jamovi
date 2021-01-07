@@ -15,6 +15,8 @@ $cov(x,y) = \frac{\sum(x_i-\bar{x})(y_i-\bar{y})}{N - 1}$
 Let's visualize our example data above. The horizontal line is our mean for each of the variables ($\bar{x}$ and $\bar{y}$) and the vertical lines are our deviations (($x_i - \bar{x}$) and ($y_i - \bar{y}$).
 
 ```{r echo = FALSE}
+library(tidyverse)
+
 correlation <- 
   data.frame(
     ID = c(1L, 2L, 3L, 4L, 5L, 6L, 7L, 8L, 9L, 10L),
@@ -72,6 +74,6 @@ $t_r = \frac{r \sqrt{N-2}}{\sqrt{1-r^2}} = \frac{.968 \sqrt{8}}{\sqrt{1-.9409}} 
 
 We can then look up our *t*-score on our critical *t* table to find our p-value based on df = N-2.
 
-**Practice**: Is the correlation coefficient of .5 with N=30 statistically significant? `r mcq(c(answer = "yes", "no"))`[^correlation-1]
+**Practice**: Is the correlation coefficient of .5 with N=30 statistically significant? `r mcq(c(answer = "yes", "no"))`[^appendix-c_correlation_math-1]
 
-[^correlation-1]: If you do your calculation correctly, you should get a $t_r$ = 3.06. In the *t* table for a two-tailed *p*-value of .05 and degrees of freedom of 28 (N-2), the critical *t* value is 2.048. Our *t*-value of 3.06 is greater than the critical *t*-value of 2.048, so we can say it is statistically significant (*p* \< .05).
+[^appendix-c_correlation_math-1]: If you do your calculation correctly, you should get a $t_r$ = 3.06. In the *t* table for a two-tailed *p*-value of .05 and degrees of freedom of 28 (N-2), the critical *t* value is 2.048. Our *t*-value of 3.06 is greater than the critical *t*-value of 2.048, so we can say it is statistically significant (*p* \< .05).
