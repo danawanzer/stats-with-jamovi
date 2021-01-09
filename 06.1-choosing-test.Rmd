@@ -1,0 +1,74 @@
+## Choosing the correct statistical test
+
+It is important that you learn how to identify *which* inferential statistic you should perform. This chart can help you determine what statistical test to perform. Note that on the right dark red boxes are parametric tests, light red boxes are non-parametric tests, and white boxes will not be covered in this class at all.
+
+![](C:/Users/wanzerd/AppData/Local/RStudio/tmp/paste-71539606.png)
+
+First, you need to determine what level of measurement your dependent variable (DV) is. We will only be covering statistical tests that have *one* dependent variable. Therefore, the variable is either categorical (i.e., nominal or ordinal) or it's continuous (i.e., interval or ratio).
+
+Next you specify how many independent variables (IVs) there are and then what level of measurement your IV(s) are. In the case of a single categorical IV, we also need to know how many levels there are to the IV (i.e., how many categories there are). For categorical variables, we also need to know if the participants are different (i.e., between-subjects) or the same (i.e., within-subjects) within each level of the category.
+
+Lastly, for many of the statistical tests we need to know whether we meet the assumptions of parametric tests. If we don't meet the assumption, then there are alternative tests we can perform.
+
+We can both *forward map* and *backwards map* with the chart above. Forward mapping involves understanding your data and your research question and then determining what statistical test to perform. Backwards mapping involves determining what kind of data is needed to perform a particular statistical test.
+
+Let's do some examples of forwards mapping. You may want to read the example and try your hand at it first and then check your answers!
+
+### Forward mapping: Choose the correct test
+
+A researcher is interested in understanding whether athletes have higher English scores than non-athletes. In other words, what is the effect of athletic status on English test scores?
+
+1.  What is the DV? What is the level of measurement? It's English test scores, which is a continuous variable.
+
+2.  How many IVs are there? We only have one IV, and it is athletic status.
+
+3.  What is the level of measurement of the IV? Athletic status is a categorical variable.
+
+4.  How many categories to the IV? Athletic status is measured as either athlete or non-athlete, so there are 2 levels.
+
+5.  Are the same or different participants used in each category? People can either be an athlete or not an athlete, so this is a between-subjects variable (aka "different").
+
+6.  Do data meet the assumptions for parametric tests? We don't know. We would need to test this. For now, let's assume we meet the assumptions.
+
+7.  Statistical test? Independent t-test
+
+A researcher is interested to know whether people perform better on English, Math, or Science tests. The researchers has all participants complete all three tests.
+
+1.  What is the DV? What is the level of measurement? This one is tricky in how it's worded. There is one DV and it's simply test score. This is a continuous variable.
+
+2.  How many IVs are there? We only have one IV, and it is type of test.
+
+3.  What is the level of measurement of the IV? Type of test is a categorical variable.
+
+4.  How many categories to the IV? Type of test has three categories: English, Math, and Science.
+
+5.  Are the same or different participants used in each category? Although the researcher could have designed a between-subjects design, this particular study has all participants participate in all conditions, so it is a within-subjects design (aka "same").
+
+6.  Do data meet the assumptions for parametric tests? We don't know. We would need to test this. For now, let's assume we meet the assumptions.
+
+7.  Statistical test? One-way repeated measures ANOVA
+
+### Backwards map: Determine the data you need
+
+Let me start off by saying we don't normally do this. We perform the test based on the data we have. But in our learning, we also want to ensure we learn all the tests. Imagine I gave you a dataset and wanted you to perform two different tests that I told you about.
+
+Here are the variables in the dataset:
+
+1.  Mile time (continuous variable ranging from 5-30 minutes)
+2.  BMI (categorical variable of underweight, normal, or overweight)
+3.  Happiness at the start of the semester (continuous variable ranging from 0-10)
+4.  Happiness at the end of the semester (continuous variable ranging from 0-10)
+
+If I told you I wanted you to perform a dependent t-test, what data would you use?
+
+1.  Assuming we meet the assumptions for a parametric test, we need to find a situation in which we have 1 continuous variable and 1 categorical variable with 2 levels in which participants are the *same* within each category (i.e., within-subjects variable).
+2.  We only have three continuous variables: mile time and our two happiness variables.
+3.  If we rethink happiness, we can realize that it's really a within-subjects variable. We are measuring happiness (our continuous DV) across two time points (start and end of the semester).
+4.  Therefore, we could perform a dependent t-test with our two happiness data points and see whether happiness differs across time in the semester.
+
+If I told you I wanted you to perform a one-way independent ANOVA, what data would you use?
+
+1.  Assuming we meet the assumptions for a parametric test, we need to find a continuous DV and a single categorical IV with 3 or more levels in which participants are *different* across categories (i.e., between-subjects design).
+2.  We only have three continuous variables: mile time and our two happiness variables.
+3.  We only have one categorical variable (BMI), and it has 3 levels: underweight, normal, overweight.
+4.  Now this is where we need to think critically. What would be the most interesting test here? How BMI affects happiness or how BMI affects mile time? Weight and performance on running a mile seem to make most sense here. Therefore, we could look at how BMI affects mile time. Though keep in mind we are not randomizing here and so this is *not* an experimental design!

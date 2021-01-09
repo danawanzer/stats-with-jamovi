@@ -41,23 +41,17 @@ Note that we now satisfy mutual exclusivity (no possible overlap in the hypothes
 
 A common error in a directional hypothesis like this is to forget that the null hypothesis is both no difference *and* the opposite. In other words, we have three possible options for our null and alternative hypotheses based on direction ($\mu$ is the Greek letter "mu" and we often use it to signify the mean):
 
-+------------------------+--------------------+----------------------+------------------------+
 |                        | Two-tailed         | One-tailed (greater) | One-tailed (less than) |
-+========================+====================+======================+========================+
+|------------------------|--------------------|----------------------|------------------------|
 | **Alternative** (H~1~) | $\mu_1$ != $\mu_2$ | $\mu_1$ \> $\mu_2$   | $\mu_1$ \< $\mu_2$     |
-+------------------------+--------------------+----------------------+------------------------+
 | **Null** (H~0~)        | $\mu_1$ == $\mu_2$ | $\mu_1$ \<= $\mu_2$  | $\mu_1$ \>= $\mu_2$    |
-+------------------------+--------------------+----------------------+------------------------+
 
 Since we're talking about mean differences, we could also reformulate the above table slightly differently:
 
-+------------------------+-------------------+----------------------+------------------------+
 |                        | Two-tailed        | One-tailed (greater) | One-tailed (less than) |
-+========================+===================+======================+========================+
+|------------------------|-------------------|----------------------|------------------------|
 | **Alternative** (H~1~) | $\mu_{diff}$ != 0 | $\mu_{diff}$ \> 0    | $\mu_{diff}$ \< 0      |
-+------------------------+-------------------+----------------------+------------------------+
 | **Null** (H~0~)        | $\mu_{diff}$ == 0 | $\mu_{diff}$ \<= 0   | $\mu_{diff}$ \>= 0     |
-+------------------------+-------------------+----------------------+------------------------+
 
 ### 2. Set the criteria for a decision
 
