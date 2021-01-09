@@ -1,0 +1,38 @@
+## Effect sizes
+
+An **effect size** is a quantitative description of the strength of a phenomenon. There are two basic effect sizes we tend to talk about:
+
+The ***d*** family of effect sizes are standardized mean differences. They start at 0 (no mean difference) and can go up to infinity, with larger values meaning larger standardized mean differences. Some of the effect sizes in this family:
+
+-   Cohen's *d* is perhaps the most popular standardized mean difference effect size. Generally, the equation is the mean difference divided by the pooled standard deviation, but in reality the equation differs based on a variety of scenarios and whether you are using a one-sample, independent samples, or paired samples *t*-test.
+
+-   Hedge's *g* is a less biased version of Cohen's *d*. Cohen's *d* is particularly problematic for small sample sizes, so Hedge's *g* is generally preferred, but you'll see that not all statistical programs provide this effect size. It's not that difficult to calculate Hedge's *g* based on Cohen's *d*, but just keep this information in mind.
+
+The ***r*** family of effect sizes are measures of strength of association. As you'll read about in the correlation and regression chapters, this family of effect sizes can describe the proportion of variance explained (e.g., r = .8 is 64% variance explained, which is r-squared). Some of the effect sizes in this family:
+
+-   *r* is a correlation. It's a standardized measure of the strength of association where *r* = -1 or +1 means a perfect relationship and *r* = 0 is no relationship at all.
+
+-   $\eta^2$ (eta-squared) measures the proportion of variance in the dependent variable associated with the different groups of the independent variable. This is considered a biased estimate, especially when trying to compare values across studies, so there are two more preferred effect sizes.
+
+-   $\eta^2_p$ (partial eta-squared) is calculated slightly differently and is considered a less biased estimate. This can allow for better comparisons of effect sizes across studies. It's still not perfect, though.
+
+-   $\omega^2$ (omega-squared) is calculated even more differently and is considered the least biased estimate. There is also $\omega^2_p$ and $\omega^2_G$ (generalized omega-squared) but we won't get into that.
+
+If you nerded out over this information, [check out this great journal article by Daniel Lakens](https://www.frontiersin.org/articles/10.3389/fpsyg.2013.00863/full).
+
+### Small, medium, and large effect sizes
+
+What is considered a small, medium, and large effect size? Quite frankly, *it depends*.
+
+You may have seen some heuristics online about what small, medium, and large is for Cohen's *d* (e.g., .2, .5, and .8) and *r* (e.g., .1, .3, and .5) but these should not be just used willy nilly without critical thought. In fact, Cohen (who is regularly cited for these heuristics) said that the way we should determine cut-offs is based on looking across studies to find what is considered small, medium, and large *in that particular context*.
+
+Lakens (who also did the great journal article on effect sizes above) has a fantastic new preprint out on [Sample Size Justification](https://psyarxiv.com/9d3yf/). In it, he provides an overview of six possible ways to determine which effect sizes are interesting:
+
+1.  "Smallest effect size of interest: what is the smallest effect size that is theoretically and practically interesting?
+2.  Minimally statistically detectable effect: given the test and sample size, what is the critical effect size that can be statistically significant?
+3.  Expected effect size: which effect size is expected based on theoretical predictions or previous research?
+4.  Width of confidence interval: which effect sizes are excluded based on the expected width of the confidence interval around the effect size?
+5.  Sensitivity power analysis: across a range of possible effect sizes, which effects does a design have sufficient power to detect when performing a hypothesis test?
+6.  Distribution of effect sizes in a research area: what is the empirical range of effect sizes in a specific research are, and which effects are *a priori* unlikely to be observed?" (p. 3)
+
+Basically, what does past research have to say about what effect size you can expect (\#3 and \#6)? What is the smallest effect size you care about (\#1)? What is the smallest effect size you can reasonably obtain (e.g., due to sample size limitations; \#2, \#3, and \#4)? This is the justification you use to determine what effect size you are looking for. This is important for when you are then determining what sample size you need, which will be discussed in a separate section.
