@@ -60,26 +60,6 @@ There are other types of variables we may be interested in:
 
 -   **Covariate**: a variable that only affects or is only related to the dependent variable
 
-### Levels of measurement
-
-There are also various **levels of measurement** that we will refresh ourselves on in an upcoming week:
-
-![](images/01-intro/Levels%20of%20measurement.png)
-
--   **Categorical variable**: variables that have *categories* to the levels, but cannot be analyzed with a mean because the levels are not proportionate
-
-    -   **Nominal variable**: a categorical variable in which each level of the variable is named but there is no order to them (e.g., breeds of dogs)
-
-        -   **Binary**, **dummy-coded**, or **dichotomous variable**: a nominal variable with only two levels (general 0 or 1)
-
-    -   **Ordinal variable**: a categorical variable in which each level of the variable is named and there is an order to them (e.g., ranks)
-
--   **Continuous variable**: variables with proportionate intervals between the levels meaning they can be analyzed with a mean, SD, variance
-
-    -   **Interval variable**: a continuous variable that has intervals that are directly proportionate (e.g., the distance between 2-3 is the same as the distance between 5-6)
-
-    -   **Ratio variable**: a continuous variable like an internal variable but can accommodate an absolute zero, meaning a zero is actually possible (e.g., weight, temperature in Kelvin, reaction time)
-
 ### Reliability and validity
 
 ![](images/01-intro/reliability-validity.jpg)
@@ -100,44 +80,6 @@ There are also various **levels of measurement** that we will refresh ourselves 
     -   **Internal validity**: validity about whether the observed relationship between A and B reflects a causal relationship between A and B
 
     -   **External validity**: validity of inferences about whether the cause-effect relationship holds over variation in persons, places, treatment variables, and measurement variables
-
-### Describing data
-
-There are multiple **measures of central tendency** (these are *all* averages so you must be careful when you say that word to explain which type you mean!):
-
--   **Mean**: the sum of all points divided by the total number of points; susceptible to outliers
-
--   **Median**: the middlemost value; less susceptible to outliers and best used when the data is skewed
-
--   **Mode**: most frequent score
-
-    -   **Multimodal** or **bimodal**: when two or more values are the most frequent score
-
-There are other terms we use to describe data:
-
--   **Frequency distribution**: overview of the times each value occurs in a dataset; often portrayed visually like with a histogram
-
--   **Histogram**: a visual depiction of the frequency distribution using bars to depict a range of the distribution
-
--   **Kurtosis**: the weight of the tails relative to a normal distribution
-
-    -   **Leptokurtic**: light tails; values are more concentrated around the mean
-
-    -   **Platykurtic**: heavy tails; values are less concentrated around the mean
-
--   **Normal distribution**: a special distribution in which the data are symmetrical on both sides of the mean; under a normal distribution, the mean is also equal to the median
-
--   **Quartile**: when a dataset is divided into four equal parts, each part is a quartile (Q1, Q2, Q3, and Q4)
-
-    -   **Interquartile range**: the middle 50% (Q2 to Q3)
-
--   **Range**: the difference between the maximum and minimum value (e.g., if the minimum score is 17 and the maximum is 49, then the range is 32)
-
--   **Skew**: in a non-normal distribution, it is when one tail of the distribution is longer than another. Present in asymmetric distributions
-
-    -   **Negative skew**: when the tail points to the negative end of the spectrum; in other words, most of the values are on the right side of the distribution
-
-    -   **Positive skew**: when the tail points to the positive end of the spectrum; in other words, most of the values are on the left side of the distribution
 
 ### Other terms
 

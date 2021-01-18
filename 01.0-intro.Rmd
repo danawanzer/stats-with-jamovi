@@ -30,13 +30,13 @@ This class is purely online and asynchronous in Spring 2020, meaning we will not
 
 1.  You will have assigned readings that may include book chapters, chapters from this online textbook, journal articles, or videos.
 2.  After completing the readings, you will complete a reading reflection to demonstrate you completed the readings, understand the material and its application, help develop the glossary for this textbook, and ask questions.
-3.  You will have a practice activity each week to help you understand and apply the material. These are not graded for accuracy but completion; they are meant to be practice to help you with the homework assignments.
+3.  You will have a practice activity each week to help you understand and apply the material. You can complete these repeatedly until you receive full credit.
 4.  Optionally, you can attend student hours to work on homework, ask questions, and get extra practice examples to extend your understanding. While they are all optional, they are highly recommended and you will be required to attend at least two student hours throughout the semester.
-5.  Lastly, you will complete either a homework assignment or exam to test your understanding of the material.
+5.  Lastly, you will complete either a homework assignment or exam to test your understanding of the material. Homework assignments can be re-done with an additional reflection. 
 
 ### Late assignments and re-doing homework
 
-All assignments can be turned in late for absolutely no penalty; they must all be turned in by the end of April (final date TBD). Life happens, and sometimes you won't be able to complete an assignment for a week or two and that is completely understandable.
+All assignments can be turned in late for absolutely no penalty; however, there are specific dates that are hard deadlines to help you stay on track in this course. Life happens, and sometimes you won't be able to complete an assignment for a week or two and that is completely understandable.
 
 That being said, you should make every effort to stay on top of the coursework in this class. Dedicate hours to work on course activities so you do not fall behind! Please reach out to me if you start feeling overwhelmed or need help getting back on track. I am here to support you!
 
@@ -88,6 +88,8 @@ For example:
 
 -   True or false: Dana thinks statistics is awesome. `r torf(TRUE)`
 
-### Errors and mistakes
+### Errors, mistakes, and suggestions
 
 I am human, therefore I err. If you find an error in the textbook or something you think might be a mistake, please let me know ASAP so I can update this for everyone else. Let me know which section you find the error or mistake in and what the error or mistake is. For example, if there was an error here you could say, "There was an error in 1.2 that the first sentence should really be 'To err is human (Alexander Pope, 1711).'"
+
+In addition, if you have ideas to help make this textbook even better, please let me know. I would love to make this a useful resource to you both during our course and in your future research. Help me in making that a reality!

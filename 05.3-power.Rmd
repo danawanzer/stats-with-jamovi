@@ -63,7 +63,7 @@ If the whole table must equal to 100%, and the left column must equal to 100% be
 
 We can visualize our *p*-value distribution using this [handy interactive calculator](https://rpsychologist.com/d3/pdist/). We set our effect size (ES) to be *d* = 0, meaning there is no effect (i.e., the null hypothesis is true). This results in a uniform distribution of p-values. Exactly 5% of p-values would fall between *p* = 0 and *p* = .05 (the shaded region to the right of the red dotted line). That aligns with our Type I error rate as well (5%). Go ahead and play around with the interactive calculator and try moving the slider for sample size! Notice that it does absolutely nothing. We'll understand why when we put everything together.
 
-![](C:/Users/wanzerd/AppData/Local/RStudio/tmp/paste-2C6A0E68.png)
+![](images/05-bean/null.png)
 
 #### Assuming the alternative hypothesis is 100% true
 
@@ -84,7 +84,7 @@ With simple arithmetic, 100-80 = 20% is our Type II error. If we were to test fo
 
 Let's visualize this. Go back to our [handy interactive calculator](https://rpsychologist.com/d3/pdist/) and put *d* = .8 as our effect size and *n* = 25 per group to our sample size. Notice now what our distribution of p-values looks like! Rather than a uniform distribution, now we have a steep exponential distribution. I have chosen to highlight all p-values in the range of *p* \> .05, which in that selection is roughly 20% (our Type II error rate from above). The number of *p*-values \< .05 is roughly 80%. Play again with the ES slider and sample size slider. Notice now that it makes a difference to our power! You're getting a glimpse into how power depends on our alpha, effect size, and sample size. BEAN!
 
-![](C:/Users/wanzerd/AppData/Local/RStudio/tmp/paste-3B4920F7.png)
+![](images/05-bean/alternative.png)
 
 #### Assuming a 50/50 split on the null and alternative hypotheses
 

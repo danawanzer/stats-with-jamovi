@@ -24,7 +24,7 @@ Furthermore, variables in jamovi can be one of four measure types:
 
 4.  ![](https://www.jamovi.org/assets/variable-id.svg) ID (used for any identifying variable you likely wouldn't ever analyze, like participant ID number or name)
 
-There's a few great things about jamovi when it comes to these data variables. First, jamovi will try to automatically determine what the data and measure types are when you type in data or when you open a dataset; this is fabulous, until it goes wrong. It's important that you always double check your data and measure types first!
+There are a few great things about jamovi when it comes to these data variables. First, jamovi will try to automatically determine what the data and measure types are when you type in data or when you open a dataset; this is fabulous, until it goes wrong. It's important that you always double check your data and measure types first!
 
 Second, those little icons will be really helpful to let you know what variables can go in which boxes. For example, we would never analyze a nominal variable as our dependent variable for a t-test, and jamovi will help remind you of that. When performing an independent samples t-test, the dependent variables box will have a little ruler icon indicating you should be putting continuous variables in that box. Similarly, it will tell you to put nominal or ordinal variables in the grouping variable (independent variable) box. Sweet!
 
@@ -45,13 +45,13 @@ In small examples, we might write-up our descriptive statistics into a paragraph
 
 [^descriptive-statistics-1]: This comes from [Wanzer (2017) Developmentally appropriate evaluations: How evaluation practices differ across age of participants](https://thesiscommons.org/bk57d/)
 
-![](C:/Users/wanzerd/AppData/Local/RStudio/tmp/paste-FE145052.png)
+![](images/02-stats-foundations/example1.png){width="602"}
 
 In examples with many variables, we might write-up our descriptive statistics into a table[^descriptive-statistics-2]:
 
 [^descriptive-statistics-2]: This comes from [Wanzer et al. (2020) Experiencing flow while viewing art: Development of the aesthetic experience questionnaire](https://psycnet.apa.org/record/2018-49650-001)
 
-![](C:/Users/wanzerd/AppData/Local/RStudio/tmp/paste-5768A65E.png)
+![](images/02-stats-foundations/example2.png){width="400"}
 
 ### Visualizing your data
 
@@ -75,12 +75,12 @@ Although these can be useful plots, I often do most of my data visualizations in
 
 [^descriptive-statistics-3]: This comes from [Wanzer et al. (2020) Promoting intentions to persist in computing: An examination of six years of the EarSketch program](https://doi.org/10.1080/08993408.2020.1714313)
 
-![](C:/Users/wanzerd/AppData/Local/RStudio/tmp/paste-4374188F.png)
+![](images/02-stats-foundations/example3.png)
 
 For some more complicated figures, I turn to the `ggplot2` package in R. Here's an example of a visualization I made in R[^descriptive-statistics-4]:
 
 [^descriptive-statistics-4]: This comes from [Wanzer (2020) What is evaluation? Perspectives of how evaluation differs (or not) from research](https://journals.sagepub.com/doi/10.1177/1098214020920710)
 
-![](C:/Users/wanzerd/AppData/Local/RStudio/tmp/paste-E21B9923.png)
+![](images/02-stats-foundations/example4.png)
 
 In this class, we'll learn about effective data visualization later in the semester. I will provide some brief tutorials to help you get started, but please note that learning data visualization should be a course unto itself, so we will not be able to cover everything.
