@@ -67,7 +67,7 @@ There are other terms we use to describe data:
 
 -   **Quartile**: when a dataset is divided into four equal parts, each part is a quartile (Q1, Q2, Q3, and Q4)
 
-    -   **Interquartile range**: the middle 50% (Q2 to Q3)
+    -   **Interquartile range**: the middle 50% (Q1 to Q3)
 
 -   **Range**: the difference between the maximum and minimum value (e.g., if the minimum score is 17 and the maximum is 49, then the range is 32)
 
