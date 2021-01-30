@@ -293,3 +293,4 @@ independent-t-test-as-a-regression
 dependent-t-test-as-a-regression
 one-way-anova-as-a-regression
 references
+examples-of-levels-of-measurement
