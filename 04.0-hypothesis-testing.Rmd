@@ -100,13 +100,13 @@ Now that we understand that a bit better, how do we find out our critical region
 2.  **Alpha**: let's just go with $\alpha$ = .05 for now
 3.  **Degrees of freedom**: This is calculated by N - 2. We have 30 children total, so 30 - 2 is 28.
 
-We then go to a [*t-*value table like this one](http://www.z-table.com/t-value-table.html) and find the cell we are looking for. First, our one-tailed probability is .05 so we're going to look under the sixth column (t~.95~, one-tail = .05, two-tails = .10). Then we need to find the row for our degrees of freedom (df = 28). That leads us to a *t*-score of **1.701**.
+We then go to a [*t-*value table like this one](http://www.z-table.com/t-value-table.html) and find the cell we are looking for to identify our critical t-value (*t*~crit~). First, our one-tailed probability is .05 so we're going to look under the sixth column (t~.95~, one-tail = .05, two-tails = .10). Then we need to find the row for our degrees of freedom (df = 28). That leads us to a *t~crit~* of **1.701**.
 
-Therefore, we can now finalize this step: our criteria for decision is as such:
+Therefore, we can now finalize this step. Our criteria for decision is as such:
 
--   *t* \> 1.701 means we *reject the null hypothesis*
+-   *t~obt~ \> t~crit~* means we reject the null hypothesis.
 
--   *t* \<= 1.701 means we *fail to reject the null hypothesis*
+-   *t~obt~ \< t~crit~* means we fail to reject the null hypothesis
 
 ### 3. Perform the test statistic
 
@@ -116,11 +116,11 @@ We haven't learned how to calculate the test statistic yet, but no worries we wi
 
 -   Children who watched the video of the adult playing passively with the Bobo doll displayed an average of 27.4 aggressive behaviors (*SD* = 3.3).
 
-That means the mean difference is 51.1 - 27.4 = 23.7. We'll learn how to conduct a t-test later, but for now you can just input the numbers into [this calculator](https://www.usablestats.com/calcs/2samplet&summary=1). It nicely gives you a lot of the values, but the one we are looking for is the test statistic, which is *t* = 19.08 (notice we round to two decimals). It also gives us our p-values based on the *null* hypothesis, which in our case is that population 1 \< population 2. The p-value is \< .00001 but we never go to so many decimals, so we would say p \< .001. The probability of getting a *t*-value as large as we did it less than .1% (less than our alpha of .05, so it is statistically significant). Very surprising!
+That means the mean difference is 51.1 - 27.4 = 23.7. We'll learn how to conduct a t-test later, but for now you can just input the numbers into [this calculator](https://www.usablestats.com/calcs/2samplet&summary=1). It nicely gives you a lot of the values, but the one we are looking for is the test statistic, which is *t~obt~* = 19.08 (notice we round to two decimals). It also gives us our p-values based on the *null* hypothesis, which in our case is that population 1 \< population 2. The p-value is \< .00001 but we never go to so many decimals, so we would say p \< .001. The probability of getting a *t*-value as large as we did it less than .1% (less than our alpha of .05, so it is statistically significant). Very surprising!
 
 ### 4. Interpret results and draw a conclusion.
 
-Remember that any *t*-value \> 1.701 means we reject the null hypothesis whereas any *t*-value \<= 1.701 means we fail to reject the null hypothesis. Since 19.08 \> 1.701, we *reject the null hypothesis that there is no difference in conditions or that children in the passive condition displayed more aggression than children in the aggressive condition.*
+Remember that when *t~obt~ \> t~crit~* we reject the null hypothesis whereas when *t~obt~ \> t~crit~* we fail to reject the null hypothesis. Since 19.08 \> 1.701, we *reject the null hypothesis that there is no difference in conditions or that children in the passive condition displayed more aggression than children in the aggressive condition.*
 
 However, this is when **Type 1** and **Type 2** errors come into play. Just because we get a result *does not automatically mean that result is 100% accurate*. There are many things that could lead us to an inaccurate interpretation!
 
