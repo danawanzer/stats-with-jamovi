@@ -123,6 +123,7 @@
 <li class="chapter" data-level="3.3.3" data-path="cleaning-data.html"><a href="cleaning-data.html#transform"><i class="fa fa-check"></i><b>3.3.3</b> Transform</a></li>
 <li class="chapter" data-level="3.3.4" data-path="cleaning-data.html"><a href="cleaning-data.html#filters"><i class="fa fa-check"></i><b>3.3.4</b> Filters</a></li>
 </ul></li>
+<li class="chapter" data-level="3.4" data-path="section.html"><a href="section.html"><i class="fa fa-check"></i><b>3.4</b> —</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html"><i class="fa fa-check"></i><b>4</b> Hypothesis testing</a>
 <ul>
@@ -433,8 +434,8 @@ Figure 4.1: Critical area of statistical significance
 <p>We then go to a <a href="http://www.z-table.com/t-value-table.html"><em>t-</em>value table like this one</a> and find the cell we are looking for to identify our critical t-value (<em>t</em><sub>crit</sub>). First, our one-tailed probability is .05 so we’re going to look under the sixth column (t<sub>.95</sub>, one-tail = .05, two-tails = .10). Then we need to find the row for our degrees of freedom (df = 28). That leads us to a <em>t<sub>crit</sub></em> of <strong>1.701</strong>.</p>
 <p>Therefore, we can now finalize this step. Our criteria for decision is as such:</p>
 <ul>
-<li><p><em>t<sub>obt</sub> &gt; t<sub>crit</sub></em> means we reject the null hypothesis.</p></li>
-<li><p><em>t<sub>obt</sub> &lt; t<sub>crit</sub></em> means we fail to reject the null hypothesis</p></li>
+<li><p><em>t<sub>obt</sub> &gt; t<sub>crit</sub></em> means we reject the null hypothesis (<em>p</em> &lt; alpha, which is usually set to .05)</p></li>
+<li><p><em>t<sub>obt</sub> &lt; t<sub>crit</sub></em> means we fail to reject the null hypothesis (<em>p</em> &gt; alpha, which is usually set to .05)</p></li>
 </ul>
 </div>
 <div id="perform-the-test-statistic" class="section level3" number="4.1.3">
@@ -445,6 +446,7 @@ Figure 4.1: Critical area of statistical significance
 <li><p>Children who watched the video of the adult playing passively with the Bobo doll displayed an average of 27.4 aggressive behaviors (<em>SD</em> = 3.3).</p></li>
 </ul>
 <p>That means the mean difference is 51.1 - 27.4 = 23.7. We’ll learn how to conduct a t-test later, but for now you can just input the numbers into <a href="https://www.usablestats.com/calcs/2samplet&amp;summary=1">this calculator</a>. It nicely gives you a lot of the values, but the one we are looking for is the test statistic, which is <em>t<sub>obt</sub></em> = 19.08 (notice we round to two decimals). It also gives us our p-values based on the <em>null</em> hypothesis, which in our case is that population 1 &lt; population 2. The p-value is &lt; .00001 but we never go to so many decimals, so we would say p &lt; .001. The probability of getting a <em>t</em>-value as large as we did it less than .1% (less than our alpha of .05, so it is statistically significant). Very surprising!</p>
+<p><em>Note</em>: It does not matter if you get a negative value. Use the absolute value of the <em>t</em><sub>obt</sub> that you get to compare to your <em>t</em><sub>crit</sub>.</p>
 </div>
 <div id="interpret-results-and-draw-a-conclusion." class="section level3" number="4.1.4">
 <h3><span class="header-section-number">4.1.4</span> 4. Interpret results and draw a conclusion.</h3>
