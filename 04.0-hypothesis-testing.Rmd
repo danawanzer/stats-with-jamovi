@@ -126,13 +126,10 @@ However, this is when **Type 1** and **Type 2** errors come into play. Just beca
 
 I like to use this table when discussing errors. On the far left column, we have our results: were they statistically significant (*p* \< .05) or not (*p* \> .05)? On the top row, we have whether *in the real world* the null or alternative hypothesis is true. In reality, we can *never* truly know whether the null or alternative hypothesis is true. We can at best approximate our understanding of the real world through replication!
 
-+----------------------------------------------------+------------------------+------------------------+
 |                                                    | H~0~ is true           | H~1~ is true           |
-+====================================================+========================+========================+
+|----------------------------------------------------|------------------------|------------------------|
 | ***p*** **\< .05** (statistically significant)     | Type 1 error           | Correct interpretation |
-+----------------------------------------------------+------------------------+------------------------+
 | ***p*** **\> .05** (statistically non-significant) | Correct interpretation | Type 2 error           |
-+----------------------------------------------------+------------------------+------------------------+
 
 Therefore, any time we get a statistically significant result (*p* \< .05), then *either* we made a correct interpretation *or we made a Type 1 error!*
 

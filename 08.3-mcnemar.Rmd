@@ -36,8 +36,6 @@ Our data set-up for McNemar's test is pretty simple. We just need two columns of
 | subj.9  | no              | no             |
 | subj.10 | no              | no             |
 
-#### Describe the data
-
 ### Perform the test
 
 Let's run an example with data from lsj-data. Open data from your Data Library in "lsj-data". Select and open "agpp". This dataset indicates the ID number of the participant and whether they would vote for AGPP before and after viewing the ads.
@@ -69,5 +67,3 @@ The first table shows us our observed frequencies. The second table gives us our
 We can write up our results in APA something like this:
 
 > McNemar's test indicated that support for AGPP changed from before to after reviewing the AGPP advertisement, $\chi^2$ (1) = 13.33, *p* \< .001. Most participants continued to not vote for AGPP after the ad (*n* = 65) and a few continued to vote for AGPP after the ad (*n* = 5). However, many participants who originally stated they would vote for AGPP changed to no longer voting for AGPP after the ad (*n* = 25); only five people who originally would not vote for AGPP changed to vote for AGPP after the ad.
-
-#### Visualize the results

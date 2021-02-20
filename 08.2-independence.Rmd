@@ -15,9 +15,15 @@ The $\chi^2$ (chi-square) test of independence (or association) tests whether an
 
 -   $H_1$: At least one observed frequency doesn't match the expected frequency.
 
-For example, imagine we are watching a show about the planet *Chapek 9*. On this planet, for someone to gain access to their capital city they must prove they're a robot, not a human. In order to determine whether or not a visitor is human, the natives ask whether the visitor prefers puppies, flowers, or large, properly formatted data files. Our alternative hypothesis would be that humans and robots have different preferences and our null is that they have the same preferences.
-
 ### Look at the data
+
+Let's run an example with data from lsj-data. Open data from your Data Library in "lsj-data". Select and open "chapek9". This dataset indicates the ID number of the participant, the species (robot or human), and their preference of the three things (puppy, flower, or data).
+
+For this example, imagine we are watching a show about the planet *Chapek 9*. On this planet, for someone to gain access to their capital city they must prove they're a robot, not a human. In order to determine whether or not a visitor is human, the natives ask whether the visitor prefers puppies, flowers, or large, properly formatted data files.
+
+-   $H_0$: Humans and robots have similar preferences.
+
+-   $H_1$: Humans and robots have different preferences.
 
 #### Data set-up
 
@@ -38,11 +44,19 @@ Our data set-up for a chi-square test of independence is pretty simple, We just 
 
 #### Describe the data
 
+Once we confirm our data is setup correctly in jamovi, we should look at our data using descriptive statistics and graphs. First, our descriptive statistics are shown below. Remember that for nominal variables we should report frequency statistics, not means and medians and such. Bar plots continue to be a good way of visualizing the data.
+
+![](images/11-independence/independence_data.png)
+
 #### Check assumptions
 
-### Perform the test
+The chi-square test of independence has the following assumptions:
 
-Let's run an example with data from lsj-data. Open data from your Data Library in "lsj-data". Select and open "chapek9". This dataset indicates the ID number of the participant, the species (robot or human), and their preference of the three things (puppy, flower, or data).
+1.  **Expected frequencies are sufficiently large**, which is usually greater than 5. If you violate this assumption, you can use Fisher's exact test.
+
+2.  Data are **independent** of one another, meaning each case contributes to only one cell of the table. If you violate this assumption, you may be able to use the McNemar test.
+
+### Perform the test
 
 1.  From the 'Analyses' toolbar select 'Frequencies' - 'Independent Samples - $\chi^2$ test of association'.
 
@@ -64,17 +78,25 @@ knitr::include_graphics("images/11-independence/independence_setup.png")
 knitr::include_graphics("images/11-independence/independence_results.png")
 ```
 
-The first table shows us our observed frequencies. The second table gives us our results. Our p-value is less than .05 so we can reject the null hypothesis that the observed frequencies match our expected frequencies. jamovi also gives us our Cramer's V value.
+The first table shows us our observed frequencies. The second table gives us our results. Our p-value is less than .05 so we can reject the null hypothesis that the observed frequencies match our expected frequencies. jamovi also gives us our Cramer's V value. Note that it does not provide Phi because we don't have a perfect square table (e.g., 2x2 or 3x3).
 
 #### Write up the results in APA style
 
 We can write up our results in APA something like this:
 
-> Pearson's $\chi^2$ test of independence showed a significant association between species and choice, $\chi^2$ (2) = 10.72, *p* = .005, Cramer's V = .24. Robots appeared to be more likely to say they prefer flowers and humans appeared to be more likely to say they prefer data.
+> Pearson's $\chi^2$ test of independence showed a significant association between species and choice, $\chi^2$ (2) = 10.72, *p* = .005, Cramer's V = .24. Robots appeared to be more likely to say they prefer flowers and humans appeared to be more likely to say they prefer data. Robots and humans appeared to be equally likely to prefer puppies.
 
 I would either write-up the observed frequencies above or, ideally, I would share the contingency table with my observed frequencies.
 
 #### Visualize the results
+
+This one is also a visualization that would likely do better in Excel than in jamovi. There are two that I think work well for this dataset and our research questions. The first is a clustered column chart:
+
+![](images/11-independence/independence_excel1.png){width="500"}
+
+The second is a stacked bar chart with connected lines:
+
+![](images/11-independence/independence_excel2.png){width="500"}
 
 ### In case of violated assumptions
 
@@ -88,7 +110,7 @@ If you violate the assumption that there your expected frequencies are sufficien
 
 If either of your variables are ordinal, instead of selecting `Phi and Cramer's V` you should select `Gamma` or `Kendall's tau-b`. Which do you choose? `Kendall's tau-b` should only be chosen if you have a square table (e.g., 3x3, 4x4, 5x5) whereas `Gamma` can be done with any size table. `Kendall's tau-b` will be a slightly more conservative estimate compared to `Gamma`.
 
-## Your turn!
+### Your turn!
 
 Open the `Sample_Dataset_2014.xlsx` file that we will be using for all Your Turn exercises. You can find the dataset here: [Sample_Dataset_2014.xlsx Download](https://github.com/danawanzer/stats-with-jamovi/blob/master/data/Sample_Dataset_2014.xlsx)
 
