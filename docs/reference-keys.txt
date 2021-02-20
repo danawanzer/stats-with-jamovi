@@ -28,6 +28,7 @@ descriptive-vs-inferential-statistics
 an-example
 measures-of-central-tendency-and-dispersion
 levels-of-measurement
+examples-of-levels-of-measurement
 normal-distribution
 key-terms
 study-design-terms
@@ -185,18 +186,16 @@ mcnemars-test
 overview-5
 look-at-the-data-5
 data-set-up-5
-describe-the-data-4
 perform-the-test-5
 interpret-results-3
 write-up-the-results-in-apa-style-5
-visualize-the-results-5
 anova
 one-way-anova
 overview-6
 why-not-multiple-t-tests
 look-at-the-data-6
 data-set-up-6
-describe-the-data-5
+describe-the-data-4
 anova-assumptions
 assumptions-3
 anova-is-robust-to-violations
@@ -204,7 +203,7 @@ checking-assumptions-4
 perform-the-test-6
 interpret-results-4
 write-up-the-results-in-apa-style-6
-visualize-the-results-6
+visualize-the-results-5
 in-case-of-violated-assumptions-4
 welchs-f-test
 kruskal-wallis-test
@@ -223,7 +222,7 @@ repeated-measures-anova
 overview-7
 look-at-the-data-7
 data-set-up-7
-describe-the-data-6
+describe-the-data-5
 check-assumptions-5
 assumptions-4
 sphericity-assumption
@@ -231,7 +230,7 @@ checking-assumptions-5
 perform-the-test-7
 interpret-results-5
 write-up-the-results-in-apa-style-7
-visualize-the-results-7
+visualize-the-results-6
 in-case-of-violated-assumptions-6
 friedmans-test
 your-turn-7
@@ -250,7 +249,7 @@ correlation
 overview-10
 look-at-the-data-8
 data-set-up-8
-describe-the-data-7
+describe-the-data-6
 check-assumptions-6
 assumptions-6
 checking-assumptions-6
@@ -259,7 +258,7 @@ testing-linearity
 perform-the-test-9
 interpreting-results-2
 write-up-the-results-in-apa-style-8
-visualize-the-results-8
+visualize-the-results-7
 in-case-of-violated-assumptions-7
 additional-information-4
 r-squared
@@ -270,7 +269,7 @@ overview-11
 understanding-regression
 look-at-the-data-9
 data-set-up-9
-describe-the-data-8
+describe-the-data-7
 check-assumptions-7
 assumptions-7
 checking-assumptions-7
@@ -293,5 +292,3 @@ independent-t-test-as-a-regression
 dependent-t-test-as-a-regression
 one-way-anova-as-a-regression
 references
-examples-of-levels-of-measurement
-section
