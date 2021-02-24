@@ -52,69 +52,6 @@
 
 
 
-<style type="text/css">
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-</style>
 
 <link rel="stylesheet" href="include/psyteachr.css" type="text/css" />
 <link rel="stylesheet" href="include/style.css" type="text/css" />
@@ -418,7 +355,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Let’s discuss these in turn and how to test for them.</p>
 <div id="normal-distribution-1" class="section level3" number="6.2.1">
 <h3><span class="header-section-number">6.2.1</span> Normal distribution</h3>
-<p>For all our statistics, our dependent variable needs to be normally distributed.<a href="#fn10" class="footnote-ref" id="fnref10"><sup>10</sup></a> We have already covered what the normal distribution is multiple times, so let’s move on to how to test for normality. There are four ways to test for normality <strong>and we should test for normality using as many tests as we possibly can!</strong></p>
+<p>For all our statistics, our dependent variable needs to be normally distributed.<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> We have already covered what the normal distribution is multiple times, so let’s move on to how to test for normality. There are four ways to test for normality <strong>and we should test for normality using as many tests as we possibly can!</strong></p>
 <ol style="list-style-type: decimal">
 <li>Visualize the distribution</li>
 <li>Test the skew and kurtosis</li>
@@ -428,7 +365,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="visualize-the-distribution" class="section level4" number="6.2.1.1">
 <h4><span class="header-section-number">6.2.1.1</span> VIsualize the distribution</h4>
 <p>In jamovi, we can go to the Explorations option and choose Descriptives. Under Plots, we can choose a histogram and/or density plot (figure on the left) or boxplot and/or violin plot and/or data points (figure on the right). We can just look at this data and visually inspect with our eyes whether the data is normally distributed. Height looks pretty fairly normally distributed in this case.</p>
-<p><img src="C:/Users/wanzerd/AppData/Local/RStudio/tmp/paste-3492BFB9.png" /></p>
+<p><img src="images/06-inferential/histogram.png" width="400" /></p>
+<p><img src="images/06-inferential/boxplot.png" width="400" /></p>
 </div>
 <div id="test-the-skew-and-kurtosis" class="section level4" number="6.2.1.2">
 <h4><span class="header-section-number">6.2.1.2</span> Test the skew and kurtosis</h4>
@@ -472,7 +410,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="q-q-plot" class="section level4" number="6.2.1.4">
 <h4><span class="header-section-number">6.2.1.4</span> Q-Q plot</h4>
 <p>Last, we can visualize the Q-Q plot. In jamovi, we can go to the Explorations option and choose Descriptives. Under plots, choose Q-Q plot. We don’t need to go into details of what is being visualized, but what we are looking for is that the data points fall along the diagonal line. On the figure on the left, we can see that the data is pretty well falling on the diagonal line (with small deviations at the tails) so we can say it looks normally distributed. However, on the figure on the right, the data points deviate from the diagonal line pretty significantly and so we can say it does not look normally distributed.</p>
-<p><img src="C:/Users/wanzerd/AppData/Local/RStudio/tmp/paste-56FC378E.png" /></p>
+<p><img src="images/06-inferential/qqplot.png" /></p>
 <p>Remember we should look at all pieces of evidence to determine whether we meet the assumption of normal distribution. Typically, all four will support each other, but there are times when some evidence contradicts other evidence. You’ll have to use your best judgment there, and often the visual inspection is the one I prioritize (e.g., if it doesn’t look normally distributed but then the other tests suggest it is, I would probably be cautious and just say we don’t meet the assumption).</p>
 </div>
 </div>
@@ -488,30 +426,29 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="visualize-the-distribution-of-data-across-groups" class="section level4" number="6.2.3.1">
 <h4><span class="header-section-number">6.2.3.1</span> Visualize the distribution of data across groups</h4>
 <p>First, we can look at the data points across groups. This can be done by choosing a plot in the Descriptives analysis and adding your IV to the “Split By” box. For example, here’s an example of data that violates the assumption of homogeneity of variance (gender by mile):</p>
-<p><img src="http://127.0.0.1:49346/9d96f296-c39c-4cb0-9c6d-d8af95d99f71/2/res/02%2520descriptives/resources/9c01612bfc278798.png" /></p>
+<p><img src="images/06-inferential/homogeneity.png" width="500" /></p>
 <p>Similarly, the variance for Gender == 0 (male) is 6796.20 whereas the variance for Gender == 1 (female) is 15401.55. Clearly, there is much greater variability for females than males for time it takes to run the mile.</p>
 </div>
 <div id="levenes-test" class="section level4" number="6.2.3.2">
 <h4><span class="header-section-number">6.2.3.2</span> Levene’s test</h4>
 <p>When we perform inferential statistics that have the assumption of homogeneity of variance, in jamovi there will be a check box to check the assumption. It will perform Levene’s test. Here’s the result of Levene’s test for the independent t-test examining the effect of gender on mile duration:</p>
 <table>
-<colgroup>
-<col width="100%" />
-</colgroup>
 <thead>
 <tr class="header">
-<th align="left">Homogeneity of Variances Test (Levene’s)</th>
+<th align="left">Levene’s</th>
+<th align="right">F</th>
+<th align="right">df1</th>
+<th align="right">df2</th>
+<th align="right">p</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"> </td>
-</tr>
-<tr class="even">
 <td align="left">MileMinDur</td>
-</tr>
-<tr class="odd">
-<td align="left">Note. A low p-value suggests a violation of the assumption of equal variances</td>
+<td align="right">41.33</td>
+<td align="right">1</td>
+<td align="right">381</td>
+<td align="right">&lt;.001</td>
 </tr>
 </tbody>
 </table>
@@ -528,8 +465,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div class="footnotes">
 <hr />
-<ol start="10">
-<li id="fn10"><p>Technically, it’s that the <em>residuals</em> need to be normally distributed, but in the case of t-tests and ANOVAs the results are the same if we test for normality of residuals or the dependent variable.<a href="checking-assumptions.html#fnref10" class="footnote-back">↩︎</a></p></li>
+<ol start="2">
+<li id="fn2"><p>Technically, it’s that the <em>residuals</em> need to be normally distributed, but in the case of t-tests and ANOVAs the results are the same if we test for normality of residuals or the dependent variable.<a href="checking-assumptions.html#fnref2" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
 <div class="psyteachr_footer">
