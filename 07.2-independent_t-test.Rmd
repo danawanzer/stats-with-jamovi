@@ -240,7 +240,7 @@ To get the most out of these exercises, try to first find out the answer on your
 
     -   Should you use a one-tailed or two-tailed hypothesis? `r mcq(c(answer = "one-tailed", "two-tailed"))`
 
-    -   Which statistic should you use based on your assumptions? `r mcq(c("independent t-test", "Welch's t-test", answer = "Mann Whitney U"))`
+    -   Which statistic should you use based on your assumptions? `r mcq(c("independent t-test", "Welch t-test", answer = "Mann Whitney U"))`
 
     -   Do athletes have faster sprint times than non-athletes? `r mcq(c(answer = "yes", "no"))`
 
@@ -248,7 +248,7 @@ To get the most out of these exercises, try to first find out the answer on your
 
     -   Should you use a one-tailed or two-tailed hypothesis? `r mcq(c(answer = "one-tailed", "two-tailed"))`
 
-    -   Which statistic should you use based on your assumptions? `r mcq(c("independent t-test", answer = "Welch's t-test", "Mann Whitney U"))`
+    -   Which statistic should you use based on your assumptions? `r mcq(c("independent t-test", answer = "Welch t-test", "Mann Whitney U"))`
 
     -   Does students who live on campus have higher English scores? `r mcq(c("yes", answer = "no"))`
 
