@@ -428,10 +428,14 @@ Figure 4.1: Scatter plots and correlation examples
 <p>Let’s run an example with data from lsj-data. Open data from your Data Library in “lsj-data.” Select and open “parenthood.” This dataset measures a new mother’s<a href="#fn11" class="footnote-ref" id="fnref11"><sup>11</sup></a> daily grumpiness very precisely, on a scale from 0 (not at all grumpy) to 100 (extremely grumpy). In addition, I am also tracking her sleeping patterns and her son’s sleeping patterns across 100 days.</p>
 <div id="data-set-up-8" class="section level4" number="10.1.2.1">
 <h4><span class="header-section-number">10.1.2.1</span> Data set-up</h4>
-<p>To conduct the correlation we first need to ensure our data is set-up properly in our dataset. This requires having two columns, one for each of our continuous variables. Each row is a unique participant or unit of analysis.</p>
+<p>To conduct the correlation we first need to ensure our data is set-up properly in our dataset. This requires having two columns, one for each of our continuous variables. Each row is a unique participant or unit of analysis. Note that jamovi might have incorrectly imported <code>dan.grump</code> as a nominal variable but that is incorrect! This shows the importance of looking at your data and checking your measure types.</p>
+<p><img src="images/08-correlation/correlation-data.png" width="500" /></p>
 </div>
 <div id="describe-the-data-6" class="section level4" number="10.1.2.2">
 <h4><span class="header-section-number">10.1.2.2</span> Describe the data</h4>
+<p>Once we confirm our data is setup correctly in jamovi, we should look at our data using descriptive statistics and graphs. First, our descriptive statistics are shown below. We can see first that we have 100 cases and no missing data. The means, medians, standard deviations, and variances are then shown, followed by the minimum and maximum values.</p>
+<p>We also see skew and kurtosis. Calculating the <em>z</em>-score for all the skew and kurtosis (remember: skew or kurtosis divided by its standard error) suggests we do not violate the assumption of normality much except for <code>day</code>. However, notice what the variable <code>day</code> is! It’s just the day of the study, from 1-100. If you look at the graph, it has a <em>uniform distribution</em> (completely flat and uniform) not a normal distribution (bell curve)!</p>
+<p><img src="images/08-correlation/correlation-descriptives.png" /></p>
 </div>
 </div>
 <div id="check-assumptions-6" class="section level3" number="10.1.3">
@@ -476,23 +480,13 @@ Figure 7.1: Testing linearity in jamovi
 <li><p>Under Additional Options, select <code>Report significance</code>, <code>Flag significant correlations</code>, and, if you have missing data, <code>N</code> (we don’t have missing data so we can ignore this).</p></li>
 <li><p>Under Plot, select <code>Correlation matrix</code>. Alternatively, you can ask for <code>Densities for variables</code> to see the density plots for each variable and <code>Statistics</code> to have the correlation coefficient added to the plot.</p></li>
 </ol>
-<p>When you are done, your setup should look like this</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-3"></span>
-<img src="images/08-correlation/correlation-setup.png" alt="Correlation setup in jamovi" width="80%" />
-<p class="caption">
-Figure 7.2: Correlation setup in jamovi
-</p>
-</div>
+<p>When you are done, your setup should look like this:</p>
+<p><img src="images/08-correlation/correlation-setup.png" width="500" /></p>
 </div>
 <div id="interpreting-results-2" class="section level3" number="10.1.5">
 <h3><span class="header-section-number">10.1.5</span> Interpreting results</h3>
 <p>Once we are satisfied we have satisfied the assumptions for the correlation, we can interpret our results.</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-4"></span>
-<img src="images/08-correlation/correlation-matrix.png" alt="Correlation results in jamovi" width="100%" />
-<p class="caption">
-Figure 7.3: Correlation results in jamovi
-</p>
-</div>
+<p><img src="images/08-correlation/correlation-matrix.png" /></p>
 <p>It looks like three of the variables are significantly (<em>p</em> &lt; .05) correlated with each other: <code>dan.sleep</code>, <code>baby.sleep</code>, and <code>dan.grump</code>. <code>day</code> does not seem to be significantly correlated with any of the other three variables.</p>
 <div id="write-up-the-results-in-apa-style-8" class="section level4" number="10.1.5.1">
 <h4><span class="header-section-number">10.1.5.1</span> Write up the results in APA style</h4>
@@ -503,6 +497,10 @@ Figure 7.3: Correlation results in jamovi
 </div>
 <div id="visualize-the-results-7" class="section level4" number="10.1.5.2">
 <h4><span class="header-section-number">10.1.5.2</span> Visualize the results</h4>
+<p>The default in the Correlation Matrix is to plot the correlation matrix of all the variables, and optionally show the densities for variables and the statistics. This is fine, but I’m not a huge fan of it. You can see it below:</p>
+<p><img src="images/08-correlation/correlation-plots.png" /></p>
+<p>Personally, this is why I like the scatr module in jamovi. You can create high-quality scatterplots of the six graphs above and then stitch them together in a nicer version. For example, here’s the correlation between the sleep quality of both Dan and the baby with a linear regression line and standard error:</p>
+<p><img src="images/08-correlation/correlation-plot1.png" width="500" /></p>
 </div>
 </div>
 <div id="in-case-of-violated-assumptions-7" class="section level3" number="10.1.6">
@@ -518,6 +516,7 @@ Figure 7.3: Correlation results in jamovi
 </div>
 <div id="comparing-strengths-of-correlations" class="section level4" number="10.1.7.2">
 <h4><span class="header-section-number">10.1.7.2</span> Comparing strengths of correlations</h4>
+<p><strong>Note</strong>: PSYC 290 students you can read the below information but I will not test you on it.</p>
 <p>Sometimes you want to compare two correlations to find out if one correlation is significantly stronger than another. You can use this calculator to calculate the p-value: <a href="https://www.psychometrica.de/correlation.html">Testing the Significance of Correlations</a></p>
 <p>Note that you use #1 (Independent Samples) when the correlations come from different samples and #2 (Dependent Samples) when the correlations come from the same sample. For example, to compare the correlation between English and Reading to the correlation between English and Writing, you would use #2 (Dependent Samples). But to compare the correlations between English and Reading for men and women, you would use #1 (Independent Samples).</p>
 <p>Let’s try them both with our <a href="https://github.com/danawanzer/stats-with-jamovi/blob/master/data/Sample_Dataset_2014.xlsx">Sample_Dataset_2014.xlsx</a>.</p>
@@ -528,10 +527,10 @@ Figure 7.3: Correlation results in jamovi
 <p>Let’s first find the correlation for men. Go to the Data tab in jamovi, click Filters, and enter in the <span class="math inline">\(\int_x\)</span> = Gender == 0. Next, go to the Analyses tab in jamovi, click Regression, and choose Correlation Matrix. Move our two variables over (<code>English</code> and <code>Reading</code>) and check the box for <code>N</code>. You should get <em>r</em> = .36, <em>p</em> &lt; .001, <em>n</em> = 181.</p>
 <p>Now let’s find the correlation for women. Go back to the Data tab in jamovi, click Filters, and change the equation to <span class="math inline">\(\int_x\)</span> = Gender == 1. Your results should automatically update because the filter changed. For women, you should get <em>r</em> = .33, <em>p</em> &lt; .001, <em>n</em> = 210.</p>
 <p>Now we can compare the correlations in <a href="https://www.psychometrica.de/correlation.html#independent">Testing the Significance of Correlations - Independent Samples</a>. In Correlation 1, put 181 in the n column and .36 in the r column. In Correlation 2, put 210 in the n column and .33 in the r column. The results are shown below. The z-score is not statistically significant (<em>p</em> = .369) so there is no significant difference in correlation strength.</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-5"></span>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-3"></span>
 <img src="images/08-correlation/compare-correlations-independent.png" alt="Comparison of correlations from independent samples" width="100%" />
 <p class="caption">
-Figure 7.4: Comparison of correlations from independent samples
+Figure 7.2: Comparison of correlations from independent samples
 </p>
 </div>
 <ol start="2" style="list-style-type: decimal">
@@ -541,17 +540,17 @@ Figure 7.4: Comparison of correlations from independent samples
 <p>Notice how we have three tests we are comparing: (1) English, (2) Reading, and (3) Writing. We can’t use this test if we are testing the correlation between variables A and B and the correlation between variables C and D. There needs to be overlap.</p>
 <p>If you still have your filter on in your dataset from the previous analysis, turn it off. Go to the Data tab, click Filters, and either select the X to delete it or toggle the active button so it’s turned off. Return to your Correlation Matrix results and click on it to edit it. Add Writing to the box.</p>
 <p>However, we have a problem! The <a href="https://www.psychometrica.de/correlation.html#dependent">Testing the Significance of Correlations - Dependent Samples</a> webpage (#2) wants a single N, but our correlation matrix has different Ns because of missing data. What can we do? We need to chain filters! Go back to your Data tab, click Filters, and add three filters like below (note: this is how you can get <em>listwise deletion</em> in jamovi):</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-6"></span>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-4"></span>
 <img src="images/08-correlation/correlation-filters.png" alt="Advanced filters" width="100%" />
 <p class="caption">
-Figure 7.5: Advanced filters
+Figure 7.3: Advanced filters
 </p>
 </div>
 <p>Our correlation matrix should have automatically updated and all the N’s equal 370. Great! We now have all the information we need to input into our <a href="https://www.psychometrica.de/correlation.html">Testing the Significance of Correlations</a> webpage, #2. For n we input 370. For <span class="math inline">\(r_{12}\)</span> we enter the correlation between (1) English and (2) Reading. For <span class="math inline">\(r_{13}\)</span> we enter the correlation between (1) English and (3) Writing. For <span class="math inline">\(r_{23}\)</span> we enter the correlation between (2) Reading and (3) Writing. Our z-score is not statistically significant (<em>p</em> = .213) so there is no significant difference in the correlation between English and Reading (<em>r</em> = .32) with the correlation between English and Writing (<em>r</em> = .37).</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-7"></span>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-5"></span>
 <img src="images/08-correlation/compare-correlations-dependent.png" alt="Comparison of correlations from dependent samples" width="100%" />
 <p class="caption">
-Figure 7.6: Comparison of correlations from dependent samples
+Figure 7.4: Comparison of correlations from dependent samples
 </p>
 </div>
 </div>

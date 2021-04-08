@@ -437,16 +437,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="look-at-the-data-6" class="section level3" number="9.1.2">
 <h3><span class="header-section-number">9.1.2</span> Look at the data</h3>
-<p>DATASET INFO</p>
+<p>For this chapter, we’re going to work with example data from lsj-data. Open data from your Data Library in “lsj-data.” Select and open “clinicaltrial” (not Clinical Trial 2). This dataset is hypothetical data of a clinical trial in which you are testing a new antidepressant drug called <em>Joyzepam</em>. In order to construct a fair test of the drug’s effectiveness, the study involves three separate drugs to be administered. One is a placebo, and the other is an existing antidepressant / anti-anxiety drug called <em>Anxifree</em>. A collection of 18 participants with moderate to severe depression are recruited for your initial testing. Because the drugs are sometimes administered in conjunction with psychological therapy, your study includes 9 people undergoing cognitive behavioral therapy (CBT) and 9 who are not. Participants are randomly assigned (doubly blinded, of course) a treatment, such that there are 3 CBT people and 3 no-therapy people assigned to each of the 3 drugs. A psychologist assesses the mood of each person after a 3 month run with each drug, and the overall improvement in each person’s mood is assessed on a scale ranging from -5 to +5.</p>
 <div id="data-set-up-6" class="section level4" number="9.1.2.1">
 <h4><span class="header-section-number">9.1.2.1</span> Data set-up</h4>
 <p>To conduct the one-way ANOVA, we first need to ensure our data is set-up properly in our dataset. This requires having two columns: one with our continuous dependent variable and one indicating which group the participant is in. Each row is a unique participant or unit of analysis.</p>
-<p>INCLUDE DATASET HERE</p>
-<p>In the data above, what is your <strong>independent variable</strong>? <select class='solveme' data-answer='["Semester"]'> <option></option> <option>ID</option> <option>Semester</option> <option>TestScore</option></select></p>
-<p>In the data above, what is your <strong>dependent variable</strong>? <select class='solveme' data-answer='["TestScore"]'> <option></option> <option>ID</option> <option>Semester</option> <option>TestScore</option></select></p>
+<p>Note that in this dataset we actually have two independent variables: <code>drug</code> and <code>therapy</code>. If we were looking at the effect of <code>therapy</code> on <code>mood.gain</code> (our DV) then we would only need to perform an independent samples t-test because there are only two groups (no.therapy and CBT). However, if we were looking at the effect of <code>drug</code> on <code>mood.gain</code>, which is our goal in this chapter, then we would perform a one-way ANOVA because there are three groups (placebo, anxifree, and joyzepam).</p>
+<p><img src="images/04_one-way-anova/anova_data.png" /></p>
 </div>
 <div id="describe-the-data-4" class="section level4" number="9.1.2.2">
 <h4><span class="header-section-number">9.1.2.2</span> Describe the data</h4>
+<p>Once we confirm our data is setup correctly in jamovi, we should look at our data using descriptive statistics and graphs. First, our descriptive statistics are shown below. We see that there are 18 cases in our dataset (a bit small, but let’s ignore that for now) with no missing data. The mean mood gain was .88 (<em>SD</em> = .53) with a minimum mood gain of .10 and maximum of 1.80. Furthermore, there are 6 people in each of our three conditions in the study so we have a <em>balanced</em> research design.</p>
+<p><img src="images/04_one-way-anova/anova_descriptives.png" /></p>
+<p>In addition, we may want to look at the distribution of mood gain across our three conditions. In the Descriptives analysis, we can choose to “split by” <code>drug</code> and then ask for a box plot with violin and data points like below. Visually, it seems like joyzepam might be leading to greater mood gain than the other two conditions, but we need to analyze it statistically to know for sure!</p>
+<p><img src="images/04_one-way-anova/anova_graph.png" /></p>
 </div>
 </div>
 <div id="anova-assumptions" class="section level3" number="9.1.3">
@@ -487,7 +490,6 @@ Figure 7.1: Testing assumptions in jamovi
 </div>
 <div id="perform-the-test-6" class="section level3" number="9.1.4">
 <h3><span class="header-section-number">9.1.4</span> Perform the test</h3>
-<p>Let’s run an example with data from lsj-data. Open data from your Data Library in “lsj-data.” Select and open “clinicaltrial.” This dataset is hypothetical data of a clinical trial in which you are testing a new antidepressant drug called <em>Joyzepam</em>. In order to construct a fair test of the drug’s effectiveness, the study involves three separate drugs to be administered. One is a placebo, and the other is an existing antidepressant / anti-anxiety drug called <em>Anxifree</em>. A collection of 18 participants with moderate to severe depression are recruited for your initial testing. Because the drugs are sometimes administered in conjunction with psychological therapy, your study includes 9 people undergoing cognitive behavioral therapy (CBT) and 9 who are not. Participants are randomly assigned (doubly blinded, of course) a treatment, such that there are 3 CBT people and 3 no-therapy people assigned to each of the 3 drugs. A psychologist assesses the mood of each person after a 3 month run with each drug, and the overall improvement in each person’s mood is assessed on a scale ranging from -5 to +5.</p>
 <p><strong>Note</strong>: Do not use the one-way ANOVA analysis in jamovi! The options there are too limited for our use. Instead, be sure you use ANOVA!</p>
 <ol style="list-style-type: decimal">
 <li><p>To perform a one-way ANOVA in jamovi, go to the Analyses tab, click the <strong>ANOVA</strong> button, and choose “ANOVA.” You might be asking why we aren’t choosing “One-Way ANOVA” and that’s because the options there are too limited.</p></li>
@@ -529,6 +531,7 @@ Figure 7.3: One-way ANOVA results in jamovi
 </div>
 <div id="visualize-the-results-5" class="section level4" number="9.1.5.2">
 <h4><span class="header-section-number">9.1.5.2</span> Visualize the results</h4>
+<p>You should visualize the results similarly to how you visualize the results for the independent samples t-test. The default graph in the estimated marginal means output for the ANOVA is not great in my opinion. Presenting the graph of the data in this case (see the graph under Look at the Data) is probably a better option.</p>
 </div>
 </div>
 <div id="in-case-of-violated-assumptions-4" class="section level3" number="9.1.6">

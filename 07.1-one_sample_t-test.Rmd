@@ -200,7 +200,7 @@ To get the most out of these exercises, try to first find out the answer on your
 
     -   Should you use a one-tailed or two-tailed hypothesis? `r mcq(c(answer = "one-tailed", "two-tailed"))`
 
-    -   Which statistic should you use based on your assumptions? `r mcq(c("Student's one sample t-test", answer = "Wilcoxon rank one sample t-test"))`
+    -   Which statistic should you use based on your assumptions? `r mcq(c("Student one sample t-test", answer = "Wilcoxon rank one sample t-test"))`
 
     -   Do the students in our dataset have a higher Writing score than passing (*M* = 70)? `r mcq(c(answer = "yes", "no"))`
 
@@ -208,6 +208,6 @@ To get the most out of these exercises, try to first find out the answer on your
 
     -   Should you use a one-tailed or two-tailed hypothesis? `r mcq(c("one-tailed", answer = "two-tailed"))`
 
-    -   Which statistic should you use based on your assumptions? `r mcq(c(answer = "Student's one sample t-test", "Wilcoxon rank one sample t-test"))`
+    -   Which statistic should you use based on your assumptions? `r mcq(c(answer = "Student one sample t-test", "Wilcoxon rank one sample t-test"))`
 
     -   Do the students in our dataset have the same national average height of college students)? `r mcq(c("yes", answer = "no"))`

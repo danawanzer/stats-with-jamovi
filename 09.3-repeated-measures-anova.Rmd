@@ -32,15 +32,21 @@ This dataset is hypothetical data in which six patients suffering from Broca's A
 
 #### Data set-up
 
-To conduct the repeated measures ANOVA, we first need to ensure our data is set-up properly in our dataset. This requires having two columns: one with our continuous dependent variable and one indicating which group the participant is in. Each row is a unique participant or unit of analysis.
+To conduct the repeated measures ANOVA, we first need to ensure our data is set-up properly in our dataset. This requires multiple columns, one for each condition or time measurement, with the values indicating the measurement of the DV for that condition or time. Each row is a unique participant or unit of analysis.
 
-INCLUDE DATA SETUP HERE
+So for our broca dataset, we have our Participant column indicating their participant number and then one column for each of the three word recognition tasks (speech, conceptual, syntax), with their scores on the knowledge test indicating the dependent variable for each condition.
 
-In the data above, what is your **independent variable**? `r mcq(c("ID", answer = "Semester", "TestScore"))`
+![](images/05-repeated-measures-anova/rm_data.png)
 
-In the data above, what is your **dependent variable**? `r mcq(c("ID", "Semester", answer = "TestScore"))`
+In the data above, what is your **independent variable**? `r mcq(c("Participant", answer = "Condition", "Speech", "Conceptual", "Syntax", "TestScore"))`
+
+In the data above, what is your **dependent variable**? `r mcq(c("Participant", "Condition", "Speech", "Conceptual", "Syntax", answer = "TestScore"))`
 
 #### Describe the data
+
+Once we confirm our data is setup correctly in jamovi, we should look at our data using descriptive statistics and graphs. First, our descriptive statistics are shown below. We see that there are only six cases total (oof, really small data set!) and the average test score on each of the three conditions. It appears participants did best on the speech condition, but we'll need to run our repeated measures ANOVA to know for sure.
+
+![](images/05-repeated-measures-anova/rm_descriptives.png)
 
 ### Check Assumptions
 
@@ -56,7 +62,7 @@ As a parametric test, the repeated measures ANOVA has the same assumptions as ot
 
 4.  ~~Scores are **independent** between groups~~ (this assumption is not relevant because all participants participate in all conditions)
 
-We cannot *test* the third and fourth assumptions; rather, those are based on knowing your data. 
+We cannot *test* the third and fourth assumptions; rather, those are based on knowing your data.
 
 However, we can and should test for the first two assumptions. Fortunately, the one-way ANOVA in jamovi has three check boxes under "Assumption Checks" that lets us test for both assumptions.
 
@@ -136,6 +142,8 @@ We can write this up in APA style similar to the one-way ANOVA.
 > A repeated measures ANOVA was performed examining how three tasks affected word recognition in patients suffering from Broca's Aphasia. Task significantly affected word recall, *F* (2, 10) = 6.93, *p* = .013, $\eta^2_G$ = .41. Tukey's post hoc difference tests indicated that participants recognized significantly more words in the speech task (*M* = 7.17, *SE* = .62) than participants in the syntax task (*M* = 4.33, *SE* = .62; *p* = .011). There were no differences between the conceptual task (*M* = 6.17, *SE* = .62) and both the speech and syntax tasks.
 
 #### Visualize the results
+
+Similar to the dependent t-test, I am not a fan of the output for the repeated measures ANOVA in jamovi under "estimated marginal means." You could modify the same syntax for the dependent t-test (you'll need to change line 3 to be sure you're picking the correct lines of data, not just 2:3, and revise the names and such. You could also move the data into Excel and do bar graphs with error bars there instead.
 
 ### In case of violated assumptions
 

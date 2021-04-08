@@ -433,13 +433,16 @@ Figure 7.1: Repeated measures ANOVA by Conditions
 <p>This dataset is hypothetical data in which six patients suffering from Broca’s Aphasia (a language deficit commonly experienced following a stroke) complete three word recognition tasks. On the first (speech production) task, patients were required to repeat single words read out aloud by the researcher. On the second (conceptual) task, designed to test word comprehension, patients were required to match a series of pictures with their correct name. On the third (syntax) task, designed to test knowledge of correct word order, patients were asked to reorder syntactically incorrect sentences. Each patient completed all three tasks. The order in which patients attempted the tasks was counterbalanced between participants. Each task consisted of a series of 10 attempts. The number of attempts successfully completed by each patient are provided in the dataset.</p>
 <div id="data-set-up-7" class="section level4" number="9.3.2.1">
 <h4><span class="header-section-number">9.3.2.1</span> Data set-up</h4>
-<p>To conduct the repeated measures ANOVA, we first need to ensure our data is set-up properly in our dataset. This requires having two columns: one with our continuous dependent variable and one indicating which group the participant is in. Each row is a unique participant or unit of analysis.</p>
-<p>INCLUDE DATA SETUP HERE</p>
-<p>In the data above, what is your <strong>independent variable</strong>? <select class='solveme' data-answer='["Semester"]'> <option></option> <option>ID</option> <option>Semester</option> <option>TestScore</option></select></p>
-<p>In the data above, what is your <strong>dependent variable</strong>? <select class='solveme' data-answer='["TestScore"]'> <option></option> <option>ID</option> <option>Semester</option> <option>TestScore</option></select></p>
+<p>To conduct the repeated measures ANOVA, we first need to ensure our data is set-up properly in our dataset. This requires multiple columns, one for each condition or time measurement, with the values indicating the measurement of the DV for that condition or time. Each row is a unique participant or unit of analysis.</p>
+<p>So for our broca dataset, we have our Participant column indicating their participant number and then one column for each of the three word recognition tasks (speech, conceptual, syntax), with their scores on the knowledge test indicating the dependent variable for each condition.</p>
+<p><img src="images/05-repeated-measures-anova/rm_data.png" /></p>
+<p>In the data above, what is your <strong>independent variable</strong>? <select class='solveme' data-answer='["Condition"]'> <option></option> <option>Participant</option> <option>Condition</option> <option>Speech</option> <option>Conceptual</option> <option>Syntax</option> <option>TestScore</option></select></p>
+<p>In the data above, what is your <strong>dependent variable</strong>? <select class='solveme' data-answer='["TestScore"]'> <option></option> <option>Participant</option> <option>Condition</option> <option>Speech</option> <option>Conceptual</option> <option>Syntax</option> <option>TestScore</option></select></p>
 </div>
 <div id="describe-the-data-5" class="section level4" number="9.3.2.2">
 <h4><span class="header-section-number">9.3.2.2</span> Describe the data</h4>
+<p>Once we confirm our data is setup correctly in jamovi, we should look at our data using descriptive statistics and graphs. First, our descriptive statistics are shown below. We see that there are only six cases total (oof, really small data set!) and the average test score on each of the three conditions. It appears participants did best on the speech condition, but we’ll need to run our repeated measures ANOVA to know for sure.</p>
+<p><img src="images/05-repeated-measures-anova/rm_descriptives.png" /></p>
 </div>
 </div>
 <div id="check-assumptions-5" class="section level3" number="9.3.3">
@@ -532,6 +535,7 @@ Figure 7.6: One-way ANOVA results in jamovi
 </div>
 <div id="visualize-the-results-6" class="section level4" number="9.3.5.2">
 <h4><span class="header-section-number">9.3.5.2</span> Visualize the results</h4>
+<p>Similar to the dependent t-test, I am not a fan of the output for the repeated measures ANOVA in jamovi under “estimated marginal means.” You could modify the same syntax for the dependent t-test (you’ll need to change line 3 to be sure you’re picking the correct lines of data, not just 2:3, and revise the names and such. You could also move the data into Excel and do bar graphs with error bars there instead.</p>
 </div>
 </div>
 <div id="in-case-of-violated-assumptions-6" class="section level3" number="9.3.6">
