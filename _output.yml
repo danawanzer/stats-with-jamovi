@@ -37,3 +37,4 @@ bookdown::pdf_book:
   citation_package: natbib
   keep_tex: yes
   css: [include/psyteachr.css, include/style.css]
+  # template: tex/preamble_nonpar.tex

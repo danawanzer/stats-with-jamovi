@@ -447,28 +447,28 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-1"></span>
 <img src="images/07-ancova/ancova_assumptions.png" alt="Assumption check results in jamovi" width="100%" />
 <p class="caption">
-Figure 4.1: Assumption check results in jamovi
+Figure 9.1: Assumption check results in jamovi
 </p>
 </div>
 <p>However, we have two additional assumptions we need to check. Let’s check the assumption of independence of the covariate and treatment effect. For that, we need to perform another ANOVA (not an ANCOVA) with our independent variables predicting age. Our results indicate we violate this assumption: both <code>stress</code> and the interaction of <code>stress * commute</code> are related to age. This suggests age is in fact a <em>confounding</em> variable, not a covariate. We should be performing a mediation, but because we want to illustrate the ANCOVA we will continue.</p>
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-2"></span>
 <img src="images/07-ancova/ancova_assumptions2.png" alt="Assumption check results in jamovi" width="100%" />
 <p class="caption">
-Figure 7.1: Assumption check results in jamovi
+Figure 9.2: Assumption check results in jamovi
 </p>
 </div>
 <p>The second additional assumption is that the relationship between the covariate and the dependent variable is similar for all levels of the independent variable (homogeneity of regression slopes). We can test this by adding an interaction term between the covariate and each independent variable in jamovi under the Model drop-down menu. If the interaction effect is not significant it can be removed. If it is significant then a different and more advanced statistical technique might be appropriate (which is beyond the scope of this class). In our case, the interactions between each IV and our covariate are not statistically significant so we can remove the interaction terms and move on.</p>
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-3"></span>
 <img src="images/07-ancova/ancova_assumptions3.png" alt="Assumption check results in jamovi" width="100%" />
 <p class="caption">
-Figure 7.2: Assumption check results in jamovi
+Figure 9.3: Assumption check results in jamovi
 </p>
 </div>
 <p>Now it’s time to interpret the results! The ANCOVA table shows that both independent variables (<code>stress</code> and <code>commute</code>), the interaction term (<code>stress * commute*</code>), and the covariate (<code>age</code>) are statistically significant. Therefore, we can look at our post hoc tests to find where the differences are.</p>
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-4"></span>
 <img src="images/07-ancova/ancova_results.png" alt="ANCOVA results in jamovi" width="100%" />
 <p class="caption">
-Figure 7.3: ANCOVA results in jamovi
+Figure 9.4: ANCOVA results in jamovi
 </p>
 </div>
 <p>Technically, we don’t need to look at the post hoc table much in this example. Because there are only two groups, we already know one group will have higher means than the other group if the F-test is significant. In fact, check this out: the square root of our F-statistic is equal to the t-statistic in our post hoc table. Neat!</p>
@@ -476,7 +476,7 @@ Figure 7.3: ANCOVA results in jamovi
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-5"></span>
 <img src="images/07-ancova/ancova_tukey.png" alt="Post hoc results in jamovi" width="100%" />
 <p class="caption">
-Figure 7.4: Post hoc results in jamovi
+Figure 9.5: Post hoc results in jamovi
 </p>
 </div>
 <p>Last, we can write-up our results! Reporting ANCOVA is very similar to reporting an ANOVA test (in this case an independent factorial ANOVA) except that we also report the effect of the covariate, as well. Here’s an example write-up:</p>
@@ -487,7 +487,7 @@ Figure 7.4: Post hoc results in jamovi
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-6"></span>
 <img src="images/07-ancova/ancova_interaction.png" alt="Interaction in jamovi" width="100%" />
 <p class="caption">
-Figure 7.5: Interaction in jamovi
+Figure 9.6: Interaction in jamovi
 </p>
 </div>
 

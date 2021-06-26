@@ -425,7 +425,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-1"></span>
 <img src="images/13-regression/dragon_categorical.png" alt="Regression lines and residuals" width="49%" /><img src="images/13-regression/dragons_continuous.png" alt="Regression lines and residuals" width="49%" />
 <p class="caption">
-Figure 4.1: Regression lines and residuals
+Figure 9.1: Regression lines and residuals
 </p>
 </div>
 <p>We determine our line equation from the scatterplot of scores by figuring out the line that fits closest to all data points. The regression line is the line with the <em>smallest</em> residuals between the line and data points.</p>
@@ -433,21 +433,21 @@ Figure 4.1: Regression lines and residuals
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-2"></span>
 <img src="images/13-regression/good-regression-line.jpg" alt="Regression lines and residuals" width="49%" /><img src="images/13-regression/bad-regression-line.jpg" alt="Regression lines and residuals" width="49%" />
 <p class="caption">
-Figure 7.1: Regression lines and residuals
+Figure 9.2: Regression lines and residuals
 </p>
 </div>
 <p>Let’s go back to our dragon example and input one of our dragons into the model to find out how residuals work. On the left, based on our dataset and the fact that our dragon is striped (spotted = 0) and has a height of 5.1 feet, we would expect our dragon to weigh 3.9 tons. However, when we actually weigh him, he weighs 4.2 tons! Therefore, the residual in this case would be .3 tons.</p>
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-3"></span>
 <img src="images/13-regression/dragon_predict_mlr.png" alt="Regression lines and residuals" width="49%" /><img src="images/13-regression/dragon_residual.png" alt="Regression lines and residuals" width="49%" />
 <p class="caption">
-Figure 7.2: Regression lines and residuals
+Figure 9.3: Regression lines and residuals
 </p>
 </div>
 <p>One of our assumption checks is that our residuals are normally distributed, so we would take all our residuals and examine those for normality.</p>
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-4"></span>
 <img src="images/13-regression/dragon_residual_distribution.png" alt="Regression lines and residuals" width="49%" />
 <p class="caption">
-Figure 7.3: Regression lines and residuals
+Figure 9.4: Regression lines and residuals
 </p>
 </div>
 <p>There is more math to regression, which is needed to calculate the <em>F</em>-test you get for the overall model test and the t-tests you get for your model coefficients, but we won’t get into that detail.</p>
@@ -497,7 +497,7 @@ Figure 7.3: Regression lines and residuals
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-5"></span>
 <img src="images/13-regression/regression-cooks.png" alt="Checking for multivariate outliers in jamovi" width="100%" />
 <p class="caption">
-Figure 7.4: Checking for multivariate outliers in jamovi
+Figure 9.5: Checking for multivariate outliers in jamovi
 </p>
 </div>
 </div>
@@ -507,7 +507,7 @@ Figure 7.4: Checking for multivariate outliers in jamovi
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-6"></span>
 <img src="images/13-regression/regression-normality.png" alt="Checking the normality of residuals in jamovi" width="100%" />
 <p class="caption">
-Figure 7.5: Checking the normality of residuals in jamovi
+Figure 9.6: Checking the normality of residuals in jamovi
 </p>
 </div>
 </div>
@@ -519,7 +519,7 @@ Figure 7.5: Checking the normality of residuals in jamovi
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-7"></span>
 <img src="images/13-regression/regression-residuals.png" alt="Checking linearity and homoscedasticity residuals in jamovi" width="49%" />
 <p class="caption">
-Figure 7.6: Checking linearity and homoscedasticity residuals in jamovi
+Figure 9.7: Checking linearity and homoscedasticity residuals in jamovi
 </p>
 </div>
 </div>
@@ -529,7 +529,7 @@ Figure 7.6: Checking linearity and homoscedasticity residuals in jamovi
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-8"></span>
 <img src="images/13-regression/regression-durbinwatson.png" alt="Checking independence of residuals in jamovi" width="100%" />
 <p class="caption">
-Figure 7.7: Checking independence of residuals in jamovi
+Figure 9.8: Checking independence of residuals in jamovi
 </p>
 </div>
 </div>
@@ -547,7 +547,7 @@ Figure 7.7: Checking independence of residuals in jamovi
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-9"></span>
 <img src="images/13-regression/regression-multicollinearity.png" alt="Checking multicollinearity in jamovi" width="100%" />
 <p class="caption">
-Figure 7.8: Checking multicollinearity in jamovi
+Figure 9.9: Checking multicollinearity in jamovi
 </p>
 </div>
 <p>Now that we met all the assumptions, we can interpret our results!</p>
@@ -573,7 +573,7 @@ Figure 7.8: Checking multicollinearity in jamovi
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-10"></span>
 <img src="images/13-regression/regression-results.png" alt="Regression results in jamovi" width="100%" />
 <p class="caption">
-Figure 7.9: Regression results in jamovi
+Figure 9.10: Regression results in jamovi
 </p>
 </div>
 <p>The first table shows us our overall model results.</p>
@@ -603,14 +603,14 @@ Figure 7.9: Regression results in jamovi
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-11"></span>
 <img src="images/13-regression/hierarchical-setup.png" alt="Hierarchical regression setup in jamovi" width="100%" />
 <p class="caption">
-Figure 7.10: Hierarchical regression setup in jamovi
+Figure 9.11: Hierarchical regression setup in jamovi
 </p>
 </div>
 <p>Our model results now change. We now have two lines for the Model Fit Measures and a Model Comparisons table. In addition, under Model Specific Results, we have a drop-down menu to specify which model we want to examine.</p>
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-12"></span>
 <img src="images/13-regression/hierarchical-results.png" alt="Hierarchical regression results in jamovi" width="100%" />
 <p class="caption">
-Figure 9.1: Hierarchical regression results in jamovi
+Figure 9.12: Hierarchical regression results in jamovi
 </p>
 </div>
 <p>Let’s interpret. Our first model (with just <code>baby.sleep</code> is significant), <em>F</em> (1, 98) = 46.18, <em>p</em> &lt; .001, <em>adjusted</em> <span class="math inline">\(R^2\)</span> = .31. So is our second model (that has both <code>baby.sleep</code> and <code>dan.sleep</code>), <em>F</em> (2, 97) = 215.24, <em>p</em> &lt; .001, <em>adjusted</em> <span class="math inline">\(R^2\)</span> = .81. There was a significant improvement between model 1 and model 2, <span class="math inline">\(F_{change}\)</span> (1, 97) = 261.52, <em>p</em> &lt; .001, <span class="math inline">\(\Delta R^2\)</span> = .50. The significant improvement means that the predictors added to model 2 significantly predict our DV <em>above and beyond</em> the predictors in model 1.</p>

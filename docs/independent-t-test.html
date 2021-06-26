@@ -442,30 +442,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h4><span class="header-section-number">7.2.2.1</span> Data set-up</h4>
 <p>To conduct the independent t-test, we first need to ensure our data is set-up properly in our dataset. This requires having two columns: one with our continuous dependent variable and one indicating which group the participant is in. Each row is a unique participant or unit of analysis.</p>
 <p>Below is the first ten rows of our data from the Harpo dataset.</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-1"></span>
-<img src="images/02-independent_t-test/independent_t-test_data.png" alt="Independent t-test data in jamovi" width="80%" />
-<p class="caption">
-Figure 4.1: Independent t-test data in jamovi
-</p>
-</div>
 <p>In the data above, what is your <strong>independent variable</strong>? <select class='solveme' data-answer='["tutor"]'> <option></option> <option>ID</option> <option>grade</option> <option>tutor</option></select></p>
 <p>In the data above, what is your <strong>dependent variable</strong>? <select class='solveme' data-answer='["grade"]'> <option></option> <option>ID</option> <option>grade</option> <option>tutor</option></select></p>
 </div>
 <div id="describe-the-data-1" class="section level4" number="7.2.2.2">
 <h4><span class="header-section-number">7.2.2.2</span> Describe the data</h4>
 <p>Once we confirm our data is setup correctly in jamovi, we should look at our data using descriptive statistics and graphs. First, our descriptive statistics are shown below. Our overall data consists of 33 cases and the students in our dataset have a mean grade of 71.55 (SD = 7.80). The minimum and maximum values look accurate; theoretically, student grades should range from 0-100. Lastly, the distribution of data looks nice and normally distributed. Although we have a pretty small sample size, especially within each group, we can proceed with our analyses. First, though, we need to check our assumptions.</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-2"></span>
-<img src="images/02-independent_t-test/independent_t-test_descriptives_all.png" alt="Descriptive statistics" width="80%" />
-<p class="caption">
-Figure 7.1: Descriptive statistics
-</p>
-</div>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-3"></span>
-<img src="images/02-independent_t-test/independent_t-test_plot_all.png" alt="Plot of the data" width="80%" />
-<p class="caption">
-Figure 7.2: Plot of the data
-</p>
-</div>
 </div>
 </div>
 <div id="check-assumptions-1" class="section level3" number="7.2.3">
@@ -488,34 +470,16 @@ Figure 7.2: Plot of the data
 <div id="testing-normality-1" class="section level5" number="7.2.3.2.1">
 <h5><span class="header-section-number">7.2.3.2.1</span> Testing normality</h5>
 <p>jamovi easily allows us to check for normality using the Shapiro-Wilk test and the Q-Q plot. The Shapiro-Wilk test was not statistically significant (W = .98, <em>p</em> = .827); therefore, this indicates the data is normally distributed. Furthermore, the lines are fairly close to the diagonal line in the Q-Q plot. We can conclude that we satisfy the assumption of normality.</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-4"></span>
-<img src="images/02-independent_t-test/independent_t-test_normality.png" alt="Testing normality in jamovi" width="100%" />
-<p class="caption">
-Figure 7.3: Testing normality in jamovi
-</p>
-</div>
 <p>Remember that we can also test for normality by <strong>looking at our data</strong> (e.g., a histogram or density plot, which you can see above) and by examining <strong>skew and kurtosis</strong>. However, you will need to view them using Exploration –&gt; Descriptives, not in the t-tests menu. Here is our skew and kurtosis:</p>
 <ul>
 <li><p><strong>Skew</strong>: <span class="math inline">\(.06/.41 = .15\)</span></p></li>
 <li><p><strong>Kurtosis</strong>: <span class="math inline">\(.33/.80 = .41\)</span></p></li>
 </ul>
 <p>Remember that we divide the value by its standard error to determine the z-score. If the absolute value of it is below 1.96 then we assume it is normally distributed. Both skew and kurtosis meet the assumption of normality. In addition, so did all our other pieces of evidence of normality: Shapiro-Wilk’s, visual examination of the distribution, and the Q-Q plot. Therefore we can assume we met the assumption of normality.</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-5"></span>
-<img src="images/02-independent_t-test/independent_t-test_skewkurtosis.png" alt="Plot of the data" width="80%" />
-<p class="caption">
-Figure 7.4: Plot of the data
-</p>
-</div>
 </div>
 <div id="testing-homogeneity-of-variance" class="section level5" number="7.2.3.2.2">
 <h5><span class="header-section-number">7.2.3.2.2</span> Testing homogeneity of variance</h5>
 <p>We test for homogeneity of variance using the Levene’s test. The Levene’s test was not statistically significant (<em>F</em> [1, 31] = 2.49, <em>p</em> = .125); therefore, this indicates our data satisfies the assumption of homogeneity of variance. However, I would add a caveat that we have a small sample of data (<em>n</em> = 15 for Anastasia and <em>n</em> = 18 for Bernadette) and the standard deviations are quite different from one another (SD = 9.00 vs 5.77, respectively). We should have tried to collect more data.</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-6"></span>
-<img src="images/02-independent_t-test/independent_t-test_homogeneity.png" alt="Testing homogeneity of variance in jamovi" width="100%" />
-<p class="caption">
-Figure 7.5: Testing homogeneity of variance in jamovi
-</p>
-</div>
 </div>
 </div>
 </div>
@@ -531,22 +495,10 @@ Figure 7.5: Testing homogeneity of variance in jamovi
 <li><p>Under Assumption Checks, select all three options: <code>Homogeneity test</code>, <code>Normality test</code>, and <code>Q-Q plot</code>.</p></li>
 </ol>
 <p>When you are done, your setup should look like this</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-7"></span>
-<img src="images/02-independent_t-test/independent_t-test_setup.png" alt="Independent t-test setup in jamovi" width="80%" />
-<p class="caption">
-Figure 7.6: Independent t-test setup in jamovi
-</p>
-</div>
 </div>
 <div id="interpret-results-1" class="section level3" number="7.2.5">
 <h3><span class="header-section-number">7.2.5</span> Interpret results</h3>
 <p>Once we are satisfied we have satisfied the assumptions for the independent t-test, we can interpret our results.</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-8"></span>
-<img src="images/02-independent_t-test/independent_t-test_ind-results.png" alt="Independent t-test results in jamovi" width="100%" />
-<p class="caption">
-Figure 7.7: Independent t-test results in jamovi
-</p>
-</div>
 <p>Our p-value is less than .05, so our results are statistically significant. Like most of the statistics we’ll come across, the larger the t-statistic (or F-statistic, or chi-square statistic…), the smaller the p-value will be. Therefore, we reject our null hypothesis that there is no difference between the two groups.</p>
 <div id="write-up-the-results-in-apa-style-1" class="section level4" number="7.2.5.1">
 <h4><span class="header-section-number">7.2.5.1</span> Write up the results in APA style</h4>
@@ -574,19 +526,7 @@ Figure 7.7: Independent t-test results in jamovi
 <div id="visualize-the-results-1" class="section level4" number="7.2.5.2">
 <h4><span class="header-section-number">7.2.5.2</span> Visualize the results</h4>
 <p>By selecting <code>Descriptives plots</code> in the setup, you get the figure below. Personally, I don’t think this is a very good plot. It’s not very informative. It just provides the mean (circle), 95% confidence interval (blue bars), and the median.</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-9"></span>
-<img src="images/02-independent_t-test/independent_t-test_plot2.png" alt="Independent t-test descriptives plot" width="100%" />
-<p class="caption">
-Figure 7.8: Independent t-test descriptives plot
-</p>
-</div>
 <p>Another default option in jamovi is via the Descriptives analysis. You can ask for the boxplot, violin plot, and data of your dependent variable split by your independent variable. This is a much better option. Not only does it show us our mean (black bars) and interquartile range (via the boxplot), but it also shows our distribution (violin plot) and data points (grey dots). This is much more informative.</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-10"></span>
-<img src="images/02-independent_t-test/independent_t-test_plot.png" alt="Independent t-test descriptives plot" width="100%" />
-<p class="caption">
-Figure 7.9: Independent t-test descriptives plot
-</p>
-</div>
 <p>Oftentimes, people display results in a simple bar chart, often adding error bars (either 95% CI or SE error bars). But this is also not a great chart because it lacks information about the underlying distribution of data. Therefore, for the independent t-test I recommend the visualization shown above.</p>
 </div>
 </div>
@@ -617,12 +557,6 @@ Figure 7.9: Independent t-test descriptives plot
 </table>
 <p>The Welch’s t-test has three main differences from the independent samples t-test: (a) the standard error (SE) is not a pooled estimate, (b) the degrees of freedom are calculated very different (not <em>N</em> - 2), and (c) it does not have an assumption of homogeneity of variance. Note that Welch’s t-test is <em>not</em> a non-parametric test because it still has the assumption of a normal distribution.</p>
 <p>The Mann-Whitney U is not calculated based on the mean but rather the median and compares ranks of values across the two groups: it has no assumptions about the distribution of data or homogeneity of variances. Therefore, it is a non-parametric test. Here is what the output for all three tests look like:</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-11"></span>
-<img src="images/02-independent_t-test/independent_t-test_full-results.png" alt="All independent t-test results in jamovi" width="100%" />
-<p class="caption">
-Figure 7.10: All independent t-test results in jamovi
-</p>
-</div>
 <div id="welchs-t-test" class="section level4" number="7.2.6.1">
 <h4><span class="header-section-number">7.2.6.1</span> Welch’s t-test</h4>
 <p>To conduct this in jamovi, under Tests select <code>Welch's</code>. You will interpret the results similarly to the independent t-test:</p>

@@ -5,7 +5,7 @@ library(tidyverse)
 library(webex)
 ```
 
-This chapter will cover some basic key terms you should recall from PSYC 190. These terms will come up repeatedly throughout the semester.
+This chapter will cover some basic key terms you should recall from PSYC 190 if you are in PSYC 290 or from earlier in the semester if you are in PSYC 790. These terms will come up repeatedly throughout the semester.
 
 ### Study design terms
 
@@ -51,13 +51,11 @@ Some terms you should be familiar with:
 We tend to talk about two different types of variables in our studies:
 
 1.  **Independent variable** (IV; also known as the predictor variable): this is the variable that is thought to be the cause of some effect. In experimental research, it is the variable that is manipulated.
-
 2.  **Dependent variable** (DV; also known as the outcome variable): this is the variable that is thought to be affected by changes in the IV.
 
 There are other types of variables we may be interested in:
 
 -   **Confounding variable**: a variable that affects or is related to both the independent and dependent variable
-
 -   **Covariate**: a variable that only affects or is only related to the dependent variable
 
 ### Reliability and validity

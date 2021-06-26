@@ -1,7 +1,7 @@
 ---
 title: "Statistics with jamovi"
 author: "Dana Wanzer"
-date: "Last Update: 2021-06-25"
+date: "Last Update: 2021-06-26"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
@@ -376,13 +376,13 @@ Variables in jamovi can be one of three data types:
 
 Furthermore, variables in jamovi can be one of four measure types:
 
-1.  ![](https://www.jamovi.org/assets/variable-nominal.svg) Nominal
+1.  ![](images/03-jamovi/variable-nominal.png) Nominal
 
-2.  ![](https://www.jamovi.org/assets/variable-ordinal.svg) Ordinal
+2.  ![](images/03-jamovi/variable-ordinal.png) Ordinal
 
-3.  ![](https://www.jamovi.org/assets/variable-continuous.svg) Continuous (meaning jamovi combines interval and ratio and doesn't distinguish between the two)
+3.  ![](images/03-jamovi/variable-continuous.png) Continuous (meaning jamovi combines interval and ratio and doesn't distinguish between the two)
 
-4.  ![](https://www.jamovi.org/assets/variable-id.svg) ID (used for any identifying variable you likely wouldn't ever analyze, like participant ID number or name)
+4.  ![](images/03-jamovi/variable-id.png) ID (used for any identifying variable you likely wouldn't ever analyze, like participant ID number or name)
 
 There are a few great things about jamovi when it comes to these data variables. First, jamovi will try to automatically determine what the data and measure types are when you type in data or when you open a dataset; this is fabulous, until it goes wrong. It's important that you always double check your data and measure types first!
 
@@ -453,7 +453,7 @@ There are four basic types of cleaning we will be learning about: checking your 
 
 ### Data setup
 
-As previously mentioned, it's really important to check that the data types and measurement types of your variables are correct. You should open the Setup (![](https://raw.githubusercontent.com/jamovi/jamovi/a3fe63705eec3ad4c39ccb36aaf58379295b5c24/client/assets/menu-variable-edit.svg){width="20"}) option under the Data tab to check.
+As previously mentioned, it's really important to check that the data types and measurement types of your variables are correct. You should open the Setup (![](images/03-jamovi/menu-variable-edit.png){width="15"}) option under the Data tab to check.
 
 When you're in Setup, here's the things you should be doing for all variables:
 

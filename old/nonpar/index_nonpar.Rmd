@@ -1,0 +1,24 @@
+--- 
+title: "R bookdownplus"
+subtitle: "Authoring Articles, Mails, Guitar Chords, Chemical Molecular Formulae and Equations with R bookdown"
+author: "Peng Zhao"
+date: ""
+documentclass: book
+output:
+  bookdown::pdf_book:
+    includes:
+      in_header: tex/preamble_nonpar.tex
+    keep_tex: yes
+#    latex_engine: xelatex
+    citation_package: natbib
+bibliography: [bib/bib.bib]
+biblio-style: apalike
+link-citations: yes
+colorlinks: no  
+# toc: no
+lot: no
+lof: no
+site: bookdown::bookdown_site
+---
+
+

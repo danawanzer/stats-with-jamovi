@@ -438,36 +438,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="data-set-up-2" class="section level4" number="7.3.2.1">
 <h4><span class="header-section-number">7.3.2.1</span> Data set-up</h4>
 <p>To conduct the dependent t-test, we first need to ensure our data is set-up properly in our dataset. This requires having two columns: one is our dependent variable score for the participant in one category and the other column is our dependent variable score for the participant in the other category. Each row is a unique participant or unit of analysis.</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-1"></span>
-<img src="images/03_dependent_t-test/dependent_data.png" alt="Dependent t-test data in jamovi" width="80%" />
-<p class="caption">
-Figure 4.1: Dependent t-test data in jamovi
-</p>
-</div>
 <p>In the data above, what is your <strong>independent variable</strong>? <select class='solveme' data-answer='["grade"]'> <option></option> <option>id</option> <option>grade</option> <option>test score</option> <option>grade_test1</option> <option>grade_test2</option></select></p>
 <p>In the data above, what is your <strong>dependent variable</strong>? <select class='solveme' data-answer='["test score"]'> <option></option> <option>id</option> <option>grade</option> <option>test score</option> <option>grade_test1</option> <option>grade_test2</option></select></p>
 </div>
 <div id="describe-the-data-2" class="section level4" number="7.3.2.2">
 <h4><span class="header-section-number">7.3.2.2</span> Describe the data</h4>
 <p>Once we confirm our data is setup correctly in jamovi, we should look at our data using descriptive statistics and graphs. First, our descriptive statistics are shown below. Our overall data consists of 20 cases (students) and the average grade is 56.98 (<em>SD</em> = 6.62) at the first test and 58.38 (<em>SD</em> = 6.41) at the second test. We have no missing cases, and our minimum and maximum values look accurate; theoretically, student grades should range from 0-100. Lastly, the distribution of data looks fairly normally distributed, although I’m personally a little worried about our small sample size. Before we can proceed with our analyses, we’ll need to check our assumptions.</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-2"></span>
-<img src="images/03_dependent_t-test/dependent_descriptives.png" alt="Descriptive statistics" width="80%" />
-<p class="caption">
-Figure 7.1: Descriptive statistics
-</p>
-</div>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-3"></span>
-<img src="images/03_dependent_t-test/dependent_descriptives.png" alt="Descriptive statistics" width="80%" />
-<p class="caption">
-Figure 7.2: Descriptive statistics
-</p>
-</div>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-4"></span>
-<img src="images/03_dependent_t-test/dependent_plot1.png" alt="Plots of the data" width="49%" /><img src="images/03_dependent_t-test/dependent_plot2.png" alt="Plots of the data" width="49%" />
-<p class="caption">
-Figure 7.3: Plots of the data
-</p>
-</div>
 </div>
 </div>
 <div id="check-assumptions-2" class="section level3" number="7.3.3">
@@ -489,12 +465,6 @@ Figure 7.3: Plots of the data
 <div id="testing-normality-2" class="section level5" number="7.3.3.2.1">
 <h5><span class="header-section-number">7.3.3.2.1</span> Testing normality</h5>
 <p>Notice how our dependent variable is really the difference in scores, and therefore that is what we are testing for normality. We test for normality using the Shapiro-Wilk test and the Q-Q plot. The Shapiro-Wilk test was not statistically significant (W = .97, <em>p</em> = .678); therefore, this indicates the data is normally distributed. Furthermore, the lines are fairly close to the diagonal line in the Q-Q plot (although it’s a bit hard to tell because our sample size is small). We can conclude that we satisfy the assumption of normality.</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-5"></span>
-<img src="images/03_dependent_t-test/dependent_normality.png" alt="Testing normality in jamovi" width="100%" />
-<p class="caption">
-Figure 7.4: Testing normality in jamovi
-</p>
-</div>
 </div>
 </div>
 </div>
@@ -510,22 +480,10 @@ Figure 7.4: Testing normality in jamovi
 <li><p>Under Assumption Checks, select both options: <code>Normality test</code> and <code>Q-Q plot</code>. You’ll check these assumptions first, which is discussed above.</p></li>
 </ol>
 <p>When you are done, your setup should look like this</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-6"></span>
-<img src="images/03_dependent_t-test/dependent_setup.png" alt="Dependent t-test setup in jamovi" width="80%" />
-<p class="caption">
-Figure 7.5: Dependent t-test setup in jamovi
-</p>
-</div>
 </div>
 <div id="interpreting-results" class="section level3" number="7.3.5">
 <h3><span class="header-section-number">7.3.5</span> Interpreting results</h3>
 <p>Once we are satisfied we have satisfied the assumptions for the dependent t-test, we can interpret our results.</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-7"></span>
-<img src="images/03_dependent_t-test/dependent_results.png" alt="Dependent t-test results in jamovi" width="100%" />
-<p class="caption">
-Figure 7.6: Dependent t-test results in jamovi
-</p>
-</div>
 <p>Our p-value is less than .05, so our results are statistically significant. Therefore, we reject the null hypothesis that there is no difference between the two groups.</p>
 <div id="write-up-the-results-in-apa-style-2" class="section level4" number="7.3.5.1">
 <h4><span class="header-section-number">7.3.5.1</span> Write up the results in APA style</h4>
@@ -545,20 +503,8 @@ Figure 7.6: Dependent t-test results in jamovi
 <div id="visualize-the-results-2" class="section level4" number="7.3.5.2">
 <h4><span class="header-section-number">7.3.5.2</span> Visualize the results</h4>
 <p>By selecting <code>Descriptives plots</code> in the setup, you get the figure below. Personally, I don’t think this is a very good plot. It’s not very informative. It just provides the mean (circle), 95% confidence interval (blue bars), and the median.</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-8"></span>
-<img src="images/03_dependent_t-test/dependent_results_plot.png" alt="Dependent t-test descriptives plot" width="100%" />
-<p class="caption">
-Figure 7.7: Dependent t-test descriptives plot
-</p>
-</div>
 <p>Another option is to use the Descriptives plots available in jamovi, which we see above in the Look at the data section above. I wish there were a way to combine them into one graph, but unfortunately there isn’t within jamovi. Instead, you’ll have to go into the Rj editor and use R code to reshape the data from wide format to long format and then call the descriptives syntax to produce the plot. You <em>could</em> copy-paste the data into a new dataset, but I always try to avoid manual work when doing analyses because something <em>always</em> goes wrong.</p>
 <p>Here’s what this looks like in jamovi:</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-9"></span>
-<img src="images/03_dependent_t-test/dependent_results_plot2.png" alt="Revised plot using the Rj editor" width="100%" />
-<p class="caption">
-Figure 7.8: Revised plot using the Rj editor
-</p>
-</div>
 <p>To make our lives a bit easier, here is the code in the Rj editor that you can copy-paste (that kind of copy-pasting I allow!) into your own jamovi. You’ll need to edit things like the list of names in line 3, the name of your DV (line 4), the name of your IV (line 5), and re-specify those names in line 9.</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="dependent-t-test.html#cb3-1" aria-hidden="true" tabindex="-1"></a>long <span class="ot">&lt;-</span> <span class="fu">reshape</span>(data, </span>
 <span id="cb3-2"><a href="dependent-t-test.html#cb3-2" aria-hidden="true" tabindex="-1"></a>                <span class="at">direction =</span> <span class="st">&quot;long&quot;</span>, </span>
@@ -578,12 +524,6 @@ Figure 7.8: Revised plot using the Rj editor
 <h3><span class="header-section-number">7.3.6</span> In case of violated assumptions</h3>
 <p>If you violated the assumption of normality and no transformation fixed your data, then you can perform the non-parametric version of the dependent t-test called the Wilcoxon Rank test. As a reminder, non-parametric tests do not make assumptions about the distribution of data because it deals with the <em>median</em> not the <em>mean</em>.</p>
 <p>Here is the output for both the dependent t-test and the Wilcoxon rank test:</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-11"></span>
-<img src="images/03_dependent_t-test/dependent_results_full.png" alt="All dependent t-test results in jamovi" width="100%" />
-<p class="caption">
-Figure 7.10: All dependent t-test results in jamovi
-</p>
-</div>
 <div id="wilcoxon-rank" class="section level4" number="7.3.6.1">
 <h4><span class="header-section-number">7.3.6.1</span> Wilcoxon rank</h4>
 <p>To conduct this in jamovi, under Tests select <code>Wilcoxon rank</code>. You will interpret the results similarly to the dependent t-test:</p>

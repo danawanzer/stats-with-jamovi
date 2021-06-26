@@ -5,48 +5,11 @@ library(tidyverse)
 library(webex)
 ```
 
-This chapter will introduce you to the course (PSYC 290 or PSYC 790), the instructor (Dr. Dana Wanzer), and the textbook.
+This chapter will introduce you to the course, the instructor (Dr. Dana Wanzer), and the textbook.
 
-## PSYC 290
-
-Welcome to PSYC 290 - Interpreting Psychological Research! I'm excited to teach this course, because as a follow-up to PSYC 190 you'll be learning about how to analyze and interpret statistical results.
-
-### Learning objectives
-
-By the end of the course, you can expect to
-
-1.  Understand the appropriate statistical procedure to apply in basic psychological research.
-2.  Understand the logic behind basic inferential statistics.
-3.  Interpret pertinent statistical information in psychology-related journal articles and other publications.
-4.  Conduct appropriate statistical tests using statistical software.
-5.  Interpret and evaluate the results of statistical tests.
-6.  Report the results of statistical analyses using APA style.
-
-In particular, you're going to learn how to analyze data in a statistical program called [jamovi](https://www.jamovi.org/), although occasionally we will practice interpreting output from SPSS and R so you can get some experience interpreting statistical output from other statistical software.
-
-### Weekly Schedule
-
-This class is purely online and asynchronous in Spring 2020, meaning we will not meet as a class at any point during the semester. Each week will look pretty similar:
-
-1.  You will have assigned readings that may include book chapters, chapters from this online textbook, journal articles, or videos.
-2.  After completing the readings, you will complete a reading reflection to demonstrate you completed the readings, understand the material and its application, help develop the glossary for this textbook, and ask questions.
-3.  You will have a practice activity each week to help you understand and apply the material. You can complete these repeatedly until you receive full credit.
-4.  Optionally, you can attend student hours to work on homework, ask questions, and get extra practice examples to extend your understanding. While they are all optional, they are highly recommended and you will be required to attend at least two student hours throughout the semester.
-5.  Lastly, you will complete either a homework assignment or exam to test your understanding of the material. Homework assignments can be re-done with an additional reflection. 
-
-### Late assignments and re-doing homework
-
-All assignments can be turned in late for absolutely no penalty; however, there are specific dates that are hard deadlines to help you stay on track in this course. Life happens, and sometimes you won't be able to complete an assignment for a week or two and that is completely understandable.
-
-That being said, you should make every effort to stay on top of the coursework in this class. Dedicate hours to work on course activities so you do not fall behind! Please reach out to me if you start feeling overwhelmed or need help getting back on track. I am here to support you!
-
-Furthermore, if you do not get the grade on the homework assignment that you want you can always re-do the homework assignment for up to full credit. There will be additional work you will need to complete to be able to re-do an assignment; more information on this will be available on Canvas.
-
-### Getting help in this class
+## Getting help in this class
 
 Come to student hours regularly! The GA and myself are *always* available to help you. We will be scheduling regularly recurring student hours each week so you can come ask questions, get help on your homework, or just have a space to come together to work on your assignments in a dedicated online space.
-
-We will also have an online Microsoft Teams team channel so that you can ask questions there. This way everyone can benefit from the answers to questions students have!
 
 If you have more personal questions, you can message me on Teams or email me at wanzerd\@uwstout.edu.
 
@@ -56,7 +19,7 @@ My name is Dana Wanzer (pronounced DAY-nuh JUAN-zur) and I started teaching at U
 
 ![](images/01-intro/cyanide-happiness_statistics.png)
 
-However, I know not everyone likes statistics. Some of you may not care much about them, and some of you may be scared about taking this course (especially in a pandemic and in an online asynchronous environment). Please know that **I am here for you and I want to make this class an enjoyable learning experience**. If there is anything I can do to help make this class more enjoyable and to help you learn, please reach out to me.
+However, I know not everyone likes statistics. Some of you may not care much about it, and some of you may be apprehensive or anxious about taking this course. Please know that **I am here for you and I want to make this class an enjoyable learning experience**. If there is anything I can do to help make this class more enjoyable and to help you learn, please reach out to me.
 
 ## Navigating this website/book
 
@@ -73,8 +36,6 @@ There are some icons at the top of this book that you may find useful:
 4.  The fourth button provides information on the keyboard shortcuts.
 
 5.  On the right of the toolbar are icons to share on various social media platforms.
-
-At some point when the textbook is more finalized, it will be turned into a PDF that can be downloaded and saved to your computer for use in the future. I will let you know when that happens!
 
 ### Quiz questions
 

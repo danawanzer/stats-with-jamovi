@@ -441,28 +441,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h4><span class="header-section-number">7.1.2.1</span> Data set-up</h4>
 <p>To conduct the independent t-test, we first need to ensure our data is set-up properly in our dataset. This requires having two columns: one with our continuous dependent variable and one indicating which group the participant is in. Each row is a unique participant or unit of analysis.</p>
 <p>Below is the first ten rows of our data from the zeppo dataset.</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-1"></span>
-<img src="images/07.1-one_sample_t-test/data.png" alt="One-sample t-test data in jamovi" width="80%" />
-<p class="caption">
-Figure 4.1: One-sample t-test data in jamovi
-</p>
-</div>
 </div>
 <div id="describe-the-data" class="section level4" number="7.1.2.2">
 <h4><span class="header-section-number">7.1.2.2</span> Describe the data</h4>
 <p>Once we confirm our data is setup correctly in jamovi, we should look at our data using descriptive statistics and graphs. First, our descriptive statistics are shown below. Our overall data consists of 20 cases and the students in our dataset have a mean grade of 72.30 (<em>SD</em> = 9.52). The minimum and maximum values look accurate; theoretically, student grades should range from 0-100. Lastly, the distribution of data looks possibly not normally distributed. Although we have a pretty small sample size, we can proceed with our analyses. First, though, we need to check our assumptions.</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-2"></span>
-<img src="images/07.1-one_sample_t-test/descriptives.png" alt="Descriptive statistics" width="80%" />
-<p class="caption">
-Figure 7.1: Descriptive statistics
-</p>
-</div>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-3"></span>
-<img src="images/07.1-one_sample_t-test/plot.png" alt="Plot of the data" width="80%" />
-<p class="caption">
-Figure 7.2: Plot of the data
-</p>
-</div>
 </div>
 </div>
 <div id="check-assumptions" class="section level3" number="7.1.3">
@@ -484,12 +466,6 @@ Figure 7.2: Plot of the data
 <div id="testing-normality" class="section level5" number="7.1.3.2.1">
 <h5><span class="header-section-number">7.1.3.2.1</span> Testing normality</h5>
 <p>jamovi easily allows us to check for normality using the Shapiro-Wilk test and the Q-Q plot. The Shapiro-Wilk test was not statistically significant (W = .96, <em>p</em> = .586); therefore, this indicates the data is normally distributed. Furthermore, the lines are fairly close to the diagonal line in the Q-Q plot. We can conclude that we satisfy the assumption of normality.</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-4"></span>
-<img src="images/07.1-one_sample_t-test/normality.png" alt="Testing normality in jamovi" width="100%" />
-<p class="caption">
-Figure 7.3: Testing normality in jamovi
-</p>
-</div>
 <p>Remember that we can also test for normality by <strong>looking at our data</strong> (e.g., a histogram or density plot, which you can see above) and by examining <strong>skew and kurtosis</strong>. However, you will need to view them using Exploration –&gt; Descriptives, not in the t-tests menu. Here is our skew and kurtosis:</p>
 <ul>
 <li><p><strong>Skew</strong>: <span class="math inline">\(-.53/.51 = -1.04\)</span></p></li>
@@ -511,22 +487,10 @@ Figure 7.3: Testing normality in jamovi
 <li><p>Under Assumption Checks, select both options: <code>Normality test</code> and <code>Q-Q plot</code>.</p></li>
 </ol>
 <p>When you are done, your setup should look like this:</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-5"></span>
-<img src="images/07.1-one_sample_t-test/setup.png" alt="One sample t-test setup in jamovi" width="80%" />
-<p class="caption">
-Figure 7.4: One sample t-test setup in jamovi
-</p>
-</div>
 </div>
 <div id="interpret-results" class="section level3" number="7.1.5">
 <h3><span class="header-section-number">7.1.5</span> Interpret results</h3>
 <p>Once we are satisfied we have satisfied the assumptions for the independent t-test, we can interpret our results.</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-6"></span>
-<img src="images/07.1-one_sample_t-test/results.png" alt="One sample t-test results in jamovi" width="100%" />
-<p class="caption">
-Figure 7.5: One sample t-test results in jamovi
-</p>
-</div>
 <p>Our p-value is less than .05, so our results are statistically significant. Like most of the statistics we’ll come across, the larger the t-statistic (or F-statistic, or chi-square statistic…), the smaller the p-value will be. Therefore, we reject our null hypothesis that the population mean is less than or equal to the sample mean of psychology students.</p>
 <div id="write-up-the-results-in-apa-style" class="section level4" number="7.1.5.1">
 <h4><span class="header-section-number">7.1.5.1</span> Write up the results in APA style</h4>
@@ -550,12 +514,6 @@ Figure 7.5: One sample t-test results in jamovi
 <div id="visualize-the-results" class="section level4" number="7.1.5.2">
 <h4><span class="header-section-number">7.1.5.2</span> Visualize the results</h4>
 <p>By selecting <code>Descriptives plots</code> in the setup, you get the figure below. Personally, I don’t think this is a very good plot. It’s not very informative. It just provides the mean (circle), 95% confidence interval (blue bars), and the median.</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-7"></span>
-<img src="images/07.1-one_sample_t-test/results-plot.png" alt="One sample t-test descriptives plot" width="100%" />
-<p class="caption">
-Figure 7.6: One sample t-test descriptives plot
-</p>
-</div>
 <p>Another default option in jamovi is via the Descriptives analysis. You can ask for the boxplot, violin plot, and data of your dependent variable split by your independent variable. This is a much better option. Not only does it show us our mean (black bars) and interquartile range (via the boxplot), but it also shows our distribution (violin plot) and data points (grey dots). This is much more informative. You can see this in the Look at your data section above.</p>
 </div>
 </div>
@@ -563,12 +521,6 @@ Figure 7.6: One sample t-test descriptives plot
 <h3><span class="header-section-number">7.1.6</span> In case of violated assumptions</h3>
 <p>If you fail to meet the assumption of normality, and no transformation fixes the data, then you can use the Wilcoxon W test.</p>
 <p>The Wilcoxon W is not calculated based on the mean but rather the median. It has no assumptions about the distribution of data. Therefore, it is a non-parametric test. Here is what the output for the student’s t-test and Wilcoxon W look like in jamovi:</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-8"></span>
-<img src="images/07.1-one_sample_t-test/wilcoxon.png" alt="All one sample t-test results in jamovi" width="100%" />
-<p class="caption">
-Figure 7.7: All one sample t-test results in jamovi
-</p>
-</div>
 <div id="wilcoxon-w-in-jamovi" class="section level5" number="7.1.6.0.1">
 <h5><span class="header-section-number">7.1.6.0.1</span> Wilcoxon W in jamovi</h5>
 <p>To conduct this in jamovi, under Tests select <code>Wilcoxon W</code>. You will interpret the results similarly to the one sample t-test:</p>

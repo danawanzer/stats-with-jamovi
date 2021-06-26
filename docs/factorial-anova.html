@@ -427,21 +427,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-1"></span>
 <img src="images/06-factorial-anova/independent-factorial_assumptions.png" alt="Assumption check results in jamovi" width="100%" />
 <p class="caption">
-Figure 4.1: Assumption check results in jamovi
+Figure 9.1: Assumption check results in jamovi
 </p>
 </div>
 <p>Let’s look at the main results next. We got three lines of results in addition to the typical residuals (error). The first two lines are our main effects of <code>attend</code> and <code>reading</code> on grades. The p-values for both are statistically significant indicating attend affects grades and reading affects grades. However, it also added an interaction term of <code>attend * reading</code>, which is not statistically significant. This means we do not have an interaction between attend and reading on grades. Interactions will be discussed in more detail in the next section.</p>
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-2"></span>
 <img src="images/06-factorial-anova/independent-factorial_results.png" alt="Independent factorial ANOVA results in jamovi" width="100%" />
 <p class="caption">
-Figure 7.1: Independent factorial ANOVA results in jamovi
+Figure 9.2: Independent factorial ANOVA results in jamovi
 </p>
 </div>
 <p>Although we could simply look at the means to know whether attending or reading had higher grades than not attending or not reading because there are only two conditions, we can also look at the post hoc tests and definitely need to look at them if we have three or more conditions per IV. These are shown below. Because the mean differences are negative, we can determine that the second group had higher means than the second group. We can confirm that with the estimated marginal means (not shown here).</p>
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-3"></span>
 <img src="images/06-factorial-anova/independent-factorial_posthoc.png" alt="Post hoc results in jamovi" width="100%" />
 <p class="caption">
-Figure 7.2: Post hoc results in jamovi
+Figure 9.3: Post hoc results in jamovi
 </p>
 </div>
 <p>Last, we can write-up our results!</p>
@@ -456,7 +456,7 @@ Figure 7.2: Post hoc results in jamovi
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-4"></span>
 <img src="images/06-factorial-anova/independent-factorial_plot.png" alt="Interaction plot in jamovi" width="100%" />
 <p class="caption">
-Figure 7.3: Interaction plot in jamovi
+Figure 9.4: Interaction plot in jamovi
 </p>
 </div>
 <p>The parallel lines that are sloping upward tell me there is a significant main effect for both IVs but no interaction. How do I know that? With two variables, there are only so many interaction shapes possible. <a href="https://courses.washington.edu/smartpsy/interactions.htm">This website</a> does a fantastic time showing you all 8 combinations of the three effects (2 main effects and 1 interaction effect). Spend some time looking through it and familiarizing yourself with the plots!</p>
@@ -482,28 +482,28 @@ Figure 7.3: Interaction plot in jamovi
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-5"></span>
 <img src="images/06-factorial-anova/rm-factorial_assumption.png" alt="Assumption testing in jamovi" width="100%" />
 <p class="caption">
-Figure 7.4: Assumption testing in jamovi
+Figure 9.5: Assumption testing in jamovi
 </p>
 </div>
 <p>Next let’s look at the within subjects effects table. Remember, we do not need to worry about the between subjects effects table because we do not have one; it will be used in the mixed factorial design below. Overall, we see a significant main effect of area, a significant main effect of time, and a significant interaction effect of both area and time. Neat!</p>
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-6"></span>
 <img src="images/06-factorial-anova/rm-factorial_results.png" alt="Repeated measures ANOVA in jamovi" width="100%" />
 <p class="caption">
-Figure 7.5: Repeated measures ANOVA in jamovi
+Figure 9.6: Repeated measures ANOVA in jamovi
 </p>
 </div>
 <p>Next, we can look at post hoc comparisons because the main effects were all statistically significant. For area, we can see that client and action had significantly higher means than product, but there was no difference between client and action. Furthermore, post-intervention performance was significantly higher than pre-intervention.</p>
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-7"></span>
 <img src="images/06-factorial-anova/rm-factorial_tukey.png" alt="Post hoc tests in jamovi" width="100%" />
 <p class="caption">
-Figure 7.6: Post hoc tests in jamovi
+Figure 9.7: Post hoc tests in jamovi
 </p>
 </div>
 <p>Last, let’s look at the interaction to get a sense of what the interaction looks like. It appears that although there are no differences between pre- and post-intervention for product, there are significant differences from pre- to post-intervention for both client and action. To be more specific on where the statistically significant differences are, you can also ask for post hoc tests for the interaction term. This is where including a plot can be very helpful for your audience!</p>
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-8"></span>
 <img src="images/06-factorial-anova/rm-factorial_interaction.png" alt="Interaction plot in jamovi" width="100%" />
 <p class="caption">
-Figure 7.7: Interaction plot in jamovi
+Figure 9.8: Interaction plot in jamovi
 </p>
 </div>
 <p>Now we have everything we need (in addition to the estimated marginal means) and can write-up our results.</p>
@@ -532,28 +532,28 @@ Figure 7.7: Interaction plot in jamovi
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-9"></span>
 <img src="images/06-factorial-anova/mixed_assumptions.png" alt="Assumption checking in jamovi" width="100%" />
 <p class="caption">
-Figure 7.8: Assumption checking in jamovi
+Figure 9.9: Assumption checking in jamovi
 </p>
 </div>
 <p>Next, we interpret out output! This time we interpret both our within subjects effects and between subjects effects tables. In the within subjects effects table, our main effect of reward is statistically significant. In the between subjects effects table, our main effect of condition is statistically significant. However, in the within subjects effects table, there is no statistically significant interaction effect of reward on condition.</p>
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-10"></span>
 <img src="images/06-factorial-anova/mixed_results.png" alt="Mixed factorial ANOVA in jamovi" width="100%" />
 <p class="caption">
-Figure 7.9: Mixed factorial ANOVA in jamovi
+Figure 9.10: Mixed factorial ANOVA in jamovi
 </p>
 </div>
 <p>To understand where the differences lie between conditions or reward preferences, we look to our post hoc tests. For reward, it looks like there is only a significant difference between food and music (<em>p</em> = .009). For condition, it looks like cravings were higher in the fasting group than in the control group. We can look at the estimated marginal means tables to find the actual Means of the conditions and see the plots.</p>
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-11"></span>
 <img src="images/06-factorial-anova/mixed_posthoc.png" alt="Post hoc tests in jamovi" width="100%" />
 <p class="caption">
-Figure 7.10: Post hoc tests in jamovi
+Figure 9.11: Post hoc tests in jamovi
 </p>
 </div>
 <p>We can look at the interaction plot, but notice that the lines are parallel which is a good indication that there is no significant interaction.</p>
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-12"></span>
 <img src="images/06-factorial-anova/mixed_interaction.png" alt="Interaction plot in jamovi" width="100%" />
 <p class="caption">
-Figure 9.1: Interaction plot in jamovi
+Figure 9.12: Interaction plot in jamovi
 </p>
 </div>
 <p>Lastly, we can write up the results in APA style!</p>
