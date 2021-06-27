@@ -17,13 +17,15 @@ The $\chi^2$ (chi-square) goodness-of-fit tests whether an observed frequency di
 
 For example, if we have a deck of cards and want to see if people don't choose cards randomly, the null hypothesis would be that there is a 25% probability of getting each hearts, clubs, spades, and diamonds.
 
-### Look at the data
+### Specify the hypotheses
 
 Let's run an example with data from lsj-data. Open data from your Data Library in "lsj-data". Select and open "randomness". This dataset has participants pull two cards from a deck. For now, we're just going to work with `choice_1`. We're interested in finding out if participants pull cards randomly from the deck.
 
 -   $H_0$: Participants pull cards randomly from the deck. In other words, there is a 25% probability of pulling each hearts, clubs, spades, and diamonds.
 
 -   $H_1$: Participants pull cards not at random from the deck. In other words, participants have a different probability than 25% of pulling at least one of the types of cards.
+
+### Look at the data
 
 #### Data set-up
 
@@ -45,13 +47,11 @@ A bar plot can visualize these descriptive statistics nicely.
 
 ### Check assumptions
 
-The chi-square goodness-of-fit test has the following assumptions:
-
-1.  **Expected frequencies are sufficiently large**, which is usually greater than 5. If you violate this assumption, you can use Fisher's exact test.
+The chi-square goodness-of-fit test has just one assumption: **Expected frequencies are sufficiently large**, which is usually greater than 5.
 
 ### Perform the test
 
-We'll be examining
+To perform the chi-square goodness of fit test, do the following steps:
 
 1.  From the 'Analyses' toolbar select 'Frequences' - 'One sample proportion tests - N outcomes'.
 
@@ -59,25 +59,21 @@ We'll be examining
 
 3.  Select `Expected counts`.
 
-When you are done, your setup should look like this
+When you are done, your setup should look like this:
 
-```{r echo = FALSE, fig.cap = "Chi-square goodness-of-fit setup in jamovi", out.width = "80%"}
-knitr::include_graphics("images/09-chi-square/chi-square_setup.png")
-```
+![](images/09-chi-square/chi-square_setup.png)
 
 ### Interpret results
 
-```{r echo = FALSE, fig.cap = "Chi-square goodness-of-fit results in jamovi"}
-knitr::include_graphics("images/09-chi-square/chi-square_results.png")
-```
+![](images/09-chi-square/chi-square_results.png)
 
-The first table shows us our observed frequencies (our data) and expected frequencies (N/k = 200/4 = 50). The second table gives us our results. Our p-value is less than .05 so we can reject the null hypothesis that the observed frequencies match our expected frequencies.
+The first table shows us our observed frequencies (our data) and expected frequencies (N/k = 200/4 = 50). The second table gives us our results. Our p-value is less than our alpha of .05 so we can reject the null hypothesis that the observed frequencies match our expected frequencies.
 
 #### Write up the results in APA style
 
 We can write up our results in APA something like this:
 
-> Of the 200 participants in the experiment, 64 selected hearts for their first choice, 51selected diamonds, 50 selected spades, and 35 selected clubs. A chi-square goodness-of-fit test was conducted to test whether the choice probabilities were identical for all four suits. The results were statistically significant ($\chi^2$ (3) = 8.44; *p* = .038), suggesting that people did not select suits purely at random.
+> Of the 200 participants in the experiment, 64 selected hearts for their first choice, 51selected diamonds, 50 selected spades, and 35 selected clubs. A chi-square goodness-of-fit test was conducted to test whether the choice probabilities were identical for all four suits. The results were statistically significant ($\chi^2$ [3] = 8.44; *p* = .038), suggesting that people did not select suits purely at random.
 
 #### Visualize the results
 
@@ -93,9 +89,7 @@ As you can tell, jamovi automatically assumed equal proportions of frequencies. 
 
 For example, maybe we think our deck is a little stacked in favor of red cards--or we think our participants are more likely to choose red cards than black cards. We can specify our expected proportions and then interpret the results. In this case, participants do not seem more likely to choose red cards based on the expected frequencies we provided.
 
-```{r echo = FALSE, fig.cap = "Chi-square goodness-of-fit - Different expected proportions"}
-knitr::include_graphics("images/09-chi-square/chi-square_results2.png")
-```
+![](images/09-chi-square/chi-square_results2.png)
 
 ### Your turn!
 
@@ -105,24 +99,24 @@ To get the most out of these exercises, try to first find out the answer on your
 
 1.  **Are there equal numbers of athletes and non-athletes?** (`Athlete` variable)
 
-    -   Do you meet the assumptions? `r mcq(c(answer = "yes", "no, expected frequencies are too small", "no, data are not independent"))`
+    -   Do you meet the assumptions?
 
-    -   Are the observed frequencies similar to the expected frequencies? `r mcq(c("yes", answer = "no"))`
+    -   Are the observed frequencies similar to the expected frequencies?
 
-    -   What is your chi-square value, rounded to two decimal places: `r fitb("10.32")`
+    -   What is your chi-square value, rounded to two decimal places?
 
 2.  **I happen to know the school this data comes from has 40% athletes and 60% non-athletes. Does our data match the school population?**
 
     -   Change your Expected Proportions ratio to .6 for non-athletes and .4 for athletes.
 
-    -   Are the observed frequencies similar to the expected frequencies? `r mcq(c(answer = "yes", "no"))`
+    -   Are the observed frequencies similar to the expected frequencies?
 
-    -   What is your chi-square value, rounded to two decimal places: `r fitb("0.96")`
+    -   What is your chi-square value, rounded to two decimal places?
 
 3.  **Are there equal numbers of freshmen, sophomores, juniors, and seniors?** (`Rank` variable)
 
-    -   Do you meet the assumptions? `r mcq(c(answer = "yes", "no, expected frequencies are too small", "no, data are not independent"))`
+    -   Do you meet the assumptions?
 
-    -   Are the observed frequencies similar to the expected frequencies? `r mcq(c("yes", answer = "no"))`
+    -   Are the observed frequencies similar to the expected frequencies?
 
-    -   What is your chi-square value, rounded to two decimal places: `r fitb("33.94")`
+    -   What is your chi-square value, rounded to two decimal places?

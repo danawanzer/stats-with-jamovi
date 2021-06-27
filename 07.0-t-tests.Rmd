@@ -1,6 +1,5 @@
 # t-tests
 
-
 ```{r ind-t_setup, echo = FALSE, message=FALSE}
 library(tidyverse)
 library(webex)
@@ -11,6 +10,6 @@ The t-test looks at difference in means between two things (e.g., groups, time, 
 
 1.  The **one-sample t-test** tests how the sample mean relates to the population mean.
 
-2.  The **independent t-test** has *independent* groups. The participants or things in group 1 are *not* the same as the participants or things in group 2.
+2.  The **independent t-test** has two *independent* groups. The participants or things in group 1 are *not* the same as the participants or things in group 2. This is a between-subjects design in which different participants are in the two groups.
 
-3.  The **dependent t-test** has *dependent* or *paired* data. The dependent variable is measured at two different times or for two different conditions for all participants or things.
+3.  The **dependent t-test** has *dependent* or *paired* data. The dependent variable is measured at two different times or for two different conditions for all participants or things. This is a within-subjects design in which case the same participants are in both groups.

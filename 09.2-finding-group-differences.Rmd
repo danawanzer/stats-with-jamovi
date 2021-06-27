@@ -10,61 +10,66 @@ If you have before-analysis hypotheses of group differences in your data, you wi
 
 1.  **Deviation**: compares the effect of each category (except the first category) to the overall experimental effect. The order of categories is alphabetical or numerical order. Notice how anxifree is considered the first category.
 
-```{r echo = FALSE, fig.cap = "Contrasts - Deviation"}
-knitr::include_graphics("images/04_one-way-anova/contrasts_deviation.png")
-```
+    ![](images/04_one-way-anova/contrasts_deviation.png)
 
+```{=html}
+<!-- -->
+```
 2.  **Simple**: Each category is compared to the first category. The order of categories is alphabetical or numerical order. Notice how anxifree is considered the first category.
 
-```{r echo = FALSE, fig.cap = "Contrasts - Simple"}
-knitr::include_graphics("images/04_one-way-anova/contrasts_simple.png")
-```
+    ![](images/04_one-way-anova/contrasts_simple.png)
 
+```{=html}
+<!-- -->
+```
 3.  **Difference**: Each category (except the first) is compared to the mean effect of all previous categories.
 
-```{r echo = FALSE, fig.cap = "Contrasts - Difference"}
-knitr::include_graphics("images/04_one-way-anova/contrasts_difference.png")
-```
+    ![](images/04_one-way-anova/contrasts_difference.png)
 
+```{=html}
+<!-- -->
+```
 4.  **Helmert**: Each category (except the last) is compared to the mean effect of all subsequent categories.
 
-```{r echo = FALSE, fig.cap = "Contrasts - Helmert"}
-knitr::include_graphics("images/04_one-way-anova/contrasts_helmert.png")
-```
+    ![](images/04_one-way-anova/contrasts_helmert.png)
 
+```{=html}
+<!-- -->
+```
 5.  **Repeated**: Each category is compared to the last category.
 
-```{r echo = FALSE, fig.cap = "Contrasts - Repeated"}
-knitr::include_graphics("images/04_one-way-anova/contrasts_repeated.png")
-```
+    ![](images/04_one-way-anova/contrasts_repeated.png)
 
+```{=html}
+<!-- -->
+```
 6.  **Polynomial**: Tests trends in the data. It will examine the *n-1*^th^ degree based on the number of groups. In this case, because we have 3 groups it is testing both a linear (^1^) and quadratic (^2^) trend. If we had 5 groups, it would test a linear (^1^), quadratic (^2^), cubic (^3^), and quartic (^4^) trend. Note that your factor levels must be ordinal for a polynomial contrast to make sense.
 
-```{r echo = FALSE, fig.cap = "Contrasts - Polynomial"}
-knitr::include_graphics("images/04_one-way-anova/contrasts_polynomial.png")
-```
+    ![](images/04_one-way-anova/contrasts_polynomial.png)
 
-**Test yourself!** Which contrast would make [most sense]{.ul} to test given that we want to know how our drug compares to the other two drugs? `r mcq(c("deviation", "simple", "difference", "helmert", answer = "repeated", "polynomial"))`
+**Test yourself!** Which contrast would make [most sense]{.ul} to test given that we want to know how our drug compares to the other two drugs?
 
 #### Write up planned contrasts in APA style
 
 Here's some example write-ups of the above results.
 
 > There is a significant difference in mood gain across the three drug conditions, *F* (2, 15) = 18.61, *p* \< .001. Repeated contrasts showed that *Joyzepam* (*M* = 1.48, *SD* = .21) outperformed both *Anxifree* (*M* = .72, *SD* = .39; *p* \< .001) and the placebo condition (*M* = .45, *SD* = .28; *p* \< .001).
->
-> (Note how this example makes no sense because our data is not ordinal) There is a significant difference in mood gain across the three drug conditions, *F* (2, 15) = 18.61, *p* \< .001. There was not a significant linear trend across the drug conditions (*p* = .150).
+
+Note how this next example makes no sense because our data is not ordinal, but here's an example polynomial write-up:
+
+> There is a significant difference in mood gain across the three drug conditions, *F* (2, 15) = 18.61, *p* \< .001. There was not a significant linear trend across the drug conditions (*p* = .150).
 
 ### Post hoc comparisons
 
-Often, we do not have any *a priori* (or planned) predictions or hypotheses about our group differences. In this case, we use post hoc procedures. These procedures do [pairwise comparisons]{.ul} among all of our groups, like t-tests across each of our groups. As we noted on the first page of this handout, this can be highly problematic for our Type I error rate! Therefore, we must perform corrections to control our familywise error rate.
+Sometimes, we do not have any *a priori* (or planned) predictions or hypotheses about our group differences. In this case, we use post hoc procedures. These procedures do [pairwise comparisons]{.ul} among all of our groups, like t-tests across each of our groups. As we noted on the first page of this handout, this can be highly problematic for our Type I error rate! Therefore, we must perform corrections to control our familywise error rate.
 
 jamovi currently supports five types of post-hoc tests; I generally only use Tukey or Bonferonni:
 
 1.  **No correction**: This doesn't correct for a Type I error at all. Don't use this! I won't even show it. It's bad. Never use it. NEVER. You are warned!
 2.  **Tukey**: This is the post hoc test I use most often. It controls the Type I error rate well, but isn't as conservative of a control as the Bonferonni.
-3.  **Scheffe**: Honestly, I've never used it. I am not sure how it's calculated.
+3.  **Scheffe**: Honestly, I've never used it. I am not sure how it's calculated. Fortunately, we have other tests that work just fine for us (:
 4.  **Bonferroni**: This is the most conservative test. It's good if you only have a small number of comparisons to make or if you *really* want to control your Type I error rate. If you have a lot of them to test , then you should use something else.
-5.  **Holm**: Honestly, I've never used it. I am not sure how it's calculated.
+5.  **Holm**: Honestly, I've never used it. I am not sure how it's calculated. Fortunately, we have other tests that work just fine for us (:
 
 Games-Howell for when you have unequal variances and Tukey for when you have equal variances. They will each calculate your p-values slightly differently but in a way to control for our Type I error rate as best it can. They are interpreted very similarly, so we will proceed with the Tukey's post hoc comparisons because we satisfied the assumption of equal variances.
 
@@ -72,9 +77,7 @@ To request post hoc tests from the one-way ANOVA, open the collapsed menu at the
 
 Below shows the post hoc test results for our one-way ANOVA. Notice the differences in p-values across the four post hoc tests and how all other values are the same. Notice how the Bonferroni is most conservative (i.e., has the largest p-values) and the Holm's is the least conservative (i.e., has the smallest p-values). Keep in mind you do not normally ask for multiple post hoc comparisons. Just pick one! Normally, I just pick Tukey's.
 
-```{r echo = FALSE, fig.cap = "Post hoc test results in jamovi"}
-knitr::include_graphics("images/04_one-way-anova/one-way_results_post-hoc.png")
-```
+![](images/04_one-way-anova/one-way_results_post-hoc.png)
 
 #### Write up post hoc results in APA style
 
@@ -102,18 +105,14 @@ Open the `Sample_Dataset_2014.xlsx` file that we will be using for all Your Turn
 
 Perform one-way ANOVAs based on the following research questions. Check your assumptions and ensure you are using the correct tests.
 
-To get the most out of these exercises, try to first find out the answer on your own and then use the drop-down menus to check your answer. 
+To get the most out of these exercises, try to first find out the answer on your own and then use the drop-down menus to check your answer.
 
 **Note**: These are the same questions as in the one-way ANOVA chapter, but now you focus on the group differences.
 
 1.  **Does students differ on English scores by rank (i.e., freshmen, sophomore, junior, senior)?**
 
-    -   Should you perform a planned contrast or post hoc comparison? `r mcq(c("planned contrast", answer = "post hoc"))`
-
-    -   What are the results of the post hoc comparison? `r mcq(c(answer = "N/A - Don't perform", "Freshmen had higher English scores than sophomores, juniors, and seniors", "Freshmen and sophomores had higher English scores than juniors and seniors"))`
+    -   Perform Tukey's post hoc tests. What are the results of the post hoc comparison?
 
 2.  **Does smoking status (Smoking: Nonsmoker = 0, Past smoker = 1, Current smoker = 2) relate to sprint time?**
 
-    -   Should you perform a planned contrast or post hoc comparison? `r mcq(c("planned contrast", answer = "post hoc"))`
-
-    -   What are the results of the post hoc comparison? `r mcq(c("N/A - Don't perform", answer = "Nonsmokers had significantly faster sprint times than current smokers", "Nonsmokers and past smokers had significantly faster spring times than current smokers", "Nonsmokers had significantly faster sprint times than both past and current smokers"))`
+    -   Perform Tukey's post hoc tests. What are the results of the post hoc comparison?

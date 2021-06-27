@@ -1,14 +1,14 @@
 ## Choosing the correct statistical test
 
-It is important that you learn how to identify *which* inferential statistic you should perform. This chart can help you determine what statistical test to perform. Note that on the right dark red boxes are parametric tests, light red boxes are non-parametric tests, and white boxes will not be covered in this class at all. Data types are indicated in either blue (continuous), green (categorical), or teal (both). Number of variables or levels of the variables are either 1 (light orange), 2/2+ (orange), or 3+ (dark orange). Between-subjects designs, meaning designs with different participants in each group, are in black whereas within-subjects designs, meaning designs with the same participants in each group, are in light grey.
+It is important that you learn how to identify *which* inferential statistic you should perform. This chart can help you determine what statistical test to perform. Note that on the right dark red boxes are parametric tests, light red boxes are non-parametric tests, and white boxes will not be covered in this class at all (in fact, there are many others not even shown that we won't cover!). Data types are indicated in either blue (continuous), green (categorical), or teal (both). Number of variables or levels of the variables are either 1 (light orange), 2/2+ (orange), or 3+ (dark orange). Between-subjects designs, meaning designs with different participants in each group, are in black whereas within-subjects designs, meaning designs with the same participants in each group, are in light grey.
 
 ![](images/Statistical%20Choices.png)
 
-First, you need to determine what level of measurement your dependent variable (DV) is. We will only be covering statistical tests that have *one* dependent variable. Therefore, the variable is either categorical (i.e., nominal or ordinal) or it's continuous (i.e., interval or ratio).
+First, you need to determine what level of measurement your dependent variable (DV) is. We will only be covering statistical tests that have *one* dependent variable. Therefore, you need to know whether the variable is categorical (i.e., nominal or ordinal) or it's continuous (i.e., interval or ratio).
 
-Next you specify how many independent variables (IVs) there are and then what level of measurement your IV(s) are. In the case of a single categorical IV, we also need to know how many levels there are to the IV (i.e., how many categories there are). For categorical variables, we also need to know if the participants are different (i.e., between-subjects) or the same (i.e., within-subjects) within each level of the category.
+Next, you need to determine how many independent variables (IVs) there are and then what level of measurement your IV(s) are. In the case of a single categorical IV, we also need to know how many levels there are to the IV (i.e., how many categories there are). For categorical variables, we also need to know if the participants are different (i.e., between-subjects) or the same (i.e., within-subjects) within each level of the category.
 
-Lastly, for many of the statistical tests we need to know whether we meet the assumptions of parametric tests. If we don't meet the assumption, then there are alternative tests we can perform.
+Lastly, for many of the statistical tests we need to know whether we meet the assumptions of parametric tests. If we don't meet the assumption, then there are alternative tests we can perform. We'll learn about assumption checking in the next section of this chapter.
 
 We can both *forward map* and *backwards map* with the chart above. Forward mapping involves understanding your data and your research question and then determining what statistical test to perform. Backwards mapping involves determining what kind of data is needed to perform a particular statistical test.
 
@@ -26,21 +26,21 @@ A researcher is interested in understanding whether athletes have higher English
 
 4.  How many categories to the IV? Athletic status is measured as either athlete or non-athlete, so there are 2 levels.
 
-5.  Are the same or different participants used in each category? People can either be an athlete or not an athlete, so this is a between-subjects variable (aka "different").
+5.  Are the same or different participants used in each category? People can either be an athlete or not an athlete, but they can't be both, so this is a between-subjects variable (aka "different").
 
 6.  Do data meet the assumptions for parametric tests? We don't know. We would need to test this. For now, let's assume we meet the assumptions.
 
 7.  Statistical test? Independent t-test
 
-A researcher is interested to know whether people perform better on English, Math, or Science tests. The researchers has all participants complete all three tests.
+A researcher is interested to know whether people perform better on the exam at the start, middle, or end of the semester. The researchers has all participants complete all three exams.
 
-1.  What is the DV? What is the level of measurement? This one is tricky in how it's worded. There is one DV and it's simply test score. This is a continuous variable.
+1.  What is the DV? What is the level of measurement? In this case, the exam is our DV and it's a continuous variable.
 
-2.  How many IVs are there? We only have one IV, and it is type of test.
+2.  How many IVs are there? We only have one IV, and it is time of the exam.
 
-3.  What is the level of measurement of the IV? Type of test is a categorical variable.
+3.  What is the level of measurement of the IV? The time of the exam is a categorical variable.
 
-4.  How many categories to the IV? Type of test has three categories: English, Math, and Science.
+4.  How many categories to the IV? Type of test has three categories: start, middle, or end of the semester.
 
 5.  Are the same or different participants used in each category? Although the researcher could have designed a between-subjects design, this particular study has all participants participate in all conditions, so it is a within-subjects design (aka "same").
 

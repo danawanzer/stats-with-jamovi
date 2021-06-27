@@ -8,27 +8,29 @@ options(knitr.graphics.auto_pdf = TRUE)
 
 ### Overview
 
-Correlation (r) tests the relationship between two variables, which are usually continuous (i.e., ratio or interval) variables. The relationship between those two variables could be *positively related*, *negatively related*, or *not related at all*.
+Correlation (*r*) tests the relationship between two variables, which are usually continuous (i.e., ratio or interval) variables. The relationship between those two variables could be *positively related*, *negatively related*, or *not related at all*.
 
 **Note**: Remember that correlation does not always equal causation!
 
-We will learn about other types of correlations, but mainly we are interested in the Pearson product moment correlation, which is often just called the Pearson correlation or just correlation. Other correlations are generally referred to by their specific name.
+We will learn about other types of correlations, but mainly we are interested in the Pearson product moment correlation, which is often just called the Pearson correlation or simply correlation. Other correlations are generally referred to by their specific name.
 
-The strength of the correlation is determined by how closely the dots in the scatterplot matrix fit on the regression line. Correlations are really *standardized covariances*. [Covariance]{.ul} is the extent to which the deviation of one variable from its mean matches the deviation of the other variable from its mean. We then standardize the covariance into the correlation which ranges from -1 to +1. Because correlations are standardized, they are considered effect sizes! Commonly, we describe values of ±.1 as a small effect size, ±.3 as medium, and ±.5 as large.
+The strength of the correlation is determined by how closely the points in the scatterplot matrix fit on the regression line. Correlations are really *standardized covariances*. [Covariance]{.ul} is the extent to which the deviation of one variable from its mean matches the deviation of the other variable from its mean. We then standardize the covariance into the correlation which ranges from -1 to +1. Because correlations are standardized, they are considered effect sizes! Commonly, we describe values of ±.1 as a small effect size, ±.3 as medium, and ±.5 as large, but remember that this heuristic is simply a heuristic and it's best to think about size in relation to your field.
 
-```{r echo = FALSE, fig.cap = "Scatter plots and correlation examples"}
-knitr::include_graphics("images/08-correlation/correlation-examples.png")
-```
+![](images/08-correlation/correlation-examples.png)
 
 **Note**: Try your hand at guessing the correlation coefficient! Play at www.guessthecorrelation.com
 
 **Note**: Another fun website to play around with is the interactive visualization website Interpreting Correlations by Kristoffer Magnusson. You can play around with what data looks like at various correlations. <https://rpsychologist.com/correlation/>
 
+### Specify your hypotheses
+
+Let's run an example with data from lsj-data. Open data from your Data Library in "lsj-data". Select and open "parenthood". This dataset measures a new mother's[^1] daily grumpiness very precisely, on a scale from 0 (not at all grumpy) to 100 (extremely grumpy). In addition, I am also tracking her sleeping patterns and her son's sleeping patterns across 100 days.
+
+[^1]: The dataset built into jamovi says the person's name is Dan, but they now go by Danielle. You can follow her on Twitter at [\@djnavarro](https://twitter.com/djnavarro).
+
+The null hypothesis is there is no correlation whereas the alternative hypothesis is that there is a correlation. In this case, our hypothesis is a two-tailed hypothesis, although we could have an *a priori* hypothesis about the relationship between our variables.
+
 ### Look at the data
-
-Let's run an example with data from lsj-data. Open data from your Data Library in "lsj-data". Select and open "parenthood". This dataset measures a new mother's[^correlation-1] daily grumpiness very precisely, on a scale from 0 (not at all grumpy) to 100 (extremely grumpy). In addition, I am also tracking her sleeping patterns and her son's sleeping patterns across 100 days.
-
-[^correlation-1]: The dataset built into jamovi says the person's name is Dan, but they now go by Danielle. You can follow her on Twitter at [\@djnavarro](https://twitter.com/djnavarro).
 
 #### Data set-up
 
@@ -66,9 +68,7 @@ The third assumption requires looking at a scatterplot of one variable on the x-
 
 By now we've had a lot of practice testing for normality. One of our data points (`day)` is strange because it's just a linear number 1-100, so we can ignore it. The Q-Q plot for `dan.sleep` looks a bit iffy, but the density plot, skew, kurtosis, and Shapiro-Wilk's tests look fine. We will say we met the assumption of normality. Below, you can see our density plots in the diagonal of our scatterplot matrix.
 
-```{r echo = FALSE, fig.cap = "Testing linearity in jamovi"}
-knitr::include_graphics("images/08-correlation/correlation-plots.png")
-```
+![](images/08-correlation/correlation-plots.png)
 
 ##### Testing linearity
 
@@ -114,7 +114,7 @@ The default in the Correlation Matrix is to plot the correlation matrix of all t
 
 ![](images/08-correlation/correlation-plots.png)
 
-Personally, this is why I like the scatr module in jamovi. You can create high-quality scatterplots of the six graphs above and then stitch them together in a nicer version. For example, here's the correlation between the sleep quality of both Dan and the baby with a linear regression line and standard error:
+Personally, this is why I like the `scatr` module in jamovi. You can create high-quality scatterplots of the six graphs above and then stitch them together in a nicer version. For example, here's the correlation between the sleep quality of both Dan and the baby with a linear regression line and standard error:
 
 ![](images/08-correlation/correlation-plot1.png){width="500"}
 
@@ -132,7 +132,7 @@ The cool thing about the correlation is that we can square $r$ to get $r^2$, whi
 
 #### Comparing strengths of correlations
 
-**Note**: PSYC 290 students you can read the below information but I will not test you on it.
+**Note**: For PSYC 290 students, you can read the below information but I will not test you on it.
 
 Sometimes you want to compare two correlations to find out if one correlation is significantly stronger than another. You can use this calculator to calculate the p-value: [Testing the Significance of Correlations](https://www.psychometrica.de/correlation.html)
 
@@ -150,9 +150,7 @@ Now let's find the correlation for women. Go back to the Data tab in jamovi, cli
 
 Now we can compare the correlations in [Testing the Significance of Correlations - Independent Samples](https://www.psychometrica.de/correlation.html#independent). In Correlation 1, put 181 in the n column and .36 in the r column. In Correlation 2, put 210 in the n column and .33 in the r column. The results are shown below. The z-score is not statistically significant (*p* = .369) so there is no significant difference in correlation strength.
 
-```{r echo = FALSE, fig.cap = "Comparison of correlations from independent samples"}
-knitr::include_graphics("images/08-correlation/compare-correlations-independent.png")
-```
+![](images/08-correlation/compare-correlations-independent.png)
 
 2.  **Comparison of correlations from dependent samples**
 
@@ -164,15 +162,11 @@ If you still have your filter on in your dataset from the previous analysis, tur
 
 However, we have a problem! The [Testing the Significance of Correlations - Dependent Samples](https://www.psychometrica.de/correlation.html#dependent) webpage (\#2) wants a single N, but our correlation matrix has different Ns because of missing data. What can we do? We need to chain filters! Go back to your Data tab, click Filters, and add three filters like below (note: this is how you can get *listwise deletion* in jamovi):
 
-```{r echo = FALSE, fig.cap = "Advanced filters"}
-knitr::include_graphics("images/08-correlation/correlation-filters.png")
-```
+![](images/08-correlation/correlation-filters.png)
 
 Our correlation matrix should have automatically updated and all the N's equal 370. Great! We now have all the information we need to input into our [Testing the Significance of Correlations](https://www.psychometrica.de/correlation.html) webpage, \#2. For n we input 370. For $r_{12}$ we enter the correlation between (1) English and (2) Reading. For $r_{13}$ we enter the correlation between (1) English and (3) Writing. For $r_{23}$ we enter the correlation between (2) Reading and (3) Writing. Our z-score is not statistically significant (*p* = .213) so there is no significant difference in the correlation between English and Reading (*r* = .32) with the correlation between English and Writing (*r* = .37).
 
-```{r echo = FALSE, fig.cap = "Comparison of correlations from dependent samples"}
-knitr::include_graphics("images/08-correlation/compare-correlations-dependent.png")
-```
+![](images/08-correlation/compare-correlations-dependent.png)
 
 ### Your turn!
 
@@ -184,16 +178,16 @@ To get the most out of these exercises, try to first find out the answer on your
 
 1.  **Are there significant correlations among the four tests (English, reading, math, writing)?**
 
-    -   Do you meet the assumption of normality for all four tests? `r mcq(c("yes", "no", answer = "yes for all but maybe not writing"))`
+    -   Do you meet the assumption of normality for all four tests?
 
-    -   Do you meet the assumption of linearity for all four tests? `r mcq(c(answer = "yes", "no"))`
+    -   Do you meet the assumption of linearity for all four tests?
 
-    -   Are the four tests significantly correlated among each other? `r mcq(c(answer = "yes", "no"))`
+    -   Are the four tests significantly correlated among each other?
 
     -   Round your answers to two decimal places:
 
-        -   What is the correlation between reading and math? `r fitb(".52")`
+        -   What is the correlation between reading and math?
 
-        -   What is the correlation between writing and reading? `r fitb(".11")`
+        -   What is the correlation between writing and reading?
 
-        -   What is the correlation between writing and English? `r fitb(".37")`
+        -   What is the correlation between writing and English?

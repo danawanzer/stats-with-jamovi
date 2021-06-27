@@ -9,13 +9,13 @@ options(knitr.graphics.auto_pdf = TRUE)
 
 ### Overview
 
-The $\chi^2$ (chi-square) test of independence (or association) tests whether an observed frequency distribution of a nominal variable matches an expected frequency distribution, but unlike the goodness of fit test we are looking at the relationship, independence, or association between two variables. Our hypotheses for the chi-square goodness-of-fit test is as follows:
+The $\chi^2$ (chi-square) test of independence (or association) tests whether an observed frequency distribution of a nominal variable matches an expected frequency distribution, but unlike the goodness of fit test we are looking at the relationship, independence, or association between two variables. Our basic hypotheses for the chi-square goodness-of-fit test is as follows:
 
 -   $H_0$: The observed frequencies match the expected frequencies.
 
 -   $H_1$: At least one observed frequency doesn't match the expected frequency.
 
-### Look at the data
+### Specify your hypotheses
 
 Let's run an example with data from lsj-data. Open data from your Data Library in "lsj-data". Select and open "chapek9". This dataset indicates the ID number of the participant, the species (robot or human), and their preference of the three things (puppy, flower, or data).
 
@@ -24,6 +24,8 @@ For this example, imagine we are watching a show about the planet *Chapek 9*. On
 -   $H_0$: Humans and robots have similar preferences.
 
 -   $H_1$: Humans and robots have different preferences.
+
+### Look at the data
 
 #### Data set-up
 
@@ -66,17 +68,13 @@ The chi-square test of independence has the following assumptions:
 
 4.  Optionally, you can request under the Cells tab to show the expected counts and the row, column, and total percentages.
 
-When you are done, your setup should look like this
+When you are done, your setup should look like this:
 
-```{r echo = FALSE, fig.cap = "Chi-square test of independence setup in jamovi", out.width = "80%"}
-knitr::include_graphics("images/11-independence/independence_setup.png")
-```
+![](images/11-independence/independence_setup.png)
 
 ### Interpreting results
 
-```{r echo = FALSE, fig.cap = "Chi-square test of independence results in jamovi"}
-knitr::include_graphics("images/11-independence/independence_results.png")
-```
+![](images/11-independence/independence_results.png)
 
 The first table shows us our observed frequencies. The second table gives us our results. Our p-value is less than .05 so we can reject the null hypothesis that the observed frequencies match our expected frequencies. jamovi also gives us our Cramer's V value. Note that it does not provide Phi because we don't have a perfect square table (e.g., 2x2 or 3x3).
 
@@ -102,7 +100,7 @@ The second is a stacked bar chart with connected lines:
 
 #### Fisher's exact test
 
-If you violate the assumption that there your expected frequencies are sufficiently large and you have a 2x2 table, you can still perform the $\chi^2$ test of independence but instead of selecting $\chi^2$you'll select `Fisher's exact test`. You'll interpret your results exactly the same but specify you used the Fisher's exact test.
+If you violate the assumption that there your expected frequencies are sufficiently large and you have a 2x2 table, you can still perform the $\chi^2$ test of independence but instead of selecting $\chi^2$you'll select `Fisher's exact test`. You'll interpret your results exactly the same but specify you used Fisher's exact test.
 
 ### Additional information
 
@@ -118,20 +116,20 @@ To get the most out of these exercises, try to first find out the answer on your
 
 1.  **Is Athlete related to Gender?**
 
-    -   Do you meet the assumptions? `r mcq(c(answer = "yes", "no, expected frequencies are too small", "no, data are not independent"))`
+    -   Do you meet the assumptions?
 
-    -   Which test should you perform? `r mcq(c(answer = "Chi-square", "Fisher's exact test"))`
+    -   Which test should you perform?
 
-    -   Are the observed frequencies similar to the expected frequencies? `r mcq(c("yes", answer = "no"))`
+    -   Are the observed frequencies similar to the expected frequencies?
 
-    -   What is your chi-square value, rounded to two decimal places: `r fitb("8.45")`
+    -   What is your chi-square value, rounded to two decimal places?
 
 2.  **Is Gender related to Rank?**
 
-    -   Do you meet the assumptions? `r mcq(c(answer = "yes", "no, expected frequencies are too small", "no, data are not independent"))`
+    -   Do you meet the assumptions?
 
-    -   Which test should you perform? `r mcq(c(answer = "Chi-square", "Fisher's exact test"))`
+    -   Which test should you perform?
 
-    -   Are the observed frequencies similar to the expected frequencies? `r mcq(c(answer = "yes", "no"))`
+    -   Are the observed frequencies similar to the expected frequencies?
 
-    -   What is your chi-square value, rounded to two decimal places: `r fitb("0.61")`
+    -   What is your chi-square value, rounded to two decimal places?

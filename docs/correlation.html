@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>10.1 Correlation | Statistics with jamovi</title>
   <meta name="description" content="This is the website for PSYC 290 and PSYC 790 at the University of Wisconsin-Stout, taught by Dana Wanzer." />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
   <meta property="og:title" content="10.1 Correlation | Statistics with jamovi" />
   <meta property="og:type" content="book" />
@@ -32,7 +32,7 @@
   
 <link rel="prev" href="correlation-and-regression.html"/>
 <link rel="next" href="regression.html"/>
-<script src="libs/header-attrs-2.6/header-attrs.js"></script>
+<script src="libs/header-attrs-2.9/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -50,12 +50,15 @@
 
 
 
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
@@ -116,6 +119,7 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+
 <link rel="stylesheet" href="include/psyteachr.css" type="text/css" />
 <link rel="stylesheet" href="include/style.css" type="text/css" />
 </head>
@@ -136,13 +140,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a></li>
 <li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
 <ul>
-<li class="chapter" data-level="1.1" data-path="psyc-290.html"><a href="psyc-290.html"><i class="fa fa-check"></i><b>1.1</b> PSYC 290</a>
-<ul>
-<li class="chapter" data-level="1.1.1" data-path="psyc-290.html"><a href="psyc-290.html#learning-objectives"><i class="fa fa-check"></i><b>1.1.1</b> Learning objectives</a></li>
-<li class="chapter" data-level="1.1.2" data-path="psyc-290.html"><a href="psyc-290.html#weekly-schedule"><i class="fa fa-check"></i><b>1.1.2</b> Weekly Schedule</a></li>
-<li class="chapter" data-level="1.1.3" data-path="psyc-290.html"><a href="psyc-290.html#late-assignments-and-re-doing-homework"><i class="fa fa-check"></i><b>1.1.3</b> Late assignments and re-doing homework</a></li>
-<li class="chapter" data-level="1.1.4" data-path="psyc-290.html"><a href="psyc-290.html#getting-help-in-this-class"><i class="fa fa-check"></i><b>1.1.4</b> Getting help in this class</a></li>
-</ul></li>
+<li class="chapter" data-level="1.1" data-path="getting-help-in-this-class.html"><a href="getting-help-in-this-class.html"><i class="fa fa-check"></i><b>1.1</b> Getting help in this class</a></li>
 <li class="chapter" data-level="1.2" data-path="dana-your-instructor.html"><a href="dana-your-instructor.html"><i class="fa fa-check"></i><b>1.2</b> Dana, your instructor</a></li>
 <li class="chapter" data-level="1.3" data-path="navigating-this-websitebook.html"><a href="navigating-this-websitebook.html"><i class="fa fa-check"></i><b>1.3</b> Navigating this website/book</a>
 <ul>
@@ -214,11 +212,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.3.1" data-path="power.html"><a href="power.html#alpha-power-and-error-rates"><i class="fa fa-check"></i><b>5.3.1</b> Alpha, power, and error rates</a></li>
 <li class="chapter" data-level="5.3.2" data-path="power.html"><a href="power.html#playing-with-alpha-power"><i class="fa fa-check"></i><b>5.3.2</b> Playing with alpha &amp; power</a></li>
 </ul></li>
-<li class="chapter" data-level="5.4" data-path="sample-size.html"><a href="sample-size.html"><i class="fa fa-check"></i><b>5.4</b> Sample size</a>
+<li class="chapter" data-level="5.4" data-path="sample-size-power-analysis.html"><a href="sample-size-power-analysis.html"><i class="fa fa-check"></i><b>5.4</b> Sample size &amp; power analysis</a>
 <ul>
-<li class="chapter" data-level="5.4.1" data-path="sample-size.html"><a href="sample-size.html#bean-power-analysis"><i class="fa fa-check"></i><b>5.4.1</b> BEAN: Power analysis</a></li>
-<li class="chapter" data-level="5.4.2" data-path="sample-size.html"><a href="sample-size.html#power-analysis-example-1"><i class="fa fa-check"></i><b>5.4.2</b> Power analysis example #1</a></li>
-<li class="chapter" data-level="5.4.3" data-path="sample-size.html"><a href="sample-size.html#play-with-jpower"><i class="fa fa-check"></i><b>5.4.3</b> Play with jpower</a></li>
+<li class="chapter" data-level="5.4.1" data-path="sample-size-power-analysis.html"><a href="sample-size-power-analysis.html#bean-power-analysis"><i class="fa fa-check"></i><b>5.4.1</b> BEAN: Power analysis</a></li>
+<li class="chapter" data-level="5.4.2" data-path="sample-size-power-analysis.html"><a href="sample-size-power-analysis.html#power-analysis-example-1"><i class="fa fa-check"></i><b>5.4.2</b> Power analysis example #1</a></li>
+<li class="chapter" data-level="5.4.3" data-path="sample-size-power-analysis.html"><a href="sample-size-power-analysis.html#play-with-jpower"><i class="fa fa-check"></i><b>5.4.3</b> Play with jpower</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="inferential-statistics.html"><a href="inferential-statistics.html"><i class="fa fa-check"></i><b>6</b> Inferential statistics</a>
@@ -247,33 +245,36 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.1" data-path="one-sample-t-test.html"><a href="one-sample-t-test.html"><i class="fa fa-check"></i><b>7.1</b> One sample t-test</a>
 <ul>
 <li class="chapter" data-level="7.1.1" data-path="one-sample-t-test.html"><a href="one-sample-t-test.html#overview"><i class="fa fa-check"></i><b>7.1.1</b> Overview</a></li>
-<li class="chapter" data-level="7.1.2" data-path="one-sample-t-test.html"><a href="one-sample-t-test.html#look-at-the-data"><i class="fa fa-check"></i><b>7.1.2</b> Look at the data</a></li>
-<li class="chapter" data-level="7.1.3" data-path="one-sample-t-test.html"><a href="one-sample-t-test.html#check-assumptions"><i class="fa fa-check"></i><b>7.1.3</b> Check assumptions</a></li>
-<li class="chapter" data-level="7.1.4" data-path="one-sample-t-test.html"><a href="one-sample-t-test.html#perform-the-test"><i class="fa fa-check"></i><b>7.1.4</b> Perform the test</a></li>
-<li class="chapter" data-level="7.1.5" data-path="one-sample-t-test.html"><a href="one-sample-t-test.html#interpret-results"><i class="fa fa-check"></i><b>7.1.5</b> Interpret results</a></li>
-<li class="chapter" data-level="7.1.6" data-path="one-sample-t-test.html"><a href="one-sample-t-test.html#in-case-of-violated-assumptions"><i class="fa fa-check"></i><b>7.1.6</b> In case of violated assumptions</a></li>
-<li class="chapter" data-level="7.1.7" data-path="one-sample-t-test.html"><a href="one-sample-t-test.html#additional-information"><i class="fa fa-check"></i><b>7.1.7</b> Additional information</a></li>
-<li class="chapter" data-level="7.1.8" data-path="one-sample-t-test.html"><a href="one-sample-t-test.html#your-turn"><i class="fa fa-check"></i><b>7.1.8</b> Your turn!</a></li>
+<li class="chapter" data-level="7.1.2" data-path="one-sample-t-test.html"><a href="one-sample-t-test.html#specify-the-hypotheses"><i class="fa fa-check"></i><b>7.1.2</b> Specify the hypotheses</a></li>
+<li class="chapter" data-level="7.1.3" data-path="one-sample-t-test.html"><a href="one-sample-t-test.html#look-at-the-data"><i class="fa fa-check"></i><b>7.1.3</b> Look at the data</a></li>
+<li class="chapter" data-level="7.1.4" data-path="one-sample-t-test.html"><a href="one-sample-t-test.html#check-assumptions"><i class="fa fa-check"></i><b>7.1.4</b> Check assumptions</a></li>
+<li class="chapter" data-level="7.1.5" data-path="one-sample-t-test.html"><a href="one-sample-t-test.html#perform-the-test"><i class="fa fa-check"></i><b>7.1.5</b> Perform the test</a></li>
+<li class="chapter" data-level="7.1.6" data-path="one-sample-t-test.html"><a href="one-sample-t-test.html#interpret-results"><i class="fa fa-check"></i><b>7.1.6</b> Interpret results</a></li>
+<li class="chapter" data-level="7.1.7" data-path="one-sample-t-test.html"><a href="one-sample-t-test.html#in-case-of-violated-assumptions"><i class="fa fa-check"></i><b>7.1.7</b> In case of violated assumptions</a></li>
+<li class="chapter" data-level="7.1.8" data-path="one-sample-t-test.html"><a href="one-sample-t-test.html#additional-information"><i class="fa fa-check"></i><b>7.1.8</b> Additional information</a></li>
+<li class="chapter" data-level="7.1.9" data-path="one-sample-t-test.html"><a href="one-sample-t-test.html#your-turn"><i class="fa fa-check"></i><b>7.1.9</b> Your turn!</a></li>
 </ul></li>
 <li class="chapter" data-level="7.2" data-path="independent-t-test.html"><a href="independent-t-test.html"><i class="fa fa-check"></i><b>7.2</b> Independent t-test</a>
 <ul>
 <li class="chapter" data-level="7.2.1" data-path="independent-t-test.html"><a href="independent-t-test.html#overview-1"><i class="fa fa-check"></i><b>7.2.1</b> Overview</a></li>
-<li class="chapter" data-level="7.2.2" data-path="independent-t-test.html"><a href="independent-t-test.html#look-at-the-data-1"><i class="fa fa-check"></i><b>7.2.2</b> Look at the data</a></li>
-<li class="chapter" data-level="7.2.3" data-path="independent-t-test.html"><a href="independent-t-test.html#check-assumptions-1"><i class="fa fa-check"></i><b>7.2.3</b> Check assumptions</a></li>
-<li class="chapter" data-level="7.2.4" data-path="independent-t-test.html"><a href="independent-t-test.html#perform-the-test-1"><i class="fa fa-check"></i><b>7.2.4</b> Perform the test</a></li>
-<li class="chapter" data-level="7.2.5" data-path="independent-t-test.html"><a href="independent-t-test.html#interpret-results-1"><i class="fa fa-check"></i><b>7.2.5</b> Interpret results</a></li>
-<li class="chapter" data-level="7.2.6" data-path="independent-t-test.html"><a href="independent-t-test.html#in-case-of-violated-assumptions-1"><i class="fa fa-check"></i><b>7.2.6</b> In case of violated assumptions</a></li>
-<li class="chapter" data-level="7.2.7" data-path="independent-t-test.html"><a href="independent-t-test.html#your-turn-1"><i class="fa fa-check"></i><b>7.2.7</b> Your turn!</a></li>
+<li class="chapter" data-level="7.2.2" data-path="independent-t-test.html"><a href="independent-t-test.html#specify-your-hypotheses"><i class="fa fa-check"></i><b>7.2.2</b> Specify your hypotheses</a></li>
+<li class="chapter" data-level="7.2.3" data-path="independent-t-test.html"><a href="independent-t-test.html#look-at-the-data-1"><i class="fa fa-check"></i><b>7.2.3</b> Look at the data</a></li>
+<li class="chapter" data-level="7.2.4" data-path="independent-t-test.html"><a href="independent-t-test.html#check-assumptions-1"><i class="fa fa-check"></i><b>7.2.4</b> Check assumptions</a></li>
+<li class="chapter" data-level="7.2.5" data-path="independent-t-test.html"><a href="independent-t-test.html#perform-the-test-1"><i class="fa fa-check"></i><b>7.2.5</b> Perform the test</a></li>
+<li class="chapter" data-level="7.2.6" data-path="independent-t-test.html"><a href="independent-t-test.html#interpret-results-1"><i class="fa fa-check"></i><b>7.2.6</b> Interpret results</a></li>
+<li class="chapter" data-level="7.2.7" data-path="independent-t-test.html"><a href="independent-t-test.html#in-case-of-violated-assumptions-1"><i class="fa fa-check"></i><b>7.2.7</b> In case of violated assumptions</a></li>
+<li class="chapter" data-level="7.2.8" data-path="independent-t-test.html"><a href="independent-t-test.html#your-turn-1"><i class="fa fa-check"></i><b>7.2.8</b> Your turn!</a></li>
 </ul></li>
 <li class="chapter" data-level="7.3" data-path="dependent-t-test.html"><a href="dependent-t-test.html"><i class="fa fa-check"></i><b>7.3</b> Dependent t-test</a>
 <ul>
 <li class="chapter" data-level="7.3.1" data-path="dependent-t-test.html"><a href="dependent-t-test.html#overview-2"><i class="fa fa-check"></i><b>7.3.1</b> Overview</a></li>
-<li class="chapter" data-level="7.3.2" data-path="dependent-t-test.html"><a href="dependent-t-test.html#look-at-the-data-2"><i class="fa fa-check"></i><b>7.3.2</b> Look at the data</a></li>
-<li class="chapter" data-level="7.3.3" data-path="dependent-t-test.html"><a href="dependent-t-test.html#check-assumptions-2"><i class="fa fa-check"></i><b>7.3.3</b> Check assumptions</a></li>
-<li class="chapter" data-level="7.3.4" data-path="dependent-t-test.html"><a href="dependent-t-test.html#perform-the-test-2"><i class="fa fa-check"></i><b>7.3.4</b> Perform the test</a></li>
-<li class="chapter" data-level="7.3.5" data-path="dependent-t-test.html"><a href="dependent-t-test.html#interpreting-results"><i class="fa fa-check"></i><b>7.3.5</b> Interpreting results</a></li>
-<li class="chapter" data-level="7.3.6" data-path="dependent-t-test.html"><a href="dependent-t-test.html#in-case-of-violated-assumptions-2"><i class="fa fa-check"></i><b>7.3.6</b> In case of violated assumptions</a></li>
-<li class="chapter" data-level="7.3.7" data-path="dependent-t-test.html"><a href="dependent-t-test.html#your-turn-2"><i class="fa fa-check"></i><b>7.3.7</b> Your turn!</a></li>
+<li class="chapter" data-level="7.3.2" data-path="dependent-t-test.html"><a href="dependent-t-test.html#specify-your-hypotheses-1"><i class="fa fa-check"></i><b>7.3.2</b> Specify your hypotheses</a></li>
+<li class="chapter" data-level="7.3.3" data-path="dependent-t-test.html"><a href="dependent-t-test.html#look-at-the-data-2"><i class="fa fa-check"></i><b>7.3.3</b> Look at the data</a></li>
+<li class="chapter" data-level="7.3.4" data-path="dependent-t-test.html"><a href="dependent-t-test.html#check-assumptions-2"><i class="fa fa-check"></i><b>7.3.4</b> Check assumptions</a></li>
+<li class="chapter" data-level="7.3.5" data-path="dependent-t-test.html"><a href="dependent-t-test.html#perform-the-test-2"><i class="fa fa-check"></i><b>7.3.5</b> Perform the test</a></li>
+<li class="chapter" data-level="7.3.6" data-path="dependent-t-test.html"><a href="dependent-t-test.html#interpreting-results"><i class="fa fa-check"></i><b>7.3.6</b> Interpreting results</a></li>
+<li class="chapter" data-level="7.3.7" data-path="dependent-t-test.html"><a href="dependent-t-test.html#in-case-of-violated-assumptions-2"><i class="fa fa-check"></i><b>7.3.7</b> In case of violated assumptions</a></li>
+<li class="chapter" data-level="7.3.8" data-path="dependent-t-test.html"><a href="dependent-t-test.html#your-turn-2"><i class="fa fa-check"></i><b>7.3.8</b> Your turn!</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="chi-square.html"><a href="chi-square.html"><i class="fa fa-check"></i><b>8</b> Chi-Square</a>
@@ -281,29 +282,32 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.1" data-path="chi-square-goodness-of-fit.html"><a href="chi-square-goodness-of-fit.html"><i class="fa fa-check"></i><b>8.1</b> Chi-Square Goodness-of-Fit</a>
 <ul>
 <li class="chapter" data-level="8.1.1" data-path="chi-square-goodness-of-fit.html"><a href="chi-square-goodness-of-fit.html#overview-3"><i class="fa fa-check"></i><b>8.1.1</b> Overview</a></li>
-<li class="chapter" data-level="8.1.2" data-path="chi-square-goodness-of-fit.html"><a href="chi-square-goodness-of-fit.html#look-at-the-data-3"><i class="fa fa-check"></i><b>8.1.2</b> Look at the data</a></li>
-<li class="chapter" data-level="8.1.3" data-path="chi-square-goodness-of-fit.html"><a href="chi-square-goodness-of-fit.html#check-assumptions-3"><i class="fa fa-check"></i><b>8.1.3</b> Check assumptions</a></li>
-<li class="chapter" data-level="8.1.4" data-path="chi-square-goodness-of-fit.html"><a href="chi-square-goodness-of-fit.html#perform-the-test-3"><i class="fa fa-check"></i><b>8.1.4</b> Perform the test</a></li>
-<li class="chapter" data-level="8.1.5" data-path="chi-square-goodness-of-fit.html"><a href="chi-square-goodness-of-fit.html#interpret-results-2"><i class="fa fa-check"></i><b>8.1.5</b> Interpret results</a></li>
-<li class="chapter" data-level="8.1.6" data-path="chi-square-goodness-of-fit.html"><a href="chi-square-goodness-of-fit.html#additional-information-1"><i class="fa fa-check"></i><b>8.1.6</b> Additional information</a></li>
-<li class="chapter" data-level="8.1.7" data-path="chi-square-goodness-of-fit.html"><a href="chi-square-goodness-of-fit.html#your-turn-3"><i class="fa fa-check"></i><b>8.1.7</b> Your turn!</a></li>
+<li class="chapter" data-level="8.1.2" data-path="chi-square-goodness-of-fit.html"><a href="chi-square-goodness-of-fit.html#specify-the-hypotheses-1"><i class="fa fa-check"></i><b>8.1.2</b> Specify the hypotheses</a></li>
+<li class="chapter" data-level="8.1.3" data-path="chi-square-goodness-of-fit.html"><a href="chi-square-goodness-of-fit.html#look-at-the-data-3"><i class="fa fa-check"></i><b>8.1.3</b> Look at the data</a></li>
+<li class="chapter" data-level="8.1.4" data-path="chi-square-goodness-of-fit.html"><a href="chi-square-goodness-of-fit.html#check-assumptions-3"><i class="fa fa-check"></i><b>8.1.4</b> Check assumptions</a></li>
+<li class="chapter" data-level="8.1.5" data-path="chi-square-goodness-of-fit.html"><a href="chi-square-goodness-of-fit.html#perform-the-test-3"><i class="fa fa-check"></i><b>8.1.5</b> Perform the test</a></li>
+<li class="chapter" data-level="8.1.6" data-path="chi-square-goodness-of-fit.html"><a href="chi-square-goodness-of-fit.html#interpret-results-2"><i class="fa fa-check"></i><b>8.1.6</b> Interpret results</a></li>
+<li class="chapter" data-level="8.1.7" data-path="chi-square-goodness-of-fit.html"><a href="chi-square-goodness-of-fit.html#additional-information-1"><i class="fa fa-check"></i><b>8.1.7</b> Additional information</a></li>
+<li class="chapter" data-level="8.1.8" data-path="chi-square-goodness-of-fit.html"><a href="chi-square-goodness-of-fit.html#your-turn-3"><i class="fa fa-check"></i><b>8.1.8</b> Your turn!</a></li>
 </ul></li>
 <li class="chapter" data-level="8.2" data-path="chi-square-test-of-independence.html"><a href="chi-square-test-of-independence.html"><i class="fa fa-check"></i><b>8.2</b> Chi-Square Test of Independence</a>
 <ul>
 <li class="chapter" data-level="8.2.1" data-path="chi-square-test-of-independence.html"><a href="chi-square-test-of-independence.html#overview-4"><i class="fa fa-check"></i><b>8.2.1</b> Overview</a></li>
-<li class="chapter" data-level="8.2.2" data-path="chi-square-test-of-independence.html"><a href="chi-square-test-of-independence.html#look-at-the-data-4"><i class="fa fa-check"></i><b>8.2.2</b> Look at the data</a></li>
-<li class="chapter" data-level="8.2.3" data-path="chi-square-test-of-independence.html"><a href="chi-square-test-of-independence.html#perform-the-test-4"><i class="fa fa-check"></i><b>8.2.3</b> Perform the test</a></li>
-<li class="chapter" data-level="8.2.4" data-path="chi-square-test-of-independence.html"><a href="chi-square-test-of-independence.html#interpreting-results-1"><i class="fa fa-check"></i><b>8.2.4</b> Interpreting results</a></li>
-<li class="chapter" data-level="8.2.5" data-path="chi-square-test-of-independence.html"><a href="chi-square-test-of-independence.html#in-case-of-violated-assumptions-3"><i class="fa fa-check"></i><b>8.2.5</b> In case of violated assumptions</a></li>
-<li class="chapter" data-level="8.2.6" data-path="chi-square-test-of-independence.html"><a href="chi-square-test-of-independence.html#additional-information-2"><i class="fa fa-check"></i><b>8.2.6</b> Additional information</a></li>
-<li class="chapter" data-level="8.2.7" data-path="chi-square-test-of-independence.html"><a href="chi-square-test-of-independence.html#your-turn-4"><i class="fa fa-check"></i><b>8.2.7</b> Your turn!</a></li>
+<li class="chapter" data-level="8.2.2" data-path="chi-square-test-of-independence.html"><a href="chi-square-test-of-independence.html#specify-your-hypotheses-2"><i class="fa fa-check"></i><b>8.2.2</b> Specify your hypotheses</a></li>
+<li class="chapter" data-level="8.2.3" data-path="chi-square-test-of-independence.html"><a href="chi-square-test-of-independence.html#look-at-the-data-4"><i class="fa fa-check"></i><b>8.2.3</b> Look at the data</a></li>
+<li class="chapter" data-level="8.2.4" data-path="chi-square-test-of-independence.html"><a href="chi-square-test-of-independence.html#perform-the-test-4"><i class="fa fa-check"></i><b>8.2.4</b> Perform the test</a></li>
+<li class="chapter" data-level="8.2.5" data-path="chi-square-test-of-independence.html"><a href="chi-square-test-of-independence.html#interpreting-results-1"><i class="fa fa-check"></i><b>8.2.5</b> Interpreting results</a></li>
+<li class="chapter" data-level="8.2.6" data-path="chi-square-test-of-independence.html"><a href="chi-square-test-of-independence.html#in-case-of-violated-assumptions-3"><i class="fa fa-check"></i><b>8.2.6</b> In case of violated assumptions</a></li>
+<li class="chapter" data-level="8.2.7" data-path="chi-square-test-of-independence.html"><a href="chi-square-test-of-independence.html#additional-information-2"><i class="fa fa-check"></i><b>8.2.7</b> Additional information</a></li>
+<li class="chapter" data-level="8.2.8" data-path="chi-square-test-of-independence.html"><a href="chi-square-test-of-independence.html#your-turn-4"><i class="fa fa-check"></i><b>8.2.8</b> Your turn!</a></li>
 </ul></li>
 <li class="chapter" data-level="8.3" data-path="mcnemars-test.html"><a href="mcnemars-test.html"><i class="fa fa-check"></i><b>8.3</b> McNemar’s Test</a>
 <ul>
 <li class="chapter" data-level="8.3.1" data-path="mcnemars-test.html"><a href="mcnemars-test.html#overview-5"><i class="fa fa-check"></i><b>8.3.1</b> Overview</a></li>
-<li class="chapter" data-level="8.3.2" data-path="mcnemars-test.html"><a href="mcnemars-test.html#look-at-the-data-5"><i class="fa fa-check"></i><b>8.3.2</b> Look at the data</a></li>
-<li class="chapter" data-level="8.3.3" data-path="mcnemars-test.html"><a href="mcnemars-test.html#perform-the-test-5"><i class="fa fa-check"></i><b>8.3.3</b> Perform the test</a></li>
-<li class="chapter" data-level="8.3.4" data-path="mcnemars-test.html"><a href="mcnemars-test.html#interpret-results-3"><i class="fa fa-check"></i><b>8.3.4</b> Interpret results</a></li>
+<li class="chapter" data-level="8.3.2" data-path="mcnemars-test.html"><a href="mcnemars-test.html#specify-your-hypotheses-3"><i class="fa fa-check"></i><b>8.3.2</b> Specify your hypotheses</a></li>
+<li class="chapter" data-level="8.3.3" data-path="mcnemars-test.html"><a href="mcnemars-test.html#look-at-the-data-5"><i class="fa fa-check"></i><b>8.3.3</b> Look at the data</a></li>
+<li class="chapter" data-level="8.3.4" data-path="mcnemars-test.html"><a href="mcnemars-test.html#perform-the-test-5"><i class="fa fa-check"></i><b>8.3.4</b> Perform the test</a></li>
+<li class="chapter" data-level="8.3.5" data-path="mcnemars-test.html"><a href="mcnemars-test.html#interpret-results-3"><i class="fa fa-check"></i><b>8.3.5</b> Interpret results</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="anova.html"><a href="anova.html"><i class="fa fa-check"></i><b>9</b> ANOVA</a>
@@ -311,13 +315,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.1" data-path="one-way-anova.html"><a href="one-way-anova.html"><i class="fa fa-check"></i><b>9.1</b> One-way ANOVA</a>
 <ul>
 <li class="chapter" data-level="9.1.1" data-path="one-way-anova.html"><a href="one-way-anova.html#overview-6"><i class="fa fa-check"></i><b>9.1.1</b> Overview</a></li>
-<li class="chapter" data-level="9.1.2" data-path="one-way-anova.html"><a href="one-way-anova.html#look-at-the-data-6"><i class="fa fa-check"></i><b>9.1.2</b> Look at the data</a></li>
-<li class="chapter" data-level="9.1.3" data-path="one-way-anova.html"><a href="one-way-anova.html#anova-assumptions"><i class="fa fa-check"></i><b>9.1.3</b> Check assumptions</a></li>
-<li class="chapter" data-level="9.1.4" data-path="one-way-anova.html"><a href="one-way-anova.html#perform-the-test-6"><i class="fa fa-check"></i><b>9.1.4</b> Perform the test</a></li>
-<li class="chapter" data-level="9.1.5" data-path="one-way-anova.html"><a href="one-way-anova.html#interpret-results-4"><i class="fa fa-check"></i><b>9.1.5</b> Interpret results</a></li>
-<li class="chapter" data-level="9.1.6" data-path="one-way-anova.html"><a href="one-way-anova.html#in-case-of-violated-assumptions-4"><i class="fa fa-check"></i><b>9.1.6</b> In case of violated assumptions</a></li>
-<li class="chapter" data-level="9.1.7" data-path="one-way-anova.html"><a href="one-way-anova.html#additional-information-3"><i class="fa fa-check"></i><b>9.1.7</b> Additional information</a></li>
-<li class="chapter" data-level="9.1.8" data-path="one-way-anova.html"><a href="one-way-anova.html#your-turn-5"><i class="fa fa-check"></i><b>9.1.8</b> Your turn!</a></li>
+<li class="chapter" data-level="9.1.2" data-path="one-way-anova.html"><a href="one-way-anova.html#specify-your-hypotheses-4"><i class="fa fa-check"></i><b>9.1.2</b> Specify your hypotheses</a></li>
+<li class="chapter" data-level="9.1.3" data-path="one-way-anova.html"><a href="one-way-anova.html#look-at-the-data-6"><i class="fa fa-check"></i><b>9.1.3</b> Look at the data</a></li>
+<li class="chapter" data-level="9.1.4" data-path="one-way-anova.html"><a href="one-way-anova.html#anova-assumptions"><i class="fa fa-check"></i><b>9.1.4</b> Check assumptions</a></li>
+<li class="chapter" data-level="9.1.5" data-path="one-way-anova.html"><a href="one-way-anova.html#perform-the-test-6"><i class="fa fa-check"></i><b>9.1.5</b> Perform the test</a></li>
+<li class="chapter" data-level="9.1.6" data-path="one-way-anova.html"><a href="one-way-anova.html#interpret-results-4"><i class="fa fa-check"></i><b>9.1.6</b> Interpret results</a></li>
+<li class="chapter" data-level="9.1.7" data-path="one-way-anova.html"><a href="one-way-anova.html#in-case-of-violated-assumptions-4"><i class="fa fa-check"></i><b>9.1.7</b> In case of violated assumptions</a></li>
+<li class="chapter" data-level="9.1.8" data-path="one-way-anova.html"><a href="one-way-anova.html#additional-information-3"><i class="fa fa-check"></i><b>9.1.8</b> Additional information</a></li>
+<li class="chapter" data-level="9.1.9" data-path="one-way-anova.html"><a href="one-way-anova.html#your-turn-5"><i class="fa fa-check"></i><b>9.1.9</b> Your turn!</a></li>
 </ul></li>
 <li class="chapter" data-level="9.2" data-path="finding-group-differences.html"><a href="finding-group-differences.html"><i class="fa fa-check"></i><b>9.2</b> Finding Group Differences</a>
 <ul>
@@ -329,12 +334,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.3" data-path="repeated-measures-anova.html"><a href="repeated-measures-anova.html"><i class="fa fa-check"></i><b>9.3</b> Repeated Measures ANOVA</a>
 <ul>
 <li class="chapter" data-level="9.3.1" data-path="repeated-measures-anova.html"><a href="repeated-measures-anova.html#overview-7"><i class="fa fa-check"></i><b>9.3.1</b> Overview</a></li>
-<li class="chapter" data-level="9.3.2" data-path="repeated-measures-anova.html"><a href="repeated-measures-anova.html#look-at-the-data-7"><i class="fa fa-check"></i><b>9.3.2</b> Look at the data</a></li>
-<li class="chapter" data-level="9.3.3" data-path="repeated-measures-anova.html"><a href="repeated-measures-anova.html#check-assumptions-5"><i class="fa fa-check"></i><b>9.3.3</b> Check Assumptions</a></li>
-<li class="chapter" data-level="9.3.4" data-path="repeated-measures-anova.html"><a href="repeated-measures-anova.html#perform-the-test-7"><i class="fa fa-check"></i><b>9.3.4</b> Perform the test</a></li>
-<li class="chapter" data-level="9.3.5" data-path="repeated-measures-anova.html"><a href="repeated-measures-anova.html#interpret-results-5"><i class="fa fa-check"></i><b>9.3.5</b> Interpret results</a></li>
-<li class="chapter" data-level="9.3.6" data-path="repeated-measures-anova.html"><a href="repeated-measures-anova.html#in-case-of-violated-assumptions-6"><i class="fa fa-check"></i><b>9.3.6</b> In case of violated assumptions</a></li>
-<li class="chapter" data-level="9.3.7" data-path="repeated-measures-anova.html"><a href="repeated-measures-anova.html#your-turn-7"><i class="fa fa-check"></i><b>9.3.7</b> Your turn!</a></li>
+<li class="chapter" data-level="9.3.2" data-path="repeated-measures-anova.html"><a href="repeated-measures-anova.html#specify-your-hypotheses-5"><i class="fa fa-check"></i><b>9.3.2</b> Specify your hypotheses</a></li>
+<li class="chapter" data-level="9.3.3" data-path="repeated-measures-anova.html"><a href="repeated-measures-anova.html#look-at-the-data-7"><i class="fa fa-check"></i><b>9.3.3</b> Look at the data</a></li>
+<li class="chapter" data-level="9.3.4" data-path="repeated-measures-anova.html"><a href="repeated-measures-anova.html#check-assumptions-5"><i class="fa fa-check"></i><b>9.3.4</b> Check Assumptions</a></li>
+<li class="chapter" data-level="9.3.5" data-path="repeated-measures-anova.html"><a href="repeated-measures-anova.html#perform-the-test-7"><i class="fa fa-check"></i><b>9.3.5</b> Perform the test</a></li>
+<li class="chapter" data-level="9.3.6" data-path="repeated-measures-anova.html"><a href="repeated-measures-anova.html#interpret-results-5"><i class="fa fa-check"></i><b>9.3.6</b> Interpret results</a></li>
+<li class="chapter" data-level="9.3.7" data-path="repeated-measures-anova.html"><a href="repeated-measures-anova.html#in-case-of-violated-assumptions-6"><i class="fa fa-check"></i><b>9.3.7</b> In case of violated assumptions</a></li>
+<li class="chapter" data-level="9.3.8" data-path="repeated-measures-anova.html"><a href="repeated-measures-anova.html#your-turn-7"><i class="fa fa-check"></i><b>9.3.8</b> Your turn!</a></li>
 </ul></li>
 <li class="chapter" data-level="9.4" data-path="factorial-anova.html"><a href="factorial-anova.html"><i class="fa fa-check"></i><b>9.4</b> Factorial ANOVA</a>
 <ul>
@@ -355,13 +361,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="10.1" data-path="correlation.html"><a href="correlation.html"><i class="fa fa-check"></i><b>10.1</b> Correlation</a>
 <ul>
 <li class="chapter" data-level="10.1.1" data-path="correlation.html"><a href="correlation.html#overview-10"><i class="fa fa-check"></i><b>10.1.1</b> Overview</a></li>
-<li class="chapter" data-level="10.1.2" data-path="correlation.html"><a href="correlation.html#look-at-the-data-8"><i class="fa fa-check"></i><b>10.1.2</b> Look at the data</a></li>
-<li class="chapter" data-level="10.1.3" data-path="correlation.html"><a href="correlation.html#check-assumptions-6"><i class="fa fa-check"></i><b>10.1.3</b> Check assumptions</a></li>
-<li class="chapter" data-level="10.1.4" data-path="correlation.html"><a href="correlation.html#perform-the-test-9"><i class="fa fa-check"></i><b>10.1.4</b> Perform the test</a></li>
-<li class="chapter" data-level="10.1.5" data-path="correlation.html"><a href="correlation.html#interpreting-results-2"><i class="fa fa-check"></i><b>10.1.5</b> Interpreting results</a></li>
-<li class="chapter" data-level="10.1.6" data-path="correlation.html"><a href="correlation.html#in-case-of-violated-assumptions-7"><i class="fa fa-check"></i><b>10.1.6</b> In case of violated assumptions</a></li>
-<li class="chapter" data-level="10.1.7" data-path="correlation.html"><a href="correlation.html#additional-information-4"><i class="fa fa-check"></i><b>10.1.7</b> Additional information</a></li>
-<li class="chapter" data-level="10.1.8" data-path="correlation.html"><a href="correlation.html#your-turn-8"><i class="fa fa-check"></i><b>10.1.8</b> Your turn!</a></li>
+<li class="chapter" data-level="10.1.2" data-path="correlation.html"><a href="correlation.html#specify-your-hypotheses-6"><i class="fa fa-check"></i><b>10.1.2</b> Specify your hypotheses</a></li>
+<li class="chapter" data-level="10.1.3" data-path="correlation.html"><a href="correlation.html#look-at-the-data-8"><i class="fa fa-check"></i><b>10.1.3</b> Look at the data</a></li>
+<li class="chapter" data-level="10.1.4" data-path="correlation.html"><a href="correlation.html#check-assumptions-6"><i class="fa fa-check"></i><b>10.1.4</b> Check assumptions</a></li>
+<li class="chapter" data-level="10.1.5" data-path="correlation.html"><a href="correlation.html#perform-the-test-9"><i class="fa fa-check"></i><b>10.1.5</b> Perform the test</a></li>
+<li class="chapter" data-level="10.1.6" data-path="correlation.html"><a href="correlation.html#interpreting-results-2"><i class="fa fa-check"></i><b>10.1.6</b> Interpreting results</a></li>
+<li class="chapter" data-level="10.1.7" data-path="correlation.html"><a href="correlation.html#in-case-of-violated-assumptions-7"><i class="fa fa-check"></i><b>10.1.7</b> In case of violated assumptions</a></li>
+<li class="chapter" data-level="10.1.8" data-path="correlation.html"><a href="correlation.html#additional-information-4"><i class="fa fa-check"></i><b>10.1.8</b> Additional information</a></li>
+<li class="chapter" data-level="10.1.9" data-path="correlation.html"><a href="correlation.html#your-turn-8"><i class="fa fa-check"></i><b>10.1.9</b> Your turn!</a></li>
 </ul></li>
 <li class="chapter" data-level="10.2" data-path="regression.html"><a href="regression.html"><i class="fa fa-check"></i><b>10.2</b> Regression</a>
 <ul>
@@ -382,7 +389,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="10.3.5" data-path="general-linear-model.html"><a href="general-linear-model.html#one-way-anova-as-a-regression"><i class="fa fa-check"></i><b>10.3.5</b> One-way ANOVA as a regression</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>11</b> References</a></li>
+<li class="appendix"><span><b>Appendices</b></span></li>
+<li class="chapter" data-level="A" data-path="answers.html"><a href="answers.html"><i class="fa fa-check"></i><b>A</b> Answers</a>
+<ul>
+<li class="chapter" data-level="A.1" data-path="answers-to-5-3-power.html"><a href="answers-to-5-3-power.html"><i class="fa fa-check"></i><b>A.1</b> Answers to 5.3 Power</a></li>
+<li class="chapter" data-level="A.2" data-path="answers-to-7-1-one-sample-t-test.html"><a href="answers-to-7-1-one-sample-t-test.html"><i class="fa fa-check"></i><b>A.2</b> Answers to 7.1 one-sample t-test</a></li>
+<li class="chapter" data-level="A.3" data-path="answers-to-7-2-independent-samples-t-test.html"><a href="answers-to-7-2-independent-samples-t-test.html"><i class="fa fa-check"></i><b>A.3</b> Answers to 7.2 independent samples t-test</a></li>
+<li class="chapter" data-level="A.4" data-path="answers-to-7-3-dependent-t-test.html"><a href="answers-to-7-3-dependent-t-test.html"><i class="fa fa-check"></i><b>A.4</b> Answers to 7.3 dependent t-test</a></li>
+<li class="chapter" data-level="A.5" data-path="answers-to-8-1-goodness-of-fit-test.html"><a href="answers-to-8-1-goodness-of-fit-test.html"><i class="fa fa-check"></i><b>A.5</b> Answers to 8.1 goodness of fit test</a></li>
+<li class="chapter" data-level="A.6" data-path="answers-to-8-2-chi-square-test-of-independence.html"><a href="answers-to-8-2-chi-square-test-of-independence.html"><i class="fa fa-check"></i><b>A.6</b> Answers to 8.2 chi-square test of independence</a></li>
+<li class="chapter" data-level="A.7" data-path="answers-to-9-1-one-way-anova.html"><a href="answers-to-9-1-one-way-anova.html"><i class="fa fa-check"></i><b>A.7</b> Answers to 9.1 one-way ANOVA</a></li>
+<li class="chapter" data-level="A.8" data-path="answers-to-9-2-finding-group-differences.html"><a href="answers-to-9-2-finding-group-differences.html"><i class="fa fa-check"></i><b>A.8</b> Answers to 9.2 finding group differences</a></li>
+<li class="chapter" data-level="A.9" data-path="answers-to-9-3-repeated-measures-anova.html"><a href="answers-to-9-3-repeated-measures-anova.html"><i class="fa fa-check"></i><b>A.9</b> Answers to 9.3 repeated measures ANOVA</a></li>
+<li class="chapter" data-level="A.10" data-path="answers-to-10-1-correlation.html"><a href="answers-to-10-1-correlation.html"><i class="fa fa-check"></i><b>A.10</b> Answers to 10.1 correlation</a></li>
+<li class="chapter" data-level="A.11" data-path="answers-to-10-2-regression.html"><a href="answers-to-10-2-regression.html"><i class="fa fa-check"></i><b>A.11</b> Answers to 10.2 regression</a></li>
+</ul></li>
+<li class="chapter" data-level="B" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>B</b> References</a></li>
 <li class="divider"></li>
 <li><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/" 
     target="blank"><img alt="Creative Commons License" 
@@ -410,38 +432,37 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">10.1</span> Correlation</h2>
 <div id="overview-10" class="section level3" number="10.1.1">
 <h3><span class="header-section-number">10.1.1</span> Overview</h3>
-<p>Correlation (r) tests the relationship between two variables, which are usually continuous (i.e., ratio or interval) variables. The relationship between those two variables could be <em>positively related</em>, <em>negatively related</em>, or <em>not related at all</em>.</p>
+<p>Correlation (<em>r</em>) tests the relationship between two variables, which are usually continuous (i.e., ratio or interval) variables. The relationship between those two variables could be <em>positively related</em>, <em>negatively related</em>, or <em>not related at all</em>.</p>
 <p><strong>Note</strong>: Remember that correlation does not always equal causation!</p>
-<p>We will learn about other types of correlations, but mainly we are interested in the Pearson product moment correlation, which is often just called the Pearson correlation or just correlation. Other correlations are generally referred to by their specific name.</p>
-<p>The strength of the correlation is determined by how closely the dots in the scatterplot matrix fit on the regression line. Correlations are really <em>standardized covariances</em>. <u>Covariance</u> is the extent to which the deviation of one variable from its mean matches the deviation of the other variable from its mean. We then standardize the covariance into the correlation which ranges from -1 to +1. Because correlations are standardized, they are considered effect sizes! Commonly, we describe values of ±.1 as a small effect size, ±.3 as medium, and ±.5 as large.</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-1"></span>
-<img src="images/08-correlation/correlation-examples.png" alt="Scatter plots and correlation examples" width="100%" />
-<p class="caption">
-Figure 9.1: Scatter plots and correlation examples
-</p>
-</div>
+<p>We will learn about other types of correlations, but mainly we are interested in the Pearson product moment correlation, which is often just called the Pearson correlation or simply correlation. Other correlations are generally referred to by their specific name.</p>
+<p>The strength of the correlation is determined by how closely the points in the scatterplot matrix fit on the regression line. Correlations are really <em>standardized covariances</em>. <u>Covariance</u> is the extent to which the deviation of one variable from its mean matches the deviation of the other variable from its mean. We then standardize the covariance into the correlation which ranges from -1 to +1. Because correlations are standardized, they are considered effect sizes! Commonly, we describe values of ±.1 as a small effect size, ±.3 as medium, and ±.5 as large, but remember that this heuristic is simply a heuristic and it’s best to think about size in relation to your field.</p>
+<p><img src="images/08-correlation/correlation-examples.png" /></p>
 <p><strong>Note</strong>: Try your hand at guessing the correlation coefficient! Play at www.guessthecorrelation.com</p>
 <p><strong>Note</strong>: Another fun website to play around with is the interactive visualization website Interpreting Correlations by Kristoffer Magnusson. You can play around with what data looks like at various correlations. <a href="https://rpsychologist.com/correlation/" class="uri">https://rpsychologist.com/correlation/</a></p>
 </div>
-<div id="look-at-the-data-8" class="section level3" number="10.1.2">
-<h3><span class="header-section-number">10.1.2</span> Look at the data</h3>
-<p>Let’s run an example with data from lsj-data. Open data from your Data Library in “lsj-data.” Select and open “parenthood.” This dataset measures a new mother’s<a href="#fn11" class="footnote-ref" id="fnref11"><sup>11</sup></a> daily grumpiness very precisely, on a scale from 0 (not at all grumpy) to 100 (extremely grumpy). In addition, I am also tracking her sleeping patterns and her son’s sleeping patterns across 100 days.</p>
-<div id="data-set-up-8" class="section level4" number="10.1.2.1">
-<h4><span class="header-section-number">10.1.2.1</span> Data set-up</h4>
+<div id="specify-your-hypotheses-6" class="section level3" number="10.1.2">
+<h3><span class="header-section-number">10.1.2</span> Specify your hypotheses</h3>
+<p>Let’s run an example with data from lsj-data. Open data from your Data Library in “lsj-data.” Select and open “parenthood.” This dataset measures a new mother’s<a href="#fn10" class="footnote-ref" id="fnref10"><sup>10</sup></a> daily grumpiness very precisely, on a scale from 0 (not at all grumpy) to 100 (extremely grumpy). In addition, I am also tracking her sleeping patterns and her son’s sleeping patterns across 100 days.</p>
+<p>The null hypothesis is there is no correlation whereas the alternative hypothesis is that there is a correlation. In this case, our hypothesis is a two-tailed hypothesis, although we could have an <em>a priori</em> hypothesis about the relationship between our variables.</p>
+</div>
+<div id="look-at-the-data-8" class="section level3" number="10.1.3">
+<h3><span class="header-section-number">10.1.3</span> Look at the data</h3>
+<div id="data-set-up-8" class="section level4" number="10.1.3.1">
+<h4><span class="header-section-number">10.1.3.1</span> Data set-up</h4>
 <p>To conduct the correlation we first need to ensure our data is set-up properly in our dataset. This requires having two columns, one for each of our continuous variables. Each row is a unique participant or unit of analysis. Note that jamovi might have incorrectly imported <code>dan.grump</code> as a nominal variable but that is incorrect! This shows the importance of looking at your data and checking your measure types.</p>
 <p><img src="images/08-correlation/correlation-data.png" width="500" /></p>
 </div>
-<div id="describe-the-data-6" class="section level4" number="10.1.2.2">
-<h4><span class="header-section-number">10.1.2.2</span> Describe the data</h4>
+<div id="describe-the-data-6" class="section level4" number="10.1.3.2">
+<h4><span class="header-section-number">10.1.3.2</span> Describe the data</h4>
 <p>Once we confirm our data is setup correctly in jamovi, we should look at our data using descriptive statistics and graphs. First, our descriptive statistics are shown below. We can see first that we have 100 cases and no missing data. The means, medians, standard deviations, and variances are then shown, followed by the minimum and maximum values.</p>
 <p>We also see skew and kurtosis. Calculating the <em>z</em>-score for all the skew and kurtosis (remember: skew or kurtosis divided by its standard error) suggests we do not violate the assumption of normality much except for <code>day</code>. However, notice what the variable <code>day</code> is! It’s just the day of the study, from 1-100. If you look at the graph, it has a <em>uniform distribution</em> (completely flat and uniform) not a normal distribution (bell curve)!</p>
 <p><img src="images/08-correlation/correlation-descriptives.png" /></p>
 </div>
 </div>
-<div id="check-assumptions-6" class="section level3" number="10.1.3">
-<h3><span class="header-section-number">10.1.3</span> Check assumptions</h3>
-<div id="assumptions-6" class="section level4" number="10.1.3.1">
-<h4><span class="header-section-number">10.1.3.1</span> Assumptions</h4>
+<div id="check-assumptions-6" class="section level3" number="10.1.4">
+<h3><span class="header-section-number">10.1.4</span> Check assumptions</h3>
+<div id="assumptions-6" class="section level4" number="10.1.4.1">
+<h4><span class="header-section-number">10.1.4.1</span> Assumptions</h4>
 <p>The Pearson correlation has the three following assumptions:</p>
 <ol style="list-style-type: decimal">
 <li><p>Both variables are <strong>normally distributed</strong></p></li>
@@ -451,27 +472,22 @@ Figure 9.1: Scatter plots and correlation examples
 <p>We test for normal distribution using the Exploration-Descriptives analysis in jamovi, looking at Shapiro-Wilk’s test, the Q-Q plot, a histogram or density plot, and skew and kurtosis z-scores.</p>
 <p>The third assumption requires looking at a scatterplot of one variable on the x-axis and the other variable on the y-axis.</p>
 </div>
-<div id="checking-assumptions-6" class="section level4" number="10.1.3.2">
-<h4><span class="header-section-number">10.1.3.2</span> Checking assumptions</h4>
-<div id="testing-normality-3" class="section level5" number="10.1.3.2.1">
-<h5><span class="header-section-number">10.1.3.2.1</span> Testing normality</h5>
+<div id="checking-assumptions-6" class="section level4" number="10.1.4.2">
+<h4><span class="header-section-number">10.1.4.2</span> Checking assumptions</h4>
+<div id="testing-normality-3" class="section level5" number="10.1.4.2.1">
+<h5><span class="header-section-number">10.1.4.2.1</span> Testing normality</h5>
 <p>By now we’ve had a lot of practice testing for normality. One of our data points (<code>day)</code> is strange because it’s just a linear number 1-100, so we can ignore it. The Q-Q plot for <code>dan.sleep</code> looks a bit iffy, but the density plot, skew, kurtosis, and Shapiro-Wilk’s tests look fine. We will say we met the assumption of normality. Below, you can see our density plots in the diagonal of our scatterplot matrix.</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-2"></span>
-<img src="images/08-correlation/correlation-plots.png" alt="Testing linearity in jamovi" width="100%" />
-<p class="caption">
-Figure 9.2: Testing linearity in jamovi
-</p>
+<p><img src="images/08-correlation/correlation-plots.png" /></p>
 </div>
-</div>
-<div id="testing-linearity" class="section level5" number="10.1.3.2.2">
-<h5><span class="header-section-number">10.1.3.2.2</span> Testing linearity</h5>
+<div id="testing-linearity" class="section level5" number="10.1.4.2.2">
+<h5><span class="header-section-number">10.1.4.2.2</span> Testing linearity</h5>
 <p>There’s nothing we can do here except look out our correlations! Do the underlying data in any of the scatterplots look like there is actually a non-linear (e.g., curvilinear) relationship? If so, you fail to meet this assumption.</p>
 <p>The scatterplots above do not suggest a non-linear relationship, so we meet the assumption of linearity.</p>
 </div>
 </div>
 </div>
-<div id="perform-the-test-9" class="section level3" number="10.1.4">
-<h3><span class="header-section-number">10.1.4</span> Perform the test</h3>
+<div id="perform-the-test-9" class="section level3" number="10.1.5">
+<h3><span class="header-section-number">10.1.5</span> Perform the test</h3>
 <ol style="list-style-type: decimal">
 <li><p>First, you’ll need to check your assumption of normality <em>outside</em> of the correlations analysis. Go to Explorations and choose Descriptives and check whether you meet the assumption of normality.</p></li>
 <li><p>To perform a correlation, go to Regression and select Correlation Matrix.</p></li>
@@ -483,40 +499,40 @@ Figure 9.2: Testing linearity in jamovi
 <p>When you are done, your setup should look like this:</p>
 <p><img src="images/08-correlation/correlation-setup.png" width="500" /></p>
 </div>
-<div id="interpreting-results-2" class="section level3" number="10.1.5">
-<h3><span class="header-section-number">10.1.5</span> Interpreting results</h3>
+<div id="interpreting-results-2" class="section level3" number="10.1.6">
+<h3><span class="header-section-number">10.1.6</span> Interpreting results</h3>
 <p>Once we are satisfied we have satisfied the assumptions for the correlation, we can interpret our results.</p>
 <p><img src="images/08-correlation/correlation-matrix.png" /></p>
 <p>It looks like three of the variables are significantly (<em>p</em> &lt; .05) correlated with each other: <code>dan.sleep</code>, <code>baby.sleep</code>, and <code>dan.grump</code>. <code>day</code> does not seem to be significantly correlated with any of the other three variables.</p>
-<div id="write-up-the-results-in-apa-style-8" class="section level4" number="10.1.5.1">
-<h4><span class="header-section-number">10.1.5.1</span> Write up the results in APA style</h4>
+<div id="write-up-the-results-in-apa-style-8" class="section level4" number="10.1.6.1">
+<h4><span class="header-section-number">10.1.6.1</span> Write up the results in APA style</h4>
 <p>We can write up our results in APA something like this:</p>
 <blockquote>
 <p>Dan’s grumpiness (<em>M</em> = 63.71, <em>SD</em> = 10.05) is negatively correlated with both Dan’s quality of sleep (<em>M</em> = 6.97, <em>SD</em> = 1.02; <em>r</em> = -.90, <em>p</em> &lt; .001) and the baby’s quality of sleep (<em>M</em> = 8.05, <em>SD</em> = 2.07; <em>r</em> = -.57, <em>p</em> &lt; .001). Furthermore, Dan’s and the baby’s quality of sleep are positively correlated (<em>r</em> = .63, <em>p</em> &lt; .001).</p>
 </blockquote>
 </div>
-<div id="visualize-the-results-7" class="section level4" number="10.1.5.2">
-<h4><span class="header-section-number">10.1.5.2</span> Visualize the results</h4>
+<div id="visualize-the-results-7" class="section level4" number="10.1.6.2">
+<h4><span class="header-section-number">10.1.6.2</span> Visualize the results</h4>
 <p>The default in the Correlation Matrix is to plot the correlation matrix of all the variables, and optionally show the densities for variables and the statistics. This is fine, but I’m not a huge fan of it. You can see it below:</p>
 <p><img src="images/08-correlation/correlation-plots.png" /></p>
-<p>Personally, this is why I like the scatr module in jamovi. You can create high-quality scatterplots of the six graphs above and then stitch them together in a nicer version. For example, here’s the correlation between the sleep quality of both Dan and the baby with a linear regression line and standard error:</p>
+<p>Personally, this is why I like the <code>scatr</code> module in jamovi. You can create high-quality scatterplots of the six graphs above and then stitch them together in a nicer version. For example, here’s the correlation between the sleep quality of both Dan and the baby with a linear regression line and standard error:</p>
 <p><img src="images/08-correlation/correlation-plot1.png" width="500" /></p>
 </div>
 </div>
-<div id="in-case-of-violated-assumptions-7" class="section level3" number="10.1.6">
-<h3><span class="header-section-number">10.1.6</span> In case of violated assumptions</h3>
+<div id="in-case-of-violated-assumptions-7" class="section level3" number="10.1.7">
+<h3><span class="header-section-number">10.1.7</span> In case of violated assumptions</h3>
 <p>If you violate any of the three assumptions, you can choose to perform Spearman’s rank correlation instead of a Pearson correlation. Both Spearman’s rho and Kendall’s tau are non-parametric statistics based on rank order. To perform Spearman’s correlation, change the check mark in jamovi from Pearson to Spearman. You will interpret just the same; however, instead of using the letter <em>r</em> you can either use <span class="math inline">\(r_s\)</span>, <span class="math inline">\(r_{spearman}\)</span>, or <span class="math inline">\(\rho\)</span> (the Greek letter rho).</p>
 <p>What about Kendall’s tau? It will likely give you the same results as Spearman’s rho but it is interpreted slightly differently. We won’t use it in this class.</p>
 </div>
-<div id="additional-information-4" class="section level3" number="10.1.7">
-<h3><span class="header-section-number">10.1.7</span> Additional information</h3>
-<div id="r-squared" class="section level4" number="10.1.7.1">
-<h4><span class="header-section-number">10.1.7.1</span> R-Squared</h4>
+<div id="additional-information-4" class="section level3" number="10.1.8">
+<h3><span class="header-section-number">10.1.8</span> Additional information</h3>
+<div id="r-squared" class="section level4" number="10.1.8.1">
+<h4><span class="header-section-number">10.1.8.1</span> R-Squared</h4>
 <p>The cool thing about the correlation is that we can square <span class="math inline">\(r\)</span> to get <span class="math inline">\(r^2\)</span>, which is the percentage of variance overlap. It is the percentage of variance in one variable that is shared by the other. You simply square the <span class="math inline">\(r\)</span> correlation coefficient to find the <span class="math inline">\(r^2\)</span>. For example, our correlation above between Dan’s grumpiness and Dan’s quality of sleep is <span class="math inline">\(r\)</span> = -.90; therefore, its <span class="math inline">\(r^2\)</span> = .81 or 81%. 81% of the variance in Dan’s grumpiness can be explained by Dan’s quality of sleep!</p>
 </div>
-<div id="comparing-strengths-of-correlations" class="section level4" number="10.1.7.2">
-<h4><span class="header-section-number">10.1.7.2</span> Comparing strengths of correlations</h4>
-<p><strong>Note</strong>: PSYC 290 students you can read the below information but I will not test you on it.</p>
+<div id="comparing-strengths-of-correlations" class="section level4" number="10.1.8.2">
+<h4><span class="header-section-number">10.1.8.2</span> Comparing strengths of correlations</h4>
+<p><strong>Note</strong>: For PSYC 290 students, you can read the below information but I will not test you on it.</p>
 <p>Sometimes you want to compare two correlations to find out if one correlation is significantly stronger than another. You can use this calculator to calculate the p-value: <a href="https://www.psychometrica.de/correlation.html">Testing the Significance of Correlations</a></p>
 <p>Note that you use #1 (Independent Samples) when the correlations come from different samples and #2 (Dependent Samples) when the correlations come from the same sample. For example, to compare the correlation between English and Reading to the correlation between English and Writing, you would use #2 (Dependent Samples). But to compare the correlations between English and Reading for men and women, you would use #1 (Independent Samples).</p>
 <p>Let’s try them both with our <a href="https://github.com/danawanzer/stats-with-jamovi/blob/master/data/Sample_Dataset_2014.xlsx">Sample_Dataset_2014.xlsx</a>.</p>
@@ -527,12 +543,7 @@ Figure 9.2: Testing linearity in jamovi
 <p>Let’s first find the correlation for men. Go to the Data tab in jamovi, click Filters, and enter in the <span class="math inline">\(\int_x\)</span> = Gender == 0. Next, go to the Analyses tab in jamovi, click Regression, and choose Correlation Matrix. Move our two variables over (<code>English</code> and <code>Reading</code>) and check the box for <code>N</code>. You should get <em>r</em> = .36, <em>p</em> &lt; .001, <em>n</em> = 181.</p>
 <p>Now let’s find the correlation for women. Go back to the Data tab in jamovi, click Filters, and change the equation to <span class="math inline">\(\int_x\)</span> = Gender == 1. Your results should automatically update because the filter changed. For women, you should get <em>r</em> = .33, <em>p</em> &lt; .001, <em>n</em> = 210.</p>
 <p>Now we can compare the correlations in <a href="https://www.psychometrica.de/correlation.html#independent">Testing the Significance of Correlations - Independent Samples</a>. In Correlation 1, put 181 in the n column and .36 in the r column. In Correlation 2, put 210 in the n column and .33 in the r column. The results are shown below. The z-score is not statistically significant (<em>p</em> = .369) so there is no significant difference in correlation strength.</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-3"></span>
-<img src="images/08-correlation/compare-correlations-independent.png" alt="Comparison of correlations from independent samples" width="100%" />
-<p class="caption">
-Figure 9.3: Comparison of correlations from independent samples
-</p>
-</div>
+<p><img src="images/08-correlation/compare-correlations-independent.png" /></p>
 <ol start="2" style="list-style-type: decimal">
 <li><strong>Comparison of correlations from dependent samples</strong></li>
 </ol>
@@ -540,37 +551,27 @@ Figure 9.3: Comparison of correlations from independent samples
 <p>Notice how we have three tests we are comparing: (1) English, (2) Reading, and (3) Writing. We can’t use this test if we are testing the correlation between variables A and B and the correlation between variables C and D. There needs to be overlap.</p>
 <p>If you still have your filter on in your dataset from the previous analysis, turn it off. Go to the Data tab, click Filters, and either select the X to delete it or toggle the active button so it’s turned off. Return to your Correlation Matrix results and click on it to edit it. Add Writing to the box.</p>
 <p>However, we have a problem! The <a href="https://www.psychometrica.de/correlation.html#dependent">Testing the Significance of Correlations - Dependent Samples</a> webpage (#2) wants a single N, but our correlation matrix has different Ns because of missing data. What can we do? We need to chain filters! Go back to your Data tab, click Filters, and add three filters like below (note: this is how you can get <em>listwise deletion</em> in jamovi):</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-4"></span>
-<img src="images/08-correlation/correlation-filters.png" alt="Advanced filters" width="100%" />
-<p class="caption">
-Figure 9.4: Advanced filters
-</p>
-</div>
+<p><img src="images/08-correlation/correlation-filters.png" /></p>
 <p>Our correlation matrix should have automatically updated and all the N’s equal 370. Great! We now have all the information we need to input into our <a href="https://www.psychometrica.de/correlation.html">Testing the Significance of Correlations</a> webpage, #2. For n we input 370. For <span class="math inline">\(r_{12}\)</span> we enter the correlation between (1) English and (2) Reading. For <span class="math inline">\(r_{13}\)</span> we enter the correlation between (1) English and (3) Writing. For <span class="math inline">\(r_{23}\)</span> we enter the correlation between (2) Reading and (3) Writing. Our z-score is not statistically significant (<em>p</em> = .213) so there is no significant difference in the correlation between English and Reading (<em>r</em> = .32) with the correlation between English and Writing (<em>r</em> = .37).</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-5"></span>
-<img src="images/08-correlation/compare-correlations-dependent.png" alt="Comparison of correlations from dependent samples" width="100%" />
-<p class="caption">
-Figure 9.5: Comparison of correlations from dependent samples
-</p>
+<p><img src="images/08-correlation/compare-correlations-dependent.png" /></p>
 </div>
 </div>
-</div>
-<div id="your-turn-8" class="section level3" number="10.1.8">
-<h3><span class="header-section-number">10.1.8</span> Your turn!</h3>
+<div id="your-turn-8" class="section level3" number="10.1.9">
+<h3><span class="header-section-number">10.1.9</span> Your turn!</h3>
 <p>Open the <code>Sample_Dataset_2014.xlsx</code> file that we will be using for all Your Turn exercises. You can find the dataset here: <a href="https://github.com/danawanzer/stats-with-jamovi/blob/master/data/Sample_Dataset_2014.xlsx">Sample_Dataset_2014.xlsx Download</a></p>
 <p>Perform correlations based on the following research questions.</p>
 <p>To get the most out of these exercises, try to first find out the answer on your own and then use the drop-down menus to check your answer.</p>
 <ol style="list-style-type: decimal">
 <li><p><strong>Are there significant correlations among the four tests (English, reading, math, writing)?</strong></p>
 <ul>
-<li><p>Do you meet the assumption of normality for all four tests? <select class='solveme' data-answer='["yes for all but maybe not writing"]'> <option></option> <option>yes</option> <option>no</option> <option>yes for all but maybe not writing</option></select></p></li>
-<li><p>Do you meet the assumption of linearity for all four tests? <select class='solveme' data-answer='["yes"]'> <option></option> <option>yes</option> <option>no</option></select></p></li>
-<li><p>Are the four tests significantly correlated among each other? <select class='solveme' data-answer='["yes"]'> <option></option> <option>yes</option> <option>no</option></select></p></li>
+<li><p>Do you meet the assumption of normality for all four tests?</p></li>
+<li><p>Do you meet the assumption of linearity for all four tests?</p></li>
+<li><p>Are the four tests significantly correlated among each other?</p></li>
 <li><p>Round your answers to two decimal places:</p>
 <ul>
-<li><p>What is the correlation between reading and math? <input class='solveme nospaces' size='3' data-answer='[".52"]'/></p></li>
-<li><p>What is the correlation between writing and reading? <input class='solveme nospaces' size='3' data-answer='[".11"]'/></p></li>
-<li><p>What is the correlation between writing and English? <input class='solveme nospaces' size='3' data-answer='[".37"]'/></p></li>
+<li><p>What is the correlation between reading and math?</p></li>
+<li><p>What is the correlation between writing and reading?</p></li>
+<li><p>What is the correlation between writing and English?</p></li>
 </ul></li>
 </ul></li>
 </ol>
@@ -579,8 +580,8 @@ Figure 9.5: Comparison of correlations from dependent samples
 </div>
 <div class="footnotes">
 <hr />
-<ol start="11">
-<li id="fn11"><p>The dataset built into jamovi says the person’s name is Dan, but they now go by Danielle. You can follow her on Twitter at <a href="https://twitter.com/djnavarro">@djnavarro</a>.<a href="correlation.html#fnref11" class="footnote-back">↩︎</a></p></li>
+<ol start="10">
+<li id="fn10"><p>The dataset built into jamovi says the person’s name is Dan, but they now go by Danielle. You can follow her on Twitter at <a href="https://twitter.com/djnavarro">@djnavarro</a>.<a href="correlation.html#fnref10" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
 <div class="psyteachr_footer">
@@ -697,6 +698,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"],
 "google": false
 },

@@ -29,39 +29,27 @@ There are three different types of alternative hypotheses we could have for the 
     -   $H_1$: The mean at time 1 or condition 1 is smaller than the mean at time 2 or condition 2.
     -   $H_0$: The mean at time 1 or condition 1 is greater than or equal to the mean at time 2 or condition 2.
 
+### Specify your hypotheses
+
+For this chapter, we're going to work with data from lsj-data. Open data from your Data Library in "lsj-data". Select and open "Chico". This dataset is hypothetical data from Dr. Chico's class in which students took two tests: one early in the semester and one later in the semester. Dr. Chico thinks that the first test is a "wake up call" for students. When they realise how hard her class really is, they'll work harder for the second test and get a better mark. Is she right?
+
+First, let's determine our hypotheses. For this one, can you determine the null and alternative hypotheses based on Dr. Chico's research question?
+
 ### Look at the data
-
-For this chapter, we're going to work with data from lsj-data. Open data from your Data Library in "lsj-data". Select and open "Chico". This dataset is hypothetical data from Dr. Chico's class in which students took two tests: one early in the semester and one later in the semester. Dr. Chico thinks that the first test is a "wake up call" for students. When they realise how hard her class really is, they'll work harder for the second test and get a better mark. Is she right? First, let's determine our hypotheses:
-
-What is Dr. Chico's alternative hypothesis? `r mcq(c("test 1 scores are different from test 2 scores", "test 1 scores are greater than test 2 scores", answer = "test 1 scores are less than test 2 scores"))`
 
 #### Data set-up
 
 To conduct the dependent t-test, we first need to ensure our data is set-up properly in our dataset. This requires having two columns: one is our dependent variable score for the participant in one category and the other column is our dependent variable score for the participant in the other category. Each row is a unique participant or unit of analysis.
 
-```{r echo = FALSE, fig.cap = "Dependent t-test data in jamovi", out.width = "80%"}
-knitr::include_graphics("images/03_dependent_t-test/dependent_data.png")
-```
+![](images/03_dependent_t-test/dependent_data.png)
 
-In the data above, what is your **independent variable**? `r mcq(c("id", answer = "grade", "test score", "grade_test1", "grade_test2"))`
-
-In the data above, what is your **dependent variable**? `r mcq(c("id", "grade", answer = "test score", "grade_test1", "grade_test2"))`
+In the data above, what is your **independent variable**? What is your **dependent variable**?
 
 #### Describe the data
 
 Once we confirm our data is setup correctly in jamovi, we should look at our data using descriptive statistics and graphs. First, our descriptive statistics are shown below. Our overall data consists of 20 cases (students) and the average grade is 56.98 (*SD* = 6.62) at the first test and 58.38 (*SD* = 6.41) at the second test. We have no missing cases, and our minimum and maximum values look accurate; theoretically, student grades should range from 0-100. Lastly, the distribution of data looks fairly normally distributed, although I'm personally a little worried about our small sample size. Before we can proceed with our analyses, we'll need to check our assumptions.
 
-```{r echo = FALSE, fig.cap = "Descriptive statistics", out.width = "80%"}
-knitr::include_graphics("images/03_dependent_t-test/dependent_descriptives.png")
-```
-
-```{r echo = FALSE, fig.cap = "Descriptive statistics", out.width = "80%"}
-knitr::include_graphics("images/03_dependent_t-test/dependent_descriptives.png")
-```
-
-```{r echo = FALSE, fig.cap = "Plots of the data", fig.show='hold',fig.align='center', out.width = "49%"}
-knitr::include_graphics(c("images/03_dependent_t-test/dependent_plot1.png", "images/03_dependent_t-test/dependent_plot2.png"))
-```
+![](images/03_dependent_t-test/dependent_descriptives.png)
 
 ### Check assumptions
 
@@ -87,9 +75,7 @@ One thing to keep in mind in all statistical software is that we often check ass
 
 Notice how our dependent variable is really the difference in scores, and therefore that is what we are testing for normality. We test for normality using the Shapiro-Wilk test and the Q-Q plot. The Shapiro-Wilk test was not statistically significant (W = .97, *p* = .678); therefore, this indicates the data is normally distributed. Furthermore, the lines are fairly close to the diagonal line in the Q-Q plot (although it's a bit hard to tell because our sample size is small). We can conclude that we satisfy the assumption of normality.
 
-```{r echo = FALSE, fig.cap = "Testing normality in jamovi"}
-knitr::include_graphics("images/03_dependent_t-test/dependent_normality.png")
-```
+![](images/03_dependent_t-test/dependent_normality.png)
 
 ### Perform the test
 
@@ -101,25 +87,21 @@ Now that we've satisfied the assumptions, we can perform the dependent t-test. H
 
 3.  Under Tests, select `Student's`. We'll learn more about the Wilcoxon rank option, which is an option if you fail to meet the assumption of normality.
 
-4.  Under Hypothesis, choose the correct hypothesis: `r mcq(c("Measure 1 is not equal to Measure 2", "Measure 1 > Measure 2", answer = "Measure 1 < Measure 2"))`
+4.  Under Hypothesis, choose the correct hypothesis based on our hypotheses from above! In this case, the answer is "Measure 1 \< Measure 2"
 
 5.  Under Additional Statistics, select `Mean difference`, `Effect size`, `Descriptives`, and (optionally) `Descriptives plots`.
 
 6.  Under Assumption Checks, select both options: `Normality test` and `Q-Q plot`. You'll check these assumptions first, which is discussed above.
 
-When you are done, your setup should look like this
+When you are done, your setup should look like this:
 
-```{r echo = FALSE, fig.cap = "Dependent t-test setup in jamovi", out.width = "80%"}
-knitr::include_graphics("images/03_dependent_t-test/dependent_setup.png")
-```
+![](images/03_dependent_t-test/dependent_setup.png)
 
 ### Interpreting results
 
 Once we are satisfied we have satisfied the assumptions for the dependent t-test, we can interpret our results.
 
-```{r echo = FALSE, fig.cap = "Dependent t-test results in jamovi"}
-knitr::include_graphics("images/03_dependent_t-test/dependent_results.png")
-```
+![](images/03_dependent_t-test/dependent_results.png)
 
 Our p-value is less than .05, so our results are statistically significant. Therefore, we reject the null hypothesis that there is no difference between the two groups.
 
@@ -127,7 +109,7 @@ Our p-value is less than .05, so our results are statistically significant. Ther
 
 When writing up the results of a statistical test, we should always include the following information:
 
-1.  Description of your research question.
+1.  Description of your research question and/or hypotheses.
 2.  Description of your data. If you fail to meet assumptions, you should specify that and describe what test you chose to perform as a result.
 3.  The results of the inferential test, including what test was performed, the test value and degrees of freedom, p-value, and effect size.
 4.  Interpretation of the results, including any other information as needed.
@@ -142,17 +124,13 @@ Remember in the previous chapter that our t-test can be negative but we can alwa
 
 By selecting `Descriptives plots` in the setup, you get the figure below. Personally, I don't think this is a very good plot. It's not very informative. It just provides the mean (circle), 95% confidence interval (blue bars), and the median.
 
-```{r echo = FALSE, fig.cap = "Dependent t-test descriptives plot"}
-knitr::include_graphics("images/03_dependent_t-test/dependent_results_plot.png")
-```
+![](images/03_dependent_t-test/dependent_results_plot.png)
 
 Another option is to use the Descriptives plots available in jamovi, which we see above in the Look at the data section above. I wish there were a way to combine them into one graph, but unfortunately there isn't within jamovi. Instead, you'll have to go into the Rj editor and use R code to reshape the data from wide format to long format and then call the descriptives syntax to produce the plot. You *could* copy-paste the data into a new dataset, but I always try to avoid manual work when doing analyses because something *always* goes wrong.
 
 Here's what this looks like in jamovi:
 
-```{r echo = FALSE, fig.cap = "Revised plot using the Rj editor"}
-knitr::include_graphics("images/03_dependent_t-test/dependent_results_plot2.png")
-```
+![](images/03_dependent_t-test/dependent_results_plot2.png)
 
 To make our lives a bit easier, here is the code in the Rj editor that you can copy-paste (that kind of copy-pasting I allow!) into your own jamovi. You'll need to edit things like the list of names in line 3, the name of your DV (line 4), the name of your IV (line 5), and re-specify those names in line 9.
 
@@ -177,9 +155,7 @@ If you violated the assumption of normality and no transformation fixed your dat
 
 Here is the output for both the dependent t-test and the Wilcoxon rank test:
 
-```{r echo = FALSE, fig.cap = "All dependent t-test results in jamovi"}
-knitr::include_graphics("images/03_dependent_t-test/dependent_results_full.png")
-```
+![](images/03_dependent_t-test/dependent_results_full.png)
 
 #### Wilcoxon rank
 
@@ -201,16 +177,16 @@ To get the most out of these exercises, try to first find out the answer on your
 
 1.  **Do students perform better on the English test than they do the Writing test?**
 
-    -   Should you use a one-tailed or two-tailed hypothesis? `r mcq(c(answer = "one-tailed", "two-tailed"))`
+    -   Should you use a one-tailed or two-tailed hypothesis?
 
-    -   Which statistic should you use based on your assumptions? `r mcq(c(answer = "dependent t-test", "Wilcoxon rank"))`
+    -   Which statistic should you use based on your assumptions?
 
-    -   Do students perform better on the English test than they do the Writing test? `r mcq(c(answer = "yes", "no"))`
+    -   Do students perform better on the English test than they do the Writing test?
 
 2.  **Does students' English scores relate to their Reading scores?**
 
-    -   Should you use a one-tailed or two-tailed hypothesis? `r mcq(c("one-tailed", answer = "two-tailed"))`
+    -   Should you use a one-tailed or two-tailed hypothesis?
 
-    -   Which statistic should you use based on your assumptions? `r mcq(c(answer = "dependent t-test", "Wilcoxon rank"))`
+    -   Which statistic should you use based on your assumptions?
 
-    -   Does students' English scores relate to their Reading scores? `r mcq(c("yes", answer = "no"))`
+    -   Does students' English scores relate to their Reading scores?

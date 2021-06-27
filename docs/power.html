@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>5.3 Power | Statistics with jamovi</title>
   <meta name="description" content="This is the website for PSYC 290 and PSYC 790 at the University of Wisconsin-Stout, taught by Dana Wanzer." />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
   <meta property="og:title" content="5.3 Power | Statistics with jamovi" />
   <meta property="og:type" content="book" />
@@ -31,8 +31,8 @@
   
   
 <link rel="prev" href="alpha-p-values.html"/>
-<link rel="next" href="sample-size.html"/>
-<script src="libs/header-attrs-2.6/header-attrs.js"></script>
+<link rel="next" href="sample-size-power-analysis.html"/>
+<script src="libs/header-attrs-2.9/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -50,12 +50,15 @@
 
 
 
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
@@ -116,6 +119,7 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+
 <link rel="stylesheet" href="include/psyteachr.css" type="text/css" />
 <link rel="stylesheet" href="include/style.css" type="text/css" />
 </head>
@@ -136,13 +140,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a></li>
 <li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
 <ul>
-<li class="chapter" data-level="1.1" data-path="psyc-290.html"><a href="psyc-290.html"><i class="fa fa-check"></i><b>1.1</b> PSYC 290</a>
-<ul>
-<li class="chapter" data-level="1.1.1" data-path="psyc-290.html"><a href="psyc-290.html#learning-objectives"><i class="fa fa-check"></i><b>1.1.1</b> Learning objectives</a></li>
-<li class="chapter" data-level="1.1.2" data-path="psyc-290.html"><a href="psyc-290.html#weekly-schedule"><i class="fa fa-check"></i><b>1.1.2</b> Weekly Schedule</a></li>
-<li class="chapter" data-level="1.1.3" data-path="psyc-290.html"><a href="psyc-290.html#late-assignments-and-re-doing-homework"><i class="fa fa-check"></i><b>1.1.3</b> Late assignments and re-doing homework</a></li>
-<li class="chapter" data-level="1.1.4" data-path="psyc-290.html"><a href="psyc-290.html#getting-help-in-this-class"><i class="fa fa-check"></i><b>1.1.4</b> Getting help in this class</a></li>
-</ul></li>
+<li class="chapter" data-level="1.1" data-path="getting-help-in-this-class.html"><a href="getting-help-in-this-class.html"><i class="fa fa-check"></i><b>1.1</b> Getting help in this class</a></li>
 <li class="chapter" data-level="1.2" data-path="dana-your-instructor.html"><a href="dana-your-instructor.html"><i class="fa fa-check"></i><b>1.2</b> Dana, your instructor</a></li>
 <li class="chapter" data-level="1.3" data-path="navigating-this-websitebook.html"><a href="navigating-this-websitebook.html"><i class="fa fa-check"></i><b>1.3</b> Navigating this website/book</a>
 <ul>
@@ -214,11 +212,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.3.1" data-path="power.html"><a href="power.html#alpha-power-and-error-rates"><i class="fa fa-check"></i><b>5.3.1</b> Alpha, power, and error rates</a></li>
 <li class="chapter" data-level="5.3.2" data-path="power.html"><a href="power.html#playing-with-alpha-power"><i class="fa fa-check"></i><b>5.3.2</b> Playing with alpha &amp; power</a></li>
 </ul></li>
-<li class="chapter" data-level="5.4" data-path="sample-size.html"><a href="sample-size.html"><i class="fa fa-check"></i><b>5.4</b> Sample size</a>
+<li class="chapter" data-level="5.4" data-path="sample-size-power-analysis.html"><a href="sample-size-power-analysis.html"><i class="fa fa-check"></i><b>5.4</b> Sample size &amp; power analysis</a>
 <ul>
-<li class="chapter" data-level="5.4.1" data-path="sample-size.html"><a href="sample-size.html#bean-power-analysis"><i class="fa fa-check"></i><b>5.4.1</b> BEAN: Power analysis</a></li>
-<li class="chapter" data-level="5.4.2" data-path="sample-size.html"><a href="sample-size.html#power-analysis-example-1"><i class="fa fa-check"></i><b>5.4.2</b> Power analysis example #1</a></li>
-<li class="chapter" data-level="5.4.3" data-path="sample-size.html"><a href="sample-size.html#play-with-jpower"><i class="fa fa-check"></i><b>5.4.3</b> Play with jpower</a></li>
+<li class="chapter" data-level="5.4.1" data-path="sample-size-power-analysis.html"><a href="sample-size-power-analysis.html#bean-power-analysis"><i class="fa fa-check"></i><b>5.4.1</b> BEAN: Power analysis</a></li>
+<li class="chapter" data-level="5.4.2" data-path="sample-size-power-analysis.html"><a href="sample-size-power-analysis.html#power-analysis-example-1"><i class="fa fa-check"></i><b>5.4.2</b> Power analysis example #1</a></li>
+<li class="chapter" data-level="5.4.3" data-path="sample-size-power-analysis.html"><a href="sample-size-power-analysis.html#play-with-jpower"><i class="fa fa-check"></i><b>5.4.3</b> Play with jpower</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="inferential-statistics.html"><a href="inferential-statistics.html"><i class="fa fa-check"></i><b>6</b> Inferential statistics</a>
@@ -247,33 +245,36 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.1" data-path="one-sample-t-test.html"><a href="one-sample-t-test.html"><i class="fa fa-check"></i><b>7.1</b> One sample t-test</a>
 <ul>
 <li class="chapter" data-level="7.1.1" data-path="one-sample-t-test.html"><a href="one-sample-t-test.html#overview"><i class="fa fa-check"></i><b>7.1.1</b> Overview</a></li>
-<li class="chapter" data-level="7.1.2" data-path="one-sample-t-test.html"><a href="one-sample-t-test.html#look-at-the-data"><i class="fa fa-check"></i><b>7.1.2</b> Look at the data</a></li>
-<li class="chapter" data-level="7.1.3" data-path="one-sample-t-test.html"><a href="one-sample-t-test.html#check-assumptions"><i class="fa fa-check"></i><b>7.1.3</b> Check assumptions</a></li>
-<li class="chapter" data-level="7.1.4" data-path="one-sample-t-test.html"><a href="one-sample-t-test.html#perform-the-test"><i class="fa fa-check"></i><b>7.1.4</b> Perform the test</a></li>
-<li class="chapter" data-level="7.1.5" data-path="one-sample-t-test.html"><a href="one-sample-t-test.html#interpret-results"><i class="fa fa-check"></i><b>7.1.5</b> Interpret results</a></li>
-<li class="chapter" data-level="7.1.6" data-path="one-sample-t-test.html"><a href="one-sample-t-test.html#in-case-of-violated-assumptions"><i class="fa fa-check"></i><b>7.1.6</b> In case of violated assumptions</a></li>
-<li class="chapter" data-level="7.1.7" data-path="one-sample-t-test.html"><a href="one-sample-t-test.html#additional-information"><i class="fa fa-check"></i><b>7.1.7</b> Additional information</a></li>
-<li class="chapter" data-level="7.1.8" data-path="one-sample-t-test.html"><a href="one-sample-t-test.html#your-turn"><i class="fa fa-check"></i><b>7.1.8</b> Your turn!</a></li>
+<li class="chapter" data-level="7.1.2" data-path="one-sample-t-test.html"><a href="one-sample-t-test.html#specify-the-hypotheses"><i class="fa fa-check"></i><b>7.1.2</b> Specify the hypotheses</a></li>
+<li class="chapter" data-level="7.1.3" data-path="one-sample-t-test.html"><a href="one-sample-t-test.html#look-at-the-data"><i class="fa fa-check"></i><b>7.1.3</b> Look at the data</a></li>
+<li class="chapter" data-level="7.1.4" data-path="one-sample-t-test.html"><a href="one-sample-t-test.html#check-assumptions"><i class="fa fa-check"></i><b>7.1.4</b> Check assumptions</a></li>
+<li class="chapter" data-level="7.1.5" data-path="one-sample-t-test.html"><a href="one-sample-t-test.html#perform-the-test"><i class="fa fa-check"></i><b>7.1.5</b> Perform the test</a></li>
+<li class="chapter" data-level="7.1.6" data-path="one-sample-t-test.html"><a href="one-sample-t-test.html#interpret-results"><i class="fa fa-check"></i><b>7.1.6</b> Interpret results</a></li>
+<li class="chapter" data-level="7.1.7" data-path="one-sample-t-test.html"><a href="one-sample-t-test.html#in-case-of-violated-assumptions"><i class="fa fa-check"></i><b>7.1.7</b> In case of violated assumptions</a></li>
+<li class="chapter" data-level="7.1.8" data-path="one-sample-t-test.html"><a href="one-sample-t-test.html#additional-information"><i class="fa fa-check"></i><b>7.1.8</b> Additional information</a></li>
+<li class="chapter" data-level="7.1.9" data-path="one-sample-t-test.html"><a href="one-sample-t-test.html#your-turn"><i class="fa fa-check"></i><b>7.1.9</b> Your turn!</a></li>
 </ul></li>
 <li class="chapter" data-level="7.2" data-path="independent-t-test.html"><a href="independent-t-test.html"><i class="fa fa-check"></i><b>7.2</b> Independent t-test</a>
 <ul>
 <li class="chapter" data-level="7.2.1" data-path="independent-t-test.html"><a href="independent-t-test.html#overview-1"><i class="fa fa-check"></i><b>7.2.1</b> Overview</a></li>
-<li class="chapter" data-level="7.2.2" data-path="independent-t-test.html"><a href="independent-t-test.html#look-at-the-data-1"><i class="fa fa-check"></i><b>7.2.2</b> Look at the data</a></li>
-<li class="chapter" data-level="7.2.3" data-path="independent-t-test.html"><a href="independent-t-test.html#check-assumptions-1"><i class="fa fa-check"></i><b>7.2.3</b> Check assumptions</a></li>
-<li class="chapter" data-level="7.2.4" data-path="independent-t-test.html"><a href="independent-t-test.html#perform-the-test-1"><i class="fa fa-check"></i><b>7.2.4</b> Perform the test</a></li>
-<li class="chapter" data-level="7.2.5" data-path="independent-t-test.html"><a href="independent-t-test.html#interpret-results-1"><i class="fa fa-check"></i><b>7.2.5</b> Interpret results</a></li>
-<li class="chapter" data-level="7.2.6" data-path="independent-t-test.html"><a href="independent-t-test.html#in-case-of-violated-assumptions-1"><i class="fa fa-check"></i><b>7.2.6</b> In case of violated assumptions</a></li>
-<li class="chapter" data-level="7.2.7" data-path="independent-t-test.html"><a href="independent-t-test.html#your-turn-1"><i class="fa fa-check"></i><b>7.2.7</b> Your turn!</a></li>
+<li class="chapter" data-level="7.2.2" data-path="independent-t-test.html"><a href="independent-t-test.html#specify-your-hypotheses"><i class="fa fa-check"></i><b>7.2.2</b> Specify your hypotheses</a></li>
+<li class="chapter" data-level="7.2.3" data-path="independent-t-test.html"><a href="independent-t-test.html#look-at-the-data-1"><i class="fa fa-check"></i><b>7.2.3</b> Look at the data</a></li>
+<li class="chapter" data-level="7.2.4" data-path="independent-t-test.html"><a href="independent-t-test.html#check-assumptions-1"><i class="fa fa-check"></i><b>7.2.4</b> Check assumptions</a></li>
+<li class="chapter" data-level="7.2.5" data-path="independent-t-test.html"><a href="independent-t-test.html#perform-the-test-1"><i class="fa fa-check"></i><b>7.2.5</b> Perform the test</a></li>
+<li class="chapter" data-level="7.2.6" data-path="independent-t-test.html"><a href="independent-t-test.html#interpret-results-1"><i class="fa fa-check"></i><b>7.2.6</b> Interpret results</a></li>
+<li class="chapter" data-level="7.2.7" data-path="independent-t-test.html"><a href="independent-t-test.html#in-case-of-violated-assumptions-1"><i class="fa fa-check"></i><b>7.2.7</b> In case of violated assumptions</a></li>
+<li class="chapter" data-level="7.2.8" data-path="independent-t-test.html"><a href="independent-t-test.html#your-turn-1"><i class="fa fa-check"></i><b>7.2.8</b> Your turn!</a></li>
 </ul></li>
 <li class="chapter" data-level="7.3" data-path="dependent-t-test.html"><a href="dependent-t-test.html"><i class="fa fa-check"></i><b>7.3</b> Dependent t-test</a>
 <ul>
 <li class="chapter" data-level="7.3.1" data-path="dependent-t-test.html"><a href="dependent-t-test.html#overview-2"><i class="fa fa-check"></i><b>7.3.1</b> Overview</a></li>
-<li class="chapter" data-level="7.3.2" data-path="dependent-t-test.html"><a href="dependent-t-test.html#look-at-the-data-2"><i class="fa fa-check"></i><b>7.3.2</b> Look at the data</a></li>
-<li class="chapter" data-level="7.3.3" data-path="dependent-t-test.html"><a href="dependent-t-test.html#check-assumptions-2"><i class="fa fa-check"></i><b>7.3.3</b> Check assumptions</a></li>
-<li class="chapter" data-level="7.3.4" data-path="dependent-t-test.html"><a href="dependent-t-test.html#perform-the-test-2"><i class="fa fa-check"></i><b>7.3.4</b> Perform the test</a></li>
-<li class="chapter" data-level="7.3.5" data-path="dependent-t-test.html"><a href="dependent-t-test.html#interpreting-results"><i class="fa fa-check"></i><b>7.3.5</b> Interpreting results</a></li>
-<li class="chapter" data-level="7.3.6" data-path="dependent-t-test.html"><a href="dependent-t-test.html#in-case-of-violated-assumptions-2"><i class="fa fa-check"></i><b>7.3.6</b> In case of violated assumptions</a></li>
-<li class="chapter" data-level="7.3.7" data-path="dependent-t-test.html"><a href="dependent-t-test.html#your-turn-2"><i class="fa fa-check"></i><b>7.3.7</b> Your turn!</a></li>
+<li class="chapter" data-level="7.3.2" data-path="dependent-t-test.html"><a href="dependent-t-test.html#specify-your-hypotheses-1"><i class="fa fa-check"></i><b>7.3.2</b> Specify your hypotheses</a></li>
+<li class="chapter" data-level="7.3.3" data-path="dependent-t-test.html"><a href="dependent-t-test.html#look-at-the-data-2"><i class="fa fa-check"></i><b>7.3.3</b> Look at the data</a></li>
+<li class="chapter" data-level="7.3.4" data-path="dependent-t-test.html"><a href="dependent-t-test.html#check-assumptions-2"><i class="fa fa-check"></i><b>7.3.4</b> Check assumptions</a></li>
+<li class="chapter" data-level="7.3.5" data-path="dependent-t-test.html"><a href="dependent-t-test.html#perform-the-test-2"><i class="fa fa-check"></i><b>7.3.5</b> Perform the test</a></li>
+<li class="chapter" data-level="7.3.6" data-path="dependent-t-test.html"><a href="dependent-t-test.html#interpreting-results"><i class="fa fa-check"></i><b>7.3.6</b> Interpreting results</a></li>
+<li class="chapter" data-level="7.3.7" data-path="dependent-t-test.html"><a href="dependent-t-test.html#in-case-of-violated-assumptions-2"><i class="fa fa-check"></i><b>7.3.7</b> In case of violated assumptions</a></li>
+<li class="chapter" data-level="7.3.8" data-path="dependent-t-test.html"><a href="dependent-t-test.html#your-turn-2"><i class="fa fa-check"></i><b>7.3.8</b> Your turn!</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="chi-square.html"><a href="chi-square.html"><i class="fa fa-check"></i><b>8</b> Chi-Square</a>
@@ -281,29 +282,32 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.1" data-path="chi-square-goodness-of-fit.html"><a href="chi-square-goodness-of-fit.html"><i class="fa fa-check"></i><b>8.1</b> Chi-Square Goodness-of-Fit</a>
 <ul>
 <li class="chapter" data-level="8.1.1" data-path="chi-square-goodness-of-fit.html"><a href="chi-square-goodness-of-fit.html#overview-3"><i class="fa fa-check"></i><b>8.1.1</b> Overview</a></li>
-<li class="chapter" data-level="8.1.2" data-path="chi-square-goodness-of-fit.html"><a href="chi-square-goodness-of-fit.html#look-at-the-data-3"><i class="fa fa-check"></i><b>8.1.2</b> Look at the data</a></li>
-<li class="chapter" data-level="8.1.3" data-path="chi-square-goodness-of-fit.html"><a href="chi-square-goodness-of-fit.html#check-assumptions-3"><i class="fa fa-check"></i><b>8.1.3</b> Check assumptions</a></li>
-<li class="chapter" data-level="8.1.4" data-path="chi-square-goodness-of-fit.html"><a href="chi-square-goodness-of-fit.html#perform-the-test-3"><i class="fa fa-check"></i><b>8.1.4</b> Perform the test</a></li>
-<li class="chapter" data-level="8.1.5" data-path="chi-square-goodness-of-fit.html"><a href="chi-square-goodness-of-fit.html#interpret-results-2"><i class="fa fa-check"></i><b>8.1.5</b> Interpret results</a></li>
-<li class="chapter" data-level="8.1.6" data-path="chi-square-goodness-of-fit.html"><a href="chi-square-goodness-of-fit.html#additional-information-1"><i class="fa fa-check"></i><b>8.1.6</b> Additional information</a></li>
-<li class="chapter" data-level="8.1.7" data-path="chi-square-goodness-of-fit.html"><a href="chi-square-goodness-of-fit.html#your-turn-3"><i class="fa fa-check"></i><b>8.1.7</b> Your turn!</a></li>
+<li class="chapter" data-level="8.1.2" data-path="chi-square-goodness-of-fit.html"><a href="chi-square-goodness-of-fit.html#specify-the-hypotheses-1"><i class="fa fa-check"></i><b>8.1.2</b> Specify the hypotheses</a></li>
+<li class="chapter" data-level="8.1.3" data-path="chi-square-goodness-of-fit.html"><a href="chi-square-goodness-of-fit.html#look-at-the-data-3"><i class="fa fa-check"></i><b>8.1.3</b> Look at the data</a></li>
+<li class="chapter" data-level="8.1.4" data-path="chi-square-goodness-of-fit.html"><a href="chi-square-goodness-of-fit.html#check-assumptions-3"><i class="fa fa-check"></i><b>8.1.4</b> Check assumptions</a></li>
+<li class="chapter" data-level="8.1.5" data-path="chi-square-goodness-of-fit.html"><a href="chi-square-goodness-of-fit.html#perform-the-test-3"><i class="fa fa-check"></i><b>8.1.5</b> Perform the test</a></li>
+<li class="chapter" data-level="8.1.6" data-path="chi-square-goodness-of-fit.html"><a href="chi-square-goodness-of-fit.html#interpret-results-2"><i class="fa fa-check"></i><b>8.1.6</b> Interpret results</a></li>
+<li class="chapter" data-level="8.1.7" data-path="chi-square-goodness-of-fit.html"><a href="chi-square-goodness-of-fit.html#additional-information-1"><i class="fa fa-check"></i><b>8.1.7</b> Additional information</a></li>
+<li class="chapter" data-level="8.1.8" data-path="chi-square-goodness-of-fit.html"><a href="chi-square-goodness-of-fit.html#your-turn-3"><i class="fa fa-check"></i><b>8.1.8</b> Your turn!</a></li>
 </ul></li>
 <li class="chapter" data-level="8.2" data-path="chi-square-test-of-independence.html"><a href="chi-square-test-of-independence.html"><i class="fa fa-check"></i><b>8.2</b> Chi-Square Test of Independence</a>
 <ul>
 <li class="chapter" data-level="8.2.1" data-path="chi-square-test-of-independence.html"><a href="chi-square-test-of-independence.html#overview-4"><i class="fa fa-check"></i><b>8.2.1</b> Overview</a></li>
-<li class="chapter" data-level="8.2.2" data-path="chi-square-test-of-independence.html"><a href="chi-square-test-of-independence.html#look-at-the-data-4"><i class="fa fa-check"></i><b>8.2.2</b> Look at the data</a></li>
-<li class="chapter" data-level="8.2.3" data-path="chi-square-test-of-independence.html"><a href="chi-square-test-of-independence.html#perform-the-test-4"><i class="fa fa-check"></i><b>8.2.3</b> Perform the test</a></li>
-<li class="chapter" data-level="8.2.4" data-path="chi-square-test-of-independence.html"><a href="chi-square-test-of-independence.html#interpreting-results-1"><i class="fa fa-check"></i><b>8.2.4</b> Interpreting results</a></li>
-<li class="chapter" data-level="8.2.5" data-path="chi-square-test-of-independence.html"><a href="chi-square-test-of-independence.html#in-case-of-violated-assumptions-3"><i class="fa fa-check"></i><b>8.2.5</b> In case of violated assumptions</a></li>
-<li class="chapter" data-level="8.2.6" data-path="chi-square-test-of-independence.html"><a href="chi-square-test-of-independence.html#additional-information-2"><i class="fa fa-check"></i><b>8.2.6</b> Additional information</a></li>
-<li class="chapter" data-level="8.2.7" data-path="chi-square-test-of-independence.html"><a href="chi-square-test-of-independence.html#your-turn-4"><i class="fa fa-check"></i><b>8.2.7</b> Your turn!</a></li>
+<li class="chapter" data-level="8.2.2" data-path="chi-square-test-of-independence.html"><a href="chi-square-test-of-independence.html#specify-your-hypotheses-2"><i class="fa fa-check"></i><b>8.2.2</b> Specify your hypotheses</a></li>
+<li class="chapter" data-level="8.2.3" data-path="chi-square-test-of-independence.html"><a href="chi-square-test-of-independence.html#look-at-the-data-4"><i class="fa fa-check"></i><b>8.2.3</b> Look at the data</a></li>
+<li class="chapter" data-level="8.2.4" data-path="chi-square-test-of-independence.html"><a href="chi-square-test-of-independence.html#perform-the-test-4"><i class="fa fa-check"></i><b>8.2.4</b> Perform the test</a></li>
+<li class="chapter" data-level="8.2.5" data-path="chi-square-test-of-independence.html"><a href="chi-square-test-of-independence.html#interpreting-results-1"><i class="fa fa-check"></i><b>8.2.5</b> Interpreting results</a></li>
+<li class="chapter" data-level="8.2.6" data-path="chi-square-test-of-independence.html"><a href="chi-square-test-of-independence.html#in-case-of-violated-assumptions-3"><i class="fa fa-check"></i><b>8.2.6</b> In case of violated assumptions</a></li>
+<li class="chapter" data-level="8.2.7" data-path="chi-square-test-of-independence.html"><a href="chi-square-test-of-independence.html#additional-information-2"><i class="fa fa-check"></i><b>8.2.7</b> Additional information</a></li>
+<li class="chapter" data-level="8.2.8" data-path="chi-square-test-of-independence.html"><a href="chi-square-test-of-independence.html#your-turn-4"><i class="fa fa-check"></i><b>8.2.8</b> Your turn!</a></li>
 </ul></li>
 <li class="chapter" data-level="8.3" data-path="mcnemars-test.html"><a href="mcnemars-test.html"><i class="fa fa-check"></i><b>8.3</b> McNemar’s Test</a>
 <ul>
 <li class="chapter" data-level="8.3.1" data-path="mcnemars-test.html"><a href="mcnemars-test.html#overview-5"><i class="fa fa-check"></i><b>8.3.1</b> Overview</a></li>
-<li class="chapter" data-level="8.3.2" data-path="mcnemars-test.html"><a href="mcnemars-test.html#look-at-the-data-5"><i class="fa fa-check"></i><b>8.3.2</b> Look at the data</a></li>
-<li class="chapter" data-level="8.3.3" data-path="mcnemars-test.html"><a href="mcnemars-test.html#perform-the-test-5"><i class="fa fa-check"></i><b>8.3.3</b> Perform the test</a></li>
-<li class="chapter" data-level="8.3.4" data-path="mcnemars-test.html"><a href="mcnemars-test.html#interpret-results-3"><i class="fa fa-check"></i><b>8.3.4</b> Interpret results</a></li>
+<li class="chapter" data-level="8.3.2" data-path="mcnemars-test.html"><a href="mcnemars-test.html#specify-your-hypotheses-3"><i class="fa fa-check"></i><b>8.3.2</b> Specify your hypotheses</a></li>
+<li class="chapter" data-level="8.3.3" data-path="mcnemars-test.html"><a href="mcnemars-test.html#look-at-the-data-5"><i class="fa fa-check"></i><b>8.3.3</b> Look at the data</a></li>
+<li class="chapter" data-level="8.3.4" data-path="mcnemars-test.html"><a href="mcnemars-test.html#perform-the-test-5"><i class="fa fa-check"></i><b>8.3.4</b> Perform the test</a></li>
+<li class="chapter" data-level="8.3.5" data-path="mcnemars-test.html"><a href="mcnemars-test.html#interpret-results-3"><i class="fa fa-check"></i><b>8.3.5</b> Interpret results</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="anova.html"><a href="anova.html"><i class="fa fa-check"></i><b>9</b> ANOVA</a>
@@ -311,13 +315,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.1" data-path="one-way-anova.html"><a href="one-way-anova.html"><i class="fa fa-check"></i><b>9.1</b> One-way ANOVA</a>
 <ul>
 <li class="chapter" data-level="9.1.1" data-path="one-way-anova.html"><a href="one-way-anova.html#overview-6"><i class="fa fa-check"></i><b>9.1.1</b> Overview</a></li>
-<li class="chapter" data-level="9.1.2" data-path="one-way-anova.html"><a href="one-way-anova.html#look-at-the-data-6"><i class="fa fa-check"></i><b>9.1.2</b> Look at the data</a></li>
-<li class="chapter" data-level="9.1.3" data-path="one-way-anova.html"><a href="one-way-anova.html#anova-assumptions"><i class="fa fa-check"></i><b>9.1.3</b> Check assumptions</a></li>
-<li class="chapter" data-level="9.1.4" data-path="one-way-anova.html"><a href="one-way-anova.html#perform-the-test-6"><i class="fa fa-check"></i><b>9.1.4</b> Perform the test</a></li>
-<li class="chapter" data-level="9.1.5" data-path="one-way-anova.html"><a href="one-way-anova.html#interpret-results-4"><i class="fa fa-check"></i><b>9.1.5</b> Interpret results</a></li>
-<li class="chapter" data-level="9.1.6" data-path="one-way-anova.html"><a href="one-way-anova.html#in-case-of-violated-assumptions-4"><i class="fa fa-check"></i><b>9.1.6</b> In case of violated assumptions</a></li>
-<li class="chapter" data-level="9.1.7" data-path="one-way-anova.html"><a href="one-way-anova.html#additional-information-3"><i class="fa fa-check"></i><b>9.1.7</b> Additional information</a></li>
-<li class="chapter" data-level="9.1.8" data-path="one-way-anova.html"><a href="one-way-anova.html#your-turn-5"><i class="fa fa-check"></i><b>9.1.8</b> Your turn!</a></li>
+<li class="chapter" data-level="9.1.2" data-path="one-way-anova.html"><a href="one-way-anova.html#specify-your-hypotheses-4"><i class="fa fa-check"></i><b>9.1.2</b> Specify your hypotheses</a></li>
+<li class="chapter" data-level="9.1.3" data-path="one-way-anova.html"><a href="one-way-anova.html#look-at-the-data-6"><i class="fa fa-check"></i><b>9.1.3</b> Look at the data</a></li>
+<li class="chapter" data-level="9.1.4" data-path="one-way-anova.html"><a href="one-way-anova.html#anova-assumptions"><i class="fa fa-check"></i><b>9.1.4</b> Check assumptions</a></li>
+<li class="chapter" data-level="9.1.5" data-path="one-way-anova.html"><a href="one-way-anova.html#perform-the-test-6"><i class="fa fa-check"></i><b>9.1.5</b> Perform the test</a></li>
+<li class="chapter" data-level="9.1.6" data-path="one-way-anova.html"><a href="one-way-anova.html#interpret-results-4"><i class="fa fa-check"></i><b>9.1.6</b> Interpret results</a></li>
+<li class="chapter" data-level="9.1.7" data-path="one-way-anova.html"><a href="one-way-anova.html#in-case-of-violated-assumptions-4"><i class="fa fa-check"></i><b>9.1.7</b> In case of violated assumptions</a></li>
+<li class="chapter" data-level="9.1.8" data-path="one-way-anova.html"><a href="one-way-anova.html#additional-information-3"><i class="fa fa-check"></i><b>9.1.8</b> Additional information</a></li>
+<li class="chapter" data-level="9.1.9" data-path="one-way-anova.html"><a href="one-way-anova.html#your-turn-5"><i class="fa fa-check"></i><b>9.1.9</b> Your turn!</a></li>
 </ul></li>
 <li class="chapter" data-level="9.2" data-path="finding-group-differences.html"><a href="finding-group-differences.html"><i class="fa fa-check"></i><b>9.2</b> Finding Group Differences</a>
 <ul>
@@ -329,12 +334,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.3" data-path="repeated-measures-anova.html"><a href="repeated-measures-anova.html"><i class="fa fa-check"></i><b>9.3</b> Repeated Measures ANOVA</a>
 <ul>
 <li class="chapter" data-level="9.3.1" data-path="repeated-measures-anova.html"><a href="repeated-measures-anova.html#overview-7"><i class="fa fa-check"></i><b>9.3.1</b> Overview</a></li>
-<li class="chapter" data-level="9.3.2" data-path="repeated-measures-anova.html"><a href="repeated-measures-anova.html#look-at-the-data-7"><i class="fa fa-check"></i><b>9.3.2</b> Look at the data</a></li>
-<li class="chapter" data-level="9.3.3" data-path="repeated-measures-anova.html"><a href="repeated-measures-anova.html#check-assumptions-5"><i class="fa fa-check"></i><b>9.3.3</b> Check Assumptions</a></li>
-<li class="chapter" data-level="9.3.4" data-path="repeated-measures-anova.html"><a href="repeated-measures-anova.html#perform-the-test-7"><i class="fa fa-check"></i><b>9.3.4</b> Perform the test</a></li>
-<li class="chapter" data-level="9.3.5" data-path="repeated-measures-anova.html"><a href="repeated-measures-anova.html#interpret-results-5"><i class="fa fa-check"></i><b>9.3.5</b> Interpret results</a></li>
-<li class="chapter" data-level="9.3.6" data-path="repeated-measures-anova.html"><a href="repeated-measures-anova.html#in-case-of-violated-assumptions-6"><i class="fa fa-check"></i><b>9.3.6</b> In case of violated assumptions</a></li>
-<li class="chapter" data-level="9.3.7" data-path="repeated-measures-anova.html"><a href="repeated-measures-anova.html#your-turn-7"><i class="fa fa-check"></i><b>9.3.7</b> Your turn!</a></li>
+<li class="chapter" data-level="9.3.2" data-path="repeated-measures-anova.html"><a href="repeated-measures-anova.html#specify-your-hypotheses-5"><i class="fa fa-check"></i><b>9.3.2</b> Specify your hypotheses</a></li>
+<li class="chapter" data-level="9.3.3" data-path="repeated-measures-anova.html"><a href="repeated-measures-anova.html#look-at-the-data-7"><i class="fa fa-check"></i><b>9.3.3</b> Look at the data</a></li>
+<li class="chapter" data-level="9.3.4" data-path="repeated-measures-anova.html"><a href="repeated-measures-anova.html#check-assumptions-5"><i class="fa fa-check"></i><b>9.3.4</b> Check Assumptions</a></li>
+<li class="chapter" data-level="9.3.5" data-path="repeated-measures-anova.html"><a href="repeated-measures-anova.html#perform-the-test-7"><i class="fa fa-check"></i><b>9.3.5</b> Perform the test</a></li>
+<li class="chapter" data-level="9.3.6" data-path="repeated-measures-anova.html"><a href="repeated-measures-anova.html#interpret-results-5"><i class="fa fa-check"></i><b>9.3.6</b> Interpret results</a></li>
+<li class="chapter" data-level="9.3.7" data-path="repeated-measures-anova.html"><a href="repeated-measures-anova.html#in-case-of-violated-assumptions-6"><i class="fa fa-check"></i><b>9.3.7</b> In case of violated assumptions</a></li>
+<li class="chapter" data-level="9.3.8" data-path="repeated-measures-anova.html"><a href="repeated-measures-anova.html#your-turn-7"><i class="fa fa-check"></i><b>9.3.8</b> Your turn!</a></li>
 </ul></li>
 <li class="chapter" data-level="9.4" data-path="factorial-anova.html"><a href="factorial-anova.html"><i class="fa fa-check"></i><b>9.4</b> Factorial ANOVA</a>
 <ul>
@@ -355,13 +361,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="10.1" data-path="correlation.html"><a href="correlation.html"><i class="fa fa-check"></i><b>10.1</b> Correlation</a>
 <ul>
 <li class="chapter" data-level="10.1.1" data-path="correlation.html"><a href="correlation.html#overview-10"><i class="fa fa-check"></i><b>10.1.1</b> Overview</a></li>
-<li class="chapter" data-level="10.1.2" data-path="correlation.html"><a href="correlation.html#look-at-the-data-8"><i class="fa fa-check"></i><b>10.1.2</b> Look at the data</a></li>
-<li class="chapter" data-level="10.1.3" data-path="correlation.html"><a href="correlation.html#check-assumptions-6"><i class="fa fa-check"></i><b>10.1.3</b> Check assumptions</a></li>
-<li class="chapter" data-level="10.1.4" data-path="correlation.html"><a href="correlation.html#perform-the-test-9"><i class="fa fa-check"></i><b>10.1.4</b> Perform the test</a></li>
-<li class="chapter" data-level="10.1.5" data-path="correlation.html"><a href="correlation.html#interpreting-results-2"><i class="fa fa-check"></i><b>10.1.5</b> Interpreting results</a></li>
-<li class="chapter" data-level="10.1.6" data-path="correlation.html"><a href="correlation.html#in-case-of-violated-assumptions-7"><i class="fa fa-check"></i><b>10.1.6</b> In case of violated assumptions</a></li>
-<li class="chapter" data-level="10.1.7" data-path="correlation.html"><a href="correlation.html#additional-information-4"><i class="fa fa-check"></i><b>10.1.7</b> Additional information</a></li>
-<li class="chapter" data-level="10.1.8" data-path="correlation.html"><a href="correlation.html#your-turn-8"><i class="fa fa-check"></i><b>10.1.8</b> Your turn!</a></li>
+<li class="chapter" data-level="10.1.2" data-path="correlation.html"><a href="correlation.html#specify-your-hypotheses-6"><i class="fa fa-check"></i><b>10.1.2</b> Specify your hypotheses</a></li>
+<li class="chapter" data-level="10.1.3" data-path="correlation.html"><a href="correlation.html#look-at-the-data-8"><i class="fa fa-check"></i><b>10.1.3</b> Look at the data</a></li>
+<li class="chapter" data-level="10.1.4" data-path="correlation.html"><a href="correlation.html#check-assumptions-6"><i class="fa fa-check"></i><b>10.1.4</b> Check assumptions</a></li>
+<li class="chapter" data-level="10.1.5" data-path="correlation.html"><a href="correlation.html#perform-the-test-9"><i class="fa fa-check"></i><b>10.1.5</b> Perform the test</a></li>
+<li class="chapter" data-level="10.1.6" data-path="correlation.html"><a href="correlation.html#interpreting-results-2"><i class="fa fa-check"></i><b>10.1.6</b> Interpreting results</a></li>
+<li class="chapter" data-level="10.1.7" data-path="correlation.html"><a href="correlation.html#in-case-of-violated-assumptions-7"><i class="fa fa-check"></i><b>10.1.7</b> In case of violated assumptions</a></li>
+<li class="chapter" data-level="10.1.8" data-path="correlation.html"><a href="correlation.html#additional-information-4"><i class="fa fa-check"></i><b>10.1.8</b> Additional information</a></li>
+<li class="chapter" data-level="10.1.9" data-path="correlation.html"><a href="correlation.html#your-turn-8"><i class="fa fa-check"></i><b>10.1.9</b> Your turn!</a></li>
 </ul></li>
 <li class="chapter" data-level="10.2" data-path="regression.html"><a href="regression.html"><i class="fa fa-check"></i><b>10.2</b> Regression</a>
 <ul>
@@ -382,7 +389,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="10.3.5" data-path="general-linear-model.html"><a href="general-linear-model.html#one-way-anova-as-a-regression"><i class="fa fa-check"></i><b>10.3.5</b> One-way ANOVA as a regression</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>11</b> References</a></li>
+<li class="appendix"><span><b>Appendices</b></span></li>
+<li class="chapter" data-level="A" data-path="answers.html"><a href="answers.html"><i class="fa fa-check"></i><b>A</b> Answers</a>
+<ul>
+<li class="chapter" data-level="A.1" data-path="answers-to-5-3-power.html"><a href="answers-to-5-3-power.html"><i class="fa fa-check"></i><b>A.1</b> Answers to 5.3 Power</a></li>
+<li class="chapter" data-level="A.2" data-path="answers-to-7-1-one-sample-t-test.html"><a href="answers-to-7-1-one-sample-t-test.html"><i class="fa fa-check"></i><b>A.2</b> Answers to 7.1 one-sample t-test</a></li>
+<li class="chapter" data-level="A.3" data-path="answers-to-7-2-independent-samples-t-test.html"><a href="answers-to-7-2-independent-samples-t-test.html"><i class="fa fa-check"></i><b>A.3</b> Answers to 7.2 independent samples t-test</a></li>
+<li class="chapter" data-level="A.4" data-path="answers-to-7-3-dependent-t-test.html"><a href="answers-to-7-3-dependent-t-test.html"><i class="fa fa-check"></i><b>A.4</b> Answers to 7.3 dependent t-test</a></li>
+<li class="chapter" data-level="A.5" data-path="answers-to-8-1-goodness-of-fit-test.html"><a href="answers-to-8-1-goodness-of-fit-test.html"><i class="fa fa-check"></i><b>A.5</b> Answers to 8.1 goodness of fit test</a></li>
+<li class="chapter" data-level="A.6" data-path="answers-to-8-2-chi-square-test-of-independence.html"><a href="answers-to-8-2-chi-square-test-of-independence.html"><i class="fa fa-check"></i><b>A.6</b> Answers to 8.2 chi-square test of independence</a></li>
+<li class="chapter" data-level="A.7" data-path="answers-to-9-1-one-way-anova.html"><a href="answers-to-9-1-one-way-anova.html"><i class="fa fa-check"></i><b>A.7</b> Answers to 9.1 one-way ANOVA</a></li>
+<li class="chapter" data-level="A.8" data-path="answers-to-9-2-finding-group-differences.html"><a href="answers-to-9-2-finding-group-differences.html"><i class="fa fa-check"></i><b>A.8</b> Answers to 9.2 finding group differences</a></li>
+<li class="chapter" data-level="A.9" data-path="answers-to-9-3-repeated-measures-anova.html"><a href="answers-to-9-3-repeated-measures-anova.html"><i class="fa fa-check"></i><b>A.9</b> Answers to 9.3 repeated measures ANOVA</a></li>
+<li class="chapter" data-level="A.10" data-path="answers-to-10-1-correlation.html"><a href="answers-to-10-1-correlation.html"><i class="fa fa-check"></i><b>A.10</b> Answers to 10.1 correlation</a></li>
+<li class="chapter" data-level="A.11" data-path="answers-to-10-2-regression.html"><a href="answers-to-10-2-regression.html"><i class="fa fa-check"></i><b>A.11</b> Answers to 10.2 regression</a></li>
+</ul></li>
+<li class="chapter" data-level="B" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>B</b> References</a></li>
 <li class="divider"></li>
 <li><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/" 
     target="blank"><img alt="Creative Commons License" 
@@ -408,8 +430,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="power" class="section level2" number="5.3">
 <h2><span class="header-section-number">5.3</span> Power</h2>
-<p><strong>Power</strong> is the probability that you will observe a significance effect if there is a true effect. In other words, power is the probability of a statistically significant result assuming the alternative hypothesis is true. Power can range from 0-100%, but typically people suggest setting it at 80%. However, in practice, power is often far lower than 80%, something we’ll investigate in the final section of this chapter and in the homework.</p>
-<p>Let’s compare this to our definition of the p-value: the probability of observing data that is as extreme or more extreme than the data you have observed, assuming the null hypothesis is true.</p>
+<p><strong>Power</strong> is the probability that you will observe a significance effect if there is a true effect. In other words, power is the probability of a statistically significant result assuming the alternative hypothesis is true. Let’s compare this to our definition of the p-value: the probability of observing data that is as extreme or more extreme than the data you have observed, assuming the null hypothesis is true.</p>
+<p>Power can range from 0-100%, but typically people set it at 80%. However, in practice, power is often far lower than 80%, something we’ll investigate in the final section of this chapter and in the homework.</p>
 <p>Power is based on the assumption that the alternative hypothesis is true whereas the <em>p</em>-value is based on the assumption that the null hypothesis is true. If we want to increase the likelihood of supporting our alternative hypothesis, then we should be doing all we can to increase our power!</p>
 <p>Let’s start putting all this together.</p>
 <div id="alpha-power-and-error-rates" class="section level3" number="5.3.1">
@@ -450,21 +472,25 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </table>
 <p>Which cell should each of the following items go?</p>
 <ol style="list-style-type: decimal">
-<li>alpha <select class='solveme' data-answer='["A"]'> <option></option> <option>A</option> <option>B</option> <option>C</option> <option>D</option></select></li>
-<li>power <select class='solveme' data-answer='["B"]'> <option></option> <option>A</option> <option>B</option> <option>C</option> <option>D</option></select></li>
-<li>type I error <select class='solveme' data-answer='["A"]'> <option></option> <option>A</option> <option>B</option> <option>C</option> <option>D</option></select></li>
-<li>Type II error <select class='solveme' data-answer='["D"]'> <option></option> <option>A</option> <option>B</option> <option>C</option> <option>D</option></select></li>
-<li>Correct inference #1 <select class='solveme' data-answer='["B"]'> <option></option> <option>A</option> <option>B</option> <option>C</option> <option>D</option></select></li>
-<li>Correct inference #2 <select class='solveme' data-answer='["C"]'> <option></option> <option>A</option> <option>B</option> <option>C</option> <option>D</option></select></li>
+<li>alpha</li>
+<li>power</li>
+<li>type I error</li>
+<li>Type II error</li>
+<li>Correct inference (hint: there are 2!)</li>
 </ol>
 </div>
 <div id="playing-with-alpha-power" class="section level3" number="5.3.2">
 <h3><span class="header-section-number">5.3.2</span> Playing with alpha &amp; power</h3>
-<p>Let’s play around with some numbers and see what happens!</p>
+<p>We’ll eventually see how power, alpha, effect sizes, and sample size all interrelate. For now, let’s examine how alpha and power relate to one another in the context of hypothesis testing.</p>
 <div id="assuming-the-null-hypothesis-is-100-true" class="section level4" number="5.3.2.1">
 <h4><span class="header-section-number">5.3.2.1</span> Assuming the null hypothesis is 100% true</h4>
 <p><em>Assuming the null hypothesis is 100% true</em>, we could fill in the table with actual numbers. Let’s also use the arbitrary values we often set alpha and power at: alpha = 5% and power = 80%. Here’s the resulting table:</p>
 <table>
+<colgroup>
+<col width="63%" />
+<col width="18%" />
+<col width="18%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th></th>
@@ -546,7 +572,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </tr>
 </tbody>
 </table>
-<p>How did we get there? Again: the table must equal to 100% and we specified ahead of time that we thought it was about 50% true for each of the hypotheses, so each column must equal to 50%. 50% of 5% is 2.5% and 50% of 80% is 40%. We then fill out the bottom row based on arithmetic.</p>
+<p>How did we get there? Again: the table must equal to 100% and we specified ahead of time that we thought it was about 50% true for each of the hypotheses, so each column must equal to 50%. 50% of 5% (alpha) is 2.5% and 50% of 80% (power) is 40%. We then fill out the bottom row based on arithmetic.</p>
 <p>Imagine this were your study and you got a significant <em>p</em>-value. What could you conclude? Either you reject the null hypothesis or fail to reject the null hypothesis. But which one? In reality, we never know, but there are things we can do to increase the likelihood that our statistically significant result is because the alternative hypothesis is true and not the null hypothesis.</p>
 <p>Right now, based on the values we have set (alpha = 5% and power = 80%), it is <em>16 times more likely</em> that the alternative hypothesis is true than the null hypothesis is true (40/2.5 = 16). You might be fine with that, but what can we do to increase this likelihood?</p>
 </div>
@@ -574,7 +600,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </tr>
 </tbody>
 </table>
-<p>Now it is <em>19 times more likely</em> (47.5/2.5 = 19) that the alternative hypothesis is true than the null hypothesis is true. Awesome! We have now discovered that increasing power increases the likelihood our alternative hypothesis is true.</p>
+<p>Now it is <em>19 times more likely</em> (47.5/2.5 = 19) that the alternative hypothesis is true than the null hypothesis is true. Awesome! We have now discovered that increasing power increases the likelihood our alternative hypothesis is true if we get a statistically significant result.</p>
 </div>
 <div id="decreasing-alpha" class="section level4" number="5.3.2.5">
 <h4><span class="header-section-number">5.3.2.5</span> Decreasing alpha</h4>
@@ -600,12 +626,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </tr>
 </tbody>
 </table>
-<p>Now it is <em>80 times more likely</em> (40/.5 = 80) that the alternative hypothesis is true than the null hypothesis is true. Awesome! We have now discovered that decreasing alpha increases the likelihood our alternative hypothesis is true.</p>
+<p>Now it is <em>80 times more likely</em> (40/.5 = 80) that the alternative hypothesis is true than the null hypothesis is true. Awesome! We have now discovered that decreasing alpha increases the likelihood our alternative hypothesis is true if we get a statistically significant result.</p>
 </div>
 <div id="your-turn-increasing-power-and-decreasing-alpha" class="section level4" number="5.3.2.6">
 <h4><span class="header-section-number">5.3.2.6</span> Your turn: Increasing power AND decreasing alpha</h4>
-<p>Try both of them. Fill out the table on your own. Then fill in the blank:</p>
-<p>When we assume the null and alternative hypotheses are 50% likely each, and we set our alpha to 1% and our power to 95%, it is <input class='solveme nospaces' size='2' data-answer='["95"]'/> times more likely that the alternative hypothesis is true than the null hypothesis is true.</p>
+<p>Let’s see what happens when we both increase power AND decrease alpha. Fill out the table on your own. When we assume the null and alternative hypotheses are 50% likely each, and we set our alpha to 1% and our power to 95%, how much more likely is it that the alternative hypothesis is true than the null hypothesis is true?</p>
 
 </div>
 </div>
@@ -701,7 +726,7 @@ window.onload = function() {
         </div>
       </div>
 <a href="alpha-p-values.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="sample-size.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="sample-size-power-analysis.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -724,6 +749,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"],
 "google": false
 },

@@ -26,21 +26,15 @@ Because we do not have a within-group IV, we will select the ANOVA analysis. Mov
 
 Let's go through the output (check that your output matches!) and then discuss how to write up the results in APA format. First, we need to check assumptions. The Levene's test and Shapiro-Wilk's test are shown below. We can see that we meet the assumption of normality but fail to meet the assumption of homogeneity of variance. Unfortunately, we cannot perform a Welch's F-test with more than one independent factorial so we will note this failed assumption and move on.
 
-```{r echo = FALSE, fig.cap = "Assumption check results in jamovi"}
-knitr::include_graphics("images/06-factorial-anova/independent-factorial_assumptions.png")
-```
+![](images/06-factorial-anova/independent-factorial_assumptions.png)
 
 Let's look at the main results next. We got three lines of results in addition to the typical residuals (error). The first two lines are our main effects of `attend` and `reading` on grades. The p-values for both are statistically significant indicating attend affects grades and reading affects grades. However, it also added an interaction term of `attend * reading`, which is not statistically significant. This means we do not have an interaction between attend and reading on grades. Interactions will be discussed in more detail in the next section.
 
-```{r echo = FALSE, fig.cap = "Independent factorial ANOVA results in jamovi"}
-knitr::include_graphics("images/06-factorial-anova/independent-factorial_results.png")
-```
+![](images/06-factorial-anova/independent-factorial_results.png)
 
 Although we could simply look at the means to know whether attending or reading had higher grades than not attending or not reading because there are only two conditions, we can also look at the post hoc tests and definitely need to look at them if we have three or more conditions per IV. These are shown below. Because the mean differences are negative, we can determine that the second group had higher means than the second group. We can confirm that with the estimated marginal means (not shown here).
 
-```{r echo = FALSE, fig.cap = "Post hoc results in jamovi"}
-knitr::include_graphics("images/06-factorial-anova/independent-factorial_posthoc.png")
-```
+![](images/06-factorial-anova/independent-factorial_posthoc.png)
 
 Last, we can write-up our results!
 
@@ -54,9 +48,7 @@ However, by default they will include them. If you have 2-3 IVs, it may be reaso
 
 jamovi can provide a plot of your interaction, which can be helpful to help interpret your results. Below is the plot for our interaction of attendance on reading.
 
-```{r echo = FALSE, fig.cap = "Interaction plot in jamovi"}
-knitr::include_graphics("images/06-factorial-anova/independent-factorial_plot.png")
-```
+![](images/06-factorial-anova/independent-factorial_plot.png)
 
 The parallel lines that are sloping upward tell me there is a significant main effect for both IVs but no interaction. How do I know that? With two variables, there are only so many interaction shapes possible. [This website](https://courses.washington.edu/smartpsy/interactions.htm) does a fantastic time showing you all 8 combinations of the three effects (2 main effects and 1 interaction effect). Spend some time looking through it and familiarizing yourself with the plots!
 
@@ -84,27 +76,19 @@ In jamovi, select Repeated Measures ANOVA under the ANOVA analysis option. Here 
 
 Now let's go over selected output. First, we need to check our assumption of sphericity. All the Mauchly's W's are not statistically significant so we satisfy the assumption of sphericity and do not need to apply any sphericity corrections.
 
-```{r echo = FALSE, fig.cap = "Assumption testing in jamovi"}
-knitr::include_graphics("images/06-factorial-anova/rm-factorial_assumption.png")
-```
+![](images/06-factorial-anova/rm-factorial_assumption.png)
 
 Next let's look at the within subjects effects table. Remember, we do not need to worry about the between subjects effects table because we do not have one; it will be used in the mixed factorial design below. Overall, we see a significant main effect of area, a significant main effect of time, and a significant interaction effect of both area and time. Neat!
 
-```{r echo = FALSE, fig.cap = "Repeated measures ANOVA in jamovi"}
-knitr::include_graphics("images/06-factorial-anova/rm-factorial_results.png")
-```
+![](images/06-factorial-anova/rm-factorial_results.png)
 
 Next, we can look at post hoc comparisons because the main effects were all statistically significant. For area, we can see that client and action had significantly higher means than product, but there was no difference between client and action. Furthermore, post-intervention performance was significantly higher than pre-intervention.
 
-```{r echo = FALSE, fig.cap = "Post hoc tests in jamovi"}
-knitr::include_graphics("images/06-factorial-anova/rm-factorial_tukey.png")
-```
+![](images/06-factorial-anova/rm-factorial_tukey.png)
 
 Last, let's look at the interaction to get a sense of what the interaction looks like. It appears that although there are no differences between pre- and post-intervention for product, there are significant differences from pre- to post-intervention for both client and action. To be more specific on where the statistically significant differences are, you can also ask for post hoc tests for the interaction term. This is where including a plot can be very helpful for your audience!
 
-```{r echo = FALSE, fig.cap = "Interaction plot in jamovi"}
-knitr::include_graphics("images/06-factorial-anova/rm-factorial_interaction.png")
-```
+![](images/06-factorial-anova/rm-factorial_interaction.png)
 
 Now we have everything we need (in addition to the estimated marginal means) and can write-up our results.
 
@@ -140,27 +124,19 @@ Now let's go through the output!
 
 First, as always we check our assumption of sphericity. Mauchly's W is not statistically significant (*p* = .073) so we satisfy the assumption of sphericity. We do not need to apply a sphericity correction.
 
-```{r echo = FALSE, fig.cap = "Assumption checking in jamovi"}
-knitr::include_graphics("images/06-factorial-anova/mixed_assumptions.png")
-```
+![](images/06-factorial-anova/mixed_assumptions.png)
 
 Next, we interpret out output! This time we interpret both our within subjects effects and between subjects effects tables. In the within subjects effects table, our main effect of reward is statistically significant. In the between subjects effects table, our main effect of condition is statistically significant. However, in the within subjects effects table, there is no statistically significant interaction effect of reward on condition.
 
-```{r echo = FALSE, fig.cap = "Mixed factorial ANOVA in jamovi"}
-knitr::include_graphics("images/06-factorial-anova/mixed_results.png")
-```
+![](images/06-factorial-anova/mixed_results.png)
 
 To understand where the differences lie between conditions or reward preferences, we look to our post hoc tests. For reward, it looks like there is only a significant difference between food and music (*p* = .009). For condition, it looks like cravings were higher in the fasting group than in the control group. We can look at the estimated marginal means tables to find the actual Means of the conditions and see the plots.
 
-```{r echo = FALSE, fig.cap = "Post hoc tests in jamovi"}
-knitr::include_graphics("images/06-factorial-anova/mixed_posthoc.png")
-```
+![](images/06-factorial-anova/mixed_posthoc.png)
 
 We can look at the interaction plot, but notice that the lines are parallel which is a good indication that there is no significant interaction.
 
-```{r echo = FALSE, fig.cap = "Interaction plot in jamovi"}
-knitr::include_graphics("images/06-factorial-anova/mixed_interaction.png")
-```
+![](images/06-factorial-anova/mixed_interaction.png)
 
 Lastly, we can write up the results in APA style!
 

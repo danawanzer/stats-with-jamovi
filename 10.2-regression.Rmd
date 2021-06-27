@@ -105,17 +105,13 @@ Other assumptions require testing:
 
 Under Data Summary, you should have a table with Cook's distance. This is one way we can check for *multivariate outliers*. This examines whether any one *line* of data is an outlier, not just one data *point*. In general, Cook's distances greater than 1 indicate a multivariate outlier. Our Cook's distances are very small, so we do not have a problem with outliers.
 
-```{r echo = FALSE, fig.cap = "Checking for multivariate outliers in jamovi"}
-knitr::include_graphics("images/13-regression/regression-cooks.png")
-```
+![](images/13-regression/regression-cooks.png)
 
 ##### Normality of the residuals
 
 The regression analysis in jamovi allows us to check normality with the Shapiro-Wilk's test and the Q-Q plot of our residuals. We've seen this multiple times, so by now it should be well-ingrained that because Shapiro-Wilk's is not statistically significant and our data points fall along the diagonal line that we satisfy the assumption of normally distributed residuals.
 
-```{r echo = FALSE, fig.cap = "Checking the normality of residuals in jamovi"}
-knitr::include_graphics("images/13-regression/regression-normality.png")
-```
+![](images/13-regression/regression-normality.png)
 
 ##### Linearity & homoscedasticity
 
@@ -125,17 +121,13 @@ To examine linearity and homoscedasticity, two of the assumptions of regression,
 
 **Homoscedasticity**: If the graph seems to funnel (e.g., widely dispersed on one end of the x-axis and narrowly dispersed on the other end), then that suggests you fail the assumption of homoscedasticity. Our data doesn't seem to be wider at any point, so we satisfy the assumption of homoscedasticity.
 
-```{r echo = FALSE, fig.cap = "Checking linearity and homoscedasticity residuals in jamovi", fig.show='hold',fig.align='center', out.width = "49%"}
-knitr::include_graphics(c("images/13-regression/regression-residuals.png"))
-```
+![](images/13-regression/regression-residuals.png)
 
 ##### Independence of residuals
 
 The Durbin-Watson test for autocorrelction tests for independence of residuals. We want the Durbin-Watson value to be as close to 2 as possible. Values less than 1 or greater than 3 are problematic and indicate we are violating this assumption. In our case, the DW test statistic is 2.12 and so very close to 2. Furthermore, they provide a p-value and the p-value is greater than .05 so the test statistic is not statistically significant, further supporting that we meet the assumption that our residuals are independent.
 
-```{r echo = FALSE, fig.cap = "Checking independence of residuals in jamovi"}
-knitr::include_graphics("images/13-regression/regression-durbinwatson.png")
-```
+![](images/13-regression/regression-durbinwatson.png)
 
 ##### Multicollinearity
 
@@ -151,9 +143,7 @@ However, to test for *multicollinearity*, we examine the VIF and Tolerance value
 
 In our data, our VIF is 1.65 and Tolerance is .61, so we satisfy the assumption of no multicollinearity.
 
-```{r echo = FALSE, fig.cap = "Checking multicollinearity in jamovi"}
-knitr::include_graphics("images/13-regression/regression-multicollinearity.png")
-```
+![](images/13-regression/regression-multicollinearity.png)
 
 Now that we met all the assumptions, we can interpret our results!
 
@@ -179,9 +169,7 @@ I'm not going to show the set-up figure here because there's just too much to sh
 
 ### Interpret results
 
-```{r echo = FALSE, fig.cap = "Regression results in jamovi"}
-knitr::include_graphics("images/13-regression/regression-results.png")
-```
+![](images/13-regression/regression-results.png)
 
 The first table shows us our overall model results.
 
@@ -217,15 +205,11 @@ Note that in many of these write-ups I did not include anything about assumption
 
 Hierarchical regression is exactly the same as multiple regression but now we have multiple models or blocks. You can specify hierarchical regression using the Model Builder drop-down menu in jamovi. Let's try an example where we have `baby.sleep` as Block 1 and `dan.sleep` as Block 2. In addition, using the Model Fit drop-down menu you should check `AIC` and `BIC` in addition to the previously selected options. Your setup should look something like this:
 
-```{r echo = FALSE, fig.cap = "Hierarchical regression setup in jamovi"}
-knitr::include_graphics("images/13-regression/hierarchical-setup.png")
-```
+![](images/13-regression/hierarchical-setup.png)
 
 Our model results now change. We now have two lines for the Model Fit Measures and a Model Comparisons table. In addition, under Model Specific Results, we have a drop-down menu to specify which model we want to examine.
 
-```{r echo = FALSE, fig.cap = "Hierarchical regression results in jamovi"}
-knitr::include_graphics("images/13-regression/hierarchical-results.png")
-```
+![](images/13-regression/hierarchical-results.png)
 
 Let's interpret. Our first model (with just `baby.sleep` is significant), *F* (1, 98) = 46.18, *p* \< .001, *adjusted* $R^2$ = .31. So is our second model (that has both `baby.sleep` and `dan.sleep`), *F* (2, 97) = 215.24, *p* \< .001, *adjusted* $R^2$ = .81. There was a significant improvement between model 1 and model 2, $F_{change}$ (1, 97) = 261.52, *p* \< .001, $\Delta R^2$ = .50. The significant improvement means that the predictors added to model 2 significantly predict our DV *above and beyond* the predictors in model 1.
 
@@ -245,9 +229,7 @@ However, if we have a nominal variable with more than two categories, then we ne
 
 The dataset we're using doesn't currently have a categorical variable, so I'm going to manually create one for demonstration purposes. I'm going to transform the `day` variable, which is the day of the data collection from 1 to 100, into a new variable that indicates whether the day is 1-32, 33-65, or 66-100, which is roughly 3 equal groups. You can see the transformation here:
 
-```{r echo = FALSE, fig.cap = "Transforming day into a categorical variable in jamovi"}
-knitr::include_graphics("images/13-regression/transform.png")
-```
+![](images/13-regression/transform.png)
 
 Let's add that to our regression model and just make it a simple multiple regression model. Three independent variables (`dan.sleep`, `baby.sleep`, and our new `day_3groups` variable) all in one block.
 
@@ -258,9 +240,7 @@ Now we need to go to the Reference Levels drop-down menu. We have two options:
 
 The other option you have is what is considered your reference level. It will default to your first level in your dataset (in this case, day_3Groups = 1) but you can change to any other level in your variable. I set my reference level to be 1, the default, and I know that because the day variable compares both levels 2 and 3 to 1. Our intercept (126.02) then is the value of grumpiness if Dan and the baby slept 0 hours in the first 32 days of our data collection.
 
-```{r echo = FALSE, fig.cap = "Regression with a categorical predictor results in jamovi"}
-knitr::include_graphics("images/13-regression/regression-categorical.png")
-```
+![](images/13-regression/regression-categorical.png)
 
 The first line of day - 3_Groups (2 -- 1) is then the difference in Dan's grumpiness between the second 1/3 of days (days 33-65) and the first 1/3 of days (days 1-32). It is not statistically significant, so there is no difference in Dan's grumpiness between the first and second 1/3 of days. Because the estimate is negative, that indicates that the first 1/3 of days have a higher estimated mean of Dan's grumpiness, but again it's not statistically significant.
 
@@ -268,9 +248,7 @@ The second line of day - 3_Groups (3 -- 1) is the difference in Dan's grumpiness
 
 In this case, the Estimated Marginal Means can be very helpful for us to interpret the model coefficients. We can get the estimated marginal means of each group on the DV at the average levels of the other two variables.
 
-```{r echo = FALSE, fig.cap = "Regression with a categorical predictor results in jamovi"}
-knitr::include_graphics("images/13-regression/regression-categorical-EMM.png")
-```
+![](images/13-regression/regression-categorical-EMM.png)
 
 ### Your turn!
 
@@ -280,28 +258,28 @@ To get the most out of these exercises, try to first find out the answer on your
 
 1.  **Perform a multiple regression examining how `English`**, **`Reading` and `Writing`, as well as `Gender` relate to the dependent variable `Math`.**
 
-    -   Do you have any significant outliers? `r mcq(c("yes", answer = "no"))`
+    -   Do you have any significant outliers?
 
-    -   Are your residuals normally distributed? `r mcq(c(answer = "yes", "no"))`
+    -   Are your residuals normally distributed?
 
-    -   Do you satisfy the assumption of linearity and homoscedasticity of your residuals (just check the Fitted residual plot)? `r mcq(c(answer = "yes", "no"))`
+    -   Do you satisfy the assumption of linearity and homoscedasticity of your residuals (just check the Fitted residual plot)?
 
-    -   Do you meet the assumption of independent residuals? `r mcq(c(answer = "yes", "no"))`
+    -   Do you meet the assumption of independent residuals?
 
-    -   Do you meet the assumption of no multicollinearity? `r mcq(c(answer = "yes", "no"))`
+    -   Do you meet the assumption of no multicollinearity?
 
-    -   Can you perform a regression with this data? `r mcq(c(answer = "yes", "no"))`
+    -   Can you perform a regression with this data?
 
-    -   What is your adjusted R-squared, rounded to two decimal places: `r fitb(".31")`
+    -   What is your adjusted R-squared, rounded to two decimal places?
 
-    -   Is the overall model statistically significant? `r mcq(c(answer = "yes", "no"))`
+    -   Is the overall model statistically significant?
 
-    -   Is `English` statistically significant? `r mcq(c("yes", answer = "no"))`
+    -   Is `English` statistically significant?
 
-    -   Is `Reading` statistically significant? `r mcq(c(answer = "yes", "no"))`
+    -   Is `Reading` statistically significant?
 
-    -   Is `Writing` statistically significant? `r mcq(c(answer = "yes", "no"))`
+    -   Is `Writing` statistically significant?
 
-    -   Is `Gender` statistically significant? `r mcq(c(answer = "yes", "no"))`
+    -   Is `Gender` statistically significant?
 
-    -   For `Gender`, do male (Gender = 0) or female (Gender = 1) students have higher math scores? `r mcq(c(answer = "male", "female"))`
+    -   For `Gender`, do male (Gender = 0) or female (Gender = 1) students have higher math scores?

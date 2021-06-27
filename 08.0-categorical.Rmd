@@ -7,14 +7,14 @@ library(viridis)
 options(knitr.graphics.auto_pdf = TRUE)
 ```
 
-The chi-quare is a categorical data analysis which is simply data analysis with categorical data. It's usually nominal data, although there are a couple tests we may use with ordinal data. There are two basic types of chi-square tests we'll be covering: 
+The chi-quare is a categorical data analysis which is simply data analysis with categorical data. It's usually nominal data, although there are a couple tests we may use with ordinal data. There are two basic types of chi-square tests we'll be covering:
 
 1.  $\chi^2$ **goodness-of-fit**: used with one variable to find if the observed frequencies match the expected frequencies
 
 2.  $\chi^2$ **test of independence (or association)**: used with two variables to find if the observed frequencies match the expected frequencies. In other words, are the two nominal variables independent or associated with one another?
 
-    1.  **Fisher's exact test**: This is an alternative to the $\chi^2$test of independence that we use when our frequencies are small.
+    1.  **Fisher's exact test**: This is an alternative to the $\chi^2$ test of independence that we use when our frequencies are small.
 
-    2.  **McNemar's test**: This is an alternative to the $\chi^2$test of independence that we have a 2x2 repeated-measures design. For example, perhaps we examine pass/fail rates before and after a training.
+    2.  **McNemar's test**: This is an alternative to the $\chi^2$ test of independence that we have a 2x2 repeated-measures design. For example, perhaps we examine pass/fail rates before and after a training.
 
-Notice how we don't have an assumption about a normal distribution. For that reason, these are all *non-parametric statistics*.
+Because these tests are all with categorical data, there are no assumptions about the distribution of the data. For that reason, these are all *non-parametric statistics*.

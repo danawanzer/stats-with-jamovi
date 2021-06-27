@@ -1,4 +1,4 @@
-## Sample size
+## Sample size & power analysis
 
 Sample size is the total number of participants in a study. In a between-subjects study, we often describe how many participants are in each group; although it is best if there are equal numbers in each group, there are times when that may not be the case.
 
@@ -54,7 +54,7 @@ This assumes that an effect size of .8 is the smallest effect size of interest. 
 | 0.809 \< d = 1.041 |   80% -- 95%    |    Probably detect     |
 |     d = 1.041      |      ≥95%       |  Almost surely detect  |
 
-In other words, we are almost sure to detect really large effect sizes, but we'll likely miss really small effect sizes. This gives us a good hint to the relationship among BEAN: holding alpha and sample size constant, as effect sizes go up power goes up.
+In other words, we are almost sure to detect really large effect sizes (d \> 1.04), but we'll likely miss really small effect sizes (d \< .56). This gives us a good hint to the relationship among BEAN: holding alpha and sample size constant, as effect sizes go up power goes up.
 
 The Power Contour plot can show a bit more about how power (color), effect size (y-axis) and sample size (x-axis) all relate to one another. Notice how the x-axis is not linear. We are learning some more about the relationship among BEAN: increasing our sample size increases our power, holding alpha and effect size constant.
 

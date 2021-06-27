@@ -1,4 +1,4 @@
-## General Linear Model 
+## General Linear Model
 
 ```{r ind-t_setup, echo = FALSE, message=FALSE}
 library(tidyverse)
@@ -21,25 +21,19 @@ Imagine we want to see how English and Reading are related. We would do a Pearso
 
 Notice how the Beta coefficient in the regression output is the *standardized coefficient* and that the correlation is the *standardized covariance*. Therefore, their values (and p-values) match identically!
 
-```{r echo = FALSE, fig.cap = "Correlation as regression"}
-knitr::include_graphics("images/14-regression-wrap-up/correlation.png")
-```
+![](images/14-regression-wrap-up/correlation.png)
 
 ### Independent t-test as a regression
 
 Next let's look at how gender is related to reading scores. First, our t-statistic and p-value match directly from the independent t-test to the linear regression coefficient. Second, our unstandardized estimate in the regression *is exactly the mean difference between the two genders*!
 
-```{r echo = FALSE, fig.cap = "Independent t-test as regression"}
-knitr::include_graphics("images/14-regression-wrap-up/t-test.png")
-```
+![](images/14-regression-wrap-up/t-test.png)
 
 ### Dependent t-test as a regression
 
 The dependent t-test can't be performed as a regression in the base jamovi, but it can if we run it in the Rj editor using the stats package. The regression formula for a dependent t-test is $y_1 -y_0 = 1$ and jamovi doesn't like it if there are not IVs, just an intercept. However, the stats package doesn't mind! Notice that our t-statistic, df, and p-value are exactly the same, and that the intercept estimate and SE match the mean difference in the paired samples t-test.
 
-```{r echo = FALSE, fig.cap = "Dependent t-test as regression"}
-knitr::include_graphics("images/14-regression-wrap-up/dependent_t-test.png")
-```
+![](images/14-regression-wrap-up/dependent_t-test.png)
 
 ### One-way ANOVA as a regression
 

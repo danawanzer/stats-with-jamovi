@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>7.3 Dependent t-test | Statistics with jamovi</title>
   <meta name="description" content="This is the website for PSYC 290 and PSYC 790 at the University of Wisconsin-Stout, taught by Dana Wanzer." />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
   <meta property="og:title" content="7.3 Dependent t-test | Statistics with jamovi" />
   <meta property="og:type" content="book" />
@@ -32,7 +32,7 @@
   
 <link rel="prev" href="independent-t-test.html"/>
 <link rel="next" href="chi-square.html"/>
-<script src="libs/header-attrs-2.6/header-attrs.js"></script>
+<script src="libs/header-attrs-2.9/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -50,12 +50,15 @@
 
 
 
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
@@ -116,6 +119,7 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+
 <link rel="stylesheet" href="include/psyteachr.css" type="text/css" />
 <link rel="stylesheet" href="include/style.css" type="text/css" />
 </head>
@@ -136,13 +140,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a></li>
 <li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
 <ul>
-<li class="chapter" data-level="1.1" data-path="psyc-290.html"><a href="psyc-290.html"><i class="fa fa-check"></i><b>1.1</b> PSYC 290</a>
-<ul>
-<li class="chapter" data-level="1.1.1" data-path="psyc-290.html"><a href="psyc-290.html#learning-objectives"><i class="fa fa-check"></i><b>1.1.1</b> Learning objectives</a></li>
-<li class="chapter" data-level="1.1.2" data-path="psyc-290.html"><a href="psyc-290.html#weekly-schedule"><i class="fa fa-check"></i><b>1.1.2</b> Weekly Schedule</a></li>
-<li class="chapter" data-level="1.1.3" data-path="psyc-290.html"><a href="psyc-290.html#late-assignments-and-re-doing-homework"><i class="fa fa-check"></i><b>1.1.3</b> Late assignments and re-doing homework</a></li>
-<li class="chapter" data-level="1.1.4" data-path="psyc-290.html"><a href="psyc-290.html#getting-help-in-this-class"><i class="fa fa-check"></i><b>1.1.4</b> Getting help in this class</a></li>
-</ul></li>
+<li class="chapter" data-level="1.1" data-path="getting-help-in-this-class.html"><a href="getting-help-in-this-class.html"><i class="fa fa-check"></i><b>1.1</b> Getting help in this class</a></li>
 <li class="chapter" data-level="1.2" data-path="dana-your-instructor.html"><a href="dana-your-instructor.html"><i class="fa fa-check"></i><b>1.2</b> Dana, your instructor</a></li>
 <li class="chapter" data-level="1.3" data-path="navigating-this-websitebook.html"><a href="navigating-this-websitebook.html"><i class="fa fa-check"></i><b>1.3</b> Navigating this website/book</a>
 <ul>
@@ -214,11 +212,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.3.1" data-path="power.html"><a href="power.html#alpha-power-and-error-rates"><i class="fa fa-check"></i><b>5.3.1</b> Alpha, power, and error rates</a></li>
 <li class="chapter" data-level="5.3.2" data-path="power.html"><a href="power.html#playing-with-alpha-power"><i class="fa fa-check"></i><b>5.3.2</b> Playing with alpha &amp; power</a></li>
 </ul></li>
-<li class="chapter" data-level="5.4" data-path="sample-size.html"><a href="sample-size.html"><i class="fa fa-check"></i><b>5.4</b> Sample size</a>
+<li class="chapter" data-level="5.4" data-path="sample-size-power-analysis.html"><a href="sample-size-power-analysis.html"><i class="fa fa-check"></i><b>5.4</b> Sample size &amp; power analysis</a>
 <ul>
-<li class="chapter" data-level="5.4.1" data-path="sample-size.html"><a href="sample-size.html#bean-power-analysis"><i class="fa fa-check"></i><b>5.4.1</b> BEAN: Power analysis</a></li>
-<li class="chapter" data-level="5.4.2" data-path="sample-size.html"><a href="sample-size.html#power-analysis-example-1"><i class="fa fa-check"></i><b>5.4.2</b> Power analysis example #1</a></li>
-<li class="chapter" data-level="5.4.3" data-path="sample-size.html"><a href="sample-size.html#play-with-jpower"><i class="fa fa-check"></i><b>5.4.3</b> Play with jpower</a></li>
+<li class="chapter" data-level="5.4.1" data-path="sample-size-power-analysis.html"><a href="sample-size-power-analysis.html#bean-power-analysis"><i class="fa fa-check"></i><b>5.4.1</b> BEAN: Power analysis</a></li>
+<li class="chapter" data-level="5.4.2" data-path="sample-size-power-analysis.html"><a href="sample-size-power-analysis.html#power-analysis-example-1"><i class="fa fa-check"></i><b>5.4.2</b> Power analysis example #1</a></li>
+<li class="chapter" data-level="5.4.3" data-path="sample-size-power-analysis.html"><a href="sample-size-power-analysis.html#play-with-jpower"><i class="fa fa-check"></i><b>5.4.3</b> Play with jpower</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="inferential-statistics.html"><a href="inferential-statistics.html"><i class="fa fa-check"></i><b>6</b> Inferential statistics</a>
@@ -247,33 +245,36 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.1" data-path="one-sample-t-test.html"><a href="one-sample-t-test.html"><i class="fa fa-check"></i><b>7.1</b> One sample t-test</a>
 <ul>
 <li class="chapter" data-level="7.1.1" data-path="one-sample-t-test.html"><a href="one-sample-t-test.html#overview"><i class="fa fa-check"></i><b>7.1.1</b> Overview</a></li>
-<li class="chapter" data-level="7.1.2" data-path="one-sample-t-test.html"><a href="one-sample-t-test.html#look-at-the-data"><i class="fa fa-check"></i><b>7.1.2</b> Look at the data</a></li>
-<li class="chapter" data-level="7.1.3" data-path="one-sample-t-test.html"><a href="one-sample-t-test.html#check-assumptions"><i class="fa fa-check"></i><b>7.1.3</b> Check assumptions</a></li>
-<li class="chapter" data-level="7.1.4" data-path="one-sample-t-test.html"><a href="one-sample-t-test.html#perform-the-test"><i class="fa fa-check"></i><b>7.1.4</b> Perform the test</a></li>
-<li class="chapter" data-level="7.1.5" data-path="one-sample-t-test.html"><a href="one-sample-t-test.html#interpret-results"><i class="fa fa-check"></i><b>7.1.5</b> Interpret results</a></li>
-<li class="chapter" data-level="7.1.6" data-path="one-sample-t-test.html"><a href="one-sample-t-test.html#in-case-of-violated-assumptions"><i class="fa fa-check"></i><b>7.1.6</b> In case of violated assumptions</a></li>
-<li class="chapter" data-level="7.1.7" data-path="one-sample-t-test.html"><a href="one-sample-t-test.html#additional-information"><i class="fa fa-check"></i><b>7.1.7</b> Additional information</a></li>
-<li class="chapter" data-level="7.1.8" data-path="one-sample-t-test.html"><a href="one-sample-t-test.html#your-turn"><i class="fa fa-check"></i><b>7.1.8</b> Your turn!</a></li>
+<li class="chapter" data-level="7.1.2" data-path="one-sample-t-test.html"><a href="one-sample-t-test.html#specify-the-hypotheses"><i class="fa fa-check"></i><b>7.1.2</b> Specify the hypotheses</a></li>
+<li class="chapter" data-level="7.1.3" data-path="one-sample-t-test.html"><a href="one-sample-t-test.html#look-at-the-data"><i class="fa fa-check"></i><b>7.1.3</b> Look at the data</a></li>
+<li class="chapter" data-level="7.1.4" data-path="one-sample-t-test.html"><a href="one-sample-t-test.html#check-assumptions"><i class="fa fa-check"></i><b>7.1.4</b> Check assumptions</a></li>
+<li class="chapter" data-level="7.1.5" data-path="one-sample-t-test.html"><a href="one-sample-t-test.html#perform-the-test"><i class="fa fa-check"></i><b>7.1.5</b> Perform the test</a></li>
+<li class="chapter" data-level="7.1.6" data-path="one-sample-t-test.html"><a href="one-sample-t-test.html#interpret-results"><i class="fa fa-check"></i><b>7.1.6</b> Interpret results</a></li>
+<li class="chapter" data-level="7.1.7" data-path="one-sample-t-test.html"><a href="one-sample-t-test.html#in-case-of-violated-assumptions"><i class="fa fa-check"></i><b>7.1.7</b> In case of violated assumptions</a></li>
+<li class="chapter" data-level="7.1.8" data-path="one-sample-t-test.html"><a href="one-sample-t-test.html#additional-information"><i class="fa fa-check"></i><b>7.1.8</b> Additional information</a></li>
+<li class="chapter" data-level="7.1.9" data-path="one-sample-t-test.html"><a href="one-sample-t-test.html#your-turn"><i class="fa fa-check"></i><b>7.1.9</b> Your turn!</a></li>
 </ul></li>
 <li class="chapter" data-level="7.2" data-path="independent-t-test.html"><a href="independent-t-test.html"><i class="fa fa-check"></i><b>7.2</b> Independent t-test</a>
 <ul>
 <li class="chapter" data-level="7.2.1" data-path="independent-t-test.html"><a href="independent-t-test.html#overview-1"><i class="fa fa-check"></i><b>7.2.1</b> Overview</a></li>
-<li class="chapter" data-level="7.2.2" data-path="independent-t-test.html"><a href="independent-t-test.html#look-at-the-data-1"><i class="fa fa-check"></i><b>7.2.2</b> Look at the data</a></li>
-<li class="chapter" data-level="7.2.3" data-path="independent-t-test.html"><a href="independent-t-test.html#check-assumptions-1"><i class="fa fa-check"></i><b>7.2.3</b> Check assumptions</a></li>
-<li class="chapter" data-level="7.2.4" data-path="independent-t-test.html"><a href="independent-t-test.html#perform-the-test-1"><i class="fa fa-check"></i><b>7.2.4</b> Perform the test</a></li>
-<li class="chapter" data-level="7.2.5" data-path="independent-t-test.html"><a href="independent-t-test.html#interpret-results-1"><i class="fa fa-check"></i><b>7.2.5</b> Interpret results</a></li>
-<li class="chapter" data-level="7.2.6" data-path="independent-t-test.html"><a href="independent-t-test.html#in-case-of-violated-assumptions-1"><i class="fa fa-check"></i><b>7.2.6</b> In case of violated assumptions</a></li>
-<li class="chapter" data-level="7.2.7" data-path="independent-t-test.html"><a href="independent-t-test.html#your-turn-1"><i class="fa fa-check"></i><b>7.2.7</b> Your turn!</a></li>
+<li class="chapter" data-level="7.2.2" data-path="independent-t-test.html"><a href="independent-t-test.html#specify-your-hypotheses"><i class="fa fa-check"></i><b>7.2.2</b> Specify your hypotheses</a></li>
+<li class="chapter" data-level="7.2.3" data-path="independent-t-test.html"><a href="independent-t-test.html#look-at-the-data-1"><i class="fa fa-check"></i><b>7.2.3</b> Look at the data</a></li>
+<li class="chapter" data-level="7.2.4" data-path="independent-t-test.html"><a href="independent-t-test.html#check-assumptions-1"><i class="fa fa-check"></i><b>7.2.4</b> Check assumptions</a></li>
+<li class="chapter" data-level="7.2.5" data-path="independent-t-test.html"><a href="independent-t-test.html#perform-the-test-1"><i class="fa fa-check"></i><b>7.2.5</b> Perform the test</a></li>
+<li class="chapter" data-level="7.2.6" data-path="independent-t-test.html"><a href="independent-t-test.html#interpret-results-1"><i class="fa fa-check"></i><b>7.2.6</b> Interpret results</a></li>
+<li class="chapter" data-level="7.2.7" data-path="independent-t-test.html"><a href="independent-t-test.html#in-case-of-violated-assumptions-1"><i class="fa fa-check"></i><b>7.2.7</b> In case of violated assumptions</a></li>
+<li class="chapter" data-level="7.2.8" data-path="independent-t-test.html"><a href="independent-t-test.html#your-turn-1"><i class="fa fa-check"></i><b>7.2.8</b> Your turn!</a></li>
 </ul></li>
 <li class="chapter" data-level="7.3" data-path="dependent-t-test.html"><a href="dependent-t-test.html"><i class="fa fa-check"></i><b>7.3</b> Dependent t-test</a>
 <ul>
 <li class="chapter" data-level="7.3.1" data-path="dependent-t-test.html"><a href="dependent-t-test.html#overview-2"><i class="fa fa-check"></i><b>7.3.1</b> Overview</a></li>
-<li class="chapter" data-level="7.3.2" data-path="dependent-t-test.html"><a href="dependent-t-test.html#look-at-the-data-2"><i class="fa fa-check"></i><b>7.3.2</b> Look at the data</a></li>
-<li class="chapter" data-level="7.3.3" data-path="dependent-t-test.html"><a href="dependent-t-test.html#check-assumptions-2"><i class="fa fa-check"></i><b>7.3.3</b> Check assumptions</a></li>
-<li class="chapter" data-level="7.3.4" data-path="dependent-t-test.html"><a href="dependent-t-test.html#perform-the-test-2"><i class="fa fa-check"></i><b>7.3.4</b> Perform the test</a></li>
-<li class="chapter" data-level="7.3.5" data-path="dependent-t-test.html"><a href="dependent-t-test.html#interpreting-results"><i class="fa fa-check"></i><b>7.3.5</b> Interpreting results</a></li>
-<li class="chapter" data-level="7.3.6" data-path="dependent-t-test.html"><a href="dependent-t-test.html#in-case-of-violated-assumptions-2"><i class="fa fa-check"></i><b>7.3.6</b> In case of violated assumptions</a></li>
-<li class="chapter" data-level="7.3.7" data-path="dependent-t-test.html"><a href="dependent-t-test.html#your-turn-2"><i class="fa fa-check"></i><b>7.3.7</b> Your turn!</a></li>
+<li class="chapter" data-level="7.3.2" data-path="dependent-t-test.html"><a href="dependent-t-test.html#specify-your-hypotheses-1"><i class="fa fa-check"></i><b>7.3.2</b> Specify your hypotheses</a></li>
+<li class="chapter" data-level="7.3.3" data-path="dependent-t-test.html"><a href="dependent-t-test.html#look-at-the-data-2"><i class="fa fa-check"></i><b>7.3.3</b> Look at the data</a></li>
+<li class="chapter" data-level="7.3.4" data-path="dependent-t-test.html"><a href="dependent-t-test.html#check-assumptions-2"><i class="fa fa-check"></i><b>7.3.4</b> Check assumptions</a></li>
+<li class="chapter" data-level="7.3.5" data-path="dependent-t-test.html"><a href="dependent-t-test.html#perform-the-test-2"><i class="fa fa-check"></i><b>7.3.5</b> Perform the test</a></li>
+<li class="chapter" data-level="7.3.6" data-path="dependent-t-test.html"><a href="dependent-t-test.html#interpreting-results"><i class="fa fa-check"></i><b>7.3.6</b> Interpreting results</a></li>
+<li class="chapter" data-level="7.3.7" data-path="dependent-t-test.html"><a href="dependent-t-test.html#in-case-of-violated-assumptions-2"><i class="fa fa-check"></i><b>7.3.7</b> In case of violated assumptions</a></li>
+<li class="chapter" data-level="7.3.8" data-path="dependent-t-test.html"><a href="dependent-t-test.html#your-turn-2"><i class="fa fa-check"></i><b>7.3.8</b> Your turn!</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="chi-square.html"><a href="chi-square.html"><i class="fa fa-check"></i><b>8</b> Chi-Square</a>
@@ -281,29 +282,32 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.1" data-path="chi-square-goodness-of-fit.html"><a href="chi-square-goodness-of-fit.html"><i class="fa fa-check"></i><b>8.1</b> Chi-Square Goodness-of-Fit</a>
 <ul>
 <li class="chapter" data-level="8.1.1" data-path="chi-square-goodness-of-fit.html"><a href="chi-square-goodness-of-fit.html#overview-3"><i class="fa fa-check"></i><b>8.1.1</b> Overview</a></li>
-<li class="chapter" data-level="8.1.2" data-path="chi-square-goodness-of-fit.html"><a href="chi-square-goodness-of-fit.html#look-at-the-data-3"><i class="fa fa-check"></i><b>8.1.2</b> Look at the data</a></li>
-<li class="chapter" data-level="8.1.3" data-path="chi-square-goodness-of-fit.html"><a href="chi-square-goodness-of-fit.html#check-assumptions-3"><i class="fa fa-check"></i><b>8.1.3</b> Check assumptions</a></li>
-<li class="chapter" data-level="8.1.4" data-path="chi-square-goodness-of-fit.html"><a href="chi-square-goodness-of-fit.html#perform-the-test-3"><i class="fa fa-check"></i><b>8.1.4</b> Perform the test</a></li>
-<li class="chapter" data-level="8.1.5" data-path="chi-square-goodness-of-fit.html"><a href="chi-square-goodness-of-fit.html#interpret-results-2"><i class="fa fa-check"></i><b>8.1.5</b> Interpret results</a></li>
-<li class="chapter" data-level="8.1.6" data-path="chi-square-goodness-of-fit.html"><a href="chi-square-goodness-of-fit.html#additional-information-1"><i class="fa fa-check"></i><b>8.1.6</b> Additional information</a></li>
-<li class="chapter" data-level="8.1.7" data-path="chi-square-goodness-of-fit.html"><a href="chi-square-goodness-of-fit.html#your-turn-3"><i class="fa fa-check"></i><b>8.1.7</b> Your turn!</a></li>
+<li class="chapter" data-level="8.1.2" data-path="chi-square-goodness-of-fit.html"><a href="chi-square-goodness-of-fit.html#specify-the-hypotheses-1"><i class="fa fa-check"></i><b>8.1.2</b> Specify the hypotheses</a></li>
+<li class="chapter" data-level="8.1.3" data-path="chi-square-goodness-of-fit.html"><a href="chi-square-goodness-of-fit.html#look-at-the-data-3"><i class="fa fa-check"></i><b>8.1.3</b> Look at the data</a></li>
+<li class="chapter" data-level="8.1.4" data-path="chi-square-goodness-of-fit.html"><a href="chi-square-goodness-of-fit.html#check-assumptions-3"><i class="fa fa-check"></i><b>8.1.4</b> Check assumptions</a></li>
+<li class="chapter" data-level="8.1.5" data-path="chi-square-goodness-of-fit.html"><a href="chi-square-goodness-of-fit.html#perform-the-test-3"><i class="fa fa-check"></i><b>8.1.5</b> Perform the test</a></li>
+<li class="chapter" data-level="8.1.6" data-path="chi-square-goodness-of-fit.html"><a href="chi-square-goodness-of-fit.html#interpret-results-2"><i class="fa fa-check"></i><b>8.1.6</b> Interpret results</a></li>
+<li class="chapter" data-level="8.1.7" data-path="chi-square-goodness-of-fit.html"><a href="chi-square-goodness-of-fit.html#additional-information-1"><i class="fa fa-check"></i><b>8.1.7</b> Additional information</a></li>
+<li class="chapter" data-level="8.1.8" data-path="chi-square-goodness-of-fit.html"><a href="chi-square-goodness-of-fit.html#your-turn-3"><i class="fa fa-check"></i><b>8.1.8</b> Your turn!</a></li>
 </ul></li>
 <li class="chapter" data-level="8.2" data-path="chi-square-test-of-independence.html"><a href="chi-square-test-of-independence.html"><i class="fa fa-check"></i><b>8.2</b> Chi-Square Test of Independence</a>
 <ul>
 <li class="chapter" data-level="8.2.1" data-path="chi-square-test-of-independence.html"><a href="chi-square-test-of-independence.html#overview-4"><i class="fa fa-check"></i><b>8.2.1</b> Overview</a></li>
-<li class="chapter" data-level="8.2.2" data-path="chi-square-test-of-independence.html"><a href="chi-square-test-of-independence.html#look-at-the-data-4"><i class="fa fa-check"></i><b>8.2.2</b> Look at the data</a></li>
-<li class="chapter" data-level="8.2.3" data-path="chi-square-test-of-independence.html"><a href="chi-square-test-of-independence.html#perform-the-test-4"><i class="fa fa-check"></i><b>8.2.3</b> Perform the test</a></li>
-<li class="chapter" data-level="8.2.4" data-path="chi-square-test-of-independence.html"><a href="chi-square-test-of-independence.html#interpreting-results-1"><i class="fa fa-check"></i><b>8.2.4</b> Interpreting results</a></li>
-<li class="chapter" data-level="8.2.5" data-path="chi-square-test-of-independence.html"><a href="chi-square-test-of-independence.html#in-case-of-violated-assumptions-3"><i class="fa fa-check"></i><b>8.2.5</b> In case of violated assumptions</a></li>
-<li class="chapter" data-level="8.2.6" data-path="chi-square-test-of-independence.html"><a href="chi-square-test-of-independence.html#additional-information-2"><i class="fa fa-check"></i><b>8.2.6</b> Additional information</a></li>
-<li class="chapter" data-level="8.2.7" data-path="chi-square-test-of-independence.html"><a href="chi-square-test-of-independence.html#your-turn-4"><i class="fa fa-check"></i><b>8.2.7</b> Your turn!</a></li>
+<li class="chapter" data-level="8.2.2" data-path="chi-square-test-of-independence.html"><a href="chi-square-test-of-independence.html#specify-your-hypotheses-2"><i class="fa fa-check"></i><b>8.2.2</b> Specify your hypotheses</a></li>
+<li class="chapter" data-level="8.2.3" data-path="chi-square-test-of-independence.html"><a href="chi-square-test-of-independence.html#look-at-the-data-4"><i class="fa fa-check"></i><b>8.2.3</b> Look at the data</a></li>
+<li class="chapter" data-level="8.2.4" data-path="chi-square-test-of-independence.html"><a href="chi-square-test-of-independence.html#perform-the-test-4"><i class="fa fa-check"></i><b>8.2.4</b> Perform the test</a></li>
+<li class="chapter" data-level="8.2.5" data-path="chi-square-test-of-independence.html"><a href="chi-square-test-of-independence.html#interpreting-results-1"><i class="fa fa-check"></i><b>8.2.5</b> Interpreting results</a></li>
+<li class="chapter" data-level="8.2.6" data-path="chi-square-test-of-independence.html"><a href="chi-square-test-of-independence.html#in-case-of-violated-assumptions-3"><i class="fa fa-check"></i><b>8.2.6</b> In case of violated assumptions</a></li>
+<li class="chapter" data-level="8.2.7" data-path="chi-square-test-of-independence.html"><a href="chi-square-test-of-independence.html#additional-information-2"><i class="fa fa-check"></i><b>8.2.7</b> Additional information</a></li>
+<li class="chapter" data-level="8.2.8" data-path="chi-square-test-of-independence.html"><a href="chi-square-test-of-independence.html#your-turn-4"><i class="fa fa-check"></i><b>8.2.8</b> Your turn!</a></li>
 </ul></li>
 <li class="chapter" data-level="8.3" data-path="mcnemars-test.html"><a href="mcnemars-test.html"><i class="fa fa-check"></i><b>8.3</b> McNemar’s Test</a>
 <ul>
 <li class="chapter" data-level="8.3.1" data-path="mcnemars-test.html"><a href="mcnemars-test.html#overview-5"><i class="fa fa-check"></i><b>8.3.1</b> Overview</a></li>
-<li class="chapter" data-level="8.3.2" data-path="mcnemars-test.html"><a href="mcnemars-test.html#look-at-the-data-5"><i class="fa fa-check"></i><b>8.3.2</b> Look at the data</a></li>
-<li class="chapter" data-level="8.3.3" data-path="mcnemars-test.html"><a href="mcnemars-test.html#perform-the-test-5"><i class="fa fa-check"></i><b>8.3.3</b> Perform the test</a></li>
-<li class="chapter" data-level="8.3.4" data-path="mcnemars-test.html"><a href="mcnemars-test.html#interpret-results-3"><i class="fa fa-check"></i><b>8.3.4</b> Interpret results</a></li>
+<li class="chapter" data-level="8.3.2" data-path="mcnemars-test.html"><a href="mcnemars-test.html#specify-your-hypotheses-3"><i class="fa fa-check"></i><b>8.3.2</b> Specify your hypotheses</a></li>
+<li class="chapter" data-level="8.3.3" data-path="mcnemars-test.html"><a href="mcnemars-test.html#look-at-the-data-5"><i class="fa fa-check"></i><b>8.3.3</b> Look at the data</a></li>
+<li class="chapter" data-level="8.3.4" data-path="mcnemars-test.html"><a href="mcnemars-test.html#perform-the-test-5"><i class="fa fa-check"></i><b>8.3.4</b> Perform the test</a></li>
+<li class="chapter" data-level="8.3.5" data-path="mcnemars-test.html"><a href="mcnemars-test.html#interpret-results-3"><i class="fa fa-check"></i><b>8.3.5</b> Interpret results</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="anova.html"><a href="anova.html"><i class="fa fa-check"></i><b>9</b> ANOVA</a>
@@ -311,13 +315,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.1" data-path="one-way-anova.html"><a href="one-way-anova.html"><i class="fa fa-check"></i><b>9.1</b> One-way ANOVA</a>
 <ul>
 <li class="chapter" data-level="9.1.1" data-path="one-way-anova.html"><a href="one-way-anova.html#overview-6"><i class="fa fa-check"></i><b>9.1.1</b> Overview</a></li>
-<li class="chapter" data-level="9.1.2" data-path="one-way-anova.html"><a href="one-way-anova.html#look-at-the-data-6"><i class="fa fa-check"></i><b>9.1.2</b> Look at the data</a></li>
-<li class="chapter" data-level="9.1.3" data-path="one-way-anova.html"><a href="one-way-anova.html#anova-assumptions"><i class="fa fa-check"></i><b>9.1.3</b> Check assumptions</a></li>
-<li class="chapter" data-level="9.1.4" data-path="one-way-anova.html"><a href="one-way-anova.html#perform-the-test-6"><i class="fa fa-check"></i><b>9.1.4</b> Perform the test</a></li>
-<li class="chapter" data-level="9.1.5" data-path="one-way-anova.html"><a href="one-way-anova.html#interpret-results-4"><i class="fa fa-check"></i><b>9.1.5</b> Interpret results</a></li>
-<li class="chapter" data-level="9.1.6" data-path="one-way-anova.html"><a href="one-way-anova.html#in-case-of-violated-assumptions-4"><i class="fa fa-check"></i><b>9.1.6</b> In case of violated assumptions</a></li>
-<li class="chapter" data-level="9.1.7" data-path="one-way-anova.html"><a href="one-way-anova.html#additional-information-3"><i class="fa fa-check"></i><b>9.1.7</b> Additional information</a></li>
-<li class="chapter" data-level="9.1.8" data-path="one-way-anova.html"><a href="one-way-anova.html#your-turn-5"><i class="fa fa-check"></i><b>9.1.8</b> Your turn!</a></li>
+<li class="chapter" data-level="9.1.2" data-path="one-way-anova.html"><a href="one-way-anova.html#specify-your-hypotheses-4"><i class="fa fa-check"></i><b>9.1.2</b> Specify your hypotheses</a></li>
+<li class="chapter" data-level="9.1.3" data-path="one-way-anova.html"><a href="one-way-anova.html#look-at-the-data-6"><i class="fa fa-check"></i><b>9.1.3</b> Look at the data</a></li>
+<li class="chapter" data-level="9.1.4" data-path="one-way-anova.html"><a href="one-way-anova.html#anova-assumptions"><i class="fa fa-check"></i><b>9.1.4</b> Check assumptions</a></li>
+<li class="chapter" data-level="9.1.5" data-path="one-way-anova.html"><a href="one-way-anova.html#perform-the-test-6"><i class="fa fa-check"></i><b>9.1.5</b> Perform the test</a></li>
+<li class="chapter" data-level="9.1.6" data-path="one-way-anova.html"><a href="one-way-anova.html#interpret-results-4"><i class="fa fa-check"></i><b>9.1.6</b> Interpret results</a></li>
+<li class="chapter" data-level="9.1.7" data-path="one-way-anova.html"><a href="one-way-anova.html#in-case-of-violated-assumptions-4"><i class="fa fa-check"></i><b>9.1.7</b> In case of violated assumptions</a></li>
+<li class="chapter" data-level="9.1.8" data-path="one-way-anova.html"><a href="one-way-anova.html#additional-information-3"><i class="fa fa-check"></i><b>9.1.8</b> Additional information</a></li>
+<li class="chapter" data-level="9.1.9" data-path="one-way-anova.html"><a href="one-way-anova.html#your-turn-5"><i class="fa fa-check"></i><b>9.1.9</b> Your turn!</a></li>
 </ul></li>
 <li class="chapter" data-level="9.2" data-path="finding-group-differences.html"><a href="finding-group-differences.html"><i class="fa fa-check"></i><b>9.2</b> Finding Group Differences</a>
 <ul>
@@ -329,12 +334,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.3" data-path="repeated-measures-anova.html"><a href="repeated-measures-anova.html"><i class="fa fa-check"></i><b>9.3</b> Repeated Measures ANOVA</a>
 <ul>
 <li class="chapter" data-level="9.3.1" data-path="repeated-measures-anova.html"><a href="repeated-measures-anova.html#overview-7"><i class="fa fa-check"></i><b>9.3.1</b> Overview</a></li>
-<li class="chapter" data-level="9.3.2" data-path="repeated-measures-anova.html"><a href="repeated-measures-anova.html#look-at-the-data-7"><i class="fa fa-check"></i><b>9.3.2</b> Look at the data</a></li>
-<li class="chapter" data-level="9.3.3" data-path="repeated-measures-anova.html"><a href="repeated-measures-anova.html#check-assumptions-5"><i class="fa fa-check"></i><b>9.3.3</b> Check Assumptions</a></li>
-<li class="chapter" data-level="9.3.4" data-path="repeated-measures-anova.html"><a href="repeated-measures-anova.html#perform-the-test-7"><i class="fa fa-check"></i><b>9.3.4</b> Perform the test</a></li>
-<li class="chapter" data-level="9.3.5" data-path="repeated-measures-anova.html"><a href="repeated-measures-anova.html#interpret-results-5"><i class="fa fa-check"></i><b>9.3.5</b> Interpret results</a></li>
-<li class="chapter" data-level="9.3.6" data-path="repeated-measures-anova.html"><a href="repeated-measures-anova.html#in-case-of-violated-assumptions-6"><i class="fa fa-check"></i><b>9.3.6</b> In case of violated assumptions</a></li>
-<li class="chapter" data-level="9.3.7" data-path="repeated-measures-anova.html"><a href="repeated-measures-anova.html#your-turn-7"><i class="fa fa-check"></i><b>9.3.7</b> Your turn!</a></li>
+<li class="chapter" data-level="9.3.2" data-path="repeated-measures-anova.html"><a href="repeated-measures-anova.html#specify-your-hypotheses-5"><i class="fa fa-check"></i><b>9.3.2</b> Specify your hypotheses</a></li>
+<li class="chapter" data-level="9.3.3" data-path="repeated-measures-anova.html"><a href="repeated-measures-anova.html#look-at-the-data-7"><i class="fa fa-check"></i><b>9.3.3</b> Look at the data</a></li>
+<li class="chapter" data-level="9.3.4" data-path="repeated-measures-anova.html"><a href="repeated-measures-anova.html#check-assumptions-5"><i class="fa fa-check"></i><b>9.3.4</b> Check Assumptions</a></li>
+<li class="chapter" data-level="9.3.5" data-path="repeated-measures-anova.html"><a href="repeated-measures-anova.html#perform-the-test-7"><i class="fa fa-check"></i><b>9.3.5</b> Perform the test</a></li>
+<li class="chapter" data-level="9.3.6" data-path="repeated-measures-anova.html"><a href="repeated-measures-anova.html#interpret-results-5"><i class="fa fa-check"></i><b>9.3.6</b> Interpret results</a></li>
+<li class="chapter" data-level="9.3.7" data-path="repeated-measures-anova.html"><a href="repeated-measures-anova.html#in-case-of-violated-assumptions-6"><i class="fa fa-check"></i><b>9.3.7</b> In case of violated assumptions</a></li>
+<li class="chapter" data-level="9.3.8" data-path="repeated-measures-anova.html"><a href="repeated-measures-anova.html#your-turn-7"><i class="fa fa-check"></i><b>9.3.8</b> Your turn!</a></li>
 </ul></li>
 <li class="chapter" data-level="9.4" data-path="factorial-anova.html"><a href="factorial-anova.html"><i class="fa fa-check"></i><b>9.4</b> Factorial ANOVA</a>
 <ul>
@@ -355,13 +361,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="10.1" data-path="correlation.html"><a href="correlation.html"><i class="fa fa-check"></i><b>10.1</b> Correlation</a>
 <ul>
 <li class="chapter" data-level="10.1.1" data-path="correlation.html"><a href="correlation.html#overview-10"><i class="fa fa-check"></i><b>10.1.1</b> Overview</a></li>
-<li class="chapter" data-level="10.1.2" data-path="correlation.html"><a href="correlation.html#look-at-the-data-8"><i class="fa fa-check"></i><b>10.1.2</b> Look at the data</a></li>
-<li class="chapter" data-level="10.1.3" data-path="correlation.html"><a href="correlation.html#check-assumptions-6"><i class="fa fa-check"></i><b>10.1.3</b> Check assumptions</a></li>
-<li class="chapter" data-level="10.1.4" data-path="correlation.html"><a href="correlation.html#perform-the-test-9"><i class="fa fa-check"></i><b>10.1.4</b> Perform the test</a></li>
-<li class="chapter" data-level="10.1.5" data-path="correlation.html"><a href="correlation.html#interpreting-results-2"><i class="fa fa-check"></i><b>10.1.5</b> Interpreting results</a></li>
-<li class="chapter" data-level="10.1.6" data-path="correlation.html"><a href="correlation.html#in-case-of-violated-assumptions-7"><i class="fa fa-check"></i><b>10.1.6</b> In case of violated assumptions</a></li>
-<li class="chapter" data-level="10.1.7" data-path="correlation.html"><a href="correlation.html#additional-information-4"><i class="fa fa-check"></i><b>10.1.7</b> Additional information</a></li>
-<li class="chapter" data-level="10.1.8" data-path="correlation.html"><a href="correlation.html#your-turn-8"><i class="fa fa-check"></i><b>10.1.8</b> Your turn!</a></li>
+<li class="chapter" data-level="10.1.2" data-path="correlation.html"><a href="correlation.html#specify-your-hypotheses-6"><i class="fa fa-check"></i><b>10.1.2</b> Specify your hypotheses</a></li>
+<li class="chapter" data-level="10.1.3" data-path="correlation.html"><a href="correlation.html#look-at-the-data-8"><i class="fa fa-check"></i><b>10.1.3</b> Look at the data</a></li>
+<li class="chapter" data-level="10.1.4" data-path="correlation.html"><a href="correlation.html#check-assumptions-6"><i class="fa fa-check"></i><b>10.1.4</b> Check assumptions</a></li>
+<li class="chapter" data-level="10.1.5" data-path="correlation.html"><a href="correlation.html#perform-the-test-9"><i class="fa fa-check"></i><b>10.1.5</b> Perform the test</a></li>
+<li class="chapter" data-level="10.1.6" data-path="correlation.html"><a href="correlation.html#interpreting-results-2"><i class="fa fa-check"></i><b>10.1.6</b> Interpreting results</a></li>
+<li class="chapter" data-level="10.1.7" data-path="correlation.html"><a href="correlation.html#in-case-of-violated-assumptions-7"><i class="fa fa-check"></i><b>10.1.7</b> In case of violated assumptions</a></li>
+<li class="chapter" data-level="10.1.8" data-path="correlation.html"><a href="correlation.html#additional-information-4"><i class="fa fa-check"></i><b>10.1.8</b> Additional information</a></li>
+<li class="chapter" data-level="10.1.9" data-path="correlation.html"><a href="correlation.html#your-turn-8"><i class="fa fa-check"></i><b>10.1.9</b> Your turn!</a></li>
 </ul></li>
 <li class="chapter" data-level="10.2" data-path="regression.html"><a href="regression.html"><i class="fa fa-check"></i><b>10.2</b> Regression</a>
 <ul>
@@ -382,7 +389,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="10.3.5" data-path="general-linear-model.html"><a href="general-linear-model.html#one-way-anova-as-a-regression"><i class="fa fa-check"></i><b>10.3.5</b> One-way ANOVA as a regression</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>11</b> References</a></li>
+<li class="appendix"><span><b>Appendices</b></span></li>
+<li class="chapter" data-level="A" data-path="answers.html"><a href="answers.html"><i class="fa fa-check"></i><b>A</b> Answers</a>
+<ul>
+<li class="chapter" data-level="A.1" data-path="answers-to-5-3-power.html"><a href="answers-to-5-3-power.html"><i class="fa fa-check"></i><b>A.1</b> Answers to 5.3 Power</a></li>
+<li class="chapter" data-level="A.2" data-path="answers-to-7-1-one-sample-t-test.html"><a href="answers-to-7-1-one-sample-t-test.html"><i class="fa fa-check"></i><b>A.2</b> Answers to 7.1 one-sample t-test</a></li>
+<li class="chapter" data-level="A.3" data-path="answers-to-7-2-independent-samples-t-test.html"><a href="answers-to-7-2-independent-samples-t-test.html"><i class="fa fa-check"></i><b>A.3</b> Answers to 7.2 independent samples t-test</a></li>
+<li class="chapter" data-level="A.4" data-path="answers-to-7-3-dependent-t-test.html"><a href="answers-to-7-3-dependent-t-test.html"><i class="fa fa-check"></i><b>A.4</b> Answers to 7.3 dependent t-test</a></li>
+<li class="chapter" data-level="A.5" data-path="answers-to-8-1-goodness-of-fit-test.html"><a href="answers-to-8-1-goodness-of-fit-test.html"><i class="fa fa-check"></i><b>A.5</b> Answers to 8.1 goodness of fit test</a></li>
+<li class="chapter" data-level="A.6" data-path="answers-to-8-2-chi-square-test-of-independence.html"><a href="answers-to-8-2-chi-square-test-of-independence.html"><i class="fa fa-check"></i><b>A.6</b> Answers to 8.2 chi-square test of independence</a></li>
+<li class="chapter" data-level="A.7" data-path="answers-to-9-1-one-way-anova.html"><a href="answers-to-9-1-one-way-anova.html"><i class="fa fa-check"></i><b>A.7</b> Answers to 9.1 one-way ANOVA</a></li>
+<li class="chapter" data-level="A.8" data-path="answers-to-9-2-finding-group-differences.html"><a href="answers-to-9-2-finding-group-differences.html"><i class="fa fa-check"></i><b>A.8</b> Answers to 9.2 finding group differences</a></li>
+<li class="chapter" data-level="A.9" data-path="answers-to-9-3-repeated-measures-anova.html"><a href="answers-to-9-3-repeated-measures-anova.html"><i class="fa fa-check"></i><b>A.9</b> Answers to 9.3 repeated measures ANOVA</a></li>
+<li class="chapter" data-level="A.10" data-path="answers-to-10-1-correlation.html"><a href="answers-to-10-1-correlation.html"><i class="fa fa-check"></i><b>A.10</b> Answers to 10.1 correlation</a></li>
+<li class="chapter" data-level="A.11" data-path="answers-to-10-2-regression.html"><a href="answers-to-10-2-regression.html"><i class="fa fa-check"></i><b>A.11</b> Answers to 10.2 regression</a></li>
+</ul></li>
+<li class="chapter" data-level="B" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>B</b> References</a></li>
 <li class="divider"></li>
 <li><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/" 
     target="blank"><img alt="Creative Commons License" 
@@ -431,25 +453,29 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 </ol>
 </div>
-<div id="look-at-the-data-2" class="section level3" number="7.3.2">
-<h3><span class="header-section-number">7.3.2</span> Look at the data</h3>
-<p>For this chapter, we’re going to work with data from lsj-data. Open data from your Data Library in “lsj-data.” Select and open “Chico.” This dataset is hypothetical data from Dr. Chico’s class in which students took two tests: one early in the semester and one later in the semester. Dr. Chico thinks that the first test is a “wake up call” for students. When they realise how hard her class really is, they’ll work harder for the second test and get a better mark. Is she right? First, let’s determine our hypotheses:</p>
-<p>What is Dr. Chico’s alternative hypothesis? <select class='solveme' data-answer='["test 1 scores are less than test 2 scores"]'> <option></option> <option>test 1 scores are different from test 2 scores</option> <option>test 1 scores are greater than test 2 scores</option> <option>test 1 scores are less than test 2 scores</option></select></p>
-<div id="data-set-up-2" class="section level4" number="7.3.2.1">
-<h4><span class="header-section-number">7.3.2.1</span> Data set-up</h4>
+<div id="specify-your-hypotheses-1" class="section level3" number="7.3.2">
+<h3><span class="header-section-number">7.3.2</span> Specify your hypotheses</h3>
+<p>For this chapter, we’re going to work with data from lsj-data. Open data from your Data Library in “lsj-data.” Select and open “Chico.” This dataset is hypothetical data from Dr. Chico’s class in which students took two tests: one early in the semester and one later in the semester. Dr. Chico thinks that the first test is a “wake up call” for students. When they realise how hard her class really is, they’ll work harder for the second test and get a better mark. Is she right?</p>
+<p>First, let’s determine our hypotheses. For this one, can you determine the null and alternative hypotheses based on Dr. Chico’s research question?</p>
+</div>
+<div id="look-at-the-data-2" class="section level3" number="7.3.3">
+<h3><span class="header-section-number">7.3.3</span> Look at the data</h3>
+<div id="data-set-up-2" class="section level4" number="7.3.3.1">
+<h4><span class="header-section-number">7.3.3.1</span> Data set-up</h4>
 <p>To conduct the dependent t-test, we first need to ensure our data is set-up properly in our dataset. This requires having two columns: one is our dependent variable score for the participant in one category and the other column is our dependent variable score for the participant in the other category. Each row is a unique participant or unit of analysis.</p>
-<p>In the data above, what is your <strong>independent variable</strong>? <select class='solveme' data-answer='["grade"]'> <option></option> <option>id</option> <option>grade</option> <option>test score</option> <option>grade_test1</option> <option>grade_test2</option></select></p>
-<p>In the data above, what is your <strong>dependent variable</strong>? <select class='solveme' data-answer='["test score"]'> <option></option> <option>id</option> <option>grade</option> <option>test score</option> <option>grade_test1</option> <option>grade_test2</option></select></p>
+<p><img src="images/03_dependent_t-test/dependent_data.png" /></p>
+<p>In the data above, what is your <strong>independent variable</strong>? What is your <strong>dependent variable</strong>?</p>
 </div>
-<div id="describe-the-data-2" class="section level4" number="7.3.2.2">
-<h4><span class="header-section-number">7.3.2.2</span> Describe the data</h4>
+<div id="describe-the-data-2" class="section level4" number="7.3.3.2">
+<h4><span class="header-section-number">7.3.3.2</span> Describe the data</h4>
 <p>Once we confirm our data is setup correctly in jamovi, we should look at our data using descriptive statistics and graphs. First, our descriptive statistics are shown below. Our overall data consists of 20 cases (students) and the average grade is 56.98 (<em>SD</em> = 6.62) at the first test and 58.38 (<em>SD</em> = 6.41) at the second test. We have no missing cases, and our minimum and maximum values look accurate; theoretically, student grades should range from 0-100. Lastly, the distribution of data looks fairly normally distributed, although I’m personally a little worried about our small sample size. Before we can proceed with our analyses, we’ll need to check our assumptions.</p>
+<p><img src="images/03_dependent_t-test/dependent_descriptives.png" /></p>
 </div>
 </div>
-<div id="check-assumptions-2" class="section level3" number="7.3.3">
-<h3><span class="header-section-number">7.3.3</span> Check assumptions</h3>
-<div id="assumptions-2" class="section level4" number="7.3.3.1">
-<h4><span class="header-section-number">7.3.3.1</span> Assumptions</h4>
+<div id="check-assumptions-2" class="section level3" number="7.3.4">
+<h3><span class="header-section-number">7.3.4</span> Check assumptions</h3>
+<div id="assumptions-2" class="section level4" number="7.3.4.1">
+<h4><span class="header-section-number">7.3.4.1</span> Assumptions</h4>
 <p>As a parametric test, the dependent t-test has the same assumptions as other parametric tests minus the homogeneity of variance assumption because we are dealing with the same people across categories</p>
 <ol style="list-style-type: decimal">
 <li><p>The <em>differences in scores</em> in the dependent variable are <strong>normally distributed</strong></p></li>
@@ -459,37 +485,40 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>We cannot <em>test</em> the second and third assumptions; rather, those are based on knowing your data.</p>
 <p>However, we can and should test for the first assumption. Fortunately, the dependent samples t-test in jamovi has two check boxes under “Assumption Checks” that lets us test normality.</p>
 </div>
-<div id="checking-assumptions-3" class="section level4" number="7.3.3.2">
-<h4><span class="header-section-number">7.3.3.2</span> Checking assumptions</h4>
+<div id="checking-assumptions-3" class="section level4" number="7.3.4.2">
+<h4><span class="header-section-number">7.3.4.2</span> Checking assumptions</h4>
 <p>One thing to keep in mind in all statistical software is that we often check assumptions simultaneously to performing the statistical test. However, we should always check assumptions first before looking at and interpreting our results. Therefore, whereas the instructions for performing the test are below, we discuss checking assumptions here first to help ingrain the importance of always checking assumptions for interpreting results.</p>
-<div id="testing-normality-2" class="section level5" number="7.3.3.2.1">
-<h5><span class="header-section-number">7.3.3.2.1</span> Testing normality</h5>
+<div id="testing-normality-2" class="section level5" number="7.3.4.2.1">
+<h5><span class="header-section-number">7.3.4.2.1</span> Testing normality</h5>
 <p>Notice how our dependent variable is really the difference in scores, and therefore that is what we are testing for normality. We test for normality using the Shapiro-Wilk test and the Q-Q plot. The Shapiro-Wilk test was not statistically significant (W = .97, <em>p</em> = .678); therefore, this indicates the data is normally distributed. Furthermore, the lines are fairly close to the diagonal line in the Q-Q plot (although it’s a bit hard to tell because our sample size is small). We can conclude that we satisfy the assumption of normality.</p>
+<p><img src="images/03_dependent_t-test/dependent_normality.png" /></p>
 </div>
 </div>
 </div>
-<div id="perform-the-test-2" class="section level3" number="7.3.4">
-<h3><span class="header-section-number">7.3.4</span> Perform the test</h3>
+<div id="perform-the-test-2" class="section level3" number="7.3.5">
+<h3><span class="header-section-number">7.3.5</span> Perform the test</h3>
 <p>Now that we’ve satisfied the assumptions, we can perform the dependent t-test. Here are the steps for doing so in jamovi:</p>
 <ol style="list-style-type: decimal">
 <li><p>Go to the Analyses tab, click the T-Tests button, and choose “Paired Samples T-Test.”</p></li>
 <li><p>Move both measurements of your dependent variable (<code>grade_test1</code> and <code>grade_test2</code>) to the Paired Variables box.</p></li>
 <li><p>Under Tests, select <code>Student's</code>. We’ll learn more about the Wilcoxon rank option, which is an option if you fail to meet the assumption of normality.</p></li>
-<li><p>Under Hypothesis, choose the correct hypothesis: <select class='solveme' data-answer='["Measure 1 < Measure 2"]'> <option></option> <option>Measure 1 is not equal to Measure 2</option> <option>Measure 1 &gt; Measure 2</option> <option>Measure 1 &lt; Measure 2</option></select></p></li>
+<li><p>Under Hypothesis, choose the correct hypothesis based on our hypotheses from above! In this case, the answer is “Measure 1 &lt; Measure 2”</p></li>
 <li><p>Under Additional Statistics, select <code>Mean difference</code>, <code>Effect size</code>, <code>Descriptives</code>, and (optionally) <code>Descriptives plots</code>.</p></li>
 <li><p>Under Assumption Checks, select both options: <code>Normality test</code> and <code>Q-Q plot</code>. You’ll check these assumptions first, which is discussed above.</p></li>
 </ol>
-<p>When you are done, your setup should look like this</p>
+<p>When you are done, your setup should look like this:</p>
+<p><img src="images/03_dependent_t-test/dependent_setup.png" /></p>
 </div>
-<div id="interpreting-results" class="section level3" number="7.3.5">
-<h3><span class="header-section-number">7.3.5</span> Interpreting results</h3>
+<div id="interpreting-results" class="section level3" number="7.3.6">
+<h3><span class="header-section-number">7.3.6</span> Interpreting results</h3>
 <p>Once we are satisfied we have satisfied the assumptions for the dependent t-test, we can interpret our results.</p>
+<p><img src="images/03_dependent_t-test/dependent_results.png" /></p>
 <p>Our p-value is less than .05, so our results are statistically significant. Therefore, we reject the null hypothesis that there is no difference between the two groups.</p>
-<div id="write-up-the-results-in-apa-style-2" class="section level4" number="7.3.5.1">
-<h4><span class="header-section-number">7.3.5.1</span> Write up the results in APA style</h4>
+<div id="write-up-the-results-in-apa-style-2" class="section level4" number="7.3.6.1">
+<h4><span class="header-section-number">7.3.6.1</span> Write up the results in APA style</h4>
 <p>When writing up the results of a statistical test, we should always include the following information:</p>
 <ol style="list-style-type: decimal">
-<li>Description of your research question.</li>
+<li>Description of your research question and/or hypotheses.</li>
 <li>Description of your data. If you fail to meet assumptions, you should specify that and describe what test you chose to perform as a result.</li>
 <li>The results of the inferential test, including what test was performed, the test value and degrees of freedom, p-value, and effect size.</li>
 <li>Interpretation of the results, including any other information as needed.</li>
@@ -500,32 +529,35 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </blockquote>
 <p>Remember in the previous chapter that our t-test can be negative but we can always flip the interpretation.</p>
 </div>
-<div id="visualize-the-results-2" class="section level4" number="7.3.5.2">
-<h4><span class="header-section-number">7.3.5.2</span> Visualize the results</h4>
+<div id="visualize-the-results-2" class="section level4" number="7.3.6.2">
+<h4><span class="header-section-number">7.3.6.2</span> Visualize the results</h4>
 <p>By selecting <code>Descriptives plots</code> in the setup, you get the figure below. Personally, I don’t think this is a very good plot. It’s not very informative. It just provides the mean (circle), 95% confidence interval (blue bars), and the median.</p>
+<p><img src="images/03_dependent_t-test/dependent_results_plot.png" /></p>
 <p>Another option is to use the Descriptives plots available in jamovi, which we see above in the Look at the data section above. I wish there were a way to combine them into one graph, but unfortunately there isn’t within jamovi. Instead, you’ll have to go into the Rj editor and use R code to reshape the data from wide format to long format and then call the descriptives syntax to produce the plot. You <em>could</em> copy-paste the data into a new dataset, but I always try to avoid manual work when doing analyses because something <em>always</em> goes wrong.</p>
 <p>Here’s what this looks like in jamovi:</p>
+<p><img src="images/03_dependent_t-test/dependent_results_plot2.png" /></p>
 <p>To make our lives a bit easier, here is the code in the Rj editor that you can copy-paste (that kind of copy-pasting I allow!) into your own jamovi. You’ll need to edit things like the list of names in line 3, the name of your DV (line 4), the name of your IV (line 5), and re-specify those names in line 9.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="dependent-t-test.html#cb3-1" aria-hidden="true" tabindex="-1"></a>long <span class="ot">&lt;-</span> <span class="fu">reshape</span>(data, </span>
-<span id="cb3-2"><a href="dependent-t-test.html#cb3-2" aria-hidden="true" tabindex="-1"></a>                <span class="at">direction =</span> <span class="st">&quot;long&quot;</span>, </span>
-<span id="cb3-3"><a href="dependent-t-test.html#cb3-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">varying =</span> <span class="fu">list</span>(<span class="fu">names</span>(data)[<span class="dv">2</span><span class="sc">:</span><span class="dv">3</span>]),</span>
-<span id="cb3-4"><a href="dependent-t-test.html#cb3-4" aria-hidden="true" tabindex="-1"></a>                <span class="at">v.names =</span> <span class="st">&quot;Test Score&quot;</span>,</span>
-<span id="cb3-5"><a href="dependent-t-test.html#cb3-5" aria-hidden="true" tabindex="-1"></a>                <span class="at">timevar =</span> <span class="st">&quot;Test Time&quot;</span>)</span>
-<span id="cb3-6"><a href="dependent-t-test.html#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-7"><a href="dependent-t-test.html#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-8"><a href="dependent-t-test.html#cb3-8" aria-hidden="true" tabindex="-1"></a>jmv<span class="sc">::</span><span class="fu">descriptives</span>(<span class="at">data =</span> long,</span>
-<span id="cb3-9"><a href="dependent-t-test.html#cb3-9" aria-hidden="true" tabindex="-1"></a>                  <span class="at">formula =</span> <span class="st">`</span><span class="at">Test Score</span><span class="st">`</span> <span class="sc">~</span> <span class="st">`</span><span class="at">Test Time</span><span class="st">`</span>,</span>
-<span id="cb3-10"><a href="dependent-t-test.html#cb3-10" aria-hidden="true" tabindex="-1"></a>                  <span class="at">box =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb3-11"><a href="dependent-t-test.html#cb3-11" aria-hidden="true" tabindex="-1"></a>                  <span class="at">violin =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb3-12"><a href="dependent-t-test.html#cb3-12" aria-hidden="true" tabindex="-1"></a>                  <span class="at">dot =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="dependent-t-test.html#cb1-1" aria-hidden="true" tabindex="-1"></a>long <span class="ot">&lt;-</span> <span class="fu">reshape</span>(data, </span>
+<span id="cb1-2"><a href="dependent-t-test.html#cb1-2" aria-hidden="true" tabindex="-1"></a>                <span class="at">direction =</span> <span class="st">&quot;long&quot;</span>, </span>
+<span id="cb1-3"><a href="dependent-t-test.html#cb1-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">varying =</span> <span class="fu">list</span>(<span class="fu">names</span>(data)[<span class="dv">2</span><span class="sc">:</span><span class="dv">3</span>]),</span>
+<span id="cb1-4"><a href="dependent-t-test.html#cb1-4" aria-hidden="true" tabindex="-1"></a>                <span class="at">v.names =</span> <span class="st">&quot;Test Score&quot;</span>,</span>
+<span id="cb1-5"><a href="dependent-t-test.html#cb1-5" aria-hidden="true" tabindex="-1"></a>                <span class="at">timevar =</span> <span class="st">&quot;Test Time&quot;</span>)</span>
+<span id="cb1-6"><a href="dependent-t-test.html#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="dependent-t-test.html#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="dependent-t-test.html#cb1-8" aria-hidden="true" tabindex="-1"></a>jmv<span class="sc">::</span><span class="fu">descriptives</span>(<span class="at">data =</span> long,</span>
+<span id="cb1-9"><a href="dependent-t-test.html#cb1-9" aria-hidden="true" tabindex="-1"></a>                  <span class="at">formula =</span> <span class="st">`</span><span class="at">Test Score</span><span class="st">`</span> <span class="sc">~</span> <span class="st">`</span><span class="at">Test Time</span><span class="st">`</span>,</span>
+<span id="cb1-10"><a href="dependent-t-test.html#cb1-10" aria-hidden="true" tabindex="-1"></a>                  <span class="at">box =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb1-11"><a href="dependent-t-test.html#cb1-11" aria-hidden="true" tabindex="-1"></a>                  <span class="at">violin =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb1-12"><a href="dependent-t-test.html#cb1-12" aria-hidden="true" tabindex="-1"></a>                  <span class="at">dot =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 </div>
 </div>
-<div id="in-case-of-violated-assumptions-2" class="section level3" number="7.3.6">
-<h3><span class="header-section-number">7.3.6</span> In case of violated assumptions</h3>
+<div id="in-case-of-violated-assumptions-2" class="section level3" number="7.3.7">
+<h3><span class="header-section-number">7.3.7</span> In case of violated assumptions</h3>
 <p>If you violated the assumption of normality and no transformation fixed your data, then you can perform the non-parametric version of the dependent t-test called the Wilcoxon Rank test. As a reminder, non-parametric tests do not make assumptions about the distribution of data because it deals with the <em>median</em> not the <em>mean</em>.</p>
 <p>Here is the output for both the dependent t-test and the Wilcoxon rank test:</p>
-<div id="wilcoxon-rank" class="section level4" number="7.3.6.1">
-<h4><span class="header-section-number">7.3.6.1</span> Wilcoxon rank</h4>
+<p><img src="images/03_dependent_t-test/dependent_results_full.png" /></p>
+<div id="wilcoxon-rank" class="section level4" number="7.3.7.1">
+<h4><span class="header-section-number">7.3.7.1</span> Wilcoxon rank</h4>
 <p>To conduct this in jamovi, under Tests select <code>Wilcoxon rank</code>. You will interpret the results similarly to the dependent t-test:</p>
 <blockquote>
 <p>Using Wilcoxon rank test, students’ test scores were significantly higher at the second test (<em>Mdn</em> = 59.70) than at the first test (<em>Mdn</em> = 57.70), W = 2.00, <em>p</em> &lt; .001.</p>
@@ -533,8 +565,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>The note about tied values is not necessary to discuss. It is just telling us one participant had identical values for both test1 and test2 (student15). You can check this yourself in the dataset</p>
 </div>
 </div>
-<div id="your-turn-2" class="section level3" number="7.3.7">
-<h3><span class="header-section-number">7.3.7</span> Your turn!</h3>
+<div id="your-turn-2" class="section level3" number="7.3.8">
+<h3><span class="header-section-number">7.3.8</span> Your turn!</h3>
 <p>Open the <code>Sample_Dataset_2014.xlsx</code> file that we will be using for all Your Turn exercises. You can find the dataset here: <a href="https://github.com/danawanzer/stats-with-jamovi/blob/master/data/Sample_Dataset_2014.xlsx">Sample_Dataset_2014.xlsx Download</a></p>
 <p>Perform dependent t-tests based on the following research questions. Think critically about whether you should be using a one-tailed or two-tailed hypothesis and check your assumptions so you know which test to use!</p>
 <p>To get the most out of these exercises, try to first find out the answer on your own and then use the drop-down menus to check your answer.</p>
@@ -542,15 +574,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ol style="list-style-type: decimal">
 <li><p><strong>Do students perform better on the English test than they do the Writing test?</strong></p>
 <ul>
-<li><p>Should you use a one-tailed or two-tailed hypothesis? <select class='solveme' data-answer='["one-tailed"]'> <option></option> <option>one-tailed</option> <option>two-tailed</option></select></p></li>
-<li><p>Which statistic should you use based on your assumptions? <select class='solveme' data-answer='["dependent t-test"]'> <option></option> <option>dependent t-test</option> <option>Wilcoxon rank</option></select></p></li>
-<li><p>Do students perform better on the English test than they do the Writing test? <select class='solveme' data-answer='["yes"]'> <option></option> <option>yes</option> <option>no</option></select></p></li>
+<li><p>Should you use a one-tailed or two-tailed hypothesis?</p></li>
+<li><p>Which statistic should you use based on your assumptions?</p></li>
+<li><p>Do students perform better on the English test than they do the Writing test?</p></li>
 </ul></li>
 <li><p><strong>Does students’ English scores relate to their Reading scores?</strong></p>
 <ul>
-<li><p>Should you use a one-tailed or two-tailed hypothesis? <select class='solveme' data-answer='["two-tailed"]'> <option></option> <option>one-tailed</option> <option>two-tailed</option></select></p></li>
-<li><p>Which statistic should you use based on your assumptions? <select class='solveme' data-answer='["dependent t-test"]'> <option></option> <option>dependent t-test</option> <option>Wilcoxon rank</option></select></p></li>
-<li><p>Does students’ English scores relate to their Reading scores? <select class='solveme' data-answer='["no"]'> <option></option> <option>yes</option> <option>no</option></select></p></li>
+<li><p>Should you use a one-tailed or two-tailed hypothesis?</p></li>
+<li><p>Which statistic should you use based on your assumptions?</p></li>
+<li><p>Does students’ English scores relate to their Reading scores?</p></li>
 </ul></li>
 </ol>
 
@@ -671,6 +703,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"],
 "google": false
 },
