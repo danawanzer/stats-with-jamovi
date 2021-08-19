@@ -23,4 +23,8 @@ This is the website for PSYC 290 and PSYC 790 at the University of Wisconsin-Sto
 
 This website is **free to use** and is licensed under a Creative Commons BY-SA (CC BY-SA) license version 4.0. This means you are free to **share** (i.e., copy and redistribute the material in any medium or format) and **adapt** (i.e., remix, transform, and build upon the material for any purpose, even commercially), provided that you **attribute** these resources by citing me, indicating if changes were made and you **share alike** (i.e., if you adapt, you must distribute your contributes under the same license as the original).
 
-Portions of this book may have been adapted from "[Learning statistics with jamovi: A tutorial for psychology students and other beginners](http://www.learnstatswithjamovi.com)" by Danielle J. Navarro and David R. Foxcroft, version 0.70. Furthermore, the template and style of this book is from [PsyTeachR](https://psyteachr.github.io/book-template/setup.html).
+Many of the data examples come from "[Learning statistics with jamovi: A tutorial for psychology students and other beginners](http://www.learnstatswithjamovi.com)" by Danielle J. Navarro and David R. Foxcroft, version 0.70.
+
+**Dedication:** This book is dedicated to my graduate statistics professor Dr. Dale Berger, who gave us a similar set of resources when he taught statistics at Claremont Graduate University. I still have my binder of handouts, homework assignments, and notes and they have been instrumental in my career. Thank you for showing me the joy of statistics.
+
+![Image of Dale Berger and Dana Wanzer at her master's graduation ceremony](images/Dale.jpg)
