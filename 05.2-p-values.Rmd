@@ -57,3 +57,12 @@ In other words, we need to think critically about the alpha level we set *and* w
 ### Are p-values bad?
 
 Some have argued that we should abandon the *p*-value; this has led to things like journals completely banning *p*-values altogether. However, I agree with Lakens that ["the practical alternative to the *p*-value is the correctly used *p*-value."](https://psyarxiv.com/shm8v/) That's to say: there is nothing *wrong* with the *p*-value inherently, and it can be useful. Rather, what's *wrong* is that many people use them incorrectly.
+
+### Video
+
+The following video walks through some of the effect sizes, alpha, and power stuff.
+
+```{r}
+knitr::include_url("https://www.youtube.com/watch?v=v1GrXJmUkBw")
+```
+

@@ -15,7 +15,7 @@ The $\chi^2$ (chi-square) goodness-of-fit tests whether an observed frequency di
 
 -   $H_1$: At least one observed frequency doesn't match the expected frequency.
 
-For example, if we have a deck of cards and want to see if people don't choose cards randomly, the null hypothesis would be that there is a 25% probability of getting each hearts, clubs, spades, and diamonds.
+However, these are *not* how you should report your hypotheses. You should specify your hypotheses in relation to the nature of your data. For example, if we have a deck of cards and want to see if people don't choose cards randomly, the null hypothesis would be that there is a 25% probability of getting each hearts, clubs, spades, and diamonds.
 
 ### Specify the hypotheses
 
@@ -81,11 +81,21 @@ The bar chart from above does a decent job of visualizing the results. Although 
 
 ![](images/09-chi-square/chi-square_excel.png){width="500"}
 
+### Video
+
+Here's a video walking through the chi-square goodness of fit test.
+
+```{r}
+knitr::include_url("https://www.youtube.com/watch?v=Pg1EA0eh2p0")
+```
+
 ### Additional information
 
 #### Different Expected Frequencies
 
-As you can tell, jamovi automatically assumed equal proportions of frequencies. However, perhaps we think our deck is loaded or we have the actual population frequencies and want to see if our distribution matches the population distribution. We can use the `Expected Proportions` in the setup to specify different expected frequencies.
+As you can tell, jamovi automatically assumed equal proportions of frequencies. However, there might be times when you don't want to make that assumption. Maybe we're testing the whether our sample frequencies match the population frequencies and those are uneven (e.g., whether our 40/60 gender split matches the 36/64 gender split in the population).
+
+We can use the `Expected Proportions` in the setup to specify different expected frequencies.
 
 For example, maybe we think our deck is a little stacked in favor of red cards--or we think our participants are more likely to choose red cards than black cards. We can specify our expected proportions and then interpret the results. In this case, participants do not seem more likely to choose red cards based on the expected frequencies we provided.
 

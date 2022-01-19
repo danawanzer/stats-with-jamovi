@@ -24,9 +24,9 @@ The strength of the correlation is determined by how closely the points in the s
 
 ### Specify your hypotheses
 
-Let's run an example with data from lsj-data. Open data from your Data Library in "lsj-data". Select and open "parenthood". This dataset measures a new mother's[^1] daily grumpiness very precisely, on a scale from 0 (not at all grumpy) to 100 (extremely grumpy). In addition, I am also tracking her sleeping patterns and her son's sleeping patterns across 100 days.
+Let's run an example with data from lsj-data. Open data from your Data Library in "lsj-data". Select and open "parenthood". This dataset measures a new mother's[^correlation-1] daily grumpiness very precisely, on a scale from 0 (not at all grumpy) to 100 (extremely grumpy). In addition, I am also tracking her sleeping patterns and her son's sleeping patterns across 100 days.
 
-[^1]: The dataset built into jamovi says the person's name is Dan, but they now go by Danielle. You can follow her on Twitter at [\@djnavarro](https://twitter.com/djnavarro).
+[^correlation-1]: The dataset built into jamovi says the person's name is Dan, but they now go by Danielle. You can follow her on Twitter at [\@djnavarro](https://twitter.com/djnavarro).
 
 The null hypothesis is there is no correlation whereas the alternative hypothesis is that there is a correlation. In this case, our hypothesis is a two-tailed hypothesis, although we could have an *a priori* hypothesis about the relationship between our variables.
 
@@ -117,6 +117,14 @@ The default in the Correlation Matrix is to plot the correlation matrix of all t
 Personally, this is why I like the `scatr` module in jamovi. You can create high-quality scatterplots of the six graphs above and then stitch them together in a nicer version. For example, here's the correlation between the sleep quality of both Dan and the baby with a linear regression line and standard error:
 
 ![](images/08-correlation/correlation-plot1.png){width="500"}
+
+### Video
+
+Here's a video walking through the correlation.
+
+```{r}
+knitr::include_url("https://www.youtube.com/watch?v=p4LNqatn2sg")
+```
 
 ### In case of violated assumptions
 

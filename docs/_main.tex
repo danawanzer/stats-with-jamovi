@@ -152,7 +152,7 @@
 
 \title{Statistics with jamovi}
 \author{Dana Wanzer}
-\date{Last Update: 2021-08-19}
+\date{Last Update: 2022-01-19}
 
 \begin{document}
 \maketitle
@@ -164,6 +164,8 @@
 \hypertarget{welcome}{%
 \chapter*{Welcome}\label{welcome}}
 \addcontentsline{toc}{chapter}{Welcome}
+
+\includegraphics{images/Cover.jpg}
 
 This is the website for PSYC 290 and PSYC 790 at the University of Wisconsin-Stout, taught by Dr.~Dana Wanzer. These resources are aimed at teaching you how to use jamovi and null hypothesis significance testing (NHST) to answer research questions.
 
@@ -234,6 +236,18 @@ In addition, if you have ideas to help make this textbook even better, please le
 \chapter{Statistics foundations}\label{statistics-foundations}}
 
 You have learned about both quantitative and qualitative methods. We will be focusing primarily on quantitative methods in this class and in this textbook. By quantitative methods, I mean methods that predominantly collect data that deals with numbers. We can then analyze that data using statistical procedures, which we will shorthand to ``statistics.'' Understanding what we mean by statistics is the purpose of this chapter.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{knitr}\SpecialCharTok{::}\FunctionTok{include\_url}\NormalTok{(}\StringTok{"https://www.youtube.com/watch?v=QirHpjLkHmc"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## PhantomJS not found. You can install it with webshot::install_phantomjs(). If it is installed, please make sure the phantomjs executable can be found via the PATH variable.
+\end{verbatim}
+
+\label{fig:unnamed-chunk-1}\textbf{CAPTION THIS FIGURE!!}
 
 \hypertarget{descriptive-vs-inferential-statistics}{%
 \section{Descriptive vs inferential statistics}\label{descriptive-vs-inferential-statistics}}
@@ -562,12 +576,27 @@ jamovi is a free and open statistical software that helps us run our descriptive
   It promotes reproducibility. jamovi will save your data, analyses, options, and results all in one file so you can easily pick up where you left off. This will make your homework and future data analyses a breeze.
 \end{enumerate}
 
-\hypertarget{getting-started-with-jamovi}{%
-\section{Getting started with jamovi}\label{getting-started-with-jamovi}}
+\hypertarget{additional-jamovi-videos}{%
+\section{Additional jamovi videos}\label{additional-jamovi-videos}}
 
-Throughout this course, you will be watching videos from the \href{https://www.linkedin.com/learning/introduction-to-jamovi/}{Introduction to jamovi LinkedIn Learning course} by Barton Poulson, founder of \href{https://datalab.cc/jamovi/}{datalab.cc}. By the end of this course, you will receive a certificate indicating you watched all the videos that you can put on your LinkedIn profile.
+If you would like additional videos on working with jamovi, I recommend either the \href{https://www.linkedin.com/learning/introduction-to-jamovi/}{Introduction to jamovi LinkedIn Learning course} by Barton Poulson, founder of \href{https://datalab.cc/jamovi/}{datalab.cc}. However, at this point the videos are a bit outdated so I am no longer assigning them.
 
-For this chapter, you should first watch the first set of videos (Introduction and chapters 1-3) on the LinkedIn Learning course before proceeding with the reading.
+\hypertarget{opening-data-in-jamovi}{%
+\section{Opening data in jamovi}\label{opening-data-in-jamovi}}
+
+I occasionally get questions on how to open .sav files (SPSS files) in jamovi. Here's a video walking you through that.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{knitr}\SpecialCharTok{::}\FunctionTok{include\_url}\NormalTok{(}\StringTok{"https://www.youtube.com/watch?v=e{-}09OfLVs2U"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## PhantomJS not found. You can install it with webshot::install_phantomjs(). If it is installed, please make sure the phantomjs executable can be found via the PATH variable.
+\end{verbatim}
+
+\label{fig:unnamed-chunk-1}\textbf{CAPTION THIS FIGURE!!}
 
 \hypertarget{descriptive-statistics}{%
 \section{Descriptive statistics}\label{descriptive-statistics}}
@@ -655,6 +684,18 @@ There are three options under \textbf{Box Plots}: \texttt{Box\ plot}, \texttt{Vi
 
 \textbf{Remember: it is incredibly important to always visualize your data!} You never know what descriptive statistics may be hiding.
 
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{knitr}\SpecialCharTok{::}\FunctionTok{include\_url}\NormalTok{(}\StringTok{"https://www.youtube.com/watch?v=d2wU0kmCJEY"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## PhantomJS not found. You can install it with webshot::install_phantomjs(). If it is installed, please make sure the phantomjs executable can be found via the PATH variable.
+\end{verbatim}
+
+\label{fig:unnamed-chunk-1}\textbf{CAPTION THIS FIGURE!!}
+
 Lastly, there is an option under \textbf{Bar Plots} for (you guessed it) a \texttt{Bar\ plot}. It will add error bars to your bar plot, but now that you know what can be hiding under descriptive statistics (bar plots only show the mean and error) you will hopefully avoid using these in the future when you can show the actual data itself.
 
 \hypertarget{expanding-your-data-visualization}{%
@@ -674,6 +715,20 @@ In this class, we'll learn about effective data visualization later in the semes
 \section{Cleaning data}\label{cleaning-data}}
 
 There are four basic types of cleaning we will be learning about: checking your data is setup correctly, computing new variables, transforming variables, and using filters.
+
+The following video walks through some of these data cleaning techniques.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{knitr}\SpecialCharTok{::}\FunctionTok{include\_url}\NormalTok{(}\StringTok{"https://www.youtube.com/watch?v=BGOZtlHRv6k"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## PhantomJS not found. You can install it with webshot::install_phantomjs(). If it is installed, please make sure the phantomjs executable can be found via the PATH variable.
+\end{verbatim}
+
+\label{fig:unnamed-chunk-1}\textbf{CAPTION THIS FIGURE!!}
 
 \hypertarget{data-setup}{%
 \subsection{Data setup}\label{data-setup}}
@@ -788,12 +843,24 @@ One of the ways we make inferences is using hypothesis testing. Regardless of th
   Interpret your results and make a decision
 \end{enumerate}
 
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{knitr}\SpecialCharTok{::}\FunctionTok{include\_url}\NormalTok{(}\StringTok{"https://www.youtube.com/watch?v=Eqs9L6gDaJg"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## PhantomJS not found. You can install it with webshot::install_phantomjs(). If it is installed, please make sure the phantomjs executable can be found via the PATH variable.
+\end{verbatim}
+
+\label{fig:unnamed-chunk-1}\textbf{CAPTION THIS FIGURE!!}
+
 Let's go through each of these in turn, using a hypothetical example.
 
 \hypertarget{an-example-of-hypothesis-testing}{%
 \section{An example of hypothesis testing}\label{an-example-of-hypothesis-testing}}
 
-Imagine a researcher wants to replicate Alburt Bandura's famous Bobo doll experiment. In this study, the researcher randomly assigns 30 six-year-old children to one of two conditions: one group watches a video of an adult showing aggressive behavior toward a Bobo doll and the other group watches a video of an adult passively playing with a Bobo doll. After watching their assigned video, children then went to the same room from the videos with the same Bobo doll. Researchers observed for aggressive behaviors\footnote{The dataset built into jamovi says the person's name is Dan, but they now go by Danielle. You can follow her on Twitter at \href{https://twitter.com/djnavarro}{@djnavarro}.}.
+Imagine a researcher wants to replicate Alburt Bandura's famous Bobo doll experiment. In this study, the researcher randomly assigns 30 six-year-old children to one of two conditions: one group watches a video of an adult showing aggressive behavior toward a Bobo doll and the other group watches a video of an adult passively playing with a Bobo doll. After watching their assigned video, children then went to the same room from the videos with the same Bobo doll. Researchers observed for aggressive behaviors\footnote{Technically, it's that the \emph{residuals} need to be normally distributed, but in the case of t-tests and ANOVAs the results are the same if we test for normality of residuals or the dependent variable.}.
 
 \hypertarget{write-your-hypotheses}{%
 \subsection{1. Write your hypotheses}\label{write-your-hypotheses}}
@@ -842,6 +909,10 @@ Since we're talking about mean differences, we could also reformulate the above 
 \bottomrule
 \end{longtable}
 
+Note: != means ``not equal'' like the ≠ symbol. I write != because that is the notation that R uses for ``not equal.''
+
+Similarly, you might be wondering why I use == instead of just =. Again, this is the notion R uses for ``exactly equal to.'' In R, a single equal sign is usually equivalent to the assignment operator (e.g., x = 10 means assign 10 to the variable x).
+
 \hypertarget{set-the-criteria-for-a-decision}{%
 \subsection{2. Set the criteria for a decision}\label{set-the-criteria-for-a-decision}}
 
@@ -853,11 +924,11 @@ Let's try to visualize this. We are saying that the null hypothesis is there is 
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{04.0-hypothesis-testing_files/figure-latex/unnamed-chunk-1-1} 
+{\centering \includegraphics[width=1\linewidth]{04.0-hypothesis-testing_files/figure-latex/unnamed-chunk-2-1} 
 
 }
 
-\caption{Critical area of statistical significance}\label{fig:unnamed-chunk-1}
+\caption{Critical area of statistical significance}\label{fig:unnamed-chunk-2}
 \end{figure}
 
 We figure out that critical value based on what we set as our level of significance, also known as the \textbf{alpha level}. Most studies you read use the arbitrary \(\alpha\) = .05 (5\%), although we really should be thinking critically about what alpha level we use (more on that in the next chapter). In the visualization above, we set the alpha to 5\% and so the area shaded in red is exactly 5\% of the area under the curve of the normal distribution.
@@ -907,7 +978,11 @@ That means the mean difference is 51.10 - 27.40 = 23.70. We'll learn how to cond
 \hypertarget{interpret-results-and-draw-a-conclusion.}{%
 \subsection{4. Interpret results and draw a conclusion.}\label{interpret-results-and-draw-a-conclusion.}}
 
-When \emph{t\textsubscript{obt} \textgreater{} t\textsubscript{crit}} we reject the null hypothesis whereas when \emph{t\textsubscript{obt} \textgreater{} t\textsubscript{crit}} we fail to reject the null hypothesis. Since 19.08 \textgreater{} 1.701, we \emph{reject the null hypothesis that there is no difference in conditions or that children in the passive condition displayed more aggression than children in the aggressive condition.}
+When \emph{t\textsubscript{obt} \textgreater{} t\textsubscript{crit}} we reject the null hypothesis which means our results are statistically significant (if our alpha is set to .05, then that means \emph{p} \textless{} .05).
+
+On the other hand, when \emph{t\textsubscript{obt} \textless{} t\textsubscript{crit}} we fail to reject the null hypothesis which means our results are not statistically significant (if our alpha is set to .05, then that means \emph{p} \textgreater{} .05).
+
+Since 19.08 \textgreater{} 1.701, we \emph{reject the null hypothesis that there is no difference in conditions or that children in the passive condition displayed more aggression than children in the aggressive condition.}
 
 However, this is when \textbf{Type 1} and \textbf{Type 2} errors come into play. Just because we get a result \emph{does not automatically mean that result is 100\% accurate}. There are many things that could lead us to an inaccurate interpretation!
 
@@ -1062,7 +1137,7 @@ A deviation exceeding the standard deviation occurs about once in three trials. 
 
 Basically, .05 was convenient. It was 1/20. It was around 2 standard deviations from the mean in a normal distribution. For some reason, it caught on (maybe the ``formally regarded as significant'' was why).
 
-However, a year later, even Fisher acknowledged we shouldn't just arbitrarily use \emph{p} = .05 as our alpha level.\footnote{The dataset built into jamovi says the person's name is Dan, but they now go by Danielle. You can follow her on Twitter at \href{https://twitter.com/djnavarro}{@djnavarro}.} Rather, we should consider setting it at higher odds (e.g., \emph{p} = .01). He also argued, ``A scientific fact should be regarded as experimentally established only if a properly designed experiment \emph{rarely fails} to give this level of significance.'' (Fisher, 1926, p.~504).
+However, a year later, even Fisher acknowledged we shouldn't just arbitrarily use \emph{p} = .05 as our alpha level.\footnote{Technically, it's that the \emph{residuals} need to be normally distributed, but in the case of t-tests and ANOVAs the results are the same if we test for normality of residuals or the dependent variable.} Rather, we should consider setting it at higher odds (e.g., \emph{p} = .01). He also argued, ``A scientific fact should be regarded as experimentally established only if a properly designed experiment \emph{rarely fails} to give this level of significance.'' (Fisher, 1926, p.~504).
 
 In other words, we need to think critically about the alpha level we set \emph{and} we need to test an effect multiple times before we start thinking the alternative hypothesis is true. Let's discuss power before we start putting it all together.
 
@@ -1070,6 +1145,23 @@ In other words, we need to think critically about the alpha level we set \emph{a
 \subsection{Are p-values bad?}\label{are-p-values-bad}}
 
 Some have argued that we should abandon the \emph{p}-value; this has led to things like journals completely banning \emph{p}-values altogether. However, I agree with Lakens that \href{https://psyarxiv.com/shm8v/}{``the practical alternative to the \emph{p}-value is the correctly used \emph{p}-value.''} That's to say: there is nothing \emph{wrong} with the \emph{p}-value inherently, and it can be useful. Rather, what's \emph{wrong} is that many people use them incorrectly.
+
+\hypertarget{video}{%
+\subsection{Video}\label{video}}
+
+The following video walks through some of the effect sizes, alpha, and power stuff.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{knitr}\SpecialCharTok{::}\FunctionTok{include\_url}\NormalTok{(}\StringTok{"https://www.youtube.com/watch?v=v1GrXJmUkBw"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## PhantomJS not found. You can install it with webshot::install_phantomjs(). If it is installed, please make sure the phantomjs executable can be found via the PATH variable.
+\end{verbatim}
+
+\label{fig:unnamed-chunk-2}\textbf{CAPTION THIS FIGURE!!}
 
 \hypertarget{power}{%
 \section{Power}\label{power}}
@@ -1247,7 +1339,7 @@ Let's do another example in which we still have a 50/50 on the hypotheses but we
 \midrule
 \endhead
 \textbf{\emph{p}} \textbf{\textless{} .05} (statistically significant) & .5\% & 40\% \\
-\textbf{\emph{p}} \textbf{\textgreater{} .05} (statistically non-significant) & 49.5\% & 20\% \\
+\textbf{\emph{p}} \textbf{\textgreater{} .05} (statistically non-significant) & 49.5\% & 10\% \\
 \bottomrule
 \end{longtable}
 
@@ -1257,6 +1349,23 @@ Now it is \emph{80 times more likely} (40/.5 = 80) that the alternative hypothes
 \subsubsection{Your turn: Increasing power AND decreasing alpha}\label{your-turn-increasing-power-and-decreasing-alpha}}
 
 Let's see what happens when we both increase power AND decrease alpha. Fill out the table on your own. When we assume the null and alternative hypotheses are 50\% likely each, and we set our alpha to 1\% and our power to 95\%, how much more likely is it that the alternative hypothesis is true than the null hypothesis is true?
+
+\hypertarget{video-1}{%
+\subsection{Video}\label{video-1}}
+
+The following walks through this power stuff some more.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{knitr}\SpecialCharTok{::}\FunctionTok{include\_url}\NormalTok{(}\StringTok{"https://www.youtube.com/watch?v=\_9ImSIP609I"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## PhantomJS not found. You can install it with webshot::install_phantomjs(). If it is installed, please make sure the phantomjs executable can be found via the PATH variable.
+\end{verbatim}
+
+\label{fig:unnamed-chunk-1}\textbf{CAPTION THIS FIGURE!!}
 
 \hypertarget{sample-size-power-analysis}{%
 \section{Sample size \& power analysis}\label{sample-size-power-analysis}}
@@ -1390,13 +1499,27 @@ It is important that you learn how to identify \emph{which} inferential statisti
 
 \includegraphics{images/Statistical Choices.png}
 
+Note: if you are a student in PSYC 290 or 790, you have access to a high-resolution PDF of this chart on Canvas.
+
 First, you need to determine what level of measurement your dependent variable (DV) is. We will only be covering statistical tests that have \emph{one} dependent variable. Therefore, you need to know whether the variable is categorical (i.e., nominal or ordinal) or it's continuous (i.e., interval or ratio).
 
 Next, you need to determine how many independent variables (IVs) there are and then what level of measurement your IV(s) are. In the case of a single categorical IV, we also need to know how many levels there are to the IV (i.e., how many categories there are). For categorical variables, we also need to know if the participants are different (i.e., between-subjects) or the same (i.e., within-subjects) within each level of the category.
 
 Lastly, for many of the statistical tests we need to know whether we meet the assumptions of parametric tests. If we don't meet the assumption, then there are alternative tests we can perform. We'll learn about assumption checking in the next section of this chapter.
 
-We can both \emph{forward map} and \emph{backwards map} with the chart above. Forward mapping involves understanding your data and your research question and then determining what statistical test to perform. Backwards mapping involves determining what kind of data is needed to perform a particular statistical test.
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{knitr}\SpecialCharTok{::}\FunctionTok{include\_url}\NormalTok{(}\StringTok{"https://www.youtube.com/watch?v=Q9sbIMCck1Q"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## PhantomJS not found. You can install it with webshot::install_phantomjs(). If it is installed, please make sure the phantomjs executable can be found via the PATH variable.
+\end{verbatim}
+
+\label{fig:unnamed-chunk-1}\textbf{CAPTION THIS FIGURE!!}
+
+We can both \emph{forward map} and \emph{backwards map} with the chart above. Forward mapping involves understanding your data and your research question and then determining what statistical test to perform. Forward mapping is mostly what you need to understand how to do! Backwards mapping involves determining what kind of data is needed to perform a particular statistical test. This is more for educational and understanding purposes and generally is not how you analyze data.
 
 Let's do some examples of forwards mapping. You may want to read the example and try your hand at it first and then check your answers!
 
@@ -1511,12 +1634,24 @@ There are four basic assumptions of most parametric tests:
   Independent scores
 \end{enumerate}
 
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{knitr}\SpecialCharTok{::}\FunctionTok{include\_url}\NormalTok{(}\StringTok{"https://www.youtube.com/watch?v=tNojQp7DQt8"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## PhantomJS not found. You can install it with webshot::install_phantomjs(). If it is installed, please make sure the phantomjs executable can be found via the PATH variable.
+\end{verbatim}
+
+\label{fig:unnamed-chunk-1}\textbf{CAPTION THIS FIGURE!!}
+
 Let's discuss these in turn and how to test for them.
 
 \hypertarget{normal-distribution-1}{%
 \subsection{Normal distribution}\label{normal-distribution-1}}
 
-For all our statistics, our dependent variable needs to be normally distributed.\footnote{The dataset built into jamovi says the person's name is Dan, but they now go by Danielle. You can follow her on Twitter at \href{https://twitter.com/djnavarro}{@djnavarro}.} We have already covered what the normal distribution is multiple times, so let's move on to how to test for normality. There are four ways to test for normality \textbf{and we should test for normality using as many tests as we possibly can!}
+For all our statistics, our dependent variable needs to be normally distributed.\footnote{Technically, it's that the \emph{residuals} need to be normally distributed, but in the case of t-tests and ANOVAs the results are the same if we test for normality of residuals or the dependent variable.} We have already covered what the normal distribution is multiple times, so let's move on to how to test for normality. There are four ways to test for normality \textbf{and we should test for normality using as many tests as we possibly can!}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -1639,6 +1774,18 @@ This is another assumption, like interval/ratio data, that we do not ever \emph{
 \section{Violated assumptions}\label{violated-assumptions}}
 
 What do you do if you have violated assumptions? Let's first talk about the assumptions we don't test (interval/ratio data and independent scores) before we turn to the other two assumptions (normality and homogeneity of variance).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{knitr}\SpecialCharTok{::}\FunctionTok{include\_url}\NormalTok{(}\StringTok{"https://www.youtube.com/watch?v=ypF1omeM{-}7g"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## PhantomJS not found. You can install it with webshot::install_phantomjs(). If it is installed, please make sure the phantomjs executable can be found via the PATH variable.
+\end{verbatim}
+
+\label{fig:unnamed-chunk-1}\textbf{CAPTION THIS FIGURE!!}
 
 \hypertarget{intervalratio-data-1}{%
 \subsection{Interval/ratio data}\label{intervalratio-data-1}}
@@ -2248,6 +2395,23 @@ Another default option in jamovi is via the Descriptives analysis. You can ask f
 
 Oftentimes, people display results in a simple bar chart, often adding error bars (either 95\% CI or SE error bars). But this is also not a great chart because it lacks information about the underlying distribution of data. Therefore, for the independent t-test I recommend the visualization shown above.
 
+\hypertarget{video-2}{%
+\subsection{Video}\label{video-2}}
+
+Here's a video walking through the independent t-test.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{knitr}\SpecialCharTok{::}\FunctionTok{include\_url}\NormalTok{(}\StringTok{"https://www.youtube.com/watch?v=Pg1EA0eh2p0"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## PhantomJS not found. You can install it with webshot::install_phantomjs(). If it is installed, please make sure the phantomjs executable can be found via the PATH variable.
+\end{verbatim}
+
+\label{fig:unnamed-chunk-1}\textbf{CAPTION THIS FIGURE!!}
+
 \hypertarget{in-case-of-violated-assumptions-1}{%
 \subsection{In case of violated assumptions}\label{in-case-of-violated-assumptions-1}}
 
@@ -2290,7 +2454,7 @@ If you do not satisfy the assumption of normality (regardless of whether you sat
 I will not go into specifics, but the idea behind the Mann-Whitney U test is that you take all the values (regardless of group) and rank them. You then sum the ranks across groups and calculate your U statistic and p-value. You interpret the p-value like you normally would, but there are differences in how we report the results because this statistic is based on the \emph{median} not the \emph{mean}.
 
 \begin{quote}
-Using the Mann-Whitney U test, there was a statistically significant difference in grades between Anastasia's students (\emph{Mdn} = 76, \emph{n} = 15) and Bernadette's students (\emph{Mdn} = 69, \emph{n}~= 18), \emph{U = 79.50}, \emph{p} = .054, \(r_{pb}\) = .41.
+Using the Mann-Whitney U test, there was a statistically significant difference in grades between Anastasia's students (\emph{Mdn} = 76, \emph{n} = 15) and Bernadette's students (\emph{Mdn} = 69, \emph{n}~= 18), \emph{U} = 79.50, \emph{p} = .046, \(r_{pb}\) = .41.
 \end{quote}
 
 \hypertarget{your-turn-1}{%
@@ -2548,6 +2712,23 @@ To make our lives a bit easier, here is the code in the Rj editor that you can c
 \end{Highlighting}
 \end{Shaded}
 
+\hypertarget{video-3}{%
+\subsection{Video}\label{video-3}}
+
+Here's a video walking through the dependent t-test.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{knitr}\SpecialCharTok{::}\FunctionTok{include\_url}\NormalTok{(}\StringTok{"https://www.youtube.com/watch?v=ywMPrS9Bo3Q"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## PhantomJS not found. You can install it with webshot::install_phantomjs(). If it is installed, please make sure the phantomjs executable can be found via the PATH variable.
+\end{verbatim}
+
+\label{fig:unnamed-chunk-2}\textbf{CAPTION THIS FIGURE!!}
+
 \hypertarget{in-case-of-violated-assumptions-2}{%
 \subsection{In case of violated assumptions}\label{in-case-of-violated-assumptions-2}}
 
@@ -2643,7 +2824,7 @@ The \(\chi^2\) (chi-square) goodness-of-fit tests whether an observed frequency 
   \(H_1\): At least one observed frequency doesn't match the expected frequency.
 \end{itemize}
 
-For example, if we have a deck of cards and want to see if people don't choose cards randomly, the null hypothesis would be that there is a 25\% probability of getting each hearts, clubs, spades, and diamonds.
+However, these are \emph{not} how you should report your hypotheses. You should specify your hypotheses in relation to the nature of your data. For example, if we have a deck of cards and want to see if people don't choose cards randomly, the null hypothesis would be that there is a 25\% probability of getting each hearts, clubs, spades, and diamonds.
 
 \hypertarget{specify-the-hypotheses-1}{%
 \subsection{Specify the hypotheses}\label{specify-the-hypotheses-1}}
@@ -2727,13 +2908,32 @@ The bar chart from above does a decent job of visualizing the results. Although 
 
 \includegraphics[width=5.20833in,height=\textheight]{images/09-chi-square/chi-square_excel.png}
 
+\hypertarget{video-4}{%
+\subsection{Video}\label{video-4}}
+
+Here's a video walking through the chi-square goodness of fit test.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{knitr}\SpecialCharTok{::}\FunctionTok{include\_url}\NormalTok{(}\StringTok{"https://www.youtube.com/watch?v=Pg1EA0eh2p0"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## PhantomJS not found. You can install it with webshot::install_phantomjs(). If it is installed, please make sure the phantomjs executable can be found via the PATH variable.
+\end{verbatim}
+
+\label{fig:unnamed-chunk-1}\textbf{CAPTION THIS FIGURE!!}
+
 \hypertarget{additional-information-1}{%
 \subsection{Additional information}\label{additional-information-1}}
 
 \hypertarget{different-expected-frequencies}{%
 \subsubsection{Different Expected Frequencies}\label{different-expected-frequencies}}
 
-As you can tell, jamovi automatically assumed equal proportions of frequencies. However, perhaps we think our deck is loaded or we have the actual population frequencies and want to see if our distribution matches the population distribution. We can use the \texttt{Expected\ Proportions} in the setup to specify different expected frequencies.
+As you can tell, jamovi automatically assumed equal proportions of frequencies. However, there might be times when you don't want to make that assumption. Maybe we're testing the whether our sample frequencies match the population frequencies and those are uneven (e.g., whether our 40/60 gender split matches the 36/64 gender split in the population).
+
+We can use the \texttt{Expected\ Proportions} in the setup to specify different expected frequencies.
 
 For example, maybe we think our deck is a little stacked in favor of red cards--or we think our participants are more likely to choose red cards than black cards. We can specify our expected proportions and then interpret the results. In this case, participants do not seem more likely to choose red cards based on the expected frequencies we provided.
 
@@ -2789,7 +2989,9 @@ To get the most out of these exercises, try to first find out the answer on your
 \hypertarget{overview-4}{%
 \subsection{Overview}\label{overview-4}}
 
-The \(\chi^2\) (chi-square) test of independence (or association) tests whether an observed frequency distribution of a nominal variable matches an expected frequency distribution, but unlike the goodness of fit test we are looking at the relationship, independence, or association between two variables. Our basic hypotheses for the chi-square goodness-of-fit test is as follows:
+The \(\chi^2\) (chi-square) test of independence (or association) tests whether an observed frequency distribution of a nominal variable matches an expected frequency distribution, but unlike the goodness of fit test we are looking at the relationship, independence, or association between two variables.
+
+Our basic hypotheses for the chi-square goodness-of-fit test is as follows:
 
 \begin{itemize}
 \item
@@ -2797,6 +2999,8 @@ The \(\chi^2\) (chi-square) test of independence (or association) tests whether 
 \item
   \(H_1\): At least one observed frequency doesn't match the expected frequency.
 \end{itemize}
+
+However, these are \emph{not} how you should report your hypotheses. You should specify your hypotheses in relation to the nature of your data. See below for an example.
 
 \hypertarget{specify-your-hypotheses-2}{%
 \subsection{Specify your hypotheses}\label{specify-your-hypotheses-2}}
@@ -2855,7 +3059,7 @@ The chi-square test of independence has the following assumptions:
 \item
   \textbf{Expected frequencies are sufficiently large}, which is usually greater than 5. If you violate this assumption, you can use Fisher's exact test.
 \item
-  Data are \textbf{independent} of one another, meaning each case contributes to only one cell of the table. If you violate this assumption, you may be able to use the McNemar test.
+  Data are \textbf{independent} of one another, meaning each case contributes to only one cell of the table. If you violate this assumption, you may be able to use the McNemar test. This requires knowing how your data was collected. If it's a within-subjects design that should be answered using a chi-square, then most likely you want to use McNemar's test. If it's a between-subjects design that should be answered using a chi-square, then you most likely meet this assumption and can perform the chi-square test of independence.
 \end{enumerate}
 
 \hypertarget{perform-the-test-4}{%
@@ -2882,7 +3086,9 @@ When you are done, your setup should look like this:
 
 \includegraphics{images/11-independence/independence_results.png}
 
-The first table shows us our observed frequencies. The second table gives us our results. Our p-value is less than .05 so we can reject the null hypothesis that the observed frequencies match our expected frequencies. jamovi also gives us our Cramer's V value. Note that it does not provide Phi because we don't have a perfect square table (e.g., 2x2 or 3x3).
+The first table shows us our observed frequencies. The second table gives us our results. Our p-value is less than .05 so we can reject the null hypothesis that the observed frequencies match our expected frequencies.
+
+jamovi also gives us our Cramer's V value. Note that it does not provide Phi because we don't have a perfect square table (e.g., 2x2 or 3x3). These are measures of effect size for the chi-square. Cramer's V can be interpreted similar to a correlation (ranges from 0 to 1, with higher scores meaning stronger relationships between the variables).
 
 \hypertarget{write-up-the-results-in-apa-style-4}{%
 \subsubsection{Write up the results in APA style}\label{write-up-the-results-in-apa-style-4}}
@@ -2905,6 +3111,23 @@ This one is also a visualization that would likely do better in Excel than in ja
 The second is a stacked bar chart with connected lines:
 
 \includegraphics[width=5.20833in,height=\textheight]{images/11-independence/independence_excel2.png}
+
+\hypertarget{video-5}{%
+\subsection{Video}\label{video-5}}
+
+Here's a video walking through the chi-square test of independence.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{knitr}\SpecialCharTok{::}\FunctionTok{include\_url}\NormalTok{(}\StringTok{"https://www.youtube.com/watch?v=6a5soxXTfkw"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## PhantomJS not found. You can install it with webshot::install_phantomjs(). If it is installed, please make sure the phantomjs executable can be found via the PATH variable.
+\end{verbatim}
+
+\label{fig:unnamed-chunk-1}\textbf{CAPTION THIS FIGURE!!}
 
 \hypertarget{in-case-of-violated-assumptions-3}{%
 \subsection{In case of violated assumptions}\label{in-case-of-violated-assumptions-3}}
@@ -3178,8 +3401,8 @@ We cannot \emph{test} the third and fourth assumptions; rather, those are based 
 
 However, we can and should test for the first two assumptions. Fortunately, the one-way ANOVA in jamovi has three check boxes under ``Assumption Checks'' that lets us test for both assumptions.
 
-\hypertarget{anova-is-robust-to-violations}{%
-\subsubsection{ANOVA is robust to violations}\label{anova-is-robust-to-violations}}
+\hypertarget{anova-is-somewhat-robust-to-violations}{%
+\subsubsection{ANOVA is (somewhat) robust to violations}\label{anova-is-somewhat-robust-to-violations}}
 
 Although we should meet the assumptions as much as possible, in general the F-statistic is \emph{robust} to violations of normality and homogeneity of variance. This means that you can still run the one-way ANOVA if you violate the assumptions, but \emph{only when group sizes and variances are equal or nearly equal}. If you have vastly different variances (such as 2:1 ratio or greater) or vastly different group sizes (such as a 2:1 ratio or greater), and especially if one group is really small (such as 10 or fewer cases), then your F-statistic is likely to be very wrong. For example, if your larger group has the larger variance, then your F-statistic is likely to be non-significant or smaller than it should be; however, if your larger group has smaller variance,then your F-statistic is likely to be significant or bigger than it should be!
 
@@ -3233,6 +3456,8 @@ Our p-value is less than our alpha value of .05, so our results are statisticall
 \hypertarget{write-up-the-results-in-apa-style-6}{%
 \subsubsection{Write up the results in APA style}\label{write-up-the-results-in-apa-style-6}}
 
+\textbf{Note}: This is sufficient if your results are not statistically significant. If your F-test is statistically significant, then you also need to report the group differences as described in the next chapter!
+
 We can write up our results in APA something like this:
 
 \begin{quote}
@@ -3245,7 +3470,7 @@ Sometimes, people like to put the statistics inside a parentheses. In that case,
 There is a significant difference in mood gain across the three drug conditions (\emph{F} {[}2, 15{]} = 18.61, \emph{p} \textless{} .001, \(\omega^2\) = .66).
 \end{quote}
 
-\textbf{Note}: This write-up \emph{is not sufficient!!!} We need to add the stuff in the next chapter on group differences.
+\textbf{Note}: Again. this write-up \emph{is not sufficient!!!} We need to add the stuff in the next chapter on group differences because our results are statistically significant. Otherwise, we could have stopped here if it was not statistically significant.
 
 \hypertarget{visualize-the-results-5}{%
 \subsubsection{Visualize the results}\label{visualize-the-results-5}}
@@ -3255,19 +3480,24 @@ You should visualize the results similarly to how you visualize the results for 
 \hypertarget{in-case-of-violated-assumptions-4}{%
 \subsection{In case of violated assumptions}\label{in-case-of-violated-assumptions-4}}
 
-The great news is that jamovi includes the Welch's F-statistic and the Kruskal-Wallis non-parametric test! The bad news is that you lose some functionality in jamovi when you use them because we use the one-way ANOVA function instead of the ANOVA functino.
+The great news is that jamovi includes the Welch's F-statistic and the Kruskal-Wallis non-parametric test! The bad news is that you lose some functionality in jamovi when you use them because we use the One-Way ANOVA function instead of the ANOVA function.
+
+As always, there is also the option to transform your data or remove outliers as an option before moving to the non-parametric statistical test. Refer back to the ``violated assumptions'' section of the inferential statistics chapter to remember how to transform your data!
 
 Just like with the Welch's t-statistic (for the independent t-test), it does not have the assumption of equal variances so it's appropriate to use if your data is normally distributed but does not have homogeneous variances. Similarly, the Kruskal-Wallis test is the non-parametric version of the one-way ANOVA and should be used if you do not satisfy the assumption of normality.
 
 Here's what statistic you should choose based on satisfying assumptions:
 
-\begin{longtable}[]{@{}lll@{}}
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.30}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.35}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.35}}@{}}
 \toprule
 & \textbf{Normality: satisfied} & \textbf{Normality: not satisfied} \\
 \midrule
 \endhead
-\textbf{Homogeneity of Variance: satisfied} & one-way ANOVA & Kruskal-Wallis \\
-\textbf{Homogeneity of Variance: not satisfied} & Welch's F-test & Kruskal-Wallis \\
+\textbf{Homogeneity of Variance: satisfied} & one-way ANOVA (but using the ANOVA function) & Kruskal-Wallis (using the one-way ANOVA function) \\
+\textbf{Homogeneity of Variance: not satisfied} & Welch's F-test (using the one-way ANOVA function) & Kruskal-Wallis (using the one-way ANOVA function) \\
 \bottomrule
 \end{longtable}
 
@@ -3362,6 +3592,8 @@ Often, we're not interested in just \emph{whether} there is a difference (which 
 
 \textbf{Note}: You \underline{do not} perform contrasts or post hoc comparisons if your overall \(F\) statistic is not statistically significant. You do not interpret group differences if you fail to reject the null hypothesis that there are no group differences!
 
+Below I provide descriptive statistics for these results. You can get this information in jamovi either by asking for descriptives from the exploration tab, or by asking for the estimated marginal means tables in the ANOVA analysis.
+
 \hypertarget{planned-contrasts}{%
 \subsection{Planned Contrasts}\label{planned-contrasts}}
 
@@ -3420,7 +3652,7 @@ If you have before-analysis hypotheses of group differences in your data, you wi
   \includegraphics{images/04_one-way-anova/contrasts_polynomial.png}
 \end{enumerate}
 
-\textbf{Test yourself!} Which contrast would make \underline{most sense} to test given that we want to know how our drug compares to the other two drugs?
+\textbf{Test yourself!} Which contrast do you think would make \underline{most sense} to test given that we want to know how our drug compares to the other two drugs?
 
 \hypertarget{write-up-planned-contrasts-in-apa-style}{%
 \subsubsection{Write up planned contrasts in APA style}\label{write-up-planned-contrasts-in-apa-style}}
@@ -3481,6 +3713,23 @@ Writing up results in APA style is both a science and an art. There's a science 
 However, there's also an art to it. Notice how I wrote that up in a way to summarize the findings as succinctly as possible. I could have said there was a difference between \emph{anxifree} and \emph{joyzepam} and a difference between \emph{joyzepam} and the placebo, but that's a lot more words and isn't written in a way to focus on what I'm hoping to see: that my drug \emph{joyzepam} performed better than the competitor \emph{anxifree} and a placebo condition.
 
 This is where you need to think creatively and be very critical in checking that what you say makes sense. Read your write-ups carefully! Have someone else read it. Can they understand what you mean?
+
+\hypertarget{video-6}{%
+\subsection{Video}\label{video-6}}
+
+Here's a video walking through the one-way ANOVA test.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{knitr}\SpecialCharTok{::}\FunctionTok{include\_url}\NormalTok{(}\StringTok{"https://www.youtube.com/watch?v=NBxLBXtvp8E"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## PhantomJS not found. You can install it with webshot::install_phantomjs(). If it is installed, please make sure the phantomjs executable can be found via the PATH variable.
+\end{verbatim}
+
+\label{fig:unnamed-chunk-1}\textbf{CAPTION THIS FIGURE!!}
 
 \hypertarget{in-case-of-violated-assumptions-5}{%
 \subsection{In case of violated assumptions}\label{in-case-of-violated-assumptions-5}}
@@ -3602,8 +3851,8 @@ We cannot \emph{test} the third and fourth assumptions; rather, those are based 
 
 However, we can and should test for the first two assumptions. Fortunately, the one-way ANOVA in jamovi has three check boxes under ``Assumption Checks'' that lets us test for both assumptions.
 
-\hypertarget{sphericity-assumption}{%
-\paragraph{Sphericity Assumption}\label{sphericity-assumption}}
+\hypertarget{what-is-the-sphericity-assumption}{%
+\paragraph{What is the Sphericity Assumption?}\label{what-is-the-sphericity-assumption}}
 
 The sphericity assumption is essentially the repeated measures ANOVA equivalent of homogeneity of variances. Sphericity means there is equality of variances of the \emph{differences} between treatment levels. For example, if there are three groups, then the difference in all three pairs of differences (1-2, 1-3, 2-3) need to have approximately equal variances. You only need to care about sphericity when there are at least three conditions, which is why we did not talk about this with the dependent t-test.
 
@@ -3612,7 +3861,9 @@ Fortunately, like the other assumption checks, testing for sphericity is as simp
 \hypertarget{checking-assumptions-5}{%
 \subsubsection{Checking assumptions}\label{checking-assumptions-5}}
 
-You'll notice there are no options to check for normality in the repeated measures ANOVA in jamovi. There's an \href{https://forum.jamovi.org/viewtopic.php?f=5\&t=1045}{interesting conversation} on the topic in the jamovi forums. Suffice to say, it's complicated and maybe someday they will implement it. For now, we just won't worry about it for the repeated measures ANOVA.
+We check assumptions using the ``Assumption Checks'' tab under the repeated measures ANOVA function.
+
+To test normality, we select Q-Q plot. It is currently the only option we have available for testing normality in the repeated measures ANOVA.
 
 So what we need to worry about is testing our assumption of sphericity. You should have checked the box \texttt{Sphericity\ tests} under the Assumption Checks drop-down menu. That produces the following output:
 
@@ -3625,9 +3876,11 @@ If Mauchly's test had been statistically significant (\emph{p} \textless{} .05),
 \begin{itemize}
 \tightlist
 \item
-  If the Greenhouse-Geisser value in the ``Tests of Sphericity'' table is \textgreater{} .75 then you should use the Huynh-Feldt correction.
+  If sphericity is violated and if the Greenhouse-Geisser value in the ``Tests of Sphericity'' table is \textgreater{} .75 then you should select the Huynh-Feldt correction and de-select the None option.
 \item
-  If the Greenhouse-Geisser value is \textless{} .75, then you should use the Greenhouse-Geisser correction.
+  If sphericity is violated and if the Greenhouse-Geisser value is \textless{} .75, then you should select the Greenhouse-Geisser correction and de-select the None option.
+\item
+  If sphericity is not violated, then only select the None option.
 \end{itemize}
 
 You can select these corrections in the Assumption Checks drop-down menu.
@@ -3646,7 +3899,7 @@ You can select these corrections in the Assumption Checks drop-down menu.
 \item
   Select Generalised \(\eta^2\) as your measure of effect size.
 \item
-  In the Assumption Checks drop-down menu, select \texttt{Sphericity\ tests}. You'll note that if you violate the assumption of sphericity, there are two corrections provided. These will be discussed later.
+  In the Assumption Checks drop-down menu, select \texttt{Sphericity\ tests} and \texttt{Q-Q\ Plots}. You'll note that if you violate the assumption of sphericity, there are two corrections provided. These are described above.
 \item
   In the Post Hoc Tests drop-down menu, select \texttt{Tukey}. Remember that we only interpret these if the overall \emph{F} is statistically significant.
 \item
@@ -3688,10 +3941,42 @@ A repeated measures ANOVA was performed examining how three tasks affected word 
 
 Similar to the dependent t-test, I am not a fan of the output for the repeated measures ANOVA in jamovi under ``estimated marginal means.'' You could modify the same syntax for the dependent t-test (you'll need to change line 3 to be sure you're picking the correct lines of data, not just 2:3, and revise the names and such. You could also move the data into Excel and do bar graphs with error bars there instead.
 
+\hypertarget{video-7}{%
+\subsection{Video}\label{video-7}}
+
+Here's a video walking through the repeated measures ANOVA test.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{knitr}\SpecialCharTok{::}\FunctionTok{include\_url}\NormalTok{(}\StringTok{"https://www.youtube.com/watch?v=Fl6S9IBC1q0"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## PhantomJS not found. You can install it with webshot::install_phantomjs(). If it is installed, please make sure the phantomjs executable can be found via the PATH variable.
+\end{verbatim}
+
+\label{fig:unnamed-chunk-1}\textbf{CAPTION THIS FIGURE!!}
+
 \hypertarget{in-case-of-violated-assumptions-6}{%
 \subsection{In case of violated assumptions}\label{in-case-of-violated-assumptions-6}}
 
-We have already discussed what to do if you violate the assumption of sphericity above; you select one of the two sphericity corrections.
+Here's what statistic you should choose based on satisfying assumptions:
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.25}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.51}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.24}}@{}}
+\toprule
+& \textbf{Normality: satisfied} & \textbf{Normality: not satisfied} \\
+\midrule
+\endhead
+\textbf{Sphericity: satisfied} & Repeated measures ANOVA & Friedman's test \\
+\textbf{Sphericity: not satisfied} & Repeated measures ANOVA with one of the sphericity corrections & Friedman's test \\
+\bottomrule
+\end{longtable}
+
+We have already discussed what to do if you violate the assumption of sphericity above; you select one of the two sphericity corrections based on the values of the sphericity tests.
 
 If you violate the assumption of normality or if the dependent variable is ordinal, then you can use the Friedman test. You can select this using the Repeated Measures ANOVA - Friedman option under the ANOVA analysis.
 
@@ -3706,7 +3991,7 @@ Once you've set-up the analysis, you can interpret the results. Overall, we cont
 
 \includegraphics{images/05-repeated-measures-anova/rm-anova_friedman.png}
 
-We can write up the results similarly as before:
+We can write up the results similarly as before except using the median because as a non-parametric test it is analyzing the median and not the mean:
 
 \begin{quote}
 Friedman's test was performed examining how three tasks affected word recognition in patients suffering from Broca's Aphasia. Task significantly affected word recall, \(\chi^2\) (2) = 6.64, \emph{p} = .036. Pairwise comparisons using Durbin-Conover indicated that participants recognized significantly more words in the speech task (\emph{M} = 7.17, \emph{Mdn} = 7.50) than participants in the syntax task (\emph{M} = 4.33, \emph{Mdn} = 6.50; \emph{p} = .006). There were no differences between the conceptual task (\emph{M} = 6.17, \emph{Mdn} = 6.50) and both the speech and syntax tasks.
@@ -3777,7 +4062,7 @@ Let's look at the main results next. We got three lines of results in addition t
 
 \includegraphics{images/06-factorial-anova/independent-factorial_results.png}
 
-Although we could simply look at the means to know whether attending or reading had higher grades than not attending or not reading because there are only two conditions, we can also look at the post hoc tests and definitely need to look at them if we have three or more conditions per IV. These are shown below. Because the mean differences are negative, we can determine that the second group had higher means than the second group. We can confirm that with the estimated marginal means (not shown here).
+Although we could simply look at the means to know whether attending or reading had higher grades than not attending or not reading because there are only two conditions, we can also look at the post hoc tests and definitely need to look at them if we have three or more conditions per IV. These are shown below. Because the mean differences are negative, we can determine that the second group had higher means than the first group. We can confirm that with the estimated marginal means (not shown here).
 
 \includegraphics{images/06-factorial-anova/independent-factorial_posthoc.png}
 
@@ -3799,6 +4084,18 @@ jamovi can provide a plot of your interaction, which can be helpful to help inte
 \includegraphics{images/06-factorial-anova/independent-factorial_plot.png}
 
 The parallel lines that are sloping upward tell me there is a significant main effect for both IVs but no interaction. How do I know that? With two variables, there are only so many interaction shapes possible. \href{https://courses.washington.edu/smartpsy/interactions.htm}{This website} does a fantastic time showing you all 8 combinations of the three effects (2 main effects and 1 interaction effect). Spend some time looking through it and familiarizing yourself with the plots!
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{knitr}\SpecialCharTok{::}\FunctionTok{include\_url}\NormalTok{(}\StringTok{"https://www.youtube.com/watch?v=EynjbSDW56I"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## PhantomJS not found. You can install it with webshot::install_phantomjs(). If it is installed, please make sure the phantomjs executable can be found via the PATH variable.
+\end{verbatim}
+
+\label{fig:unnamed-chunk-1}\textbf{CAPTION THIS FIGURE!!}
 
 \hypertarget{repeated-measures-factorial-anova}{%
 \subsection{Repeated Measures Factorial ANOVA}\label{repeated-measures-factorial-anova}}
@@ -3850,6 +4147,14 @@ Now we have everything we need (in addition to the estimated marginal means) and
 \begin{quote}
 We tested a 2 (time: pre- and post-intervention) x 3 (area: product, client, action) repeated measures factorial design to examine how both time and area affected performance. We satisfied the assumption of sphericity for all effects. There was a significant main effect of time (\emph{F} {[}1, 9{]} = 33.85, \emph{p} \textless{} .001, \(\eta^2_G\) = .25) such that performance at post-intervention (\emph{M} = 26.80, \emph{SE} = 1.84) was higher than at pre-intervention (\emph{M} = 19.37, \emph{SE} = 1.84). There was also a significant main effect of area (\emph{F} {[}2, 18{]} = 26.96, \emph{p} \textless{} .001, \(\eta^2_G\) = .36) such that both client (\emph{M} = 25.10, \emph{SE} = 1.95) and action (\emph{M} = 27.65, \emph{SE}~= 19.5) performance was higher than product performance (\emph{M} = 16.50, \emph{SE} = 1.95), but there was no difference between client and action performance. Lastly, there was a significant interaction between time and area such that there were no differences in product performance from pre- to post-intervention but there was for client and action performance (see Figure 1).
 \end{quote}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{knitr}\SpecialCharTok{::}\FunctionTok{include\_url}\NormalTok{(}\StringTok{"https://www.youtube.com/watch?v=BQAFjSzoFHU"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\label{fig:unnamed-chunk-2}\textbf{CAPTION THIS FIGURE!!}
 
 \hypertarget{mixed-factorial-anova}{%
 \subsection{Mixed Factorial ANOVA}\label{mixed-factorial-anova}}
@@ -3903,10 +4208,18 @@ We can look at the interaction plot, but notice that the lines are parallel whic
 Lastly, we can write up the results in APA style!
 
 \begin{quote}
-To test how both condition (control or fasting) and reward preference (food, money, and music) affected food cravings, we performed a mixed factorial ANOVA. There was a significant main effect of condition (\emph{F} {[}2, 196{]} = 4.45, \emph{p} = .013, \(\eta^2_G\) = .00) and a significant main effect of reward (\emph{F} {[}1, 98{]} = 82.44, \emph{p} \textless{} .001, \(\eta^2_G\) = .43). However, there was no statistically significant interaction effect of reward on condition (\emph{F} {[}2, 196{]} = .66, \emph{p} = .519, \(\eta^2_G\) = .00).
+To test how both condition (control or fasting) and reward preference (food, money, and music) affected food cravings, we performed a mixed factorial ANOVA. There was a significant main effect of condition (\emph{F} {[}1, 98{]} = 82.44, \emph{p} \textless{} .001, \(\eta^2_G\) = .43) and a significant main effect of reward (\emph{F} {[}2, 196{]} = 4.45, \emph{p} = .013, \(\eta^2_G\) = .00). However, there was no statistically significant interaction effect of reward on condition (\emph{F} {[}2, 196{]} = .66, \emph{p} = .519, \(\eta^2_G\) = .00).
 
 For condition, participants who fasted (\emph{M} = 3.81, \emph{SE} = .11) reported significantly more food cravings than participants in the control condition (\emph{M} = 2.33, \emph{SE} = .11; \(p_{Tukey}\) \textless{} .001). For reward, the food reward (\emph{M} = 3.14, \emph{SE} = .09) led to significantly higher food cravings than the music reward (\emph{M} = 3.00, \emph{SE} = .09; \(p_{Tukey}\) = .009), but there was no differences between the money reward (\emph{M} = 3.07, \emph{SE} = .09) and both food (\(p_{Tukey}\) = .340) or music (\(p_{Tukey}\) = .258).
 \end{quote}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{knitr}\SpecialCharTok{::}\FunctionTok{include\_url}\NormalTok{(}\StringTok{"https://www.youtube.com/watch?v=lbZK\_FoZKW4"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\label{fig:unnamed-chunk-3}\textbf{CAPTION THIS FIGURE!!}
 
 \hypertarget{ancova}{%
 \section{ANCOVA}\label{ancova}}
@@ -4004,7 +4317,22 @@ We conducted a study examining how stress and commute affect happiness levels in
 There was a significant main effect of stress on happiness such that participants in the low stress condition (\emph{M} = 68.45, \emph{SE} = 2.55) reported significantly greater happiness than participants in the high stress condition (\emph{M} = 39.85, \emph{SE} = 2.55), \emph{F} (1, 15) = 52.61, \emph{p} \textless{} .001, \(\omega^2\) = .39. There was also a significant main effect of commute on happiness such that participants who commuted via cycling (\emph{M} = 64.70, \emph{SE} = 2.29) reported significantly greater happiness than participants who commuted via driving (\emph{M} = 43.60, \emph{SE} = 2.29), \emph{F} (1, 15) = 42.33, \emph{p} \textless{} .001, \(\omega^2\) = .31. There was a significant interaction between stress and commute type such that happiness levels were similar in the low stress condition for both commute types, but happiness was significantly higher for participants who cycled versus those who drove in the high stress condition, \emph{F} (1, 15) = 14.15, \emph{p}~= .002, \(\omega^2\) = .10. Furthermore, age was a significant covariate of our dependent variable, \emph{F} (1, 15) = 6.39, \emph{p} = .023, \(\omega^2\) = .04.
 \end{quote}
 
-\includegraphics{images/07-ancova/ancova_interaction.png}
+\hypertarget{video-8}{%
+\subsection[ Video]{\texorpdfstring{\protect\includegraphics{images/07-ancova/ancova_interaction.png} Video}{ Video}}\label{video-8}}
+
+Here's a video walking through the ANCOVA test.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{knitr}\SpecialCharTok{::}\FunctionTok{include\_url}\NormalTok{(}\StringTok{"https://www.youtube.com/watch?v=OdKyMYoO0VU"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## PhantomJS not found. You can install it with webshot::install_phantomjs(). If it is installed, please make sure the phantomjs executable can be found via the PATH variable.
+\end{verbatim}
+
+\label{fig:unnamed-chunk-1}\textbf{CAPTION THIS FIGURE!!}
 
 \hypertarget{correlation-and-regression}{%
 \chapter{Correlation and regression}\label{correlation-and-regression}}
@@ -4151,6 +4479,23 @@ The default in the Correlation Matrix is to plot the correlation matrix of all t
 Personally, this is why I like the \texttt{scatr} module in jamovi. You can create high-quality scatterplots of the six graphs above and then stitch them together in a nicer version. For example, here's the correlation between the sleep quality of both Dan and the baby with a linear regression line and standard error:
 
 \includegraphics[width=5.20833in,height=\textheight]{images/08-correlation/correlation-plot1.png}
+
+\hypertarget{video-9}{%
+\subsection{Video}\label{video-9}}
+
+Here's a video walking through the correlation.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{knitr}\SpecialCharTok{::}\FunctionTok{include\_url}\NormalTok{(}\StringTok{"https://www.youtube.com/watch?v=p4LNqatn2sg"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## PhantomJS not found. You can install it with webshot::install_phantomjs(). If it is installed, please make sure the phantomjs executable can be found via the PATH variable.
+\end{verbatim}
+
+\label{fig:unnamed-chunk-1}\textbf{CAPTION THIS FIGURE!!}
 
 \hypertarget{in-case-of-violated-assumptions-7}{%
 \subsection{In case of violated assumptions}\label{in-case-of-violated-assumptions-7}}
@@ -4332,6 +4677,8 @@ There is more math to regression, which is needed to calculate the \emph{F}-test
 
 Let's run an example with data from lsj-data. Open data from your Data Library in ``lsj-data''. Select and open \texttt{parenthood}. This dataset includes the sleep quality of both Dan and Dan's baby, Dan's grumpiness, and the day of the data collection from 1-100.
 
+We'll be testing how both Dan's and Dan's baby's quality of sleep affect Dan's grumpiness.
+
 \hypertarget{data-set-up-9}{%
 \subsubsection{Data set-up}\label{data-set-up-9}}
 
@@ -4392,14 +4739,20 @@ Other assumptions require testing:
 \hypertarget{outliers}{%
 \paragraph{Outliers}\label{outliers}}
 
-Under Data Summary, you should have a table with Cook's distance. This is one way we can check for \emph{multivariate outliers}. This examines whether any one \emph{line}~of data is an outlier, not just one data \emph{point}. In general, Cook's distances greater than 1 indicate a multivariate outlier. Our Cook's distances are very small, so we do not have a problem with outliers.
+Under Data Summary, you should have a table with Cook's distance. This is one way we can check for \emph{multivariate outliers}. This examines whether any one \emph{line} of data is an outlier, not just one data \emph{point}. In general, Cook's distances greater than 1 indicate a multivariate outlier. Our Cook's distances are very small, so we do not have a problem with outliers.
 
 \includegraphics{images/13-regression/regression-cooks.png}
+
+If you violate this assumption and have one or more multivariate outliers, then go to the Save tab in your regression setup and select the box for Cook's distance. That will create a new variable in your dataset with the Cook's distance. Create a filter and remove any data that has a Cook's distance greater than 1.
 
 \hypertarget{normality-of-the-residuals}{%
 \paragraph{Normality of the residuals}\label{normality-of-the-residuals}}
 
-The regression analysis in jamovi allows us to check normality with the Shapiro-Wilk's test and the Q-Q plot of our residuals. We've seen this multiple times, so by now it should be well-ingrained that because Shapiro-Wilk's is not statistically significant and our data points fall along the diagonal line that we satisfy the assumption of normally distributed residuals.
+The regression analysis in jamovi allows us to check multivariate normality with the Shapiro-Wilk's test and the Q-Q plot of our residuals. We've seen this multiple times, so by now it should be well-ingrained that because Shapiro-Wilk's is not statistically significant and our data points fall along the diagonal line that we satisfy the assumption of normally distributed residuals.
+
+Note that in large datasets, your Q-Q plot may look fine but your Shapiro-Wilk's test may be statistically significant. In that case, you can likely assume your data is normally distributed. The Shapiro-Wilk's test tends to say things are not normal with very small deviations from large datasets.
+
+If you violate the assumption of normality, you can try transformating one or more variables. For the purposes of our assignments, if you violate this assumption then just mention that it is violated and that you will proceed anyways.
 
 \includegraphics{images/13-regression/regression-normality.png}
 
@@ -4407,6 +4760,8 @@ The regression analysis in jamovi allows us to check normality with the Shapiro-
 \paragraph{Linearity \& homoscedasticity}\label{linearity-homoscedasticity}}
 
 To examine linearity and homoscedasticity, two of the assumptions of regression, we examine the Residuals Plots. You will get one plot of the overall model (Fitted) and one for each of your variables (DV and IV(s)). I've displayed the residuals plot for the Fitted values against the residuals below. In these plots, we want our data to look like a random scattering of dots even dispersed around zero on the y-axis.
+
+We will not be learning non-normal or weighted least squares regression in this course, so if you violate one or both of these assumptions then mention which are violated and that you will proceed anyways.
 
 \textbf{Linearity}: If the data points seem to have a curve in the graph, then that suggests you have failed the assumption of linearity. Our data doesn't seem to have any curve to it, so we satisfy the assumption of linearity.
 
@@ -4417,7 +4772,9 @@ To examine linearity and homoscedasticity, two of the assumptions of regression,
 \hypertarget{independence-of-residuals}{%
 \paragraph{Independence of residuals}\label{independence-of-residuals}}
 
-The Durbin-Watson test for autocorrelction tests for independence of residuals. We want the Durbin-Watson value to be as close to 2 as possible. Values less than 1 or greater than 3 are problematic and indicate we are violating this assumption. In our case, the DW test statistic is 2.12 and so very close to 2. Furthermore, they provide a p-value and the p-value is greater than .05 so the test statistic is not statistically significant, further supporting that we meet the assumption that our residuals are independent.
+The Durbin-Watson test for autocorrelation tests for independence of residuals. We want the Durbin-Watson value to be as close to 2 as possible. Values less than 1 or greater than 3 are problematic and indicate we are violating this assumption. In our case, the DW test statistic is 2.12 and so very close to 2. Furthermore, they provide a p-value and the p-value is greater than .05 so the test statistic is not statistically significant, further supporting that we meet the assumption that our residuals are independent.
+
+If you violate this assumption, it's likely a function of how your data was collected (e.g., a time effect or you have nested data). We won't be covering what to do in these cases, but if you have nested data you may be interested in multilevel or hierarchical modeling (MLM/HLM).
 
 \includegraphics{images/13-regression/regression-durbinwatson.png}
 
@@ -4507,6 +4864,23 @@ Dan collected data on how many hours of sleep Dan and Dan's baby got, as well as
 \end{quote}
 
 Note that in many of these write-ups I did not include anything about assumption checking. I normally write up that information as part of my analytic plan in my methods section (e.g., ``I checked for multivariate outliers using Cook's distance.''). Included in this section, I explain what I will do if I do not meet various assumptions. Then, if I don't meet the assumption in the results section I explain that I did not meet the assumption, explain the results if necessary, explain what I did, and then give the results. In this case, we met all the assumptions (that presumably I described in my methods section) and therefore went straight to the results.
+
+\hypertarget{video-10}{%
+\subsection{Video}\label{video-10}}
+
+Here's a video walking through the regression.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{knitr}\SpecialCharTok{::}\FunctionTok{include\_url}\NormalTok{(}\StringTok{"https://www.youtube.com/watch?v=SfubvsatkdA"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## PhantomJS not found. You can install it with webshot::install_phantomjs(). If it is installed, please make sure the phantomjs executable can be found via the PATH variable.
+\end{verbatim}
+
+\label{fig:unnamed-chunk-5}\textbf{CAPTION THIS FIGURE!!}
 
 \hypertarget{additional-information-5}{%
 \subsection{Additional information}\label{additional-information-5}}
@@ -4662,6 +5036,66 @@ Although I did not directly ask for them, the estimated marginal means for the l
 
 \caption{One-way ANOVA as a regression}\label{fig:unnamed-chunk-1}
 \end{figure}
+
+\hypertarget{writing-up-results}{%
+\chapter{Writing up results}\label{writing-up-results}}
+
+This chapter goes over how to write up statistical results. Refer back to this chapter often!
+
+\hypertarget{the-4-components-of-writing-statistical-results}{%
+\section{The 4 components of writing statistical results}\label{the-4-components-of-writing-statistical-results}}
+
+When writing up the results of a statistical test, we should always include the following information:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Description of your research question and/or hypotheses.
+\item
+  Description of your data. If you fail to meet assumptions, you should specify that and describe what test you chose to perform as a result.
+\item
+  The results of the inferential test, including what test was performed, the test value and degrees of freedom, p-value, and effect size.
+\item
+  Interpretation of the results or whether the hypothesis was supported or not, including any other information as needed.
+\end{enumerate}
+
+\hypertarget{an-example-1}{%
+\section{An example}\label{an-example-1}}
+
+Let's go through an example. This data comes from the independent t-test chapter. Given the results of the t-test, we can write up our results in APA something like this:
+
+\begin{quote}
+The research question was whether there was a difference in student grades between Anastasia's and Bernadette's classes. Anastasia's students (\emph{M} = 74.53, \emph{SD} = 9.00, \emph{n} = 15) had significantly higher grades than Bernadette's students (\emph{M} = 69.06, \emph{SD} = 5.77, \emph{n}~= 18), \emph{t} (31) = 2.12, \emph{p} = .043, \emph{d} = .74.
+\end{quote}
+
+Let's analyze that against the 4 things we need to report:
+
+\begin{quote}
+\textbf{\#1:} The research question was whether there was a difference in student grades between Anastasia's and Bernadette's classes. \textbf{\#4} Anastasia's students \textbf{\#2} (\emph{M} = 74.53, \emph{SD} = 9.00, \emph{n} = 15) \textbf{\#4 cont.} had significantly higher grades than Bernadette's students \textbf{\#2} (\emph{M} = 69.06, \emph{SD} = 5.77, \emph{n}~= 18), \textbf{\#3} \emph{t} (31) = 2.12, \emph{p} = .043, \emph{d} = .74.
+\end{quote}
+
+To ease the interpretation, let's write it out like this:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Research question or hypothesis}: Is there a difference in student grades between Anastasia's and Bernadette's classes?
+\item
+  \textbf{Descriptive statistics}: Anastasia's students (\emph{M} = 74.53, \emph{SD} = 9.00, \emph{n} = 15); Bernadette's students (\emph{M} = 69.06, \emph{SD} = 5.77, \emph{n}~= 18)
+\item
+  \textbf{Inferential statistics}: \emph{t} (31) = 2.12, \emph{p} = .043, \emph{d} = .74
+\item
+  \textbf{Interpretation of results that answer's the research question or demonstrates whether the hypothesis was rejected or not}: Anastasia's students had significantly higher grades than Bernadette's students.
+\end{enumerate}
+
+Sometimes, people like to put the statistics inside a parentheses. In that case, you need to change the parentheses around the degrees of freedom as brackets. Here's another example write-up of the results in APA style:
+
+\begin{quote}
+\textbf{\#1} I tested the difference in grades between Anastasia's students \textbf{\#2} (\emph{M} = 74.53, \emph{SD} = 9.00, \emph{n} = 15) and Bernadette's students (\emph{M} = 69.06, \emph{SD} = 5.77, \emph{n}~= 18). \textbf{\#3} An independent samples t-test showed that the 5.48 mean difference between the tutor's student was statistically significant (\emph{t} {[}31{]} = 2.12, \emph{p} = .043, \emph{d} = .74). \textbf{\#4} Therefore, we reject the null hypothesis that there is no difference in grades between the two classes.
+\end{quote}
+
+Note that these are not the only way we can write up the results in APA format. The key is that we include all four pieces of information as specified above.
 
 \hypertarget{appendix-appendices}{%
 \appendix}

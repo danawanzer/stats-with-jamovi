@@ -12,8 +12,14 @@ jamovi is a free and open statistical software that helps us run our descriptive
 
 5.  It promotes reproducibility. jamovi will save your data, analyses, options, and results all in one file so you can easily pick up where you left off. This will make your homework and future data analyses a breeze.
 
-## Getting started with jamovi
+## Additional jamovi videos
 
-Throughout this course, you will be watching videos from the [Introduction to jamovi LinkedIn Learning course](https://www.linkedin.com/learning/introduction-to-jamovi/) by Barton Poulson, founder of [datalab.cc](https://datalab.cc/jamovi/). By the end of this course, you will receive a certificate indicating you watched all the videos that you can put on your LinkedIn profile.
+If you would like additional videos on working with jamovi, I recommend either the [Introduction to jamovi LinkedIn Learning course](https://www.linkedin.com/learning/introduction-to-jamovi/) by Barton Poulson, founder of [datalab.cc](https://datalab.cc/jamovi/). However, at this point the videos are a bit outdated so I am no longer assigning them. 
 
-For this chapter, you should first watch the first set of videos (Introduction and chapters 1-3) on the LinkedIn Learning course before proceeding with the reading.
+## Opening data in jamovi
+
+I occasionally get questions on how to open .sav files (SPSS files) in jamovi. Here's a video walking you through that.
+
+```{r}
+knitr::include_url("https://www.youtube.com/watch?v=e-09OfLVs2U")
+```

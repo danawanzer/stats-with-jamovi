@@ -84,7 +84,7 @@ We cannot *test* the third and fourth assumptions; rather, those are based on kn
 
 However, we can and should test for the first two assumptions. Fortunately, the one-way ANOVA in jamovi has three check boxes under "Assumption Checks" that lets us test for both assumptions.
 
-#### ANOVA is robust to violations
+#### ANOVA is (somewhat) robust to violations
 
 Although we should meet the assumptions as much as possible, in general the F-statistic is *robust* to violations of normality and homogeneity of variance. This means that you can still run the one-way ANOVA if you violate the assumptions, but *only when group sizes and variances are equal or nearly equal*. If you have vastly different variances (such as 2:1 ratio or greater) or vastly different group sizes (such as a 2:1 ratio or greater), and especially if one group is really small (such as 10 or fewer cases), then your F-statistic is likely to be very wrong. For example, if your larger group has the larger variance, then your F-statistic is likely to be non-significant or smaller than it should be; however, if your larger group has smaller variance,then your F-statistic is likely to be significant or bigger than it should be!
 
@@ -130,6 +130,8 @@ Our p-value is less than our alpha value of .05, so our results are statisticall
 
 #### Write up the results in APA style
 
+**Note**: This is sufficient if your results are not statistically significant. If your F-test is statistically significant, then you also need to report the group differences as described in the next chapter!
+
 We can write up our results in APA something like this:
 
 > There is a significant difference in mood gain across the three drug conditions, *F* (2, 15) = 18.61, *p* \< .001, $\omega^2$ = .66.
@@ -138,7 +140,7 @@ Sometimes, people like to put the statistics inside a parentheses. In that case,
 
 > There is a significant difference in mood gain across the three drug conditions (*F* [2, 15] = 18.61, *p* \< .001, $\omega^2$ = .66).
 
-**Note**: This write-up *is not sufficient!!!* We need to add the stuff in the next chapter on group differences.
+**Note**: Again. this write-up *is not sufficient!!!* We need to add the stuff in the next chapter on group differences because our results are statistically significant. Otherwise, we could have stopped here if it was not statistically significant.
 
 #### Visualize the results
 
@@ -146,16 +148,18 @@ You should visualize the results similarly to how you visualize the results for 
 
 ### In case of violated assumptions
 
-The great news is that jamovi includes the Welch's F-statistic and the Kruskal-Wallis non-parametric test! The bad news is that you lose some functionality in jamovi when you use them because we use the one-way ANOVA function instead of the ANOVA functino.
+The great news is that jamovi includes the Welch's F-statistic and the Kruskal-Wallis non-parametric test! The bad news is that you lose some functionality in jamovi when you use them because we use the One-Way ANOVA function instead of the ANOVA function.
+
+As always, there is also the option to transform your data or remove outliers as an option before moving to the non-parametric statistical test. Refer back to the "violated assumptions" section of the inferential statistics chapter to remember how to transform your data!
 
 Just like with the Welch's t-statistic (for the independent t-test), it does not have the assumption of equal variances so it's appropriate to use if your data is normally distributed but does not have homogeneous variances. Similarly, the Kruskal-Wallis test is the non-parametric version of the one-way ANOVA and should be used if you do not satisfy the assumption of normality.
 
 Here's what statistic you should choose based on satisfying assumptions:
 
-|                                            | **Normality: satisfied** | **Normality: not satisfied** |
-|--------------------------------------------|--------------------------|------------------------------|
-| **Homogeneity of Variance: satisfied**     | one-way ANOVA            | Kruskal-Wallis               |
-| **Homogeneity of Variance: not satisfied** | Welch's F-test           | Kruskal-Wallis               |
+|                                            | **Normality: satisfied**                          | **Normality: not satisfied**                      |
+|--------------------------------------------|---------------------------------------------------|---------------------------------------------------|
+| **Homogeneity of Variance: satisfied**     | one-way ANOVA (but using the ANOVA function)      | Kruskal-Wallis (using the one-way ANOVA function) |
+| **Homogeneity of Variance: not satisfied** | Welch's F-test (using the one-way ANOVA function) | Kruskal-Wallis (using the one-way ANOVA function) |
 
 #### Welch's F-test
 

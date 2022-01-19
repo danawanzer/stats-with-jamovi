@@ -149,6 +149,15 @@ jmv::descriptives(data = long,
                   dot = TRUE)
 ```
 
+### Video
+
+Here's a video walking through the dependent t-test.
+
+```{r}
+knitr::include_url("https://www.youtube.com/watch?v=ywMPrS9Bo3Q")
+```
+
+
 ### In case of violated assumptions
 
 If you violated the assumption of normality and no transformation fixed your data, then you can perform the non-parametric version of the dependent t-test called the Wilcoxon Rank test. As a reminder, non-parametric tests do not make assumptions about the distribution of data because it deals with the *median* not the *mean*.

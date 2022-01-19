@@ -9,11 +9,15 @@ options(knitr.graphics.auto_pdf = TRUE)
 
 ### Overview
 
-The $\chi^2$ (chi-square) test of independence (or association) tests whether an observed frequency distribution of a nominal variable matches an expected frequency distribution, but unlike the goodness of fit test we are looking at the relationship, independence, or association between two variables. Our basic hypotheses for the chi-square goodness-of-fit test is as follows:
+The $\chi^2$ (chi-square) test of independence (or association) tests whether an observed frequency distribution of a nominal variable matches an expected frequency distribution, but unlike the goodness of fit test we are looking at the relationship, independence, or association between two variables.
+
+Our basic hypotheses for the chi-square goodness-of-fit test is as follows:
 
 -   $H_0$: The observed frequencies match the expected frequencies.
 
 -   $H_1$: At least one observed frequency doesn't match the expected frequency.
+
+However, these are *not* how you should report your hypotheses. You should specify your hypotheses in relation to the nature of your data. See below for an example.
 
 ### Specify your hypotheses
 
@@ -56,7 +60,7 @@ The chi-square test of independence has the following assumptions:
 
 1.  **Expected frequencies are sufficiently large**, which is usually greater than 5. If you violate this assumption, you can use Fisher's exact test.
 
-2.  Data are **independent** of one another, meaning each case contributes to only one cell of the table. If you violate this assumption, you may be able to use the McNemar test.
+2.  Data are **independent** of one another, meaning each case contributes to only one cell of the table. If you violate this assumption, you may be able to use the McNemar test. This requires knowing how your data was collected. If it's a within-subjects design that should be answered using a chi-square, then most likely you want to use McNemar's test. If it's a between-subjects design that should be answered using a chi-square, then you most likely meet this assumption and can perform the chi-square test of independence.
 
 ### Perform the test
 
@@ -76,7 +80,9 @@ When you are done, your setup should look like this:
 
 ![](images/11-independence/independence_results.png)
 
-The first table shows us our observed frequencies. The second table gives us our results. Our p-value is less than .05 so we can reject the null hypothesis that the observed frequencies match our expected frequencies. jamovi also gives us our Cramer's V value. Note that it does not provide Phi because we don't have a perfect square table (e.g., 2x2 or 3x3).
+The first table shows us our observed frequencies. The second table gives us our results. Our p-value is less than .05 so we can reject the null hypothesis that the observed frequencies match our expected frequencies.
+
+jamovi also gives us our Cramer's V value. Note that it does not provide Phi because we don't have a perfect square table (e.g., 2x2 or 3x3). These are measures of effect size for the chi-square. Cramer's V can be interpreted similar to a correlation (ranges from 0 to 1, with higher scores meaning stronger relationships between the variables).
 
 #### Write up the results in APA style
 
@@ -95,6 +101,14 @@ This one is also a visualization that would likely do better in Excel than in ja
 The second is a stacked bar chart with connected lines:
 
 ![](images/11-independence/independence_excel2.png){width="500"}
+
+### Video
+
+Here's a video walking through the chi-square test of independence.
+
+```{r}
+knitr::include_url("https://www.youtube.com/watch?v=6a5soxXTfkw")
+```
 
 ### In case of violated assumptions
 

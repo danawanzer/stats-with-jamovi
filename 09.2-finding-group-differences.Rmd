@@ -4,6 +4,8 @@ Often, we're not interested in just *whether* there is a difference (which the F
 
 **Note**: You [do not]{.ul} perform contrasts or post hoc comparisons if your overall $F$ statistic is not statistically significant. You do not interpret group differences if you fail to reject the null hypothesis that there are no group differences!
 
+Below I provide descriptive statistics for these results. You can get this information in jamovi either by asking for descriptives from the exploration tab, or by asking for the estimated marginal means tables in the ANOVA analysis.
+
 ### Planned Contrasts
 
 If you have before-analysis hypotheses of group differences in your data, you will use planned contrasts. You can find the planned contrasts in the ANOVA (but not the one-way ANOVA) setup as a drop-down menu. Note that while I show all six contrasts that jamovi provides, you do not normally do multiple contrasts. These are just shown for illustrative purposes:
@@ -12,42 +14,37 @@ If you have before-analysis hypotheses of group differences in your data, you wi
 
     ![](images/04_one-way-anova/contrasts_deviation.png)
 
-```{=html}
 <!-- -->
-```
+
 2.  **Simple**: Each category is compared to the first category. The order of categories is alphabetical or numerical order. Notice how anxifree is considered the first category.
 
     ![](images/04_one-way-anova/contrasts_simple.png)
 
-```{=html}
 <!-- -->
-```
+
 3.  **Difference**: Each category (except the first) is compared to the mean effect of all previous categories.
 
     ![](images/04_one-way-anova/contrasts_difference.png)
 
-```{=html}
 <!-- -->
-```
+
 4.  **Helmert**: Each category (except the last) is compared to the mean effect of all subsequent categories.
 
     ![](images/04_one-way-anova/contrasts_helmert.png)
 
-```{=html}
 <!-- -->
-```
+
 5.  **Repeated**: Each category is compared to the last category.
 
     ![](images/04_one-way-anova/contrasts_repeated.png)
 
-```{=html}
 <!-- -->
-```
+
 6.  **Polynomial**: Tests trends in the data. It will examine the *n-1*^th^ degree based on the number of groups. In this case, because we have 3 groups it is testing both a linear (^1^) and quadratic (^2^) trend. If we had 5 groups, it would test a linear (^1^), quadratic (^2^), cubic (^3^), and quartic (^4^) trend. Note that your factor levels must be ordinal for a polynomial contrast to make sense.
 
     ![](images/04_one-way-anova/contrasts_polynomial.png)
 
-**Test yourself!** Which contrast would make [most sense]{.ul} to test given that we want to know how our drug compares to the other two drugs?
+**Test yourself!** Which contrast do you think would make [most sense]{.ul} to test given that we want to know how our drug compares to the other two drugs?
 
 #### Write up planned contrasts in APA style
 
@@ -90,6 +87,14 @@ Writing up results in APA style is both a science and an art. There's a science 
 However, there's also an art to it. Notice how I wrote that up in a way to summarize the findings as succinctly as possible. I could have said there was a difference between *anxifree* and *joyzepam* and a difference between *joyzepam* and the placebo, but that's a lot more words and isn't written in a way to focus on what I'm hoping to see: that my drug *joyzepam* performed better than the competitor *anxifree* and a placebo condition.
 
 This is where you need to think creatively and be very critical in checking that what you say makes sense. Read your write-ups carefully! Have someone else read it. Can they understand what you mean?
+
+### Video
+
+Here's a video walking through the one-way ANOVA test.
+
+```{r}
+knitr::include_url("https://www.youtube.com/watch?v=NBxLBXtvp8E")
+```
 
 ### In case of violated assumptions
 

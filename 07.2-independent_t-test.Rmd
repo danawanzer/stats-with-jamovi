@@ -165,6 +165,14 @@ Another default option in jamovi is via the Descriptives analysis. You can ask f
 
 Oftentimes, people display results in a simple bar chart, often adding error bars (either 95% CI or SE error bars). But this is also not a great chart because it lacks information about the underlying distribution of data. Therefore, for the independent t-test I recommend the visualization shown above.
 
+### Video
+
+Here's a video walking through the independent t-test.
+
+```{r}
+knitr::include_url("https://www.youtube.com/watch?v=Pg1EA0eh2p0")
+```
+
 ### In case of violated assumptions
 
 If you fail to meet one or both of the assumptions of normality (and no transformations fixed your data) and homogeneity of variances, jamovi has the alternative statistics easily built in. Here's what statistic you should choose based on satisfying assumptions:
@@ -196,7 +204,7 @@ If you do not satisfy the assumption of normality (regardless of whether you sat
 
 I will not go into specifics, but the idea behind the Mann-Whitney U test is that you take all the values (regardless of group) and rank them. You then sum the ranks across groups and calculate your U statistic and p-value. You interpret the p-value like you normally would, but there are differences in how we report the results because this statistic is based on the *median* not the *mean*.
 
-> Using the Mann-Whitney U test, there was a statistically significant difference in grades between Anastasia's students (*Mdn* = 76, *n* = 15) and Bernadette's students (*Mdn* = 69, *n* = 18), *U = 79.50*, *p* = .054, $r_{pb}$ = .41.
+> Using the Mann-Whitney U test, there was a statistically significant difference in grades between Anastasia's students (*Mdn* = 76, *n* = 15) and Bernadette's students (*Mdn* = 69, *n* = 18), *U* = 79.50, *p* = .046, $r_{pb}$ = .41.
 
 ### Your turn!
 

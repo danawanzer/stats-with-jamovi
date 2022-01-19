@@ -9,6 +9,10 @@ One of the ways we make inferences is using hypothesis testing. Regardless of th
 3.  Perform the test statistic (this step has a little bit more to it, but we'll get to it later!)
 4.  Interpret your results and make a decision
 
+```{r}
+knitr::include_url("https://www.youtube.com/watch?v=Eqs9L6gDaJg")
+```
+
 Let's go through each of these in turn, using a hypothetical example.
 
 ## An example of hypothesis testing
@@ -43,7 +47,7 @@ A common error in a directional hypothesis like this is to forget that the null 
 
 |                        | Two-tailed         | One-tailed (greater) | One-tailed (less than) |
 |------------------------|--------------------|----------------------|------------------------|
-| **Alternative** (H~1~) | $\mu_1$ != $\mu_2$ | $\mu_1$ \> $\mu_2$   | $\mu_1$ \< $\mu_2$     |
+| **Alternative** (H~1~) | $\mu_1$ !=  $\mu_2$ | $\mu_1$ \> $\mu_2$   | $\mu_1$ \< $\mu_2$     |
 | **Null** (H~0~)        | $\mu_1$ == $\mu_2$ | $\mu_1$ \<= $\mu_2$  | $\mu_1$ \>= $\mu_2$    |
 
 Since we're talking about mean differences, we could also reformulate the above table slightly differently:
@@ -52,6 +56,10 @@ Since we're talking about mean differences, we could also reformulate the above 
 |------------------------|-------------------|----------------------|------------------------|
 | **Alternative** (H~1~) | $\mu_{diff}$ != 0 | $\mu_{diff}$ \> 0    | $\mu_{diff}$ \< 0      |
 | **Null** (H~0~)        | $\mu_{diff}$ == 0 | $\mu_{diff}$ \<= 0   | $\mu_{diff}$ \>= 0     |
+
+Note: != means "not equal" like the ≠ symbol. I write != because that is the notation that R uses for "not equal." 
+
+Similarly, you might be wondering why I use == instead of just =. Again, this is the notion R uses for "exactly equal to." In R, a single equal sign is usually equivalent to the assignment operator (e.g., x = 10 means assign 10 to the variable x). 
 
 ### 2. Set the criteria for a decision
 
@@ -120,7 +128,11 @@ That means the mean difference is 51.10 - 27.40 = 23.70. We'll learn how to cond
 
 ### 4. Interpret results and draw a conclusion.
 
-When *t~obt~ \> t~crit~* we reject the null hypothesis whereas when *t~obt~ \> t~crit~* we fail to reject the null hypothesis. Since 19.08 \> 1.701, we *reject the null hypothesis that there is no difference in conditions or that children in the passive condition displayed more aggression than children in the aggressive condition.*
+When *t~obt~ \> t~crit~* we reject the null hypothesis which means our results are statistically significant (if our alpha is set to .05, then that means *p* \< .05). 
+
+On the other hand, when *t~obt~ \< t~crit~* we fail to reject the null hypothesis which means our results are not statistically significant (if our alpha is set to .05, then that means *p* \> .05). 
+
+Since 19.08 \> 1.701, we *reject the null hypothesis that there is no difference in conditions or that children in the passive condition displayed more aggression than children in the aggressive condition.*
 
 However, this is when **Type 1** and **Type 2** errors come into play. Just because we get a result *does not automatically mean that result is 100% accurate*. There are many things that could lead us to an inaccurate interpretation!
 

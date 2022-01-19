@@ -67,7 +67,7 @@ We cannot *test* the third and fourth assumptions; rather, those are based on kn
 
 However, we can and should test for the first two assumptions. Fortunately, the one-way ANOVA in jamovi has three check boxes under "Assumption Checks" that lets us test for both assumptions.
 
-##### Sphericity Assumption
+##### What is the Sphericity Assumption?
 
 The sphericity assumption is essentially the repeated measures ANOVA equivalent of homogeneity of variances. Sphericity means there is equality of variances of the *differences* between treatment levels. For example, if there are three groups, then the difference in all three pairs of differences (1-2, 1-3, 2-3) need to have approximately equal variances. You only need to care about sphericity when there are at least three conditions, which is why we did not talk about this with the dependent t-test.
 
@@ -75,7 +75,9 @@ Fortunately, like the other assumption checks, testing for sphericity is as simp
 
 #### Checking assumptions
 
-You'll notice there are no options to check for normality in the repeated measures ANOVA in jamovi. There's an [interesting conversation](https://forum.jamovi.org/viewtopic.php?f=5&t=1045) on the topic in the jamovi forums. Suffice to say, it's complicated and maybe someday they will implement it. For now, we just won't worry about it for the repeated measures ANOVA.
+We check assumptions using the "Assumption Checks" tab under the repeated measures ANOVA function.
+
+To test normality, we select Q-Q plot. It is currently the only option we have available for testing normality in the repeated measures ANOVA.
 
 So what we need to worry about is testing our assumption of sphericity. You should have checked the box `Sphericity tests` under the Assumption Checks drop-down menu. That produces the following output:
 
@@ -85,8 +87,9 @@ Mauchly's test of sphericity tests the null hypothesis that the variances of the
 
 If Mauchly's test had been statistically significant (*p* \< .05), then we would conclude that the assumption had *not* been met. In that case, we would apply a correction to the *F*-value obtained in the repeated measures ANOVA:
 
--   If the Greenhouse-Geisser value in the "Tests of Sphericity" table is \> .75 then you should use the Huynh-Feldt correction.
--   If the Greenhouse-Geisser value is \< .75, then you should use the Greenhouse-Geisser correction.
+-   If sphericity is violated and if the Greenhouse-Geisser value in the "Tests of Sphericity" table is \> .75 then you should select the Huynh-Feldt correction and de-select the None option.
+-   If sphericity is violated and if the Greenhouse-Geisser value is \< .75, then you should select the Greenhouse-Geisser correction and de-select the None option.
+-   If sphericity is not violated, then only select the None option.
 
 You can select these corrections in the Assumption Checks drop-down menu.
 
@@ -100,7 +103,7 @@ You can select these corrections in the Assumption Checks drop-down menu.
 
 4.  Select Generalised $\eta^2$ as your measure of effect size.
 
-5.  In the Assumption Checks drop-down menu, select `Sphericity tests`. You'll note that if you violate the assumption of sphericity, there are two corrections provided. These will be discussed later.
+5.  In the Assumption Checks drop-down menu, select `Sphericity tests` and `Q-Q Plots`. You'll note that if you violate the assumption of sphericity, there are two corrections provided. These are described above.
 
 6.  In the Post Hoc Tests drop-down menu, select `Tukey`. Remember that we only interpret these if the overall *F* is statistically significant.
 
@@ -136,9 +139,28 @@ We can write this up in APA style similar to the one-way ANOVA.
 
 Similar to the dependent t-test, I am not a fan of the output for the repeated measures ANOVA in jamovi under "estimated marginal means." You could modify the same syntax for the dependent t-test (you'll need to change line 3 to be sure you're picking the correct lines of data, not just 2:3, and revise the names and such. You could also move the data into Excel and do bar graphs with error bars there instead.
 
+### Video
+
+Here's a video walking through the repeated measures ANOVA test.
+
+```{r}
+knitr::include_url("https://www.youtube.com/watch?v=Fl6S9IBC1q0")
+
+```
+
 ### In case of violated assumptions
 
-We have already discussed what to do if you violate the assumption of sphericity above; you select one of the two sphericity corrections.
+Here's what statistic you should choose based on satisfying assumptions:
+
++-------------------------------+----------------------------------------------------------------+------------------------------+
+|                               | **Normality: satisfied**                                       | **Normality: not satisfied** |
++===============================+================================================================+==============================+
+| **Sphericity: satisfied**     | Repeated measures ANOVA                                        | Friedman's test              |
++-------------------------------+----------------------------------------------------------------+------------------------------+
+| **Sphericity: not satisfied** | Repeated measures ANOVA with one of the sphericity corrections | Friedman's test              |
++-------------------------------+----------------------------------------------------------------+------------------------------+
+
+We have already discussed what to do if you violate the assumption of sphericity above; you select one of the two sphericity corrections based on the values of the sphericity tests.
 
 If you violate the assumption of normality or if the dependent variable is ordinal, then you can use the Friedman test. You can select this using the Repeated Measures ANOVA - Friedman option under the ANOVA analysis.
 
@@ -152,7 +174,7 @@ Once you've set-up the analysis, you can interpret the results. Overall, we cont
 
 ![](images/05-repeated-measures-anova/rm-anova_friedman.png)
 
-We can write up the results similarly as before:
+We can write up the results similarly as before except using the median because as a non-parametric test it is analyzing the median and not the mean:
 
 > Friedman's test was performed examining how three tasks affected word recognition in patients suffering from Broca's Aphasia. Task significantly affected word recall, $\chi^2$ (2) = 6.64, *p* = .036. Pairwise comparisons using Durbin-Conover indicated that participants recognized significantly more words in the speech task (*M* = 7.17, *Mdn* = 7.50) than participants in the syntax task (*M* = 4.33, *Mdn* = 6.50; *p* = .006). There were no differences between the conceptual task (*M* = 6.17, *Mdn* = 6.50) and both the speech and syntax tasks.
 

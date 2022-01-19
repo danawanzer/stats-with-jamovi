@@ -7,6 +7,11 @@ library(webex)
 
 You have learned about both quantitative and qualitative methods. We will be focusing primarily on quantitative methods in this class and in this textbook. By quantitative methods, I mean methods that predominantly collect data that deals with numbers. We can then analyze that data using statistical procedures, which we will shorthand to "statistics." Understanding what we mean by statistics is the purpose of this chapter.
 
+```{r}
+knitr::include_url("https://www.youtube.com/watch?v=QirHpjLkHmc")
+```
+
+
 ## Descriptive vs inferential statistics
 
 There are basically two different types of statistics:

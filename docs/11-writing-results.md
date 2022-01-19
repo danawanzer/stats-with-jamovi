@@ -1,0 +1,38 @@
+# Writing up results
+
+This chapter goes over how to write up statistical results. Refer back to this chapter often!
+
+## The 4 components of writing statistical results
+
+When writing up the results of a statistical test, we should always include the following information:
+
+1.  Description of your research question and/or hypotheses.
+
+2.  Description of your data. If you fail to meet assumptions, you should specify that and describe what test you chose to perform as a result.
+
+3.  The results of the inferential test, including what test was performed, the test value and degrees of freedom, p-value, and effect size.
+
+4.  Interpretation of the results or whether the hypothesis was supported or not, including any other information as needed.
+
+## An example
+
+Let's go through an example. This data comes from the independent t-test chapter. Given the results of the t-test, we can write up our results in APA something like this:
+
+> The research question was whether there was a difference in student grades between Anastasia's and Bernadette's classes. Anastasia's students (*M* = 74.53, *SD* = 9.00, *n* = 15) had significantly higher grades than Bernadette's students (*M* = 69.06, *SD* = 5.77, *n* = 18), *t* (31) = 2.12, *p* = .043, *d* = .74.
+
+Let's analyze that against the 4 things we need to report:
+
+> **\#1:** The research question was whether there was a difference in student grades between Anastasia's and Bernadette's classes. **\#4** Anastasia's students **\#2** (*M* = 74.53, *SD* = 9.00, *n* = 15) **\#4 cont.** had significantly higher grades than Bernadette's students **\#2** (*M* = 69.06, *SD* = 5.77, *n* = 18), **\#3** *t* (31) = 2.12, *p* = .043, *d* = .74.
+
+To ease the interpretation, let's write it out like this:
+
+1.  **Research question or hypothesis**: Is there a difference in student grades between Anastasia's and Bernadette's classes?
+2.  **Descriptive statistics**: Anastasia's students (*M* = 74.53, *SD* = 9.00, *n* = 15); Bernadette's students (*M* = 69.06, *SD* = 5.77, *n* = 18)
+3.  **Inferential statistics**: *t* (31) = 2.12, *p* = .043, *d* = .74
+4.  **Interpretation of results that answer's the research question or demonstrates whether the hypothesis was rejected or not**: Anastasia's students had significantly higher grades than Bernadette's students.
+
+Sometimes, people like to put the statistics inside a parentheses. In that case, you need to change the parentheses around the degrees of freedom as brackets. Here's another example write-up of the results in APA style:
+
+> **\#1** I tested the difference in grades between Anastasia's students **\#2** (*M* = 74.53, *SD* = 9.00, *n* = 15) and Bernadette's students (*M* = 69.06, *SD* = 5.77, *n* = 18). **\#3** An independent samples t-test showed that the 5.48 mean difference between the tutor's student was statistically significant (*t* [31] = 2.12, *p* = .043, *d* = .74). **\#4** Therefore, we reject the null hypothesis that there is no difference in grades between the two classes.
+
+Note that these are not the only way we can write up the results in APA format. The key is that we include all four pieces of information as specified above.
