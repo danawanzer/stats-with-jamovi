@@ -22,6 +22,6 @@ I occasionally get questions on how to open .sav files (SPSS files) in jamovi. H
 
 ```{r echo = FALSE, message = FALSE, warning = FALSE}
 library(vembedr)
-embed_url("https://www.youtube.com/embed?v=e-09OfLVs2U")
+embed_url("https://www.youtube.com/watch?v=e-09OfLVs2U")
 ```
 
