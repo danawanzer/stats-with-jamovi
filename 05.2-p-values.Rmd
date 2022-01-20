@@ -62,7 +62,8 @@ Some have argued that we should abandon the *p*-value; this has led to things li
 
 The following video walks through some of the effect sizes, alpha, and power stuff.
 
-```{r}
-knitr::include_url("https://www.youtube.com/watch?v=v1GrXJmUkBw")
+```{r echo = FALSE, message = FALSE, warning = FALSE}
+library(vembedr)
+embed_url("https://www.youtube.com/watch?v=v1GrXJmUkBw")
 ```
 

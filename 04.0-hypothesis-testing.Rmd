@@ -9,8 +9,9 @@ One of the ways we make inferences is using hypothesis testing. Regardless of th
 3.  Perform the test statistic (this step has a little bit more to it, but we'll get to it later!)
 4.  Interpret your results and make a decision
 
-```{r}
-knitr::include_url("https://www.youtube.com/watch?v=Eqs9L6gDaJg")
+```{r echo = FALSE, message = FALSE, warning = FALSE}
+library(vembedr)
+embed_url("https://www.youtube.com/watch?v=Eqs9L6gDaJg")
 ```
 
 Let's go through each of these in turn, using a hypothetical example.

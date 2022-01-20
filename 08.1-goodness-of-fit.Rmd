@@ -85,8 +85,9 @@ The bar chart from above does a decent job of visualizing the results. Although 
 
 Here's a video walking through the chi-square goodness of fit test.
 
-```{r}
-knitr::include_url("https://www.youtube.com/watch?v=Pg1EA0eh2p0")
+```{r echo = FALSE, message = FALSE, warning = FALSE}
+library(vembedr)
+embed_url("https://www.youtube.com/watch?v=Pg1EA0eh2p0")
 ```
 
 ### Additional information

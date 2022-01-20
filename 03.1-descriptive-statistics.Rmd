@@ -63,8 +63,9 @@ There are three options under **Box Plots**: `Box plot`, `Violin` (which is real
 
 **Remember: it is incredibly important to always visualize your data!** You never know what descriptive statistics may be hiding.
 
-```{r}
-knitr::include_url("https://www.youtube.com/watch?v=d2wU0kmCJEY")
+```{r echo = FALSE, message = FALSE, warning = FALSE}
+library(vembedr)
+embed_url("https://www.youtube.com/watch?v=d2wU0kmCJEY")
 ```
 
 

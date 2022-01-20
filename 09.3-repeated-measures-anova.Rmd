@@ -143,9 +143,9 @@ Similar to the dependent t-test, I am not a fan of the output for the repeated m
 
 Here's a video walking through the repeated measures ANOVA test.
 
-```{r}
-knitr::include_url("https://www.youtube.com/watch?v=Fl6S9IBC1q0")
-
+```{r echo = FALSE, message = FALSE, warning = FALSE}
+library(vembedr)
+embed_url("https://www.youtube.com/watch?v=Fl6S9IBC1q0")
 ```
 
 ### In case of violated assumptions

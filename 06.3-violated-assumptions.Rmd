@@ -2,8 +2,9 @@
 
 What do you do if you have violated assumptions? Let's first talk about the assumptions we don't test (interval/ratio data and independent scores) before we turn to the other two assumptions (normality and homogeneity of variance).
 
-```{r}
-knitr::include_url("https://www.youtube.com/watch?v=ypF1omeM-7g")
+```{r echo = FALSE, message = FALSE, warning = FALSE}
+library(vembedr)
+embed_url("https://www.youtube.com/watch?v=Q9sbIMCck1Q")
 ```
 
 ### Interval/ratio data

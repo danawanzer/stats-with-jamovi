@@ -215,8 +215,9 @@ Note that in many of these write-ups I did not include anything about assumption
 
 Here's a video walking through the regression.
 
-```{r}
-knitr::include_url("https://www.youtube.com/watch?v=SfubvsatkdA")
+```{r echo = FALSE, message = FALSE, warning = FALSE}
+library(vembedr)
+embed_url("https://www.youtube.com/watch?v=SfubvsatkdA")
 ```
 
 ### Additional information

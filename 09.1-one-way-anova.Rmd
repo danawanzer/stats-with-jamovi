@@ -156,10 +156,13 @@ Just like with the Welch's t-statistic (for the independent t-test), it does not
 
 Here's what statistic you should choose based on satisfying assumptions:
 
++--------------------------------------------+---------------------------------------------------+---------------------------------------------------+
 |                                            | **Normality: satisfied**                          | **Normality: not satisfied**                      |
-|--------------------------------------------|---------------------------------------------------|---------------------------------------------------|
++============================================+===================================================+===================================================+
 | **Homogeneity of Variance: satisfied**     | one-way ANOVA (but using the ANOVA function)      | Kruskal-Wallis (using the one-way ANOVA function) |
++--------------------------------------------+---------------------------------------------------+---------------------------------------------------+
 | **Homogeneity of Variance: not satisfied** | Welch's F-test (using the one-way ANOVA function) | Kruskal-Wallis (using the one-way ANOVA function) |
++--------------------------------------------+---------------------------------------------------+---------------------------------------------------+
 
 #### Welch's F-test
 

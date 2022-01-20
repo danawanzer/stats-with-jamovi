@@ -122,8 +122,9 @@ Personally, this is why I like the `scatr` module in jamovi. You can create high
 
 Here's a video walking through the correlation.
 
-```{r}
-knitr::include_url("https://www.youtube.com/watch?v=p4LNqatn2sg")
+```{r echo = FALSE, message = FALSE, warning = FALSE}
+library(vembedr)
+embed_url("https://www.youtube.com/watch?v=p4LNqatn2sg")
 ```
 
 ### In case of violated assumptions

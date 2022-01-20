@@ -153,8 +153,9 @@ jmv::descriptives(data = long,
 
 Here's a video walking through the dependent t-test.
 
-```{r}
-knitr::include_url("https://www.youtube.com/watch?v=ywMPrS9Bo3Q")
+```{r echo = FALSE, message = FALSE, warning = FALSE}
+library(vembedr)
+embed_url("https://www.youtube.com/watch?v=ywMPrS9Bo3Q")
 ```
 
 

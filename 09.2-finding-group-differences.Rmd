@@ -92,8 +92,9 @@ This is where you need to think creatively and be very critical in checking that
 
 Here's a video walking through the one-way ANOVA test.
 
-```{r}
-knitr::include_url("https://www.youtube.com/watch?v=NBxLBXtvp8E")
+```{r echo = FALSE, message = FALSE, warning = FALSE}
+library(vembedr)
+embed_url("https://www.youtube.com/watch?v=NBxLBXtvp8E")
 ```
 
 ### In case of violated assumptions

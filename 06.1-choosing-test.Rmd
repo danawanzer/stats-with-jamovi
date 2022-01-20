@@ -12,8 +12,9 @@ Next, you need to determine how many independent variables (IVs) there are and t
 
 Lastly, for many of the statistical tests we need to know whether we meet the assumptions of parametric tests. If we don't meet the assumption, then there are alternative tests we can perform. We'll learn about assumption checking in the next section of this chapter.
 
-```{r}
-knitr::include_url("https://www.youtube.com/watch?v=Q9sbIMCck1Q")
+```{r echo = FALSE, message = FALSE, warning = FALSE}
+library(vembedr)
+embed_url("https://www.youtube.com/watch?v=Q9sbIMCck1Q")
 ```
 
 We can both *forward map* and *backwards map* with the chart above. Forward mapping involves understanding your data and your research question and then determining what statistical test to perform. Forward mapping is mostly what you need to understand how to do! Backwards mapping involves determining what kind of data is needed to perform a particular statistical test. This is more for educational and understanding purposes and generally is not how you analyze data.

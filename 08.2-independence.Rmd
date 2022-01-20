@@ -106,8 +106,9 @@ The second is a stacked bar chart with connected lines:
 
 Here's a video walking through the chi-square test of independence.
 
-```{r}
-knitr::include_url("https://www.youtube.com/watch?v=6a5soxXTfkw")
+```{r echo = FALSE, message = FALSE, warning = FALSE}
+library(vembedr)
+embed_url("https://www.youtube.com/watch?v=6a5soxXTfkw")
 ```
 
 ### In case of violated assumptions

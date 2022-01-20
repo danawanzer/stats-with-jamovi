@@ -307,3 +307,6 @@ answers-to-9.2-finding-group-differences
 answers-to-9.3-repeated-measures-anova
 answers-to-10.1-correlation
 answers-to-10.2-regression
+fig:unnamed-chunk-2
+fig:unnamed-chunk-3
+fig:unnamed-chunk-4

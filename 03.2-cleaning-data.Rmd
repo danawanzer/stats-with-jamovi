@@ -4,8 +4,9 @@ There are four basic types of cleaning we will be learning about: checking your 
 
 The following video walks through some of these data cleaning techniques.
 
-```{r}
-knitr::include_url("https://www.youtube.com/watch?v=BGOZtlHRv6k")
+```{r echo = FALSE, message = FALSE, warning = FALSE}
+library(vembedr)
+embed_url("https://www.youtube.com/watch?v=BGOZtlHRv6k")
 ```
 
 ### Data setup

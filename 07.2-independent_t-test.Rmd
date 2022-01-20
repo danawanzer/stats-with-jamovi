@@ -169,8 +169,9 @@ Oftentimes, people display results in a simple bar chart, often adding error bar
 
 Here's a video walking through the independent t-test.
 
-```{r}
-knitr::include_url("https://www.youtube.com/watch?v=Pg1EA0eh2p0")
+```{r echo = FALSE, message = FALSE, warning = FALSE}
+library(vembedr)
+embed_url("https://www.youtube.com/watch?v=Pg1EA0eh2p0")
 ```
 
 ### In case of violated assumptions
