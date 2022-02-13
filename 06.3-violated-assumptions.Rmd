@@ -4,7 +4,7 @@ What do you do if you have violated assumptions? Let's first talk about the assu
 
 ```{r echo = FALSE, message = FALSE, warning = FALSE}
 library(vembedr)
-embed_url("https://www.youtube.com/watch?v=Q9sbIMCck1Q")
+embed_url("https://www.youtube.com/watch?v=ypF1omeM-7g")
 ```
 
 ### Interval/ratio data
