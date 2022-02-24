@@ -299,7 +299,7 @@
 <li class="chapter" data-level="9.5.1" data-path="ancova.html"><a href="ancova.html#overview-9"><i class="fa fa-check"></i><b>9.5.1</b> Overview</a></li>
 <li class="chapter" data-level="9.5.2" data-path="ancova.html"><a href="ancova.html#assumptions-5"><i class="fa fa-check"></i><b>9.5.2</b> Assumptions</a></li>
 <li class="chapter" data-level="9.5.3" data-path="ancova.html"><a href="ancova.html#perform-the-test-8"><i class="fa fa-check"></i><b>9.5.3</b> Perform the test</a></li>
-<li class="chapter" data-level="9.5.4" data-path="ancova.html"><a href="ancova.html#video-8"><i class="fa fa-check"></i><b>9.5.4</b> <img src="images/07-ancova/ancova_interaction.png" /> Video</a></li>
+<li class="chapter" data-level="9.5.4" data-path="ancova.html"><a href="ancova.html#video-8"><i class="fa fa-check"></i><b>9.5.4</b> Video</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html"><i class="fa fa-check"></i><b>10</b> Correlation and regression</a>
@@ -405,8 +405,8 @@
 <li>Visualize the Q-Q plot</li>
 </ol>
 <div id="visualize-the-distribution" class="section level4" number="6.2.1.1">
-<h4><span class="header-section-number">6.2.1.1</span> VIsualize the distribution</h4>
-<p>In jamovi, we can go to the Explorations option and choose Descriptives. Under Plots, we can choose a histogram and/or density plot (figure on the left) or boxplot and/or violin plot and/or data points (figure on the right). We can just look at this data and visually inspect with our eyes whether the data is normally distributed. Height looks pretty fairly normally distributed in this case.</p>
+<h4><span class="header-section-number">6.2.1.1</span> Visualize the distribution</h4>
+<p>In jamovi, we can go to the Explorations option and choose Descriptives. Under Plots, we can choose a histogram and/or density plot (figure on the left) or boxplot and/or violin plot and/or data points (figure on the right). We can just look at this data and visually inspect with our eyes whether the data is normally distributed based on the density curve. We are looking to see to what extent it looks like a normal distribution. Height looks pretty fairly normally distributed in this case.</p>
 <p><img src="images/06-inferential/histogram.png" width="400" /></p>
 <p><img src="images/06-inferential/boxplot.png" width="400" /></p>
 </div>
@@ -460,7 +460,7 @@
 <h3><span class="header-section-number">6.2.2</span> Interval/ratio data</h3>
 <p>If we are performing a test that has a continuous DV, then the variable must be measured at the interval or ratio level. It is important that the data has proportional intervals between levels of the variable, and ordinal variables often do not meet this assumption.</p>
 <p>It is very important to avoid treating ordinal variables as continuous variables. We cannot calculate a mean or difference between ordinal values, but we <em>can</em> for continuous variables. What is often done–and is often inappropriate to do–is treat Likert-scale items as a continuous DV. What we <em>can</em> do is take a sum or average of multiple Likert-scale items and treat that sum or average as a continuous DV.</p>
-<p>There is no “test” we can perform here. Rather, you will need to improve in recognizing whether data is interval/ratio (continuous) or ordinal (categorical).</p>
+<p>There is no “test” we can perform here. Rather, you will need to just recognize whether data is interval/ratio (continuous) or ordinal/nominal (categorical).</p>
 </div>
 <div id="homogeneity-of-variance" class="section level3" number="6.2.3">
 <h3><span class="header-section-number">6.2.3</span> Homogeneity of variance</h3>
@@ -468,13 +468,15 @@
 <p>We can test this assumption in two ways.</p>
 <div id="visualize-the-distribution-of-data-across-groups" class="section level4" number="6.2.3.1">
 <h4><span class="header-section-number">6.2.3.1</span> Visualize the distribution of data across groups</h4>
-<p>First, we can look at the data points across groups. This can be done by choosing a plot in the Descriptives analysis and adding your IV to the “Split By” box. For example, here’s an example of data that violates the assumption of homogeneity of variance (gender by mile time):</p>
+<p>First, we can look at the data points across groups. This can be done by choosing a plot in the Descriptives analysis and adding your IV to the “Split By” box. For example, here’s an example of data that violates the assumption of homogeneity of variance (gender by mile time) because the variance in scores for females (1) is a lot wider than the variance in scores for males (0):</p>
 <p><img src="images/06-inferential/homogeneity.png" width="500" /></p>
-<p>Similarly, the variance for Gender == 0 (male) is 6796.20 whereas the variance for Gender == 1 (female) is 15401.55. Clearly, there is much greater variability for females than males for time it takes to run the mile.</p>
+<p>Similarly, in the Descriptives under Statistics you can ask for Variance. The variance for Gender == 0 (male) is 6796.20 whereas the variance for Gender == 1 (female) is 15401.55. Clearly, there is much greater variability for females than males for time it takes to run the mile.</p>
 </div>
 <div id="levenes-test" class="section level4" number="6.2.3.2">
 <h4><span class="header-section-number">6.2.3.2</span> Levene’s test</h4>
-<p>When we perform inferential statistics that have the assumption of homogeneity of variance, in jamovi there will be a check box to check the assumption. It will perform Levene’s test. Here’s the result of Levene’s test for the independent t-test examining the effect of gender on mile duration:</p>
+<p>When we perform inferential statistics that have the assumption of homogeneity of variance, in jamovi there will be a check box to check the assumption. It will perform Levene’s test.</p>
+<p>However, you may be testing the assumption prior to running your analysis (or learning about inferential statistics just yet). In that case, to perform Levene’s test, go to Analyses then ANOVA then One-way ANOVA. Move your continuous variable to the Dependent Variables box and move your nominal variable to the Grouping Variable box. Check the box “homogeneity test.” Only report the results of Levene’s test; ignore the one-way ANOVA results!</p>
+<p>Here’s the result of Levene’s test for the effect of gender on mile duration:</p>
 <table>
 <thead>
 <tr class="header">

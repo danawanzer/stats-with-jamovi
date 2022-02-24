@@ -16,18 +16,18 @@ Let's discuss these in turn and how to test for them.
 
 ### Normal distribution
 
-For all our statistics, our dependent variable needs to be normally distributed.[^1] We have already covered what the normal distribution is multiple times, so let's move on to how to test for normality. There are four ways to test for normality **and we should test for normality using as many tests as we possibly can!**
+For all our statistics, our dependent variable needs to be normally distributed.[^checking-assumptions-1] We have already covered what the normal distribution is multiple times, so let's move on to how to test for normality. There are four ways to test for normality **and we should test for normality using as many tests as we possibly can!**
 
-[^1]: Technically, it's that the *residuals* need to be normally distributed, but in the case of t-tests and ANOVAs the results are the same if we test for normality of residuals or the dependent variable.
+[^checking-assumptions-1]: Technically, it's that the *residuals* need to be normally distributed, but in the case of t-tests and ANOVAs the results are the same if we test for normality of residuals or the dependent variable.
 
 1.  Visualize the distribution
 2.  Test the skew and kurtosis
 3.  Conduct a Shapiro-Wilk test
 4.  Visualize the Q-Q plot
 
-#### VIsualize the distribution
+#### Visualize the distribution
 
-In jamovi, we can go to the Explorations option and choose Descriptives. Under Plots, we can choose a histogram and/or density plot (figure on the left) or boxplot and/or violin plot and/or data points (figure on the right). We can just look at this data and visually inspect with our eyes whether the data is normally distributed. Height looks pretty fairly normally distributed in this case.
+In jamovi, we can go to the Explorations option and choose Descriptives. Under Plots, we can choose a histogram and/or density plot (figure on the left) or boxplot and/or violin plot and/or data points (figure on the right). We can just look at this data and visually inspect with our eyes whether the data is normally distributed based on the density curve. We are looking to see to what extent it looks like a normal distribution. Height looks pretty fairly normally distributed in this case.
 
 ![](images/06-inferential/histogram.png){width="400"}
 
@@ -73,7 +73,7 @@ If we are performing a test that has a continuous DV, then the variable must be 
 
 It is very important to avoid treating ordinal variables as continuous variables. We cannot calculate a mean or difference between ordinal values, but we *can* for continuous variables. What is often done--and is often inappropriate to do--is treat Likert-scale items as a continuous DV. What we *can* do is take a sum or average of multiple Likert-scale items and treat that sum or average as a continuous DV.
 
-There is no "test" we can perform here. Rather, you will need to improve in recognizing whether data is interval/ratio (continuous) or ordinal (categorical).
+There is no "test" we can perform here. Rather, you will need to just recognize whether data is interval/ratio (continuous) or ordinal/nominal (categorical).
 
 ### Homogeneity of variance
 
@@ -83,15 +83,19 @@ We can test this assumption in two ways.
 
 #### Visualize the distribution of data across groups
 
-First, we can look at the data points across groups. This can be done by choosing a plot in the Descriptives analysis and adding your IV to the "Split By" box. For example, here's an example of data that violates the assumption of homogeneity of variance (gender by mile time):
+First, we can look at the data points across groups. This can be done by choosing a plot in the Descriptives analysis and adding your IV to the "Split By" box. For example, here's an example of data that violates the assumption of homogeneity of variance (gender by mile time) because the variance in scores for females (1) is a lot wider than the variance in scores for males (0):
 
 ![](images/06-inferential/homogeneity.png){width="500"}
 
-Similarly, the variance for Gender == 0 (male) is 6796.20 whereas the variance for Gender == 1 (female) is 15401.55. Clearly, there is much greater variability for females than males for time it takes to run the mile.
+Similarly, in the Descriptives under Statistics you can ask for Variance. The variance for Gender == 0 (male) is 6796.20 whereas the variance for Gender == 1 (female) is 15401.55. Clearly, there is much greater variability for females than males for time it takes to run the mile.
 
 #### Levene's test
 
-When we perform inferential statistics that have the assumption of homogeneity of variance, in jamovi there will be a check box to check the assumption. It will perform Levene's test. Here's the result of Levene's test for the independent t-test examining the effect of gender on mile duration:
+When we perform inferential statistics that have the assumption of homogeneity of variance, in jamovi there will be a check box to check the assumption. It will perform Levene's test.
+
+However, you may be testing the assumption prior to running your analysis (or learning about inferential statistics just yet). In that case, to perform Levene's test, go to Analyses then ANOVA then One-way ANOVA. Move your continuous variable to the Dependent Variables box and move your nominal variable to the Grouping Variable box. Check the box "homogeneity test." Only report the results of Levene's test; ignore the one-way ANOVA results!
+
+Here's the result of Levene's test for the effect of gender on mile duration:
 
 | Levene's   |     F | df1 | df2 |      p |
 |:-----------|------:|----:|----:|-------:|
