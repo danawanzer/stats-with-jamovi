@@ -310,3 +310,4 @@ answers-to-10.2-regression
 fig:unnamed-chunk-2
 fig:unnamed-chunk-3
 fig:unnamed-chunk-4
+common-errors
