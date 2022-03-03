@@ -73,7 +73,9 @@ One thing to keep in mind in all statistical software is that we often check ass
 
 ##### Testing normality
 
-Notice how our dependent variable is really the difference in scores, and therefore that is what we are testing for normality. We test for normality using the Shapiro-Wilk test and the Q-Q plot. The Shapiro-Wilk test was not statistically significant (W = .97, *p* = .678); therefore, this indicates the data is normally distributed. Furthermore, the lines are fairly close to the diagonal line in the Q-Q plot (although it's a bit hard to tell because our sample size is small). We can conclude that we satisfy the assumption of normality.
+Notice how our dependent variable is really the difference in scores, and therefore that is what we are testing for normality. **First, you need to calculate a new variable that is the difference in scores.** Go to Compute and enter into the formulate box `Var1 - Var2` (in this case, `grade_test1-grade_test2`). Rename it to something meaningful to you. Then you are going to use that variable to test for normality.
+
+We test for normality using the Shapiro-Wilk test and the Q-Q plot, as well as looking at the density/histogram plot and the skew/kurtosis (not shown here). The Shapiro-Wilk test was not statistically significant (W = .97, *p* = .678); therefore, this indicates the data is normally distributed. Furthermore, the lines are fairly close to the diagonal line in the Q-Q plot (although it's a bit hard to tell because our sample size is small). We can conclude that we satisfy the assumption of normality.
 
 ![](images/03_dependent_t-test/dependent_normality.png)
 
@@ -157,7 +159,6 @@ Here's a video walking through the dependent t-test.
 library(vembedr)
 embed_url("https://www.youtube.com/watch?v=ywMPrS9Bo3Q")
 ```
-
 
 ### In case of violated assumptions
 
