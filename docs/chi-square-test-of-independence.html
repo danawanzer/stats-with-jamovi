@@ -299,7 +299,7 @@
 <li class="chapter" data-level="9.5.1" data-path="ancova.html"><a href="ancova.html#overview-9"><i class="fa fa-check"></i><b>9.5.1</b> Overview</a></li>
 <li class="chapter" data-level="9.5.2" data-path="ancova.html"><a href="ancova.html#assumptions-5"><i class="fa fa-check"></i><b>9.5.2</b> Assumptions</a></li>
 <li class="chapter" data-level="9.5.3" data-path="ancova.html"><a href="ancova.html#perform-the-test-8"><i class="fa fa-check"></i><b>9.5.3</b> Perform the test</a></li>
-<li class="chapter" data-level="9.5.4" data-path="ancova.html"><a href="ancova.html#video-8"><i class="fa fa-check"></i><b>9.5.4</b> <img src="images/07-ancova/ancova_interaction.png" /> Video</a></li>
+<li class="chapter" data-level="9.5.4" data-path="ancova.html"><a href="ancova.html#video-8"><i class="fa fa-check"></i><b>9.5.4</b> Video</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html"><i class="fa fa-check"></i><b>10</b> Correlation and regression</a>
@@ -339,8 +339,9 @@
 </ul></li>
 <li class="chapter" data-level="11" data-path="writing-up-results.html"><a href="writing-up-results.html"><i class="fa fa-check"></i><b>11</b> Writing up results</a>
 <ul>
-<li class="chapter" data-level="11.1" data-path="the-4-components-of-writing-statistical-results.html"><a href="the-4-components-of-writing-statistical-results.html"><i class="fa fa-check"></i><b>11.1</b> The 4 components of writing statistical results</a></li>
-<li class="chapter" data-level="11.2" data-path="an-example-1.html"><a href="an-example-1.html"><i class="fa fa-check"></i><b>11.2</b> An example</a></li>
+<li class="chapter" data-level="11.0.1" data-path="writing-up-results.html"><a href="writing-up-results.html#the-4-components-of-writing-statistical-results"><i class="fa fa-check"></i><b>11.0.1</b> The 4 components of writing statistical results</a></li>
+<li class="chapter" data-level="11.0.2" data-path="writing-up-results.html"><a href="writing-up-results.html#an-example-1"><i class="fa fa-check"></i><b>11.0.2</b> An example</a></li>
+<li class="chapter" data-level="11.0.3" data-path="writing-up-results.html"><a href="writing-up-results.html#common-errors"><i class="fa fa-check"></i><b>11.0.3</b> 7 Common Errors</a></li>
 </ul></li>
 <li class="appendix"><span><b>Appendices</b></span></li>
 <li class="chapter" data-level="A" data-path="answers.html"><a href="answers.html"><i class="fa fa-check"></i><b>A</b> Answers</a>
@@ -382,6 +383,8 @@
             <section class="normal" id="section-">
 <div id="chi-square-test-of-independence" class="section level2" number="8.2">
 <h2><span class="header-section-number">8.2</span> Chi-Square Test of Independence</h2>
+<pre><code>## Warning: package &#39;viridis&#39; was built under R version 4.0.5</code></pre>
+<pre><code>## Warning: package &#39;viridisLite&#39; was built under R version 4.0.5</code></pre>
 <div id="overview-4" class="section level3" number="8.2.1">
 <h3><span class="header-section-number">8.2.1</span> Overview</h3>
 <p>The <span class="math inline">\(\chi^2\)</span> (chi-square) test of independence (or association) tests whether an observed frequency distribution of a nominal variable matches an expected frequency distribution, but unlike the goodness of fit test we are looking at the relationship, independence, or association between two variables.</p>
@@ -477,7 +480,10 @@
 <h4><span class="header-section-number">8.2.3.3</span> Check assumptions</h4>
 <p>The chi-square test of independence has the following assumptions:</p>
 <ol style="list-style-type: decimal">
-<li><p><strong>Expected frequencies are sufficiently large</strong>, which is usually greater than 5. If you violate this assumption, you can use Fisher’s exact test.</p></li>
+<li><p><strong>Expected frequencies are sufficiently large</strong>, which is usually greater than 5. If you violate this assumption, you can use Fisher’s exact test.</p>
+<ul>
+<li>You test for this assumption by selected “Expected counts” in the Cells tab for the test of independence. You will then see rows of expected counts in your contingency table. Look at the numbers and check that they are all 5 or greater.</li>
+</ul></li>
 <li><p>Data are <strong>independent</strong> of one another, meaning each case contributes to only one cell of the table. If you violate this assumption, you may be able to use the McNemar test. This requires knowing how your data was collected. If it’s a within-subjects design that should be answered using a chi-square, then most likely you want to use McNemar’s test. If it’s a between-subjects design that should be answered using a chi-square, then you most likely meet this assumption and can perform the chi-square test of independence.</p></li>
 </ol>
 </div>
