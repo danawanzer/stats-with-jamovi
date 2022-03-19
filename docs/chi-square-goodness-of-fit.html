@@ -32,7 +32,7 @@
   
 <link rel="prev" href="chi-square.html"/>
 <link rel="next" href="chi-square-test-of-independence.html"/>
-<script src="libs/header-attrs-2.9/header-attrs.js"></script>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -299,7 +299,7 @@
 <li class="chapter" data-level="9.5.1" data-path="ancova.html"><a href="ancova.html#overview-9"><i class="fa fa-check"></i><b>9.5.1</b> Overview</a></li>
 <li class="chapter" data-level="9.5.2" data-path="ancova.html"><a href="ancova.html#assumptions-5"><i class="fa fa-check"></i><b>9.5.2</b> Assumptions</a></li>
 <li class="chapter" data-level="9.5.3" data-path="ancova.html"><a href="ancova.html#perform-the-test-8"><i class="fa fa-check"></i><b>9.5.3</b> Perform the test</a></li>
-<li class="chapter" data-level="9.5.4" data-path="ancova.html"><a href="ancova.html#video-8"><i class="fa fa-check"></i><b>9.5.4</b> <img src="images/07-ancova/ancova_interaction.png" /> Video</a></li>
+<li class="chapter" data-level="9.5.4" data-path="ancova.html"><a href="ancova.html#video-8"><i class="fa fa-check"></i><b>9.5.4</b> Video</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html"><i class="fa fa-check"></i><b>10</b> Correlation and regression</a>
@@ -339,8 +339,9 @@
 </ul></li>
 <li class="chapter" data-level="11" data-path="writing-up-results.html"><a href="writing-up-results.html"><i class="fa fa-check"></i><b>11</b> Writing up results</a>
 <ul>
-<li class="chapter" data-level="11.1" data-path="the-4-components-of-writing-statistical-results.html"><a href="the-4-components-of-writing-statistical-results.html"><i class="fa fa-check"></i><b>11.1</b> The 4 components of writing statistical results</a></li>
-<li class="chapter" data-level="11.2" data-path="an-example-1.html"><a href="an-example-1.html"><i class="fa fa-check"></i><b>11.2</b> An example</a></li>
+<li class="chapter" data-level="11.0.1" data-path="writing-up-results.html"><a href="writing-up-results.html#the-4-components-of-writing-statistical-results"><i class="fa fa-check"></i><b>11.0.1</b> The 4 components of writing statistical results</a></li>
+<li class="chapter" data-level="11.0.2" data-path="writing-up-results.html"><a href="writing-up-results.html#an-example-1"><i class="fa fa-check"></i><b>11.0.2</b> An example</a></li>
+<li class="chapter" data-level="11.0.3" data-path="writing-up-results.html"><a href="writing-up-results.html#common-errors"><i class="fa fa-check"></i><b>11.0.3</b> 7 Common Errors</a></li>
 </ul></li>
 <li class="appendix"><span><b>Appendices</b></span></li>
 <li class="chapter" data-level="A" data-path="answers.html"><a href="answers.html"><i class="fa fa-check"></i><b>A</b> Answers</a>
@@ -418,6 +419,7 @@
 <div id="check-assumptions-3" class="section level3" number="8.1.4">
 <h3><span class="header-section-number">8.1.4</span> Check assumptions</h3>
 <p>The chi-square goodness-of-fit test has just one assumption: <strong>Expected frequencies are sufficiently large</strong>, which is usually greater than 5.</p>
+<p>To test this assumption, select “Expected counts” in jamovi. Examine the expected counts (not proportion) in the output. If all expected values are greater than 5 then you meet the assumption.</p>
 </div>
 <div id="perform-the-test-3" class="section level3" number="8.1.5">
 <h3><span class="header-section-number">8.1.5</span> Perform the test</h3>
@@ -438,7 +440,7 @@
 <h4><span class="header-section-number">8.1.6.1</span> Write up the results in APA style</h4>
 <p>We can write up our results in APA something like this:</p>
 <blockquote>
-<p>Of the 200 participants in the experiment, 64 selected hearts for their first choice, 51selected diamonds, 50 selected spades, and 35 selected clubs. A chi-square goodness-of-fit test was conducted to test whether the choice probabilities were identical for all four suits. The results were statistically significant (<span class="math inline">\(\chi^2\)</span> [3] = 8.44; <em>p</em> = .038), suggesting that people did not select suits purely at random.</p>
+<p>Of the 200 participants in the experiment, 64 selected hearts for their first choice, 51 selected diamonds, 50 selected spades, and 35 selected clubs. A chi-square goodness-of-fit test was conducted to test whether the choice probabilities were identical for all four suits. The results were statistically significant (<span class="math inline">\(\chi^2\)</span> [3] = 8.44; <em>p</em> = .038), suggesting that people did not select suits purely at random. Participants chose the hearts more frequently than expected and the clubs less frequently than expected.</p>
 </blockquote>
 </div>
 <div id="visualize-the-results-3" class="section level4" number="8.1.6.2">
