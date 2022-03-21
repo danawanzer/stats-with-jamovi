@@ -32,7 +32,7 @@
   
 <link rel="prev" href="finding-group-differences.html"/>
 <link rel="next" href="factorial-anova.html"/>
-<script src="libs/header-attrs-2.9/header-attrs.js"></script>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -299,7 +299,7 @@
 <li class="chapter" data-level="9.5.1" data-path="ancova.html"><a href="ancova.html#overview-9"><i class="fa fa-check"></i><b>9.5.1</b> Overview</a></li>
 <li class="chapter" data-level="9.5.2" data-path="ancova.html"><a href="ancova.html#assumptions-5"><i class="fa fa-check"></i><b>9.5.2</b> Assumptions</a></li>
 <li class="chapter" data-level="9.5.3" data-path="ancova.html"><a href="ancova.html#perform-the-test-8"><i class="fa fa-check"></i><b>9.5.3</b> Perform the test</a></li>
-<li class="chapter" data-level="9.5.4" data-path="ancova.html"><a href="ancova.html#video-8"><i class="fa fa-check"></i><b>9.5.4</b> <img src="images/07-ancova/ancova_interaction.png" /> Video</a></li>
+<li class="chapter" data-level="9.5.4" data-path="ancova.html"><a href="ancova.html#video-8"><i class="fa fa-check"></i><b>9.5.4</b> Video</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html"><i class="fa fa-check"></i><b>10</b> Correlation and regression</a>
@@ -339,8 +339,9 @@
 </ul></li>
 <li class="chapter" data-level="11" data-path="writing-up-results.html"><a href="writing-up-results.html"><i class="fa fa-check"></i><b>11</b> Writing up results</a>
 <ul>
-<li class="chapter" data-level="11.1" data-path="the-4-components-of-writing-statistical-results.html"><a href="the-4-components-of-writing-statistical-results.html"><i class="fa fa-check"></i><b>11.1</b> The 4 components of writing statistical results</a></li>
-<li class="chapter" data-level="11.2" data-path="an-example-1.html"><a href="an-example-1.html"><i class="fa fa-check"></i><b>11.2</b> An example</a></li>
+<li class="chapter" data-level="11.0.1" data-path="writing-up-results.html"><a href="writing-up-results.html#the-4-components-of-writing-statistical-results"><i class="fa fa-check"></i><b>11.0.1</b> The 4 components of writing statistical results</a></li>
+<li class="chapter" data-level="11.0.2" data-path="writing-up-results.html"><a href="writing-up-results.html#an-example-1"><i class="fa fa-check"></i><b>11.0.2</b> An example</a></li>
+<li class="chapter" data-level="11.0.3" data-path="writing-up-results.html"><a href="writing-up-results.html#common-errors"><i class="fa fa-check"></i><b>11.0.3</b> 7 Common Errors</a></li>
 </ul></li>
 <li class="appendix"><span><b>Appendices</b></span></li>
 <li class="chapter" data-level="A" data-path="answers.html"><a href="answers.html"><i class="fa fa-check"></i><b>A</b> Answers</a>
@@ -384,7 +385,7 @@
 <h2><span class="header-section-number">9.3</span> Repeated Measures ANOVA</h2>
 <div id="overview-7" class="section level3" number="9.3.1">
 <h3><span class="header-section-number">9.3.1</span> Overview</h3>
-<p>The repeated measures analysis of variance (ANOVA) is used to test the difference in our dependent variable between <u>three or more</u> groups of observations in which all participants participate in all groups or levels. Our grouping variable is our independent variable. In other words, we use the one-way ANOVA when we have a research question with a <strong>continuous dependent variable</strong> and a <strong>categorical independent variable with three or more categories in which the <u>same</u> participants are in each category</strong>.</p>
+<p>The repeated measures analysis of variance (ANOVA) is used to test the difference in our dependent variable between <u>three or more</u> groups of observations in which all participants participate in all groups or levels. Our grouping variable is our independent variable. In other words, we use the repeated measures ANOVA when we have a research question with a <strong>continuous dependent variable</strong> and a <strong>categorical independent variable with three or more categories in which the <u>same</u> participants are in each category</strong>.</p>
 <p>The repeated measures ANOVA is also sometimes called the one-way related ANOVA.</p>
 <p>There are two ways we could have the repeated measures ANOVA. Perhaps the same group of participants are measured in the same dependent variable at three or more time points. In this case, our independent variable is time and our dependent variable is whatever is measured at each time point.</p>
 <p><img src="images/05-repeated-measures-anova/Laerd1.png" /></p>
@@ -428,7 +429,7 @@
 <li><p><del>Scores are <strong>independent</strong> between groups</del> (this assumption is not relevant because all participants participate in all conditions)</p></li>
 </ol>
 <p>We cannot <em>test</em> the third and fourth assumptions; rather, those are based on knowing your data.</p>
-<p>However, we can and should test for the first two assumptions. Fortunately, the one-way ANOVA in jamovi has three check boxes under “Assumption Checks” that lets us test for both assumptions.</p>
+<p>However, we can and should test for the first two assumptions. Fortunately, the repated measures ANOVA in jamovi has check boxes under “Assumption Checks” that lets us test for both assumptions.</p>
 <div id="what-is-the-sphericity-assumption" class="section level5" number="9.3.4.1.1">
 <h5><span class="header-section-number">9.3.4.1.1</span> What is the Sphericity Assumption?</h5>
 <p>The sphericity assumption is essentially the repeated measures ANOVA equivalent of homogeneity of variances. Sphericity means there is equality of variances of the <em>differences</em> between treatment levels. For example, if there are three groups, then the difference in all three pairs of differences (1-2, 1-3, 2-3) need to have approximately equal variances. You only need to care about sphericity when there are at least three conditions, which is why we did not talk about this with the dependent t-test.</p>
