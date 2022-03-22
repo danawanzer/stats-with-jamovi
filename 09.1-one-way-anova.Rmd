@@ -44,7 +44,7 @@ For this chapter, we're going to work with example data from lsj-data. Open data
 Our hypotheses for the one-way ANOVA are pretty simple:
 
 -   $H_0$: There is **no difference** in mood between the three drugs.
--   $H_1$: There is **a difference** in nood between the three drugs. However, we'll need the next chapter to figure out where those differences might be.
+-   $H_1$: There is **a difference** in mood between the three drugs. *However, we'll need the next chapter to figure out where those differences might be.*
 
 ### Look at the data
 
