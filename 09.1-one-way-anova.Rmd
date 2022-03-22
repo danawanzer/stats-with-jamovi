@@ -90,7 +90,7 @@ Although we should meet the assumptions as much as possible, in general the F-st
 
 #### Checking assumptions
 
-We test for normality using the Shapiro-Wilk test and the Q-Q plot; we can also test it with skew/kurtosis and looking at the distribution of data. The Shapiro-Wilk test was not statistically significant (W = .96, *p* = .605); therefore, this indicates the data is normally distributed. Furthermore, the lines are fairly close to the diagonal line in the Q-Q plot. We can conclude that we satisfy the assumption of normality.
+We test for normality using the Shapiro-Wilk test and the Q-Q plot; we can also test it with skew/kurtosis and looking at the distribution of data. The Shapiro-Wilk test was not statistically significant (*W* = .96, *p* = .605); therefore, this indicates the data is normally distributed. Furthermore, the lines are fairly close to the diagonal line in the Q-Q plot. We can conclude that we satisfy the assumption of normality.
 
 We test for homogeneity of variance using the Levene's test. The Levene's test was not statistically significant (*F* [2, 15] = 1.45, *p* = .266); therefore, this indicates our data satisfies the assumption of homogeneity of variance. However, I would add a caveat that we have a small sample of data (*N* = 18); we should have tried to collect more data.
 

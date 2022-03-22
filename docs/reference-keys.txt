@@ -311,3 +311,9 @@ fig:unnamed-chunk-2
 fig:unnamed-chunk-3
 fig:unnamed-chunk-4
 common-errors
+entering-data-in-jamovi
+positive-and-negative-t-values-1
+additional-information-6
+positive-and-negative-t-values-2
+additional-information-7
+reverse-scoring

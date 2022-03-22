@@ -32,7 +32,7 @@
   
 <link rel="prev" href="chi-square.html"/>
 <link rel="next" href="chi-square-test-of-independence.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/header-attrs-2.9/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -383,6 +383,8 @@
             <section class="normal" id="section-">
 <div id="chi-square-goodness-of-fit" class="section level2" number="8.1">
 <h2><span class="header-section-number">8.1</span> Chi-Square Goodness-of-Fit</h2>
+<pre><code>## Warning: package &#39;viridis&#39; was built under R version 4.0.5</code></pre>
+<pre><code>## Warning: package &#39;viridisLite&#39; was built under R version 4.0.5</code></pre>
 <div id="overview-3" class="section level3" number="8.1.1">
 <h3><span class="header-section-number">8.1.1</span> Overview</h3>
 <p>The <span class="math inline">\(\chi^2\)</span> (chi-square) goodness-of-fit tests whether an observed frequency distribution of a nominal variable matches an expected frequency distribution. Our hypotheses for the chi-square goodness-of-fit test is as follows:</p>
@@ -419,13 +421,13 @@
 <div id="check-assumptions-3" class="section level3" number="8.1.4">
 <h3><span class="header-section-number">8.1.4</span> Check assumptions</h3>
 <p>The chi-square goodness-of-fit test has just one assumption: <strong>Expected frequencies are sufficiently large</strong>, which is usually greater than 5.</p>
-<p>You test for this assumption by checking the “Expected counts” box. You will then see rows of expected counts in your contingency table. Look at the numbers and check that they are all 5 or greater.</p>
+<p>You test for this assumption by checking the “Expected counts” box. You will then see rows of expected counts in your contingency table. Look at the “expected” numbers and check that they are all 5 or greater.</p>
 </div>
 <div id="perform-the-test-3" class="section level3" number="8.1.5">
 <h3><span class="header-section-number">8.1.5</span> Perform the test</h3>
 <p>To perform the chi-square goodness of fit test, do the following steps:</p>
 <ol style="list-style-type: decimal">
-<li><p>From the ‘Analyses’ toolbar select ‘Frequences’ - ‘One sample proportion tests - N outcomes.’</p></li>
+<li><p>From the ‘Analyses’ toolbar select ‘Frequencies’ - ‘One sample proportion tests - N outcomes.’</p></li>
 <li><p>Move <code>choice_1</code> into the Variable box.</p></li>
 <li><p>Select <code>Expected counts</code> so you can check for your assumption of expected frequencies.</p></li>
 </ol>
@@ -440,8 +442,9 @@
 <h4><span class="header-section-number">8.1.6.1</span> Write up the results in APA style</h4>
 <p>We can write up our results in APA something like this:</p>
 <blockquote>
-<p>Of the 200 participants in the experiment, 64 selected hearts for their first choice, 51 selected diamonds, 50 selected spades, and 35 selected clubs. A chi-square goodness-of-fit test was conducted to test whether the choice probabilities were identical for all four suits. The results were statistically significant (<span class="math inline">\(\chi^2\)</span> [3] = 8.44; <em>p</em> = .038), suggesting that people did not select suits purely at random. Participants chose the hearts more frequently than expected and the clubs less frequently than expected.</p>
+<p>Of the 200 participants in the experiment, 64 selected hearts for their first choice, 51 selected diamonds, 50 selected spades, and 35 selected clubs. A chi-square goodness-of-fit test was conducted to test whether the choice probabilities were identical for all four suits. The results were statistically significant (<span class="math inline">\(\chi^2\)</span> [3] = 8.44; <em>p</em> = .038), suggesting that people did not select suits purely at random. Participants chose the hearts (32%) more frequently than expected and the clubs (17%) less frequently than expected.</p>
 </blockquote>
+<p>Note that I described the data in the first sentence, but I could have also described it in more detail in the last sentence as part of my interpretation or I could have even written up the results in a table! There are many ways to write up results in APA style, and what’s important is you have the four pieces of information as described in the Writing Results chapter of this textbook.</p>
 </div>
 <div id="visualize-the-results-3" class="section level4" number="8.1.6.2">
 <h4><span class="header-section-number">8.1.6.2</span> Visualize the results</h4>

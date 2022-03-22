@@ -45,6 +45,19 @@ If you'd like to learn more about computed variables in jamovi, [check out this 
 
 Sometimes we want to take an existing variable and transform it in some way or we want to do a computation across multiple variables (e.g., reverse-score multiple items in a dataset). If you want to learn more about transforming variables, [the jamovi blog has a great blog post on the topic](https://blog.jamovi.org/2018/10/23/transforming-variables.html).
 
+#### Reverse-scoring
+
+Sometimes items need to be reverse-scored because they are in the opposite direction of the entire scale.
+
+Let's imagine we have a Happiness Scale with the following four items:
+
+1.  I am happy.
+2.  I am content.
+3.  Life is overall positive.
+4.  I am unhappy.
+
+The happiness scale suggests that higher scores is higher happiness, but the fourth item is opposite. Higher scores on that item actually indicate lower happiness. Therefore, we would need to use "Transform" to recode the items so the highest score is the lowest score and so on. For example, if it were rated on a 5-point scale then you would need to recode so a 1 = 5, 2 = 4, 3 = 3, 4 = 2, and 5 = 1.
+
 #### Recoding
 
 Maybe we want to recode variables. Perhaps we want to recode the Neuroticism scale into low, moderate, and high extraversion. The scale ranges from 1-5, so I'm going to say that scores between 1-2.333 are low, 2.334 to 3.666 is moderate, and 3.667 to 5 is high. First, I create a new Transform variable:

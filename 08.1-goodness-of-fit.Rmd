@@ -49,13 +49,13 @@ A bar plot can visualize these descriptive statistics nicely.
 
 The chi-square goodness-of-fit test has just one assumption: **Expected frequencies are sufficiently large**, which is usually greater than 5.
 
-You test for this assumption by checking the "Expected counts" box. You will then see rows of expected counts in your contingency table. Look at the numbers and check that they are all 5 or greater.
+You test for this assumption by checking the "Expected counts" box. You will then see rows of expected counts in your contingency table. Look at the "expected" numbers and check that they are all 5 or greater.
 
 ### Perform the test
 
 To perform the chi-square goodness of fit test, do the following steps:
 
-1.  From the 'Analyses' toolbar select 'Frequences' - 'One sample proportion tests - N outcomes'.
+1.  From the 'Analyses' toolbar select 'Frequencies' - 'One sample proportion tests - N outcomes'.
 
 2.  Move `choice_1` into the Variable box.
 
@@ -75,7 +75,9 @@ The first table shows us our observed frequencies (our data) and expected freque
 
 We can write up our results in APA something like this:
 
-> Of the 200 participants in the experiment, 64 selected hearts for their first choice, 51 selected diamonds, 50 selected spades, and 35 selected clubs. A chi-square goodness-of-fit test was conducted to test whether the choice probabilities were identical for all four suits. The results were statistically significant ($\chi^2$ [3] = 8.44; *p* = .038), suggesting that people did not select suits purely at random. Participants chose the hearts more frequently than expected and the clubs less frequently than expected.
+> Of the 200 participants in the experiment, 64 selected hearts for their first choice, 51 selected diamonds, 50 selected spades, and 35 selected clubs. A chi-square goodness-of-fit test was conducted to test whether the choice probabilities were identical for all four suits. The results were statistically significant ($\chi^2$ [3] = 8.44; *p* = .038), suggesting that people did not select suits purely at random. Participants chose the hearts (32%) more frequently than expected and the clubs (17%) less frequently than expected.
+
+Note that I described the data in the first sentence, but I could have also described it in more detail in the last sentence as part of my interpretation or I could have even written up the results in a table! There are many ways to write up results in APA style, and what's important is you have the four pieces of information as described in the Writing Results chapter of this textbook.
 
 #### Visualize the results
 

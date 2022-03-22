@@ -176,6 +176,18 @@ To conduct this in jamovi, under Tests select `Wilcoxon rank`. You will interpre
 
 The note about tied values is not necessary to discuss. It is just telling us one participant had identical values for both test1 and test2 (student15). You can check this yourself in the dataset
 
+### Additional Information
+
+#### Positive and negative t values
+
+Students often worry about positive or negative t-statistic values and are unsure how to interpret it. Positive or negative t-statistic values simply occur based on which group is listed first. Our t-statistic above is positive because we tested the difference between the first test (*M* = 56.98) versus the second test (*M* = 58.38) and so Test1 - Test2 is a mean difference of -1.40 and a *t*-statistic of -6.48.
+
+However, if our classes were reversed, our mean difference would 1.40 and our t-statistic would be 6.48.
+
+All that is to say, *your positive or negative t-statistic is arbitrary and is just a function of which group is listed first, which is also arbitrary*. So do not fret!
+
+One last note: this positive or negative t-statistic is only relevant for the t-test. You will not get negative values for the F-statistic or chi-square tests!
+
 ### Your turn!
 
 Open the `Sample_Dataset_2014.xlsx` file that we will be using for all Your Turn exercises. You can find the dataset here: [Sample_Dataset_2014.xlsx Download](https://github.com/danawanzer/stats-with-jamovi/blob/master/data/Sample_Dataset_2014.xlsx)

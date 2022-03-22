@@ -32,7 +32,7 @@
   
 <link rel="prev" href="dependent-t-test.html"/>
 <link rel="next" href="chi-square-goodness-of-fit.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/header-attrs-2.9/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -220,6 +220,7 @@
 </ul></li>
 <li class="chapter" data-level="8" data-path="chi-square.html"><a href="chi-square.html"><i class="fa fa-check"></i><b>8</b> Chi-Square</a>
 <ul>
+<li class="chapter" data-level="8.0.1" data-path="chi-square.html"><a href="chi-square.html#entering-data-in-jamovi"><i class="fa fa-check"></i><b>8.0.1</b> Entering data in jamovi</a></li>
 <li class="chapter" data-level="8.1" data-path="chi-square-goodness-of-fit.html"><a href="chi-square-goodness-of-fit.html"><i class="fa fa-check"></i><b>8.1</b> Chi-Square Goodness-of-Fit</a>
 <ul>
 <li class="chapter" data-level="8.1.1" data-path="chi-square-goodness-of-fit.html"><a href="chi-square-goodness-of-fit.html#overview-3"><i class="fa fa-check"></i><b>8.1.1</b> Overview</a></li>
@@ -383,7 +384,9 @@
             <section class="normal" id="section-">
 <div id="chi-square" class="section level1" number="8">
 <h1><span class="header-section-number">Chapter 8</span> Chi-Square</h1>
-<p>The chi-quare is a categorical data analysis which is simply data analysis with categorical data. It’s usually nominal data, although there are a couple tests we may use with ordinal data. There are two basic types of chi-square tests we’ll be covering:</p>
+<pre><code>## Warning: package &#39;viridis&#39; was built under R version 4.0.5</code></pre>
+<pre><code>## Warning: package &#39;viridisLite&#39; was built under R version 4.0.5</code></pre>
+<p>The chi-square (pronounced kai) is a categorical data analysis which is simply data analysis with categorical data. It’s usually nominal data, although there are a couple tests we may use with ordinal data. There are two basic types of chi-square tests we’ll be covering:</p>
 <ol style="list-style-type: decimal">
 <li><p><span class="math inline">\(\chi^2\)</span> <strong>goodness-of-fit</strong>: used with one variable to find if the observed frequencies match the expected frequencies</p></li>
 <li><p><span class="math inline">\(\chi^2\)</span> <strong>test of independence (or association)</strong>: used with two variables to find if the observed frequencies match the expected frequencies. In other words, are the two nominal variables independent or associated with one another?</p>
@@ -393,7 +396,11 @@
 </ol></li>
 </ol>
 <p>Because these tests are all with categorical data, there are no assumptions about the distribution of the data. For that reason, these are all <em>non-parametric statistics</em>.</p>
-<!--chapter:end:08.0-categorical.Rmd-->
+<div id="entering-data-in-jamovi" class="section level3" number="8.0.1">
+<h3><span class="header-section-number">8.0.1</span> Entering data in jamovi</h3>
+<p>One thing to note that is unique about the chi-square is that you can either setup your data in the raw format or you can use the frequency tables as your data. If you use the frequency table, then you can move the counts/frequency variable into the Counts box in either the goodness-of-fit or test of independence analyses.</p>
+
+</div>
 </div>
 <div class="psyteachr_footer">
   
