@@ -1,4 +1,4 @@
-## Regression
+## 22. Regression
 
 ```{r ind-t_setup, echo = FALSE, message=FALSE}
 library(tidyverse)
@@ -6,8 +6,6 @@ library(webex)
 library(viridis)
 options(knitr.graphics.auto_pdf = TRUE)
 ```
-
-### Overview
 
 Regression can examine multiple predictor variables simultaneously. Whereas the factorial ANOVA can only handle categorical variables (i.e., nominal or ordinal), regression can handle all types of predictor variables including both categorical and continuous.
 

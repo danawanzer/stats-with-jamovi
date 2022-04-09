@@ -1,8 +1,8 @@
 # (APPENDIX) Appendices {-}
 
-# Answers
+# Answers to Your Turn exercises
 
-## Answers to 5.3 Power
+### Answers to 5.3 Power {.unlisted .unnumbered}
 
 In the following table, determine where each of the pieces should go. Note that we have six things to populate but only four cells: each cell must contain at least one of the six things. Think critically here before testing your answers!
 
@@ -23,7 +23,7 @@ Which cell should each of the following items go?
 
 Let's see what happens when we both increase power AND decrease alpha. Fill out the table on your own. When we assume the null and alternative hypotheses are 50% likely each, and we set our alpha to 1% and our power to 95%, how much more likely is it that the alternative hypothesis is true than the null hypothesis is true? (answer = 95 times more likely!)
 
-## Answers to 7.1 one-sample t-test
+### Answers to 7.1 one-sample t-test {.unlisted .unnumbered}
 
 1.  **Do the students in our dataset have a higher Writing score than than the passing score? (*M* = 70)?**
 
@@ -41,7 +41,7 @@ Let's see what happens when we both increase power AND decrease alpha. Fill out 
 
     -   Do the students in our dataset have the same national average height of college students)? (answer = no)
 
-## Answers to 7.2 independent samples t-test
+### Answers to 7.2 independent samples t-test {.unlisted .unnumbered}
 
 1.  **Does height differ by gender (Gender: male = 0, female = 1)?**
 
@@ -75,7 +75,7 @@ Let's see what happens when we both increase power AND decrease alpha. Fill out 
 
     -   Does athletic status relate to math scores? (answer = yes)
 
-## Answers to 7.3 dependent t-test
+### Answers to 7.3 dependent t-test {.unlisted .unnumbered}
 
 **Note**: Technically, none of our data is suitable for a dependent t-test in this dataset. We will pretend that the four test score variables (`English`, `Reading`, `Math`, and `Writing`) are really four measurements of the same underlying test. In reality, we would analyze this data using correlation.
 
@@ -95,7 +95,7 @@ Let's see what happens when we both increase power AND decrease alpha. Fill out 
 
     -   Does students' English scores relate to their Reading scores? (answer = no)
 
-## Answers to 8.1 goodness of fit test
+### Answers to 8.1 goodness of fit test {.unlisted .unnumbered}
 
 1.  **Are there equal numbers of athletes and non-athletes?** (`Athlete` variable)
 
@@ -121,7 +121,7 @@ Let's see what happens when we both increase power AND decrease alpha. Fill out 
 
     -   What is your chi-square value, rounded to two decimal places? (answer = 33.94)
 
-## Answers to 8.2 chi-square test of independence
+### Answers to 8.2 chi-square test of independence {.unlisted .unnumbered}
 
 1.  **Is Athlete related to Gender?**
 
@@ -143,7 +143,7 @@ Let's see what happens when we both increase power AND decrease alpha. Fill out 
 
     -   What is your chi-square value, rounded to two decimal places? (answer = .61)
 
-## Answers to 9.1 one-way ANOVA
+### Answers to 9.1 one-way ANOVA {.unlisted .unnumbered}
 
 1.  **Does students differ on English scores by rank (i.e., freshmen, sophomore, junior, senior)?**
 
@@ -165,7 +165,7 @@ Let's see what happens when we both increase power AND decrease alpha. Fill out 
 
     -   Does smoking status relate to sprint time? (answer = yes)
 
-## Answers to 9.2 finding group differences
+### Answers to 9.2 finding group differences {.unlisted .unnumbered}
 
 1.  **Does students differ on English scores by rank (i.e., freshmen, sophomore, junior, senior)?**
 
@@ -175,7 +175,7 @@ Let's see what happens when we both increase power AND decrease alpha. Fill out 
 
     -   Perform Tukey's post hoc tests. What are the results of the post hoc comparison? (answer = Nonsmokers had significantly faster sprint times than current smokers)
 
-## Answers to 9.3 repeated measures ANOVA
+### Answers to 9.3 repeated measures ANOVA {.unlisted .unnumbered}
 
 1.  **Does students differ on their test scores (English, Reading, Math, Writing)?**
 
@@ -189,7 +189,7 @@ Let's see what happens when we both increase power AND decrease alpha. Fill out 
 
     -   What are the results of the post hoc comparison?
 
-## Answers to 10.1 correlation
+### Answers to 10.1 correlation {.unlisted .unnumbered}
 
 1.  **Are there significant correlations among the four tests (English, reading, math, writing)?**
 
@@ -207,7 +207,7 @@ Let's see what happens when we both increase power AND decrease alpha. Fill out 
 
         -   What is the correlation between writing and English? (answer = .37)
 
-## Answers to 10.2 regression
+### Answers to 10.2 regression {.unlisted .unnumbered}
 
 1.  **Perform a multiple regression examining how `English`**, **`Reading` and `Writing`, as well as `Gender` relate to the dependent variable `Math`.**
 

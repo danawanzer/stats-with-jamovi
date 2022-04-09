@@ -1,4 +1,4 @@
-## Chi-Square Goodness-of-Fit
+## 13. Chi-Square Goodness-of-Fit
 
 ```{r ind-t_setup, echo = FALSE, message=FALSE}
 library(tidyverse)

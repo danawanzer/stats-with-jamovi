@@ -1,4 +1,4 @@
-# Statistics foundations
+# 2. Statistics foundations
 
 ```{r intro-setup, echo = FALSE, message=FALSE}
 library(tidyverse)
@@ -45,7 +45,7 @@ But what we really want to know is: which group performed better on the test? Fo
 
     Interested in better techniques for studying? Check out [The Learning Scientists](https://www.learningscientists.org/blog/category/For+Students). This [article](https://www.learningscientists.org/blog/2020/1/9-1)does a good job of summarizing the research on effective study practices.
 
-## Measures of central tendency and dispersion
+## Central tendency and dispersion
 
 There are multiple **measures of central tendency** (these are *all* averages so you must be careful when you say that word to explain which type you mean!):
 
@@ -137,17 +137,3 @@ Confused still on the levels of measurement? Maybe this will help! Notice that s
 We can make any continuous variable into an ordinal and nominal variable and any ordinal variable into a nominal variable. But if we have a nominal variable we cannot make it ordinal, nor can we make an ordinal variable continuous. In other words, continuous variables *contain more information*. Often, we want to avoid losing information and *always* keep the variable at the highest level of measurement. Continuous has more information than ordinal has more information than nominal.
 
 Another way to put it: never do a median split and avoid "collapsing" categories when you can. You're losing information from your data by doing so.
-
-## Normal distribution
-
-A very important distribution of data is known as the **normal distribution**. You may have also heard it called a bell-shaped curve. It has really important statistical properties which is why most of the inferential statistics we'll be learning in this class are *parametric statistics* that assume our data has a *normal distribution*.
-
-Some of the important statistical properties of the normal distribution:
-
--   Data are equally distributed on both sides of the mean.
-
--   Skew and kurtosis are equal to 0, which is to say there is no skew or bad kurtosis.
-
--   The mean is equal to the median, and both are the exact center of the distribution of data. In other words, if your mean and median are *not* the same, you know you have skewed data! In fact, if your median \< mean then you have positive skew and if your median \> mean then you have negative skew.
-
--   We know the percentage of cases within 1, 2, 3, etc. standard deviations from the mean.

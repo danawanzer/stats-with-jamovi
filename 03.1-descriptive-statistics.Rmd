@@ -1,4 +1,4 @@
-## Descriptive statistics
+## Describing data
 
 As a reminder, **descriptive statistics** are used to summarize, organize, and overall *describe* our sample data.
 
@@ -26,11 +26,11 @@ There are a few great things about jamovi when it comes to these data variables.
 
 Second, those little icons will be really helpful to let you know what variables can go in which boxes. For example, we would never analyze a nominal variable as our dependent variable for a t-test, and jamovi will help remind you of that. When performing an independent samples t-test, the dependent variables box will have a little ruler icon indicating you should be putting continuous variables in that box. Similarly, it will tell you to put nominal or ordinal variables in the grouping variable (independent variable) box. Sweet!
 
-### Exploring your data
+### Describing your data
 
-In the third chapter of the LinkedIn Learning videos, you learned about data exploration, which are descriptive statistics. Exploring our data is partly to describe our data and partly to check our data before performing inferential statistics. jamovi puts all our descriptive statistics into one useful analysis under the Exploration tab called `Descriptives`.
+We explore our data partly to describe our data and partly to check our data before performing inferential statistics. jamovi puts all our descriptive statistics into one useful analysis under the Exploration tab called `Descriptives`. Whenever you want to understand the measure of central tendency or dispersion of a single variable (e.g., what is the average score on a particular scale?) then you'll go to the `Descriptives` analysis under Exploration.
 
-You first learned about various descriptive statistics. In the `Descriptives` analysis, these are under the `Statistics` drop-down menu. There are a ton of possible options!
+In the `Descriptives` analysis, these are under the `Statistics` drop-down menu. There are a ton of possible options!
 
 1.  **Sample size**: you can ask for the sample size (`N`) and number of missing values (`Missing`)
 2.  **Percentile values**: these are useful for creating quartiles (`Cut points for 4 equal groups`) or `Percentiles` of various sizes.
@@ -38,6 +38,10 @@ You first learned about various descriptive statistics. In the `Descriptives` an
 4.  **Central Tendency**: similarly, you should also be familiar with all of the measures of central tendency: `Mean`, `Median`, `Mode`, and `Sum`.
 5.  **Distribution**: you should also be familiar with both `Skewness` and `Kurtosis` and later we will learn what those values mean and how that helps us test for normality
 6.  **Normality**: lastly, there is a statistical test for normality called the `Shapiro-Wilk` test that we will learn about later.
+
+### Writing up descriptive statistics
+
+We'll learn more about writing up our inferential statistics results later, but first let's learn how we might report our descriptive statistics.
 
 In small examples, we might write-up our descriptive statistics into a paragraph[^descriptive-statistics-1]:
 
@@ -51,27 +55,38 @@ In examples with many variables, we might write-up our descriptive statistics in
 
 ![](images/02-stats-foundations/example2.png){width="400"}
 
-### Visualizing your data
+## Visualizing data
 
 "A picture is worth a thousand words," and in a world in which journal articles have word count limits, figures and graphs are priceless. They are also an incredibly powerful way to examine your data because it can often illuminate patterns you may not be able to see through a table.
 
-jamovi has some plots built into its platform, both under the `Plots` drop-down menu in the `Descriptives` analysis and as options for many of the inferential statistical analyses. For the latter, I will provide some guidance on best practices for visualizing inferential results in the relevant subsequent chapters. For now, let's go over the various `Plots` in the `Descriptives` analysis.
+jamovi has some plots built into its platform, both under the `Plots` drop-down menu in the `Descriptives` analysis and as options for many of the inferential statistical analyses.
+
+We'll learn more about how to choose and conduct better data visualizations later, but for now here are some recommended visualizations depending on what you are trying to do.
+
+[When you want to visualize the distribution of a continuous variable]{.ul}
 
 First, there are two **Histogram** options: `Histogram` and `Density`. These are useful for seeing the overall distribution of your data and to help check for normality. Which should you use? I think they're both pretty great, and in fact you can combine the two to have a histogram plot with a density overlay. I like this option best.
 
-There are three options under **Box Plots**: `Box plot`, `Violin` (which is really a density plot with its mirror image!), and `Data` (which can be Jittered or Stacked; I prefer Jittered so you can see the density of data points really well. Personally, I love checking all three boxes. This gives you the best of all three: the distribution of your data with the `Violin` option, the quartiles and mean with the `Box plot` option, and a visualization of all your data points using the `Data` option, which is really useful because the other two options can be *hiding* weird things in your data.
+[When you want to visualize the distribution of a continuous variable split by a categorical variable]{.ul}
+
+There are three options under **Box Plots**: `Box plot`, `Violin` (which is really a density plot with its mirror image!), `Data` (which can be Jittered or Stacked; I prefer Jittered so you can see the density of data points really well), and `Mean`. Personally, I love checking all four boxes! This gives you the best of all them: the distribution of your data with the `Violin` option, the quartiles and mean with the `Box plot` option, a visualization of all your data points using the `Data` option, which is really useful because the other two options can be *hiding* weird things in your data, and what the `Mean` is.
+
+[When you want to visualize the frequencies of a categorical variable]{.ul}
+
+For this you would choose the single option under **Bar Plots**: `Bar plot`. It will simply show the frequencies of a categorical variable.
+
+``` {block, type="info"}
 
 **Remember: it is incredibly important to always visualize your data!** You never know what descriptive statistics may be hiding.
+
+```
 
 ```{r echo = FALSE, message = FALSE, warning = FALSE}
 library(vembedr)
 embed_url("https://www.youtube.com/watch?v=d2wU0kmCJEY")
 ```
 
-
-Lastly, there is an option under **Bar Plots** for (you guessed it) a `Bar plot`. It will add error bars to your bar plot, but now that you know what can be hiding under descriptive statistics (bar plots only show the mean and error) you will hopefully avoid using these in the future when you can show the actual data itself.
-
-#### Expanding your data visualization
+### Expanding your data visualization
 
 Although these can be useful plots, I often do most of my data visualizations in other platforms. For most of my work, I use Excel because I find it pretty easy to make beautiful graphs. Here's an example of a visualization I made in Excel[^descriptive-statistics-3]:
 

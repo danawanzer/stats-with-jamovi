@@ -1,8 +1,8 @@
-# Writing up results
+# 9. Writing up results
 
 This chapter goes over how to write up statistical results. Refer back to this chapter often!
 
-### The 4 components of writing statistical results
+### The 4 components of writing statistical results  {.unlisted .unnumbered}
 
 When writing up the results of a statistical test, we should always include the following information:
 
@@ -14,7 +14,7 @@ When writing up the results of a statistical test, we should always include the 
 
 4.  Interpretation of the results or whether the hypothesis was supported or not, including any other information as needed.
 
-### An example
+### An example  {.unlisted .unnumbered}
 
 Let's go through an example. This data comes from the independent t-test chapter. Given the results of the t-test, we can write up our results in APA something like this:
 
@@ -37,7 +37,7 @@ Sometimes, people like to put the statistics inside a parentheses. In that case,
 
 Note that these are not the only way we can write up the results in APA format. The key is that we include all four pieces of information as specified above.
 
-### 7 Common Errors
+### 7 Common Errors  {.unlisted .unnumbered}
 
 The following video details 7 common errors that folks make when reporting statistical results:
 

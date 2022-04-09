@@ -1,4 +1,4 @@
-## Dependent t-test
+## 12. Dependent t-test
 
 ```{r ind-t_setup, echo = FALSE, message=FALSE}
 library(tidyverse)

@@ -1,12 +1,10 @@
-## Correlation
+## 21. Correlation
 
 ```{r ind-t_setup, echo = FALSE, message=FALSE}
 library(tidyverse)
 library(webex)
 options(knitr.graphics.auto_pdf = TRUE)
 ```
-
-### Overview
 
 Correlation (*r*) tests the relationship between two variables, which are usually continuous (i.e., ratio or interval) variables. The relationship between those two variables could be *positively related*, *negatively related*, or *not related at all*.
 

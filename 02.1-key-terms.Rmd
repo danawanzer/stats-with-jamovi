@@ -1,4 +1,4 @@
-## Key Terms
+## Design & Methods Key Terms
 
 ```{r intro-setup, echo = FALSE, message=FALSE}
 library(tidyverse)

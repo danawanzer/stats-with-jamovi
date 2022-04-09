@@ -1,4 +1,4 @@
-## General Linear Model
+## 23. General Linear Model
 
 ```{r ind-t_setup, echo = FALSE, message=FALSE}
 library(tidyverse)
@@ -6,8 +6,6 @@ library(webex)
 library(viridis)
 options(knitr.graphics.auto_pdf = TRUE)
 ```
-
-### Overview
 
 The regression is a General Linear Model (GLM). Everything we've learned up to this point is also a general linear model. Pretty much everything we've learned in this class *could* be performed as simple a regression. You may wonder why we have not just taught regression and none of the others. There are some who are indeed proponents of that! However, I believe teaching "simpler" statistics like the t-test and correlation first is easiest to understand. Most of the statistics you will perform from here on out---including in your careers---will be what we have already learned (i.e., t-test, ANOVA, chi-square, correlation). However, I present this information so you may begin to see how all of this is related.
 

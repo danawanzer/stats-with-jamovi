@@ -1,12 +1,10 @@
-## One-way ANOVA
+## 16. One-way ANOVA
 
 ```{r ind-t_setup, echo = FALSE, message=FALSE}
 library(tidyverse)
 library(webex)
 options(knitr.graphics.auto_pdf = TRUE)
 ```
-
-### Overview
 
 The one-way analysis of variance (ANOVA) is used to test the difference in our dependent variable between [three or more]{.ul} different groups of observations. Our grouping variable is our independent variable. In other words, we use the one-way ANOVA when we have a research question with a **continuous dependent variable** and a **categorical independent variable with three or more categories in which different participants are in each category**.
 

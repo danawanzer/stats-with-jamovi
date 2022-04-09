@@ -4,9 +4,10 @@ bookdown::gitbook:
   includes:
     after_body: [include/footer.html, include/webex.js]
   css: [include/psyteachr.css, include/style.css]
+  number_sections: false
   config:
     toc:
-      collapse: section
+      collapse: subsection
       scroll_highlight: yes
       before: |
         <li><a href="./">Stats with jamovi</a></li>
@@ -30,11 +31,11 @@ bookdown::gitbook:
       vk: no
       all: ['facebook', 'google', 'twitter', 'linkedin', 'weibo', 'instapaper']
   split_by: section
-bookdown::pdf_book:
-  includes:
-    in_header: preamble.tex
-  latex_engine: xelatex
-  citation_package: natbib
-  keep_tex: yes
-  css: [include/psyteachr.css, include/style.css]
-  # template: tex/preamble_nonpar.tex
+# bookdown::pdf_book:
+#   includes:
+#     in_header: preamble.tex
+#   latex_engine: xelatex
+#   citation_package: natbib
+#   keep_tex: yes
+#   css: [include/psyteachr.css, include/style.css]
+#   # template: tex/preamble_nonpar.tex

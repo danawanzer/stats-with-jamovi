@@ -19,6 +19,6 @@ The chi-square (pronounced kai) is a categorical data analysis which is simply d
 
 Because these tests are all with categorical data, there are no assumptions about the distribution of the data. For that reason, these are all *non-parametric statistics*.
 
-### Entering data in jamovi
+### Entering data in jamovi {.unlisted .unnumbered}
 
 One thing to note that is unique about the chi-square is that you can either setup your data in the raw format or you can use the frequency tables as your data. If you use the frequency table, then you can move the counts/frequency variable into the Counts box in either the goodness-of-fit or test of independence analyses.

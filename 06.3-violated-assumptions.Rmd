@@ -1,4 +1,4 @@
-## Violated assumptions
+# 8. Violated assumptions
 
 What do you do if you have violated assumptions? Let's first talk about the assumptions we don't test (interval/ratio data and independent scores) before we turn to the other two assumptions (normality and homogeneity of variance).
 
