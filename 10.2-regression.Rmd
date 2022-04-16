@@ -51,11 +51,18 @@ knitr::include_graphics("images/13-regression/dragon_residual_distribution.png")
 
 There is more math to regression, which is needed to calculate the *F*-test you get for the overall model test and the t-tests you get for your model coefficients, but we won't get into that detail.
 
-### Look at the data
+### Step 1: Look at the data
 
 Let's run an example with data from lsj-data. Open data from your Data Library in "lsj-data". Select and open `parenthood`. This dataset includes the sleep quality of both Dan and Dan's baby, Dan's grumpiness, and the day of the data collection from 1-100.
 
 We'll be testing how both Dan's and Dan's baby's quality of sleep affect Dan's grumpiness.
+
+Here's a video walking through the regression.
+
+```{r echo = FALSE, message = FALSE, warning = FALSE}
+library(vembedr)
+embed_url("https://www.youtube.com/watch?v=SfubvsatkdA")
+```
 
 #### Data set-up
 
@@ -73,35 +80,21 @@ We also see skew and kurtosis. Calculating the *z*-score for all the skew and ku
 
 ![](images/08-correlation/correlation-descriptives.png)
 
-### Check Assumptions
-
-#### Assumptions
+### Step 2: Check Assumptions
 
 The regression has a lot of assumptions.
 
-Some require no testing:
+Some require no testing and are a function of understanding your data and research design:
 
 1.  **Variable types**: The DV is continuous and the IVs are either continuous, dichotomous, or ordinal.
 
 2.  **Independence**: All the outcome variable values are independent (e.g., come from a separate entity).
 
-Other assumptions require testing:
+Other assumptions require testing. We'll go through each of these one at a time.
 
-1.  **No outliers**: There shouldn't be any data in the dataset that is an outlier which would strongly influence your results.
+#### No outliers
 
-2.  **Normality of the *residuals***: Up to this point, we've examined the normality of the outcome variables. With regression, our variables can be non-normal as long as the residuals (i.e., error) are normally distributed.
-
-3.  **Linearity**: The relationship between each IV and DV is linear. Sometimes you may expect a curvilinear relationship between an IV and DV, in which case we square or cube the IV and use that variable as our predictor variable in the regression.
-
-4.  **Homogeneity of variance (homoscedasticity)**: At each level of the predictor variables, the variance of the residual terms should be constant.
-
-5.  **Independent residuals**: For any two observations, the residual terms should be uncorrelated (or independent). Our errors must be normally distributed *and* uncorrelated.
-
-6.  **No multicollinearity**: There should be no perfect or near-perfect linear relationship between two or more of the predictors in your regression model. For example, you would not include "heigh_cm" and "heigh_in" in your model because they would be perfectly related to one another. We'll learn how to test for this.
-
-#### Checking Assumptions
-
-##### Outliers
+There shouldn't be any data in the dataset that is an outlier which would strongly influence your results.
 
 Under Data Summary, you should have a table with Cook's distance. This is one way we can check for *multivariate outliers*. This examines whether any one *line* of data is an outlier, not just one data *point*. In general, Cook's distances greater than 1 indicate a multivariate outlier. Our Cook's distances are very small, so we do not have a problem with outliers.
 
@@ -109,7 +102,9 @@ Under Data Summary, you should have a table with Cook's distance. This is one wa
 
 If you violate this assumption and have one or more multivariate outliers, then go to the Save tab in your regression setup and select the box for Cook's distance. That will create a new variable in your dataset with the Cook's distance. Create a filter and remove any data that has a Cook's distance greater than 1.
 
-##### Normality of the residuals
+#### Normality of the residuals
+
+Up to this point, we've examined the normality of the outcome variables. With regression, our variables can be non-normal as long as the residuals (i.e., error) are normally distributed.
 
 The regression analysis in jamovi allows us to check multivariate normality with the Shapiro-Wilk's test and the Q-Q plot of our residuals. We've seen this multiple times, so by now it should be well-ingrained that because Shapiro-Wilk's is not statistically significant and our data points fall along the diagonal line that we satisfy the assumption of normally distributed residuals.
 
@@ -119,19 +114,33 @@ If you violate the assumption of normality, you can try transformating one or mo
 
 ![](images/13-regression/regression-normality.png)
 
-##### Linearity & homoscedasticity
+#### Linearity & homoscedasticity
 
-To examine linearity and homoscedasticity, two of the assumptions of regression, we examine the Residuals Plots. You will get one plot of the overall model (Fitted) and one for each of your variables (DV and IV(s)). I've displayed the residuals plot for the Fitted values against the residuals below. In these plots, we want our data to look like a random scattering of dots even dispersed around zero on the y-axis.
+**Linearity**: The assumption of linearity means relationship between each IV and DV is linear. Sometimes you may expect a curvilinear relationship between an IV and DV, in which case we square or cube the IV and use that variable as our predictor variable in the regression.
+
+**Homogeneity of variance (homoscedasticity)**: The assumption of homoscedasticity means at each level of the predictor variables, the variance of the residual terms should be constant.
+
+To examine linearity and homoscedasticity we examine the Residuals Plots. You will get one plot of the overall model (Fitted) and one for each of your variables (DV and IV(s). We only focus on the Fitted residuals, shown below. In these plots, we want our data to look like a random scattering of dots even dispersed around zero on the y-axis.
 
 We will not be learning non-normal or weighted least squares regression in this course, so if you violate one or both of these assumptions then mention which are violated and that you will proceed anyways.
 
+![](images/13-regression/regression-residuals.png)
+
 **Linearity**: If the data points seem to have a curve in the graph, then that suggests you have failed the assumption of linearity. Our data doesn't seem to have any curve to it, so we satisfy the assumption of linearity.
+
+This image by [Laerd Statistics](https://statistics.laerd.com/spss-tutorials/pearsons-product-moment-correlation-using-spss-statistics.php) shows what non-linear relationships might look like.
+
+![](images/08-correlation/linear-non-linear.png)
 
 **Homoscedasticity**: If the graph seems to funnel (e.g., widely dispersed on one end of the x-axis and narrowly dispersed on the other end), then that suggests you fail the assumption of homoscedasticity. Our data doesn't seem to be wider at any point, so we satisfy the assumption of homoscedasticity.
 
-![](images/13-regression/regression-residuals.png)
+This image by [CleverTap](https://clevertap.com/blog/a-brief-primer-on-linear-regression-part-ii/) shows what heteroscedasticity might look like.
 
-##### Independence of residuals
+![](images/08-correlation/homoscedasticity.png)
+
+#### Independence of residuals
+
+This assumption means that for any two observations, the residual terms should be uncorrelated (or independent). Our errors must be normally distributed and uncorrelated.
 
 The Durbin-Watson test for autocorrelation tests for independence of residuals. We want the Durbin-Watson value to be as close to 2 as possible. Values less than 1 or greater than 3 are problematic and indicate we are violating this assumption. In our case, the DW test statistic is 2.12 and so very close to 2. Furthermore, they provide a p-value and the p-value is greater than .05 so the test statistic is not statistically significant, further supporting that we meet the assumption that our residuals are independent.
 
@@ -139,7 +148,9 @@ If you violate this assumption, it's likely a function of how your data was coll
 
 ![](images/13-regression/regression-durbinwatson.png)
 
-##### Multicollinearity
+#### No multicollinearity
+
+This assumption means there should be no perfect or near-perfect linear relationship between two or more of the predictors in your regression model. For example, you would not include "heigh_cm" and "heigh_in" in your model because they would be perfectly related to one another.
 
 Multicollinearity is a problem for three reasons:
 
@@ -157,7 +168,7 @@ In our data, our VIF is 1.65 and Tolerance is .61, so we satisfy the assumption 
 
 Now that we met all the assumptions, we can interpret our results!
 
-### Perform the test
+### Step 3: Perform the test
 
 1.  From the 'Analyses' toolbar select 'Regression' - 'Linear regression'. Note that we select this option regardless of whether we are performing a linear regression, multiple regression, or hierarchical regression.
 
@@ -177,7 +188,7 @@ Now that we met all the assumptions, we can interpret our results!
 
 I'm not going to show the set-up figure here because there's just too much to show.
 
-### Interpret results
+### Step 4: Interpret results
 
 ![](images/13-regression/regression-results.png)
 
@@ -191,9 +202,9 @@ However, more commonly we report the adjusted R-squared value, which adjusts the
 
 **Model coefficients**: Just like in ANOVA, we first examine if the model is significant (overall model test) and then look at individual factors, in this case being individual variables in our regression model. Each variable--our intercept and both independent variables--have an associated *t*-test. In this case, Dan's sleep significantly predicts Dan's grumpiness, but the baby's sleep does not.
 
-**Standardized coefficients**: We also asked for standardized estimates, which we get in the last column of our model coefficients table. These are *standardized* so that we can compare them to other variables. They give us an idea of the *strength* of the relationship between that IV on the DV. Larger values = bigger effects. The standardized estimate is called Beta ($\beta$) whereas the unstandardized estimate is just called that or B (the letter B, not Beta). We use the standardized estimates to compare the strength of the estimate to other IVs and we use unstandardized estimates to write our linear equations and predict the DV given values of the IV.
+**Standardized coefficients**: We also asked for standardized estimates (Stand. Estimate), which we get in the last column of our model coefficients table. These are *standardized* so that we can compare them to other variables. They give us an idea of the *strength* of the relationship between that IV on the DV. Larger values = bigger effects. The standardized estimate is called Beta ($\beta$) whereas the unstandardized estimate is just called that or B (the letter B, not Beta). We use the standardized estimates to compare the strength of the estimate to other IVs and we use unstandardized estimates to write our linear equations and predict the DV given values of the IV.
 
-*What about the intercept?* You might be wondering what we do with the intercept. Typically, nothing. We only use it to create our equation so that we can predict Dan's grumpiness based on Dan's sleep and the baby's sleep. For example, our equation from our data is such:
+***What about the intercept?***You might be wondering what we do with the intercept. Typically, nothing. We only use it to create our equation so that we can predict Dan's grumpiness based on Dan's sleep and the baby's sleep. For example, our equation from our data is such:
 
 $y = 125.97 - 8.95(dan.sleep) + .01(baby.sleep)$
 
@@ -209,38 +220,7 @@ We can write up our results in APA something like this:
 
 Note that in many of these write-ups I did not include anything about assumption checking. I normally write up that information as part of my analytic plan in my methods section (e.g., "I checked for multivariate outliers using Cook's distance."). Included in this section, I explain what I will do if I do not meet various assumptions. Then, if I don't meet the assumption in the results section I explain that I did not meet the assumption, explain the results if necessary, explain what I did, and then give the results. In this case, we met all the assumptions (that presumably I described in my methods section) and therefore went straight to the results.
 
-### Video
-
-Here's a video walking through the regression.
-
-```{r echo = FALSE, message = FALSE, warning = FALSE}
-library(vembedr)
-embed_url("https://www.youtube.com/watch?v=SfubvsatkdA")
-```
-
-### Additional information
-
-#### Hierarchical regression
-
-Hierarchical regression is exactly the same as multiple regression but now we have multiple models or blocks. You can specify hierarchical regression using the Model Builder drop-down menu in jamovi. Let's try an example where we have `baby.sleep` as Block 1 and `dan.sleep` as Block 2. In addition, using the Model Fit drop-down menu you should check `AIC` and `BIC` in addition to the previously selected options. Your setup should look something like this:
-
-![](images/13-regression/hierarchical-setup.png)
-
-Our model results now change. We now have two lines for the Model Fit Measures and a Model Comparisons table. In addition, under Model Specific Results, we have a drop-down menu to specify which model we want to examine.
-
-![](images/13-regression/hierarchical-results.png)
-
-Let's interpret. Our first model (with just `baby.sleep` is significant), *F* (1, 98) = 46.18, *p* \< .001, *adjusted* $R^2$ = .31. So is our second model (that has both `baby.sleep` and `dan.sleep`), *F* (2, 97) = 215.24, *p* \< .001, *adjusted* $R^2$ = .81. There was a significant improvement between model 1 and model 2, $F_{change}$ (1, 97) = 261.52, *p* \< .001, $\Delta R^2$ = .50. The significant improvement means that the predictors added to model 2 significantly predict our DV *above and beyond* the predictors in model 1.
-
-We might write-up these results as such:
-
-> Dan collected data on how many hours of sleep Dan and Dan's baby got, as well as Dan's grumpiness, for 100 days. Dan tested how the hours of sleep both Dan and the baby got affected Dan's grumpiness using hierarchical regression to find out how Dan's sleep predicted Dan's grumpiness above and beyond the baby's sleep.
->
-> First, the baby's sleep significantly predicted Dan's grumpiness*, F* (1, 98) = 46.18, *p* \< .001, *adjusted* $R^2$ = .31. As the baby's hours of sleep increased, Dan's grumpiness decreased, *t* (98) = -6.80, *SE* = .40, *p* \< .001, $\beta$ = -.57.
->
-> A second model was tested that added Dan's sleep. This model--comprised of both baby's sleep and Dan's sleep--significantly predicted Dan's grumpiness, *F* (2, 97) = 215.24, *p* \< .001, *adjusted* $R^2$ = .81. There was a significant improvement between model 1 and model 2, $F_{change}$ (1, 97) = 261.52, *p* \< .001, $\Delta R^2$ = .50. In the second model, as Dan's sleep increased, Dan's grumpiness decreased, *t* (97) = -16.17, *SE* = .55, *p* \< .001, $\beta$ = -.90. However, the baby's sleep did not significantly relate to Dan's grumpiness when controlling for Dan's sleep, *t* (97) = .04, *SE* = .27, *p* = .969, $\beta$ = .00.
-
-#### Categorical Predictors
+### Categorical Predictors
 
 Dummy coded variables (with values 0 or 1) are pretty easy to interpret in regression. If the Beta is positive, then the value of 1 would have a higher mean on the DV than the value of 0. If the Beta is negative, then the value of 0 would have a higher mean on the DV than the value of 1.
 
@@ -269,7 +249,27 @@ In this case, the Estimated Marginal Means can be very helpful for us to interpr
 
 ![](images/13-regression/regression-categorical-EMM.png)
 
-### Your turn!
+### Hierarchical regression
+
+Hierarchical regression is exactly the same as multiple regression but now we have multiple models or blocks. You can specify hierarchical regression using the Model Builder drop-down menu in jamovi. Let's try an example where we have `baby.sleep` as Block 1 and `dan.sleep` as Block 2. In addition, using the Model Fit drop-down menu you should check `AIC` and `BIC` in addition to the previously selected options. Your setup should look something like this:
+
+![](images/13-regression/hierarchical-setup.png)
+
+Our model results now change. We now have two lines for the Model Fit Measures and a Model Comparisons table. In addition, under Model Specific Results, we have a drop-down menu to specify which model we want to examine.
+
+![](images/13-regression/hierarchical-results.png)
+
+Let's interpret. Our first model (with just `baby.sleep` is significant), *F* (1, 98) = 46.18, *p* \< .001, *adjusted* $R^2$ = .31. So is our second model (that has both `baby.sleep` and `dan.sleep`), *F* (2, 97) = 215.24, *p* \< .001, *adjusted* $R^2$ = .81. There was a significant improvement between model 1 and model 2, $F_{change}$ (1, 97) = 261.52, *p* \< .001, $\Delta R^2$ = .50. The significant improvement means that the predictors added to model 2 significantly predict our DV *above and beyond* the predictors in model 1.
+
+We might write-up these results as such:
+
+> Dan collected data on how many hours of sleep Dan and Dan's baby got, as well as Dan's grumpiness, for 100 days. Dan tested how the hours of sleep both Dan and the baby got affected Dan's grumpiness using hierarchical regression to find out how Dan's sleep predicted Dan's grumpiness above and beyond the baby's sleep.
+>
+> First, the baby's sleep significantly predicted Dan's grumpiness*, F* (1, 98) = 46.18, *p* \< .001, *adjusted* $R^2$ = .31. As the baby's hours of sleep increased, Dan's grumpiness decreased, *t* (98) = -6.80, *SE* = .40, *p* \< .001, $\beta$ = -.57.
+>
+> A second model was tested that added Dan's sleep. This model--comprised of both baby's sleep and Dan's sleep--significantly predicted Dan's grumpiness, *F* (2, 97) = 215.24, *p* \< .001, *adjusted* $R^2$ = .81. There was a significant improvement between model 1 and model 2, $F_{change}$ (1, 97) = 261.52, *p* \< .001, $\Delta R^2$ = .50. In the second model, as Dan's sleep increased, Dan's grumpiness decreased, *t* (97) = -16.17, *SE* = .55, *p* \< .001, $\beta$ = -.90. However, the baby's sleep did not significantly relate to Dan's grumpiness when controlling for Dan's sleep, *t* (97) = .04, *SE* = .27, *p* = .969, $\beta$ = .00.
+
+### Additional practice
 
 Open the `Sample_Dataset_2014.xlsx` file that we will be using for all Your Turn exercises. You can find the dataset here: [Sample_Dataset_2014.xlsx Download](https://github.com/danawanzer/stats-with-jamovi/blob/master/data/Sample_Dataset_2014.xlsx)
 

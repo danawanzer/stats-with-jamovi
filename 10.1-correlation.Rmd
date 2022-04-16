@@ -20,15 +20,18 @@ The strength of the correlation is determined by how closely the points in the s
 
 **Note**: Another fun website to play around with is the interactive visualization website Interpreting Correlations by Kristoffer Magnusson. You can play around with what data looks like at various correlations. <https://rpsychologist.com/correlation/>
 
-### Specify your hypotheses
+### Step 1: Look at the data
 
 Let's run an example with data from lsj-data. Open data from your Data Library in "lsj-data". Select and open "parenthood". This dataset measures a new mother's[^correlation-1] daily grumpiness very precisely, on a scale from 0 (not at all grumpy) to 100 (extremely grumpy). In addition, I am also tracking her sleeping patterns and her son's sleeping patterns across 100 days.
 
 [^correlation-1]: The dataset built into jamovi says the person's name is Dan, but they now go by Danielle. You can follow her on Twitter at [\@djnavarro](https://twitter.com/djnavarro).
 
-The null hypothesis is there is no correlation whereas the alternative hypothesis is that there is a correlation. In this case, our hypothesis is a two-tailed hypothesis, although we could have an *a priori* hypothesis about the relationship between our variables.
+Here's a video walking through the correlation.
 
-### Look at the data
+```{r echo = FALSE, message = FALSE, warning = FALSE}
+library(vembedr)
+embed_url("https://www.youtube.com/watch?v=p4LNqatn2sg")
+```
 
 #### Data set-up
 
@@ -44,9 +47,13 @@ We also see skew and kurtosis. Calculating the *z*-score for all the skew and ku
 
 ![](images/08-correlation/correlation-descriptives.png)
 
-### Check assumptions
+### Specify your hypotheses
 
-#### Assumptions
+The null hypothesis is there is no correlation whereas the alternative hypothesis is that there is a correlation. In this case, our hypothesis is a two-tailed hypothesis, although we could have an *a priori* hypothesis about the relationship between our variables such that it is either correlated positively or negatively. But since we just want to see if there is a relationship we will specify a non-directional hypothesis.
+
+Note that in this particular scenario we're examining multiple correlations and so in fact we have multiple hypotheses we are testing.
+
+### Step 2: Check assumptions
 
 The Pearson correlation has the three following assumptions:
 
@@ -56,43 +63,57 @@ The Pearson correlation has the three following assumptions:
 
 3.  The relationship between the two variables is **linear**
 
-We test for normal distribution using the Exploration-Descriptives analysis in jamovi, looking at Shapiro-Wilk's test, the Q-Q plot, a histogram or density plot, and skew and kurtosis z-scores.
-
 The third assumption requires looking at a scatterplot of one variable on the x-axis and the other variable on the y-axis.
 
-#### Checking assumptions
+#### Testing normality
 
-##### Testing normality
+By now we've had a lot of practice testing for normality. We test for normal distribution using the Exploration-Descriptives analysis in jamovi, looking at Shapiro-Wilk's test, the Q-Q plot, a histogram or density plot, and skew and kurtosis z-scores.
 
-By now we've had a lot of practice testing for normality. One of our data points (`day)` is strange because it's just a linear number 1-100, so we can ignore it. The Q-Q plot for `dan.sleep` looks a bit iffy, but the density plot, skew, kurtosis, and Shapiro-Wilk's tests look fine. We will say we met the assumption of normality. Below, you can see our density plots in the diagonal of our scatterplot matrix.
+One thing to note is that **for the correlation we test normality of both continuous variables**.
+
+One of our data points (`day)` is strange because it's just a linear number 1-100, so we can ignore it. The Q-Q plot for `dan.sleep` looks a bit iffy, but the density plot, skew, kurtosis, and Shapiro-Wilk's tests look fine. We will say we met the assumption of normality. Below, you can see our density plots in the diagonal of our scatterplot matrix.
 
 ![](images/08-correlation/correlation-plots.png)
 
-##### Testing linearity
+#### Testing linearity
 
-There's nothing we can do here except look out our correlations! Do the underlying data in any of the scatterplots look like there is actually a non-linear (e.g., curvilinear) relationship? If so, you fail to meet this assumption.
+To check linearity we examine the scatterplots as shown above. We look at all the dots and look to see if there is a non-linear (e.g., curvilinear) relationship. If there seems to be a curve to the data points then you fail to meet this assumption. Note that you need to look at the data points themselves; the correlation matrix will always produce lines even if the underlying data looks curvilinear.
 
 The scatterplots above do not suggest a non-linear relationship, so we meet the assumption of linearity.
 
-### Perform the test
+This image by [Laerd Statistics](https://statistics.laerd.com/spss-tutorials/pearsons-product-moment-correlation-using-spss-statistics.php) shows what non-linear relationships might look like.
 
-1.  First, you'll need to check your assumption of normality *outside* of the correlations analysis. Go to Explorations and choose Descriptives and check whether you meet the assumption of normality.
+![](images/08-correlation/linear-non-linear.png)
 
-2.  To perform a correlation, go to Regression and select Correlation Matrix.
+### Step 3: Perform the test
 
-3.  Move all four variables into the dialogue box on the right (`dan.sleep`, `baby.sleep`, `day`, and `dan.grump`).
+#### Decide which statistical test you should be using
 
-4.  Select Pearson under Correlation Coefficients. We'll go over the other two later.
+If you violate any of the three assumptions, you can choose to perform Spearman's rank correlation instead of a Pearson correlation. Both Spearman's rho and Kendall's tau are non-parametric statistics based on rank order. To perform Spearman's correlation, change the check mark in jamovi from Pearson to Spearman. You will interpret just the same; however, instead of using the letter *r* you can either use $r_s$, $r_{spearman}$, or $\rho$ (the Greek letter rho).
 
-5.  Under Additional Options, select `Report significance`, `Flag significant correlations`, and, if you have missing data, `N` (we don't have missing data so we can ignore this).
+What about Kendall's tau? It will likely give you the same results as Spearman's rho but it is interpreted slightly differently. We won't use it in this class.
 
-6.  Under Plot, select `Correlation matrix`. Alternatively, you can ask for `Densities for variables` to see the density plots for each variable and `Statistics` to have the correlation coefficient added to the plot.
+#### Decide which hypothesis you should be using
+
+If you have a directional alternative hypothesis then you should specify `Correlated positively` or `Correlated negatively`. However, if you don't have a prior hypothesis of the direction of the effect (i.e., you have a non-directional alternative hypothesis) then you should select `Correlated`.
+
+#### Perform the test
+
+1.  To perform a correlation, go to Regression and select "Correlation Matrix".
+
+2.  Move the variables of your correlation hypothesis/hypotheses into the variables box. In this case, we have four variables so move all four variables into the dialogue box on the right (`dan.sleep`, `baby.sleep`, `day`, and `dan.grump`).
+
+3.  Select the correlation coefficient you are using based on which assumptions you met. In this case, we met the assumptions of linearity and normality so we will use `Pearson`.
+
+4.  Under Additional Options, select `Report significance`, `Flag significant correlations`, and, if you have missing data, `N` (we don't have missing data so we can ignore this).
+
+5.  Under Plot, select `Correlation matrix`. Alternatively, you can ask for `Densities for variables` to see the density plots for each variable and `Statistics` to have the correlation coefficient added to the plot.
 
 When you are done, your setup should look like this:
 
 ![](images/08-correlation/correlation-setup.png){width="500"}
 
-### Interpreting results
+### Step 4: Interpreting results
 
 Once we are satisfied we have satisfied the assumptions for the correlation, we can interpret our results.
 
@@ -116,38 +137,23 @@ Personally, this is why I like the `scatr` module in jamovi. You can create high
 
 ![](images/08-correlation/correlation-plot1.png){width="500"}
 
-### Video
-
-Here's a video walking through the correlation.
-
-```{r echo = FALSE, message = FALSE, warning = FALSE}
-library(vembedr)
-embed_url("https://www.youtube.com/watch?v=p4LNqatn2sg")
-```
-
-### In case of violated assumptions
-
-If you violate any of the three assumptions, you can choose to perform Spearman's rank correlation instead of a Pearson correlation. Both Spearman's rho and Kendall's tau are non-parametric statistics based on rank order. To perform Spearman's correlation, change the check mark in jamovi from Pearson to Spearman. You will interpret just the same; however, instead of using the letter *r* you can either use $r_s$, $r_{spearman}$, or $\rho$ (the Greek letter rho).
-
-What about Kendall's tau? It will likely give you the same results as Spearman's rho but it is interpreted slightly differently. We won't use it in this class.
-
-### Additional information
-
 #### R-Squared
 
 The cool thing about the correlation is that we can square $r$ to get $r^2$, which is the percentage of variance overlap. It is the percentage of variance in one variable that is shared by the other. You simply square the $r$ correlation coefficient to find the $r^2$. For example, our correlation above between Dan's grumpiness and Dan's quality of sleep is $r$ = -.90; therefore, its $r^2$ = .81 or 81%. 81% of the variance in Dan's grumpiness can be explained by Dan's quality of sleep!
 
-#### Comparing strengths of correlations
+### Comparing strengths of correlations
 
-**Note**: For PSYC 290 students, you can read the below information but I will not test you on it.
+```{block, type="info"}
+For PSYC 290 students, you can read the below information if you are interested but otherwise you can ignore this section. This is advanced material.
+```
 
 Sometimes you want to compare two correlations to find out if one correlation is significantly stronger than another. You can use this calculator to calculate the p-value: [Testing the Significance of Correlations](https://www.psychometrica.de/correlation.html)
 
-Note that you use \#1 (Independent Samples) when the correlations come from different samples and \#2 (Dependent Samples) when the correlations come from the same sample. For example, to compare the correlation between English and Reading to the correlation between English and Writing, you would use \#2 (Dependent Samples). But to compare the correlations between English and Reading for men and women, you would use \#1 (Independent Samples).
+Note that you use #1 (Independent Samples) when the correlations come from different samples and #2 (Dependent Samples) when the correlations come from the same sample. For example, to compare the correlation between English and Reading to the correlation between English and Writing, you would use #2 (Dependent Samples). But to compare the correlations between English and Reading for men and women, you would use #1 (Independent Samples).
 
 Let's try them both with our [Sample_Dataset_2014.xlsx](https://github.com/danawanzer/stats-with-jamovi/blob/master/data/Sample_Dataset_2014.xlsx).
 
-1.  **Comparison of correlations from independent samples**
+#### Comparison of correlations from independent samples
 
 We want to test the correlations between English and Reading for men and women. We first need to gather those correlations in jamovi. We can do this through **filters**.
 
@@ -159,7 +165,7 @@ Now we can compare the correlations in [Testing the Significance of Correlations
 
 ![](images/08-correlation/compare-correlations-independent.png)
 
-2.  **Comparison of correlations from dependent samples**
+#### Comparison of correlations from dependent samples
 
 Now let's test whether the correlation between English and Reading differs from the correlation between English and Writing.
 
@@ -167,15 +173,15 @@ Notice how we have three tests we are comparing: (1) English, (2) Reading, and (
 
 If you still have your filter on in your dataset from the previous analysis, turn it off. Go to the Data tab, click Filters, and either select the X to delete it or toggle the active button so it's turned off. Return to your Correlation Matrix results and click on it to edit it. Add Writing to the box.
 
-However, we have a problem! The [Testing the Significance of Correlations - Dependent Samples](https://www.psychometrica.de/correlation.html#dependent) webpage (\#2) wants a single N, but our correlation matrix has different Ns because of missing data. What can we do? We need to chain filters! Go back to your Data tab, click Filters, and add three filters like below (note: this is how you can get *listwise deletion* in jamovi):
+However, we have a problem! The [Testing the Significance of Correlations - Dependent Samples](https://www.psychometrica.de/correlation.html#dependent) webpage (#2) wants a single N, but our correlation matrix has different Ns because of missing data. What can we do? We need to chain filters! Go back to your Data tab, click Filters, and add three filters like below (note: this is how you can get *listwise deletion* in jamovi):
 
 ![](images/08-correlation/correlation-filters.png)
 
-Our correlation matrix should have automatically updated and all the N's equal 370. Great! We now have all the information we need to input into our [Testing the Significance of Correlations](https://www.psychometrica.de/correlation.html) webpage, \#2. For n we input 370. For $r_{12}$ we enter the correlation between (1) English and (2) Reading. For $r_{13}$ we enter the correlation between (1) English and (3) Writing. For $r_{23}$ we enter the correlation between (2) Reading and (3) Writing. Our z-score is not statistically significant (*p* = .213) so there is no significant difference in the correlation between English and Reading (*r* = .32) with the correlation between English and Writing (*r* = .37).
+Our correlation matrix should have automatically updated and all the N's equal 370. Great! We now have all the information we need to input into our [Testing the Significance of Correlations](https://www.psychometrica.de/correlation.html) webpage, #2. For n we input 370. For $r_{12}$ we enter the correlation between (1) English and (2) Reading. For $r_{13}$ we enter the correlation between (1) English and (3) Writing. For $r_{23}$ we enter the correlation between (2) Reading and (3) Writing. Our z-score is not statistically significant (*p* = .213) so there is no significant difference in the correlation between English and Reading (*r* = .32) with the correlation between English and Writing (*r* = .37).
 
 ![](images/08-correlation/compare-correlations-dependent.png)
 
-### Your turn!
+### Additional practice
 
 Open the `Sample_Dataset_2014.xlsx` file that we will be using for all Your Turn exercises. You can find the dataset here: [Sample_Dataset_2014.xlsx Download](https://github.com/danawanzer/stats-with-jamovi/blob/master/data/Sample_Dataset_2014.xlsx)
 
