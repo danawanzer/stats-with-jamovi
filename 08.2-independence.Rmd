@@ -7,29 +7,30 @@ library(viridis)
 options(knitr.graphics.auto_pdf = TRUE)
 ```
 
-### Overview
-
 The $\chi^2$ (chi-square) test of independence (or association) tests whether an observed frequency distribution of a nominal variable matches an expected frequency distribution, but unlike the goodness of fit test we are looking at the relationship, independence, or association between two variables.
 
 Our basic hypotheses for the chi-square goodness-of-fit test is as follows:
 
--   $H_0$: The observed frequencies match the expected frequencies.
+-   $H_0$: The observed frequencies match the expected frequencies. In other words, there are no differences in frequencies of how the levels in one variable relate to the levels in another variable.
 
--   $H_1$: At least one observed frequency doesn't match the expected frequency.
+-   $H_1$: At least one observed frequency doesn't match the expected frequency. In other words, at least one level has significantly different frequencies in another variable than we would expect.
 
-However, these are *not* how you should report your hypotheses. You should specify your hypotheses in relation to the nature of your data. See below for an example.
+```{block, type="danger"}
+Note that these are not how you should report your hypotheses! You should specify your hypotheses in relation to the nature of your two variables. It should be clear what your two variables are.
+```
 
-### Specify your hypotheses
+### Step 1: Look at the data
 
 Let's run an example with data from lsj-data. Open data from your Data Library in "lsj-data". Select and open "chapek9". This dataset indicates the ID number of the participant, the species (robot or human), and their preference of the three things (puppy, flower, or data).
 
 For this example, imagine we are watching a show about the planet *Chapek 9*. On this planet, for someone to gain access to their capital city they must prove they're a robot, not a human. In order to determine whether or not a visitor is human, the natives ask whether the visitor prefers puppies, flowers, or large, properly formatted data files.
 
--   $H_0$: Humans and robots have similar preferences.
+Here's a video walking through the chi-square test of independence example in this chapter.
 
--   $H_1$: Humans and robots have different preferences.
-
-### Look at the data
+```{r echo = FALSE, message = FALSE, warning = FALSE}
+library(vembedr)
+embed_url("https://www.youtube.com/watch?v=6a5soxXTfkw")
+```
 
 #### Data set-up
 
@@ -54,35 +55,55 @@ Once we confirm our data is setup correctly in jamovi, we should look at our dat
 
 ![](images/11-independence/independence_data.png)
 
-#### Check assumptions
+#### Specify the hypotheses
+
+The question here is whether humans and robots differ in preferring puppies, flowers, or data so we can determine who is a robot so only robots are let into the city. Therefore, our hypotheses might be something like this:
+
+-   $H_0$: Humans and robots have similar preferences.
+
+-   $H_1$: Humans and robots have different preferences.
+
+### Step 2: Check assumptions
 
 The chi-square test of independence has the following assumptions:
 
-1.  **Expected frequencies are sufficiently large**, which is usually greater than 5. If you violate this assumption, you can use Fisher's exact test.
+1.  **Expected frequencies are sufficiently large**, which is usually greater than 5. If you violate this assumption, you can use [Fisher's exact test].
 
     -   You test for this assumption by selected "Expected counts" in the Cells tab for the test of independence. You will then see rows of expected counts in your contingency table. Look at the numbers and check that they are all 5 or greater.
 
-2.  Data are **independent** of one another, meaning each case contributes to only one cell of the table. If you violate this assumption, you may be able to use the McNemar test. This requires knowing how your data was collected. If it's a within-subjects design that should be answered using a chi-square, then most likely you want to use McNemar's test. If it's a between-subjects design that should be answered using a chi-square, then you most likely meet this assumption and can perform the chi-square test of independence.
+2.  Data are **independent** of one another, meaning each case contributes to only one cell of the table. If you violate this assumption, you may be able to use the McNemar test (next chapter).
 
-### Perform the test
+    -   This requires knowing how your data was collected. If it's a within-subjects design that should be answered using a chi-square, then most likely you want to use McNemar's test. If it's a between-subjects design that should be answered using a chi-square, then you most likely meet this assumption and can perform the chi-square test of independence.
 
-1.  From the 'Analyses' toolbar select 'Frequencies' - 'Independent Samples - $\chi^2$ test of association'.
+### Step 3: Perform the test
 
-2.  Move `choice` into rows and `species` into columns. Note that the placement in rows or columns doesn't really matter, but because we typically work with portrait pages I tend to prefer putting in rows whatever variable has more levels. In this case, choice has 3 levels and species only 2 so I like to put choice in rows and species in columns.
+1.  Go to the Analyses tab, click the Frequencies button, and choose "Independent Samples - $\chi^2$ test of association".
 
-3.  Under the Statistics tab, select $\chi^2$ under Tests and `Phi and Cramer's V` under Nominal.
+2.  Move your two variables into the rows and columns boxes. In this case, move `choice` into rows and `species` into columns. Note that the placement in rows or columns doesn't really matter, but because we typically work with portrait pages I tend to prefer putting in rows whatever variable has more levels. In this case, choice has 3 levels and species only 2 so I like to put choice in rows and species in columns.
 
-4.  Optionally, you can request under the Cells tab to show the expected counts and the row, column, and total percentages.
+3.  Under the Statistics tab, select $\chi^2$ under Tests and `Phi and Cramer's V` under Nominal to get your effect size.
 
-When you are done, your setup should look like this:
+4.  Select `Expected counts` under Cells to test your assumption of expected frequencies. Optionally, you can request the row, column, and total percentages. I often find these easier to report and interpret.
+
+5.  Select `Bar Plot` under plots. You may want to tinker with the settings here of determining whether you should use a side by side or stacked bar type, counts or percentages, and rows or columns.
+
+When you are done, part of your setup should look like this (note: not all the setup is shown here!):
 
 ![](images/11-independence/independence_setup.png)
 
-### Interpreting results
+#### Ordinal variable(s)
 
-![](images/11-independence/independence_results.png)
+If either of your variables are ordinal, instead of selecting `Phi and Cramer's V` you should select `Gamma` or `Kendall's tau-b`. Which do you choose? `Kendall's tau-b` should only be chosen if you have a square table (e.g., 3x3, 4x4, 5x5) whereas `Gamma` can be done with any size table. `Kendall's tau-b` will be a slightly more conservative estimate compared to `Gamma`.
 
-The first table shows us our observed frequencies. The second table gives us our results. Our p-value is less than .05 so we can reject the null hypothesis that the observed frequencies match our expected frequencies.
+### Step 4: Interpret results
+
+![](images/09-chi-square/chi-square_results1.png)
+
+The first table shows us our observed and expected frequencies. We use the expected frequencies to test our assumption that expected frequencies are greater than 5. Our smallest expected frequncy is 13.53 so we meet this assumption.
+
+![](images/09-chi-square/chi-square_results2.png)
+
+The second table gives us our results. Our p-value (*p* = .005) is less than .05 so we can reject the null hypothesis that the observed frequencies match our expected frequencies.
 
 jamovi also gives us our Cramer's V value. Note that it does not provide Phi because we don't have a perfect square table (e.g., 2x2 or 3x3). These are measures of effect size for the chi-square. Cramer's V can be interpreted similar to a correlation (ranges from 0 to 1, with higher scores meaning stronger relationships between the variables).
 
@@ -90,13 +111,15 @@ jamovi also gives us our Cramer's V value. Note that it does not provide Phi bec
 
 We can write up our results in APA something like this:
 
-> Pearson's $\chi^2$ test of independence showed a significant association between species and choice, $\chi^2$ (2) = 10.72, *p* = .005, Cramer's V = .24. Robots appeared to be more likely to say they prefer flowers and humans appeared to be more likely to say they prefer data. Robots and humans appeared to be equally likely to prefer puppies.
-
-I would either write-up the observed frequencies above or, ideally, I would share the contingency table with my observed frequencies.
+> Pearson's $\chi^2$ test of independence showed a significant association between species and choice, $\chi^2$ (2) = 10.72, *p* = .005, Cramer's V = .24. Robots were more likely to say they prefer flowers (70%) compared to humans (30%) and humans were more likely to say they prefer data (60%) compared to robots (40%). Robots (46%) and humans (54%) were equally likely to prefer puppies.
 
 #### Visualize the results
 
-This one is also a visualization that would likely do better in Excel than in jamovi. There are two that I think work well for this dataset and our research questions. The first is a clustered column chart:
+jamovi has some decent plots with some of the latest updates. Here's one I created after tinkering with the settings under Plots on the chi-square setup. These are sufficient for your homework assignments in this class, but note that sometimes when there are many bars or long labels for the levels of your variable it will scrunch up. Hopefully jamovi will fix it in the future.
+
+![](images/09-chi-square/chi-square_results4.png)
+
+However, you can also create these pretty easily in Excel. There are two that I think work well for this dataset and our research questions. The first is a clustered column chart:
 
 ![](images/11-independence/independence_excel1.png){width="500"}
 
@@ -104,28 +127,11 @@ The second is a stacked bar chart with connected lines:
 
 ![](images/11-independence/independence_excel2.png){width="500"}
 
-### Video
-
-Here's a video walking through the chi-square test of independence.
-
-```{r echo = FALSE, message = FALSE, warning = FALSE}
-library(vembedr)
-embed_url("https://www.youtube.com/watch?v=6a5soxXTfkw")
-```
-
-### In case of violated assumptions
-
-#### Fisher's exact test
+### Fisher's exact test
 
 If you violate the assumption that there your expected frequencies are sufficiently large and you have a 2x2 table, you can still perform the $\chi^2$ test of independence but instead of selecting $\chi^2$you'll select `Fisher's exact test`. You'll interpret your results exactly the same but specify you used Fisher's exact test.
 
-### Additional information
-
-#### Ordinal variable(s)
-
-If either of your variables are ordinal, instead of selecting `Phi and Cramer's V` you should select `Gamma` or `Kendall's tau-b`. Which do you choose? `Kendall's tau-b` should only be chosen if you have a square table (e.g., 3x3, 4x4, 5x5) whereas `Gamma` can be done with any size table. `Kendall's tau-b` will be a slightly more conservative estimate compared to `Gamma`.
-
-### Your turn!
+### Additional practice
 
 Open the `Sample_Dataset_2014.xlsx` file that we will be using for all Your Turn exercises. You can find the dataset here: [Sample_Dataset_2014.xlsx Download](https://github.com/danawanzer/stats-with-jamovi/blob/master/data/Sample_Dataset_2014.xlsx)
 

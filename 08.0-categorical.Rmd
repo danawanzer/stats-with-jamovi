@@ -7,7 +7,7 @@ library(viridis)
 options(knitr.graphics.auto_pdf = TRUE)
 ```
 
-The chi-square (pronounced kai) is a categorical data analysis which is simply data analysis with categorical data. It's usually nominal data, although there are a couple tests we may use with ordinal data. There are two basic types of chi-square tests we'll be covering:
+The chi-square (pronounced like kai, not like the tea) is a categorical data analysis which is simply data analysis with categorical data. It's usually used with nominal data, although there are a couple tests we may use with ordinal data. There are two basic types of chi-square tests we'll be covering:
 
 1.  $\chi^2$ **goodness-of-fit**: used with one variable to find if the observed frequencies match the expected frequencies
 
