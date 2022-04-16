@@ -18,18 +18,18 @@ The other way we might have the repeated measures ANOVA is if all our participan
 
 ![](images/05-repeated-measures-anova/Laerd2.png)
 
-### Specify your hypotheses
+### Step 1: Look at the data
 
 Let's run an example with data from lsj-data. Open data from your Data Library in "lsj-data". Select and open "broca".
 
 This dataset is hypothetical data in which six patients suffering from Broca's Aphasia (a language deficit commonly experienced following a stroke) complete three word recognition tasks. On the first (speech production) task, patients were required to repeat single words read out aloud by the researcher. On the second (conceptual) task, designed to test word comprehension, patients were required to match a series of pictures with their correct name. On the third (syntax) task, designed to test knowledge of correct word order, patients were asked to reorder syntactically incorrect sentences. Each patient completed all three tasks. The order in which patients attempted the tasks was counterbalanced between participants. Each task consisted of a series of 10 attempts. The number of attempts successfully completed by each patient are provided in the dataset.
 
-Just like the one-way ANOVA, we have fairly simple hypotheses for the basic repeated measures ANOVA:
+Here's a video walking through the repeated measures ANOVA test.
 
--   $H_0$: There is **no difference** in word recognition across the three tasks.
--   $H_1$: There is **a difference** in word recognition across the three tasks.
-
-### Look at the data
+```{r echo = FALSE, message = FALSE, warning = FALSE}
+library(vembedr)
+embed_url("https://www.youtube.com/watch?v=Fl6S9IBC1q0")
+```
 
 #### Data set-up
 
@@ -47,9 +47,14 @@ Once we confirm our data is setup correctly in jamovi, we should look at our dat
 
 ![](images/05-repeated-measures-anova/rm_descriptives.png)
 
-### Check Assumptions
+#### Specify your hypotheses
 
-#### Assumptions
+In this scenario, we want to see if there is a difference in word recognition across the three tasks. Just like the one-way ANOVA, we have fairly simple hypotheses for the basic repeated measures ANOVA:
+
+-   $H_0$: There is **no difference** in word recognition across the three tasks.
+-   $H_1$: There is **a difference** in word recognition across the three tasks.
+
+### Step 2: Check Assumptions
 
 As a parametric test, the repeated measures ANOVA has the same assumptions as other parametric tests:
 
@@ -65,19 +70,15 @@ We cannot *test* the third and fourth assumptions; rather, those are based on kn
 
 However, we can and should test for the first two assumptions. Fortunately, the repated measures ANOVA in jamovi has check boxes under "Assumption Checks" that lets us test for both assumptions.
 
-##### What is the Sphericity Assumption?
+#### Testing normality
+
+We check assumptions using the "Assumption Checks" tab under the repeated measures ANOVA function. To test normality, we select Q-Q plot. It is currently the only option we have available for testing normality in the repeated measures ANOVA.
+
+#### Testing sphericity
 
 The sphericity assumption is essentially the repeated measures ANOVA equivalent of homogeneity of variances. Sphericity means there is equality of variances of the *differences* between treatment levels. For example, if there are three groups, then the difference in all three pairs of differences (1-2, 1-3, 2-3) need to have approximately equal variances. You only need to care about sphericity when there are at least three conditions, which is why we did not talk about this with the dependent t-test.
 
-Fortunately, like the other assumption checks, testing for sphericity is as simple as a checkbox in jamovi.
-
-#### Checking assumptions
-
-We check assumptions using the "Assumption Checks" tab under the repeated measures ANOVA function.
-
-To test normality, we select Q-Q plot. It is currently the only option we have available for testing normality in the repeated measures ANOVA.
-
-So what we need to worry about is testing our assumption of sphericity. You should have checked the box `Sphericity tests` under the Assumption Checks drop-down menu. That produces the following output:
+Fortunately, like the other assumption checks, testing for sphericity is as simple as a checkbox in jamovi. Check the box `Sphericity tests` under the Assumption Checks drop-down menu. That produces the following output:
 
 ![](images/05-repeated-measures-anova/rm-anova_sphericity.png)
 
@@ -85,23 +86,41 @@ Mauchly's test of sphericity tests the null hypothesis that the variances of the
 
 If Mauchly's test had been statistically significant (*p* \< .05), then we would conclude that the assumption had *not* been met. In that case, we would apply a correction to the *F*-value obtained in the repeated measures ANOVA:
 
--   If sphericity is violated and if the Greenhouse-Geisser value in the "Tests of Sphericity" table is \> .75 then you should select the Huynh-Feldt correction and de-select the None option.
+-   If sphericity is violated and if the Greenhouse-Geisser value in the "Tests of Sphericity" table is > .75 then you should select the Huynh-Feldt correction and de-select the None option.
 -   If sphericity is violated and if the Greenhouse-Geisser value is \< .75, then you should select the Greenhouse-Geisser correction and de-select the None option.
 -   If sphericity is not violated, then only select the None option.
 
 You can select these corrections in the Assumption Checks drop-down menu.
 
-### Perform the test
+### Step 3: Perform the test
+
+#### Decide which statistical test you should be using
+
+Here's what statistic you should choose based on satisfying assumptions:
+
++-------------------------------+----------------------------------------------------------------+------------------------------+
+|                               | **Normality: satisfied**                                       | **Normality: not satisfied** |
++===============================+================================================================+==============================+
+| **Sphericity: satisfied**     | Repeated measures ANOVA                                        | [Friedman's test]            |
++-------------------------------+----------------------------------------------------------------+------------------------------+
+| **Sphericity: not satisfied** | Repeated measures ANOVA with one of the sphericity corrections | [Friedman's test]            |
++-------------------------------+----------------------------------------------------------------+------------------------------+
+
+#### Perform the test
+
+We have already discussed what to do if you violate the assumption of sphericity above; you select one of the two sphericity corrections based on the values of the sphericity tests.
+
+If you violate the assumption of normality or if the dependent variable is ordinal, then you can use the Friedman test. You can select this using the Repeated Measures ANOVA - Friedman option under the ANOVA analysis.
 
 1.  To perform a repeated measures ANOVA in jamovi, go to the Analyses tab, click the ANOVA button, and choose "Repeated Measures ANOVA".
 
-2.  Under "Repeated Measures Factors" name your independent variable. In this case you can name it "Task". Rename the three levels of Task: Speech, Conceptual, and Syntax.
+2.  Under "Repeated Measures Factors" name your independent variable and rename the levels to match the repeated measurements. In this case you can name it "Task". Rename the three levels of Task: Speech, Conceptual, and Syntax.
 
 3.  Under "Repeated Measures Cells" move the given variable into the correct level. For example, you'll move Speech to the Speech cell.
 
 4.  Select Generalised $\eta^2$ as your measure of effect size.
 
-5.  In the Assumption Checks drop-down menu, select `Sphericity tests` and `Q-Q Plots`. You'll note that if you violate the assumption of sphericity, there are two corrections provided. These are described above.
+5.  In the Assumption Checks drop-down menu, select `Sphericity tests` and `Q-Q Plots`. You'll note that if you violate the assumption of sphericity, there are two corrections provided (see [testing sphericity]). Uncheck "none" if you fail to meet the assumption so you only perform one test.
 
 6.  In the Post Hoc Tests drop-down menu, select `Tukey`. Remember that we only interpret these if the overall *F* is statistically significant.
 
@@ -113,7 +132,7 @@ When you are done, your setup should look like this:
 
 ![](images/05-repeated-measures-anova/rm-anova_setup2.png)
 
-### Interpret results
+### Step 4: Interpret results
 
 Once we are satisfied we have satisfied the assumptions for the repeated measures, we can interpret our results.
 
@@ -135,36 +154,11 @@ We can write this up in APA style similar to the one-way ANOVA.
 
 #### Visualize the results
 
-Similar to the dependent t-test, I am not a fan of the output for the repeated measures ANOVA in jamovi under "estimated marginal means." You could modify the same syntax for the dependent t-test (you'll need to change line 3 to be sure you're picking the correct lines of data, not just 2:3, and revise the names and such. You could also move the data into Excel and do bar graphs with error bars there instead.
+Similar to the dependent t-test, I am not a fan of the output for the repeated measures ANOVA in jamovi under "estimated marginal means" but it's good enough for our purposes. Be sure to select "observed scores" under plot.
 
-### Video
+### Friedman's test
 
-Here's a video walking through the repeated measures ANOVA test.
-
-```{r echo = FALSE, message = FALSE, warning = FALSE}
-library(vembedr)
-embed_url("https://www.youtube.com/watch?v=Fl6S9IBC1q0")
-```
-
-### In case of violated assumptions
-
-Here's what statistic you should choose based on satisfying assumptions:
-
-+-------------------------------+----------------------------------------------------------------+------------------------------+
-|                               | **Normality: satisfied**                                       | **Normality: not satisfied** |
-+===============================+================================================================+==============================+
-| **Sphericity: satisfied**     | Repeated measures ANOVA                                        | Friedman's test              |
-+-------------------------------+----------------------------------------------------------------+------------------------------+
-| **Sphericity: not satisfied** | Repeated measures ANOVA with one of the sphericity corrections | Friedman's test              |
-+-------------------------------+----------------------------------------------------------------+------------------------------+
-
-We have already discussed what to do if you violate the assumption of sphericity above; you select one of the two sphericity corrections based on the values of the sphericity tests.
-
-If you violate the assumption of normality or if the dependent variable is ordinal, then you can use the Friedman test. You can select this using the Repeated Measures ANOVA - Friedman option under the ANOVA analysis.
-
-#### Friedman's test
-
-Friedman's test can only examine one within-subjects variable, so you will move all three conditions (Speech, Conceptual, and Syntax) to the Measures box. Select `Pairwise comparisons (Durbin-Conover` for post hoc comparisons and `Descriptives` for the Means and Medians. Optionally, you can select to plot either the Means or Medians. The setup is shown below.
+Friedman's test can only examine one within-subjects variable (i.e., we can't have a non-parametric repeated measures factorial ANOVA), so you will move all three conditions (Speech, Conceptual, and Syntax) to the Measures box. Select `Pairwise comparisons (Durbin-Conover` for post hoc comparisons and `Descriptives` for the Means and Medians. Optionally, you can select to plot either the Means or Medians. The setup is shown below.
 
 ![](images/05-repeated-measures-anova/rm-anova_friedman_setup.png)
 
@@ -176,7 +170,7 @@ We can write up the results similarly as before except using the median because 
 
 > Friedman's test was performed examining how three tasks affected word recognition in patients suffering from Broca's Aphasia. Task significantly affected word recall, $\chi^2$ (2) = 6.64, *p* = .036. Pairwise comparisons using Durbin-Conover indicated that participants recognized significantly more words in the speech task (*M* = 7.17, *Mdn* = 7.50) than participants in the syntax task (*M* = 4.33, *Mdn* = 6.50; *p* = .006). There were no differences between the conceptual task (*M* = 6.17, *Mdn* = 6.50) and both the speech and syntax tasks.
 
-### Your turn!
+### Additional practice
 
 Open the `Sample_Dataset_2014.xlsx` file that we will be using for all Your Turn exercises. You can find the dataset here: [Sample_Dataset_2014.xlsx Download](https://github.com/danawanzer/stats-with-jamovi/blob/master/data/Sample_Dataset_2014.xlsx)
 
