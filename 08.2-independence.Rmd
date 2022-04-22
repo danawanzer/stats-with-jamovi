@@ -1,4 +1,4 @@
-## 14. Chi-Square Test of Independence
+## 13. Chi-Square Test of Independence
 
 ```{r ind-t_setup, echo = FALSE, message=FALSE}
 library(tidyverse)

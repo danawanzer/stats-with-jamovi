@@ -1,4 +1,4 @@
-## 22. Regression
+## 21. Regression
 
 ```{r ind-t_setup, echo = FALSE, message=FALSE}
 library(tidyverse)

@@ -1,4 +1,4 @@
-## 15. McNemar's Test
+## 14. McNemar's Test
 
 ```{r ind-t_setup, echo = FALSE, message=FALSE}
 library(tidyverse)

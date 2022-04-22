@@ -1,4 +1,4 @@
-## 17. Finding Group Differences
+## 16. Finding Group Differences
 
 Often, we're not interested in just *whether* there is a difference (which the F-statistic can tell us), but *where* the differences are between groups (which the F-statistic cannot tell us). For that, we use either [planned contrasts]{.ul} when you have specific hypotheses you want to test or [post-hoc comparisons]{.ul} when you have no specific hypotheses.
 

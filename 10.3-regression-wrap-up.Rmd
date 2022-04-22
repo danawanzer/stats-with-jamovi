@@ -1,4 +1,4 @@
-## 23. General Linear Model
+## 22. General Linear Model
 
 ```{r ind-t_setup, echo = FALSE, message=FALSE}
 library(tidyverse)

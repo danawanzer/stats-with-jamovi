@@ -1,4 +1,4 @@
-## 20. ANCOVA
+## 19. ANCOVA
 
 ```{r ind-t_setup, echo = FALSE, message=FALSE}
 library(tidyverse)

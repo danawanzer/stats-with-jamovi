@@ -1,4 +1,4 @@
-## 16. One-way ANOVA
+## 15. One-way ANOVA
 
 ```{r ind-t_setup, echo = FALSE, message=FALSE}
 library(tidyverse)
