@@ -12,7 +12,6 @@ library(vembedr)
 embed_url("https://www.youtube.com/watch?v=QirHpjLkHmc")
 ```
 
-
 ## Descriptive vs inferential statistics
 
 There are basically two different types of statistics:
@@ -114,25 +113,16 @@ This should be refresher material for you, but it is extremely important you are
 
 Confused still on the levels of measurement? Maybe this will help! Notice that studying can be measured at different levels. Depending on the nature of the question and response options, it might be nominal, ordinal, or continuous! Here's an example of data at the continuous, ordinal, and nominal level.
 
-+--------------------+-------------------------+--------------------------------------+---------------------------------------+
 | Name               | Study_Continuous        | Study_Ordinal                        | Study_Nominal                         |
-+====================+=========================+======================================+=======================================+
+|--------------------|-------------------------|--------------------------------------|---------------------------------------|
 | *Name (Character)* | *Hours studied per day* | *Likert scale of amount of studying* | *Whether or not they study every day* |
-+--------------------+-------------------------+--------------------------------------+---------------------------------------+
 | Jesus              | 5.0                     | A great deal                         | Yes                                   |
-+--------------------+-------------------------+--------------------------------------+---------------------------------------+
 | Nicky              | 4.5                     | A great deal                         | Yes                                   |
-+--------------------+-------------------------+--------------------------------------+---------------------------------------+
 | Bradford           | 3.2                     | A moderate amount                    | Yes                                   |
-+--------------------+-------------------------+--------------------------------------+---------------------------------------+
 | Sylvia             | 1.7                     | A small amount                       | Yes                                   |
-+--------------------+-------------------------+--------------------------------------+---------------------------------------+
 | Martha             | 0.2                     | Rarely                               | Yes                                   |
-+--------------------+-------------------------+--------------------------------------+---------------------------------------+
 | Lillian            | 0.0                     | Never                                | No                                    |
-+--------------------+-------------------------+--------------------------------------+---------------------------------------+
 | Trayvon            | 0.0                     | Never                                | No                                    |
-+--------------------+-------------------------+--------------------------------------+---------------------------------------+
 
 We can make any continuous variable into an ordinal and nominal variable and any ordinal variable into a nominal variable. But if we have a nominal variable we cannot make it ordinal, nor can we make an ordinal variable continuous. In other words, continuous variables *contain more information*. Often, we want to avoid losing information and *always* keep the variable at the highest level of measurement. Continuous has more information than ordinal has more information than nominal.
 
