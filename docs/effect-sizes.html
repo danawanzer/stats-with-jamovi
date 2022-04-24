@@ -32,7 +32,7 @@
   
 <link rel="prev" href="bean.html"/>
 <link rel="next" href="alpha-p-values.html"/>
-<script src="libs/header-attrs-2.9/header-attrs.js"></script>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -140,10 +140,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a></li>
 <li class="part"><span><b>I Overview</b></span></li>
-<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i>1. Introduction</a>
-<ul>
-<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html#technology-tips"><i class="fa fa-check"></i>Technology Tips</a></li>
-</ul></li>
+<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i>1. Introduction</a></li>
 <li class="chapter" data-level="" data-path="statistics-foundations.html"><a href="statistics-foundations.html"><i class="fa fa-check"></i>2. Statistics foundations</a>
 <ul>
 <li class="chapter" data-level="" data-path="descriptive-vs-inferential-statistics.html"><a href="descriptive-vs-inferential-statistics.html"><i class="fa fa-check"></i>Descriptive vs inferential statistics</a>
@@ -189,10 +186,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="" data-path="example-of-hypothesis-testing.html"><a href="example-of-hypothesis-testing.html"><i class="fa fa-check"></i>Example of hypothesis testing</a>
 <ul>
-<li class="chapter" data-level="" data-path="example-of-hypothesis-testing.html"><a href="example-of-hypothesis-testing.html#write-your-hypotheses"><i class="fa fa-check"></i>1. Write your hypotheses</a></li>
-<li class="chapter" data-level="" data-path="example-of-hypothesis-testing.html"><a href="example-of-hypothesis-testing.html#set-the-criteria-for-a-decision"><i class="fa fa-check"></i>2. Set the criteria for a decision</a></li>
-<li class="chapter" data-level="" data-path="example-of-hypothesis-testing.html"><a href="example-of-hypothesis-testing.html#perform-the-test-statistic"><i class="fa fa-check"></i>3. Perform the test statistic</a></li>
-<li class="chapter" data-level="" data-path="example-of-hypothesis-testing.html"><a href="example-of-hypothesis-testing.html#interpret-results-and-draw-a-conclusion."><i class="fa fa-check"></i>4. Interpret results and draw a conclusion.</a></li>
+<li class="chapter" data-level="" data-path="example-of-hypothesis-testing.html"><a href="example-of-hypothesis-testing.html#look-at-the-data"><i class="fa fa-check"></i>1. Look at the data</a></li>
+<li class="chapter" data-level="" data-path="example-of-hypothesis-testing.html"><a href="example-of-hypothesis-testing.html#check-assumptions"><i class="fa fa-check"></i>2. Check assumptions</a></li>
+<li class="chapter" data-level="" data-path="example-of-hypothesis-testing.html"><a href="example-of-hypothesis-testing.html#perform-the-test"><i class="fa fa-check"></i>3. Perform the test</a></li>
+<li class="chapter" data-level="" data-path="example-of-hypothesis-testing.html"><a href="example-of-hypothesis-testing.html#interpret-the-results"><i class="fa fa-check"></i>4. Interpret the results</a></li>
 <li class="chapter" data-level="" data-path="example-of-hypothesis-testing.html"><a href="example-of-hypothesis-testing.html#final-note"><i class="fa fa-check"></i>Final note</a></li>
 </ul></li>
 </ul></li>
@@ -424,12 +421,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>You may have seen some heuristics online about what small, medium, and large is for Cohen’s <em>d</em> (e.g., .2, .5, and .8) and <em>r</em> (e.g., .1, .3, and .5) but these heuristics should not be used without critical thought. In fact, Cohen (who is regularly cited for these heuristics) said that the way we should determine cut-offs is based on looking across studies to find what is considered small, medium, and large <em>in that particular context</em>.</p>
 <p>Lakens (who also did the great journal article on effect sizes above) has a fantastic new preprint out on <a href="https://psyarxiv.com/9d3yf/">Sample Size Justification</a>. In it, he provides an overview of six possible ways to determine which effect sizes are interesting:</p>
 <ol style="list-style-type: decimal">
-<li>"Smallest effect size of interest: what is the smallest effect size that is theoretically and practically interesting?</li>
+<li>“Smallest effect size of interest: what is the smallest effect size that is theoretically and practically interesting?</li>
 <li>Minimally statistically detectable effect: given the test and sample size, what is the critical effect size that can be statistically significant?</li>
 <li>Expected effect size: which effect size is expected based on theoretical predictions or previous research?</li>
 <li>Width of confidence interval: which effect sizes are excluded based on the expected width of the confidence interval around the effect size?</li>
 <li>Sensitivity power analysis: across a range of possible effect sizes, which effects does a design have sufficient power to detect when performing a hypothesis test?</li>
-<li>Distribution of effect sizes in a research area: what is the empirical range of effect sizes in a specific research are, and which effects are <em>a priori</em> unlikely to be observed?" (p. 3)</li>
+<li>Distribution of effect sizes in a research area: what is the empirical range of effect sizes in a specific research are, and which effects are <em>a priori</em> unlikely to be observed?” (p. 3)</li>
 </ol>
 <p>Basically, what does past research have to say about what effect size you can expect (#3 and #6)? What is the smallest effect size you care about (#1)? What is the smallest effect size you can reasonably obtain (e.g., due to sample size limitations; #2, #3, and #4)? This is the justification you use to determine what effect size you are looking for. This is important for when you are then determining what sample size you need, which will be discussed in a separate section.</p>
 

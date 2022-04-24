@@ -32,7 +32,7 @@
   
 <link rel="prev" href="anova.html"/>
 <link rel="next" href="finding-group-differences.html"/>
-<script src="libs/header-attrs-2.9/header-attrs.js"></script>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -140,10 +140,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a></li>
 <li class="part"><span><b>I Overview</b></span></li>
-<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i>1. Introduction</a>
-<ul>
-<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html#technology-tips"><i class="fa fa-check"></i>Technology Tips</a></li>
-</ul></li>
+<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i>1. Introduction</a></li>
 <li class="chapter" data-level="" data-path="statistics-foundations.html"><a href="statistics-foundations.html"><i class="fa fa-check"></i>2. Statistics foundations</a>
 <ul>
 <li class="chapter" data-level="" data-path="descriptive-vs-inferential-statistics.html"><a href="descriptive-vs-inferential-statistics.html"><i class="fa fa-check"></i>Descriptive vs inferential statistics</a>
@@ -189,10 +186,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="" data-path="example-of-hypothesis-testing.html"><a href="example-of-hypothesis-testing.html"><i class="fa fa-check"></i>Example of hypothesis testing</a>
 <ul>
-<li class="chapter" data-level="" data-path="example-of-hypothesis-testing.html"><a href="example-of-hypothesis-testing.html#write-your-hypotheses"><i class="fa fa-check"></i>1. Write your hypotheses</a></li>
-<li class="chapter" data-level="" data-path="example-of-hypothesis-testing.html"><a href="example-of-hypothesis-testing.html#set-the-criteria-for-a-decision"><i class="fa fa-check"></i>2. Set the criteria for a decision</a></li>
-<li class="chapter" data-level="" data-path="example-of-hypothesis-testing.html"><a href="example-of-hypothesis-testing.html#perform-the-test-statistic"><i class="fa fa-check"></i>3. Perform the test statistic</a></li>
-<li class="chapter" data-level="" data-path="example-of-hypothesis-testing.html"><a href="example-of-hypothesis-testing.html#interpret-results-and-draw-a-conclusion."><i class="fa fa-check"></i>4. Interpret results and draw a conclusion.</a></li>
+<li class="chapter" data-level="" data-path="example-of-hypothesis-testing.html"><a href="example-of-hypothesis-testing.html#look-at-the-data"><i class="fa fa-check"></i>1. Look at the data</a></li>
+<li class="chapter" data-level="" data-path="example-of-hypothesis-testing.html"><a href="example-of-hypothesis-testing.html#check-assumptions"><i class="fa fa-check"></i>2. Check assumptions</a></li>
+<li class="chapter" data-level="" data-path="example-of-hypothesis-testing.html"><a href="example-of-hypothesis-testing.html#perform-the-test"><i class="fa fa-check"></i>3. Perform the test</a></li>
+<li class="chapter" data-level="" data-path="example-of-hypothesis-testing.html"><a href="example-of-hypothesis-testing.html#interpret-the-results"><i class="fa fa-check"></i>4. Interpret the results</a></li>
 <li class="chapter" data-level="" data-path="example-of-hypothesis-testing.html"><a href="example-of-hypothesis-testing.html#final-note"><i class="fa fa-check"></i>Final note</a></li>
 </ul></li>
 </ul></li>
@@ -428,6 +425,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <p>Ouch! 10 tests would have a Type I error rate of 40%! That means that if we performed 10 statistical tests (assuming the effect does not exist), then 40% of the results could be statistically significant by chance alone and would be a false positive. That’s not good!</p>
 <p>Therefore, we use the one-way ANOVA as one test to see if there is a difference overall. We can also do things to control or limit our familywise error rate, which I’ll get into later.</p>
+<p><a href="https://xkcd.com/882/">This comic by xkcd</a> provides a great visualization and description for why we need to be super careful about making multiple comparisons.</p>
 </div>
 <div id="relationship-between-anova-and-t-test" class="section level4">
 <h4>Relationship between ANOVA and t-test</h4>
@@ -451,14 +449,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Note that in this dataset we actually have two independent variables: <code>drug</code> and <code>therapy</code>. If we were looking at the effect of <code>therapy</code> on <code>mood.gain</code> (our DV) then we would only need to perform an independent samples t-test because there are only two groups (no.therapy and CBT). However, if we were looking at the effect of <code>drug</code> on <code>mood.gain</code>, which is our goal in this chapter, then we would perform a one-way ANOVA because there are three groups (placebo, anxifree, and joyzepam).</p>
 <p><img src="images/04_one-way-anova/anova_data.png" /></p>
 </div>
-<div id="describe-the-data-4" class="section level4">
+<div id="describe-the-data-5" class="section level4">
 <h4>Describe the data</h4>
 <p>Once we confirm our data is setup correctly in jamovi, we should look at our data using descriptive statistics and graphs. First, our descriptive statistics are shown below. We see that there are 18 cases in our dataset (a bit small, but let’s ignore that for now) with no missing data. The mean mood gain was .88 (<em>SD</em> = .53) with a minimum mood gain of .10 and maximum of 1.80. Furthermore, there are 6 people in each of our three conditions in the study so we have a <em>balanced</em> research design.</p>
 <p><img src="images/04_one-way-anova/anova_descriptives.png" /></p>
 <p>In addition, we may want to look at the distribution of mood gain across our three conditions. In the Descriptives analysis, we can choose to “split by” <code>drug</code> and then ask for a box plot with violin and data points like below. Visually, it seems like joyzepam might be leading to greater mood gain than the other two conditions, but we need to analyze it statistically to know for sure!</p>
 <p><img src="images/04_one-way-anova/anova_graph.png" /></p>
 </div>
-<div id="specify-the-hypotheses-6" class="section level4">
+<div id="specify-the-hypotheses-7" class="section level4">
 <h4>Specify the hypotheses</h4>
 <p>Our basic research question for the one-way ANOVA is whether there is a difference in mood between the three drugs. Therfore, our hypotheses for the one-way ANOVA could be written as such:</p>
 <ul>
@@ -529,7 +527,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h4>A note on one-tailed vs. two-tailed tests in the ANOVA</h4>
 <p>Unlike a t-test, we can’t have a one-tailed test with an ANOVA. Our planned contrasts or post-hoc tests can tell us where differences are, and we can provide directional hypotheses there if we so choose.</p>
 </div>
-<div id="perform-the-test-3" class="section level4">
+<div id="perform-the-test-4" class="section level4">
 <h4>Perform the test</h4>
 <div class="danger">
 <p>

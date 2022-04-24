@@ -32,7 +32,7 @@
   
 <link rel="prev" href="cleaning-data.html"/>
 <link rel="next" href="example-of-hypothesis-testing.html"/>
-<script src="libs/header-attrs-2.9/header-attrs.js"></script>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -140,10 +140,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a></li>
 <li class="part"><span><b>I Overview</b></span></li>
-<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i>1. Introduction</a>
-<ul>
-<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html#technology-tips"><i class="fa fa-check"></i>Technology Tips</a></li>
-</ul></li>
+<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i>1. Introduction</a></li>
 <li class="chapter" data-level="" data-path="statistics-foundations.html"><a href="statistics-foundations.html"><i class="fa fa-check"></i>2. Statistics foundations</a>
 <ul>
 <li class="chapter" data-level="" data-path="descriptive-vs-inferential-statistics.html"><a href="descriptive-vs-inferential-statistics.html"><i class="fa fa-check"></i>Descriptive vs inferential statistics</a>
@@ -189,10 +186,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="" data-path="example-of-hypothesis-testing.html"><a href="example-of-hypothesis-testing.html"><i class="fa fa-check"></i>Example of hypothesis testing</a>
 <ul>
-<li class="chapter" data-level="" data-path="example-of-hypothesis-testing.html"><a href="example-of-hypothesis-testing.html#write-your-hypotheses"><i class="fa fa-check"></i>1. Write your hypotheses</a></li>
-<li class="chapter" data-level="" data-path="example-of-hypothesis-testing.html"><a href="example-of-hypothesis-testing.html#set-the-criteria-for-a-decision"><i class="fa fa-check"></i>2. Set the criteria for a decision</a></li>
-<li class="chapter" data-level="" data-path="example-of-hypothesis-testing.html"><a href="example-of-hypothesis-testing.html#perform-the-test-statistic"><i class="fa fa-check"></i>3. Perform the test statistic</a></li>
-<li class="chapter" data-level="" data-path="example-of-hypothesis-testing.html"><a href="example-of-hypothesis-testing.html#interpret-results-and-draw-a-conclusion."><i class="fa fa-check"></i>4. Interpret results and draw a conclusion.</a></li>
+<li class="chapter" data-level="" data-path="example-of-hypothesis-testing.html"><a href="example-of-hypothesis-testing.html#look-at-the-data"><i class="fa fa-check"></i>1. Look at the data</a></li>
+<li class="chapter" data-level="" data-path="example-of-hypothesis-testing.html"><a href="example-of-hypothesis-testing.html#check-assumptions"><i class="fa fa-check"></i>2. Check assumptions</a></li>
+<li class="chapter" data-level="" data-path="example-of-hypothesis-testing.html"><a href="example-of-hypothesis-testing.html#perform-the-test"><i class="fa fa-check"></i>3. Perform the test</a></li>
+<li class="chapter" data-level="" data-path="example-of-hypothesis-testing.html"><a href="example-of-hypothesis-testing.html#interpret-the-results"><i class="fa fa-check"></i>4. Interpret the results</a></li>
 <li class="chapter" data-level="" data-path="example-of-hypothesis-testing.html"><a href="example-of-hypothesis-testing.html#final-note"><i class="fa fa-check"></i>Final note</a></li>
 </ul></li>
 </ul></li>
@@ -405,13 +402,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="hypothesis-testing" class="section level1">
 <h1>4. Hypothesis testing</h1>
 <p>Now that we’ve covered descriptive statistics and are familiar with our statistical software, it’s time to turn to inferential statistics. Remember, we conduct inferential statistics because we often cannot collect data from an entire population. Therefore, we collect a sample to draw inferences about the population of interest.</p>
-<p>One of the ways we make inferences is using hypothesis testing. We are going to be learning about Null Hypothesis Significance Testing (NHST), which means we test and make inferences about the null hypothesis (which we’ll learn about soon).</p>
+<p>One of the ways we make inferences is using hypothesis testing. We are going to be learning about Null Hypothesis Significance Testing (NHST), which means we test and make inferences about the null hypothesis (which we’ll learn about in more detail soon).</p>
 <p>Regardless of the inferential statistic we are performing, hypothesis testing goes through the same procedures:</p>
 <ol style="list-style-type: decimal">
-<li>Write your hypothesis (aka the alternative hypothesis) and its accompanying null hypothesis.</li>
-<li>Set the criteria for a decision of whether to support or reject the null hypothesis</li>
-<li>Perform the test statistic (this step has a little bit more to it, but we’ll get to it later!)</li>
-<li>Interpret your results and make a decision</li>
+<li><strong>Look at the data</strong> by examining the descriptive statistics and describing your hypotheses</li>
+<li><strong>Check assumptions</strong> to ensure your data is satisfactory for performing the inferential statistic (or choosing the correct statistic depending on which assumptions are met)</li>
+<li><strong>Perform the test</strong> by running the inferential statistic</li>
+<li><strong>Interpret the results</strong> and make a decision about whether you reject or fail to reject the null hypothesis, write-up the results in APA format, and visualizat the</li>
 </ol>
 <div class="vembedr">
 <div>
@@ -419,6 +416,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 <p>Let’s go through each of these in turn, using a hypothetical example.</p>
+<div class="info">
+<p>
+Check Canvas for a useful 2-page “cheat sheet” of the hypothesis testing 4-step process detailed here. It summarizes the info you will learn here and in the subseqeunt set of chapters. Print it and bring it with you to class!
+</p>
+</div>
 </div>
 <div class="psyteachr_footer">
   

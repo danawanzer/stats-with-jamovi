@@ -32,7 +32,7 @@
   
 <link rel="prev" href="hypothesis-testing.html"/>
 <link rel="next" href="bean.html"/>
-<script src="libs/header-attrs-2.9/header-attrs.js"></script>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -140,10 +140,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a></li>
 <li class="part"><span><b>I Overview</b></span></li>
-<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i>1. Introduction</a>
-<ul>
-<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html#technology-tips"><i class="fa fa-check"></i>Technology Tips</a></li>
-</ul></li>
+<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i>1. Introduction</a></li>
 <li class="chapter" data-level="" data-path="statistics-foundations.html"><a href="statistics-foundations.html"><i class="fa fa-check"></i>2. Statistics foundations</a>
 <ul>
 <li class="chapter" data-level="" data-path="descriptive-vs-inferential-statistics.html"><a href="descriptive-vs-inferential-statistics.html"><i class="fa fa-check"></i>Descriptive vs inferential statistics</a>
@@ -189,10 +186,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="" data-path="example-of-hypothesis-testing.html"><a href="example-of-hypothesis-testing.html"><i class="fa fa-check"></i>Example of hypothesis testing</a>
 <ul>
-<li class="chapter" data-level="" data-path="example-of-hypothesis-testing.html"><a href="example-of-hypothesis-testing.html#write-your-hypotheses"><i class="fa fa-check"></i>1. Write your hypotheses</a></li>
-<li class="chapter" data-level="" data-path="example-of-hypothesis-testing.html"><a href="example-of-hypothesis-testing.html#set-the-criteria-for-a-decision"><i class="fa fa-check"></i>2. Set the criteria for a decision</a></li>
-<li class="chapter" data-level="" data-path="example-of-hypothesis-testing.html"><a href="example-of-hypothesis-testing.html#perform-the-test-statistic"><i class="fa fa-check"></i>3. Perform the test statistic</a></li>
-<li class="chapter" data-level="" data-path="example-of-hypothesis-testing.html"><a href="example-of-hypothesis-testing.html#interpret-results-and-draw-a-conclusion."><i class="fa fa-check"></i>4. Interpret results and draw a conclusion.</a></li>
+<li class="chapter" data-level="" data-path="example-of-hypothesis-testing.html"><a href="example-of-hypothesis-testing.html#look-at-the-data"><i class="fa fa-check"></i>1. Look at the data</a></li>
+<li class="chapter" data-level="" data-path="example-of-hypothesis-testing.html"><a href="example-of-hypothesis-testing.html#check-assumptions"><i class="fa fa-check"></i>2. Check assumptions</a></li>
+<li class="chapter" data-level="" data-path="example-of-hypothesis-testing.html"><a href="example-of-hypothesis-testing.html#perform-the-test"><i class="fa fa-check"></i>3. Perform the test</a></li>
+<li class="chapter" data-level="" data-path="example-of-hypothesis-testing.html"><a href="example-of-hypothesis-testing.html#interpret-the-results"><i class="fa fa-check"></i>4. Interpret the results</a></li>
 <li class="chapter" data-level="" data-path="example-of-hypothesis-testing.html"><a href="example-of-hypothesis-testing.html#final-note"><i class="fa fa-check"></i>Final note</a></li>
 </ul></li>
 </ul></li>
@@ -405,17 +402,29 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="example-of-hypothesis-testing" class="section level2">
 <h2>Example of hypothesis testing</h2>
 <p>Imagine a researcher wants to replicate Alburt Bandura’s famous Bobo doll experiment. In this study, the researcher randomly assigns 30 six-year-old children to one of two conditions: one group watches a video of an adult showing aggressive behavior toward a Bobo doll and the other group watches a video of an adult passively playing with a Bobo doll. After watching their assigned video, children then went to the same room from the videos with the same Bobo doll. Researchers observed for aggressive behaviors<a href="#fn6" class="footnote-ref" id="fnref6"><sup>6</sup></a>.</p>
-<div id="write-your-hypotheses" class="section level3">
-<h3>1. Write your hypotheses</h3>
-<p>The first step is to write out our hypotheses. We need to write our <strong>alternative</strong> and <strong>null</strong> hypotheses.</p>
-<p>The alternative hypothesis is typically what we expect the results of the study to be. We often expect to see <em>something</em>; that there <em>is</em> an effect. We usually write this out as H<sub>1</sub>.</p>
-<p>The null hypothesis is typically what we <em>don’t</em> expect the results of the study to be. It is often that there was <em>no</em> effect of the study. We usually write this out as H<sub>0</sub>.</p>
+<div id="look-at-the-data" class="section level3">
+<h3>1. Look at the data</h3>
+<p>The first step is to look at our data. We need to make sure we understand our study, what research design was used, how data was collected, and what the dataset looks like.</p>
+<div id="describe-the-data" class="section level4">
+<h4>Describe the data</h4>
+<p>Although we are working with a hypothetical scenario, we can think about what the data would look like in a spreadsheet. We have two variables: what condition they are in (IV) and their aggressive behaviors (DV). We would therefore imagine two columns in our dataset, one for ‘Condition’ and one for ‘Aggression.’ Conditions is either, let’s iamgine, “AggressiveAdultPlay” or “PassiveAdultPlay.” Aggressive behaviors might be a numeric continuous value of how many aggressive behaviors were observed for the child when they played with the Bobo doll.</p>
+</div>
+<div id="specify-the-hypotheses" class="section level4">
+<h4>Specify the hypotheses</h4>
+<p>As mentioned previously, we are using Null Hypothesis Significance Testing, or NHST. We are therefore <em>testing hypotheses</em> in our inferential statistics, and specifically testing the null hypothesis. We need to first write out our hypotheses, which are our <strong>alternative</strong> and <strong>null</strong> hypotheses.</p>
+<p>The alternative hypothesis is typically what we expect the results of the study to be. We often expect to see <em>something</em>. The alternative hypothesis is that there <em>is</em> an effect of the study. We usually write this out as H<sub>1</sub>.</p>
+<p>The null hypothesis is typically what we <em>don’t</em> expect the results of the study to be. The null hypothesis is that there was <em>no</em> effect of the study. We usually write this out as H<sub>0</sub>.</p>
+<div class="info">
+<p>
+Note that regardless of our research question, our null hypothesis is always that there is no effect. This is what “null” means: none or zero effect.
+</p>
+</div>
 <p>The two hypotheses–our alternative and null hypotheses–must be <strong>mutually exclusive</strong> and <strong>exhaustive</strong>. Mutually exclusive means a potential result of the study cannot support both the alternative and null hypothesis; it must exclusively support only one. Exhaustive means the entire possible universe of results must be captured in our two hypotheses; it must exhaust all possible results.</p>
 <p>We might also have <strong>directional</strong> or <strong>non-directional</strong> hypotheses. Directional hypotheses are also called one-tailed hypotheses because only one tail of the distribution would lead us to fail to reject the null hypothesis. Non-directional hypotheses are such that we don’t know whether the difference will be greater or less than 0, but we just think there will be a difference; these are also called two-tailed hypotheses because both tails of the distribution would lead us to fail to reject the null hypothesis. This will make a little more sense below and a lot more sense in the next chapter.</p>
 <p>What might the hypotheses be for our example study? There should be theory and research to support alternative hypotheses. There is ample research now that viewing aggression leads to aggression through imitation and observed learning. Therefore, the researcher likely has a hypothesis that watching the aggressive adult will lead to more aggressive behavior than watching the passive adult.</p>
 <p>Therefore, our hypotheses would be:</p>
 <p><strong>H<sub>1</sub></strong>: Children watching the video with the adult aggressively playing with the Bobo doll will exhibit <em>more</em> aggressive behaviors than children watching the video with the adult playing passively.</p>
-<p><strong>H<sub>0</sub></strong>: There will be <em>no difference</em> in children’s aggressive behaviors between the two groups or children watching the video with the adult aggressively playing with the Bobo doll will exhibit <em>fewer</em> aggressive behaviors than children watching the video with the adult playing passively.</p>
+<p><strong>H<sub>0</sub></strong>: There will be <em>no difference</em> in children’s aggressive behaviors between the two groups OR children watching the video with the adult aggressively playing with the Bobo doll will exhibit <em>fewer</em> aggressive behaviors than children watching the video with the adult playing passively.</p>
 <p>Note that we now satisfy mutual exclusivity (no possible overlap in the hypotheses) and exhaustiveness (all possible results are captured).</p>
 <p>A common error in a directional hypothesis like this is to forget that the null hypothesis is both no difference <em>and</em> the opposite. In other words, we have three possible options for our null and alternative hypotheses based on direction (<span class="math inline">\(\mu\)</span> is the Greek letter “mu” and we often use it to signify the mean):</p>
 <table>
@@ -467,28 +476,55 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </tr>
 </tbody>
 </table>
-<p>Note: != means “not equal” like the ≠ symbol. I write != because that is the notation that R uses for “not equal.”</p>
-<p>Similarly, you might be wondering why I use == instead of just =. Again, this is the notion R uses for “exactly equal to.” In R, a single equal sign is usually equivalent to the assignment operator (e.g., x = 10 means assign 10 to the variable x).</p>
+<div class="info">
+<p>
+Note: != means “not equal” like the ≠ symbol. I write != because that is the notation that R uses for “not equal.”
+</p>
+<p>
+Similarly, you might be wondering why I use == instead of just =. Again, this is the notion R uses for “exactly equal to.” In R, a single equal sign is usually equivalent to the assignment operator (e.g., x = 10 means assign 10 to the variable x).
+</p>
 </div>
-<div id="set-the-criteria-for-a-decision" class="section level3">
-<h3>2. Set the criteria for a decision</h3>
-<p>Our hypotheses simply state “more aggressive” or “no difference/less aggressive.” What constitutes <em>more</em>? What constitutes <em>no difference</em>? We have to specify that.</p>
-<p>No difference seems easy. That’s a difference of zero, right? Well, not exactly, because it’s highly unlikely we would get an <em>exact</em> difference of zero. Therefore the question is: which values are close enough to a difference of zero that we’d still say that there is no difference? If our values are within that range, then we would fail to reject the null hypothesis. If our values are <em>outside</em> that range, then we would reject the null hypothesis.<a href="#fn7" class="footnote-ref" id="fnref7"><sup>7</sup></a></p>
+</div>
+</div>
+<div id="check-assumptions" class="section level3">
+<h3>2. Check assumptions</h3>
+<p>We’re going to skip over this for now (read more in the “Parametric Assumptions” chapter later). Just keep in the back of your head that you need to understand whether you met the assumptions to know exactly what statistical test to perform.</p>
+</div>
+<div id="perform-the-test" class="section level3">
+<h3>3. Perform the test</h3>
+<div class="info">
+<p>
+For this example chapter, we’re going to walk through how we might do these analyses by hand. Back in the day before computers existed, or before they were more widely available, this is how folks would analyze their data!
+</p>
+<p>
+This helps us both understand the “behind the scenes” processes of our statistical programs, but also gives us a greater appreciation for what our statistical programs provide us.
+</p>
+</div>
+<p>The basic thing we’re trying to do with our inferential testing is determine what consistutes “more” aggression or “no difference” in aggression.</p>
+<p>No difference seems easy. That’s a difference of zero, right? Well, not exactly, because it’s highly unlikely we would get an <em>exact</em> difference of zero. Therefore the question is: which values are close enough to a difference of zero that we’d still say that there is no difference? If our values are within that range, then we would fail to reject the null hypothesis. If our values are <em>outside</em> that range, then we would reject the null hypothesis.</p>
+<div class="warning">
+<p>
+Note my language carefully here: fail to reject the null hypothesis OR reject the null hypothesis. Note how I am not saying support the alternative hypothesis!
+</p>
+<p>
+Through NHST, we are only ever testing the null hypothesis and therefore can only make conclusions about the null hypothesis. This is why we need replication studies to provide ample support for alternative hypotheses.
+</p>
+</div>
 <p>Let’s try to visualize this. We are saying that the null hypothesis is there is no difference (or less aggression), but at some point no difference turns into <em>greater</em> difference. Furthermore, we have a directional hypothesis in that we do not think the difference will be negative, that children watching the adult play aggressively will exhibit fewer aggressive behaviors. Basically, we need to know what the critical value is in the figure below.</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-2"></span>
-<img src="04.0-hypothesis-testing_files/figure-html/unnamed-chunk-2-1.png" alt="Critical area of statistical significance" width="100%" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-7"></span>
+<img src="04.0-hypothesis-testing_files/figure-html/unnamed-chunk-7-1.png" alt="Critical area of statistical significance" width="100%" />
 <p class="caption">
 Figure 1: Critical area of statistical significance
 </p>
 </div>
 <p>We figure out that critical value based on what we set as our level of significance, also known as the <strong>alpha level</strong>. Most studies you read use the arbitrary <span class="math inline">\(\alpha\)</span> = .05 (5%), although we really should be thinking critically about what alpha level we use (more on that in the next chapter). In the visualization above, we set the alpha to 5% and so the area shaded in red is exactly 5% of the area under the curve of the normal distribution.</p>
-<p>Our alpha is the level of which we are saying would be considered “surprising” versus “not surprising.” If we got a mean difference that fell in that red area, then we would consider that “surprising” <em>if we believed the null hypothesis was true</em>. Basically, if we assume there is a mean difference of 0 (i.e., the null hypothesis), values past the critical value would be considered surprising enough that we would say that we reject the null hypothesis. This is why it is called <em>null hypothesis significance testing</em>.</p>
+<p>Our alpha is the level of which we are saying would be considered “surprising” versus “not surprising.” If we got a mean difference that fell in that red area, then we would consider that “surprising” <em>if we believed the null hypothesis was true</em>. Basically, if we assume there is a mean difference of 0 (i.e., the null hypothesis), values past the critical value would be considered surprising enough that we would say that we reject the null hypothesis. Again, this is why it is called <em>null hypothesis significance testing</em>.</p>
 <p>In other words, <em>the area in red are values that are unlikely to occur if the null hypothesis (in this case, mean difference &lt;= 0) were true.</em></p>
-<p>Now that we understand that a bit better, how do we find out our critical region? We do so based on our understanding of the incredible properties of the normal distribution! Back in the day before computers, some fancy mathematicians and statisticians figured out the exact <em>t</em>-values based on things like the direction of our hypothesis, our alpha, and our degrees of freedom. Let’s figure these out for our example:</p>
+<p>Now that we understand that a bit better, how do we find out our critical value, or the red region? We do so based on our understanding of the incredible properties of the normal distribution! Back in the day before computers, some fancy mathematicians and statisticians figured out the exact <em>t</em>-values based on things like the direction of our hypothesis, our alpha, and our degrees of freedom. Let’s figure these out for our example:</p>
 <ol style="list-style-type: decimal">
-<li><strong>Direction of our hypothesis</strong>: we have already determined we’re using a one-tailed hypothesis.</li>
-<li><strong>Alpha</strong>: let’s just go with <span class="math inline">\(\alpha\)</span> = .05 for now</li>
-<li><strong>Degrees of freedom</strong>: This is calculated by N - 2. We have 30 children total, so 30 - 2 is 28.</li>
+<li><strong>Direction of our hypothesis</strong>: We have already determined we’re using a one-tailed hypothesis because we have a directional hypothesis</li>
+<li><strong>Alpha</strong>: Let’s stick with the default that most psychological research uses of <span class="math inline">\(\alpha\)</span> = .05</li>
+<li><strong>Degrees of freedom</strong>: For this test, this is calculated by N - 2. We have 30 children total, so 30 - 2 is 28</li>
 </ol>
 <p>We then go to a <a href="http://www.z-table.com/t-value-table.html"><em>t-</em>value table like this one</a> and find the cell we are looking for to identify our critical t-value (<em>t</em><sub>crit</sub>). First, our one-tailed probability is .05 so we’re going to look under the sixth column (t<sub>.95</sub>, one-tail = .05, two-tails = .10). Then we need to find the row for our degrees of freedom (df = 28). That leads us to a <em>t<sub>crit</sub></em> of <strong>1.701</strong>.</p>
 <p>Therefore, we can now finalize this step. Our criteria for decision is as such:</p>
@@ -497,25 +533,43 @@ Figure 1: Critical area of statistical significance
 <li><p><em>t<sub>obt</sub> &lt; t<sub>crit</sub></em> means we fail to reject the null hypothesis</p></li>
 </ul>
 </div>
-<div id="perform-the-test-statistic" class="section level3">
-<h3>3. Perform the test statistic</h3>
-<p>We haven’t learned how to calculate the test statistic yet, but no worries we will get there soon. We had 30 participants, 15 in each condition. The researcher performed the experiment and got the following results:</p>
+<div id="interpret-the-results" class="section level3">
+<h3>4. Interpret the results</h3>
+<p>We had 30 participants, 15 in each condition. The researcher performed the experiment and got the following results:</p>
 <ul>
 <li><p>Children who watched the video of the adult playing aggressively with the Bobo doll displayed an average of 51.10 aggressive behaviors (<em>SD</em> = 3.50).</p></li>
 <li><p>Children who watched the video of the adult playing passively with the Bobo doll displayed an average of 27.40 aggressive behaviors (<em>SD</em> = 3.30).</p></li>
 </ul>
-<p>That means the mean difference is 51.10 - 27.40 = 23.70. We’ll learn how to conduct a t-test later, but for now you can just input the numbers into <a href="https://www.usablestats.com/calcs/2samplet&amp;summary=1">this calculator</a>. It nicely gives you a lot of the values, but the one we are looking for is the test statistic, which is <em>t<sub>obt</sub></em> = 19.08 (notice we round to two decimals). It also gives us our p-values based on the <em>null</em> hypothesis, which in our case is that population 1 &lt; population 2. The p-value is &lt; .00001 but we never go to so many decimals, so we would say p &lt; .001. The probability of getting a <em>t</em>-value as large as we did it less than .1% (less than our alpha of .05, so it is statistically significant). Very surprising!</p>
+<p>The mean difference is 51.10 - 27.40 = 23.70. We’ll learn how to conduct a t-test in jamovi later, but for now you can just input the numbers into <a href="https://www.usablestats.com/calcs/2samplet&amp;summary=1">this calculator</a>. It nicely gives you a lot of the values, but the one we are looking for is the test statistic, which is <em>t<sub>obt</sub></em> = 19.08 (notice we round to two decimals).</p>
+<div class="info">
+<p>
+The calculator also gives us our exact p-value, which in this case is &lt; .00001 but we never go to so many decimals, so we would say p &lt; .001. The probability of getting a t-value as large as we did it less than .1% (less than our alpha of .05, so it is statistically significant). Very surprising!
+</p>
+<p>
+This calculator is acting as a statistical software and therefore giving us our exact p-value just like jamovi will provide for you once we move to the software. For now, just appreciate that we can estimate whether we met the p-value threshold when we analyze things by hand below.
+</p>
 </div>
-<div id="interpret-results-and-draw-a-conclusion." class="section level3">
-<h3>4. Interpret results and draw a conclusion.</h3>
-<p>When <em>t<sub>obt</sub> &gt; t<sub>crit</sub></em> we reject the null hypothesis which means our results are statistically significant (if our alpha is set to .05, then that means <em>p</em> &lt; .05).</p>
-<p>On the other hand, when <em>t<sub>obt</sub> &lt; t<sub>crit</sub></em> we fail to reject the null hypothesis which means our results are not statistically significant (if our alpha is set to .05, then that means <em>p</em> &gt; .05).</p>
+<div id="interpret-the-results-1" class="section level4">
+<h4>Interpret the results</h4>
+<p>When <em>t<sub>obt</sub> &gt; t<sub>crit</sub></em> our results are statistically significant (<em>p</em> &lt; α) and we reject the null hypothesis which means our results are statistically significant.</p>
+<p>On the other hand, when <em>t<sub>obt</sub> &lt; t<sub>crit</sub></em> our results are not statistically significant (<em>p</em> &gt; α) which means we fail to reject the null hypothesis.</p>
 <p>Since 19.08 &gt; 1.701, we <em>reject the null hypothesis that there is no difference in conditions or that children in the passive condition displayed more aggression than children in the aggressive condition.</em></p>
+<div class="warning">
+<p>
+A common mistake is assuming that p &lt; .05 means that the alternative hypothesis is true. This is inaccurate because the p-value is the probability of our data given the null hypothesis is true. It says nothing about the alternative hypothesis.
+</p>
+<p>
+Similarly, a common mistake is assuming p &gt; .05 means the alternative hypothesis is false. This is incorrect for the same exact reason; NHST says nothing about the alternative hypothesis.
+</p>
+</div>
+</div>
+<div id="type-1-and-2-errors" class="section level4">
+<h4>Type 1 and 2 errors</h4>
 <p>However, this is when <strong>Type 1</strong> and <strong>Type 2</strong> errors come into play. Just because we get a result <em>does not automatically mean that result is 100% accurate</em>. There are many things that could lead us to an inaccurate interpretation!</p>
 <p>I like to use this table when discussing errors. On the far left column, we have our results: were they statistically significant (<em>p</em> &lt; .05) or not (<em>p</em> &gt; .05)? On the top row, we have whether <em>in the real world</em> the null or alternative hypothesis is true. In reality, we can <em>never</em> truly know whether the null or alternative hypothesis is true. We can at best approximate our understanding of the real world through replication!</p>
 <table>
 <colgroup>
-<col width="52%" />
+<col width="51%" />
 <col width="24%" />
 <col width="24%" />
 </colgroup>
@@ -541,8 +595,16 @@ Figure 1: Critical area of statistical significance
 </table>
 <p>Therefore, any time we get a statistically significant result (<em>p</em> &lt; .05), then <em>either</em> we made a correct interpretation <em>or we made a Type 1 error!</em></p>
 <p>Similarly, any time we get a statistically non-significant results (<em>p</em> &gt; .05) then <em>either</em> we made a correct interpretation <em>or we made a Type 2 error</em>!</p>
-<p>A common mistake is assuming that <em>p</em> &lt; .05 means that the alternative hypothesis is true. This is inaccurate because the <em>p</em>-value is the probability of our data given the null hypothesis is true. It says nothing about the alternative hypothesis. Similarly, a common mistake is assuming <em>p</em> &gt; .05 means the alternative hypothesis is false. This is incorrect for the same exact reason.</p>
+<div class="warning">
+<p>
+Anothing common mistake is to assume statistically significant results mean we 100% reject the null hypothesis. However, we can never know beyond a certainty of a doubt whether a significant result is a correct interpretation; we could also be making a Type 1 error.
+</p>
+<p>
+Similarly, another common mistake is to assume a non-significant results we definitely fail to reject the null hypothesis. We never know for sure whether the null or alternative is true, so in this case we could be making a Type 2 error.
+</p>
+</div>
 <p>Next week we’ll learn a lot more about p-values, errors, and more. For now, tuck this piece of information into your brain to remember!</p>
+</div>
 </div>
 <div id="final-note" class="section level3">
 <h3>Final note</h3>
@@ -555,8 +617,7 @@ Figure 1: Critical area of statistical significance
 <div class="footnotes">
 <hr />
 <ol start="6">
-<li id="fn6"><p>If you want to read more, this is a short read on the history of the .05 alpha level: <a href="https://www2.psych.ubc.ca/~schaller/528Readings/CowlesDavis1982.pdf" class="uri">https://www2.psych.ubc.ca/~schaller/528Readings/CowlesDavis1982.pdf</a><a href="example-of-hypothesis-testing.html#fnref6" class="footnote-back">↩︎</a></p></li>
-<li id="fn7"><p>Note my language carefully here: fail to reject the null hypothesis OR reject the null hypothesis. Note how I am <em>not</em> saying support the alternative hypothesis! Through null hypothesis significance testing, we are only ever testing the null hypothesis and therefore can only make conclusions about it. This is why we need replication studies to provide ample support for alternative hypotheses.<a href="example-of-hypothesis-testing.html#fnref7" class="footnote-back">↩︎</a></p></li>
+<li id="fn6"><p>Note that the study design was actually much more impressive than what I’m describing. They accounted for the children’s baseline aggression and the gender of both the child and the person in the video. If you are interested, you can read more here: <a href="https://www.simplypsychology.org/bobo-doll.html" class="uri">https://www.simplypsychology.org/bobo-doll.html</a><a href="example-of-hypothesis-testing.html#fnref6" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
 <div class="psyteachr_footer">

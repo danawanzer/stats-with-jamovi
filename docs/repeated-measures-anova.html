@@ -32,7 +32,7 @@
   
 <link rel="prev" href="finding-group-differences.html"/>
 <link rel="next" href="factorial-anova.html"/>
-<script src="libs/header-attrs-2.9/header-attrs.js"></script>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -140,10 +140,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a></li>
 <li class="part"><span><b>I Overview</b></span></li>
-<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i>1. Introduction</a>
-<ul>
-<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html#technology-tips"><i class="fa fa-check"></i>Technology Tips</a></li>
-</ul></li>
+<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i>1. Introduction</a></li>
 <li class="chapter" data-level="" data-path="statistics-foundations.html"><a href="statistics-foundations.html"><i class="fa fa-check"></i>2. Statistics foundations</a>
 <ul>
 <li class="chapter" data-level="" data-path="descriptive-vs-inferential-statistics.html"><a href="descriptive-vs-inferential-statistics.html"><i class="fa fa-check"></i>Descriptive vs inferential statistics</a>
@@ -189,10 +186,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="" data-path="example-of-hypothesis-testing.html"><a href="example-of-hypothesis-testing.html"><i class="fa fa-check"></i>Example of hypothesis testing</a>
 <ul>
-<li class="chapter" data-level="" data-path="example-of-hypothesis-testing.html"><a href="example-of-hypothesis-testing.html#write-your-hypotheses"><i class="fa fa-check"></i>1. Write your hypotheses</a></li>
-<li class="chapter" data-level="" data-path="example-of-hypothesis-testing.html"><a href="example-of-hypothesis-testing.html#set-the-criteria-for-a-decision"><i class="fa fa-check"></i>2. Set the criteria for a decision</a></li>
-<li class="chapter" data-level="" data-path="example-of-hypothesis-testing.html"><a href="example-of-hypothesis-testing.html#perform-the-test-statistic"><i class="fa fa-check"></i>3. Perform the test statistic</a></li>
-<li class="chapter" data-level="" data-path="example-of-hypothesis-testing.html"><a href="example-of-hypothesis-testing.html#interpret-results-and-draw-a-conclusion."><i class="fa fa-check"></i>4. Interpret results and draw a conclusion.</a></li>
+<li class="chapter" data-level="" data-path="example-of-hypothesis-testing.html"><a href="example-of-hypothesis-testing.html#look-at-the-data"><i class="fa fa-check"></i>1. Look at the data</a></li>
+<li class="chapter" data-level="" data-path="example-of-hypothesis-testing.html"><a href="example-of-hypothesis-testing.html#check-assumptions"><i class="fa fa-check"></i>2. Check assumptions</a></li>
+<li class="chapter" data-level="" data-path="example-of-hypothesis-testing.html"><a href="example-of-hypothesis-testing.html#perform-the-test"><i class="fa fa-check"></i>3. Perform the test</a></li>
+<li class="chapter" data-level="" data-path="example-of-hypothesis-testing.html"><a href="example-of-hypothesis-testing.html#interpret-the-results"><i class="fa fa-check"></i>4. Interpret the results</a></li>
 <li class="chapter" data-level="" data-path="example-of-hypothesis-testing.html"><a href="example-of-hypothesis-testing.html#final-note"><i class="fa fa-check"></i>Final note</a></li>
 </ul></li>
 </ul></li>
@@ -427,7 +424,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><img src="images/05-repeated-measures-anova/rm_data.png" /></p>
 <p>In the data above, what is your <strong>independent variable</strong>? What is your <strong>dependent variable</strong>?</p>
 </div>
-<div id="describe-the-data-5" class="section level4">
+<div id="describe-the-data-6" class="section level4">
 <h4>Describe the data</h4>
 <p>Once we confirm our data is setup correctly in jamovi, we should look at our data using descriptive statistics and graphs. First, our descriptive statistics are shown below. We see that there are only six cases total (oof, really small data set!) and the average test score on each of the three conditions. It appears participants did best on the speech condition, but we’ll need to run our repeated measures ANOVA to know for sure.</p>
 <p><img src="images/05-repeated-measures-anova/rm_descriptives.png" /></p>
@@ -454,7 +451,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>However, we can and should test for the first two assumptions. Fortunately, the repated measures ANOVA in jamovi has check boxes under “Assumption Checks” that lets us test for both assumptions.</p>
 <div id="testing-normality-4" class="section level4">
 <h4>Testing normality</h4>
-<p>We check assumptions using the “Assumption Checks” tab under the repeated measures ANOVA function. To test normality, we select Q-Q plot. It is currently the only option we have available for testing normality in the repeated measures ANOVA.</p>
+<div class="info">
+<p>
+Note that the way we test normality is different than what we’ve learned before!
+</p>
+</div>
+<p>We cannot test normality using all four methods we previously learned about because in this case we are checking normality of the residuals. You don’t need to know what that means yet (we’ll discuss it more when we go over regression).</p>
+<p>To check normality for the repeated measures ANOVA, we have to go run the repeated measures ANOVA in jamovi. To test normality, under ‘Assumption Checks’ we select Q-Q plot. It is currently the only option we have available for testing normality in the repeated measures ANOVA.</p>
 </div>
 <div id="testing-sphericity" class="section level4">
 <h4>Testing sphericity</h4>
@@ -503,15 +506,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </tbody>
 </table>
 </div>
-<div id="perform-the-test-4" class="section level4">
+<div id="perform-the-test-5" class="section level4">
 <h4>Perform the test</h4>
 <p>We have already discussed what to do if you violate the assumption of sphericity above; you select one of the two sphericity corrections based on the values of the sphericity tests.</p>
 <p>If you violate the assumption of normality or if the dependent variable is ordinal, then you can use the Friedman test. You can select this using the Repeated Measures ANOVA - Friedman option under the ANOVA analysis.</p>
 <ol style="list-style-type: decimal">
 <li><p>To perform a repeated measures ANOVA in jamovi, go to the Analyses tab, click the ANOVA button, and choose “Repeated Measures ANOVA.”</p></li>
-<li><p>Under “Repeated Measures Factors” name your independent variable and rename the levels to match the repeated measurements. In this case you can name it “Task.” Rename the three levels of Task: Speech, Conceptual, and Syntax.</p></li>
+<li><p>Under “Repeated Measures Factors” name your independent variable where it says <code>RM Factor 1</code> and rename the levels to match the repeated measurements. In this case you can name the factor “Task.” Rename the three levels of Task: Speech, Conceptual, and Syntax.</p></li>
 <li><p>Under “Repeated Measures Cells” move the given variable into the correct level. For example, you’ll move Speech to the Speech cell.</p></li>
 <li><p>Select Generalised <span class="math inline">\(\eta^2\)</span> as your measure of effect size.</p></li>
+<li><p>Rename your Dependent Variable Label to match what is being measured across all conditions or time points. In this case, in the three conditions we are measuring their scores on the word recognition task. I will just call this “Word recognition score.”</p></li>
 <li><p>In the Assumption Checks drop-down menu, select <code>Sphericity tests</code> and <code>Q-Q Plots</code>. You’ll note that if you violate the assumption of sphericity, there are two corrections provided (see <a href="repeated-measures-anova.html#testing-sphericity">testing sphericity</a>). Uncheck “none” if you fail to meet the assumption so you only perform one test.</p></li>
 <li><p>In the Post Hoc Tests drop-down menu, select <code>Tukey</code>. Remember that we only interpret these if the overall <em>F</em> is statistically significant.</p></li>
 <li><p>In the Estimated Marginal Means drop-down menu, move Task to the Marginal Means box, select <code>Marginal means tables</code>, and select <code>Observed scores</code> . Uncheck <code>Equal cell weights</code>.</p></li>
@@ -538,7 +542,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="visualize-the-results-6" class="section level4">
 <h4>Visualize the results</h4>
-<p>Similar to the dependent t-test, I am not a fan of the output for the repeated measures ANOVA in jamovi under “estimated marginal means” but it’s good enough for our purposes. Be sure to select “observed scores” under plot.</p>
+<p>Under ’Estimated Marginal Means” move your repeated measures factor to the Term 1 box. Select <code>Marginal means plots</code> under Output and check the box for <code>Observed scores</code>. Here’s the resulting output from our scenario.</p>
+<p><img src="images/05-repeated-measures-anova/RM%20ANOVA%20visual.png" /></p>
 </div>
 </div>
 <div id="friedmans-test" class="section level3">

@@ -32,7 +32,7 @@
   
 <link rel="prev" href="t-tests.html"/>
 <link rel="next" href="independent-t-test.html"/>
-<script src="libs/header-attrs-2.9/header-attrs.js"></script>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -140,10 +140,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a></li>
 <li class="part"><span><b>I Overview</b></span></li>
-<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i>1. Introduction</a>
-<ul>
-<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html#technology-tips"><i class="fa fa-check"></i>Technology Tips</a></li>
-</ul></li>
+<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i>1. Introduction</a></li>
 <li class="chapter" data-level="" data-path="statistics-foundations.html"><a href="statistics-foundations.html"><i class="fa fa-check"></i>2. Statistics foundations</a>
 <ul>
 <li class="chapter" data-level="" data-path="descriptive-vs-inferential-statistics.html"><a href="descriptive-vs-inferential-statistics.html"><i class="fa fa-check"></i>Descriptive vs inferential statistics</a>
@@ -189,10 +186,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="" data-path="example-of-hypothesis-testing.html"><a href="example-of-hypothesis-testing.html"><i class="fa fa-check"></i>Example of hypothesis testing</a>
 <ul>
-<li class="chapter" data-level="" data-path="example-of-hypothesis-testing.html"><a href="example-of-hypothesis-testing.html#write-your-hypotheses"><i class="fa fa-check"></i>1. Write your hypotheses</a></li>
-<li class="chapter" data-level="" data-path="example-of-hypothesis-testing.html"><a href="example-of-hypothesis-testing.html#set-the-criteria-for-a-decision"><i class="fa fa-check"></i>2. Set the criteria for a decision</a></li>
-<li class="chapter" data-level="" data-path="example-of-hypothesis-testing.html"><a href="example-of-hypothesis-testing.html#perform-the-test-statistic"><i class="fa fa-check"></i>3. Perform the test statistic</a></li>
-<li class="chapter" data-level="" data-path="example-of-hypothesis-testing.html"><a href="example-of-hypothesis-testing.html#interpret-results-and-draw-a-conclusion."><i class="fa fa-check"></i>4. Interpret results and draw a conclusion.</a></li>
+<li class="chapter" data-level="" data-path="example-of-hypothesis-testing.html"><a href="example-of-hypothesis-testing.html#look-at-the-data"><i class="fa fa-check"></i>1. Look at the data</a></li>
+<li class="chapter" data-level="" data-path="example-of-hypothesis-testing.html"><a href="example-of-hypothesis-testing.html#check-assumptions"><i class="fa fa-check"></i>2. Check assumptions</a></li>
+<li class="chapter" data-level="" data-path="example-of-hypothesis-testing.html"><a href="example-of-hypothesis-testing.html#perform-the-test"><i class="fa fa-check"></i>3. Perform the test</a></li>
+<li class="chapter" data-level="" data-path="example-of-hypothesis-testing.html"><a href="example-of-hypothesis-testing.html#interpret-the-results"><i class="fa fa-check"></i>4. Interpret the results</a></li>
 <li class="chapter" data-level="" data-path="example-of-hypothesis-testing.html"><a href="example-of-hypothesis-testing.html#final-note"><i class="fa fa-check"></i>Final note</a></li>
 </ul></li>
 </ul></li>
@@ -441,13 +438,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Below is the first ten rows of our data from the zeppo dataset.</p>
 <p><img src="images/07.1-one_sample_t-test/data.png" /></p>
 </div>
-<div id="describe-the-data" class="section level4">
+<div id="describe-the-data-1" class="section level4">
 <h4>Describe the data</h4>
 <p>Once we confirm our data is setup correctly in jamovi, we should look at our data using descriptive statistics and graphs. First, our descriptive statistics are shown below. Our overall data consists of 20 cases and the students in our dataset have a mean grade of 72.30 (<em>SD</em> = 9.52). The minimum and maximum values look accurate; theoretically, student grades should range from 0-100. Lastly, the distribution of data looks possibly not normally distributed. Although we have a pretty small sample size, we can proceed with our analyses. First, though, we need to check our assumptions.</p>
 <p><img src="images/07.1-one_sample_t-test/descriptives.png" /></p>
 <p><img src="images/07.1-one_sample_t-test/plot.png" width="523" /></p>
 </div>
-<div id="specify-the-hypotheses" class="section level4">
+<div id="specify-the-hypotheses-1" class="section level4">
 <h4>Specify the hypotheses</h4>
 <p>For this chapter, we’re going to work with data from lsj-data. Open data from your Data Library in “lsj-data.” Select and open “zeppo.” This dataset is hypothetical data of 20 psychology students taking Dr. Zeppo’s introductory statistics class. Dr. Zeppo wants to know if the psychology students tend to get the same grade as everyone else (<em>M</em> = 67.5) or whether they get a higher or lower grade. As students in a psychology course, we’re going to assume psychology students get higher grades.</p>
 <p>First, it may be useful to understand what our dependent and independent variables are. Our dependent variable is the outcome variable, and in this case it’s the grade students get in the course. Our independent variable that is presumed to “cause” the outcome, and in this case it’s our sample of psychology students whom we’re comparing to our population of all students.</p>
@@ -475,7 +472,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>jamovi easily allows us to check for normality using all four methods we’ve learned about.</p>
 <p>First, the Shapiro-Wilk test was not statistically significant (W = .96, <em>p</em> = .586); therefore, this indicates the data is normally distributed.</p>
 <p>Second, the dots are fairly close to the diagonal line in the Q-Q plot.</p>
-<p><img src="images/07.1-one_sample_t-test/normality.png" />")</p>
+<p><img src="images/07.1-one_sample_t-test/normality.png" />“)</p>
 <p>Third, we can examine the z-scores of skew and kurtosis:</p>
 <ul>
 <li><p><strong>Skew</strong>: <span class="math inline">\(-.53/.51 = -1.04\)</span></p></li>
@@ -504,7 +501,7 @@ Remember that the hypothesis you use is based on your alternative hypothesis and
 </p>
 </div>
 </div>
-<div id="perform-the-test" class="section level4">
+<div id="perform-the-test-1" class="section level4">
 <h4>Perform the test</h4>
 <p>Now that we’ve checked the assumptions, we can perform the one sample t-test. Here are the steps for doing so in jamovi:</p>
 <ol style="list-style-type: decimal">

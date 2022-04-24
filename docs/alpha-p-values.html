@@ -32,7 +32,7 @@
   
 <link rel="prev" href="effect-sizes.html"/>
 <link rel="next" href="power.html"/>
-<script src="libs/header-attrs-2.9/header-attrs.js"></script>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -140,10 +140,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a></li>
 <li class="part"><span><b>I Overview</b></span></li>
-<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i>1. Introduction</a>
-<ul>
-<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html#technology-tips"><i class="fa fa-check"></i>Technology Tips</a></li>
-</ul></li>
+<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i>1. Introduction</a></li>
 <li class="chapter" data-level="" data-path="statistics-foundations.html"><a href="statistics-foundations.html"><i class="fa fa-check"></i>2. Statistics foundations</a>
 <ul>
 <li class="chapter" data-level="" data-path="descriptive-vs-inferential-statistics.html"><a href="descriptive-vs-inferential-statistics.html"><i class="fa fa-check"></i>Descriptive vs inferential statistics</a>
@@ -189,10 +186,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="" data-path="example-of-hypothesis-testing.html"><a href="example-of-hypothesis-testing.html"><i class="fa fa-check"></i>Example of hypothesis testing</a>
 <ul>
-<li class="chapter" data-level="" data-path="example-of-hypothesis-testing.html"><a href="example-of-hypothesis-testing.html#write-your-hypotheses"><i class="fa fa-check"></i>1. Write your hypotheses</a></li>
-<li class="chapter" data-level="" data-path="example-of-hypothesis-testing.html"><a href="example-of-hypothesis-testing.html#set-the-criteria-for-a-decision"><i class="fa fa-check"></i>2. Set the criteria for a decision</a></li>
-<li class="chapter" data-level="" data-path="example-of-hypothesis-testing.html"><a href="example-of-hypothesis-testing.html#perform-the-test-statistic"><i class="fa fa-check"></i>3. Perform the test statistic</a></li>
-<li class="chapter" data-level="" data-path="example-of-hypothesis-testing.html"><a href="example-of-hypothesis-testing.html#interpret-results-and-draw-a-conclusion."><i class="fa fa-check"></i>4. Interpret results and draw a conclusion.</a></li>
+<li class="chapter" data-level="" data-path="example-of-hypothesis-testing.html"><a href="example-of-hypothesis-testing.html#look-at-the-data"><i class="fa fa-check"></i>1. Look at the data</a></li>
+<li class="chapter" data-level="" data-path="example-of-hypothesis-testing.html"><a href="example-of-hypothesis-testing.html#check-assumptions"><i class="fa fa-check"></i>2. Check assumptions</a></li>
+<li class="chapter" data-level="" data-path="example-of-hypothesis-testing.html"><a href="example-of-hypothesis-testing.html#perform-the-test"><i class="fa fa-check"></i>3. Perform the test</a></li>
+<li class="chapter" data-level="" data-path="example-of-hypothesis-testing.html"><a href="example-of-hypothesis-testing.html#interpret-the-results"><i class="fa fa-check"></i>4. Interpret the results</a></li>
 <li class="chapter" data-level="" data-path="example-of-hypothesis-testing.html"><a href="example-of-hypothesis-testing.html#final-note"><i class="fa fa-check"></i>Final note</a></li>
 </ul></li>
 </ul></li>
@@ -427,7 +424,7 @@ Figure 2: Critical area of statistical significance
 <p>A deviation exceeding the standard deviation occurs about once in three trials. Twice the standard deviation is exceeded only about once in 22 trials, thrice the standard deviation only once in 370 trials…. The value for which P = .05, or 1 in 20, is 1.96 or nearly 2 ; it is convenient to take this point as a limit in judging whether a deviation is to be considered significant or not. Deviations exceeding twice the standard deviation are thus formally regarded as significant.</p>
 </blockquote>
 <p>Basically, .05 was convenient. It was 1/20. It was around 2 standard deviations from the mean in a normal distribution. For some reason, it caught on (maybe the “formally regarded as significant” was why).</p>
-<p>However, a year later, even Fisher acknowledged we shouldn’t just arbitrarily use <em>p</em> = .05 as our alpha level.<a href="#fn8" class="footnote-ref" id="fnref8"><sup>8</sup></a> Rather, we should consider setting it at higher odds (e.g., <em>p</em> = .01). He also argued, “A scientific fact should be regarded as experimentally established only if a properly designed experiment <em>rarely fails</em> to give this level of significance.” (Fisher, 1926, p. 504).</p>
+<p>However, a year later, even Fisher acknowledged we shouldn’t just arbitrarily use <em>p</em> = .05 as our alpha level.<a href="#fn7" class="footnote-ref" id="fnref7"><sup>7</sup></a> Rather, we should consider setting it at higher odds (e.g., <em>p</em> = .01). He also argued, “A scientific fact should be regarded as experimentally established only if a properly designed experiment <em>rarely fails</em> to give this level of significance.” (Fisher, 1926, p. 504).</p>
 <p>In other words, we need to think critically about the alpha level we set <em>and</em> we need to test an effect multiple times before we start thinking the alternative hypothesis is true. Let’s discuss power before we start putting it all together.</p>
 </div>
 <div id="are-p-values-bad" class="section level3">
@@ -447,8 +444,8 @@ Figure 2: Critical area of statistical significance
 </div>
 <div class="footnotes">
 <hr />
-<ol start="8">
-<li id="fn8"><p>If you want to read more, this is a short read on the history of the .05 alpha level: <a href="https://www2.psych.ubc.ca/~schaller/528Readings/CowlesDavis1982.pdf" class="uri">https://www2.psych.ubc.ca/~schaller/528Readings/CowlesDavis1982.pdf</a><a href="alpha-p-values.html#fnref8" class="footnote-back">↩︎</a></p></li>
+<ol start="7">
+<li id="fn7"><p>If you want to read more, this is a short read on the history of the .05 alpha level: <a href="https://www2.psych.ubc.ca/~schaller/528Readings/CowlesDavis1982.pdf" class="uri">https://www2.psych.ubc.ca/~schaller/528Readings/CowlesDavis1982.pdf</a><a href="alpha-p-values.html#fnref7" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
 <div class="psyteachr_footer">

@@ -32,7 +32,7 @@
   
 <link rel="prev" href="correlation.html"/>
 <link rel="next" href="general-linear-model.html"/>
-<script src="libs/header-attrs-2.9/header-attrs.js"></script>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -140,10 +140,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a></li>
 <li class="part"><span><b>I Overview</b></span></li>
-<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i>1. Introduction</a>
-<ul>
-<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html#technology-tips"><i class="fa fa-check"></i>Technology Tips</a></li>
-</ul></li>
+<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i>1. Introduction</a></li>
 <li class="chapter" data-level="" data-path="statistics-foundations.html"><a href="statistics-foundations.html"><i class="fa fa-check"></i>2. Statistics foundations</a>
 <ul>
 <li class="chapter" data-level="" data-path="descriptive-vs-inferential-statistics.html"><a href="descriptive-vs-inferential-statistics.html"><i class="fa fa-check"></i>Descriptive vs inferential statistics</a>
@@ -189,10 +186,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="" data-path="example-of-hypothesis-testing.html"><a href="example-of-hypothesis-testing.html"><i class="fa fa-check"></i>Example of hypothesis testing</a>
 <ul>
-<li class="chapter" data-level="" data-path="example-of-hypothesis-testing.html"><a href="example-of-hypothesis-testing.html#write-your-hypotheses"><i class="fa fa-check"></i>1. Write your hypotheses</a></li>
-<li class="chapter" data-level="" data-path="example-of-hypothesis-testing.html"><a href="example-of-hypothesis-testing.html#set-the-criteria-for-a-decision"><i class="fa fa-check"></i>2. Set the criteria for a decision</a></li>
-<li class="chapter" data-level="" data-path="example-of-hypothesis-testing.html"><a href="example-of-hypothesis-testing.html#perform-the-test-statistic"><i class="fa fa-check"></i>3. Perform the test statistic</a></li>
-<li class="chapter" data-level="" data-path="example-of-hypothesis-testing.html"><a href="example-of-hypothesis-testing.html#interpret-results-and-draw-a-conclusion."><i class="fa fa-check"></i>4. Interpret results and draw a conclusion.</a></li>
+<li class="chapter" data-level="" data-path="example-of-hypothesis-testing.html"><a href="example-of-hypothesis-testing.html#look-at-the-data"><i class="fa fa-check"></i>1. Look at the data</a></li>
+<li class="chapter" data-level="" data-path="example-of-hypothesis-testing.html"><a href="example-of-hypothesis-testing.html#check-assumptions"><i class="fa fa-check"></i>2. Check assumptions</a></li>
+<li class="chapter" data-level="" data-path="example-of-hypothesis-testing.html"><a href="example-of-hypothesis-testing.html#perform-the-test"><i class="fa fa-check"></i>3. Perform the test</a></li>
+<li class="chapter" data-level="" data-path="example-of-hypothesis-testing.html"><a href="example-of-hypothesis-testing.html#interpret-the-results"><i class="fa fa-check"></i>4. Interpret the results</a></li>
 <li class="chapter" data-level="" data-path="example-of-hypothesis-testing.html"><a href="example-of-hypothesis-testing.html#final-note"><i class="fa fa-check"></i>Final note</a></li>
 </ul></li>
 </ul></li>
@@ -404,8 +401,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="regression" class="section level2">
 <h2>21. Regression</h2>
-<pre><code>## Warning: package &#39;viridis&#39; was built under R version 4.0.5</code></pre>
-<pre><code>## Warning: package &#39;viridisLite&#39; was built under R version 4.0.5</code></pre>
 <p>Regression can examine multiple predictor variables simultaneously. Whereas the factorial ANOVA can only handle categorical variables (i.e., nominal or ordinal), regression can handle all types of predictor variables including both categorical and continuous.</p>
 <p>There are three types of regression in general:</p>
 <ol style="list-style-type: decimal">
@@ -429,21 +424,21 @@ Figure 2: Regression lines and residuals
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-2"></span>
 <img src="images/13-regression/good-regression-line.jpg" alt="Regression lines and residuals" width="49%" /><img src="images/13-regression/bad-regression-line.jpg" alt="Regression lines and residuals" width="49%" />
 <p class="caption">
-Figure 1: Regression lines and residuals
+Figure 3: Regression lines and residuals
 </p>
 </div>
 <p>Let’s go back to our dragon example and input one of our dragons into the model to find out how residuals work. On the left, based on our dataset and the fact that our dragon is striped (spotted = 0) and has a height of 5.1 feet, we would expect our dragon to weigh 3.9 tons. However, when we actually weigh him, he weighs 4.2 tons! Therefore, the residual in this case would be .3 tons.</p>
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-3"></span>
 <img src="images/13-regression/dragon_predict_mlr.png" alt="Regression lines and residuals" width="49%" /><img src="images/13-regression/dragon_residual.png" alt="Regression lines and residuals" width="49%" />
 <p class="caption">
-Figure 3: Regression lines and residuals
+Figure 4: Regression lines and residuals
 </p>
 </div>
 <p>One of our assumption checks is that our residuals are normally distributed, so we would take all our residuals and examine those for normality.</p>
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-4"></span>
 <img src="images/13-regression/dragon_residual_distribution.png" alt="Regression lines and residuals" width="49%" />
 <p class="caption">
-Figure 4: Regression lines and residuals
+Figure 5: Regression lines and residuals
 </p>
 </div>
 <p>There is more math to regression, which is needed to calculate the <em>F</em>-test you get for the overall model test and the t-tests you get for your model coefficients, but we won’t get into that detail.</p>
@@ -464,7 +459,7 @@ Figure 4: Regression lines and residuals
 <p>For this chapter, we’re going to return to the <code>parenthood</code> dataset from lsj-data. Remember that this dataset includes the sleep quality of both Dan and Dan’s baby, Dan’s grumpiness, and the day of the data collection from 1-100.</p>
 <p><img src="images/08-correlation/correlation-data.png" /></p>
 </div>
-<div id="describe-the-data-7" class="section level4">
+<div id="describe-the-data-8" class="section level4">
 <h4>Describe the data</h4>
 <p>Once we confirm our data is setup correctly in jamovi, we should look at our data using descriptive statistics and graphs. First, our descriptive statistics are shown below. We can see first that we have 100 cases and no missing data. The means, medians, standard deviations, and variances are then shown, followed by the minimum and maximum values.</p>
 <p>We also see skew and kurtosis. Calculating the <em>z</em>-score for all the skew and kurtosis (remember: skew or kurtosis divided by its standard error) suggests we do not violate the assumption of normality much except for <code>day</code>. However, notice what the variable <code>day</code> is! It’s just the day of the study, from 1-100. If you look at the graph, it has a <em>uniform distribution</em> (completely flat and uniform) not a normal distribution (bell curve)!</p>
