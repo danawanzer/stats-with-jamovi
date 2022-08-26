@@ -27,9 +27,9 @@ Check Canvas for a useful 2-page "cheat sheet" of the hypothesis testing 4-step 
 
 ## Example of hypothesis testing
 
-Imagine a researcher wants to replicate Alburt Bandura's famous Bobo doll experiment. In this study, the researcher randomly assigns 30 six-year-old children to one of two conditions: one group watches a video of an adult showing aggressive behavior toward a Bobo doll and the other group watches a video of an adult passively playing with a Bobo doll. After watching their assigned video, children then went to the same room from the videos with the same Bobo doll. Researchers observed for aggressive behaviors[^hypothesis-testing-1].
+Imagine a researcher wants to replicate Alburt Bandura's famous Bobo doll experiment. In this study, the researcher randomly assigns 30 six-year-old children to one of two conditions: one group watches a video of an adult showing aggressive behavior toward a Bobo doll and the other group watches a video of an adult passively playing with a Bobo doll. After watching their assigned video, children then went to the same room from the videos with the same Bobo doll. Researchers observed for aggressive behaviors[^04.0-hypothesis-testing-1].
 
-[^hypothesis-testing-1]: Note that the study design was actually much more impressive than what I'm describing. They accounted for the children's baseline aggression and the gender of both the child and the person in the video. If you are interested, you can read more here: <https://www.simplypsychology.org/bobo-doll.html>
+[^04.0-hypothesis-testing-1]: Note that the study design was actually much more impressive than what I'm describing. They accounted for the children's baseline aggression and the gender of both the child and the person in the video. If you are interested, you can read more here: <https://www.simplypsychology.org/bobo-doll.html>
 
 ### 1. Look at the data
 
@@ -154,7 +154,7 @@ We then go to a [*t-*value table like this one](http://www.z-table.com/t-value-t
 
 Therefore, we can now finalize this step. Our criteria for decision is as such:
 
--   *t~obt~ > t~crit~* means we reject the null hypothesis.
+-   *t~obt~ \> t~crit~* means we reject the null hypothesis.
 
 -   *t~obt~ \< t~crit~* means we fail to reject the null hypothesis
 
@@ -196,13 +196,10 @@ However, this is when **Type 1** and **Type 2** errors come into play. Just beca
 
 I like to use this table when discussing errors. On the far left column, we have our results: were they statistically significant (*p* \< .05) or not (*p* \> .05)? On the top row, we have whether *in the real world* the null or alternative hypothesis is true. In reality, we can *never* truly know whether the null or alternative hypothesis is true. We can at best approximate our understanding of the real world through replication!
 
-+----------------------------------------------------+------------------------+------------------------+
 |                                                    | H~0~ is true           | H~1~ is true           |
-+====================================================+========================+========================+
+|----------------------------------------------------|------------------------|------------------------|
 | ***p*** **\< .05** (statistically significant)     | Type 1 error           | Correct interpretation |
-+----------------------------------------------------+------------------------+------------------------+
 | ***p*** **\> .05** (statistically non-significant) | Correct interpretation | Type 2 error           |
-+----------------------------------------------------+------------------------+------------------------+
 
 Therefore, any time we get a statistically significant result (*p* \< .05), then *either* we made a correct interpretation *or we made a Type 1 error!*
 
