@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>21. Regression | Statistics with jamovi</title>
   <meta name="description" content="This is the website for PSYC 290 and PSYC 790 at the University of Wisconsin-Stout, taught by Dana Wanzer." />
-  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
 
   <meta property="og:title" content="21. Regression | Statistics with jamovi" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="This is the website for PSYC 290 and PSYC 790 at the University of Wisconsin-Stout, taught by Dana Wanzer." />
   
@@ -32,8 +31,8 @@
   
 <link rel="prev" href="correlation.html"/>
 <link rel="next" href="general-linear-model.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -49,9 +48,9 @@
 
 
 
-
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 <link href="libs/vembedr-0.1.5/css/vembedr.css" rel="stylesheet" />
 
 
@@ -138,244 +137,244 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="./">Stats with jamovi</a></li>
 
 <li class="divider"></li>
-<li><a href="index.html#welcome" id="toc-welcome">Welcome</a></li>
-<li><a href="#part-overview" id="toc-part-overview">(PART) Overview</a></li>
-<li><a href="introduction.html#introduction" id="toc-introduction">1. Introduction</a></li>
-<li><a href="statistics-foundations.html#statistics-foundations" id="toc-statistics-foundations">2. Statistics foundations</a>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a></li>
+<li class="part"><span><b>I Overview</b></span></li>
+<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i>1. Introduction</a></li>
+<li class="chapter" data-level="" data-path="statistics-foundations.html"><a href="statistics-foundations.html"><i class="fa fa-check"></i>2. Statistics foundations</a>
 <ul>
-<li><a href="descriptive-vs-inferential-statistics.html#descriptive-vs-inferential-statistics" id="toc-descriptive-vs-inferential-statistics">Descriptive vs inferential statistics</a>
+<li class="chapter" data-level="" data-path="descriptive-vs-inferential-statistics.html"><a href="descriptive-vs-inferential-statistics.html"><i class="fa fa-check"></i>Descriptive vs inferential statistics</a>
 <ul>
-<li><a href="descriptive-vs-inferential-statistics.html#an-example" id="toc-an-example">An example</a></li>
+<li class="chapter" data-level="" data-path="descriptive-vs-inferential-statistics.html"><a href="descriptive-vs-inferential-statistics.html#an-example"><i class="fa fa-check"></i>An example</a></li>
 </ul></li>
-<li><a href="central-tendency-and-dispersion.html#central-tendency-and-dispersion" id="toc-central-tendency-and-dispersion">Central tendency and dispersion</a></li>
-<li><a href="levels-of-measurement.html#levels-of-measurement" id="toc-levels-of-measurement">Levels of measurement</a>
+<li class="chapter" data-level="" data-path="central-tendency-and-dispersion.html"><a href="central-tendency-and-dispersion.html"><i class="fa fa-check"></i>Central tendency and dispersion</a></li>
+<li class="chapter" data-level="" data-path="levels-of-measurement.html"><a href="levels-of-measurement.html"><i class="fa fa-check"></i>Levels of measurement</a>
 <ul>
-<li><a href="levels-of-measurement.html#examples-of-levels-of-measurement" id="toc-examples-of-levels-of-measurement">Examples of levels of measurement</a></li>
+<li class="chapter" data-level="" data-path="levels-of-measurement.html"><a href="levels-of-measurement.html#examples-of-levels-of-measurement"><i class="fa fa-check"></i>Examples of levels of measurement</a></li>
 </ul></li>
-<li><a href="design-methods-key-terms.html#design-methods-key-terms" id="toc-design-methods-key-terms">Design &amp; Methods Key Terms</a>
+<li class="chapter" data-level="" data-path="design-methods-key-terms.html"><a href="design-methods-key-terms.html"><i class="fa fa-check"></i>Design &amp; Methods Key Terms</a>
 <ul>
-<li><a href="design-methods-key-terms.html#study-design-terms" id="toc-study-design-terms">Study design terms</a></li>
-<li><a href="design-methods-key-terms.html#variables" id="toc-variables">Variables</a></li>
-<li><a href="design-methods-key-terms.html#reliability-and-validity" id="toc-reliability-and-validity">Reliability and validity</a></li>
-<li><a href="design-methods-key-terms.html#other-terms" id="toc-other-terms">Other terms</a></li>
-</ul></li>
-</ul></li>
-<li><a href="#part-intro-to-jamovi" id="toc-part-intro-to-jamovi">(PART) Intro to jamovi</a></li>
-<li><a href="overview-of-jamovi.html#overview-of-jamovi" id="toc-overview-of-jamovi">3. Overview of jamovi</a>
-<ul>
-<li><a href="describing-data.html#describing-data" id="toc-describing-data">Describing data</a>
-<ul>
-<li><a href="describing-data.html#data-variables" id="toc-data-variables">Data variables</a></li>
-<li><a href="describing-data.html#describing-your-data" id="toc-describing-your-data">Describing your data</a></li>
-<li><a href="describing-data.html#writing-up-descriptive-statistics" id="toc-writing-up-descriptive-statistics">Writing up descriptive statistics</a></li>
-</ul></li>
-<li><a href="visualizing-data.html#visualizing-data" id="toc-visualizing-data">Visualizing data</a>
-<ul>
-<li><a href="visualizing-data.html#expanding-your-data-visualization" id="toc-expanding-your-data-visualization">Expanding your data visualization</a></li>
-</ul></li>
-<li><a href="cleaning-data.html#cleaning-data" id="toc-cleaning-data">Cleaning data</a>
-<ul>
-<li><a href="cleaning-data.html#data-setup" id="toc-data-setup">Data setup</a></li>
-<li><a href="cleaning-data.html#compute" id="toc-compute">Compute</a></li>
-<li><a href="cleaning-data.html#transform" id="toc-transform">Transform</a></li>
-<li><a href="cleaning-data.html#filters" id="toc-filters">Filters</a></li>
+<li class="chapter" data-level="" data-path="design-methods-key-terms.html"><a href="design-methods-key-terms.html#study-design-terms"><i class="fa fa-check"></i>Study design terms</a></li>
+<li class="chapter" data-level="" data-path="design-methods-key-terms.html"><a href="design-methods-key-terms.html#variables"><i class="fa fa-check"></i>Variables</a></li>
+<li class="chapter" data-level="" data-path="design-methods-key-terms.html"><a href="design-methods-key-terms.html#reliability-and-validity"><i class="fa fa-check"></i>Reliability and validity</a></li>
+<li class="chapter" data-level="" data-path="design-methods-key-terms.html"><a href="design-methods-key-terms.html#other-terms"><i class="fa fa-check"></i>Other terms</a></li>
 </ul></li>
 </ul></li>
-<li><a href="#part-nhst" id="toc-part-nhst">(PART) NHST</a></li>
-<li><a href="hypothesis-testing.html#hypothesis-testing" id="toc-hypothesis-testing">4. Hypothesis testing</a>
+<li class="part"><span><b>II Intro to jamovi</b></span></li>
+<li class="chapter" data-level="" data-path="overview-of-jamovi.html"><a href="overview-of-jamovi.html"><i class="fa fa-check"></i>3. Overview of jamovi</a>
 <ul>
-<li><a href="example-of-hypothesis-testing.html#example-of-hypothesis-testing" id="toc-example-of-hypothesis-testing">Example of hypothesis testing</a>
+<li class="chapter" data-level="" data-path="describing-data.html"><a href="describing-data.html"><i class="fa fa-check"></i>Describing data</a>
 <ul>
-<li><a href="example-of-hypothesis-testing.html#look-at-the-data" id="toc-look-at-the-data">1. Look at the data</a></li>
-<li><a href="example-of-hypothesis-testing.html#check-assumptions" id="toc-check-assumptions">2. Check assumptions</a></li>
-<li><a href="example-of-hypothesis-testing.html#perform-the-test" id="toc-perform-the-test">3. Perform the test</a></li>
-<li><a href="example-of-hypothesis-testing.html#interpret-the-results" id="toc-interpret-the-results">4. Interpret the results</a></li>
-<li><a href="example-of-hypothesis-testing.html#final-note" id="toc-final-note">Final note</a></li>
+<li class="chapter" data-level="" data-path="describing-data.html"><a href="describing-data.html#data-variables"><i class="fa fa-check"></i>Data variables</a></li>
+<li class="chapter" data-level="" data-path="describing-data.html"><a href="describing-data.html#describing-your-data"><i class="fa fa-check"></i>Describing your data</a></li>
+<li class="chapter" data-level="" data-path="describing-data.html"><a href="describing-data.html#writing-up-descriptive-statistics"><i class="fa fa-check"></i>Writing up descriptive statistics</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="visualizing-data.html"><a href="visualizing-data.html"><i class="fa fa-check"></i>Visualizing data</a>
+<ul>
+<li class="chapter" data-level="" data-path="visualizing-data.html"><a href="visualizing-data.html#expanding-your-data-visualization"><i class="fa fa-check"></i>Expanding your data visualization</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="cleaning-data.html"><a href="cleaning-data.html"><i class="fa fa-check"></i>Cleaning data</a>
+<ul>
+<li class="chapter" data-level="" data-path="cleaning-data.html"><a href="cleaning-data.html#data-setup"><i class="fa fa-check"></i>Data setup</a></li>
+<li class="chapter" data-level="" data-path="cleaning-data.html"><a href="cleaning-data.html#compute"><i class="fa fa-check"></i>Compute</a></li>
+<li class="chapter" data-level="" data-path="cleaning-data.html"><a href="cleaning-data.html#transform"><i class="fa fa-check"></i>Transform</a></li>
+<li class="chapter" data-level="" data-path="cleaning-data.html"><a href="cleaning-data.html#filters"><i class="fa fa-check"></i>Filters</a></li>
 </ul></li>
 </ul></li>
-<li><a href="bean.html#bean" id="toc-bean">5. BEAN</a>
+<li class="part"><span><b>III NHST</b></span></li>
+<li class="chapter" data-level="" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html"><i class="fa fa-check"></i>4. Hypothesis testing</a>
 <ul>
-<li><a href="effect-sizes.html#effect-sizes" id="toc-effect-sizes">Effect sizes</a>
+<li class="chapter" data-level="" data-path="example-of-hypothesis-testing.html"><a href="example-of-hypothesis-testing.html"><i class="fa fa-check"></i>Example of hypothesis testing</a>
 <ul>
-<li><a href="effect-sizes.html#small-medium-and-large-effect-sizes" id="toc-small-medium-and-large-effect-sizes">Small, medium, and large effect sizes</a></li>
-</ul></li>
-<li><a href="alpha-p-values.html#alpha-p-values" id="toc-alpha-p-values">Alpha &amp; p-values</a>
-<ul>
-<li><a href="alpha-p-values.html#alpha" id="toc-alpha">Alpha</a></li>
-<li><a href="alpha-p-values.html#are-p-values-bad" id="toc-are-p-values-bad">Are p-values bad?</a></li>
-<li><a href="alpha-p-values.html#video" id="toc-video">Video</a></li>
-</ul></li>
-<li><a href="power.html#power" id="toc-power">Power</a>
-<ul>
-<li><a href="power.html#alpha-power-and-error-rates" id="toc-alpha-power-and-error-rates">Alpha, power, and error rates</a></li>
-<li><a href="power.html#playing-with-alpha-power" id="toc-playing-with-alpha-power">Playing with alpha &amp; power</a></li>
-<li><a href="power.html#video-1" id="toc-video-1">Video</a></li>
-</ul></li>
-<li><a href="sample-size-power-analysis.html#sample-size-power-analysis" id="toc-sample-size-power-analysis">Sample size &amp; power analysis</a>
-<ul>
-<li><a href="sample-size-power-analysis.html#bean-power-analysis" id="toc-bean-power-analysis">BEAN: Power analysis</a></li>
-<li><a href="sample-size-power-analysis.html#power-analysis-example-1" id="toc-power-analysis-example-1">Power analysis example #1</a></li>
-<li><a href="sample-size-power-analysis.html#play-with-jpower" id="toc-play-with-jpower">Play with jpower</a></li>
+<li class="chapter" data-level="" data-path="example-of-hypothesis-testing.html"><a href="example-of-hypothesis-testing.html#look-at-the-data"><i class="fa fa-check"></i>1. Look at the data</a></li>
+<li class="chapter" data-level="" data-path="example-of-hypothesis-testing.html"><a href="example-of-hypothesis-testing.html#check-assumptions"><i class="fa fa-check"></i>2. Check assumptions</a></li>
+<li class="chapter" data-level="" data-path="example-of-hypothesis-testing.html"><a href="example-of-hypothesis-testing.html#perform-the-test"><i class="fa fa-check"></i>3. Perform the test</a></li>
+<li class="chapter" data-level="" data-path="example-of-hypothesis-testing.html"><a href="example-of-hypothesis-testing.html#interpret-the-results"><i class="fa fa-check"></i>4. Interpret the results</a></li>
+<li class="chapter" data-level="" data-path="example-of-hypothesis-testing.html"><a href="example-of-hypothesis-testing.html#final-note"><i class="fa fa-check"></i>Final note</a></li>
 </ul></li>
 </ul></li>
-<li><a href="inferential-statistics.html#inferential-statistics" id="toc-inferential-statistics">6. Inferential statistics</a>
+<li class="chapter" data-level="" data-path="bean.html"><a href="bean.html"><i class="fa fa-check"></i>5. BEAN</a>
 <ul>
-<li><a href="choosing-the-correct-test.html#choosing-the-correct-test" id="toc-choosing-the-correct-test">Choosing the correct test</a>
+<li class="chapter" data-level="" data-path="effect-sizes.html"><a href="effect-sizes.html"><i class="fa fa-check"></i>Effect sizes</a>
 <ul>
-<li><a href="choosing-the-correct-test.html#forward-mapping-choose-the-correct-test" id="toc-forward-mapping-choose-the-correct-test">Forward mapping: Choose the correct test</a></li>
-<li><a href="choosing-the-correct-test.html#backwards-map-determine-the-data-you-need" id="toc-backwards-map-determine-the-data-you-need">Backwards map: Determine the data you need</a></li>
+<li class="chapter" data-level="" data-path="effect-sizes.html"><a href="effect-sizes.html#small-medium-and-large-effect-sizes"><i class="fa fa-check"></i>Small, medium, and large effect sizes</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="alpha-p-values.html"><a href="alpha-p-values.html"><i class="fa fa-check"></i>Alpha &amp; p-values</a>
+<ul>
+<li class="chapter" data-level="" data-path="alpha-p-values.html"><a href="alpha-p-values.html#alpha"><i class="fa fa-check"></i>Alpha</a></li>
+<li class="chapter" data-level="" data-path="alpha-p-values.html"><a href="alpha-p-values.html#are-p-values-bad"><i class="fa fa-check"></i>Are p-values bad?</a></li>
+<li class="chapter" data-level="" data-path="alpha-p-values.html"><a href="alpha-p-values.html#video"><i class="fa fa-check"></i>Video</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="power.html"><a href="power.html"><i class="fa fa-check"></i>Power</a>
+<ul>
+<li class="chapter" data-level="" data-path="power.html"><a href="power.html#alpha-power-and-error-rates"><i class="fa fa-check"></i>Alpha, power, and error rates</a></li>
+<li class="chapter" data-level="" data-path="power.html"><a href="power.html#playing-with-alpha-power"><i class="fa fa-check"></i>Playing with alpha &amp; power</a></li>
+<li class="chapter" data-level="" data-path="power.html"><a href="power.html#video-1"><i class="fa fa-check"></i>Video</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="sample-size-power-analysis.html"><a href="sample-size-power-analysis.html"><i class="fa fa-check"></i>Sample size &amp; power analysis</a>
+<ul>
+<li class="chapter" data-level="" data-path="sample-size-power-analysis.html"><a href="sample-size-power-analysis.html#bean-power-analysis"><i class="fa fa-check"></i>BEAN: Power analysis</a></li>
+<li class="chapter" data-level="" data-path="sample-size-power-analysis.html"><a href="sample-size-power-analysis.html#power-analysis-example-1"><i class="fa fa-check"></i>Power analysis example #1</a></li>
+<li class="chapter" data-level="" data-path="sample-size-power-analysis.html"><a href="sample-size-power-analysis.html#play-with-jpower"><i class="fa fa-check"></i>Play with jpower</a></li>
 </ul></li>
 </ul></li>
-<li><a href="parametric-assumptions.html#parametric-assumptions" id="toc-parametric-assumptions">7. Parametric assumptions</a>
+<li class="chapter" data-level="" data-path="inferential-statistics.html"><a href="inferential-statistics.html"><i class="fa fa-check"></i>6. Inferential statistics</a>
 <ul>
-<li><a href="checking-assumptions.html#checking-assumptions" id="toc-checking-assumptions">Checking assumptions</a>
+<li class="chapter" data-level="" data-path="choosing-the-correct-test.html"><a href="choosing-the-correct-test.html"><i class="fa fa-check"></i>Choosing the correct test</a>
 <ul>
-<li><a href="checking-assumptions.html#normal-distribution" id="toc-normal-distribution">Normal distribution</a></li>
-<li><a href="checking-assumptions.html#intervalratio-data" id="toc-intervalratio-data">Interval/ratio data</a></li>
-<li><a href="checking-assumptions.html#homogeneity-of-variance" id="toc-homogeneity-of-variance">Homogeneity of variance</a></li>
-<li><a href="checking-assumptions.html#independent-scores" id="toc-independent-scores">Independent scores</a></li>
-</ul></li>
-<li><a href="violated-assumptions.html#violated-assumptions" id="toc-violated-assumptions">Violated assumptions</a>
-<ul>
-<li><a href="violated-assumptions.html#intervalratio-data-1" id="toc-intervalratio-data-1">Interval/ratio data</a></li>
-<li><a href="violated-assumptions.html#independent-data" id="toc-independent-data">Independent data</a></li>
-<li><a href="violated-assumptions.html#normality-or-homogeneity-of-variance" id="toc-normality-or-homogeneity-of-variance">Normality or homogeneity of variance</a></li>
+<li class="chapter" data-level="" data-path="choosing-the-correct-test.html"><a href="choosing-the-correct-test.html#forward-mapping-choose-the-correct-test"><i class="fa fa-check"></i>Forward mapping: Choose the correct test</a></li>
+<li class="chapter" data-level="" data-path="choosing-the-correct-test.html"><a href="choosing-the-correct-test.html#backwards-map-determine-the-data-you-need"><i class="fa fa-check"></i>Backwards map: Determine the data you need</a></li>
 </ul></li>
 </ul></li>
-<li><a href="writing-up-results.html#writing-up-results" id="toc-writing-up-results">8. Writing up results</a></li>
-<li><a href="#part-individual-tests" id="toc-part-individual-tests">(PART) Individual Tests</a></li>
-<li><a href="t-tests.html#t-tests" id="toc-t-tests">t-tests</a>
+<li class="chapter" data-level="" data-path="parametric-assumptions.html"><a href="parametric-assumptions.html"><i class="fa fa-check"></i>7. Parametric assumptions</a>
 <ul>
-<li><a href="one-sample-t-test.html#one-sample-t-test" id="toc-one-sample-t-test">9. One sample t-test</a>
+<li class="chapter" data-level="" data-path="checking-assumptions.html"><a href="checking-assumptions.html"><i class="fa fa-check"></i>Checking assumptions</a>
 <ul>
-<li><a href="one-sample-t-test.html#step-1-look-at-the-data" id="toc-step-1-look-at-the-data">Step 1: Look at the data</a></li>
-<li><a href="one-sample-t-test.html#step-2-check-assumptions" id="toc-step-2-check-assumptions">Step 2: Check assumptions</a></li>
-<li><a href="one-sample-t-test.html#step-3-perform-the-test" id="toc-step-3-perform-the-test">Step 3: Perform the test</a></li>
-<li><a href="one-sample-t-test.html#step-4-interpret-results" id="toc-step-4-interpret-results">Step 4: Interpret results</a></li>
-<li><a href="one-sample-t-test.html#wilcoxon-w-test" id="toc-wilcoxon-w-test">Wilcoxon W test</a></li>
-<li><a href="one-sample-t-test.html#your-turn" id="toc-your-turn">Your turn!</a></li>
+<li class="chapter" data-level="" data-path="checking-assumptions.html"><a href="checking-assumptions.html#normal-distribution"><i class="fa fa-check"></i>Normal distribution</a></li>
+<li class="chapter" data-level="" data-path="checking-assumptions.html"><a href="checking-assumptions.html#intervalratio-data"><i class="fa fa-check"></i>Interval/ratio data</a></li>
+<li class="chapter" data-level="" data-path="checking-assumptions.html"><a href="checking-assumptions.html#homogeneity-of-variance"><i class="fa fa-check"></i>Homogeneity of variance</a></li>
+<li class="chapter" data-level="" data-path="checking-assumptions.html"><a href="checking-assumptions.html#independent-scores"><i class="fa fa-check"></i>Independent scores</a></li>
 </ul></li>
-<li><a href="independent-t-test.html#independent-t-test" id="toc-independent-t-test">10. Independent t-test</a>
+<li class="chapter" data-level="" data-path="violated-assumptions.html"><a href="violated-assumptions.html"><i class="fa fa-check"></i>Violated assumptions</a>
 <ul>
-<li><a href="independent-t-test.html#step-1-look-at-the-data-1" id="toc-step-1-look-at-the-data-1">Step 1: Look at the data</a></li>
-<li><a href="independent-t-test.html#step-2-check-assumptions-1" id="toc-step-2-check-assumptions-1">Step 2: Check assumptions</a></li>
-<li><a href="independent-t-test.html#step-3-perform-the-test-1" id="toc-step-3-perform-the-test-1">Step 3: Perform the test</a></li>
-<li><a href="independent-t-test.html#step-4-interpret-results-1" id="toc-step-4-interpret-results-1">Step 4: Interpret results</a></li>
-<li><a href="independent-t-test.html#welchs-t-test" id="toc-welchs-t-test">Welch’s t-test</a></li>
-<li><a href="independent-t-test.html#mann-whitney-u-test" id="toc-mann-whitney-u-test">Mann-Whitney U test</a></li>
-<li><a href="independent-t-test.html#additional-practice" id="toc-additional-practice">Additional practice</a></li>
-</ul></li>
-<li><a href="dependent-t-test.html#dependent-t-test" id="toc-dependent-t-test">11. Dependent t-test</a>
-<ul>
-<li><a href="dependent-t-test.html#step-1-look-at-the-data-2" id="toc-step-1-look-at-the-data-2">Step 1: Look at the data</a></li>
-<li><a href="dependent-t-test.html#step-2-check-assumptions-2" id="toc-step-2-check-assumptions-2">Step 2: Check assumptions</a></li>
-<li><a href="dependent-t-test.html#step-3-perform-the-test-2" id="toc-step-3-perform-the-test-2">Step 3: Perform the test</a></li>
-<li><a href="dependent-t-test.html#step-4-interpret-results-2" id="toc-step-4-interpret-results-2">Step 4: Interpret results</a></li>
-<li><a href="dependent-t-test.html#wilcoxon-rank" id="toc-wilcoxon-rank">Wilcoxon rank</a></li>
-<li><a href="dependent-t-test.html#additional-practice-1" id="toc-additional-practice-1">Additional practice</a></li>
+<li class="chapter" data-level="" data-path="violated-assumptions.html"><a href="violated-assumptions.html#intervalratio-data-1"><i class="fa fa-check"></i>Interval/ratio data</a></li>
+<li class="chapter" data-level="" data-path="violated-assumptions.html"><a href="violated-assumptions.html#independent-data"><i class="fa fa-check"></i>Independent data</a></li>
+<li class="chapter" data-level="" data-path="violated-assumptions.html"><a href="violated-assumptions.html#normality-or-homogeneity-of-variance"><i class="fa fa-check"></i>Normality or homogeneity of variance</a></li>
 </ul></li>
 </ul></li>
-<li><a href="chi-square.html#chi-square" id="toc-chi-square">Chi-Square</a>
+<li class="chapter" data-level="" data-path="writing-up-results.html"><a href="writing-up-results.html"><i class="fa fa-check"></i>8. Writing up results</a></li>
+<li class="part"><span><b>IV Individual Tests</b></span></li>
+<li class="chapter" data-level="" data-path="t-tests.html"><a href="t-tests.html"><i class="fa fa-check"></i>t-tests</a>
 <ul>
-<li><a href="chi-square-goodness-of-fit.html#chi-square-goodness-of-fit" id="toc-chi-square-goodness-of-fit">12. Chi-Square Goodness-of-Fit</a>
+<li class="chapter" data-level="" data-path="one-sample-t-test.html"><a href="one-sample-t-test.html"><i class="fa fa-check"></i>9. One sample t-test</a>
 <ul>
-<li><a href="chi-square-goodness-of-fit.html#step-1-look-at-the-data-3" id="toc-step-1-look-at-the-data-3">Step 1: Look at the data</a></li>
-<li><a href="chi-square-goodness-of-fit.html#step-2-check-assumptions-3" id="toc-step-2-check-assumptions-3">Step 2: Check assumptions</a></li>
-<li><a href="chi-square-goodness-of-fit.html#step-3-perform-the-test-3" id="toc-step-3-perform-the-test-3">Step 3: Perform the test</a></li>
-<li><a href="chi-square-goodness-of-fit.html#step-4-interpret-results-3" id="toc-step-4-interpret-results-3">Step 4: Interpret results</a></li>
-<li><a href="chi-square-goodness-of-fit.html#additional-practice-2" id="toc-additional-practice-2">Additional practice</a></li>
+<li class="chapter" data-level="" data-path="one-sample-t-test.html"><a href="one-sample-t-test.html#step-1-look-at-the-data"><i class="fa fa-check"></i>Step 1: Look at the data</a></li>
+<li class="chapter" data-level="" data-path="one-sample-t-test.html"><a href="one-sample-t-test.html#step-2-check-assumptions"><i class="fa fa-check"></i>Step 2: Check assumptions</a></li>
+<li class="chapter" data-level="" data-path="one-sample-t-test.html"><a href="one-sample-t-test.html#step-3-perform-the-test"><i class="fa fa-check"></i>Step 3: Perform the test</a></li>
+<li class="chapter" data-level="" data-path="one-sample-t-test.html"><a href="one-sample-t-test.html#step-4-interpret-results"><i class="fa fa-check"></i>Step 4: Interpret results</a></li>
+<li class="chapter" data-level="" data-path="one-sample-t-test.html"><a href="one-sample-t-test.html#wilcoxon-w-test"><i class="fa fa-check"></i>Wilcoxon W test</a></li>
+<li class="chapter" data-level="" data-path="one-sample-t-test.html"><a href="one-sample-t-test.html#your-turn"><i class="fa fa-check"></i>Your turn!</a></li>
 </ul></li>
-<li><a href="chi-square-test-of-independence.html#chi-square-test-of-independence" id="toc-chi-square-test-of-independence">13. Chi-Square Test of Independence</a>
+<li class="chapter" data-level="" data-path="independent-t-test.html"><a href="independent-t-test.html"><i class="fa fa-check"></i>10. Independent t-test</a>
 <ul>
-<li><a href="chi-square-test-of-independence.html#step-1-look-at-the-data-4" id="toc-step-1-look-at-the-data-4">Step 1: Look at the data</a></li>
-<li><a href="chi-square-test-of-independence.html#step-2-check-assumptions-4" id="toc-step-2-check-assumptions-4">Step 2: Check assumptions</a></li>
-<li><a href="chi-square-test-of-independence.html#step-3-perform-the-test-4" id="toc-step-3-perform-the-test-4">Step 3: Perform the test</a></li>
-<li><a href="chi-square-test-of-independence.html#step-4-interpret-results-4" id="toc-step-4-interpret-results-4">Step 4: Interpret results</a></li>
-<li><a href="chi-square-test-of-independence.html#fishers-exact-test" id="toc-fishers-exact-test">Fisher’s exact test</a></li>
-<li><a href="chi-square-test-of-independence.html#additional-practice-3" id="toc-additional-practice-3">Additional practice</a></li>
+<li class="chapter" data-level="" data-path="independent-t-test.html"><a href="independent-t-test.html#step-1-look-at-the-data-1"><i class="fa fa-check"></i>Step 1: Look at the data</a></li>
+<li class="chapter" data-level="" data-path="independent-t-test.html"><a href="independent-t-test.html#step-2-check-assumptions-1"><i class="fa fa-check"></i>Step 2: Check assumptions</a></li>
+<li class="chapter" data-level="" data-path="independent-t-test.html"><a href="independent-t-test.html#step-3-perform-the-test-1"><i class="fa fa-check"></i>Step 3: Perform the test</a></li>
+<li class="chapter" data-level="" data-path="independent-t-test.html"><a href="independent-t-test.html#step-4-interpret-results-1"><i class="fa fa-check"></i>Step 4: Interpret results</a></li>
+<li class="chapter" data-level="" data-path="independent-t-test.html"><a href="independent-t-test.html#welchs-t-test"><i class="fa fa-check"></i>Welch’s t-test</a></li>
+<li class="chapter" data-level="" data-path="independent-t-test.html"><a href="independent-t-test.html#mann-whitney-u-test"><i class="fa fa-check"></i>Mann-Whitney U test</a></li>
+<li class="chapter" data-level="" data-path="independent-t-test.html"><a href="independent-t-test.html#additional-practice"><i class="fa fa-check"></i>Additional practice</a></li>
 </ul></li>
-<li><a href="mcnemars-test.html#mcnemars-test" id="toc-mcnemars-test">14. McNemar’s Test</a>
+<li class="chapter" data-level="" data-path="dependent-t-test.html"><a href="dependent-t-test.html"><i class="fa fa-check"></i>11. Dependent t-test</a>
 <ul>
-<li><a href="mcnemars-test.html#step-1-look-at-the-data-5" id="toc-step-1-look-at-the-data-5">Step 1: Look at the data</a></li>
-<li><a href="mcnemars-test.html#step-2-check-assumptions-5" id="toc-step-2-check-assumptions-5">Step 2: Check assumptions</a></li>
-<li><a href="mcnemars-test.html#step-3-perform-the-test-5" id="toc-step-3-perform-the-test-5">Step 3: Perform the test</a></li>
-<li><a href="mcnemars-test.html#step-4-interpret-results-5" id="toc-step-4-interpret-results-5">Step 4: Interpret results</a></li>
-</ul></li>
-</ul></li>
-<li><a href="anova.html#anova" id="toc-anova">ANOVA</a>
-<ul>
-<li><a href="one-way-anova.html#one-way-anova" id="toc-one-way-anova">15. One-way ANOVA</a>
-<ul>
-<li><a href="one-way-anova.html#step-1-look-at-the-data-6" id="toc-step-1-look-at-the-data-6">Step 1: Look at the data</a></li>
-<li><a href="one-way-anova.html#anova-assumptions" id="toc-anova-assumptions">Step 2: Check assumptions</a></li>
-<li><a href="one-way-anova.html#step-3-perform-the-test-6" id="toc-step-3-perform-the-test-6">Step 3: Perform the test</a></li>
-<li><a href="one-way-anova.html#step-4-interpret-results-6" id="toc-step-4-interpret-results-6">Step 4: Interpret results</a></li>
-<li><a href="one-way-anova.html#welchs-f-test" id="toc-welchs-f-test">Welch’s F-test</a></li>
-<li><a href="one-way-anova.html#kruskal-wallis-test" id="toc-kruskal-wallis-test">Kruskal-Wallis test</a></li>
-<li><a href="one-way-anova.html#additional-practice-4" id="toc-additional-practice-4">Additional practice</a></li>
-</ul></li>
-<li><a href="finding-group-differences.html#finding-group-differences" id="toc-finding-group-differences">16. Finding Group Differences</a>
-<ul>
-<li><a href="finding-group-differences.html#post-hoc-comparisons" id="toc-post-hoc-comparisons">Post hoc comparisons</a></li>
-<li><a href="finding-group-differences.html#welchs-f-test-post-hoc-tests" id="toc-welchs-f-test-post-hoc-tests">Welch’s F-test post hoc tests</a></li>
-<li><a href="finding-group-differences.html#kruskal-wallis-post-hoc-tests" id="toc-kruskal-wallis-post-hoc-tests">Kruskal-Wallis post hoc tests</a></li>
-<li><a href="finding-group-differences.html#planned-contrasts" id="toc-planned-contrasts">Planned Contrasts</a></li>
-<li><a href="finding-group-differences.html#additional-practice-5" id="toc-additional-practice-5">Additional practice</a></li>
-</ul></li>
-<li><a href="repeated-measures-anova.html#repeated-measures-anova" id="toc-repeated-measures-anova">17. Repeated Measures ANOVA</a>
-<ul>
-<li><a href="repeated-measures-anova.html#step-1-look-at-the-data-7" id="toc-step-1-look-at-the-data-7">Step 1: Look at the data</a></li>
-<li><a href="repeated-measures-anova.html#step-2-check-assumptions-6" id="toc-step-2-check-assumptions-6">Step 2: Check Assumptions</a></li>
-<li><a href="repeated-measures-anova.html#step-3-perform-the-test-7" id="toc-step-3-perform-the-test-7">Step 3: Perform the test</a></li>
-<li><a href="repeated-measures-anova.html#step-4-interpret-results-7" id="toc-step-4-interpret-results-7">Step 4: Interpret results</a></li>
-<li><a href="repeated-measures-anova.html#friedmans-test" id="toc-friedmans-test">Friedman’s test</a></li>
-<li><a href="repeated-measures-anova.html#additional-practice-6" id="toc-additional-practice-6">Additional practice</a></li>
-</ul></li>
-<li><a href="factorial-anova.html#factorial-anova" id="toc-factorial-anova">18. Factorial ANOVA</a>
-<ul>
-<li><a href="factorial-anova.html#independent-factorial-anova" id="toc-independent-factorial-anova">Independent Factorial ANOVA</a></li>
-<li><a href="factorial-anova.html#repeated-measures-factorial-anova" id="toc-repeated-measures-factorial-anova">Repeated Measures Factorial ANOVA</a></li>
-<li><a href="factorial-anova.html#mixed-factorial-anova" id="toc-mixed-factorial-anova">Mixed Factorial ANOVA</a></li>
-</ul></li>
-<li><a href="ancova.html#ancova" id="toc-ancova">19. ANCOVA</a>
-<ul>
-<li><a href="ancova.html#step-1-look-at-the-data-8" id="toc-step-1-look-at-the-data-8">Step 1: Look at the data</a></li>
-<li><a href="ancova.html#step-2-check-assumptions-7" id="toc-step-2-check-assumptions-7">Step 2: Check Assumptions</a></li>
-<li><a href="ancova.html#step-3-perform-the-test-8" id="toc-step-3-perform-the-test-8">Step 3: Perform the test</a></li>
-<li><a href="ancova.html#step-3-interpret-results" id="toc-step-3-interpret-results">Step 3: Interpret results</a></li>
+<li class="chapter" data-level="" data-path="dependent-t-test.html"><a href="dependent-t-test.html#step-1-look-at-the-data-2"><i class="fa fa-check"></i>Step 1: Look at the data</a></li>
+<li class="chapter" data-level="" data-path="dependent-t-test.html"><a href="dependent-t-test.html#step-2-check-assumptions-2"><i class="fa fa-check"></i>Step 2: Check assumptions</a></li>
+<li class="chapter" data-level="" data-path="dependent-t-test.html"><a href="dependent-t-test.html#step-3-perform-the-test-2"><i class="fa fa-check"></i>Step 3: Perform the test</a></li>
+<li class="chapter" data-level="" data-path="dependent-t-test.html"><a href="dependent-t-test.html#step-4-interpret-results-2"><i class="fa fa-check"></i>Step 4: Interpret results</a></li>
+<li class="chapter" data-level="" data-path="dependent-t-test.html"><a href="dependent-t-test.html#wilcoxon-rank"><i class="fa fa-check"></i>Wilcoxon rank</a></li>
+<li class="chapter" data-level="" data-path="dependent-t-test.html"><a href="dependent-t-test.html#additional-practice-1"><i class="fa fa-check"></i>Additional practice</a></li>
 </ul></li>
 </ul></li>
-<li><a href="correlation-and-regression.html#correlation-and-regression" id="toc-correlation-and-regression">Correlation and regression</a>
+<li class="chapter" data-level="" data-path="chi-square.html"><a href="chi-square.html"><i class="fa fa-check"></i>Chi-Square</a>
 <ul>
-<li><a href="correlation.html#correlation" id="toc-correlation">20. Correlation</a>
+<li class="chapter" data-level="" data-path="chi-square-goodness-of-fit.html"><a href="chi-square-goodness-of-fit.html"><i class="fa fa-check"></i>12. Chi-Square Goodness-of-Fit</a>
 <ul>
-<li><a href="correlation.html#step-1-look-at-the-data-9" id="toc-step-1-look-at-the-data-9">Step 1: Look at the data</a></li>
-<li><a href="correlation.html#step-2-check-assumptions-8" id="toc-step-2-check-assumptions-8">Step 2: Check assumptions</a></li>
-<li><a href="correlation.html#step-3-perform-the-test-9" id="toc-step-3-perform-the-test-9">Step 3: Perform the test</a></li>
-<li><a href="correlation.html#step-4-interpreting-results" id="toc-step-4-interpreting-results">Step 4: Interpreting results</a></li>
-<li><a href="correlation.html#comparing-strengths-of-correlations" id="toc-comparing-strengths-of-correlations">Comparing strengths of correlations</a></li>
-<li><a href="correlation.html#additional-practice-7" id="toc-additional-practice-7">Additional practice</a></li>
+<li class="chapter" data-level="" data-path="chi-square-goodness-of-fit.html"><a href="chi-square-goodness-of-fit.html#step-1-look-at-the-data-3"><i class="fa fa-check"></i>Step 1: Look at the data</a></li>
+<li class="chapter" data-level="" data-path="chi-square-goodness-of-fit.html"><a href="chi-square-goodness-of-fit.html#step-2-check-assumptions-3"><i class="fa fa-check"></i>Step 2: Check assumptions</a></li>
+<li class="chapter" data-level="" data-path="chi-square-goodness-of-fit.html"><a href="chi-square-goodness-of-fit.html#step-3-perform-the-test-3"><i class="fa fa-check"></i>Step 3: Perform the test</a></li>
+<li class="chapter" data-level="" data-path="chi-square-goodness-of-fit.html"><a href="chi-square-goodness-of-fit.html#step-4-interpret-results-3"><i class="fa fa-check"></i>Step 4: Interpret results</a></li>
+<li class="chapter" data-level="" data-path="chi-square-goodness-of-fit.html"><a href="chi-square-goodness-of-fit.html#additional-practice-2"><i class="fa fa-check"></i>Additional practice</a></li>
 </ul></li>
-<li><a href="regression.html#regression" id="toc-regression">21. Regression</a>
+<li class="chapter" data-level="" data-path="chi-square-test-of-independence.html"><a href="chi-square-test-of-independence.html"><i class="fa fa-check"></i>13. Chi-Square Test of Independence</a>
 <ul>
-<li><a href="regression.html#step-1-look-at-the-data-10" id="toc-step-1-look-at-the-data-10">Step 1: Look at the data</a></li>
-<li><a href="regression.html#step-2-check-assumptions-9" id="toc-step-2-check-assumptions-9">Step 2: Check Assumptions</a></li>
-<li><a href="regression.html#step-3-perform-the-test-10" id="toc-step-3-perform-the-test-10">Step 3: Perform the test</a></li>
-<li><a href="regression.html#step-4-interpret-results-8" id="toc-step-4-interpret-results-8">Step 4: Interpret results</a></li>
-<li><a href="regression.html#categorical-predictors" id="toc-categorical-predictors">Categorical Predictors</a></li>
-<li><a href="regression.html#hierarchical-regression" id="toc-hierarchical-regression">Hierarchical regression</a></li>
-<li><a href="regression.html#additional-practice-8" id="toc-additional-practice-8">Additional practice</a></li>
+<li class="chapter" data-level="" data-path="chi-square-test-of-independence.html"><a href="chi-square-test-of-independence.html#step-1-look-at-the-data-4"><i class="fa fa-check"></i>Step 1: Look at the data</a></li>
+<li class="chapter" data-level="" data-path="chi-square-test-of-independence.html"><a href="chi-square-test-of-independence.html#step-2-check-assumptions-4"><i class="fa fa-check"></i>Step 2: Check assumptions</a></li>
+<li class="chapter" data-level="" data-path="chi-square-test-of-independence.html"><a href="chi-square-test-of-independence.html#step-3-perform-the-test-4"><i class="fa fa-check"></i>Step 3: Perform the test</a></li>
+<li class="chapter" data-level="" data-path="chi-square-test-of-independence.html"><a href="chi-square-test-of-independence.html#step-4-interpret-results-4"><i class="fa fa-check"></i>Step 4: Interpret results</a></li>
+<li class="chapter" data-level="" data-path="chi-square-test-of-independence.html"><a href="chi-square-test-of-independence.html#fishers-exact-test"><i class="fa fa-check"></i>Fisher’s exact test</a></li>
+<li class="chapter" data-level="" data-path="chi-square-test-of-independence.html"><a href="chi-square-test-of-independence.html#additional-practice-3"><i class="fa fa-check"></i>Additional practice</a></li>
 </ul></li>
-<li><a href="general-linear-model.html#general-linear-model" id="toc-general-linear-model">22. General Linear Model</a>
+<li class="chapter" data-level="" data-path="mcnemars-test.html"><a href="mcnemars-test.html"><i class="fa fa-check"></i>14. McNemar’s Test</a>
 <ul>
-<li><a href="general-linear-model.html#correlation-as-a-regression" id="toc-correlation-as-a-regression">Correlation as a regression</a></li>
-<li><a href="general-linear-model.html#independent-t-test-as-a-regression" id="toc-independent-t-test-as-a-regression">Independent t-test as a regression</a></li>
-<li><a href="general-linear-model.html#dependent-t-test-as-a-regression" id="toc-dependent-t-test-as-a-regression">Dependent t-test as a regression</a></li>
-<li><a href="general-linear-model.html#one-way-anova-as-a-regression" id="toc-one-way-anova-as-a-regression">One-way ANOVA as a regression</a></li>
+<li class="chapter" data-level="" data-path="mcnemars-test.html"><a href="mcnemars-test.html#step-1-look-at-the-data-5"><i class="fa fa-check"></i>Step 1: Look at the data</a></li>
+<li class="chapter" data-level="" data-path="mcnemars-test.html"><a href="mcnemars-test.html#step-2-check-assumptions-5"><i class="fa fa-check"></i>Step 2: Check assumptions</a></li>
+<li class="chapter" data-level="" data-path="mcnemars-test.html"><a href="mcnemars-test.html#step-3-perform-the-test-5"><i class="fa fa-check"></i>Step 3: Perform the test</a></li>
+<li class="chapter" data-level="" data-path="mcnemars-test.html"><a href="mcnemars-test.html#step-4-interpret-results-5"><i class="fa fa-check"></i>Step 4: Interpret results</a></li>
 </ul></li>
 </ul></li>
-<li><a href="#appendix-appendices" id="toc-appendix-appendices">(APPENDIX) Appendices</a></li>
-<li><a href="answers-to-your-turn-exercises.html#answers-to-your-turn-exercises" id="toc-answers-to-your-turn-exercises">Answers to Your Turn exercises</a></li>
+<li class="chapter" data-level="" data-path="anova.html"><a href="anova.html"><i class="fa fa-check"></i>ANOVA</a>
+<ul>
+<li class="chapter" data-level="" data-path="one-way-anova.html"><a href="one-way-anova.html"><i class="fa fa-check"></i>15. One-way ANOVA</a>
+<ul>
+<li class="chapter" data-level="" data-path="one-way-anova.html"><a href="one-way-anova.html#step-1-look-at-the-data-6"><i class="fa fa-check"></i>Step 1: Look at the data</a></li>
+<li class="chapter" data-level="" data-path="one-way-anova.html"><a href="one-way-anova.html#anova-assumptions"><i class="fa fa-check"></i>Step 2: Check assumptions</a></li>
+<li class="chapter" data-level="" data-path="one-way-anova.html"><a href="one-way-anova.html#step-3-perform-the-test-6"><i class="fa fa-check"></i>Step 3: Perform the test</a></li>
+<li class="chapter" data-level="" data-path="one-way-anova.html"><a href="one-way-anova.html#step-4-interpret-results-6"><i class="fa fa-check"></i>Step 4: Interpret results</a></li>
+<li class="chapter" data-level="" data-path="one-way-anova.html"><a href="one-way-anova.html#welchs-f-test"><i class="fa fa-check"></i>Welch’s F-test</a></li>
+<li class="chapter" data-level="" data-path="one-way-anova.html"><a href="one-way-anova.html#kruskal-wallis-test"><i class="fa fa-check"></i>Kruskal-Wallis test</a></li>
+<li class="chapter" data-level="" data-path="one-way-anova.html"><a href="one-way-anova.html#additional-practice-4"><i class="fa fa-check"></i>Additional practice</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="finding-group-differences.html"><a href="finding-group-differences.html"><i class="fa fa-check"></i>16. Finding Group Differences</a>
+<ul>
+<li class="chapter" data-level="" data-path="finding-group-differences.html"><a href="finding-group-differences.html#post-hoc-comparisons"><i class="fa fa-check"></i>Post hoc comparisons</a></li>
+<li class="chapter" data-level="" data-path="finding-group-differences.html"><a href="finding-group-differences.html#welchs-f-test-post-hoc-tests"><i class="fa fa-check"></i>Welch’s F-test post hoc tests</a></li>
+<li class="chapter" data-level="" data-path="finding-group-differences.html"><a href="finding-group-differences.html#kruskal-wallis-post-hoc-tests"><i class="fa fa-check"></i>Kruskal-Wallis post hoc tests</a></li>
+<li class="chapter" data-level="" data-path="finding-group-differences.html"><a href="finding-group-differences.html#planned-contrasts"><i class="fa fa-check"></i>Planned Contrasts</a></li>
+<li class="chapter" data-level="" data-path="finding-group-differences.html"><a href="finding-group-differences.html#additional-practice-5"><i class="fa fa-check"></i>Additional practice</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="repeated-measures-anova.html"><a href="repeated-measures-anova.html"><i class="fa fa-check"></i>17. Repeated Measures ANOVA</a>
+<ul>
+<li class="chapter" data-level="" data-path="repeated-measures-anova.html"><a href="repeated-measures-anova.html#step-1-look-at-the-data-7"><i class="fa fa-check"></i>Step 1: Look at the data</a></li>
+<li class="chapter" data-level="" data-path="repeated-measures-anova.html"><a href="repeated-measures-anova.html#step-2-check-assumptions-6"><i class="fa fa-check"></i>Step 2: Check Assumptions</a></li>
+<li class="chapter" data-level="" data-path="repeated-measures-anova.html"><a href="repeated-measures-anova.html#step-3-perform-the-test-7"><i class="fa fa-check"></i>Step 3: Perform the test</a></li>
+<li class="chapter" data-level="" data-path="repeated-measures-anova.html"><a href="repeated-measures-anova.html#step-4-interpret-results-7"><i class="fa fa-check"></i>Step 4: Interpret results</a></li>
+<li class="chapter" data-level="" data-path="repeated-measures-anova.html"><a href="repeated-measures-anova.html#friedmans-test"><i class="fa fa-check"></i>Friedman’s test</a></li>
+<li class="chapter" data-level="" data-path="repeated-measures-anova.html"><a href="repeated-measures-anova.html#additional-practice-6"><i class="fa fa-check"></i>Additional practice</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="factorial-anova.html"><a href="factorial-anova.html"><i class="fa fa-check"></i>18. Factorial ANOVA</a>
+<ul>
+<li class="chapter" data-level="" data-path="factorial-anova.html"><a href="factorial-anova.html#independent-factorial-anova"><i class="fa fa-check"></i>Independent Factorial ANOVA</a></li>
+<li class="chapter" data-level="" data-path="factorial-anova.html"><a href="factorial-anova.html#repeated-measures-factorial-anova"><i class="fa fa-check"></i>Repeated Measures Factorial ANOVA</a></li>
+<li class="chapter" data-level="" data-path="factorial-anova.html"><a href="factorial-anova.html#mixed-factorial-anova"><i class="fa fa-check"></i>Mixed Factorial ANOVA</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="ancova.html"><a href="ancova.html"><i class="fa fa-check"></i>19. ANCOVA</a>
+<ul>
+<li class="chapter" data-level="" data-path="ancova.html"><a href="ancova.html#step-1-look-at-the-data-8"><i class="fa fa-check"></i>Step 1: Look at the data</a></li>
+<li class="chapter" data-level="" data-path="ancova.html"><a href="ancova.html#step-2-check-assumptions-7"><i class="fa fa-check"></i>Step 2: Check Assumptions</a></li>
+<li class="chapter" data-level="" data-path="ancova.html"><a href="ancova.html#step-3-perform-the-test-8"><i class="fa fa-check"></i>Step 3: Perform the test</a></li>
+<li class="chapter" data-level="" data-path="ancova.html"><a href="ancova.html#step-3-interpret-results"><i class="fa fa-check"></i>Step 3: Interpret results</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html"><i class="fa fa-check"></i>Correlation and regression</a>
+<ul>
+<li class="chapter" data-level="" data-path="correlation.html"><a href="correlation.html"><i class="fa fa-check"></i>20. Correlation</a>
+<ul>
+<li class="chapter" data-level="" data-path="correlation.html"><a href="correlation.html#step-1-look-at-the-data-9"><i class="fa fa-check"></i>Step 1: Look at the data</a></li>
+<li class="chapter" data-level="" data-path="correlation.html"><a href="correlation.html#step-2-check-assumptions-8"><i class="fa fa-check"></i>Step 2: Check assumptions</a></li>
+<li class="chapter" data-level="" data-path="correlation.html"><a href="correlation.html#step-3-perform-the-test-9"><i class="fa fa-check"></i>Step 3: Perform the test</a></li>
+<li class="chapter" data-level="" data-path="correlation.html"><a href="correlation.html#step-4-interpreting-results"><i class="fa fa-check"></i>Step 4: Interpreting results</a></li>
+<li class="chapter" data-level="" data-path="correlation.html"><a href="correlation.html#comparing-strengths-of-correlations"><i class="fa fa-check"></i>Comparing strengths of correlations</a></li>
+<li class="chapter" data-level="" data-path="correlation.html"><a href="correlation.html#additional-practice-7"><i class="fa fa-check"></i>Additional practice</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="regression.html"><a href="regression.html"><i class="fa fa-check"></i>21. Regression</a>
+<ul>
+<li class="chapter" data-level="" data-path="regression.html"><a href="regression.html#step-1-look-at-the-data-10"><i class="fa fa-check"></i>Step 1: Look at the data</a></li>
+<li class="chapter" data-level="" data-path="regression.html"><a href="regression.html#step-2-check-assumptions-9"><i class="fa fa-check"></i>Step 2: Check Assumptions</a></li>
+<li class="chapter" data-level="" data-path="regression.html"><a href="regression.html#step-3-perform-the-test-10"><i class="fa fa-check"></i>Step 3: Perform the test</a></li>
+<li class="chapter" data-level="" data-path="regression.html"><a href="regression.html#step-4-interpret-results-8"><i class="fa fa-check"></i>Step 4: Interpret results</a></li>
+<li class="chapter" data-level="" data-path="regression.html"><a href="regression.html#categorical-predictors"><i class="fa fa-check"></i>Categorical Predictors</a></li>
+<li class="chapter" data-level="" data-path="regression.html"><a href="regression.html#hierarchical-regression"><i class="fa fa-check"></i>Hierarchical regression</a></li>
+<li class="chapter" data-level="" data-path="regression.html"><a href="regression.html#additional-practice-8"><i class="fa fa-check"></i>Additional practice</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="general-linear-model.html"><a href="general-linear-model.html"><i class="fa fa-check"></i>22. General Linear Model</a>
+<ul>
+<li class="chapter" data-level="" data-path="general-linear-model.html"><a href="general-linear-model.html#correlation-as-a-regression"><i class="fa fa-check"></i>Correlation as a regression</a></li>
+<li class="chapter" data-level="" data-path="general-linear-model.html"><a href="general-linear-model.html#independent-t-test-as-a-regression"><i class="fa fa-check"></i>Independent t-test as a regression</a></li>
+<li class="chapter" data-level="" data-path="general-linear-model.html"><a href="general-linear-model.html#dependent-t-test-as-a-regression"><i class="fa fa-check"></i>Dependent t-test as a regression</a></li>
+<li class="chapter" data-level="" data-path="general-linear-model.html"><a href="general-linear-model.html#one-way-anova-as-a-regression"><i class="fa fa-check"></i>One-way ANOVA as a regression</a></li>
+</ul></li>
+</ul></li>
+<li class="appendix"><span><b>Appendices</b></span></li>
+<li class="chapter" data-level="" data-path="answers-to-your-turn-exercises.html"><a href="answers-to-your-turn-exercises.html"><i class="fa fa-check"></i>Answers to Your Turn exercises</a></li>
 <li class="divider"></li>
 <li><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/" 
     target="blank"><img alt="Creative Commons License" 
@@ -399,8 +398,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="regression" class="section level2">
-<h2>21. Regression</h2>
+<div id="regression" class="section level2 hasAnchor">
+<h2>21. Regression<a href="regression.html#regression" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Regression can examine multiple predictor variables simultaneously. Whereas the factorial ANOVA can only handle categorical variables (i.e., nominal or ordinal), regression can handle all types of predictor variables including both categorical and continuous.</p>
 <p>There are three types of regression in general:</p>
 <ol style="list-style-type: decimal">
@@ -409,11 +408,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p><u>Hierarchical regression</u>: this looks at the effect of multiple predictors (IVs) on a single outcome (DV), but there are multiple “blocks” or “steps” so that you can check the added predictability of new variables.</p></li>
 </ol>
 <p>Note that the linear regression is actually equivalent to a lot of the statistics we’ve learned. For example, the linear regression will produce the same results as a t-test when we have a dichotomous predictor, a one-way ANOVA when we have an ordinal predictor, and a correlation when we have a continuous predictor. We’ll learn more about this at the end of the textbook when we wrap everything up.</p>
-<div id="understanding-regression" class="section level4">
-<h4>Understanding regression</h4>
+<div id="understanding-regression" class="section level4 hasAnchor">
+<h4>Understanding regression<a href="regression.html#understanding-regression" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>A linear regression model is basically a linear line, which many of us learned as y = mx + b, where y is our predicted outcome score, x is the IV, b is the intercept (the score in y when x = 0), and m is the slope (when you increase x-value by 1 unit, the y-value goes up by m units).</p>
 <p>Let’s imagine we have a dataset of dragons with a categorical predictor (whether they are spotted or striped) and a continuous predictor (height) and a continuous dependent variable (weight). We want to use this dataset to be able to predict the weight of future dragons. First, let’s learn how to interpret the coefficients for our two predictor variables (images from <a href="https://github.com/allisonhorst/stats-illustrations#multiple-linear-regression-dragons-thread">Allison Horst</a>).</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-1"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-1"></span>
 <img src="images/13-regression/dragon_categorical.png" alt="Regression lines and residuals" width="49%" /><img src="images/13-regression/dragons_continuous.png" alt="Regression lines and residuals" width="49%" />
 <p class="caption">
 Figure 2: Regression lines and residuals
@@ -421,21 +420,21 @@ Figure 2: Regression lines and residuals
 </div>
 <p>We determine our line equation from the scatterplot of scores by figuring out the line that fits closest to all data points. The regression line is the line with the <em>smallest</em> residuals between the line and data points.</p>
 <p>Let’s visualize the regression line for how Dan’s sleepiness affect Dan’s grumpiness. On the left, we see the regression line (in purple) is very close to the data points and the residuals (the grey lines between the purple line and the data points) are smaller. On the right, we see the regression line is far from a lot of the data points and the residuals are larger.</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-2"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-2"></span>
 <img src="images/13-regression/good-regression-line.jpg" alt="Regression lines and residuals" width="49%" /><img src="images/13-regression/bad-regression-line.jpg" alt="Regression lines and residuals" width="49%" />
 <p class="caption">
 Figure 3: Regression lines and residuals
 </p>
 </div>
 <p>Let’s go back to our dragon example and input one of our dragons into the model to find out how residuals work. On the left, based on our dataset and the fact that our dragon is striped (spotted = 0) and has a height of 5.1 feet, we would expect our dragon to weigh 3.9 tons. However, when we actually weigh him, he weighs 4.2 tons! Therefore, the residual in this case would be .3 tons.</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-3"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-3"></span>
 <img src="images/13-regression/dragon_predict_mlr.png" alt="Regression lines and residuals" width="49%" /><img src="images/13-regression/dragon_residual.png" alt="Regression lines and residuals" width="49%" />
 <p class="caption">
 Figure 4: Regression lines and residuals
 </p>
 </div>
 <p>One of our assumption checks is that our residuals are normally distributed, so we would take all our residuals and examine those for normality.</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-4"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-4"></span>
 <img src="images/13-regression/dragon_residual_distribution.png" alt="Regression lines and residuals" width="49%" />
 <p class="caption">
 Figure 5: Regression lines and residuals
@@ -443,8 +442,8 @@ Figure 5: Regression lines and residuals
 </div>
 <p>There is more math to regression, which is needed to calculate the <em>F</em>-test you get for the overall model test and the t-tests you get for your model coefficients, but we won’t get into that detail.</p>
 </div>
-<div id="step-1-look-at-the-data-10" class="section level3">
-<h3>Step 1: Look at the data</h3>
+<div id="step-1-look-at-the-data-10" class="section level3 hasAnchor">
+<h3>Step 1: Look at the data<a href="regression.html#step-1-look-at-the-data-10" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Let’s run an example with data from lsj-data. Open data from your Data Library in “lsj-data”. Select and open <code>parenthood</code>. This dataset includes the sleep quality of both Dan and Dan’s baby, Dan’s grumpiness, and the day of the data collection from 1-100.</p>
 <p>We’ll be testing how both Dan’s and Dan’s baby’s quality of sleep affect Dan’s grumpiness.</p>
 <p>Here’s a video walking through the regression.</p>
@@ -453,21 +452,21 @@ Figure 5: Regression lines and residuals
 <iframe src="https://www.youtube.com/embed/SfubvsatkdA" width="533" height="300" frameborder="0" allowfullscreen="" data-external="1"></iframe>
 </div>
 </div>
-<div id="data-set-up-9" class="section level4">
-<h4>Data set-up</h4>
+<div id="data-set-up-9" class="section level4 hasAnchor">
+<h4>Data set-up<a href="regression.html#data-set-up-9" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Our data set-up for regression depends on the type of regression and type of data, but in general we’ll have one column of our continuous DV and one or more columns of our IV(s).</p>
 <p>For this chapter, we’re going to return to the <code>parenthood</code> dataset from lsj-data. Remember that this dataset includes the sleep quality of both Dan and Dan’s baby, Dan’s grumpiness, and the day of the data collection from 1-100.</p>
 <p><img src="images/08-correlation/correlation-data.png" /></p>
 </div>
-<div id="describe-the-data-8" class="section level4">
-<h4>Describe the data</h4>
+<div id="describe-the-data-8" class="section level4 hasAnchor">
+<h4>Describe the data<a href="regression.html#describe-the-data-8" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Once we confirm our data is setup correctly in jamovi, we should look at our data using descriptive statistics and graphs. First, our descriptive statistics are shown below. We can see first that we have 100 cases and no missing data. The means, medians, standard deviations, and variances are then shown, followed by the minimum and maximum values.</p>
 <p>We also see skew and kurtosis. Calculating the <em>z</em>-score for all the skew and kurtosis (remember: skew or kurtosis divided by its standard error) suggests we do not violate the assumption of normality much except for <code>day</code>. However, notice what the variable <code>day</code> is! It’s just the day of the study, from 1-100. If you look at the graph, it has a <em>uniform distribution</em> (completely flat and uniform) not a normal distribution (bell curve)!</p>
 <p><img src="images/08-correlation/correlation-descriptives.png" /></p>
 </div>
 </div>
-<div id="step-2-check-assumptions-9" class="section level3">
-<h3>Step 2: Check Assumptions</h3>
+<div id="step-2-check-assumptions-9" class="section level3 hasAnchor">
+<h3>Step 2: Check Assumptions<a href="regression.html#step-2-check-assumptions-9" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The regression has a lot of assumptions.</p>
 <p>Some require no testing and are a function of understanding your data and research design:</p>
 <ol style="list-style-type: decimal">
@@ -475,23 +474,23 @@ Figure 5: Regression lines and residuals
 <li><p><strong>Independence</strong>: All the outcome variable values are independent (e.g., come from a separate entity).</p></li>
 </ol>
 <p>Other assumptions require testing. We’ll go through each of these one at a time.</p>
-<div id="no-outliers" class="section level4">
-<h4>No outliers</h4>
+<div id="no-outliers" class="section level4 hasAnchor">
+<h4>No outliers<a href="regression.html#no-outliers" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>There shouldn’t be any data in the dataset that is an outlier which would strongly influence your results.</p>
 <p>Under Data Summary, you should have a table with Cook’s distance. This is one way we can check for <em>multivariate outliers</em>. This examines whether any one <em>line</em> of data is an outlier, not just one data <em>point</em>. In general, Cook’s distances greater than 1 indicate a multivariate outlier. Our Cook’s distances are very small, so we do not have a problem with outliers.</p>
 <p><img src="images/13-regression/regression-cooks.png" /></p>
 <p>If you violate this assumption and have one or more multivariate outliers, then go to the Save tab in your regression setup and select the box for Cook’s distance. That will create a new variable in your dataset with the Cook’s distance. Create a filter and remove any data that has a Cook’s distance greater than 1.</p>
 </div>
-<div id="normality-of-the-residuals" class="section level4">
-<h4>Normality of the residuals</h4>
+<div id="normality-of-the-residuals" class="section level4 hasAnchor">
+<h4>Normality of the residuals<a href="regression.html#normality-of-the-residuals" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Up to this point, we’ve examined the normality of the outcome variables. With regression, our variables can be non-normal as long as the residuals (i.e., error) are normally distributed.</p>
 <p>The regression analysis in jamovi allows us to check multivariate normality with the Shapiro-Wilk’s test and the Q-Q plot of our residuals. We’ve seen this multiple times, so by now it should be well-ingrained that because Shapiro-Wilk’s is not statistically significant and our data points fall along the diagonal line that we satisfy the assumption of normally distributed residuals.</p>
 <p>Note that in large datasets, your Q-Q plot may look fine but your Shapiro-Wilk’s test may be statistically significant. In that case, you can likely assume your data is normally distributed. The Shapiro-Wilk’s test tends to say things are not normal with very small deviations from large datasets.</p>
 <p>If you violate the assumption of normality, you can try transformating one or more variables. For the purposes of our assignments, if you violate this assumption then just mention that it is violated and that you will proceed anyways.</p>
 <p><img src="images/13-regression/regression-normality.png" /></p>
 </div>
-<div id="linearity-homoscedasticity" class="section level4">
-<h4>Linearity &amp; homoscedasticity</h4>
+<div id="linearity-homoscedasticity" class="section level4 hasAnchor">
+<h4>Linearity &amp; homoscedasticity<a href="regression.html#linearity-homoscedasticity" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p><strong>Linearity</strong>: The assumption of linearity means relationship between each IV and DV is linear. Sometimes you may expect a curvilinear relationship between an IV and DV, in which case we square or cube the IV and use that variable as our predictor variable in the regression.</p>
 <p><strong>Homogeneity of variance (homoscedasticity)</strong>: The assumption of homoscedasticity means at each level of the predictor variables, the variance of the residual terms should be constant.</p>
 <p>To examine linearity and homoscedasticity we examine the Residuals Plots. You will get one plot of the overall model (Fitted) and one for each of your variables (DV and IV(s). We only focus on the Fitted residuals, shown below. In these plots, we want our data to look like a random scattering of dots even dispersed around zero on the y-axis.</p>
@@ -504,15 +503,15 @@ Figure 5: Regression lines and residuals
 <p>This image by <a href="https://clevertap.com/blog/a-brief-primer-on-linear-regression-part-ii/">CleverTap</a> shows what heteroscedasticity might look like.</p>
 <p><img src="images/08-correlation/homoscedasticity.png" /></p>
 </div>
-<div id="independence-of-residuals" class="section level4">
-<h4>Independence of residuals</h4>
+<div id="independence-of-residuals" class="section level4 hasAnchor">
+<h4>Independence of residuals<a href="regression.html#independence-of-residuals" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>This assumption means that for any two observations, the residual terms should be uncorrelated (or independent). Our errors must be normally distributed and uncorrelated.</p>
 <p>The Durbin-Watson test for autocorrelation tests for independence of residuals. We want the Durbin-Watson value to be as close to 2 as possible. Values less than 1 or greater than 3 are problematic and indicate we are violating this assumption. In our case, the DW test statistic is 2.12 and so very close to 2. Furthermore, they provide a p-value and the p-value is greater than .05 so the test statistic is not statistically significant, further supporting that we meet the assumption that our residuals are independent.</p>
 <p>If you violate this assumption, it’s likely a function of how your data was collected (e.g., a time effect or you have nested data). We won’t be covering what to do in these cases, but if you have nested data you may be interested in multilevel or hierarchical modeling (MLM/HLM).</p>
 <p><img src="images/13-regression/regression-durbinwatson.png" /></p>
 </div>
-<div id="no-multicollinearity" class="section level4">
-<h4>No multicollinearity</h4>
+<div id="no-multicollinearity" class="section level4 hasAnchor">
+<h4>No multicollinearity<a href="regression.html#no-multicollinearity" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>This assumption means there should be no perfect or near-perfect linear relationship between two or more of the predictors in your regression model. For example, you would not include “heigh_cm” and “heigh_in” in your model because they would be perfectly related to one another.</p>
 <p>Multicollinearity is a problem for three reasons:</p>
 <ol style="list-style-type: decimal">
@@ -527,8 +526,8 @@ Figure 5: Regression lines and residuals
 <p>Now that we met all the assumptions, we can interpret our results!</p>
 </div>
 </div>
-<div id="step-3-perform-the-test-10" class="section level3">
-<h3>Step 3: Perform the test</h3>
+<div id="step-3-perform-the-test-10" class="section level3 hasAnchor">
+<h3>Step 3: Perform the test<a href="regression.html#step-3-perform-the-test-10" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ol style="list-style-type: decimal">
 <li><p>From the ‘Analyses’ toolbar select ‘Regression’ - ‘Linear regression’. Note that we select this option regardless of whether we are performing a linear regression, multiple regression, or hierarchical regression.</p></li>
 <li><p>Move your dependent variable <code>dan.grump</code> into the Dependent Variable box and all your independent variables into either Covariates (if they are continuous variables) or Factors (if they are categorical variables). In this case, all our variables are continuous so move both <code>dan.sleep</code> and <code>baby.sleep</code> to the Covariates box.</p></li>
@@ -541,8 +540,8 @@ Figure 5: Regression lines and residuals
 </ol>
 <p>I’m not going to show the set-up figure here because there’s just too much to show.</p>
 </div>
-<div id="step-4-interpret-results-8" class="section level3">
-<h3>Step 4: Interpret results</h3>
+<div id="step-4-interpret-results-8" class="section level3 hasAnchor">
+<h3>Step 4: Interpret results<a href="regression.html#step-4-interpret-results-8" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><img src="images/13-regression/regression-results.png" /></p>
 <p>The first table shows us our overall model results.</p>
 <p><strong>R, R-squared, and adjusted R-squared</strong>: We get our R and R-squared values (R-squared literally being R squared). Remember back to correlation: R-squared is the <em>proportion</em> of variance in the dependent variable that can be accounted for by the predictor(s). In this case, Dan and the baby’s sleep quality predict 82% of the variance in Dan’s grumpiness.</p>
@@ -554,8 +553,8 @@ Figure 5: Regression lines and residuals
 <p><span class="math inline">\(y = 125.97 - 8.95(dan.sleep) + .01(baby.sleep)\)</span></p>
 <p>If Dan’s sleep was 5 and baby’s sleep was 8, then we’d expect Dan’s grumpiness to be:</p>
 <p><span class="math inline">\(y = 125.97 - 8.95(5) + .01(8) = 125.97 - 44.75 + .08 = 81.3\)</span></p>
-<div id="write-up-the-results-in-apa-style-10" class="section level4">
-<h4>Write up the results in APA style</h4>
+<div id="write-up-the-results-in-apa-style-10" class="section level4 hasAnchor">
+<h4>Write up the results in APA style<a href="regression.html#write-up-the-results-in-apa-style-10" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>We can write up our results in APA something like this:</p>
 <blockquote>
 <p>Dan collected data on how many hours of sleep Dan and Dan’s baby got, as well as Dan’s grumpiness, for 100 days. Dan tested how the hours of sleep both Dan and the baby got affected Dan’s grumpiness using a multiple regression. The combination of predictors were significantly related to Dan’s grumpiness, <em>F</em> (2, 97) = 215.24, <em>p</em> &lt; .001, adjusted <span class="math inline">\(R^2\)</span> = .81. The number of hours of sleep Dan got significantly predicted Dan’s grumpiness, <span class="math inline">\(\beta\)</span> = -.90, <em>t</em> (97)= -16.17, <em>SE</em> = .55, <em>p</em> &lt; .001. However, the number of hours of sleep the baby got did not significantly relate to Dan’s grumpiness, <span class="math inline">\(\beta\)</span> = 0.00, <em>t</em> (97)= .04, <em>SE</em> = .27, <em>p</em> = .969.</p>
@@ -563,8 +562,8 @@ Figure 5: Regression lines and residuals
 <p>Note that in many of these write-ups I did not include anything about assumption checking. I normally write up that information as part of my analytic plan in my methods section (e.g., “I checked for multivariate outliers using Cook’s distance.”). Included in this section, I explain what I will do if I do not meet various assumptions. Then, if I don’t meet the assumption in the results section I explain that I did not meet the assumption, explain the results if necessary, explain what I did, and then give the results. In this case, we met all the assumptions (that presumably I described in my methods section) and therefore went straight to the results.</p>
 </div>
 </div>
-<div id="categorical-predictors" class="section level3">
-<h3>Categorical Predictors</h3>
+<div id="categorical-predictors" class="section level3 hasAnchor">
+<h3>Categorical Predictors<a href="regression.html#categorical-predictors" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Dummy coded variables (with values 0 or 1) are pretty easy to interpret in regression. If the Beta is positive, then the value of 1 would have a higher mean on the DV than the value of 0. If the Beta is negative, then the value of 0 would have a higher mean on the DV than the value of 1.</p>
 <p>However, if we have a nominal variable with more than two categories, then we need to dummy code the data to analyze in a regression. Fortunately, jamovi can do this automatically for us!</p>
 <p>The dataset we’re using doesn’t currently have a categorical variable, so I’m going to manually create one for demonstration purposes. I’m going to transform the <code>day</code> variable, which is the day of the data collection from 1 to 100, into a new variable that indicates whether the day is 1-32, 33-65, or 66-100, which is roughly 3 equal groups. You can see the transformation here:</p>
@@ -582,8 +581,8 @@ Figure 5: Regression lines and residuals
 <p>In this case, the Estimated Marginal Means can be very helpful for us to interpret the model coefficients. We can get the estimated marginal means of each group on the DV at the average levels of the other two variables.</p>
 <p><img src="images/13-regression/regression-categorical-EMM.png" /></p>
 </div>
-<div id="hierarchical-regression" class="section level3">
-<h3>Hierarchical regression</h3>
+<div id="hierarchical-regression" class="section level3 hasAnchor">
+<h3>Hierarchical regression<a href="regression.html#hierarchical-regression" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Hierarchical regression is exactly the same as multiple regression but now we have multiple models or blocks. You can specify hierarchical regression using the Model Builder drop-down menu in jamovi. Let’s try an example where we have <code>baby.sleep</code> as Block 1 and <code>dan.sleep</code> as Block 2. In addition, using the Model Fit drop-down menu you should check <code>AIC</code> and <code>BIC</code> in addition to the previously selected options. Your setup should look something like this:</p>
 <p><img src="images/13-regression/hierarchical-setup.png" /></p>
 <p>Our model results now change. We now have two lines for the Model Fit Measures and a Model Comparisons table. In addition, under Model Specific Results, we have a drop-down menu to specify which model we want to examine.</p>
@@ -596,8 +595,8 @@ Figure 5: Regression lines and residuals
 <p>A second model was tested that added Dan’s sleep. This model–comprised of both baby’s sleep and Dan’s sleep–significantly predicted Dan’s grumpiness, <em>F</em> (2, 97) = 215.24, <em>p</em> &lt; .001, <em>adjusted</em> <span class="math inline">\(R^2\)</span> = .81. There was a significant improvement between model 1 and model 2, <span class="math inline">\(F_{change}\)</span> (1, 97) = 261.52, <em>p</em> &lt; .001, <span class="math inline">\(\Delta R^2\)</span> = .50. In the second model, as Dan’s sleep increased, Dan’s grumpiness decreased, <em>t</em> (97) = -16.17, <em>SE</em> = .55, <em>p</em> &lt; .001, <span class="math inline">\(\beta\)</span> = -.90. However, the baby’s sleep did not significantly relate to Dan’s grumpiness when controlling for Dan’s sleep, <em>t</em> (97) = .04, <em>SE</em> = .27, <em>p</em> = .969, <span class="math inline">\(\beta\)</span> = .00.</p>
 </blockquote>
 </div>
-<div id="additional-practice-8" class="section level3">
-<h3>Additional practice</h3>
+<div id="additional-practice-8" class="section level3 hasAnchor">
+<h3>Additional practice<a href="regression.html#additional-practice-8" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Open the <code>Sample_Dataset_2014.xlsx</code> file that we will be using for all Your Turn exercises. You can find the dataset here: <a href="https://github.com/danawanzer/stats-with-jamovi/blob/master/data/Sample_Dataset_2014.xlsx">Sample_Dataset_2014.xlsx Download</a></p>
 <p>To get the most out of these exercises, try to first find out the answer on your own and then use the drop-down menus to check your answer.</p>
 <ol style="list-style-type: decimal">
@@ -716,7 +715,6 @@ window.onload = function() {
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -757,6 +755,10 @@ gitbook.start({
 "text": null
 },
 "download": {},
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "subsection",
 "scroll_highlight": true
@@ -771,7 +773,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

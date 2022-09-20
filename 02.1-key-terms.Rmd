@@ -2,7 +2,6 @@
 
 ```{r intro-setup, echo = FALSE, message=FALSE}
 library(tidyverse)
-library(webex)
 ```
 
 This chapter will cover some basic key terms you should recall from PSYC 190 if you are in PSYC 290 or from earlier in the semester if you are in PSYC 790. These terms will come up repeatedly throughout the semester.

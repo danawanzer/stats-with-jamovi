@@ -14,7 +14,7 @@ description: "This is the website for PSYC 290 and PSYC 790 at the University of
 # automatically create a bib database for R packages
 # add any packages you want to cite here
 knitr::write_bib(c(
-  .packages(), 'bookdown', 'tidyverse', 'webex'), 'packages.bib')
+  .packages(), 'bookdown', 'tidyverse'), 'packages.bib')
 ```
 
 # Welcome {.unnumbered}

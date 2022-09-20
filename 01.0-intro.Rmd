@@ -4,7 +4,6 @@
 
 ```{r intro-setup, echo = FALSE, message=FALSE}
 library(tidyverse)
-library(webex)
 ```
 
 This chapter will introduce you to the course, the instructor (Dr. Dana Wanzer), and the textbook.

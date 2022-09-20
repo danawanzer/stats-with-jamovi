@@ -2,7 +2,6 @@
 
 ```{r ind-t_setup, echo = FALSE, message=FALSE}
 library(tidyverse)
-library(webex)
 library(viridis)
 options(knitr.graphics.auto_pdf = TRUE)
 ```

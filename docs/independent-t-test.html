@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>10. Independent t-test | Statistics with jamovi</title>
   <meta name="description" content="This is the website for PSYC 290 and PSYC 790 at the University of Wisconsin-Stout, taught by Dana Wanzer." />
-  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
 
   <meta property="og:title" content="10. Independent t-test | Statistics with jamovi" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="This is the website for PSYC 290 and PSYC 790 at the University of Wisconsin-Stout, taught by Dana Wanzer." />
   
@@ -32,8 +31,8 @@
   
 <link rel="prev" href="one-sample-t-test.html"/>
 <link rel="next" href="dependent-t-test.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -49,9 +48,9 @@
 
 
 
-
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 <link href="libs/vembedr-0.1.5/css/vembedr.css" rel="stylesheet" />
 
 
@@ -138,244 +137,244 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="./">Stats with jamovi</a></li>
 
 <li class="divider"></li>
-<li><a href="index.html#welcome" id="toc-welcome">Welcome</a></li>
-<li><a href="#part-overview" id="toc-part-overview">(PART) Overview</a></li>
-<li><a href="introduction.html#introduction" id="toc-introduction">1. Introduction</a></li>
-<li><a href="statistics-foundations.html#statistics-foundations" id="toc-statistics-foundations">2. Statistics foundations</a>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a></li>
+<li class="part"><span><b>I Overview</b></span></li>
+<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i>1. Introduction</a></li>
+<li class="chapter" data-level="" data-path="statistics-foundations.html"><a href="statistics-foundations.html"><i class="fa fa-check"></i>2. Statistics foundations</a>
 <ul>
-<li><a href="descriptive-vs-inferential-statistics.html#descriptive-vs-inferential-statistics" id="toc-descriptive-vs-inferential-statistics">Descriptive vs inferential statistics</a>
+<li class="chapter" data-level="" data-path="descriptive-vs-inferential-statistics.html"><a href="descriptive-vs-inferential-statistics.html"><i class="fa fa-check"></i>Descriptive vs inferential statistics</a>
 <ul>
-<li><a href="descriptive-vs-inferential-statistics.html#an-example" id="toc-an-example">An example</a></li>
+<li class="chapter" data-level="" data-path="descriptive-vs-inferential-statistics.html"><a href="descriptive-vs-inferential-statistics.html#an-example"><i class="fa fa-check"></i>An example</a></li>
 </ul></li>
-<li><a href="central-tendency-and-dispersion.html#central-tendency-and-dispersion" id="toc-central-tendency-and-dispersion">Central tendency and dispersion</a></li>
-<li><a href="levels-of-measurement.html#levels-of-measurement" id="toc-levels-of-measurement">Levels of measurement</a>
+<li class="chapter" data-level="" data-path="central-tendency-and-dispersion.html"><a href="central-tendency-and-dispersion.html"><i class="fa fa-check"></i>Central tendency and dispersion</a></li>
+<li class="chapter" data-level="" data-path="levels-of-measurement.html"><a href="levels-of-measurement.html"><i class="fa fa-check"></i>Levels of measurement</a>
 <ul>
-<li><a href="levels-of-measurement.html#examples-of-levels-of-measurement" id="toc-examples-of-levels-of-measurement">Examples of levels of measurement</a></li>
+<li class="chapter" data-level="" data-path="levels-of-measurement.html"><a href="levels-of-measurement.html#examples-of-levels-of-measurement"><i class="fa fa-check"></i>Examples of levels of measurement</a></li>
 </ul></li>
-<li><a href="design-methods-key-terms.html#design-methods-key-terms" id="toc-design-methods-key-terms">Design &amp; Methods Key Terms</a>
+<li class="chapter" data-level="" data-path="design-methods-key-terms.html"><a href="design-methods-key-terms.html"><i class="fa fa-check"></i>Design &amp; Methods Key Terms</a>
 <ul>
-<li><a href="design-methods-key-terms.html#study-design-terms" id="toc-study-design-terms">Study design terms</a></li>
-<li><a href="design-methods-key-terms.html#variables" id="toc-variables">Variables</a></li>
-<li><a href="design-methods-key-terms.html#reliability-and-validity" id="toc-reliability-and-validity">Reliability and validity</a></li>
-<li><a href="design-methods-key-terms.html#other-terms" id="toc-other-terms">Other terms</a></li>
-</ul></li>
-</ul></li>
-<li><a href="#part-intro-to-jamovi" id="toc-part-intro-to-jamovi">(PART) Intro to jamovi</a></li>
-<li><a href="overview-of-jamovi.html#overview-of-jamovi" id="toc-overview-of-jamovi">3. Overview of jamovi</a>
-<ul>
-<li><a href="describing-data.html#describing-data" id="toc-describing-data">Describing data</a>
-<ul>
-<li><a href="describing-data.html#data-variables" id="toc-data-variables">Data variables</a></li>
-<li><a href="describing-data.html#describing-your-data" id="toc-describing-your-data">Describing your data</a></li>
-<li><a href="describing-data.html#writing-up-descriptive-statistics" id="toc-writing-up-descriptive-statistics">Writing up descriptive statistics</a></li>
-</ul></li>
-<li><a href="visualizing-data.html#visualizing-data" id="toc-visualizing-data">Visualizing data</a>
-<ul>
-<li><a href="visualizing-data.html#expanding-your-data-visualization" id="toc-expanding-your-data-visualization">Expanding your data visualization</a></li>
-</ul></li>
-<li><a href="cleaning-data.html#cleaning-data" id="toc-cleaning-data">Cleaning data</a>
-<ul>
-<li><a href="cleaning-data.html#data-setup" id="toc-data-setup">Data setup</a></li>
-<li><a href="cleaning-data.html#compute" id="toc-compute">Compute</a></li>
-<li><a href="cleaning-data.html#transform" id="toc-transform">Transform</a></li>
-<li><a href="cleaning-data.html#filters" id="toc-filters">Filters</a></li>
+<li class="chapter" data-level="" data-path="design-methods-key-terms.html"><a href="design-methods-key-terms.html#study-design-terms"><i class="fa fa-check"></i>Study design terms</a></li>
+<li class="chapter" data-level="" data-path="design-methods-key-terms.html"><a href="design-methods-key-terms.html#variables"><i class="fa fa-check"></i>Variables</a></li>
+<li class="chapter" data-level="" data-path="design-methods-key-terms.html"><a href="design-methods-key-terms.html#reliability-and-validity"><i class="fa fa-check"></i>Reliability and validity</a></li>
+<li class="chapter" data-level="" data-path="design-methods-key-terms.html"><a href="design-methods-key-terms.html#other-terms"><i class="fa fa-check"></i>Other terms</a></li>
 </ul></li>
 </ul></li>
-<li><a href="#part-nhst" id="toc-part-nhst">(PART) NHST</a></li>
-<li><a href="hypothesis-testing.html#hypothesis-testing" id="toc-hypothesis-testing">4. Hypothesis testing</a>
+<li class="part"><span><b>II Intro to jamovi</b></span></li>
+<li class="chapter" data-level="" data-path="overview-of-jamovi.html"><a href="overview-of-jamovi.html"><i class="fa fa-check"></i>3. Overview of jamovi</a>
 <ul>
-<li><a href="example-of-hypothesis-testing.html#example-of-hypothesis-testing" id="toc-example-of-hypothesis-testing">Example of hypothesis testing</a>
+<li class="chapter" data-level="" data-path="describing-data.html"><a href="describing-data.html"><i class="fa fa-check"></i>Describing data</a>
 <ul>
-<li><a href="example-of-hypothesis-testing.html#look-at-the-data" id="toc-look-at-the-data">1. Look at the data</a></li>
-<li><a href="example-of-hypothesis-testing.html#check-assumptions" id="toc-check-assumptions">2. Check assumptions</a></li>
-<li><a href="example-of-hypothesis-testing.html#perform-the-test" id="toc-perform-the-test">3. Perform the test</a></li>
-<li><a href="example-of-hypothesis-testing.html#interpret-the-results" id="toc-interpret-the-results">4. Interpret the results</a></li>
-<li><a href="example-of-hypothesis-testing.html#final-note" id="toc-final-note">Final note</a></li>
+<li class="chapter" data-level="" data-path="describing-data.html"><a href="describing-data.html#data-variables"><i class="fa fa-check"></i>Data variables</a></li>
+<li class="chapter" data-level="" data-path="describing-data.html"><a href="describing-data.html#describing-your-data"><i class="fa fa-check"></i>Describing your data</a></li>
+<li class="chapter" data-level="" data-path="describing-data.html"><a href="describing-data.html#writing-up-descriptive-statistics"><i class="fa fa-check"></i>Writing up descriptive statistics</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="visualizing-data.html"><a href="visualizing-data.html"><i class="fa fa-check"></i>Visualizing data</a>
+<ul>
+<li class="chapter" data-level="" data-path="visualizing-data.html"><a href="visualizing-data.html#expanding-your-data-visualization"><i class="fa fa-check"></i>Expanding your data visualization</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="cleaning-data.html"><a href="cleaning-data.html"><i class="fa fa-check"></i>Cleaning data</a>
+<ul>
+<li class="chapter" data-level="" data-path="cleaning-data.html"><a href="cleaning-data.html#data-setup"><i class="fa fa-check"></i>Data setup</a></li>
+<li class="chapter" data-level="" data-path="cleaning-data.html"><a href="cleaning-data.html#compute"><i class="fa fa-check"></i>Compute</a></li>
+<li class="chapter" data-level="" data-path="cleaning-data.html"><a href="cleaning-data.html#transform"><i class="fa fa-check"></i>Transform</a></li>
+<li class="chapter" data-level="" data-path="cleaning-data.html"><a href="cleaning-data.html#filters"><i class="fa fa-check"></i>Filters</a></li>
 </ul></li>
 </ul></li>
-<li><a href="bean.html#bean" id="toc-bean">5. BEAN</a>
+<li class="part"><span><b>III NHST</b></span></li>
+<li class="chapter" data-level="" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html"><i class="fa fa-check"></i>4. Hypothesis testing</a>
 <ul>
-<li><a href="effect-sizes.html#effect-sizes" id="toc-effect-sizes">Effect sizes</a>
+<li class="chapter" data-level="" data-path="example-of-hypothesis-testing.html"><a href="example-of-hypothesis-testing.html"><i class="fa fa-check"></i>Example of hypothesis testing</a>
 <ul>
-<li><a href="effect-sizes.html#small-medium-and-large-effect-sizes" id="toc-small-medium-and-large-effect-sizes">Small, medium, and large effect sizes</a></li>
-</ul></li>
-<li><a href="alpha-p-values.html#alpha-p-values" id="toc-alpha-p-values">Alpha &amp; p-values</a>
-<ul>
-<li><a href="alpha-p-values.html#alpha" id="toc-alpha">Alpha</a></li>
-<li><a href="alpha-p-values.html#are-p-values-bad" id="toc-are-p-values-bad">Are p-values bad?</a></li>
-<li><a href="alpha-p-values.html#video" id="toc-video">Video</a></li>
-</ul></li>
-<li><a href="power.html#power" id="toc-power">Power</a>
-<ul>
-<li><a href="power.html#alpha-power-and-error-rates" id="toc-alpha-power-and-error-rates">Alpha, power, and error rates</a></li>
-<li><a href="power.html#playing-with-alpha-power" id="toc-playing-with-alpha-power">Playing with alpha &amp; power</a></li>
-<li><a href="power.html#video-1" id="toc-video-1">Video</a></li>
-</ul></li>
-<li><a href="sample-size-power-analysis.html#sample-size-power-analysis" id="toc-sample-size-power-analysis">Sample size &amp; power analysis</a>
-<ul>
-<li><a href="sample-size-power-analysis.html#bean-power-analysis" id="toc-bean-power-analysis">BEAN: Power analysis</a></li>
-<li><a href="sample-size-power-analysis.html#power-analysis-example-1" id="toc-power-analysis-example-1">Power analysis example #1</a></li>
-<li><a href="sample-size-power-analysis.html#play-with-jpower" id="toc-play-with-jpower">Play with jpower</a></li>
+<li class="chapter" data-level="" data-path="example-of-hypothesis-testing.html"><a href="example-of-hypothesis-testing.html#look-at-the-data"><i class="fa fa-check"></i>1. Look at the data</a></li>
+<li class="chapter" data-level="" data-path="example-of-hypothesis-testing.html"><a href="example-of-hypothesis-testing.html#check-assumptions"><i class="fa fa-check"></i>2. Check assumptions</a></li>
+<li class="chapter" data-level="" data-path="example-of-hypothesis-testing.html"><a href="example-of-hypothesis-testing.html#perform-the-test"><i class="fa fa-check"></i>3. Perform the test</a></li>
+<li class="chapter" data-level="" data-path="example-of-hypothesis-testing.html"><a href="example-of-hypothesis-testing.html#interpret-the-results"><i class="fa fa-check"></i>4. Interpret the results</a></li>
+<li class="chapter" data-level="" data-path="example-of-hypothesis-testing.html"><a href="example-of-hypothesis-testing.html#final-note"><i class="fa fa-check"></i>Final note</a></li>
 </ul></li>
 </ul></li>
-<li><a href="inferential-statistics.html#inferential-statistics" id="toc-inferential-statistics">6. Inferential statistics</a>
+<li class="chapter" data-level="" data-path="bean.html"><a href="bean.html"><i class="fa fa-check"></i>5. BEAN</a>
 <ul>
-<li><a href="choosing-the-correct-test.html#choosing-the-correct-test" id="toc-choosing-the-correct-test">Choosing the correct test</a>
+<li class="chapter" data-level="" data-path="effect-sizes.html"><a href="effect-sizes.html"><i class="fa fa-check"></i>Effect sizes</a>
 <ul>
-<li><a href="choosing-the-correct-test.html#forward-mapping-choose-the-correct-test" id="toc-forward-mapping-choose-the-correct-test">Forward mapping: Choose the correct test</a></li>
-<li><a href="choosing-the-correct-test.html#backwards-map-determine-the-data-you-need" id="toc-backwards-map-determine-the-data-you-need">Backwards map: Determine the data you need</a></li>
+<li class="chapter" data-level="" data-path="effect-sizes.html"><a href="effect-sizes.html#small-medium-and-large-effect-sizes"><i class="fa fa-check"></i>Small, medium, and large effect sizes</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="alpha-p-values.html"><a href="alpha-p-values.html"><i class="fa fa-check"></i>Alpha &amp; p-values</a>
+<ul>
+<li class="chapter" data-level="" data-path="alpha-p-values.html"><a href="alpha-p-values.html#alpha"><i class="fa fa-check"></i>Alpha</a></li>
+<li class="chapter" data-level="" data-path="alpha-p-values.html"><a href="alpha-p-values.html#are-p-values-bad"><i class="fa fa-check"></i>Are p-values bad?</a></li>
+<li class="chapter" data-level="" data-path="alpha-p-values.html"><a href="alpha-p-values.html#video"><i class="fa fa-check"></i>Video</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="power.html"><a href="power.html"><i class="fa fa-check"></i>Power</a>
+<ul>
+<li class="chapter" data-level="" data-path="power.html"><a href="power.html#alpha-power-and-error-rates"><i class="fa fa-check"></i>Alpha, power, and error rates</a></li>
+<li class="chapter" data-level="" data-path="power.html"><a href="power.html#playing-with-alpha-power"><i class="fa fa-check"></i>Playing with alpha &amp; power</a></li>
+<li class="chapter" data-level="" data-path="power.html"><a href="power.html#video-1"><i class="fa fa-check"></i>Video</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="sample-size-power-analysis.html"><a href="sample-size-power-analysis.html"><i class="fa fa-check"></i>Sample size &amp; power analysis</a>
+<ul>
+<li class="chapter" data-level="" data-path="sample-size-power-analysis.html"><a href="sample-size-power-analysis.html#bean-power-analysis"><i class="fa fa-check"></i>BEAN: Power analysis</a></li>
+<li class="chapter" data-level="" data-path="sample-size-power-analysis.html"><a href="sample-size-power-analysis.html#power-analysis-example-1"><i class="fa fa-check"></i>Power analysis example #1</a></li>
+<li class="chapter" data-level="" data-path="sample-size-power-analysis.html"><a href="sample-size-power-analysis.html#play-with-jpower"><i class="fa fa-check"></i>Play with jpower</a></li>
 </ul></li>
 </ul></li>
-<li><a href="parametric-assumptions.html#parametric-assumptions" id="toc-parametric-assumptions">7. Parametric assumptions</a>
+<li class="chapter" data-level="" data-path="inferential-statistics.html"><a href="inferential-statistics.html"><i class="fa fa-check"></i>6. Inferential statistics</a>
 <ul>
-<li><a href="checking-assumptions.html#checking-assumptions" id="toc-checking-assumptions">Checking assumptions</a>
+<li class="chapter" data-level="" data-path="choosing-the-correct-test.html"><a href="choosing-the-correct-test.html"><i class="fa fa-check"></i>Choosing the correct test</a>
 <ul>
-<li><a href="checking-assumptions.html#normal-distribution" id="toc-normal-distribution">Normal distribution</a></li>
-<li><a href="checking-assumptions.html#intervalratio-data" id="toc-intervalratio-data">Interval/ratio data</a></li>
-<li><a href="checking-assumptions.html#homogeneity-of-variance" id="toc-homogeneity-of-variance">Homogeneity of variance</a></li>
-<li><a href="checking-assumptions.html#independent-scores" id="toc-independent-scores">Independent scores</a></li>
-</ul></li>
-<li><a href="violated-assumptions.html#violated-assumptions" id="toc-violated-assumptions">Violated assumptions</a>
-<ul>
-<li><a href="violated-assumptions.html#intervalratio-data-1" id="toc-intervalratio-data-1">Interval/ratio data</a></li>
-<li><a href="violated-assumptions.html#independent-data" id="toc-independent-data">Independent data</a></li>
-<li><a href="violated-assumptions.html#normality-or-homogeneity-of-variance" id="toc-normality-or-homogeneity-of-variance">Normality or homogeneity of variance</a></li>
+<li class="chapter" data-level="" data-path="choosing-the-correct-test.html"><a href="choosing-the-correct-test.html#forward-mapping-choose-the-correct-test"><i class="fa fa-check"></i>Forward mapping: Choose the correct test</a></li>
+<li class="chapter" data-level="" data-path="choosing-the-correct-test.html"><a href="choosing-the-correct-test.html#backwards-map-determine-the-data-you-need"><i class="fa fa-check"></i>Backwards map: Determine the data you need</a></li>
 </ul></li>
 </ul></li>
-<li><a href="writing-up-results.html#writing-up-results" id="toc-writing-up-results">8. Writing up results</a></li>
-<li><a href="#part-individual-tests" id="toc-part-individual-tests">(PART) Individual Tests</a></li>
-<li><a href="t-tests.html#t-tests" id="toc-t-tests">t-tests</a>
+<li class="chapter" data-level="" data-path="parametric-assumptions.html"><a href="parametric-assumptions.html"><i class="fa fa-check"></i>7. Parametric assumptions</a>
 <ul>
-<li><a href="one-sample-t-test.html#one-sample-t-test" id="toc-one-sample-t-test">9. One sample t-test</a>
+<li class="chapter" data-level="" data-path="checking-assumptions.html"><a href="checking-assumptions.html"><i class="fa fa-check"></i>Checking assumptions</a>
 <ul>
-<li><a href="one-sample-t-test.html#step-1-look-at-the-data" id="toc-step-1-look-at-the-data">Step 1: Look at the data</a></li>
-<li><a href="one-sample-t-test.html#step-2-check-assumptions" id="toc-step-2-check-assumptions">Step 2: Check assumptions</a></li>
-<li><a href="one-sample-t-test.html#step-3-perform-the-test" id="toc-step-3-perform-the-test">Step 3: Perform the test</a></li>
-<li><a href="one-sample-t-test.html#step-4-interpret-results" id="toc-step-4-interpret-results">Step 4: Interpret results</a></li>
-<li><a href="one-sample-t-test.html#wilcoxon-w-test" id="toc-wilcoxon-w-test">Wilcoxon W test</a></li>
-<li><a href="one-sample-t-test.html#your-turn" id="toc-your-turn">Your turn!</a></li>
+<li class="chapter" data-level="" data-path="checking-assumptions.html"><a href="checking-assumptions.html#normal-distribution"><i class="fa fa-check"></i>Normal distribution</a></li>
+<li class="chapter" data-level="" data-path="checking-assumptions.html"><a href="checking-assumptions.html#intervalratio-data"><i class="fa fa-check"></i>Interval/ratio data</a></li>
+<li class="chapter" data-level="" data-path="checking-assumptions.html"><a href="checking-assumptions.html#homogeneity-of-variance"><i class="fa fa-check"></i>Homogeneity of variance</a></li>
+<li class="chapter" data-level="" data-path="checking-assumptions.html"><a href="checking-assumptions.html#independent-scores"><i class="fa fa-check"></i>Independent scores</a></li>
 </ul></li>
-<li><a href="independent-t-test.html#independent-t-test" id="toc-independent-t-test">10. Independent t-test</a>
+<li class="chapter" data-level="" data-path="violated-assumptions.html"><a href="violated-assumptions.html"><i class="fa fa-check"></i>Violated assumptions</a>
 <ul>
-<li><a href="independent-t-test.html#step-1-look-at-the-data-1" id="toc-step-1-look-at-the-data-1">Step 1: Look at the data</a></li>
-<li><a href="independent-t-test.html#step-2-check-assumptions-1" id="toc-step-2-check-assumptions-1">Step 2: Check assumptions</a></li>
-<li><a href="independent-t-test.html#step-3-perform-the-test-1" id="toc-step-3-perform-the-test-1">Step 3: Perform the test</a></li>
-<li><a href="independent-t-test.html#step-4-interpret-results-1" id="toc-step-4-interpret-results-1">Step 4: Interpret results</a></li>
-<li><a href="independent-t-test.html#welchs-t-test" id="toc-welchs-t-test">Welch’s t-test</a></li>
-<li><a href="independent-t-test.html#mann-whitney-u-test" id="toc-mann-whitney-u-test">Mann-Whitney U test</a></li>
-<li><a href="independent-t-test.html#additional-practice" id="toc-additional-practice">Additional practice</a></li>
-</ul></li>
-<li><a href="dependent-t-test.html#dependent-t-test" id="toc-dependent-t-test">11. Dependent t-test</a>
-<ul>
-<li><a href="dependent-t-test.html#step-1-look-at-the-data-2" id="toc-step-1-look-at-the-data-2">Step 1: Look at the data</a></li>
-<li><a href="dependent-t-test.html#step-2-check-assumptions-2" id="toc-step-2-check-assumptions-2">Step 2: Check assumptions</a></li>
-<li><a href="dependent-t-test.html#step-3-perform-the-test-2" id="toc-step-3-perform-the-test-2">Step 3: Perform the test</a></li>
-<li><a href="dependent-t-test.html#step-4-interpret-results-2" id="toc-step-4-interpret-results-2">Step 4: Interpret results</a></li>
-<li><a href="dependent-t-test.html#wilcoxon-rank" id="toc-wilcoxon-rank">Wilcoxon rank</a></li>
-<li><a href="dependent-t-test.html#additional-practice-1" id="toc-additional-practice-1">Additional practice</a></li>
+<li class="chapter" data-level="" data-path="violated-assumptions.html"><a href="violated-assumptions.html#intervalratio-data-1"><i class="fa fa-check"></i>Interval/ratio data</a></li>
+<li class="chapter" data-level="" data-path="violated-assumptions.html"><a href="violated-assumptions.html#independent-data"><i class="fa fa-check"></i>Independent data</a></li>
+<li class="chapter" data-level="" data-path="violated-assumptions.html"><a href="violated-assumptions.html#normality-or-homogeneity-of-variance"><i class="fa fa-check"></i>Normality or homogeneity of variance</a></li>
 </ul></li>
 </ul></li>
-<li><a href="chi-square.html#chi-square" id="toc-chi-square">Chi-Square</a>
+<li class="chapter" data-level="" data-path="writing-up-results.html"><a href="writing-up-results.html"><i class="fa fa-check"></i>8. Writing up results</a></li>
+<li class="part"><span><b>IV Individual Tests</b></span></li>
+<li class="chapter" data-level="" data-path="t-tests.html"><a href="t-tests.html"><i class="fa fa-check"></i>t-tests</a>
 <ul>
-<li><a href="chi-square-goodness-of-fit.html#chi-square-goodness-of-fit" id="toc-chi-square-goodness-of-fit">12. Chi-Square Goodness-of-Fit</a>
+<li class="chapter" data-level="" data-path="one-sample-t-test.html"><a href="one-sample-t-test.html"><i class="fa fa-check"></i>9. One sample t-test</a>
 <ul>
-<li><a href="chi-square-goodness-of-fit.html#step-1-look-at-the-data-3" id="toc-step-1-look-at-the-data-3">Step 1: Look at the data</a></li>
-<li><a href="chi-square-goodness-of-fit.html#step-2-check-assumptions-3" id="toc-step-2-check-assumptions-3">Step 2: Check assumptions</a></li>
-<li><a href="chi-square-goodness-of-fit.html#step-3-perform-the-test-3" id="toc-step-3-perform-the-test-3">Step 3: Perform the test</a></li>
-<li><a href="chi-square-goodness-of-fit.html#step-4-interpret-results-3" id="toc-step-4-interpret-results-3">Step 4: Interpret results</a></li>
-<li><a href="chi-square-goodness-of-fit.html#additional-practice-2" id="toc-additional-practice-2">Additional practice</a></li>
+<li class="chapter" data-level="" data-path="one-sample-t-test.html"><a href="one-sample-t-test.html#step-1-look-at-the-data"><i class="fa fa-check"></i>Step 1: Look at the data</a></li>
+<li class="chapter" data-level="" data-path="one-sample-t-test.html"><a href="one-sample-t-test.html#step-2-check-assumptions"><i class="fa fa-check"></i>Step 2: Check assumptions</a></li>
+<li class="chapter" data-level="" data-path="one-sample-t-test.html"><a href="one-sample-t-test.html#step-3-perform-the-test"><i class="fa fa-check"></i>Step 3: Perform the test</a></li>
+<li class="chapter" data-level="" data-path="one-sample-t-test.html"><a href="one-sample-t-test.html#step-4-interpret-results"><i class="fa fa-check"></i>Step 4: Interpret results</a></li>
+<li class="chapter" data-level="" data-path="one-sample-t-test.html"><a href="one-sample-t-test.html#wilcoxon-w-test"><i class="fa fa-check"></i>Wilcoxon W test</a></li>
+<li class="chapter" data-level="" data-path="one-sample-t-test.html"><a href="one-sample-t-test.html#your-turn"><i class="fa fa-check"></i>Your turn!</a></li>
 </ul></li>
-<li><a href="chi-square-test-of-independence.html#chi-square-test-of-independence" id="toc-chi-square-test-of-independence">13. Chi-Square Test of Independence</a>
+<li class="chapter" data-level="" data-path="independent-t-test.html"><a href="independent-t-test.html"><i class="fa fa-check"></i>10. Independent t-test</a>
 <ul>
-<li><a href="chi-square-test-of-independence.html#step-1-look-at-the-data-4" id="toc-step-1-look-at-the-data-4">Step 1: Look at the data</a></li>
-<li><a href="chi-square-test-of-independence.html#step-2-check-assumptions-4" id="toc-step-2-check-assumptions-4">Step 2: Check assumptions</a></li>
-<li><a href="chi-square-test-of-independence.html#step-3-perform-the-test-4" id="toc-step-3-perform-the-test-4">Step 3: Perform the test</a></li>
-<li><a href="chi-square-test-of-independence.html#step-4-interpret-results-4" id="toc-step-4-interpret-results-4">Step 4: Interpret results</a></li>
-<li><a href="chi-square-test-of-independence.html#fishers-exact-test" id="toc-fishers-exact-test">Fisher’s exact test</a></li>
-<li><a href="chi-square-test-of-independence.html#additional-practice-3" id="toc-additional-practice-3">Additional practice</a></li>
+<li class="chapter" data-level="" data-path="independent-t-test.html"><a href="independent-t-test.html#step-1-look-at-the-data-1"><i class="fa fa-check"></i>Step 1: Look at the data</a></li>
+<li class="chapter" data-level="" data-path="independent-t-test.html"><a href="independent-t-test.html#step-2-check-assumptions-1"><i class="fa fa-check"></i>Step 2: Check assumptions</a></li>
+<li class="chapter" data-level="" data-path="independent-t-test.html"><a href="independent-t-test.html#step-3-perform-the-test-1"><i class="fa fa-check"></i>Step 3: Perform the test</a></li>
+<li class="chapter" data-level="" data-path="independent-t-test.html"><a href="independent-t-test.html#step-4-interpret-results-1"><i class="fa fa-check"></i>Step 4: Interpret results</a></li>
+<li class="chapter" data-level="" data-path="independent-t-test.html"><a href="independent-t-test.html#welchs-t-test"><i class="fa fa-check"></i>Welch’s t-test</a></li>
+<li class="chapter" data-level="" data-path="independent-t-test.html"><a href="independent-t-test.html#mann-whitney-u-test"><i class="fa fa-check"></i>Mann-Whitney U test</a></li>
+<li class="chapter" data-level="" data-path="independent-t-test.html"><a href="independent-t-test.html#additional-practice"><i class="fa fa-check"></i>Additional practice</a></li>
 </ul></li>
-<li><a href="mcnemars-test.html#mcnemars-test" id="toc-mcnemars-test">14. McNemar’s Test</a>
+<li class="chapter" data-level="" data-path="dependent-t-test.html"><a href="dependent-t-test.html"><i class="fa fa-check"></i>11. Dependent t-test</a>
 <ul>
-<li><a href="mcnemars-test.html#step-1-look-at-the-data-5" id="toc-step-1-look-at-the-data-5">Step 1: Look at the data</a></li>
-<li><a href="mcnemars-test.html#step-2-check-assumptions-5" id="toc-step-2-check-assumptions-5">Step 2: Check assumptions</a></li>
-<li><a href="mcnemars-test.html#step-3-perform-the-test-5" id="toc-step-3-perform-the-test-5">Step 3: Perform the test</a></li>
-<li><a href="mcnemars-test.html#step-4-interpret-results-5" id="toc-step-4-interpret-results-5">Step 4: Interpret results</a></li>
-</ul></li>
-</ul></li>
-<li><a href="anova.html#anova" id="toc-anova">ANOVA</a>
-<ul>
-<li><a href="one-way-anova.html#one-way-anova" id="toc-one-way-anova">15. One-way ANOVA</a>
-<ul>
-<li><a href="one-way-anova.html#step-1-look-at-the-data-6" id="toc-step-1-look-at-the-data-6">Step 1: Look at the data</a></li>
-<li><a href="one-way-anova.html#anova-assumptions" id="toc-anova-assumptions">Step 2: Check assumptions</a></li>
-<li><a href="one-way-anova.html#step-3-perform-the-test-6" id="toc-step-3-perform-the-test-6">Step 3: Perform the test</a></li>
-<li><a href="one-way-anova.html#step-4-interpret-results-6" id="toc-step-4-interpret-results-6">Step 4: Interpret results</a></li>
-<li><a href="one-way-anova.html#welchs-f-test" id="toc-welchs-f-test">Welch’s F-test</a></li>
-<li><a href="one-way-anova.html#kruskal-wallis-test" id="toc-kruskal-wallis-test">Kruskal-Wallis test</a></li>
-<li><a href="one-way-anova.html#additional-practice-4" id="toc-additional-practice-4">Additional practice</a></li>
-</ul></li>
-<li><a href="finding-group-differences.html#finding-group-differences" id="toc-finding-group-differences">16. Finding Group Differences</a>
-<ul>
-<li><a href="finding-group-differences.html#post-hoc-comparisons" id="toc-post-hoc-comparisons">Post hoc comparisons</a></li>
-<li><a href="finding-group-differences.html#welchs-f-test-post-hoc-tests" id="toc-welchs-f-test-post-hoc-tests">Welch’s F-test post hoc tests</a></li>
-<li><a href="finding-group-differences.html#kruskal-wallis-post-hoc-tests" id="toc-kruskal-wallis-post-hoc-tests">Kruskal-Wallis post hoc tests</a></li>
-<li><a href="finding-group-differences.html#planned-contrasts" id="toc-planned-contrasts">Planned Contrasts</a></li>
-<li><a href="finding-group-differences.html#additional-practice-5" id="toc-additional-practice-5">Additional practice</a></li>
-</ul></li>
-<li><a href="repeated-measures-anova.html#repeated-measures-anova" id="toc-repeated-measures-anova">17. Repeated Measures ANOVA</a>
-<ul>
-<li><a href="repeated-measures-anova.html#step-1-look-at-the-data-7" id="toc-step-1-look-at-the-data-7">Step 1: Look at the data</a></li>
-<li><a href="repeated-measures-anova.html#step-2-check-assumptions-6" id="toc-step-2-check-assumptions-6">Step 2: Check Assumptions</a></li>
-<li><a href="repeated-measures-anova.html#step-3-perform-the-test-7" id="toc-step-3-perform-the-test-7">Step 3: Perform the test</a></li>
-<li><a href="repeated-measures-anova.html#step-4-interpret-results-7" id="toc-step-4-interpret-results-7">Step 4: Interpret results</a></li>
-<li><a href="repeated-measures-anova.html#friedmans-test" id="toc-friedmans-test">Friedman’s test</a></li>
-<li><a href="repeated-measures-anova.html#additional-practice-6" id="toc-additional-practice-6">Additional practice</a></li>
-</ul></li>
-<li><a href="factorial-anova.html#factorial-anova" id="toc-factorial-anova">18. Factorial ANOVA</a>
-<ul>
-<li><a href="factorial-anova.html#independent-factorial-anova" id="toc-independent-factorial-anova">Independent Factorial ANOVA</a></li>
-<li><a href="factorial-anova.html#repeated-measures-factorial-anova" id="toc-repeated-measures-factorial-anova">Repeated Measures Factorial ANOVA</a></li>
-<li><a href="factorial-anova.html#mixed-factorial-anova" id="toc-mixed-factorial-anova">Mixed Factorial ANOVA</a></li>
-</ul></li>
-<li><a href="ancova.html#ancova" id="toc-ancova">19. ANCOVA</a>
-<ul>
-<li><a href="ancova.html#step-1-look-at-the-data-8" id="toc-step-1-look-at-the-data-8">Step 1: Look at the data</a></li>
-<li><a href="ancova.html#step-2-check-assumptions-7" id="toc-step-2-check-assumptions-7">Step 2: Check Assumptions</a></li>
-<li><a href="ancova.html#step-3-perform-the-test-8" id="toc-step-3-perform-the-test-8">Step 3: Perform the test</a></li>
-<li><a href="ancova.html#step-3-interpret-results" id="toc-step-3-interpret-results">Step 3: Interpret results</a></li>
+<li class="chapter" data-level="" data-path="dependent-t-test.html"><a href="dependent-t-test.html#step-1-look-at-the-data-2"><i class="fa fa-check"></i>Step 1: Look at the data</a></li>
+<li class="chapter" data-level="" data-path="dependent-t-test.html"><a href="dependent-t-test.html#step-2-check-assumptions-2"><i class="fa fa-check"></i>Step 2: Check assumptions</a></li>
+<li class="chapter" data-level="" data-path="dependent-t-test.html"><a href="dependent-t-test.html#step-3-perform-the-test-2"><i class="fa fa-check"></i>Step 3: Perform the test</a></li>
+<li class="chapter" data-level="" data-path="dependent-t-test.html"><a href="dependent-t-test.html#step-4-interpret-results-2"><i class="fa fa-check"></i>Step 4: Interpret results</a></li>
+<li class="chapter" data-level="" data-path="dependent-t-test.html"><a href="dependent-t-test.html#wilcoxon-rank"><i class="fa fa-check"></i>Wilcoxon rank</a></li>
+<li class="chapter" data-level="" data-path="dependent-t-test.html"><a href="dependent-t-test.html#additional-practice-1"><i class="fa fa-check"></i>Additional practice</a></li>
 </ul></li>
 </ul></li>
-<li><a href="correlation-and-regression.html#correlation-and-regression" id="toc-correlation-and-regression">Correlation and regression</a>
+<li class="chapter" data-level="" data-path="chi-square.html"><a href="chi-square.html"><i class="fa fa-check"></i>Chi-Square</a>
 <ul>
-<li><a href="correlation.html#correlation" id="toc-correlation">20. Correlation</a>
+<li class="chapter" data-level="" data-path="chi-square-goodness-of-fit.html"><a href="chi-square-goodness-of-fit.html"><i class="fa fa-check"></i>12. Chi-Square Goodness-of-Fit</a>
 <ul>
-<li><a href="correlation.html#step-1-look-at-the-data-9" id="toc-step-1-look-at-the-data-9">Step 1: Look at the data</a></li>
-<li><a href="correlation.html#step-2-check-assumptions-8" id="toc-step-2-check-assumptions-8">Step 2: Check assumptions</a></li>
-<li><a href="correlation.html#step-3-perform-the-test-9" id="toc-step-3-perform-the-test-9">Step 3: Perform the test</a></li>
-<li><a href="correlation.html#step-4-interpreting-results" id="toc-step-4-interpreting-results">Step 4: Interpreting results</a></li>
-<li><a href="correlation.html#comparing-strengths-of-correlations" id="toc-comparing-strengths-of-correlations">Comparing strengths of correlations</a></li>
-<li><a href="correlation.html#additional-practice-7" id="toc-additional-practice-7">Additional practice</a></li>
+<li class="chapter" data-level="" data-path="chi-square-goodness-of-fit.html"><a href="chi-square-goodness-of-fit.html#step-1-look-at-the-data-3"><i class="fa fa-check"></i>Step 1: Look at the data</a></li>
+<li class="chapter" data-level="" data-path="chi-square-goodness-of-fit.html"><a href="chi-square-goodness-of-fit.html#step-2-check-assumptions-3"><i class="fa fa-check"></i>Step 2: Check assumptions</a></li>
+<li class="chapter" data-level="" data-path="chi-square-goodness-of-fit.html"><a href="chi-square-goodness-of-fit.html#step-3-perform-the-test-3"><i class="fa fa-check"></i>Step 3: Perform the test</a></li>
+<li class="chapter" data-level="" data-path="chi-square-goodness-of-fit.html"><a href="chi-square-goodness-of-fit.html#step-4-interpret-results-3"><i class="fa fa-check"></i>Step 4: Interpret results</a></li>
+<li class="chapter" data-level="" data-path="chi-square-goodness-of-fit.html"><a href="chi-square-goodness-of-fit.html#additional-practice-2"><i class="fa fa-check"></i>Additional practice</a></li>
 </ul></li>
-<li><a href="regression.html#regression" id="toc-regression">21. Regression</a>
+<li class="chapter" data-level="" data-path="chi-square-test-of-independence.html"><a href="chi-square-test-of-independence.html"><i class="fa fa-check"></i>13. Chi-Square Test of Independence</a>
 <ul>
-<li><a href="regression.html#step-1-look-at-the-data-10" id="toc-step-1-look-at-the-data-10">Step 1: Look at the data</a></li>
-<li><a href="regression.html#step-2-check-assumptions-9" id="toc-step-2-check-assumptions-9">Step 2: Check Assumptions</a></li>
-<li><a href="regression.html#step-3-perform-the-test-10" id="toc-step-3-perform-the-test-10">Step 3: Perform the test</a></li>
-<li><a href="regression.html#step-4-interpret-results-8" id="toc-step-4-interpret-results-8">Step 4: Interpret results</a></li>
-<li><a href="regression.html#categorical-predictors" id="toc-categorical-predictors">Categorical Predictors</a></li>
-<li><a href="regression.html#hierarchical-regression" id="toc-hierarchical-regression">Hierarchical regression</a></li>
-<li><a href="regression.html#additional-practice-8" id="toc-additional-practice-8">Additional practice</a></li>
+<li class="chapter" data-level="" data-path="chi-square-test-of-independence.html"><a href="chi-square-test-of-independence.html#step-1-look-at-the-data-4"><i class="fa fa-check"></i>Step 1: Look at the data</a></li>
+<li class="chapter" data-level="" data-path="chi-square-test-of-independence.html"><a href="chi-square-test-of-independence.html#step-2-check-assumptions-4"><i class="fa fa-check"></i>Step 2: Check assumptions</a></li>
+<li class="chapter" data-level="" data-path="chi-square-test-of-independence.html"><a href="chi-square-test-of-independence.html#step-3-perform-the-test-4"><i class="fa fa-check"></i>Step 3: Perform the test</a></li>
+<li class="chapter" data-level="" data-path="chi-square-test-of-independence.html"><a href="chi-square-test-of-independence.html#step-4-interpret-results-4"><i class="fa fa-check"></i>Step 4: Interpret results</a></li>
+<li class="chapter" data-level="" data-path="chi-square-test-of-independence.html"><a href="chi-square-test-of-independence.html#fishers-exact-test"><i class="fa fa-check"></i>Fisher’s exact test</a></li>
+<li class="chapter" data-level="" data-path="chi-square-test-of-independence.html"><a href="chi-square-test-of-independence.html#additional-practice-3"><i class="fa fa-check"></i>Additional practice</a></li>
 </ul></li>
-<li><a href="general-linear-model.html#general-linear-model" id="toc-general-linear-model">22. General Linear Model</a>
+<li class="chapter" data-level="" data-path="mcnemars-test.html"><a href="mcnemars-test.html"><i class="fa fa-check"></i>14. McNemar’s Test</a>
 <ul>
-<li><a href="general-linear-model.html#correlation-as-a-regression" id="toc-correlation-as-a-regression">Correlation as a regression</a></li>
-<li><a href="general-linear-model.html#independent-t-test-as-a-regression" id="toc-independent-t-test-as-a-regression">Independent t-test as a regression</a></li>
-<li><a href="general-linear-model.html#dependent-t-test-as-a-regression" id="toc-dependent-t-test-as-a-regression">Dependent t-test as a regression</a></li>
-<li><a href="general-linear-model.html#one-way-anova-as-a-regression" id="toc-one-way-anova-as-a-regression">One-way ANOVA as a regression</a></li>
+<li class="chapter" data-level="" data-path="mcnemars-test.html"><a href="mcnemars-test.html#step-1-look-at-the-data-5"><i class="fa fa-check"></i>Step 1: Look at the data</a></li>
+<li class="chapter" data-level="" data-path="mcnemars-test.html"><a href="mcnemars-test.html#step-2-check-assumptions-5"><i class="fa fa-check"></i>Step 2: Check assumptions</a></li>
+<li class="chapter" data-level="" data-path="mcnemars-test.html"><a href="mcnemars-test.html#step-3-perform-the-test-5"><i class="fa fa-check"></i>Step 3: Perform the test</a></li>
+<li class="chapter" data-level="" data-path="mcnemars-test.html"><a href="mcnemars-test.html#step-4-interpret-results-5"><i class="fa fa-check"></i>Step 4: Interpret results</a></li>
 </ul></li>
 </ul></li>
-<li><a href="#appendix-appendices" id="toc-appendix-appendices">(APPENDIX) Appendices</a></li>
-<li><a href="answers-to-your-turn-exercises.html#answers-to-your-turn-exercises" id="toc-answers-to-your-turn-exercises">Answers to Your Turn exercises</a></li>
+<li class="chapter" data-level="" data-path="anova.html"><a href="anova.html"><i class="fa fa-check"></i>ANOVA</a>
+<ul>
+<li class="chapter" data-level="" data-path="one-way-anova.html"><a href="one-way-anova.html"><i class="fa fa-check"></i>15. One-way ANOVA</a>
+<ul>
+<li class="chapter" data-level="" data-path="one-way-anova.html"><a href="one-way-anova.html#step-1-look-at-the-data-6"><i class="fa fa-check"></i>Step 1: Look at the data</a></li>
+<li class="chapter" data-level="" data-path="one-way-anova.html"><a href="one-way-anova.html#anova-assumptions"><i class="fa fa-check"></i>Step 2: Check assumptions</a></li>
+<li class="chapter" data-level="" data-path="one-way-anova.html"><a href="one-way-anova.html#step-3-perform-the-test-6"><i class="fa fa-check"></i>Step 3: Perform the test</a></li>
+<li class="chapter" data-level="" data-path="one-way-anova.html"><a href="one-way-anova.html#step-4-interpret-results-6"><i class="fa fa-check"></i>Step 4: Interpret results</a></li>
+<li class="chapter" data-level="" data-path="one-way-anova.html"><a href="one-way-anova.html#welchs-f-test"><i class="fa fa-check"></i>Welch’s F-test</a></li>
+<li class="chapter" data-level="" data-path="one-way-anova.html"><a href="one-way-anova.html#kruskal-wallis-test"><i class="fa fa-check"></i>Kruskal-Wallis test</a></li>
+<li class="chapter" data-level="" data-path="one-way-anova.html"><a href="one-way-anova.html#additional-practice-4"><i class="fa fa-check"></i>Additional practice</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="finding-group-differences.html"><a href="finding-group-differences.html"><i class="fa fa-check"></i>16. Finding Group Differences</a>
+<ul>
+<li class="chapter" data-level="" data-path="finding-group-differences.html"><a href="finding-group-differences.html#post-hoc-comparisons"><i class="fa fa-check"></i>Post hoc comparisons</a></li>
+<li class="chapter" data-level="" data-path="finding-group-differences.html"><a href="finding-group-differences.html#welchs-f-test-post-hoc-tests"><i class="fa fa-check"></i>Welch’s F-test post hoc tests</a></li>
+<li class="chapter" data-level="" data-path="finding-group-differences.html"><a href="finding-group-differences.html#kruskal-wallis-post-hoc-tests"><i class="fa fa-check"></i>Kruskal-Wallis post hoc tests</a></li>
+<li class="chapter" data-level="" data-path="finding-group-differences.html"><a href="finding-group-differences.html#planned-contrasts"><i class="fa fa-check"></i>Planned Contrasts</a></li>
+<li class="chapter" data-level="" data-path="finding-group-differences.html"><a href="finding-group-differences.html#additional-practice-5"><i class="fa fa-check"></i>Additional practice</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="repeated-measures-anova.html"><a href="repeated-measures-anova.html"><i class="fa fa-check"></i>17. Repeated Measures ANOVA</a>
+<ul>
+<li class="chapter" data-level="" data-path="repeated-measures-anova.html"><a href="repeated-measures-anova.html#step-1-look-at-the-data-7"><i class="fa fa-check"></i>Step 1: Look at the data</a></li>
+<li class="chapter" data-level="" data-path="repeated-measures-anova.html"><a href="repeated-measures-anova.html#step-2-check-assumptions-6"><i class="fa fa-check"></i>Step 2: Check Assumptions</a></li>
+<li class="chapter" data-level="" data-path="repeated-measures-anova.html"><a href="repeated-measures-anova.html#step-3-perform-the-test-7"><i class="fa fa-check"></i>Step 3: Perform the test</a></li>
+<li class="chapter" data-level="" data-path="repeated-measures-anova.html"><a href="repeated-measures-anova.html#step-4-interpret-results-7"><i class="fa fa-check"></i>Step 4: Interpret results</a></li>
+<li class="chapter" data-level="" data-path="repeated-measures-anova.html"><a href="repeated-measures-anova.html#friedmans-test"><i class="fa fa-check"></i>Friedman’s test</a></li>
+<li class="chapter" data-level="" data-path="repeated-measures-anova.html"><a href="repeated-measures-anova.html#additional-practice-6"><i class="fa fa-check"></i>Additional practice</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="factorial-anova.html"><a href="factorial-anova.html"><i class="fa fa-check"></i>18. Factorial ANOVA</a>
+<ul>
+<li class="chapter" data-level="" data-path="factorial-anova.html"><a href="factorial-anova.html#independent-factorial-anova"><i class="fa fa-check"></i>Independent Factorial ANOVA</a></li>
+<li class="chapter" data-level="" data-path="factorial-anova.html"><a href="factorial-anova.html#repeated-measures-factorial-anova"><i class="fa fa-check"></i>Repeated Measures Factorial ANOVA</a></li>
+<li class="chapter" data-level="" data-path="factorial-anova.html"><a href="factorial-anova.html#mixed-factorial-anova"><i class="fa fa-check"></i>Mixed Factorial ANOVA</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="ancova.html"><a href="ancova.html"><i class="fa fa-check"></i>19. ANCOVA</a>
+<ul>
+<li class="chapter" data-level="" data-path="ancova.html"><a href="ancova.html#step-1-look-at-the-data-8"><i class="fa fa-check"></i>Step 1: Look at the data</a></li>
+<li class="chapter" data-level="" data-path="ancova.html"><a href="ancova.html#step-2-check-assumptions-7"><i class="fa fa-check"></i>Step 2: Check Assumptions</a></li>
+<li class="chapter" data-level="" data-path="ancova.html"><a href="ancova.html#step-3-perform-the-test-8"><i class="fa fa-check"></i>Step 3: Perform the test</a></li>
+<li class="chapter" data-level="" data-path="ancova.html"><a href="ancova.html#step-3-interpret-results"><i class="fa fa-check"></i>Step 3: Interpret results</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="correlation-and-regression.html"><a href="correlation-and-regression.html"><i class="fa fa-check"></i>Correlation and regression</a>
+<ul>
+<li class="chapter" data-level="" data-path="correlation.html"><a href="correlation.html"><i class="fa fa-check"></i>20. Correlation</a>
+<ul>
+<li class="chapter" data-level="" data-path="correlation.html"><a href="correlation.html#step-1-look-at-the-data-9"><i class="fa fa-check"></i>Step 1: Look at the data</a></li>
+<li class="chapter" data-level="" data-path="correlation.html"><a href="correlation.html#step-2-check-assumptions-8"><i class="fa fa-check"></i>Step 2: Check assumptions</a></li>
+<li class="chapter" data-level="" data-path="correlation.html"><a href="correlation.html#step-3-perform-the-test-9"><i class="fa fa-check"></i>Step 3: Perform the test</a></li>
+<li class="chapter" data-level="" data-path="correlation.html"><a href="correlation.html#step-4-interpreting-results"><i class="fa fa-check"></i>Step 4: Interpreting results</a></li>
+<li class="chapter" data-level="" data-path="correlation.html"><a href="correlation.html#comparing-strengths-of-correlations"><i class="fa fa-check"></i>Comparing strengths of correlations</a></li>
+<li class="chapter" data-level="" data-path="correlation.html"><a href="correlation.html#additional-practice-7"><i class="fa fa-check"></i>Additional practice</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="regression.html"><a href="regression.html"><i class="fa fa-check"></i>21. Regression</a>
+<ul>
+<li class="chapter" data-level="" data-path="regression.html"><a href="regression.html#step-1-look-at-the-data-10"><i class="fa fa-check"></i>Step 1: Look at the data</a></li>
+<li class="chapter" data-level="" data-path="regression.html"><a href="regression.html#step-2-check-assumptions-9"><i class="fa fa-check"></i>Step 2: Check Assumptions</a></li>
+<li class="chapter" data-level="" data-path="regression.html"><a href="regression.html#step-3-perform-the-test-10"><i class="fa fa-check"></i>Step 3: Perform the test</a></li>
+<li class="chapter" data-level="" data-path="regression.html"><a href="regression.html#step-4-interpret-results-8"><i class="fa fa-check"></i>Step 4: Interpret results</a></li>
+<li class="chapter" data-level="" data-path="regression.html"><a href="regression.html#categorical-predictors"><i class="fa fa-check"></i>Categorical Predictors</a></li>
+<li class="chapter" data-level="" data-path="regression.html"><a href="regression.html#hierarchical-regression"><i class="fa fa-check"></i>Hierarchical regression</a></li>
+<li class="chapter" data-level="" data-path="regression.html"><a href="regression.html#additional-practice-8"><i class="fa fa-check"></i>Additional practice</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="general-linear-model.html"><a href="general-linear-model.html"><i class="fa fa-check"></i>22. General Linear Model</a>
+<ul>
+<li class="chapter" data-level="" data-path="general-linear-model.html"><a href="general-linear-model.html#correlation-as-a-regression"><i class="fa fa-check"></i>Correlation as a regression</a></li>
+<li class="chapter" data-level="" data-path="general-linear-model.html"><a href="general-linear-model.html#independent-t-test-as-a-regression"><i class="fa fa-check"></i>Independent t-test as a regression</a></li>
+<li class="chapter" data-level="" data-path="general-linear-model.html"><a href="general-linear-model.html#dependent-t-test-as-a-regression"><i class="fa fa-check"></i>Dependent t-test as a regression</a></li>
+<li class="chapter" data-level="" data-path="general-linear-model.html"><a href="general-linear-model.html#one-way-anova-as-a-regression"><i class="fa fa-check"></i>One-way ANOVA as a regression</a></li>
+</ul></li>
+</ul></li>
+<li class="appendix"><span><b>Appendices</b></span></li>
+<li class="chapter" data-level="" data-path="answers-to-your-turn-exercises.html"><a href="answers-to-your-turn-exercises.html"><i class="fa fa-check"></i>Answers to Your Turn exercises</a></li>
 <li class="divider"></li>
 <li><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/" 
     target="blank"><img alt="Creative Commons License" 
@@ -399,8 +398,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="independent-t-test" class="section level2">
-<h2>10. Independent t-test</h2>
+<div id="independent-t-test" class="section level2 hasAnchor">
+<h2>10. Independent t-test<a href="independent-t-test.html#independent-t-test" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The independent t-test is used to test the difference in our dependent variable between two different groups of observations. Our grouping variable is our independent variable. In other words, we use the independent t-test when we have a research question with a <strong>continuous dependent variable</strong> and a <strong>categorical independent variable with two categories in which <u>different</u> participants are in each category</strong>.</p>
 <p>The independent t-test is also called the independent samples t-test and the Student’s t-test.</p>
 <p>There are three different types of alternative hypotheses we could have for the independent t-test:</p>
@@ -421,8 +420,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><span class="math inline">\(H_0\)</span>: The mean for Group 1 is greater than or equal to the mean for Group 2.</li>
 </ul></li>
 </ol>
-<div id="step-1-look-at-the-data-1" class="section level3">
-<h3>Step 1: Look at the data</h3>
+<div id="step-1-look-at-the-data-1" class="section level3 hasAnchor">
+<h3>Step 1: Look at the data<a href="independent-t-test.html#step-1-look-at-the-data-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>For this chapter, we’re going to work with data from lsj-data. Open data from your Data Library in “lsj-data”. Select and open “Harpo”.This dataset is hypothetical data of 33 students taking Dr. Harpo’s statistics lectures. We have two tutors for the class, Anastasia (<em>n</em> = 15) and Bernadette (<em>n</em> = 18). Our research question is “Which tutor results in better student grades?”</p>
 <p>Here’s a video walking through the independent t-test.</p>
 <div class="vembedr">
@@ -430,21 +429,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <iframe src="https://www.youtube.com/embed/Pg1EA0eh2p0" width="533" height="300" frameborder="0" allowfullscreen="" data-external="1"></iframe>
 </div>
 </div>
-<div id="data-set-up-1" class="section level4">
-<h4>Data set-up</h4>
+<div id="data-set-up-1" class="section level4 hasAnchor">
+<h4>Data set-up<a href="independent-t-test.html#data-set-up-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>To conduct the independent t-test, we first need to ensure our data is set-up properly in our dataset. This requires having two columns: one with our continuous dependent variable and one indicating which group the participant is in. Each row is a unique participant or unit of analysis.</p>
 <p>Below is the first ten rows of our data from the Harpo dataset.</p>
 <p><img src="images/02-independent_t-test/independent_t-test_data.png" /></p>
 <p>In the data above, what is your <strong>independent variable</strong>? What is your <strong>dependent variable</strong>?</p>
 </div>
-<div id="describe-the-data-2" class="section level4">
-<h4>Describe the data</h4>
+<div id="describe-the-data-2" class="section level4 hasAnchor">
+<h4>Describe the data<a href="independent-t-test.html#describe-the-data-2" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Once we confirm our data is setup correctly in jamovi, we should look at our data using descriptive statistics and graphs. First, our descriptive statistics are shown below. Our overall data consists of 33 cases and the students in our dataset have a mean grade of 71.55 (SD = 7.80). The minimum and maximum values look accurate; theoretically, student grades should range from 0-100. Lastly, the distribution of data looks nice and normally distributed. Although we have a pretty small sample size, especially within each group, we can proceed with our analyses. First, though, we need to check our assumptions.</p>
 <p><img src="images/02-independent_t-test/independent_t-test_descriptives_all.png" /></p>
 <p><img src="images/02-independent_t-test/independent_t-test_plot_all.png" width="528" /></p>
 </div>
-<div id="specify-the-hypotheses-2" class="section level4">
-<h4>Specify the hypotheses</h4>
+<div id="specify-the-hypotheses-2" class="section level4 hasAnchor">
+<h4>Specify the hypotheses<a href="independent-t-test.html#specify-the-hypotheses-2" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Our research question is “Which tutor results in better student grades?” This isn’t directional. We don’t have a hypothesis that one group does better than the other. Therefore our hypotheses can be written up as such:</p>
 <ul>
 <li><span class="math inline">\(H_1\)</span>: There is a difference in student grades between Anastasia’s and Bernadette’s classes.</li>
@@ -453,8 +452,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>From now on, we’ll assume our <span class="math inline">\(\alpha\)</span> is .05 as default; however, remember that we should think critically about our alpha value when hypothesis testing!</p>
 </div>
 </div>
-<div id="step-2-check-assumptions-1" class="section level3">
-<h3>Step 2: Check assumptions</h3>
+<div id="step-2-check-assumptions-1" class="section level3 hasAnchor">
+<h3>Step 2: Check assumptions<a href="independent-t-test.html#step-2-check-assumptions-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>As a parametric test, the independent t-test has the same assumptions as other parametric tests:</p>
 <ol style="list-style-type: decimal">
 <li><p>The dependent variable is <strong>normally distributed</strong></p></li>
@@ -465,8 +464,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>We cannot test the third and fourth assumptions; rather, those are based on knowing your data.</p>
 <p>However, we can and should test for the first two assumptions. Fortunately, the independent samples t-test in jamovi has two check boxes under “Assumption Checks” that lets us test for both assumptions.</p>
 <p>One thing to keep in mind in all statistical software is that we often check assumptions simultaneously to performing the statistical test. However, we should always check assumptions first before looking at and interpreting our results. Therefore, whereas the instructions for performing the test are below, we discuss checking assumptions here first to help ingrain the importance of always checking assumptions for interpreting results.</p>
-<div id="testing-normality-1" class="section level5">
-<h5>Testing normality</h5>
+<div id="testing-normality-1" class="section level5 hasAnchor">
+<h5>Testing normality<a href="independent-t-test.html#testing-normality-1" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p>jamovi easily allows us to check for normality using the Shapiro-Wilk test and the Q-Q plot. The Shapiro-Wilk test was not statistically significant (W = .98, <em>p</em> = .827); therefore, this indicates the data is normally distributed. Furthermore, the lines are fairly close to the diagonal line in the Q-Q plot. We can conclude that we satisfy the assumption of normality.</p>
 <p><img src="images/02-independent_t-test/independent_t-test_normality.png" /></p>
 <p>Remember that we can also test for normality by <strong>looking at our data</strong> (e.g., a histogram or density plot, which you can see above) and by examining <strong>skew and kurtosis</strong>. However, you will need to view them using Exploration –&gt; Descriptives, not in the t-tests menu. Here is our skew and kurtosis:</p>
@@ -477,16 +476,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Remember that we divide the value by its standard error to determine the z-score. If the absolute value of it is below 1.96 then we assume it is normally distributed. Both skew and kurtosis meet the assumption of normality. In addition, so did all our other pieces of evidence of normality: Shapiro-Wilk’s, visual examination of the distribution, and the Q-Q plot. Therefore we can assume we met the assumption of normality.</p>
 <p><img src="images/02-independent_t-test/independent_t-test_skewkurtosis.png" /></p>
 </div>
-<div id="testing-homogeneity-of-variance" class="section level5">
-<h5>Testing homogeneity of variance</h5>
+<div id="testing-homogeneity-of-variance" class="section level5 hasAnchor">
+<h5>Testing homogeneity of variance<a href="independent-t-test.html#testing-homogeneity-of-variance" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p>We test for homogeneity of variance using the Levene’s test. The Levene’s test was not statistically significant (<em>F</em> [1, 31] = 2.49, <em>p</em> = .125); therefore, this indicates our data satisfies the assumption of homogeneity of variance. However, I would add a caveat that we have a small sample of data (<em>n</em> = 15 for Anastasia and <em>n</em> = 18 for Bernadette) and the standard deviations are quite different from one another (SD = 9.00 vs 5.77, respectively). We should have tried to collect more data.</p>
 <p><img src="images/02-independent_t-test/independent_t-test_homogeneity.png" /></p>
 </div>
 </div>
-<div id="step-3-perform-the-test-1" class="section level3">
-<h3>Step 3: Perform the test</h3>
-<div id="decide-which-statistical-test-you-should-be-using-1" class="section level4">
-<h4>Decide which statistical test you should be using</h4>
+<div id="step-3-perform-the-test-1" class="section level3 hasAnchor">
+<h3>Step 3: Perform the test<a href="independent-t-test.html#step-3-perform-the-test-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="decide-which-statistical-test-you-should-be-using-1" class="section level4 hasAnchor">
+<h4>Decide which statistical test you should be using<a href="independent-t-test.html#decide-which-statistical-test-you-should-be-using-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>If you fail to meet one or both of the assumptions of normality (and no transformations fixed your data) and homogeneity of variances, jamovi has the alternative statistics easily built in. Here’s what statistic you should choose based on satisfying assumptions:</p>
 <table style="width:100%;">
 <colgroup>
@@ -515,8 +514,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </tbody>
 </table>
 </div>
-<div id="decide-which-hypothesis-you-should-be-using-1" class="section level4">
-<h4>Decide which hypothesis you should be using</h4>
+<div id="decide-which-hypothesis-you-should-be-using-1" class="section level4 hasAnchor">
+<h4>Decide which hypothesis you should be using<a href="independent-t-test.html#decide-which-hypothesis-you-should-be-using-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>When you specified the hypotheses you should understand whether you had a directional (one-tailed) or non-directional (two-tailed) alternative hypothesis based on the research question.</p>
 <p>If the alternative hypothesis is non-directional (two-tailed) then you choose <code>Group 1 ≠ Group 2</code>.</p>
 <p>If the alternative hypothesis directional (one-tailed) then you choose <code>Group 1 &gt; Group 2</code> or <code>Group 1 &lt; Group 2</code> depending on which group you think has the higher average.</p>
@@ -529,8 +528,8 @@ looking at the data.
 </p>
 </div>
 </div>
-<div id="perform-the-test-2" class="section level4">
-<h4>Perform the test</h4>
+<div id="perform-the-test-2" class="section level4 hasAnchor">
+<h4>Perform the test<a href="independent-t-test.html#perform-the-test-2" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Now that we’ve checked the assumptions, we can perform the independent t-test. Here are the steps for doing so in jamovi:</p>
 <ol style="list-style-type: decimal">
 <li><p>Go to the Analyses tab, click the T-Tests button, and choose “Independent Samples T-Test”.</p></li>
@@ -544,20 +543,20 @@ looking at the data.
 <p><img src="images/02-independent_t-test/independent_t-test_setup.png" /></p>
 </div>
 </div>
-<div id="step-4-interpret-results-1" class="section level3">
-<h3>Step 4: Interpret results</h3>
+<div id="step-4-interpret-results-1" class="section level3 hasAnchor">
+<h3>Step 4: Interpret results<a href="independent-t-test.html#step-4-interpret-results-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Once we are satisfied we have satisfied the assumptions for the independent t-test, we can interpret our results.</p>
 <p><img src="images/02-independent_t-test/independent_t-test_ind-results.png" /></p>
 <p>Our p-value is less than our alpha value of .05, so our results are statistically significant. Like most of the statistics we’ll come across, the larger the t-statistic (or F-statistic, or chi-square statistic…), the smaller the p-value will be. Therefore, we reject our null hypothesis that there is no difference between the two groups.</p>
-<div id="a-note-about-positive-and-negative-t-values-1" class="section level4">
-<h4>A note about positive and negative t values</h4>
+<div id="a-note-about-positive-and-negative-t-values-1" class="section level4 hasAnchor">
+<h4>A note about positive and negative t values<a href="independent-t-test.html#a-note-about-positive-and-negative-t-values-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Students often worry about positive or negative t-statistic values and are unsure how to interpret it. Positive or negative t-statistic values simply occur based on which group is listed first. Our t-statistic above is positive because we tested the difference between Anastasia’s class (<em>M</em> = 74.53) versus Bernadette’s class (<em>M</em> = 69.06) and so Anastasia - Bernadette is a mean difference of 5.48.</p>
 <p>However, if our classes were reversed, our mean difference would -5.48 and our t-statistic would be -2.12.</p>
 <p>All that is to say, <em>your positive or negative t-statistic is arbitrary and is just a function of which group is listed first, which is also arbitrary</em>. So do not fret!</p>
 <p>One last note: this positive or negative t-statistic is only relevant for the t-test. You will not get negative values for the F-statistic or chi-square tests!</p>
 </div>
-<div id="write-up-the-results-in-apa-style-1" class="section level4">
-<h4>Write up the results in APA style</h4>
+<div id="write-up-the-results-in-apa-style-1" class="section level4 hasAnchor">
+<h4>Write up the results in APA style<a href="independent-t-test.html#write-up-the-results-in-apa-style-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>When writing up the results of a statistical test, we should always include the following information:</p>
 <ol style="list-style-type: decimal">
 <li>Description of your research question and/or hypotheses.</li>
@@ -579,8 +578,8 @@ looking at the data.
 </blockquote>
 <p>Note that these are not the only way we can write up the results in APA format. The key is that we include all four pieces of information as specified above.</p>
 </div>
-<div id="visualize-the-results-1" class="section level4">
-<h4>Visualize the results</h4>
+<div id="visualize-the-results-1" class="section level4 hasAnchor">
+<h4>Visualize the results<a href="independent-t-test.html#visualize-the-results-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>By selecting <code>Descriptives plots</code> in the setup, you get the figure below. Personally, I don’t think this is a very good plot. It’s not very informative. It just provides the mean (circle), 95% confidence interval (blue bars), and the median.</p>
 <p><img src="images/02-independent_t-test/independent_t-test_plot2.png" /></p>
 <p>Another default option in jamovi is via the Descriptives analysis. You can ask for the boxplot, violin plot, and data of your dependent variable split by your independent variable. This is a much better option. Not only does it show us our mean (black bars) and interquartile range (via the boxplot), but it also shows our distribution (violin plot) and data points (grey dots). This is much more informative.</p>
@@ -588,8 +587,8 @@ looking at the data.
 <p>Oftentimes, people display results in a simple bar chart, often adding error bars (either 95% CI or SE error bars). But this is also not a great chart because it lacks information about the underlying distribution of data. Therefore, for the independent t-test I recommend the visualization shown above.</p>
 </div>
 </div>
-<div id="welchs-t-test" class="section level3">
-<h3>Welch’s t-test</h3>
+<div id="welchs-t-test" class="section level3 hasAnchor">
+<h3>Welch’s t-test<a href="independent-t-test.html#welchs-t-test" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The Welch’s t-test has three main differences from the independent samples t-test: (a) the standard error (SE) is not a pooled estimate, (b) the degrees of freedom are calculated very different (not <em>N</em> - 2), and (c) it does not have an assumption of homogeneity of variance. Note that Welch’s t-test is <em>not</em> a non-parametric test because it still has the assumption of a normal distribution.</p>
 <p><img src="images/02-independent_t-test/independent_t-test_full-results.png" /></p>
 <div class="danger">
@@ -607,8 +606,8 @@ of all three tests.
 <p>Why is it no longer statistically significant? Which result should you trust? In reality, the difference in <em>p</em>-values is likely due to chance. However, the independent t-test and Welch’s test have different strengths and weaknesses. If the two populations really do have equal variances, then the independent t-test is slightly more powerful (lower Type II error rate) than the Welch’s test. However, if they <em>don’t</em> have the same variances, then the assumptions of the independent t-test are violated and you may not be able to trust the results; you may end up with a higher Type I error rate. So it’s a trade-off.</p>
 <p>Which should you use? I tend to prefer always using Welch’s t-test because if the variances are equal, then there will be practically no difference between the independent and Welch’s t-test. But if the variances are not equal, then Welch’s t-test will outperform the independent t-test. For that reason, defaulting to the Welch’s t-test makes most sense to me.</p>
 </div>
-<div id="mann-whitney-u-test" class="section level3">
-<h3>Mann-Whitney U test</h3>
+<div id="mann-whitney-u-test" class="section level3 hasAnchor">
+<h3>Mann-Whitney U test<a href="independent-t-test.html#mann-whitney-u-test" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The Mann-Whitney U is not calculated based on the mean but rather the median and compares ranks of values across the two groups: it has no assumptions about the distribution of data or homogeneity of variances. Therefore, it is a non-parametric test.</p>
 <p>If you do not satisfy the assumption of normality (regardless of whether you satisfy the assumption of homogeneity of variance), you should either try to transform your data to be normally distributed or you will need to use a non-parametric test. In this case, if you originally wanted to perform an independent t-test, the non-parametric equivalent test is the Mann-Whitney U test.</p>
 <p><img src="images/02-independent_t-test/independent_t-test_full-results.png" /></p>
@@ -625,8 +624,8 @@ of all three tests.
 <p>Using the Mann-Whitney U test, there was a statistically significant difference in grades between Anastasia’s students (<em>Mdn</em> = 76, <em>n</em> = 15) and Bernadette’s students (<em>Mdn</em> = 69, <em>n</em> = 18), <em>U</em> = 79.50, <em>p</em> = .046, <span class="math inline">\(r_{pb}\)</span> = .41.</p>
 </blockquote>
 </div>
-<div id="additional-practice" class="section level3">
-<h3>Additional practice</h3>
+<div id="additional-practice" class="section level3 hasAnchor">
+<h3>Additional practice<a href="independent-t-test.html#additional-practice" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Open the <code>Sample_Dataset_2014.xlsx</code> file that we will be using for all Your Turn exercises. You can find the dataset here: <a href="https://github.com/danawanzer/stats-with-jamovi/blob/master/data/Sample_Dataset_2014.xlsx">Sample_Dataset_2014.xlsx Download</a></p>
 <p>Perform independent t-tests based on the following research questions. Think critically about whether you should be using a one-tailed or two-tailed hypothesis and check your assumptions so you know which test to use!</p>
 <p>To get the most out of these exercises, try to first find out the answer on your own and then use the drop-down menus to check your answer.</p>
@@ -754,7 +753,6 @@ window.onload = function() {
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -795,6 +793,10 @@ gitbook.start({
 "text": null
 },
 "download": {},
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "subsection",
 "scroll_highlight": true
@@ -809,7 +811,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

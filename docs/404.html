@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>14. McNemar’s Test | Statistics with jamovi</title>
+  <title>Page not found | Statistics with jamovi</title>
   <meta name="description" content="This is the website for PSYC 290 and PSYC 790 at the University of Wisconsin-Stout, taught by Dana Wanzer." />
   <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="14. McNemar’s Test | Statistics with jamovi" />
+  <meta property="og:title" content="Page not found | Statistics with jamovi" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="This is the website for PSYC 290 and PSYC 790 at the University of Wisconsin-Stout, taught by Dana Wanzer." />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="14. McNemar’s Test | Statistics with jamovi" />
+  <meta name="twitter:title" content="Page not found | Statistics with jamovi" />
   
   <meta name="twitter:description" content="This is the website for PSYC 290 and PSYC 790 at the University of Wisconsin-Stout, taught by Dana Wanzer." />
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="chi-square-test-of-independence.html"/>
-<link rel="next" href="anova.html"/>
+
+
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -398,115 +398,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="mcnemars-test" class="section level2 hasAnchor">
-<h2>14. McNemar’s Test<a href="mcnemars-test.html#mcnemars-test" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>McNemar’s test is based on the <span class="math inline">\(\chi^2\)</span> (chi-square) test of independence (or association), but is used in a repeated measures or within-subjects design.</p>
-<p>We’ll go over a brief example so you’re familiar with this test, but in practice I don’t see this statistic often so we won’t go over it any further than this.</p>
-<div id="step-1-look-at-the-data-5" class="section level3 hasAnchor">
-<h3>Step 1: Look at the data<a href="mcnemars-test.html#step-1-look-at-the-data-5" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>For example, suppose we’re working with the <em>Australian Generic Political Party</em> (AGPP) and your job is to find out how effective AGPP political advertisements are. You gather 100 people and ask them to watch the AGPP ads. You ask participants before and after viewing ads whether they intend to vote for the AGPP.</p>
-<p>This data comes from lsj-data. Open data from your Data Library in “lsj-data”. Select and open “agpp”. This dataset indicates the ID number of the participant and whether they would vote for AGPP before and after viewing the ads.</p>
-<div id="data-set-up-5" class="section level4 hasAnchor">
-<h4>Data set-up<a href="mcnemars-test.html#data-set-up-5" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>Our data set-up for McNemar’s test is pretty simple. We just need two columns of nominal data, with one row per participant and each column being the same variable at two different time points. Here’s our data for our example we’ll be working with, which you can find in the lsj-data called <code>agpp</code>:</p>
-<table>
-<thead>
-<tr class="header">
-<th>ID</th>
-<th>response_before</th>
-<th>response_after</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>subj.1</td>
-<td>no</td>
-<td>yes</td>
-</tr>
-<tr class="even">
-<td>subj.2</td>
-<td>yes</td>
-<td>no</td>
-</tr>
-<tr class="odd">
-<td>subj.3</td>
-<td>yes</td>
-<td>no</td>
-</tr>
-<tr class="even">
-<td>subj.4</td>
-<td>yes</td>
-<td>no</td>
-</tr>
-<tr class="odd">
-<td>subj.5</td>
-<td>no</td>
-<td>no</td>
-</tr>
-<tr class="even">
-<td>subj.6</td>
-<td>no</td>
-<td>no</td>
-</tr>
-<tr class="odd">
-<td>subj.7</td>
-<td>no</td>
-<td>no</td>
-</tr>
-<tr class="even">
-<td>subj.8</td>
-<td>no</td>
-<td>yes</td>
-</tr>
-<tr class="odd">
-<td>subj.9</td>
-<td>no</td>
-<td>no</td>
-</tr>
-<tr class="even">
-<td>subj.10</td>
-<td>no</td>
-<td>no</td>
-</tr>
-</tbody>
-</table>
+<div id="page-not-found" class="section level1">
+<h1>Page not found</h1>
+<p>The page you requested cannot be found (perhaps it was moved or renamed).</p>
+<p>You may want to try searching to find the page's new location, or use
+the table of contents to find the page you are looking for.</p>
 </div>
-<div id="specify-the-hypotheses-6" class="section level4 hasAnchor">
-<h4>Specify the hypotheses<a href="mcnemars-test.html#specify-the-hypotheses-6" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>Given you want to see if the AGPP political advertisements are, you want to see if participants are more likely to vote for AGPP after viewing the advertisement. Therefore, the alternative hypothesis is that intentions to vote for the AGPP don’t match the expected frequency of intentions to vote.</p>
-</div>
-</div>
-<div id="step-2-check-assumptions-5" class="section level3 hasAnchor">
-<h3>Step 2: Check assumptions<a href="mcnemars-test.html#step-2-check-assumptions-5" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>You came here because you violated the assumptions of the test of independence’s assumption of independence. You should have a within-subjects design to perform this test. We meet this assumption so we can move on!</p>
-</div>
-<div id="step-3-perform-the-test-5" class="section level3 hasAnchor">
-<h3>Step 3: Perform the test<a href="mcnemars-test.html#step-3-perform-the-test-5" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<ol style="list-style-type: decimal">
-<li><p>Go to the Analyses tab, click the Frequencies button, and choose “Paired Samples - McNemar test”.</p></li>
-<li><p>Move <code>response_before</code> into rows and <code>response_after</code> into columns. Note that the placement in rows or columns doesn’t really matter.</p></li>
-<li><p>Under the Statistics tab, select <span class="math inline">\(\chi^2\)</span> under Tests.</p></li>
-<li><p>Optionally, you can request under to show the row and column percentages.</p></li>
-</ol>
-<p>When you are done, your setup should look like this:</p>
-<p><img src="images/12-mcnemar/mcnemar_setup.png" /></p>
-</div>
-<div id="step-4-interpret-results-5" class="section level3 hasAnchor">
-<h3>Step 4: Interpret results<a href="mcnemars-test.html#step-4-interpret-results-5" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p><img src="images/12-mcnemar/mcnemar_results.png" /></p>
-<p>The first table shows us our observed frequencies.</p>
-<p>The second table gives us our results. Our p-value is less than .05 so we can reject the null hypothesis that the observed frequencies match our expected frequencies. Unfortunately, looking at our table it also shows that the ads had a negative effect: people were less likely to vote AGPP after seeing the ads.</p>
-<div id="write-up-the-results-in-apa-style-5" class="section level4 hasAnchor">
-<h4>Write up the results in APA style<a href="mcnemars-test.html#write-up-the-results-in-apa-style-5" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>We can write up our results in APA something like this:</p>
-<blockquote>
-<p>McNemar’s test indicated that support for AGPP changed from before to after reviewing the AGPP advertisement, <span class="math inline">\(\chi^2\)</span> (1) = 13.33, <em>p</em> &lt; .001. Most participants continued to not vote for AGPP after the ad (<em>n</em> = 65) and a few continued to vote for AGPP after the ad (<em>n</em> = 5). However, many participants who originally stated they would vote for AGPP changed to no longer voting for AGPP after the ad (<em>n</em> = 25); only five people who originally would not vote for AGPP changed to vote for AGPP after the ad.</p>
-</blockquote>
-
-</div>
-</div>
-</div>
-<!-- </div> -->
 <div class="psyteachr_footer">
   
 </div>
@@ -597,8 +494,8 @@ window.onload = function() {
           </div>
         </div>
       </div>
-<a href="chi-square-test-of-independence.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="anova.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
