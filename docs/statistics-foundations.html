@@ -142,14 +142,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i>1. Introduction</a></li>
 <li class="chapter" data-level="" data-path="statistics-foundations.html"><a href="statistics-foundations.html"><i class="fa fa-check"></i>2. Statistics foundations</a>
 <ul>
+<li class="chapter" data-level="" data-path="statistics-foundations.html"><a href="statistics-foundations.html#central-tendency-and-dispersion"><i class="fa fa-check"></i>Central tendency and dispersion</a></li>
+<li class="chapter" data-level="" data-path="statistics-foundations.html"><a href="statistics-foundations.html#levels-of-measurement"><i class="fa fa-check"></i>Levels of measurement</a></li>
 <li class="chapter" data-level="" data-path="descriptive-vs-inferential-statistics.html"><a href="descriptive-vs-inferential-statistics.html"><i class="fa fa-check"></i>Descriptive vs inferential statistics</a>
 <ul>
 <li class="chapter" data-level="" data-path="descriptive-vs-inferential-statistics.html"><a href="descriptive-vs-inferential-statistics.html#an-example"><i class="fa fa-check"></i>An example</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="central-tendency-and-dispersion.html"><a href="central-tendency-and-dispersion.html"><i class="fa fa-check"></i>Central tendency and dispersion</a></li>
-<li class="chapter" data-level="" data-path="levels-of-measurement.html"><a href="levels-of-measurement.html"><i class="fa fa-check"></i>Levels of measurement</a>
-<ul>
-<li class="chapter" data-level="" data-path="levels-of-measurement.html"><a href="levels-of-measurement.html#examples-of-levels-of-measurement"><i class="fa fa-check"></i>Examples of levels of measurement</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="design-methods-key-terms.html"><a href="design-methods-key-terms.html"><i class="fa fa-check"></i>Design &amp; Methods Key Terms</a>
 <ul>
@@ -404,6 +401,143 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="vembedr">
 <div>
 <iframe src="https://www.youtube.com/embed/QirHpjLkHmc" width="533" height="300" frameborder="0" allowfullscreen="" data-external="1"></iframe>
+</div>
+</div>
+<div id="central-tendency-and-dispersion" class="section level3 hasAnchor">
+<h3>Central tendency and dispersion<a href="statistics-foundations.html#central-tendency-and-dispersion" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>There are multiple <strong>measures of central tendency</strong> (these are <em>all</em> averages so you must be careful when you say that word to explain which type you mean!):</p>
+<ul>
+<li><p><strong>Mean</strong>: the sum of all points divided by the total number of points; susceptible to outliers</p></li>
+<li><p><strong>Median</strong>: the middlemost value; less susceptible to outliers and best used when the data is skewed</p></li>
+<li><p><strong>Mode</strong>: most frequent score</p>
+<ul>
+<li><strong>Multimodal</strong> or <strong>bimodal</strong>: when two or more values are the most frequent score</li>
+</ul></li>
+</ul>
+<p>Note that depending on the shape of the distribution, the mean, median, and mode may not be the same value. If we have a <strong>normal distribution</strong> then they will be the exact same! However, if we have a positively skewed distribution, the mean and median will be pulled towards the positively skewed data, as shown in this figure by <a href="https://lucidmanager.org/r4h2o/stats.html">Peter Prevos</a>.</p>
+<p><img src="images/02-stats-foundations/tendency-1.png" /></p>
+<p>There are also multiple <strong>measures of dispersion</strong> that describe the spread of our data:</p>
+<ul>
+<li><p><strong>Range</strong>: the difference between the maximum and minimum value (e.g., if the minimum score is 17 and the maximum is 49, then the range is 32)</p></li>
+<li><p><strong>Quartile</strong>: when a dataset is divided into four equal parts, the first quartile (Q1) is at the 25th percentile, the second quartile (Q2) is at the 50th percentile, and the third quartile (Q3) is at the 75th percentile.</p>
+<ul>
+<li><strong>Interquartile range</strong>: the middle 50% (Q1 to Q3)</li>
+</ul></li>
+<li><p><strong>Variance</strong>: the sum of the squared deviations from the mean. This means first (a) calculating the mean, (b) subtracting each score from the mean (aka deviations from the mean), (c) squaring each of those deviations values, and (d) summing all those squared deviations. This is represented by the equation <span class="math inline">\(\frac{\sum (X-\mu)^2}{N}\)</span></p></li>
+<li><p><strong>Standard deviation</strong>: is the square of the variance. This is represented by the equation <span class="math inline">\(\sqrt{\frac{\sum (X-\mu)^2}{N}}\)</span> however that equation is only used if we are examining the whole population. If we only have a sample, we replace the denominator <code>N</code> with <code>N-1</code>.</p></li>
+</ul>
+<p>We also have two main <strong>measures of shape</strong> that describe the shape of the distribution of our data:</p>
+<ul>
+<li><p><strong>Skew</strong>: in a non-normal distribution, it is when one tail of the distribution is longer than another. Present in asymmetric distributions</p>
+<ul>
+<li><p><strong>Negative skew</strong>: when the tail points to the negative end of the spectrum; in other words, most of the values are on the right side of the distribution</p></li>
+<li><p><strong>Positive skew</strong>: when the tail points to the positive end of the spectrum; in other words, most of the values are on the left side of the distribution</p></li>
+</ul></li>
+</ul>
+<p><a href="https://lucidmanager.org/r4h2o/stats.html"><img src="images/02-stats-foundations/skewness-1.png" alt="Figure by Peter Prevos." /></a></p>
+<ul>
+<li><p><strong>Kurtosis</strong>: the weight of the tails relative to a normal distribution. There are some fancy terms related to kurtosis that you may hear about, but honestly I don’t hear them used very frequently by researchers.</p>
+<ul>
+<li><strong>Leptokurtic</strong>: light tails; values are more concentrated around the mean</li>
+<li><strong>Platykurtic</strong>: heavy tails; values are less concentrated around the mean</li>
+</ul></li>
+</ul>
+<p><a href="https://www.jstor.org/stable/2332181?origin=crossref"><img src="images/02-stats-foundations/kurtosis.png" alt="Figure by “Student” (1927)" /></a></p>
+<p>There are other terms we use to describe data:</p>
+<ul>
+<li><p><strong>Frequency distribution</strong>: overview of the times each value occurs in a dataset; often portrayed visually like with a histogram</p></li>
+<li><p><strong>Histogram</strong>: a visual depiction of the frequency distribution using bars to depict a range of the distribution</p></li>
+<li><p><strong>Normal distribution</strong>: a special distribution in which the data are symmetrical on both sides of the mean; under a normal distribution, the mean is also equal to the median</p></li>
+</ul>
+</div>
+<div id="levels-of-measurement" class="section level3 hasAnchor">
+<h3>Levels of measurement<a href="statistics-foundations.html#levels-of-measurement" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>This should be refresher material for you, but it is extremely important you are familiar with the four levels of measurement.</p>
+<p><img src="images/01-intro/Levels%20of%20measurement.png" /></p>
+<p><strong>Categorical</strong>: variables that have <em>categories</em> to the levels, but cannot be analyzed with a mean because the levels are not proportionate. There are two types of categorical variables:</p>
+<ul>
+<li><p><strong>Nominal</strong>: a categorical variable in which each level of the variable is named but there is no order to them (e.g., breeds of dogs)</p>
+<ul>
+<li><strong>Binary</strong>, <strong>dummy-coded</strong>, or <strong>dichotomous</strong>: a nominal variable with only two levels (general 0 or 1). This is a special type of nominal variable.</li>
+</ul></li>
+<li><p><strong>Ordinal</strong>: a categorical variable in which each level of the variable is named and there is an order to them (e.g., ranks)</p></li>
+</ul>
+<p><strong>Continuous</strong>: variables with proportionate intervals between the levels meaning they can be analyzed with a mean, SD, variance. There are two types of continuous variables (although for the purpose of this course we will simply call them continuous variables):</p>
+<ul>
+<li><p><strong>Interval</strong>: a continuous variable that has intervals that are directly proportionate (e.g., the distance between 2-3 is the same as the distance between 5-6)</p></li>
+<li><p><strong>Ratio</strong>: a continuous variable like an internal variable but can accommodate an absolute zero, meaning a zero is actually possible (e.g., weight, temperature in Kelvin, reaction time)</p></li>
+</ul>
+<div id="examples-of-levels-of-measurement" class="section level4 hasAnchor">
+<h4>Examples of levels of measurement<a href="statistics-foundations.html#examples-of-levels-of-measurement" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Confused still on the levels of measurement? Maybe this will help! Notice that studying can be measured at different levels. Depending on the nature of the question and response options, it might be nominal, ordinal, or continuous! Here’s an example of data at the continuous, ordinal, and nominal level.</p>
+<table>
+<colgroup>
+<col width="16%" />
+<col width="20%" />
+<col width="31%" />
+<col width="31%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Study_Continuous</th>
+<th>Study_Ordinal</th>
+<th>Study_Nominal</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><em>Name (Character)</em></td>
+<td><em>Hours studied per day</em></td>
+<td><em>Likert scale of amount of studying</em></td>
+<td><em>Whether or not they study every day</em></td>
+</tr>
+<tr class="even">
+<td>Jesus</td>
+<td>5.0</td>
+<td>A great deal</td>
+<td>Yes</td>
+</tr>
+<tr class="odd">
+<td>Nicky</td>
+<td>4.5</td>
+<td>A great deal</td>
+<td>Yes</td>
+</tr>
+<tr class="even">
+<td>Bradford</td>
+<td>3.2</td>
+<td>A moderate amount</td>
+<td>Yes</td>
+</tr>
+<tr class="odd">
+<td>Sylvia</td>
+<td>1.7</td>
+<td>A small amount</td>
+<td>Yes</td>
+</tr>
+<tr class="even">
+<td>Martha</td>
+<td>0.2</td>
+<td>Rarely</td>
+<td>Yes</td>
+</tr>
+<tr class="odd">
+<td>Lillian</td>
+<td>0.0</td>
+<td>Never</td>
+<td>No</td>
+</tr>
+<tr class="even">
+<td>Trayvon</td>
+<td>0.0</td>
+<td>Never</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<p>We can make any continuous variable into an ordinal and nominal variable and any ordinal variable into a nominal variable. But if we have a nominal variable we cannot make it ordinal, nor can we make an ordinal variable continuous. In other words, continuous variables <em>contain more information</em>. Often, we want to avoid losing information and <em>always</em> keep the variable at the highest level of measurement. Continuous has more information than ordinal has more information than nominal.</p>
+<p>Another way to put it: never do a median split and avoid “collapsing” categories when you can. You’re losing information from your data by doing so.</p>
 </div>
 </div>
 </div>
