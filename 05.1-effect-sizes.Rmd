@@ -26,6 +26,10 @@ What is considered a small, medium, and large effect size? Quite frankly, *it de
 
 You may have seen some heuristics online about what small, medium, and large is for Cohen's *d* (e.g., .2, .5, and .8) and *r* (e.g., .1, .3, and .5) but these heuristics should not be used without critical thought. In fact, Cohen (who is regularly cited for these heuristics) said that the way we should determine cut-offs is based on looking across studies to find what is considered small, medium, and large *in that particular context*.
 
+### What makes an effect practically significant?
+
+We'll get into p-values in a moment, which are about statistical significance, but they don't tell us anything about how meaningful the effect is. That's what an effect size is for. But how do we know if it's meaningful or practically significant? 
+
 Lakens (who also did the great journal article on effect sizes above) has a fantastic new preprint out on [Sample Size Justification](https://psyarxiv.com/9d3yf/). In it, he provides an overview of six possible ways to determine which effect sizes are interesting:
 
 1.  "Smallest effect size of interest: what is the smallest effect size that is theoretically and practically interesting?
