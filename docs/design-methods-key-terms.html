@@ -88,6 +88,7 @@
 <li class="chapter" data-level="" data-path="design-methods-key-terms.html"><a href="design-methods-key-terms.html#study-design-terms"><i class="fa fa-check"></i>Study design terms</a></li>
 <li class="chapter" data-level="" data-path="design-methods-key-terms.html"><a href="design-methods-key-terms.html#variables"><i class="fa fa-check"></i>Variables</a></li>
 <li class="chapter" data-level="" data-path="design-methods-key-terms.html"><a href="design-methods-key-terms.html#reliability-and-validity"><i class="fa fa-check"></i>Reliability and validity</a></li>
+<li class="chapter" data-level="" data-path="design-methods-key-terms.html"><a href="design-methods-key-terms.html#statistical-terms"><i class="fa fa-check"></i>Statistical terms</a></li>
 <li class="chapter" data-level="" data-path="design-methods-key-terms.html"><a href="design-methods-key-terms.html#other-terms"><i class="fa fa-check"></i>Other terms</a></li>
 </ul></li>
 </ul></li>
@@ -160,13 +161,22 @@
 </ul></li>
 <li class="chapter" data-level="" data-path="parametric-assumptions.html"><a href="parametric-assumptions.html"><i class="fa fa-check"></i>7. Parametric assumptions</a>
 <ul>
-<li class="chapter" data-level="" data-path="checking-assumptions.html"><a href="checking-assumptions.html"><i class="fa fa-check"></i>Checking assumptions</a>
+<li class="chapter" data-level="" data-path="intervalratio-data.html"><a href="intervalratio-data.html"><i class="fa fa-check"></i>Interval/ratio data</a></li>
+<li class="chapter" data-level="" data-path="independent-scores.html"><a href="independent-scores.html"><i class="fa fa-check"></i>Independent scores</a></li>
+<li class="chapter" data-level="" data-path="normal-distribution.html"><a href="normal-distribution.html"><i class="fa fa-check"></i>Normal distribution</a>
 <ul>
-<li class="chapter" data-level="" data-path="checking-assumptions.html"><a href="checking-assumptions.html#normal-distribution"><i class="fa fa-check"></i>Normal distribution</a></li>
-<li class="chapter" data-level="" data-path="checking-assumptions.html"><a href="checking-assumptions.html#intervalratio-data"><i class="fa fa-check"></i>Interval/ratio data</a></li>
-<li class="chapter" data-level="" data-path="checking-assumptions.html"><a href="checking-assumptions.html#homogeneity-of-variance"><i class="fa fa-check"></i>Homogeneity of variance</a></li>
-<li class="chapter" data-level="" data-path="checking-assumptions.html"><a href="checking-assumptions.html#independent-scores"><i class="fa fa-check"></i>Independent scores</a></li>
+<li class="chapter" data-level="" data-path="normal-distribution.html"><a href="normal-distribution.html#visualize-the-distribution"><i class="fa fa-check"></i>Visualize the distribution</a></li>
+<li class="chapter" data-level="" data-path="normal-distribution.html"><a href="normal-distribution.html#test-the-skew-and-kurtosis"><i class="fa fa-check"></i>Test the skew and kurtosis</a></li>
+<li class="chapter" data-level="" data-path="normal-distribution.html"><a href="normal-distribution.html#shapiro-wilk-test"><i class="fa fa-check"></i>Shapiro-Wilk test</a></li>
+<li class="chapter" data-level="" data-path="normal-distribution.html"><a href="normal-distribution.html#q-q-plot"><i class="fa fa-check"></i>Q-Q plot</a></li>
 </ul></li>
+<li class="chapter" data-level="" data-path="homogeneity-of-variance.html"><a href="homogeneity-of-variance.html"><i class="fa fa-check"></i>Homogeneity of variance</a>
+<ul>
+<li class="chapter" data-level="" data-path="homogeneity-of-variance.html"><a href="homogeneity-of-variance.html#visualize-the-distribution-of-data-across-groups"><i class="fa fa-check"></i>Visualize the distribution of data across groups</a></li>
+<li class="chapter" data-level="" data-path="homogeneity-of-variance.html"><a href="homogeneity-of-variance.html#examine-the-variances-across-groups"><i class="fa fa-check"></i>Examine the variances across groups</a></li>
+<li class="chapter" data-level="" data-path="homogeneity-of-variance.html"><a href="homogeneity-of-variance.html#levenes-test"><i class="fa fa-check"></i>Levene’s test</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="recapping-parametric-assumptions.html"><a href="recapping-parametric-assumptions.html"><i class="fa fa-check"></i>Recapping parametric assumptions</a></li>
 <li class="chapter" data-level="" data-path="violated-assumptions.html"><a href="violated-assumptions.html"><i class="fa fa-check"></i>Violated assumptions</a>
 <ul>
 <li class="chapter" data-level="" data-path="violated-assumptions.html"><a href="violated-assumptions.html#intervalratio-data-1"><i class="fa fa-check"></i>Interval/ratio data</a></li>
@@ -393,6 +403,17 @@
 <li><p><strong>Internal validity</strong>: validity about whether the observed relationship between A and B reflects a causal relationship between A and B</p></li>
 <li><p><strong>External validity</strong>: validity of inferences about whether the cause-effect relationship holds over variation in persons, places, treatment variables, and measurement variables</p></li>
 </ul></li>
+</ul>
+</div>
+<div id="statistical-terms" class="section level3 hasAnchor">
+<h3>Statistical terms<a href="design-methods-key-terms.html#statistical-terms" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li><p><strong>Degrees of freedom (df)</strong>: Degrees of freedom are the number of values that are free to vary and are not constrained.</p>
+<ul>
+<li><p>The easiest way to understand them is with an example of the mean. If you know the sum of 4 numbers, then 3 of those numbers are free to vary but the fifth value is dependent on (and constrained) to the values of the other. If your sum is 10, you could have three random values of 2, 3, and 1 (which are free to vary) but your fourth number <em>must</em> be 4. Therefore, the degrees of freedom in this example would be 3.</p></li>
+<li><p>Typically, degrees of freedom are <em>n</em> - 1 however it is <em>n</em> - 2 for a paired samples t-test and <em>k</em> - 1 for the within-subjects design for an ANOVA,</p></li>
+</ul></li>
+<li><p><strong>Confidence intervals</strong>: A confidence interval is such that in repeated sampling (e.g., replicating a study over and over and over again) then 95% of those confidence intervals should contain the true population parameter. You can see this visualized, and learn more about it, with this great <a href="https://rpsychologist.com/d3/ci/">visualization</a> and read this great <a href="http://daniellakens.blogspot.com/2016/03/the-difference-between-confidence.html">blog post</a>.</p></li>
 </ul>
 </div>
 <div id="other-terms" class="section level3 hasAnchor">

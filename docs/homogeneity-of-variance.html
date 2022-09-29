@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>2. Statistics foundations | Statistics with jamovi</title>
+  <title>Homogeneity of variance | Statistics with jamovi</title>
   <meta name="description" content="This is the website for PSYC 290 and PSYC 790 at the University of Wisconsin-Stout, taught by Dana Wanzer." />
   <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="2. Statistics foundations | Statistics with jamovi" />
+  <meta property="og:title" content="Homogeneity of variance | Statistics with jamovi" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="This is the website for PSYC 290 and PSYC 790 at the University of Wisconsin-Stout, taught by Dana Wanzer." />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="2. Statistics foundations | Statistics with jamovi" />
+  <meta name="twitter:title" content="Homogeneity of variance | Statistics with jamovi" />
   
   <meta name="twitter:description" content="This is the website for PSYC 290 and PSYC 790 at the University of Wisconsin-Stout, taught by Dana Wanzer." />
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="index.html"/>
-<link rel="next" href="descriptive-vs-inferential-statistics.html"/>
+<link rel="prev" href="normal-distribution.html"/>
+<link rel="next" href="recapping-parametric-assumptions.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -340,152 +340,46 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="statistics-foundations" class="section level1 hasAnchor">
-<h1>2. Statistics foundations<a href="statistics-foundations.html#statistics-foundations" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>You have learned about both quantitative and qualitative methods. We will be focusing primarily on quantitative methods in this class and in this textbook. By quantitative methods, I mean methods that predominantly collect data that deals with numbers. We can then analyze that data using statistical procedures, which we will shorthand to “statistics.” Understanding what we mean by statistics is the purpose of this chapter.</p>
-<div class="vembedr">
-<div>
-<iframe src="https://www.youtube.com/embed/QirHpjLkHmc" width="533" height="300" frameborder="0" allowfullscreen="" data-external="1"></iframe>
+<div id="homogeneity-of-variance" class="section level2 hasAnchor">
+<h2>Homogeneity of variance<a href="homogeneity-of-variance.html#homogeneity-of-variance" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Our third assumption is that the variance in the DV needs to be the same at each level of the IV. If we fail to meet the assumption, we say we have heterogeneity. It might help you to remember that the prefix <em>homo</em> means same and <em>hetero</em> means different.</p>
+<p>We can test this assumption in two ways.</p>
+<div id="visualize-the-distribution-of-data-across-groups" class="section level3 hasAnchor">
+<h3>Visualize the distribution of data across groups<a href="homogeneity-of-variance.html#visualize-the-distribution-of-data-across-groups" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>First, we can look at the data points across groups. This can be done by choosing a plot in the Descriptives analysis and adding your IV to the “Split By” box. Then select Box Plot, Violin, Data (Jittered) under Plots.</p>
+<p>For example, here’s an example of data that violates the assumption of homogeneity of variance (gender by mile time) because the variance in scores for females (1) is a lot wider than the variance in scores for males (0):</p>
+<p><img src="images/06-inferential/homogeneity.png" width="500" /></p>
 </div>
+<div id="examine-the-variances-across-groups" class="section level3 hasAnchor">
+<h3>Examine the variances across groups<a href="homogeneity-of-variance.html#examine-the-variances-across-groups" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Similarly, in the Exploration –&gt; Descriptives under Statistics you can ask for Variance after splitting the DV by the IV. The variance for Gender == 0 (male) is 6796.20 whereas the variance for Gender == 1 (female) is 15401.55. Clearly, there is much greater variability for females than males for time it takes to run the mile.</p>
 </div>
-<div id="central-tendency-and-dispersion" class="section level3 hasAnchor">
-<h3>Central tendency and dispersion<a href="statistics-foundations.html#central-tendency-and-dispersion" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>There are multiple <strong>measures of central tendency</strong> (these are <em>all</em> averages so you must be careful when you say that word to explain which type you mean!):</p>
-<ul>
-<li><p><strong>Mean</strong>: the sum of all points divided by the total number of points; susceptible to outliers</p></li>
-<li><p><strong>Median</strong>: the middlemost value; less susceptible to outliers and best used when the data is skewed</p></li>
-<li><p><strong>Mode</strong>: most frequent score</p>
-<ul>
-<li><strong>Multimodal</strong> or <strong>bimodal</strong>: when two or more values are the most frequent score</li>
-</ul></li>
-</ul>
-<p>Note that depending on the shape of the distribution, the mean, median, and mode may not be the same value. If we have a <strong>normal distribution</strong> then they will be the exact same! However, if we have a positively skewed distribution, the mean and median will be pulled towards the positively skewed data, as shown in this figure by <a href="https://lucidmanager.org/r4h2o/stats.html">Peter Prevos</a>.</p>
-<p><img src="images/02-stats-foundations/tendency-1.png" /></p>
-<p>There are also multiple <strong>measures of dispersion</strong> that describe the spread of our data:</p>
-<ul>
-<li><p><strong>Range</strong>: the difference between the maximum and minimum value (e.g., if the minimum score is 17 and the maximum is 49, then the range is 32)</p></li>
-<li><p><strong>Quartile</strong>: when a dataset is divided into four equal parts, the first quartile (Q1) is at the 25th percentile, the second quartile (Q2) is at the 50th percentile, and the third quartile (Q3) is at the 75th percentile.</p>
-<ul>
-<li><strong>Interquartile range</strong>: the middle 50% (Q1 to Q3)</li>
-</ul></li>
-<li><p><strong>Variance</strong>: the sum of the squared deviations from the mean. This means first (a) calculating the mean, (b) subtracting each score from the mean (aka deviations from the mean), (c) squaring each of those deviations values, and (d) summing all those squared deviations. This is represented by the equation <span class="math inline">\(\frac{\sum (X-\mu)^2}{N}\)</span></p></li>
-<li><p><strong>Standard deviation</strong>: is the square of the variance. This is represented by the equation <span class="math inline">\(\sqrt{\frac{\sum (X-\mu)^2}{N}}\)</span> however that equation is only used if we are examining the whole population. If we only have a sample, we replace the denominator <code>N</code> with <code>N-1</code>.</p></li>
-</ul>
-<p>We also have two main <strong>measures of shape</strong> that describe the shape of the distribution of our data:</p>
-<ul>
-<li><p><strong>Skew</strong>: in a non-normal distribution, it is when one tail of the distribution is longer than another. Present in asymmetric distributions</p>
-<ul>
-<li><p><strong>Negative skew</strong>: when the tail points to the negative end of the spectrum; in other words, most of the values are on the right side of the distribution</p></li>
-<li><p><strong>Positive skew</strong>: when the tail points to the positive end of the spectrum; in other words, most of the values are on the left side of the distribution</p></li>
-</ul></li>
-</ul>
-<p><a href="https://lucidmanager.org/r4h2o/stats.html"><img src="images/02-stats-foundations/skewness-1.png" alt="Figure by Peter Prevos." /></a></p>
-<ul>
-<li><p><strong>Kurtosis</strong>: the weight of the tails relative to a normal distribution. There are some fancy terms related to kurtosis that you may hear about, but honestly I don’t hear them used very frequently by researchers.</p>
-<ul>
-<li><strong>Leptokurtic</strong>: light tails; values are more concentrated around the mean</li>
-<li><strong>Platykurtic</strong>: heavy tails; values are less concentrated around the mean</li>
-</ul></li>
-</ul>
-<p><a href="https://www.jstor.org/stable/2332181?origin=crossref"><img src="images/02-stats-foundations/kurtosis.png" alt="Figure by “Student” (1927)" /></a></p>
-<p>There are other terms we use to describe data:</p>
-<ul>
-<li><p><strong>Frequency distribution</strong>: overview of the times each value occurs in a dataset; often portrayed visually like with a histogram</p></li>
-<li><p><strong>Histogram</strong>: a visual depiction of the frequency distribution using bars to depict a range of the distribution</p></li>
-<li><p><strong>Normal distribution</strong>: a special distribution in which the data are symmetrical on both sides of the mean; under a normal distribution, the mean is also equal to the median</p></li>
-</ul>
-</div>
-<div id="levels-of-measurement" class="section level3 hasAnchor">
-<h3>Levels of measurement<a href="statistics-foundations.html#levels-of-measurement" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>This should be refresher material for you, but it is extremely important you are familiar with the four levels of measurement.</p>
-<p><img src="images/01-intro/Levels%20of%20measurement.png" /></p>
-<p><strong>Categorical</strong>: variables that have <em>categories</em> to the levels, but cannot be analyzed with a mean because the levels are not proportionate. There are two types of categorical variables:</p>
-<ul>
-<li><p><strong>Nominal</strong>: a categorical variable in which each level of the variable is named but there is no order to them (e.g., breeds of dogs)</p>
-<ul>
-<li><strong>Binary</strong>, <strong>dummy-coded</strong>, or <strong>dichotomous</strong>: a nominal variable with only two levels (general 0 or 1). This is a special type of nominal variable.</li>
-</ul></li>
-<li><p><strong>Ordinal</strong>: a categorical variable in which each level of the variable is named and there is an order to them (e.g., ranks)</p></li>
-</ul>
-<p><strong>Continuous</strong>: variables with proportionate intervals between the levels meaning they can be analyzed with a mean, SD, variance. There are two types of continuous variables (although for the purpose of this course we will simply call them continuous variables):</p>
-<ul>
-<li><p><strong>Interval</strong>: a continuous variable that has intervals that are directly proportionate (e.g., the distance between 2-3 is the same as the distance between 5-6)</p></li>
-<li><p><strong>Ratio</strong>: a continuous variable like an internal variable but can accommodate an absolute zero, meaning a zero is actually possible (e.g., weight, temperature in Kelvin, reaction time)</p></li>
-</ul>
-<div id="examples-of-levels-of-measurement" class="section level4 hasAnchor">
-<h4>Examples of levels of measurement<a href="statistics-foundations.html#examples-of-levels-of-measurement" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>Confused still on the levels of measurement? Maybe this will help! Notice that studying can be measured at different levels. Depending on the nature of the question and response options, it might be nominal, ordinal, or continuous! Here’s an example of data at the continuous, ordinal, and nominal level.</p>
+<div id="levenes-test" class="section level3 hasAnchor">
+<h3>Levene’s test<a href="homogeneity-of-variance.html#levenes-test" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>When we perform inferential statistics that have the assumption of homogeneity of variance, in jamovi there will be a check box to check the assumption. It will perform Levene’s test.</p>
+<p>However, you may be testing the assumption prior to running your analysis (or learning about inferential statistics just yet). In that case, to perform Levene’s test, go to Analyses then ANOVA then One-way ANOVA. Move your continuous variable to the Dependent Variables box and move your nominal variable to the Grouping Variable box. Check the box “homogeneity test.” Only report the results of Levene’s test; ignore the one-way ANOVA results!</p>
+<p>Here’s the result of Levene’s test for the effect of gender on mile duration:</p>
 <table>
-<colgroup>
-<col width="21%" />
-<col width="21%" />
-<col width="27%" />
-<col width="28%" />
-</colgroup>
 <thead>
 <tr class="header">
-<th>Name</th>
-<th>Study_Continuous</th>
-<th>Study_Ordinal</th>
-<th>Study_Nominal</th>
+<th align="left">Levene’s</th>
+<th align="right">F</th>
+<th align="right">df1</th>
+<th align="right">df2</th>
+<th align="right">p</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><em>Name (Character)</em></td>
-<td><em>Hours studied per day</em></td>
-<td><em>Likert scale of amount of studying</em></td>
-<td><em>Whether or not they study every day</em></td>
-</tr>
-<tr class="even">
-<td>Jesus</td>
-<td>5.0</td>
-<td>A great deal</td>
-<td>Yes</td>
-</tr>
-<tr class="odd">
-<td>Nicky</td>
-<td>4.5</td>
-<td>A great deal</td>
-<td>Yes</td>
-</tr>
-<tr class="even">
-<td>Bradford</td>
-<td>3.2</td>
-<td>A moderate amount</td>
-<td>Yes</td>
-</tr>
-<tr class="odd">
-<td>Sylvia</td>
-<td>1.7</td>
-<td>A small amount</td>
-<td>Yes</td>
-</tr>
-<tr class="even">
-<td>Martha</td>
-<td>0.2</td>
-<td>Rarely</td>
-<td>Yes</td>
-</tr>
-<tr class="odd">
-<td>Lillian</td>
-<td>0.0</td>
-<td>Never</td>
-<td>No</td>
-</tr>
-<tr class="even">
-<td>Trayvon</td>
-<td>0.0</td>
-<td>Never</td>
-<td>No</td>
+<td align="left">MileMinDur</td>
+<td align="right">41.33</td>
+<td align="right">1</td>
+<td align="right">381</td>
+<td align="right">&lt;.001</td>
 </tr>
 </tbody>
 </table>
-<p>We can make any continuous variable into an ordinal and nominal variable and any ordinal variable into a nominal variable. But if we have a nominal variable we cannot make it ordinal, nor can we make an ordinal variable continuous. In other words, continuous variables <em>contain more information</em>. Often, we want to avoid losing information and <em>always</em> keep the variable at the highest level of measurement. Continuous has more information than ordinal has more information than nominal.</p>
-<p>Another way to put it: never do a median split and avoid “collapsing” categories when you can. You’re losing information from your data by doing so.</p>
-<p>Also, just because we put numbers to something does not necessarily make it continuous! Be careful and think critically.</p>
-<p><a href="https://xkcd.com/2610/"><img src="https://imgs.xkcd.com/comics/assigning_numbers.png" alt="XKCD: Assinging Numbers" /></a></p>
-</div>
+<p>Like the other tests above, <strong>a non-significant Levene’s test means we meet the assumption of homogeneity of variance.</strong> However, if Levene’s test is statistically significant, then we fail to meet the assumption of homogeneity of variance and have heterogeneity of variance. In this case, our test is statistically significant so, in combination with our plot above, we say we violated this assumption.</p>
 </div>
 </div>
 <div class="psyteachr_footer">
@@ -578,8 +472,8 @@ window.onload = function() {
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="descriptive-vs-inferential-statistics.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="normal-distribution.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="recapping-parametric-assumptions.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

@@ -4,7 +4,7 @@
 library(tidyverse)
 ```
 
-The following covers some terminology that will be helpful to keep in mind throughout the semester. 
+The following covers some terminology that will be helpful to keep in mind throughout the semester.
 
 ### Study design terms
 
@@ -77,6 +77,16 @@ There are other types of variables we may be interested in:
     -   **Internal validity**: validity about whether the observed relationship between A and B reflects a causal relationship between A and B
 
     -   **External validity**: validity of inferences about whether the cause-effect relationship holds over variation in persons, places, treatment variables, and measurement variables
+
+### Statistical terms
+
+-   **Degrees of freedom (df)**: Degrees of freedom are the number of values that are free to vary and are not constrained.
+
+    -   The easiest way to understand them is with an example of the mean. If you know the sum of 4 numbers, then 3 of those numbers are free to vary but the fifth value is dependent on (and constrained) to the values of the other. If your sum is 10, you could have three random values of 2, 3, and 1 (which are free to vary) but your fourth number *must* be 4. Therefore, the degrees of freedom in this example would be 3.
+
+    -   Typically, degrees of freedom are *n* - 1 however it is *n* - 2 for a paired samples t-test and *k* - 1 for the within-subjects design for an ANOVA,
+
+-   **Confidence intervals**: A confidence interval is such that in repeated sampling (e.g., replicating a study over and over and over again) then 95% of those confidence intervals should contain the true population parameter. You can see this visualized, and learn more about it, with this great [visualization](https://rpsychologist.com/d3/ci/) and read this great [blog post](http://daniellakens.blogspot.com/2016/03/the-difference-between-confidence.html).
 
 ### Other terms
 

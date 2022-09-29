@@ -21,16 +21,24 @@ Next, you need to determine how many independent variables (IVs) there are and t
 
 Lastly, for many of the statistical tests we need to know whether we meet the assumptions of parametric tests. If we don't meet the assumption, then there are alternative tests we can perform. We'll learn about assumption checking in the next section of this chapter.
 
-```{r echo = FALSE, message = FALSE, warning = FALSE}
-library(vembedr)
-embed_url("https://www.youtube.com/watch?v=Q9sbIMCck1Q")
+```{block, type="info"}
+You may find it helpful to first think whether you have a between-subjects or a within-subjects design. If you have groups, are participants in the same conditions or different conditions? Then that narrows down the possibility of what inferential statistic you would use.
 ```
+
+Another tool that can help you determine the statistical test you want to perform is <https://stathand.net/>
+
+------------------------------------------------------------------------
 
 We can both *forward map* and *backwards map* with the chart above. Forward mapping involves understanding your data and your research question and then determining what statistical test to perform. Forward mapping is mostly what you need to understand how to do! Backwards mapping involves determining what kind of data is needed to perform a particular statistical test. This is more for educational and understanding purposes and generally is not how you analyze data.
 
 Let's do some examples of forwards mapping. You may want to read the example and try your hand at it first and then check your answers!
 
 ### Forward mapping: Choose the correct test
+
+```{r echo = FALSE, message = FALSE, warning = FALSE}
+library(vembedr)
+embed_url("https://www.youtube.com/watch?v=Q9sbIMCck1Q")
+```
 
 A researcher is interested in understanding whether athletes have higher English scores than non-athletes. In other words, what is the effect of athletic status on English test scores?
 
