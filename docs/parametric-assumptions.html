@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>7. Parametric assumptions | Statistics with jamovi</title>
+  <title>Parametric assumptions | Statistics with jamovi</title>
   <meta name="description" content="This is the website for PSYC 290 and PSYC 790 at the University of Wisconsin-Stout, taught by Dana Wanzer." />
   <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="7. Parametric assumptions | Statistics with jamovi" />
+  <meta property="og:title" content="Parametric assumptions | Statistics with jamovi" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="This is the website for PSYC 290 and PSYC 790 at the University of Wisconsin-Stout, taught by Dana Wanzer." />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="7. Parametric assumptions | Statistics with jamovi" />
+  <meta name="twitter:title" content="Parametric assumptions | Statistics with jamovi" />
   
   <meta name="twitter:description" content="This is the website for PSYC 290 and PSYC 790 at the University of Wisconsin-Stout, taught by Dana Wanzer." />
   
@@ -30,7 +30,7 @@
   
   
 <link rel="prev" href="choosing-the-correct-test.html"/>
-<link rel="next" href="intervalratio-data.html"/>
+<link rel="next" href="violated-assumptions.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -54,6 +54,70 @@
 <link href="libs/vembedr-0.1.5/css/vembedr.css" rel="stylesheet" />
 
 
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
 
 
 <link rel="stylesheet" href="include/psyteachr.css" type="text/css" />
@@ -75,6 +139,7 @@
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a></li>
 <li class="part"><span><b>I Overview</b></span></li>
+<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i>1. Introduction</a></li>
 <li class="chapter" data-level="" data-path="statistics-foundations.html"><a href="statistics-foundations.html"><i class="fa fa-check"></i>2. Statistics foundations</a>
 <ul>
 <li class="chapter" data-level="" data-path="statistics-foundations.html"><a href="statistics-foundations.html#central-tendency-and-dispersion"><i class="fa fa-check"></i>Central tendency and dispersion</a></li>
@@ -88,6 +153,7 @@
 <li class="chapter" data-level="" data-path="design-methods-key-terms.html"><a href="design-methods-key-terms.html#study-design-terms"><i class="fa fa-check"></i>Study design terms</a></li>
 <li class="chapter" data-level="" data-path="design-methods-key-terms.html"><a href="design-methods-key-terms.html#variables"><i class="fa fa-check"></i>Variables</a></li>
 <li class="chapter" data-level="" data-path="design-methods-key-terms.html"><a href="design-methods-key-terms.html#reliability-and-validity"><i class="fa fa-check"></i>Reliability and validity</a></li>
+<li class="chapter" data-level="" data-path="design-methods-key-terms.html"><a href="design-methods-key-terms.html#statistical-terms"><i class="fa fa-check"></i>Statistical terms</a></li>
 <li class="chapter" data-level="" data-path="design-methods-key-terms.html"><a href="design-methods-key-terms.html#other-terms"><i class="fa fa-check"></i>Other terms</a></li>
 </ul></li>
 </ul></li>
@@ -112,7 +178,8 @@
 <li class="chapter" data-level="" data-path="cleaning-data.html"><a href="cleaning-data.html#filters"><i class="fa fa-check"></i>Filters</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="" data-path=""><a href="#part-nhst"><i class="fa fa-check"></i>(PART) NHST</a>
+<li class="part"><span><b>III NHST</b></span></li>
+<li class="chapter" data-level="" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html"><i class="fa fa-check"></i>4. Hypothesis testing</a>
 <ul>
 <li class="chapter" data-level="" data-path="example-of-hypothesis-testing.html"><a href="example-of-hypothesis-testing.html"><i class="fa fa-check"></i>Example of hypothesis testing</a>
 <ul>
@@ -157,25 +224,14 @@
 <li class="chapter" data-level="" data-path="choosing-the-correct-test.html"><a href="choosing-the-correct-test.html#forward-mapping-choose-the-correct-test"><i class="fa fa-check"></i>Forward mapping: Choose the correct test</a></li>
 <li class="chapter" data-level="" data-path="choosing-the-correct-test.html"><a href="choosing-the-correct-test.html#backwards-map-determine-the-data-you-need"><i class="fa fa-check"></i>Backwards map: Determine the data you need</a></li>
 </ul></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="parametric-assumptions.html"><a href="parametric-assumptions.html"><i class="fa fa-check"></i>7. Parametric assumptions</a>
+<li class="chapter" data-level="" data-path="parametric-assumptions.html"><a href="parametric-assumptions.html"><i class="fa fa-check"></i>Parametric assumptions</a>
 <ul>
-<li class="chapter" data-level="" data-path="intervalratio-data.html"><a href="intervalratio-data.html"><i class="fa fa-check"></i>Interval/ratio data</a></li>
-<li class="chapter" data-level="" data-path="independent-scores.html"><a href="independent-scores.html"><i class="fa fa-check"></i>Independent scores</a></li>
-<li class="chapter" data-level="" data-path="normal-distribution.html"><a href="normal-distribution.html"><i class="fa fa-check"></i>Normal distribution</a>
-<ul>
-<li class="chapter" data-level="" data-path="normal-distribution.html"><a href="normal-distribution.html#visualize-the-distribution"><i class="fa fa-check"></i>Visualize the distribution</a></li>
-<li class="chapter" data-level="" data-path="normal-distribution.html"><a href="normal-distribution.html#test-the-skew-and-kurtosis"><i class="fa fa-check"></i>Test the skew and kurtosis</a></li>
-<li class="chapter" data-level="" data-path="normal-distribution.html"><a href="normal-distribution.html#shapiro-wilk-test"><i class="fa fa-check"></i>Shapiro-Wilk test</a></li>
-<li class="chapter" data-level="" data-path="normal-distribution.html"><a href="normal-distribution.html#q-q-plot"><i class="fa fa-check"></i>Q-Q plot</a></li>
+<li class="chapter" data-level="" data-path="parametric-assumptions.html"><a href="parametric-assumptions.html#intervalratio-data"><i class="fa fa-check"></i>Interval/ratio data</a></li>
+<li class="chapter" data-level="" data-path="parametric-assumptions.html"><a href="parametric-assumptions.html#independent-scores"><i class="fa fa-check"></i>Independent scores</a></li>
+<li class="chapter" data-level="" data-path="parametric-assumptions.html"><a href="parametric-assumptions.html#normal-distribution"><i class="fa fa-check"></i>Normal distribution</a></li>
+<li class="chapter" data-level="" data-path="parametric-assumptions.html"><a href="parametric-assumptions.html#homogeneity-of-variance"><i class="fa fa-check"></i>Homogeneity of variance</a></li>
+<li class="chapter" data-level="" data-path="parametric-assumptions.html"><a href="parametric-assumptions.html#recapping-parametric-assumptions"><i class="fa fa-check"></i>Recapping parametric assumptions</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="homogeneity-of-variance.html"><a href="homogeneity-of-variance.html"><i class="fa fa-check"></i>Homogeneity of variance</a>
-<ul>
-<li class="chapter" data-level="" data-path="homogeneity-of-variance.html"><a href="homogeneity-of-variance.html#visualize-the-distribution-of-data-across-groups"><i class="fa fa-check"></i>Visualize the distribution of data across groups</a></li>
-<li class="chapter" data-level="" data-path="homogeneity-of-variance.html"><a href="homogeneity-of-variance.html#examine-the-variances-across-groups"><i class="fa fa-check"></i>Examine the variances across groups</a></li>
-<li class="chapter" data-level="" data-path="homogeneity-of-variance.html"><a href="homogeneity-of-variance.html#levenes-test"><i class="fa fa-check"></i>Levene’s test</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="recapping-parametric-assumptions.html"><a href="recapping-parametric-assumptions.html"><i class="fa fa-check"></i>Recapping parametric assumptions</a></li>
 <li class="chapter" data-level="" data-path="violated-assumptions.html"><a href="violated-assumptions.html"><i class="fa fa-check"></i>Violated assumptions</a>
 <ul>
 <li class="chapter" data-level="" data-path="violated-assumptions.html"><a href="violated-assumptions.html#intervalratio-data-1"><i class="fa fa-check"></i>Interval/ratio data</a></li>
@@ -184,7 +240,7 @@
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="writing-up-results.html"><a href="writing-up-results.html"><i class="fa fa-check"></i>8. Writing up results</a></li>
-<li class="part"><span><b>III Individual Tests</b></span></li>
+<li class="part"><span><b>IV Individual Tests</b></span></li>
 <li class="chapter" data-level="" data-path="t-tests.html"><a href="t-tests.html"><i class="fa fa-check"></i>t-tests</a>
 <ul>
 <li class="chapter" data-level="" data-path="one-sample-t-test.html"><a href="one-sample-t-test.html"><i class="fa fa-check"></i>9. One sample t-test</a>
@@ -340,8 +396,8 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="parametric-assumptions" class="section level1 hasAnchor">
-<h1>7. Parametric assumptions<a href="parametric-assumptions.html#parametric-assumptions" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="parametric-assumptions" class="section level2 hasAnchor">
+<h2>Parametric assumptions<a href="parametric-assumptions.html#parametric-assumptions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Most of the inferential statistics we’ll be learning in this class are <em>parametric statistics</em> which means it’s based on certain assumptions about the shape of the distribution (in this class we’ll focus on the normal distribution).</p>
 <p>It’s important to check assumptions because your data may not always be what they seem. You need to look at your data in all sorts of ways to make sure it’s satisfactory for inferential statistics. <a href="https://www.youtube.com/watch?v=zNbF006Y5x4">This video</a> is a fun little look into how our eyes can deceive us and why we need to look at things from a variety of angles and perceptions.</p>
 <p>There are four basic assumptions of most parametric tests:</p>
@@ -357,6 +413,163 @@
 </div>
 </div>
 <p>Let’s discuss these in turn and how to test for them.</p>
+<div id="intervalratio-data" class="section level3 hasAnchor">
+<h3>Interval/ratio data<a href="parametric-assumptions.html#intervalratio-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>If we are performing a test that has a continuous DV, then the variable must be measured at the interval or ratio level. It is important that the data has proportional intervals between levels of the variable, and ordinal variables often do not meet this assumption.</p>
+<p>It is very important to avoid treating ordinal variables as continuous variables. We cannot calculate a mean or difference between ordinal values, but we <em>can</em> for continuous variables. What is often done–and is often inappropriate to do–is treat Likert-scale items as a continuous DV. What we <em>can</em> do is take a sum or average of multiple Likert-scale items and treat that sum or average as a continuous DV.</p>
+<p>There is no “test” we can perform here. Rather, you will need to just recognize whether data is interval/ratio (continuous) or ordinal/nominal (categorical).</p>
+</div>
+<div id="independent-scores" class="section level3 hasAnchor">
+<h3>Independent scores<a href="parametric-assumptions.html#independent-scores" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>In between-subjects designs (e.g., the independent t-test or one-way ANOVA), data from different participants should be independent meaning that the response of one participant does not influence the response of another participant. We violate this assumption in the case of nested data (e.g., when our sample consists of students in three different classrooms, it is likely that students within classrooms are more similar than we would expect otherwise).</p>
+<p>In within-subjects designs (e.g., the dependent t-test or repeated measures ANOVA), we automatically violate the assumption because <em>of course</em> the scores of one participant in one condition will relate to their scores on another condition. However, their scores should still not influence any other participant’s response.</p>
+<p>This is another assumption, like interval/ratio data, that we do not ever <em>test</em> but is a function of knowing our data.</p>
+</div>
+<div id="normal-distribution" class="section level3 hasAnchor">
+<h3>Normal distribution<a href="parametric-assumptions.html#normal-distribution" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>For all our statistics, our dependent variable needs to be normally distributed, or have a normal distribution. You may have also heard it called a bell-shaped curve. It has really important statistical properties which is why most of the inferential statistics we’ll be learning in this class are <em>parametric statistics</em> that assume our data has a <em>normal distribution</em>.</p>
+<p>Some of the important statistical properties of the normal distribution:</p>
+<ul>
+<li><p>Data are equally distributed on both sides of the mean.</p></li>
+<li><p>Skew and kurtosis are equal to 0, which is to say there is no skew or bad kurtosis.</p></li>
+<li><p>The mean is equal to the median, and both are the exact center of the distribution of data. In other words, if your mean and median are <em>not</em> the same, you know you have skewed data! In fact, if your median &lt; mean then you have positive skew and if your median &gt; mean then you have negative skew.</p></li>
+<li><p>We know the percentage of cases within 1, 2, 3, etc. standard deviations from the mean.</p></li>
+</ul>
+<p>There are four ways to test for normality <strong>and we should test for normality using as many tests as we possibly can!</strong></p>
+<ol style="list-style-type: decimal">
+<li>Visualize the distribution</li>
+<li>Test the skew and kurtosis</li>
+<li>Conduct a Shapiro-Wilk test</li>
+<li>Visualize the Q-Q plot</li>
+</ol>
+<div id="visualize-the-distribution" class="section level4 hasAnchor">
+<h4>Visualize the distribution<a href="parametric-assumptions.html#visualize-the-distribution" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>In jamovi, we can go to the Explorations option and choose Descriptives. Under Plots, we can choose a histogram and/or density plot (figure on the left) or boxplot and/or violin plot and/or data points (figure on the right). We can just look at this data and visually inspect with our eyes whether the data is normally distributed based on the density curve. We are looking to see to what extent it looks like a normal distribution. Height looks pretty fairly normally distributed in this case.</p>
+<p><img src="images/06-inferential/histogram.png" width="400" /></p>
+<p><img src="images/06-inferential/boxplot.png" width="400" /></p>
+</div>
+<div id="test-the-skew-and-kurtosis" class="section level4 hasAnchor">
+<h4>Test the skew and kurtosis<a href="parametric-assumptions.html#test-the-skew-and-kurtosis" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>In jamovi, we can go to the Explorations option and choose Descriptives. Under statistics, choose skew and kurtosis. You’ll have to do a bit more work to actually figure out whether the skew and kurtosis is problematic though.</p>
+<p>For height, here is our skew and kurtosis:</p>
+<table>
+<tbody>
+<tr class="odd">
+<td><strong>Descriptives</strong></td>
+<td><strong>Height</strong></td>
+</tr>
+<tr class="even">
+<td>Skewness</td>
+<td>.230</td>
+</tr>
+<tr class="odd">
+<td>Std. error skewness</td>
+<td>.121</td>
+</tr>
+<tr class="even">
+<td>Kurtosis</td>
+<td>.113</td>
+</tr>
+<tr class="odd">
+<td>Std. error kurtosis</td>
+<td>.241</td>
+</tr>
+</tbody>
+</table>
+<p>We need to calculate <em>z</em>-scores for skew and kurtosis. We do that by dividing the value by its standard error:</p>
+<ul>
+<li><p>Skew: .230 / .121 = 1.90</p></li>
+<li><p>Kurtosis: .113 / .241 = .47</p></li>
+</ul>
+<p>How do we know if it’s problematic? <strong>If the <em>z</em>-score for skew or kurtosis are less than |1.96| then it is <em>not</em> statistically significant and <em>is</em> normally distributed.</strong> However, if the <em>z</em> &gt; |1.96| then it <em>is</em> statistically significant and <em>is not</em> normally distributed. In this case, both skew and kurtosis z-scores are less than 1.96 so we meet the assumption of normal distribution as evidenced by skew and kurtosis.</p>
+</div>
+<div id="shapiro-wilk-test" class="section level4 hasAnchor">
+<h4>Shapiro-Wilk test<a href="parametric-assumptions.html#shapiro-wilk-test" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>In jamovi, we can go to the Explorations option and choose Descriptives. Under statistics, choose Shapiro-Wilk. It will provide you the Shapiro-Wilk W test statistic and its respective p-value. In our case, Shapiro-Wilk’s for height is 68.03, <em>p</em> = .070. <strong>If the Shapiro-Wilk’s test is <em>not</em> statistically significant then it <em>is</em> normally distributed.</strong> However, if the Shapiro-Wilk’s test <em>is</em> statistically significant then it <em>is not</em> normally distributed. In this case, our Shapiro-Wilk’s test is not statistically significant so we meet the assumption of normal distribution as evidenced by the Shapiro-Wilk’s test.</p>
+</div>
+<div id="q-q-plot" class="section level4 hasAnchor">
+<h4>Q-Q plot<a href="parametric-assumptions.html#q-q-plot" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Last, we can visualize the Q-Q plot. In jamovi, we can go to the Explorations option and choose Descriptives. Under plots, choose Q-Q plot. We don’t need to go into details of what is being visualized, but what we are looking for is that the data points fall along the diagonal line. On the figure on the left, we can see that the data is pretty well falling on the diagonal line (with small deviations at the tails) so we can say it looks normally distributed. However, on the figure on the right, the data points deviate from the diagonal line pretty significantly and so we can say it does not look normally distributed.</p>
+<p><img src="images/06-inferential/qqplot.png" /></p>
+<p>Remember we should look at all pieces of evidence to determine whether we meet the assumption of normal distribution. Typically, all four will support each other, but there are times when some evidence contradicts other evidence. You’ll have to use your best judgment there, and often the visual inspection is the one I prioritize (e.g., if it doesn’t look normally distributed but then the other tests suggest it is, I would probably be cautious and just say we don’t meet the assumption).</p>
+<p>Here’s a video by Alexander Swan on interpreting a Q-Q plot in jamovi:</p>
+<div class="vembedr">
+<div>
+<iframe src="https://www.youtube.com/embed/sLhFc-4qSXE" width="533" height="300" frameborder="0" allowfullscreen="" data-external="1"></iframe>
+</div>
+</div>
+</div>
+</div>
+<div id="homogeneity-of-variance" class="section level3 hasAnchor">
+<h3>Homogeneity of variance<a href="parametric-assumptions.html#homogeneity-of-variance" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Our third assumption is that the variance in the DV needs to be the same at each level of the IV. If we fail to meet the assumption, we say we have heterogeneity. It might help you to remember that the prefix <em>homo</em> means same and <em>hetero</em> means different.</p>
+<p>We can test this assumption in two ways.</p>
+<div id="visualize-the-distribution-of-data-across-groups" class="section level4 hasAnchor">
+<h4>Visualize the distribution of data across groups<a href="parametric-assumptions.html#visualize-the-distribution-of-data-across-groups" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>First, we can look at the data points across groups. This can be done by choosing a plot in the Descriptives analysis and adding your IV to the “Split By” box. Then select Box Plot, Violin, Data (Jittered) under Plots.</p>
+<p>For example, here’s an example of data that violates the assumption of homogeneity of variance (gender by mile time) because the variance in scores for females (1) is a lot wider than the variance in scores for males (0):</p>
+<p><img src="images/06-inferential/homogeneity.png" width="500" /></p>
+</div>
+<div id="examine-the-variances-across-groups" class="section level4 hasAnchor">
+<h4>Examine the variances across groups<a href="parametric-assumptions.html#examine-the-variances-across-groups" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Similarly, in the Exploration –&gt; Descriptives under Statistics you can ask for Variance after splitting the DV by the IV. The variance for Gender == 0 (male) is 6796.20 whereas the variance for Gender == 1 (female) is 15401.55. Clearly, there is much greater variability for females than males for time it takes to run the mile.</p>
+</div>
+<div id="levenes-test" class="section level4 hasAnchor">
+<h4>Levene’s test<a href="parametric-assumptions.html#levenes-test" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>When we perform inferential statistics that have the assumption of homogeneity of variance, in jamovi there will be a check box to check the assumption. It will perform Levene’s test.</p>
+<p>However, you may be testing the assumption prior to running your analysis (or learning about inferential statistics just yet). In that case, to perform Levene’s test, go to Analyses then ANOVA then One-way ANOVA. Move your continuous variable to the Dependent Variables box and move your nominal variable to the Grouping Variable box. Check the box “homogeneity test.” Only report the results of Levene’s test; ignore the one-way ANOVA results!</p>
+<p>Here’s the result of Levene’s test for the effect of gender on mile duration:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Levene’s</th>
+<th align="right">F</th>
+<th align="right">df1</th>
+<th align="right">df2</th>
+<th align="right">p</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">MileMinDur</td>
+<td align="right">41.33</td>
+<td align="right">1</td>
+<td align="right">381</td>
+<td align="right">&lt;.001</td>
+</tr>
+</tbody>
+</table>
+<p>Like the other tests above, <strong>a non-significant Levene’s test means we meet the assumption of homogeneity of variance.</strong> However, if Levene’s test is statistically significant, then we fail to meet the assumption of homogeneity of variance and have heterogeneity of variance. In this case, our test is statistically significant so, in combination with our plot above, we say we violated this assumption.</p>
+</div>
+</div>
+<div id="recapping-parametric-assumptions" class="section level3 hasAnchor">
+<h3>Recapping parametric assumptions<a href="parametric-assumptions.html#recapping-parametric-assumptions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Let’s summarize the four assumptions and generally how to test for them:</p>
+<ol style="list-style-type: decimal">
+<li><strong>Interval or ratio (i.e., continuous) dependent variable</strong>
+<ol style="list-style-type: decimal">
+<li>Know your levels of measurement and make sure the dependent variable is continuous.</li>
+</ol></li>
+<li><strong>Independent scores on the dependent variable</strong>
+<ol style="list-style-type: decimal">
+<li>Know your research design and make sure you have a between-subjects design and that scores from one person do not affect scores from another person (e.g., nested data). There are special considerations for within-subjects designs that we’ll learn about later.</li>
+</ol></li>
+<li><strong>Normal distribution of the dependent variable</strong>
+<ol style="list-style-type: decimal">
+<li><p>Visualize the distribution with a histogram and/or density plot of the dependent variable</p></li>
+<li><p>Test the skew and kurtosis by calculating the <em>z</em>-scores</p></li>
+<li><p>Test using the Shapiro-Wilk test</p></li>
+<li><p>Examine the Q-Q plot for deviations from the diagonal line</p></li>
+</ol></li>
+<li><strong>Homogeneity of variances</strong>
+<ol style="list-style-type: decimal">
+<li><p>Visualize the distribution by a boxplot, violin plot, and/or data (jittered recommended) with the dependent variable split by the independent variable</p></li>
+<li><p>Examine the variances of the dependent variable split by the independent variable</p></li>
+<li><p>Test using Levene’s test</p></li>
+</ol></li>
+</ol>
+
+</div>
 </div>
 <div class="psyteachr_footer">
   
@@ -449,7 +662,7 @@ window.onload = function() {
         </div>
       </div>
 <a href="choosing-the-correct-test.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="intervalratio-data.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="violated-assumptions.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
