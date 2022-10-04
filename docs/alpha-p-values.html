@@ -239,6 +239,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="violated-assumptions.html"><a href="violated-assumptions.html#normality-or-homogeneity-of-variance"><i class="fa fa-check"></i>Normality or homogeneity of variance</a></li>
 </ul></li>
 </ul></li>
+<li class="chapter" data-level="" data-path="reliability.html"><a href="reliability.html"><i class="fa fa-check"></i>7. Reliability</a></li>
 <li class="chapter" data-level="" data-path="writing-up-results.html"><a href="writing-up-results.html"><i class="fa fa-check"></i>8. Writing up results</a></li>
 <li class="part"><span><b>IV Individual Tests</b></span></li>
 <li class="chapter" data-level="" data-path="t-tests.html"><a href="t-tests.html"><i class="fa fa-check"></i>t-tests</a>
@@ -401,7 +402,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Whereas effect sizes tell us about <em>practical</em> significance, they do not tell us about <em>statistical</em> significance. That is what <em>p</em>-values are for: they tell us whether our results are <em>statistically</em> significant or how surprising they are. The formal definition of a <strong><em>p</em>-value</strong> is that it is the probability of observing data that is as extreme or more extreme than the data you have observed, assuming the null hypothesis is true. There’s two things to keep in mind about this definition:</p>
 <ol style="list-style-type: decimal">
 <li>The p-value is about the <strong>probability of our <u>data</u></strong>. It is not about the probability of our hypothesis.</li>
-<li>The p-value is <strong>based on the assumption that the <u>null</u> hypothesis is <u>true</u></strong>. In null hypothesis significance testing, we are only ever testing against the null. We can never “accept” the alternative hypothesis but rather fail to reject the null. If we fail to reject the null enough times (and rarely reject the null) then it gives weighted evidence towards our alternative hypothesis, but we can never prove the alternative hypothesis is true.</li>
+<li>The p-value is <strong>based on the assumption that the <u>null</u> hypothesis is <u>true</u></strong>. In null hypothesis significance testing, we are only ever testing against the null. We can never “accept” the alternative hypothesis but rather fail to reject the null. If we reject the null enough times (and rarely fail to reject the null) then it gives weighted evidence towards our alternative hypothesis, but we can never prove the alternative hypothesis is true.</li>
 </ol>
 <p>Another way we could think of the <em>p</em>-value is: assuming there is no difference (i.e., the null hypothesis is true), how surprising is our data?</p>
 <p>You may have heard of <em>p</em>-values before. You may have heard about them in a previous statistics course or you may have heard of them in relation to the “replication crisis.” You may have heard about the journal that banned <em>p</em>-values altogether. You may then be wondering why we are learning about <em>p</em>-values if they seem so problematic that they should be banned.</p>
@@ -423,6 +424,7 @@ Figure 2: Critical area of statistical significance
 <p>Basically, .05 was convenient. It was 1/20. It was around 2 standard deviations from the mean in a normal distribution. For some reason, it caught on (maybe the “formally regarded as significant” was why).</p>
 <p>However, a year later, even Fisher acknowledged we shouldn’t just arbitrarily use <em>p</em> = .05 as our alpha level.<a href="#fn7" class="footnote-ref" id="fnref7"><sup>7</sup></a> Rather, we should consider setting it at higher odds (e.g., <em>p</em> = .01). He also argued, “A scientific fact should be regarded as experimentally established only if a properly designed experiment <em>rarely fails</em> to give this level of significance.” (Fisher, 1926, p. 504).</p>
 <p>In other words, we need to think critically about the alpha level we set <em>and</em> we need to test an effect multiple times before we start thinking the alternative hypothesis is true. We’ll discuss power next before we start putting it all together.</p>
+<p><a href="https://twitter.com/Notawful/status/1573388208314159104"><img src="https://pbs.twimg.com/media/FdXMPMhX0AIj6qb?format=jpg" alt="Courtesy of Dr. Jess Hartnett (@Notawful on Twitter)" /></a></p>
 </div>
 <div id="are-p-values-bad" class="section level3 hasAnchor">
 <h3>Are p-values bad?<a href="alpha-p-values.html#are-p-values-bad" class="anchor-section" aria-label="Anchor link to header"></a></h3>

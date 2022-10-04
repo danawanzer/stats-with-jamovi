@@ -3,7 +3,7 @@
 Whereas effect sizes tell us about *practical* significance, they do not tell us about *statistical* significance. That is what *p*-values are for: they tell us whether our results are *statistically* significant or how surprising they are. The formal definition of a ***p*****-value** is that it is the probability of observing data that is as extreme or more extreme than the data you have observed, assuming the null hypothesis is true. There's two things to keep in mind about this definition:
 
 1.  The p-value is about the **probability of our [data]{.underline}**. It is not about the probability of our hypothesis.
-2.  The p-value is **based on the assumption that the [null]{.underline} hypothesis is [true]{.underline}**. In null hypothesis significance testing, we are only ever testing against the null. We can never "accept" the alternative hypothesis but rather fail to reject the null. If we fail to reject the null enough times (and rarely reject the null) then it gives weighted evidence towards our alternative hypothesis, but we can never prove the alternative hypothesis is true.
+2.  The p-value is **based on the assumption that the [null]{.underline} hypothesis is [true]{.underline}**. In null hypothesis significance testing, we are only ever testing against the null. We can never "accept" the alternative hypothesis but rather fail to reject the null. If we reject the null enough times (and rarely fail to reject the null) then it gives weighted evidence towards our alternative hypothesis, but we can never prove the alternative hypothesis is true.
 
 Another way we could think of the *p*-value is: assuming there is no difference (i.e., the null hypothesis is true), how surprising is our data?
 
@@ -53,6 +53,8 @@ However, a year later, even Fisher acknowledged we shouldn't just arbitrarily us
 [^05.2-p-values-1]: If you want to read more, this is a short read on the history of the .05 alpha level: <https://www2.psych.ubc.ca/~schaller/528Readings/CowlesDavis1982.pdf>
 
 In other words, we need to think critically about the alpha level we set *and* we need to test an effect multiple times before we start thinking the alternative hypothesis is true. We'll discuss power next before we start putting it all together.
+
+[![Courtesy of Dr. Jess Hartnett (\@Notawful on Twitter)](https://pbs.twimg.com/media/FdXMPMhX0AIj6qb?format=jpg)](https://twitter.com/Notawful/status/1573388208314159104)
 
 ### Are p-values bad?
 
