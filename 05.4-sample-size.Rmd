@@ -2,7 +2,7 @@
 
 Sample size is the total number of participants in a study (often denoted as *n* in a paper). In a between-subjects study, we often describe how many participants are in each group; although it is best if there are equal numbers in each group, there are times when that may not be the case.
 
-Often, the biggest question we want to know is: what sample size do I need for my study? Daniel Lakens has a great new [preprint](https://psyarxiv.com/9d3yf/) out on the topic and a [sample size justification online tool](https://shiny.ieis.tue.nl/sample_size_justification/). We often cannot measure the entire population, but some other ways we can determine the sample size are:
+Often, the biggest question we want to know is: what sample size do I need for my study? Daniel Lakens has a great new [preprint](https://psyarxiv.com/9d3yf/) and [chapter](https://lakens.github.io/statistical_inferences/power.html) out on the topic and a [sample size justification online tool](https://shiny.ieis.tue.nl/sample_size_justification/). We often cannot measure the entire population, but some other ways we can determine the sample size are:
 
 1.  Resource constraints: sometimes time and budget limits our sample size
 2.  Accuracy or an *a priori* power analysis: based on the statistical power we hope to achieve (which is in turn based on the effect size we expect)

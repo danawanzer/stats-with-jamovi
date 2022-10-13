@@ -86,7 +86,7 @@ There are other types of variables we may be interested in:
 
     -   Typically, degrees of freedom are *n* - 1 however it is *n* - 2 for a paired samples t-test and *k* - 1 for the within-subjects design for an ANOVA,
 
--   **Confidence intervals**: A confidence interval is such that in repeated sampling (e.g., replicating a study over and over and over again) then 95% of those confidence intervals should contain the true population parameter. You can see this visualized, and learn more about it, with this great [visualization](https://rpsychologist.com/d3/ci/) and read this great [blog post](http://daniellakens.blogspot.com/2016/03/the-difference-between-confidence.html).
+-   **Confidence intervals**: A confidence interval is such that in repeated sampling (e.g., replicating a study over and over and over again) then 95% of those confidence intervals should contain the true population parameter. You can see this visualized, and learn more about it, with this great [visualization](https://rpsychologist.com/d3/ci/) and read this great [blog post](http://daniellakens.blogspot.com/2016/03/the-difference-between-confidence.html). You can also [read a chapter on this topic by Daniel Lakens](https://lakens.github.io/statistical_inferences/confint.html).
 
 ### Other terms
 

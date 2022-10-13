@@ -5,7 +5,7 @@ library(tidyverse)
 options(knitr.graphics.auto_pdf = TRUE)
 ```
 
-The independent t-test is used to test the difference in our dependent variable between two different groups of observations. Our grouping variable is our independent variable. In other words, we use the independent t-test when we have a research question with a **continuous dependent variable** and a **categorical independent variable with two categories in which [different]{.ul} participants are in each category**.
+The independent t-test is used to test the difference in our dependent variable between two different groups of observations. Our grouping variable is our independent variable. In other words, we use the independent t-test when we have a research question with a **continuous dependent variable** and a **categorical independent variable with two categories in which [different]{.underline} participants are in each category**.
 
 The independent t-test is also called the independent samples t-test and the Student's t-test.
 
@@ -110,13 +110,10 @@ We test for homogeneity of variance using the Levene's test. The Levene's test w
 
 If you fail to meet one or both of the assumptions of normality (and no transformations fixed your data) and homogeneity of variances, jamovi has the alternative statistics easily built in. Here's what statistic you should choose based on satisfying assumptions:
 
-+--------------------------------------------+--------------------------+------------------------------+
-|                                            | **Normality: satisfied** | **Normality: not satisfied** |
-+============================================+==========================+==============================+
-| **Homogeneity of Variance: satisfied**     | Student's t-test         | [Mann-Whitney U test]        |
-+--------------------------------------------+--------------------------+------------------------------+
-| **Homogeneity of Variance: not satisfied** | [Welch's t-test]         | [Mann-Whitney U test]        |
-+--------------------------------------------+--------------------------+------------------------------+
+|                                            | **Normality: satisfied**         | **Normality: not satisfied** |
+|-------------------------------|-------------------|----------------------|
+| **Homogeneity of Variance: satisfied**     | Student's t-test                 | [Mann-Whitney U test]        |
+| **Homogeneity of Variance: not satisfied** | [Welch's t-test](#welchs-t-test) | [Mann-Whitney U test]        |
 
 #### Decide which hypothesis you should be using
 
@@ -183,13 +180,17 @@ We can write up our results in APA something like this:
 
 Let's analyze that against the 4 things we need to report:
 
-> **\#1:** The research question was whether there was a difference in student grades between Anastasia's and Bernadette's classes. **\#4** Anastasia's students **\#2** (*M* = 74.53, *SD* = 9.00, *n* = 15) **\#4 cont.** had significantly higher grades than Bernadette's students **\#2** (*M* = 69.06, *SD* = 5.77, *n* = 18), **\#3** *t* (31) = 2.12, *p* = .043, *d* = .74.
+> **#1:** The research question was whether there was a difference in student grades between Anastasia's and Bernadette's classes. **#4** Anastasia's students **#2** (*M* = 74.53, *SD* = 9.00, *n* = 15) **#4 cont.** had significantly higher grades than Bernadette's students **#2** (*M* = 69.06, *SD* = 5.77, *n* = 18), **#3** *t* (31) = 2.12, *p* = .043, *d* = .74.
 
 Sometimes, people like to put the statistics inside a parentheses. In that case, you need to change the parentheses around the degrees of freedom as brackets. Here's another example write-up of the results in APA style:
 
-> **\#1** I tested the difference in grades between Anastasia's students **\#2** (*M* = 74.53, *SD* = 9.00, *n* = 15) and Bernadette's students (*M* = 69.06, *SD* = 5.77, *n* = 18). **\#3** An independent samples t-test showed that the 5.48 mean difference between the tutor's student was statistically significant (*t* [31] = 2.12, *p* = .043, *d* = .74). **\#4** Therefore, we reject the null hypothesis that there is no difference in grades between the two classes.
+> **#1** I tested the difference in grades between Anastasia's students **#2** (*M* = 74.53, *SD* = 9.00, *n* = 15) and Bernadette's students (*M* = 69.06, *SD* = 5.77, *n* = 18). **#3** An independent samples t-test showed that the 5.48 mean difference between the tutor's student was statistically significant (*t* [31] = 2.12, *p* = .043, *d* = .74). **#4** Therefore, we reject the null hypothesis that there is no difference in grades between the two classes.
 
 Note that these are not the only way we can write up the results in APA format. The key is that we include all four pieces of information as specified above.
+
+You can also better see where we are getting all the information from with the following image:
+
+![](images/02-independent_t-test/t-test%20results%20and%20write-up%20comparison/independent.png){width="965"}
 
 #### Visualize the results
 
@@ -203,7 +204,7 @@ Another default option in jamovi is via the Descriptives analysis. You can ask f
 
 Oftentimes, people display results in a simple bar chart, often adding error bars (either 95% CI or SE error bars). But this is also not a great chart because it lacks information about the underlying distribution of data. Therefore, for the independent t-test I recommend the visualization shown above.
 
-### Welch's t-test
+### Welch's t-test {#welchs-t-test}
 
 The Welch's t-test has three main differences from the independent samples t-test: (a) the standard error (SE) is not a pooled estimate, (b) the degrees of freedom are calculated very different (not *N* - 2), and (c) it does not have an assumption of homogeneity of variance. Note that Welch's t-test is *not* a non-parametric test because it still has the assumption of a normal distribution.
 

@@ -1,5 +1,7 @@
 ## Effect sizes
 
+*If you'd like to read a more in-depth discussion of effect sizes, I recommend also reading [Daniel Lakens' chapter in his textbook "Improving Your Statistical Inferences."](https://lakens.github.io/statistical_inferences/effectsize.html)*
+
 An **effect size** is a quantitative description of the strength of a phenomenon. There are two basic effect sizes we tend to talk about:
 
 The ***d*** family of effect sizes are standardized mean differences. They start at 0 (no mean difference) and can go up to infinity, with larger values meaning larger standardized mean differences. Some of the effect sizes in this family:
@@ -28,7 +30,7 @@ You may have seen some heuristics online about what small, medium, and large is 
 
 ### What makes an effect practically significant?
 
-We'll get into p-values in a moment, which are about statistical significance, but they don't tell us anything about how meaningful the effect is. That's what an effect size is for. But how do we know if it's meaningful or practically significant? 
+We'll get into p-values in a moment, which are about statistical significance, but they don't tell us anything about how meaningful the effect is. That's what an effect size is for. But how do we know if it's meaningful or practically significant?
 
 Lakens (who also did the great journal article on effect sizes above) has a fantastic new preprint out on [Sample Size Justification](https://psyarxiv.com/9d3yf/). In it, he provides an overview of six possible ways to determine which effect sizes are interesting:
 
@@ -39,4 +41,4 @@ Lakens (who also did the great journal article on effect sizes above) has a fant
 5.  Sensitivity power analysis: across a range of possible effect sizes, which effects does a design have sufficient power to detect when performing a hypothesis test?
 6.  Distribution of effect sizes in a research area: what is the empirical range of effect sizes in a specific research are, and which effects are *a priori* unlikely to be observed?" (p. 3)
 
-Basically, what does past research have to say about what effect size you can expect (\#3 and \#6)? What is the smallest effect size you care about (\#1)? What is the smallest effect size you can reasonably obtain (e.g., due to sample size limitations; \#2, \#3, and \#4)? This is the justification you use to determine what effect size you are looking for. This is important for when you are then determining what sample size you need, which will be discussed in a separate section.
+Basically, what does past research have to say about what effect size you can expect (#3 and #6)? What is the smallest effect size you care about (#1)? What is the smallest effect size you can reasonably obtain (e.g., due to sample size limitations; #2, #3, and #4)? This is the justification you use to determine what effect size you are looking for. This is important for when you are then determining what sample size you need, which will be discussed in a separate section.
