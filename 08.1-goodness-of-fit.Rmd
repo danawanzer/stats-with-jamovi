@@ -79,9 +79,9 @@ As you will see in the output, jamovi automatically assumed equal proportions of
 
 We can use the `Expected Proportions` in the setup to specify different expected frequencies.
 
-For example, in our current scenario maybe we think our deck is a little stacked in favor of red cards--or we think our participants are more likely to choose red cards than black cards. We can specify our expected proportions and then interpret the results. In this case, participants do not seem more likely to choose red cards based on the expected frequencies we provided.
+For example, in our current scenario maybe we think our deck is a little stacked in favor of red cards--or we think our participants are more likely to choose red cards than black cards. We can specify our expected proportions and then interpret the results, such as the example shown in the figure below. In this case, assuming a null distribution of a stacked deck for red cards, participants do not seem more likely to choose red cards based on the expected frequencies we provided.
 
-![](images/09-chi-square/chi-square_results2.png)
+![](images/09-chi-square/chi-square_results3.png)
 
 ### Step 4: Interpret results
 
