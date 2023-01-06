@@ -19,6 +19,11 @@ We won't be covering it in this class, but if you violate this assumption then y
 
 If you violate either normality or homogeneity of variance, there are a few options you can choose.
 
+```{block, type="info"}
+
+Something I commonly hear from students when they read this section is whether this isn't messing with our data and making it invalid. However, outliers and non-normal data do not play nicely with our inferential statistics, so what we are doing is making our data more appropriate for our tests. Whatever changes we make should be transparently reported so that our readers and reviewers can critically examine our methods. 
+```
+
 #### Remove outliers
 
 First, double check that you do not have any outliers. How do you know if data is an outlier? To look for outliers in single variables (aka univariate outliers), you can just look at your data. To look for multivariate outliers (outliers across multiple variables), you can look at Mahalanobis distance or Cook's distance, which you would need to use the Rj editor to perform in jamovi and we won't cover in this class.
@@ -34,7 +39,7 @@ What can you do in case of outliers?
 
 Winsorizing is used when both tails of the distribution have outliers whereas trimming is used when it's just one or a few outliers on one side of the distribution. In both cases, we replace the extreme valuse with the next-most-extreme values. There's more to Winsorizing than what I've described here, so I encourage you to learn more if you are interested.
 
-We can do this through the Transform feature on jamovi. For example, here's what it looks like to trim the Reading variable to get rid of the few scores on the far left of the histogram. We want to take those values less than 60 and replace their scores with a new score of 60.
+We can do this through the Transform feature on jamovi. For example, here's what it looks like to trim the Reading variable to get rid of the few scores on the far left of the histogram. We want to take those values less than 60 and replace their scores with a new score of 60. If we were winsorizing on both ends, we might take values greater than 100 and replace with 100.
 
 ![](images/03-jamovi/winsorize.png)
 
@@ -60,5 +65,7 @@ When you perform a transformation, then you need to check whether the transforma
 #### Non-parametric tests
 
 If all else fails--meaning there are no outliers or no transformations fix the violated assumption(s)--then you can perform a non-parametric test. These tests have *no* assumption of normally distributed data or homogeneity of variance! As you saw in the chart about choosing the correct statistical test, many of our parametric tests have non-parametric equivalents.
+
+You might wonder why we don't just use non-parametric tests and just get rid of all these parametric tests. However, if we meet our assumptions then the parametric test will be more capable of detecting effects if they exist compared to non-parametric tests. When we don't meet assumptions, then the non-parametric tests will be more capable of detecting effects.
 
 When we cover each individual statistical test (e.g., independent t-test) we will also cover its non-parametric equivalent (e.g., Mann-Whitney test). So stay tuned and just remember you have this option if you violate assumptions!

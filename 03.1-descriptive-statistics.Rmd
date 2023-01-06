@@ -8,9 +8,9 @@ First, it's important to understand the different types of variables in jamovi a
 
 Variables in jamovi can be one of three data types:
 
-1.  Integer, meaning the values are discrete whole numbers
-2.  Decimal, meaning the values are numbers with decimals
-3.  Text, meaning the values are alphanumeric, not just numeric
+1.  **Integer**, meaning the values are discrete whole numbers
+2.  **Decimal**, meaning the values are numbers with decimals
+3.  **Text**, meaning the values are alphanumeric, not just numeric
 
 Furthermore, variables in jamovi can be one of four measure types:
 
@@ -40,7 +40,7 @@ In the `Descriptives` analysis, these are under the `Statistics` drop-down menu.
 
 1.  **Sample size**: you can ask for the sample size (`N`) and number of missing values (`Missing`)
 2.  **Percentile values**: these are useful for creating quartiles (`Cut points for 4 equal groups`) or `Percentiles` of various sizes.
-3.  **Dispersion**: you should already be familiar with most of the measures of dispersion, particularly the `Minimum` and `Maximum` and the `Std. deviation` (SD) and `Variance` (which is just SD^2^). We'll learn about the `S. E. Mean` later.
+3.  **Dispersion**: you should already be familiar with most of the measures of dispersion, particularly the `Minimum` and `Maximum`, but there is also the `Std. deviation` (SD) and `Variance` (which is just SD^2^). We'll learn about the `S. E. Mean` later.
 4.  **Central Tendency**: similarly, you should also be familiar with all of the measures of central tendency: `Mean`, `Median`, `Mode`, and `Sum`.
 5.  **Distribution**: you should also be familiar with both `Skewness` and `Kurtosis` and later we will learn what those values mean and how that helps us test for normality
 6.  **Normality**: lastly, there is a statistical test for normality called the `Shapiro-Wilk` test that we will learn about later.
@@ -53,7 +53,7 @@ Sometimes we want to get the descriptive statistics for one variable across mult
 
 We'll learn more about writing up our inferential statistics results later, but first let's learn how we might report our descriptive statistics.
 
-In small examples, we might write-up our descriptive statistics into a paragraph[^03.1-descriptive-statistics-1]:
+In small examples, we might write-up our descriptive statistics into a paragraph[^03.1-descriptive-statistics-1] (note that there is also an independent t-test and a chi-square test of independence!):
 
 [^03.1-descriptive-statistics-1]: This comes from [Wanzer (2017) Developmentally appropriate evaluations: How evaluation practices differ across age of participants](https://thesiscommons.org/bk57d/)
 
@@ -71,11 +71,11 @@ In examples with many variables, we might write-up our descriptive statistics in
 
 jamovi has some plots built into its platform, both under the `Plots` drop-down menu in the `Descriptives` analysis and as options for many of the inferential statistical analyses.
 
-We'll learn more about how to choose and conduct better data visualizations later, but for now here are some recommended visualizations depending on what you are trying to do.
+We'll learn more about how to choose and conduct better data visualizations later, but for now here are some recommended visualizations depending on what you are trying to do. Note that we will do most of our visualizations in jamovi, but we may also learn how to visualize data via Excel. There are also excellent LinkedIn Learning courses on data visualization in Excel and other tools that I strongly recommend; they are free for you if you are a UW-Stout student.
 
 [When you want to visualize the distribution of a continuous variable]{.underline}
 
-First, there are two **Histogram** options: `Histogram` and `Density`. These are useful for seeing the overall distribution of your data and to help check for normality. Which should you use? I think they're both pretty great, and in fact you can combine the two to have a histogram plot with a density overlay. I like this option best.
+First, there are two **Histogram** options: `Histogram` and `Density`. These are useful for seeing the overall distribution of your data and to help check for normality. Which should you use? I think they're both pretty great, and in fact you can combine the two to have a histogram plot with a density overlay. I like this option best because it presents more information and better lets us see if the if the density curve looks normally distributed.
 
 [When you want to visualize the distribution of a continuous variable split by a categorical variable]{.underline}
 
@@ -88,7 +88,6 @@ For this you would choose the single option under **Bar Plots**: `Bar plot`. It 
 ```{block, type="info"}
 
 **Remember: it is incredibly important to always visualize your data!** You never know what descriptive statistics may be hiding.
-
 ```
 
 ```{r echo = FALSE, message = FALSE, warning = FALSE}

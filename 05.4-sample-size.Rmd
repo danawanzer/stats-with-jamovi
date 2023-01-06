@@ -1,12 +1,14 @@
 ## Sample size & power analysis
 
-Sample size is the total number of participants in a study (often denoted as *n* in a paper). In a between-subjects study, we often describe how many participants are in each group; although it is best if there are equal numbers in each group, there are times when that may not be the case.
+### Sample size (N)
+
+Sample size is the total number of participants in a study (often denoted as *n* in a paper). In a between-subjects study, we should also describe how many participants are in each group, especially if the groups are unequal in size.
 
 Often, the biggest question we want to know is: what sample size do I need for my study? Daniel Lakens has a great new [preprint](https://psyarxiv.com/9d3yf/) and [chapter](https://lakens.github.io/statistical_inferences/power.html) out on the topic and a [sample size justification online tool](https://shiny.ieis.tue.nl/sample_size_justification/). We often cannot measure the entire population, but some other ways we can determine the sample size are:
 
 1.  Resource constraints: sometimes time and budget limits our sample size
 2.  Accuracy or an *a priori* power analysis: based on the statistical power we hope to achieve (which is in turn based on the effect size we expect)
-3.  Heuristics: some prespecified rule or norm that is described in the literature (to be avoided as much as possible)
+3.  Heuristics: some prespecified rule or norm that is described in the literature (to be avoided as much as possible because they're often wrong)
 
 The first option is more of a research methods discussion and will not be discussed here. The third option is to be avoided as much as possible. Therefore, that leads us to the second option, which is to conduct an *a priori* power analysis.
 
@@ -14,15 +16,15 @@ We'll cover it broadly here, but if you want to learn more about conducting powe
 
 ### BEAN: Power analysis
 
-We previously saw how alpha and power relate to one another. In the [interactive calculator](https://rpsychologist.com/d3/pdist/) you also started to discover that effect sizes and sample size also relate to alpha and power. This is the power of the BEAN: if you know three out of the four of BEAN, you can determine the fourth. Power, effect sizes, alpha, and sample sizes all interrelate!
+We previously saw how alpha and power relate to one another. In the [interactive calculator](https://rpsychologist.com/d3/pdist/) you started to discover that effect sizes and sample size also relate to alpha and power. This is the power of the BEAN: if you know three out of the four of BEAN, you can determine the fourth. Power, effect sizes, alpha, and sample sizes all interrelate!
 
-Typically, there are three things we may be interested in figuring out:
+Typically, there are three things we may be interested in figuring out related to BEAN:
 
 1.  What sample size do I need given the effect size of interest, alpha level, and power level?
 2.  What power do I have to detect the effect size of interest given my alpha level and sample size?
 3.  What effect size can I reasonably detect given my alpha level, power level, and sample size?
 
-There is software out there to help you conduct power analyses. The most popular is [G\*Power](https://www.psychologie.hhu.de/arbeitsgruppen/allgemeine-psychologie-und-arbeitspsychologie/gpower.html).
+There is software out there to help you conduct power analyses. The most popular is [G\*Power](https://www.psychologie.hhu.de/arbeitsgruppen/allgemeine-psychologie-und-arbeitspsychologie/gpower.html) (there are various guides on how to use G\*Power, including [this](https://link.springer.com/article/10.3758/BF03203630) and [this](https://link.springer.com/article/10.3758/BF03193146)). There are specific power calculators for more complex statistical procedures. There are also methods of using simulations to determine the power, but they are more complex and we won't cover them in this course.
 
 For our purposes, we're going to simplify things and use the jpower module in jamovi. This can calculate power for an independent samples t-test, a paired samples t-test, and a one-sample t-test. Our previous example in the last chapter (the Bobo doll experiment) has two groups in a between-subjects design. Next chapter you'll learn how to determine what statistical test you would perform, but for now I will just tell you that we would conduct an independent samples t-test with this experiment's data.
 

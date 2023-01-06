@@ -28,7 +28,7 @@ This book was developed in R/Rstudio using [bookdown](https://bookdown.org/yihui
 
 There are some icons at the top of this book that you may find useful:
 
-1.  The first button of the toolbar toggles the visibility of the sidebar, which contains the table of contents. You can also hit the `S` key on your keyboard to toggle the sidebar.
+1.  The first button of the toolbar, which looks like three horizontal lines, toggles the visibility of the sidebar, which contains the table of contents. You can also hit the `S` key on your keyboard to toggle the sidebar.
 
 2.  The second button of the toolbar is the search button, which you can use to search the entire book. You can also hit the `F` (Find) key on your keyboard.
 
@@ -52,8 +52,10 @@ When you are working on this course, I recommend that you only have open the app
 
 Another friendly reminder: restart your computer frequently, at least once a week. Your computer will begin slowing down the longer you wait in between restarts. Also, be sure to update your computer regularly.
 
+Note that jamovi now has a cool [Cloud version](https://cloud.jamovi.org/). It has nearly all the same features as the desktop version, but as of January 2023 it is still in beta and so it may not always work perfectly. I strongly recommend you use the Desktop version in this course.
+
 ### Errors, mistakes, and suggestions {.unlisted .unnumbered}
 
-I am human, therefore I err. If you find an error in the textbook or something you think might be a mistake, please let me know ASAP so I can update this for everyone else. Let me know which section you find the error or mistake in and what the error or mistake is. For example, if there was an error here you could say, "There was an error in 1.2 that the first sentence should really be 'To err is human (Alexander Pope, 1711).'"
+I am human, therefore I err. If you find an error in the textbook or something you think might be a mistake, please let me know ASAP so I can update this for everyone else. Let me know which section you find the error or mistake in and what the error or mistake is. For example, if there was an error here you could say, "There was an error in chapter 1, last section, that the first sentence should really be 'To err is human (Alexander Pope, 1711).'"
 
 In addition, if you have ideas to help make this textbook even better, please let me know. I would love to make this a useful resource to you both during our course and in your future research. Help me in making that a reality!

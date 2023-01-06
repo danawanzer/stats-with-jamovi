@@ -77,7 +77,7 @@
 <li class="part"><span><b>I Overview</b></span></li>
 <li class="chapter" data-level="" data-path="statistics-foundations.html"><a href="statistics-foundations.html"><i class="fa fa-check"></i>2. Statistics foundations</a>
 <ul>
-<li class="chapter" data-level="" data-path="statistics-foundations.html"><a href="statistics-foundations.html#central-tendency-and-dispersion"><i class="fa fa-check"></i>Central tendency and dispersion</a></li>
+<li class="chapter" data-level="" data-path="statistics-foundations.html"><a href="statistics-foundations.html#describing-our-data"><i class="fa fa-check"></i>Describing Our Data</a></li>
 <li class="chapter" data-level="" data-path="statistics-foundations.html"><a href="statistics-foundations.html#levels-of-measurement"><i class="fa fa-check"></i>Levels of measurement</a></li>
 <li class="chapter" data-level="" data-path="descriptive-vs-inferential-statistics.html"><a href="descriptive-vs-inferential-statistics.html"><i class="fa fa-check"></i>Descriptive vs inferential statistics</a>
 <ul>
@@ -92,8 +92,7 @@
 <li class="chapter" data-level="" data-path="design-methods-key-terms.html"><a href="design-methods-key-terms.html#other-terms"><i class="fa fa-check"></i>Other terms</a></li>
 </ul></li>
 </ul></li>
-<li class="part"><span><b>II Intro to jamovi</b></span></li>
-<li class="chapter" data-level="" data-path="overview-of-jamovi.html"><a href="overview-of-jamovi.html"><i class="fa fa-check"></i>3. Overview of jamovi</a>
+<li class="chapter" data-level="" data-path=""><a href="#part-intro-to-jamovi"><i class="fa fa-check"></i>(PART) Intro to jamovi</a>
 <ul>
 <li class="chapter" data-level="" data-path="describing-data.html"><a href="describing-data.html"><i class="fa fa-check"></i>Describing data</a>
 <ul>
@@ -108,8 +107,8 @@
 <li class="chapter" data-level="" data-path="cleaning-data.html"><a href="cleaning-data.html"><i class="fa fa-check"></i>Cleaning data</a>
 <ul>
 <li class="chapter" data-level="" data-path="cleaning-data.html"><a href="cleaning-data.html#data-setup"><i class="fa fa-check"></i>Data setup</a></li>
-<li class="chapter" data-level="" data-path="cleaning-data.html"><a href="cleaning-data.html#compute"><i class="fa fa-check"></i>Compute</a></li>
-<li class="chapter" data-level="" data-path="cleaning-data.html"><a href="cleaning-data.html#transform"><i class="fa fa-check"></i>Transform</a></li>
+<li class="chapter" data-level="" data-path="cleaning-data.html"><a href="cleaning-data.html#compute-create-new-variables-using-some-computation"><i class="fa fa-check"></i>Compute (create new variables using some computation)</a></li>
+<li class="chapter" data-level="" data-path="cleaning-data.html"><a href="cleaning-data.html#transform-revise-current-variables"><i class="fa fa-check"></i>Transform (revise current variables)</a></li>
 <li class="chapter" data-level="" data-path="cleaning-data.html"><a href="cleaning-data.html#filters"><i class="fa fa-check"></i>Filters</a></li>
 </ul></li>
 </ul></li>
@@ -128,6 +127,7 @@
 <ul>
 <li class="chapter" data-level="" data-path="effect-sizes.html"><a href="effect-sizes.html"><i class="fa fa-check"></i>Effect sizes</a>
 <ul>
+<li class="chapter" data-level="" data-path="effect-sizes.html"><a href="effect-sizes.html#types-of-effect-sizes"><i class="fa fa-check"></i>Types of effect sizes</a></li>
 <li class="chapter" data-level="" data-path="effect-sizes.html"><a href="effect-sizes.html#small-medium-and-large-effect-sizes"><i class="fa fa-check"></i>Small, medium, and large effect sizes</a></li>
 <li class="chapter" data-level="" data-path="effect-sizes.html"><a href="effect-sizes.html#what-makes-an-effect-practically-significant"><i class="fa fa-check"></i>What makes an effect practically significant?</a></li>
 </ul></li>
@@ -175,7 +175,7 @@
 </ul></li>
 <li class="chapter" data-level="" data-path="reliability.html"><a href="reliability.html"><i class="fa fa-check"></i>7. Reliability</a></li>
 <li class="chapter" data-level="" data-path="writing-up-results.html"><a href="writing-up-results.html"><i class="fa fa-check"></i>8. Writing up results</a></li>
-<li class="part"><span><b>III Individual Tests</b></span></li>
+<li class="part"><span><b>II Individual Tests</b></span></li>
 <li class="chapter" data-level="" data-path="t-tests.html"><a href="t-tests.html"><i class="fa fa-check"></i>t-tests</a>
 <ul>
 <li class="chapter" data-level="" data-path="one-sample-t-test.html"><a href="one-sample-t-test.html"><i class="fa fa-check"></i>9. One sample t-test</a>
@@ -334,20 +334,36 @@
 <div id="effect-sizes" class="section level2 hasAnchor">
 <h2>Effect sizes<a href="effect-sizes.html#effect-sizes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><em>If you’d like to read a more in-depth discussion of effect sizes, I recommend also reading <a href="https://lakens.github.io/statistical_inferences/effectsize.html">Daniel Lakens’ chapter in his textbook “Improving Your Statistical Inferences.”</a></em></p>
-<p>An <strong>effect size</strong> is a quantitative description of the strength of a phenomenon. There are two basic effect sizes we tend to talk about:</p>
+<p>An <strong>effect size</strong> is a quantitative description of the strength of a phenomenon (phenomenon means thing being studied). The larger the value, the stronger the phenomenon (e.g., bigger mean differences or stronger relationship).</p>
+<div id="types-of-effect-sizes" class="section level3 hasAnchor">
+<h3>Types of effect sizes<a href="effect-sizes.html#types-of-effect-sizes" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>There are two basic effect sizes we tend to talk about:</p>
 <p>The <strong><em>d</em></strong> family of effect sizes are standardized mean differences. They start at 0 (no mean difference) and can go up to infinity, with larger values meaning larger standardized mean differences. Some of the effect sizes in this family:</p>
 <ul>
 <li><p>Cohen’s <em>d</em> is perhaps the most popular standardized mean difference effect size. Generally, the equation is the mean difference divided by the pooled standard deviation, but in reality the equation differs based on a variety of scenarios and whether you are using a one-sample, independent samples, or paired samples <em>t</em>-test.</p></li>
 <li><p>Hedge’s <em>g</em> is a less biased version of Cohen’s <em>d</em>. Cohen’s <em>d</em> is particularly problematic for small sample sizes, so Hedge’s <em>g</em> is generally preferred, but you’ll see that not all statistical programs provide this effect size. It’s not that difficult to calculate Hedge’s <em>g</em> based on Cohen’s <em>d</em>, but just keep this information in mind.</p></li>
 </ul>
-<p>The <strong><em>r</em></strong> family of effect sizes are measures of strength of association. As you’ll read about in the correlation and regression chapters, this family of effect sizes can describe the proportion of variance explained (e.g., r = .8 is 64% variance explained, which is r-squared). Some of the effect sizes in this family:</p>
+<p>The <strong><em>r</em></strong> family of effect sizes are measures of strength of association. As you’ll read about in the correlation and regression chapters, this family of effect sizes can describe the proportion of variance explained by squaring the correlation (e.g., with a correlation of <em>r</em> = .8, then the r-squared is .8<sup>2</sup> or .8 * .8 which is 64% variance explained). Some of the effect sizes in this family:</p>
 <ul>
-<li><p><em>r</em> is a correlation. It’s a standardized measure of the strength of association where <em>r</em> = -1 or +1 means a perfect relationship and <em>r</em> = 0 is no relationship at all.</p></li>
-<li><p><span class="math inline">\(\eta^2\)</span> (eta-squared) measures the proportion of variance in the dependent variable associated with the different groups of the independent variable. This is considered a biased estimate, especially when trying to compare values across studies, so there are two more preferred effect sizes.</p></li>
-<li><p><span class="math inline">\(\eta^2_p\)</span> (partial eta-squared) is calculated slightly differently and is considered a less biased estimate. This can allow for better comparisons of effect sizes across studies. It’s still not perfect, though.</p></li>
-<li><p><span class="math inline">\(\omega^2\)</span> (omega-squared) is calculated even more differently and is considered the least biased estimate. There is also <span class="math inline">\(\omega^2_p\)</span> and <span class="math inline">\(\omega^2_G\)</span> (generalized omega-squared) but we won’t get into that.</p></li>
+<li><p><em>r</em> is a correlation. It’s a standardized measure of the strength of association where <em>r</em> = -1 or +1 means a perfect relationship and <em>r</em> = 0 is no relationship at all. We typically work with Pearson’s correlation, but we will also learn about Spearman correlation and rho.</p></li>
+<li><p><span class="math inline">\(\eta^2\)</span> (eta-squared) measures the proportion of variance in the dependent variable associated with the different groups of the independent variable. This is considered a biased estimate, especially when trying to compare values across studies, so there are two more preferred effect sizes. We’ll cover the difference between these three in a later chapter (ANOVA).</p></li>
+<li><p><span class="math inline">\(\eta^2_p\)</span> (partial eta-squared) is calculated slightly differently and is considered a less biased estimate (again, we’ll learn about this in a later chapter). This can allow for better comparisons of effect sizes across studies. It’s still not perfect, though.</p></li>
+<li><p><span class="math inline">\(\omega^2\)</span> (omega-squared) is calculated even more differently and is considered the least biased estimate. There is also <span class="math inline">\(\omega^2_p\)</span> (partial omega-squared) and <span class="math inline">\(\omega^2_G\)</span> (generalized omega-squared) but as jamovi doesn’t provide it we won’t go over it in this course.</p></li>
 </ul>
-<p>If you nerded out over this information and want to learn more, <a href="https://www.frontiersin.org/articles/10.3389/fpsyg.2013.00863/full">check out this great journal article by Daniel Lakens</a>.</p>
+<div class="info">
+<p>
+What is all this about more or less biased effect sizes? It has to do
+with how the standard deviations are calculated in these effect sizes
+and the fact that we’re dealing with samples and trying to infer the
+population’s effect size. Cohen’s d and eta-squared tend to slightly
+overestimate the true population effect, so there are options that
+provide corrections for this overestimation and lead to less biased
+results.
+</p>
+</div>
+<p>We’ll also learn about phi, Cramer’s V, and beta as other measures of effect size.</p>
+<p>If you nerded out over this information and want to learn more, <a href="https://www.frontiersin.org/articles/10.3389/fpsyg.2013.00863/full">check out this great journal article by Daniel Lakens</a> or this <a href="https://lakens.github.io/statistical_inferences/effectsize.html">chapter on effect sizes by Daniel Lakens</a>.</p>
+</div>
 <div id="small-medium-and-large-effect-sizes" class="section level3 hasAnchor">
 <h3>Small, medium, and large effect sizes<a href="effect-sizes.html#small-medium-and-large-effect-sizes" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>What is considered a small, medium, and large effect size? Quite frankly, <em>it depends</em>.</p>
@@ -366,6 +382,7 @@
 <li>Distribution of effect sizes in a research area: what is the empirical range of effect sizes in a specific research are, and which effects are <em>a priori</em> unlikely to be observed?” (p. 3)</li>
 </ol>
 <p>Basically, what does past research have to say about what effect size you can expect (#3 and #6)? What is the smallest effect size you care about (#1)? What is the smallest effect size you can reasonably obtain (e.g., due to sample size limitations; #2, #3, and #4)? This is the justification you use to determine what effect size you are looking for. This is important for when you are then determining what sample size you need, which will be discussed in a separate section.</p>
+<p>As a fun followup, as an example of #6, <a href="https://journals.sagepub.com/stoken/default+domain/U7HVJPIXFWBBWQDKMGXT/full">this study in the field of education</a> collected effect sizes of many education interventions to figure out benchmarks for small (&lt;.05), medium (&lt;.20), and large (&gt;= .20) effect sizes based on existing data rather than poor quality heuristics.</p>
 
 </div>
 </div>

@@ -15,21 +15,33 @@ It is important that you learn how to identify *which* inferential statistic you
 
 Note: if you are a student in PSYC 290 or 790, you have access to a high-resolution PDF of this chart on Canvas.
 
+```{block, type="info"}
+You may find it helpful to first think whether you have a between-subjects or a within-subjects design. If you have groups, are participants in the same conditions (within-subjects) or different conditions (between-subjects)? Then that narrows down the possibility of what inferential statistic you would use. For example, if you know you have a repeated measures design with only one IV, then it's either a dependent t-test or repeated measures ANOVA depending on whether there are 2 or 3+ categories to the IV.
+```
+
 First, you need to determine what level of measurement your dependent variable (DV) is. We will only be covering statistical tests that have *one* dependent variable. Therefore, you need to know whether the variable is categorical (i.e., nominal or ordinal) or it's continuous (i.e., interval or ratio).
+
+```{block, type="info"}
+Go back to Chapter 2 "Levels of Measurement" to refresh yourself on the difference between categorical and continous variables! This is very important information to remember throughout this course. Furthermore, you need to know exactly how things are measured or manipulated to determine the level of measurement. 
+```
 
 Next, you need to determine how many independent variables (IVs) there are and then what level of measurement your IV(s) are. In the case of a single categorical IV, we also need to know how many levels there are to the IV (i.e., how many categories there are). For categorical variables, we also need to know if the participants are different (i.e., between-subjects) or the same (i.e., within-subjects) within each level of the category.
 
 Lastly, for many of the statistical tests we need to know whether we meet the assumptions of parametric tests. If we don't meet the assumption, then there are alternative tests we can perform. We'll learn about assumption checking in the next section of this chapter.
 
 ```{block, type="info"}
-You may find it helpful to first think whether you have a between-subjects or a within-subjects design. If you have groups, are participants in the same conditions or different conditions? Then that narrows down the possibility of what inferential statistic you would use.
+Checking assumptions is very important to know which exact test to perform. For now, we'll assume the assumptions are met, but we'll learn more about checking assumptions in the next chapter.
 ```
 
 Another tool that can help you determine the statistical test you want to perform is <https://stathand.net/>
 
 ------------------------------------------------------------------------
 
-We can both *forward map* and *backwards map* with the chart above. Forward mapping involves understanding your data and your research question and then determining what statistical test to perform. Forward mapping is mostly what you need to understand how to do! Backwards mapping involves determining what kind of data is needed to perform a particular statistical test. This is more for educational and understanding purposes and generally is not how you analyze data.
+We can both *forward map* and *backwards map* with the chart above.
+
+Forward mapping involves understanding your data and your research question and then determining what statistical test to perform. Forward mapping is mostly what you need to understand how to do!
+
+Backwards mapping involves determining what kind of data is needed to perform a particular statistical test. This is more for educational and understanding purposes and generally is not how you analyze data. You may also use it to justify which statistical test you performed.
 
 Let's do some examples of forwards mapping. You may want to read the example and try your hand at it first and then check your answers!
 

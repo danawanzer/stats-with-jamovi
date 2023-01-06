@@ -25,7 +25,7 @@ When you're in Setup, here's the things you should be doing for all variables:
 
 5.  Add labels to levels. For example, the variable `Athlete` is 0 for non-athlete and 1 for athlete. Rather than keeping just the 0 and 1, you can specify under Levels that 0 is non-athlete.
 
-### Compute
+### Compute (create new variables using some computation)
 
 Sometimes you need to create new variables from your raw (meaning uncleaned) data. Perhaps you collected data on a scale that has five items. Normally, we create an average score of all the five items and that new *computed* average score is what we use in our analyses.
 
@@ -41,7 +41,7 @@ The basic formula, then is to do MEAN(var1, var2, ... varn). You can see what we
 
 If you'd like to learn more about computed variables in jamovi, [check out this jamovi blog post on the topic](https://blog.jamovi.org/2017/11/28/jamovi-formulas.html).
 
-### Transform
+### Transform (revise current variables)
 
 Sometimes we want to take an existing variable and transform it in some way or we want to do a computation across multiple variables (e.g., reverse-score multiple items in a dataset). If you want to learn more about transforming variables, [the jamovi blog has a great blog post on the topic](https://blog.jamovi.org/2018/10/23/transforming-variables.html).
 

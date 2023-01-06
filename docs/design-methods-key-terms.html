@@ -77,7 +77,7 @@
 <li class="part"><span><b>I Overview</b></span></li>
 <li class="chapter" data-level="" data-path="statistics-foundations.html"><a href="statistics-foundations.html"><i class="fa fa-check"></i>2. Statistics foundations</a>
 <ul>
-<li class="chapter" data-level="" data-path="statistics-foundations.html"><a href="statistics-foundations.html#central-tendency-and-dispersion"><i class="fa fa-check"></i>Central tendency and dispersion</a></li>
+<li class="chapter" data-level="" data-path="statistics-foundations.html"><a href="statistics-foundations.html#describing-our-data"><i class="fa fa-check"></i>Describing Our Data</a></li>
 <li class="chapter" data-level="" data-path="statistics-foundations.html"><a href="statistics-foundations.html#levels-of-measurement"><i class="fa fa-check"></i>Levels of measurement</a></li>
 <li class="chapter" data-level="" data-path="descriptive-vs-inferential-statistics.html"><a href="descriptive-vs-inferential-statistics.html"><i class="fa fa-check"></i>Descriptive vs inferential statistics</a>
 <ul>
@@ -338,7 +338,7 @@
 <h3>Study design terms<a href="design-methods-key-terms.html#study-design-terms" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Some terms you should be familiar with:</p>
 <ul>
-<li><p><strong>Between-group/subject design</strong>: different people are in each condition; participants are only exposed to a single condition</p></li>
+<li><p><strong>Between-group/subject design</strong>: in a study, participants are only exposed to a single condition. In other words, there are different people in each condition.</p></li>
 <li><p><strong>Correlational research</strong>: a study in which causality cannot be claimed; correlation does not infer causation! It is, however, one of three necessary conditions to infer causality. It is a <em>necessary</em> but <em>insufficient alone</em> condition.</p></li>
 <li><p><strong>Cross-sectional research</strong>: also called non-experimental research; the IV is not manipulated and there is no random assignment. Furthermore, data is only collected at one time point (as opposed to longitudinal research)</p></li>
 <li><p><strong>Experimental research</strong>: the IV is manipulated and there is random assignment</p></li>
@@ -359,27 +359,28 @@
 <li><strong>Systematic</strong>: researcher something systematically error into the study, especially into one condition over another. For example, by randomly assigning participants into one of two conditions, we are introducing systematic variability between participants. However, it could be unintentional systematic variation; for example, perhaps we have two researchers collecting data and one is mean and the other is nice, and so participants respond differently depending on which researcher collects data from them.</li>
 <li><strong>Unsystematic</strong>: random variation</li>
 </ul></li>
-<li><p><strong>Within-group/subject design</strong>: the same person is in all conditions</p></li>
+<li><p><strong>Within-group/subject design</strong>: in a study, participants are exposed to every condition. In other words, there are the same people in each condition.</p></li>
 </ul>
 </div>
 <div id="variables" class="section level3 hasAnchor">
 <h3>Variables<a href="design-methods-key-terms.html#variables" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>We tend to talk about two different types of variables in our studies:</p>
 <ol style="list-style-type: decimal">
-<li><strong>Independent variable</strong> (IV; also known as the predictor variable): this is the variable that is thought to be the cause of some effect. In experimental research, it is the variable that is manipulated.</li>
+<li><strong>Independent variable</strong> (IV; also known as the predictor variable or exposure variable): this is the variable that is thought to be the cause of some effect. In experimental research, it is the variable that is manipulated. Note</li>
 <li><strong>Dependent variable</strong> (DV; also known as the outcome variable): this is the variable that is thought to be affected by changes in the IV.</li>
 </ol>
-<p>There are other types of variables we may be interested in:</p>
+<p>There are other types of variables we may be interested in. Note that these variables are not considered independent variables because we would not manipulate them or try to examine how they cause the dependent variable.</p>
 <ul>
 <li><strong>Confounding variable</strong>: a variable that affects or is related to both the independent and dependent variable</li>
 <li><strong>Covariate</strong>: a variable that only affects or is only related to the dependent variable</li>
 </ul>
+<p><a href="https://www.researchgate.net/publication/299415540_Confounding_and_causation_in_the_epidemiology_of_lead"><img src="images/02-stats-foundations/Possible-relationships-of-a-covariate-and-a-confounder-to-an-exposure-variable-and-an.png" alt="Wilson &amp; Wilson (2016)" /></a></p>
 </div>
 <div id="reliability-and-validity" class="section level3 hasAnchor">
 <h3>Reliability and validity<a href="design-methods-key-terms.html#reliability-and-validity" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><img src="images/01-intro/reliability-validity.jpg" /></p>
 <ul>
-<li><p><strong>Reliability</strong>: the consistency of a measure by time (test-retest reliability), across items (internal consistency) or across different researchers (inter-rater reliability)</p></li>
+<li><p><strong>Reliability</strong>: the consistency of a measure by time (test-retest reliability), across items (internal consistency) or across different researchers (inter-rater reliability). Check out Chapter <a href="reliability.html#reliability"><strong>??</strong></a> for more information on measuring reliability.</p></li>
 <li><p><strong>Validity</strong>: the extent to which a test measures what it claims to measure</p>
 <ul>
 <li><p><strong>Construct validity</strong>: validity of inferences about the higher order constructs that represent sampling particulars. There are multiple types of construct validity; here are a few:</p>
@@ -400,8 +401,8 @@
 <ul>
 <li><p><strong>Degrees of freedom (df)</strong>: Degrees of freedom are the number of values that are free to vary and are not constrained.</p>
 <ul>
-<li><p>The easiest way to understand them is with an example of the mean. If you know the sum of 4 numbers, then 3 of those numbers are free to vary but the fifth value is dependent on (and constrained) to the values of the other. If your sum is 10, you could have three random values of 2, 3, and 1 (which are free to vary) but your fourth number <em>must</em> be 4. Therefore, the degrees of freedom in this example would be 3.</p></li>
-<li><p>Typically, degrees of freedom are <em>n</em> - 1 however it is <em>n</em> - 2 for a paired samples t-test and <em>k</em> - 1 for the within-subjects design for an ANOVA,</p></li>
+<li><p>The easiest way to understand them is with an example of the mean. If you know the sum of 4 numbers, then 3 of those numbers are free to vary but the fifth value is dependent on (and constrained) to the values of the other. If your sum is 10, you could have three random values of 2, 3, and 1 (which are free to vary) but your fourth number <em>must</em> be 4. Therefore, the degrees of freedom in this example would be 3, which is n - 1.</p></li>
+<li><p>The statistical tests all have different ways of calculating degrees of freedom. For example, the one-sample t-test is <em>n</em> - 1, the independent t-test is <em>n<sub>1</sub></em> + <em>n<sub>2</sub></em> - 2, and the dependent t-test is <em>n</em> - 1 where <em>n</em> is the number of pairs.</p></li>
 </ul></li>
 <li><p><strong>Confidence intervals</strong>: A confidence interval is such that in repeated sampling (e.g., replicating a study over and over and over again) then 95% of those confidence intervals should contain the true population parameter. You can see this visualized, and learn more about it, with this great <a href="https://rpsychologist.com/d3/ci/">visualization</a> and read this great <a href="http://daniellakens.blogspot.com/2016/03/the-difference-between-confidence.html">blog post</a>. You can also <a href="https://lakens.github.io/statistical_inferences/confint.html">read a chapter on this topic by Daniel Lakens</a>.</p></li>
 </ul>
