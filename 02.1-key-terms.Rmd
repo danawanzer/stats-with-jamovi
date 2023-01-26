@@ -40,7 +40,7 @@ Some terms you should be familiar with:
 
 -   **Variation**:
 
-    -   **Systematic**: researcher something systematically error into the study, especially into one condition over another. For example, by randomly assigning participants into one of two conditions, we are introducing systematic variability between participants. However, it could be unintentional systematic variation; for example, perhaps we have two researchers collecting data and one is mean and the other is nice, and so participants respond differently depending on which researcher collects data from them.
+    -   **Systematic**: researcher introduces error systematically into the study, especially into one condition over another. For example, by randomly assigning participants into one of two conditions, we are introducing systematic variability between participants. However, it could be unintentional systematic variation; for example, perhaps we have two researchers collecting data and one is mean and the other is nice, and so participants respond differently depending on which researcher collects data from them.
     -   **Unsystematic**: random variation
 
 -   **Within-group/subject design**: in a study, participants are exposed to every condition. In other words, there are the same people in each condition.
