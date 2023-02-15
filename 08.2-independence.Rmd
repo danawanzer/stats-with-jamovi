@@ -10,13 +10,17 @@ The $\chi^2$ (chi-square) test of independence (or association) tests whether an
 
 Our basic hypotheses for the chi-square test of indepdendence is as follows:
 
--   $H_0$: There are no differences in frequencies of how the levels in one variable relate to the levels in another variable.
+-   $H_0$: There are no differences in frequencies of how the categories in one variable relate to the levels in another variable.
 
--   $H_1$: At least one level in one variable has significantly different frequencies in another variable than we would expect.
+-   $H_1$: At least one category in one variable has significantly different frequencies in another variable than we would expect.
 
 ```{block, type="danger"}
 Note that these are not how you should report your hypotheses! You should specify your hypotheses in relation to the nature of your two variables. It should be clear what your two variables are.
 ```
+
+There is no directionality for a chi-square test, so there is no such thing as a one-tailed or two-tailed hypothesis.
+
+We often communicate what kind of chi-square test we are performing by using language like "We performed a 2x3 chi-square test of independence." This means that there are two variables, the first of which has 2 categories to the categorical variable and the second of which has 3 categories to the categorical variable. We might describe it in even more detail, such as "We performed a 2 (condition: experimental vs control) x 3 (mood: happy, sad, or neutral) chi-square test of independence."
 
 ### Step 1: Look at the data
 
@@ -24,7 +28,7 @@ Let's run an example with data from lsj-data. Open data from your Data Library i
 
 For this example, imagine we are watching a show about the planet *Chapek 9*. On this planet, for someone to gain access to their capital city they must prove they're a robot, not a human. In order to determine whether or not a visitor is human, the natives ask whether the visitor prefers puppies, flowers, or large, properly formatted data files.
 
-This is what we would call a 2x3 chi-square test because the first variable species has two levels (robot or human) and the second variable choice has three levels (puppies, flowers, data).
+This is what we would call a 2x3 chi-square test because the first variable species has two categories (robot or human) and the second variable choice has three categories (puppies, flowers, data).
 
 Here's a video walking through the chi-square test of independence example in this chapter.
 
@@ -74,13 +78,13 @@ The chi-square test of independence has the following assumptions:
 
 2.  Data are **independent** of one another, meaning each case contributes to only one cell of the table. If you violate this assumption, you may be able to use the McNemar test (next chapter).
 
-    -   This requires knowing how your data was collected. If it's a within-subjects design that should be answered using a chi-square, then most likely you want to use McNemar's test. If it's a between-subjects design that should be answered using a chi-square, then you most likely meet this assumption and can perform the chi-square test of independence.
+    -   This requires knowing how your data was collected. If it's a within-subjects design (i.e., all participants are in all conditions of one variable), then most likely you want to use McNemar's test. If it's a between-subjects design (i.e., some participants are in one condition of a variable), then you most likely meet this assumption and can perform the chi-square test of independence.
 
 ### Step 3: Perform the test
 
 1.  Go to the Analyses tab, click the Frequencies button, and choose "Independent Samples - $\chi^2$ test of association".
 
-2.  Move your two variables into the rows and columns boxes. In this case, move `choice` into rows and `species` into columns. Note that the placement in rows or columns doesn't really matter, but because we typically work with portrait pages I tend to prefer putting in rows whatever variable has more levels. In this case, choice has 3 levels and species only 2 so I like to put choice in rows and species in columns.
+2.  Move your two variables into the rows and columns boxes. In this case, move `choice` into rows and `species` into columns. Note that the placement in rows or columns doesn't really matter, but because we typically work with portrait pages I tend to prefer putting in rows whatever variable has more categories. In this case, choice has 3 categories and species only 2 so I like to put choice in rows and species in columns.
 
 3.  Under the Statistics tab, select $\chi^2$ under Tests and `Phi and Cramer's V` under Nominal to get your effect size.
 
@@ -104,9 +108,13 @@ The first table shows us our observed and expected frequencies. We use the expec
 
 ![](images/09-chi-square/chi-square_results2.png)
 
-The second table gives us our results. Our p-value (*p* = .005) is less than .05 so we can reject the null hypothesis that the observed frequencies match our expected frequencies.
+The second table gives us our results. Our p-value (*p* = .005) is less than .05 so we can reject the null hypothesis that the observed frequencies match our expected frequencies. The degrees of freedom (df) is the number of categories of one variable minus one times the number of categories in the second variable minus one which is (*r* - 1)(*c* - 1) or in this case (2-1)(3-1) = 2.
 
 jamovi also gives us our Cramer's V value. Note that it does not provide Phi because we don't have a perfect square table (e.g., 2x2 or 3x3). These are measures of effect size for the chi-square. Cramer's V can be interpreted similar to a correlation (ranges from 0 to 1, with higher scores meaning stronger relationships between the variables).
+
+```{block, type="info"}
+Currently, jamovi cannot tell us where the differences are if the chi-square is statistically significant. That means that the expected frequencies in one cell differ significantly from the observed frequencies, but which cells? For now, just eyeball the comparisons if the chi-square is statistically significant. Someday I'm sure jamovi will include standardized residuals for us to test this more quantitatively.
+```
 
 #### Write up the results in APA style
 
@@ -116,7 +124,7 @@ We can write up our results in APA something like this:
 
 #### Visualize the results
 
-jamovi has some decent plots with some of the latest updates. Here's one I created after tinkering with the settings under Plots on the chi-square setup. These are sufficient for your homework assignments in this class, but note that sometimes when there are many bars or long labels for the levels of your variable it will scrunch up. Hopefully jamovi will fix it in the future.
+jamovi has some decent plots with some of the latest updates. Here's one I created after tinkering with the settings under Plots on the chi-square setup. These are sufficient for your homework assignments in this class, but note that sometimes when there are many bars or long labels for the categories of your variable it will scrunch up. Hopefully jamovi will fix it in the future.
 
 ![](images/09-chi-square/chi-square_results4.png)
 
@@ -128,9 +136,15 @@ The second is a stacked bar chart with connected lines:
 
 ![](images/11-independence/independence_excel2.png){width="500"}
 
+Which do you choose? Whichever you think better communicates the message of the results of the analysis! This takes skill and practice, and probably an entirely separate course on effective data visualization.
+
 ### Fisher's exact test {#fishers-exact-test}
 
-If you violate the assumption that there your expected frequencies are sufficiently large and you have a 2x2 table, you can still perform the $\chi^2$ test of independence but instead of selecting $\chi^2$you'll select `Fisher's exact test`. You'll interpret your results exactly the same but specify you used Fisher's exact test.
+If you violate the assumption that there your expected frequencies are sufficiently large and you have a 2x2 table, you can still perform the $\chi^2$ test of independence but instead of selecting $\chi^2$you'll select `Fisher's exact test`. You'll interpret your results exactly the same but specify you used Fisher's exact test. Here's an example write-up from the results above:
+
+> Fisher's exact test of independence showed a significant association between species and choice, $\chi^2$ (2) = 10.72, *p* = .004, Cramer's V = .24. Robots were more likely to say they prefer flowers (70%) compared to humans (30%) and humans were more likely to say they prefer data (60%) compared to robots (40%). Robots (46%) and humans (54%) were equally likely to prefer puppies.
+
+Note that what changes is only the p-value from the chi-square test and Fisher's exact test.
 
 ### Additional practice
 

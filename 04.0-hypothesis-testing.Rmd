@@ -85,14 +85,14 @@ Let's analyze these hypotheses in more detail:
 A common error in a directional hypothesis like this is to forget that the null hypothesis is both no difference *and* the opposite. In other words, we have three possible options for our null and alternative hypotheses based on direction ($\mu$ is the Greek letter "mu" and we often use it to signify the mean):
 
 |                        | Two-tailed         | One-tailed (greater) | One-tailed (less than) |
-|------------------------|--------------------|----------------------|------------------------|
+|-------------------|------------------|------------------|-------------------|
 | **Alternative** (H~1~) | $\mu_1$ != $\mu_2$ | $\mu_1$ \> $\mu_2$   | $\mu_1$ \< $\mu_2$     |
 | **Null** (H~0~)        | $\mu_1$ == $\mu_2$ | $\mu_1$ \<= $\mu_2$  | $\mu_1$ \>= $\mu_2$    |
 
 Since we're talking about mean differences, we could also reformulate the above table slightly differently:
 
 |                        | Two-tailed        | One-tailed (greater) | One-tailed (less than) |
-|------------------------|-------------------|----------------------|------------------------|
+|-------------------|------------------|------------------|-------------------|
 | **Alternative** (H~1~) | $\mu_{diff}$ != 0 | $\mu_{diff}$ \> 0    | $\mu_{diff}$ \< 0      |
 | **Null** (H~0~)        | $\mu_{diff}$ == 0 | $\mu_{diff}$ \<= 0   | $\mu_{diff}$ \>= 0     |
 
@@ -203,7 +203,7 @@ The mean difference is 51.10 - 27.40 = 23.70. We'll learn how to conduct a t-tes
 
 ```{block, type="info"}
 
-The calculator also gives us our exact p-value, which in this case is < .00001 but in APA style we typically report p-values to three decimal places, so we would say p < .001. The probability of getting a t-value as large as we did it less than .1% (less than our alpha of .05, so it is statistically significant). Very surprising!
+The calculator also gives us our exact p-value, which in this case is < .00001 but in APA style we typically report p-values to three decimal places, so we would say p < .001. The probability of getting a t-value as large as we did is less than .1% (less than our alpha of .05, so it is statistically significant). Very surprising!
 
 This calculator is acting as a statistical software and therefore giving us our exact p-value just like jamovi will provide for you once we move to the software. For now, just appreciate that we can estimate whether we met the p-value threshold when we analyze things by hand below.
 ```
@@ -232,7 +232,7 @@ However, this is when **Type 1** and **Type 2** errors come into play. Just beca
 I like to use this table when discussing errors. On the far left column, we have our results: were they statistically significant (*p* \< .05) or not (*p* \> .05)? On the top row, we have whether *in the real world* the null or alternative hypothesis is true. In reality, we can *never* truly know whether the null or alternative hypothesis is true. We can at best approximate our understanding of the real world through replication!
 
 |                                                    | H~0~ is true           | H~1~ is true           |
-|----------------------------------------------------|------------------------|------------------------|
+|------------------------------------|------------------|------------------|
 | ***p*** **\< .05** (statistically significant)     | Type 1 error           | Correct interpretation |
 | ***p*** **\> .05** (statistically non-significant) | Correct interpretation | Type 2 error           |
 
