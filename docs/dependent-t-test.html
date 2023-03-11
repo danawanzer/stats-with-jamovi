@@ -139,7 +139,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a></li>
 <li class="part"><span><b>I Overview</b></span></li>
-<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i>1. Introduction</a></li>
 <li class="chapter" data-level="" data-path="statistics-foundations.html"><a href="statistics-foundations.html"><i class="fa fa-check"></i>2. Statistics foundations</a>
 <ul>
 <li class="chapter" data-level="" data-path="statistics-foundations.html"><a href="statistics-foundations.html#describing-our-data"><i class="fa fa-check"></i>Describing Our Data</a></li>
@@ -157,8 +156,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="design-methods-key-terms.html"><a href="design-methods-key-terms.html#other-terms"><i class="fa fa-check"></i>Other terms</a></li>
 </ul></li>
 </ul></li>
-<li class="part"><span><b>II Intro to jamovi</b></span></li>
-<li class="chapter" data-level="" data-path="overview-of-jamovi.html"><a href="overview-of-jamovi.html"><i class="fa fa-check"></i>3. Overview of jamovi</a>
+<li class="chapter" data-level="" data-path=""><a href="#part-intro-to-jamovi"><i class="fa fa-check"></i>(PART) Intro to jamovi</a>
 <ul>
 <li class="chapter" data-level="" data-path="describing-data.html"><a href="describing-data.html"><i class="fa fa-check"></i>Describing data</a>
 <ul>
@@ -178,8 +176,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="cleaning-data.html"><a href="cleaning-data.html#filters"><i class="fa fa-check"></i>Filters</a></li>
 </ul></li>
 </ul></li>
-<li class="part"><span><b>III NHST</b></span></li>
-<li class="chapter" data-level="" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html"><i class="fa fa-check"></i>4. Hypothesis testing</a>
+<li class="chapter" data-level="" data-path=""><a href="#part-nhst"><i class="fa fa-check"></i>(PART) NHST</a>
 <ul>
 <li class="chapter" data-level="" data-path="example-of-hypothesis-testing.html"><a href="example-of-hypothesis-testing.html"><i class="fa fa-check"></i>Example of hypothesis testing</a>
 <ul>
@@ -243,7 +240,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="" data-path="reliability.html"><a href="reliability.html"><i class="fa fa-check"></i>7. Reliability</a></li>
 <li class="chapter" data-level="" data-path="writing-up-results.html"><a href="writing-up-results.html"><i class="fa fa-check"></i>8. Writing up results</a></li>
-<li class="part"><span><b>IV Individual Tests</b></span></li>
+<li class="part"><span><b>II Individual Tests</b></span></li>
 <li class="chapter" data-level="" data-path="t-tests.html"><a href="t-tests.html"><i class="fa fa-check"></i>t-tests</a>
 <ul>
 <li class="chapter" data-level="" data-path="one-sample-t-test.html"><a href="one-sample-t-test.html"><i class="fa fa-check"></i>9. One sample t-test</a>
@@ -376,6 +373,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="appendix"><span><b>Appendices</b></span></li>
 <li class="chapter" data-level="" data-path="answers-to-your-turn-exercises.html"><a href="answers-to-your-turn-exercises.html"><i class="fa fa-check"></i>Answers to Your Turn exercises</a></li>
+<li class="chapter" data-level="" data-path="statistics-foundations-1.html"><a href="statistics-foundations-1.html"><i class="fa fa-check"></i>2. Statistics foundations</a>
+<ul>
+<li class="chapter" data-level="" data-path="statistics-foundations-1.html"><a href="statistics-foundations-1.html#describing-our-data-1"><i class="fa fa-check"></i>Describing Our Data</a></li>
+<li class="chapter" data-level="" data-path="statistics-foundations-1.html"><a href="statistics-foundations-1.html#levels-of-measurement-1"><i class="fa fa-check"></i>Levels of measurement</a></li>
+<li class="chapter" data-level="" data-path="descriptive-vs-inferential-statistics-1.html"><a href="descriptive-vs-inferential-statistics-1.html"><i class="fa fa-check"></i>Descriptive vs inferential statistics</a>
+<ul>
+<li class="chapter" data-level="" data-path="descriptive-vs-inferential-statistics-1.html"><a href="descriptive-vs-inferential-statistics-1.html#an-example-2"><i class="fa fa-check"></i>An example</a></li>
+</ul></li>
+</ul></li>
 <li class="divider"></li>
 <li><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/" 
     target="blank"><img alt="Creative Commons License" 
@@ -467,6 +473,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Notice how our dependent variable is really the difference in scores, and therefore that is what we are testing for normality. <strong>First, you need to calculate a new variable that is the difference in scores.</strong> Go to Compute and enter into the formulate box <code>Var1 - Var2</code> (in this case, <code>grade_test1-grade_test2</code>). Rename it to something meaningful to you. Then you are going to use that variable to test for normality.</p>
 <p>We test for normality using the Shapiro-Wilk test and the Q-Q plot, as well as looking at the density/histogram plot and the skew/kurtosis (not shown here but still important to conduct!). The Shapiro-Wilk test was not statistically significant (W = .97, <em>p</em> = .678); therefore, this indicates the data is normally distributed. Furthermore, the lines are fairly close to the diagonal line in the Q-Q plot (although it’s a bit hard to tell because our sample size is small). We can conclude that we satisfy the assumption of normality.</p>
 <p><img src="images/03_dependent_t-test/dependent_normality.png" /></p>
+<div class="info">
+<p>
+Why don’t we test for homogeneity of variance with the dependent
+t-test? It’s because just like normality is technically testing for the
+normality of the difference scores between the two groups, homogeneity
+of variance would be with the difference of variance in scores between
+the two groups, which is just a single value. Therefore, there’s nothing
+to test for variance in the dependent t-test. However, once we have
+three or more conditions, which we’d test with the repeated measures
+ANOVA, we then test for this assumption using a similar term called
+sphericity! We’ll learn more in the repeated measures ANOVA chapter.
+</p>
+</div>
 </div>
 </div>
 <div id="step-3-perform-the-test-2" class="section level3 hasAnchor">
@@ -509,6 +528,14 @@ looking at the data.
 <p>Once we are satisfied we have satisfied the assumptions for the dependent t-test, we can interpret our results.</p>
 <p><img src="images/03_dependent_t-test/dependent_results.png" /></p>
 <p>Our p-value is less than .05, so our results are statistically significant. Therefore, we reject the null hypothesis that there is no difference between the two groups.</p>
+<div class="info">
+<p>
+What is “df”? That stands for degrees of freedom. The “key terms”
+chapter covers them in more detail, but in the case of the independent
+samples t-test they are calculated by the number of participants in our
+sample minus 1 (n-1) which in this case is 20-1 or 19.
+</p>
+</div>
 <div id="a-note-about-positive-and-negative-t-values-2" class="section level4 hasAnchor">
 <h4>A note about positive and negative t values<a href="dependent-t-test.html#a-note-about-positive-and-negative-t-values-2" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Students often worry about positive or negative t-statistic values and are unsure how to interpret it. Positive or negative t-statistic values simply occur based on which group is listed first. Our t-statistic above is negative because we tested the difference between grades on the first test (<em>M</em> = 56.98) compared to the second test (<em>M</em> = 58.38) and so Test1 - Test2 = -.1.40.</p>
@@ -537,7 +564,7 @@ looking at the data.
 <h4>Visualize the results<a href="dependent-t-test.html#visualize-the-results-2" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>By selecting <code>Descriptives plots</code> in the setup, you get the figure below. Personally, I don’t think this is a very good plot. It’s not very informative. It just provides the mean (circle), 95% confidence interval (blue bars), and the median.</p>
 <p><img src="images/03_dependent_t-test/dependent_results_plot.png" /></p>
-<p>Another option is to use the Descriptives plots available in jamovi, which we see above in the Look at the data section above. I wish there were a way to combine them into one graph, but unfortunately there isn’t within jamovi. Instead, you’ll have to go into the Rj editor and use R code to reshape the data from wide format to long format and then call the descriptives syntax to produce the plot. You <em>could</em> copy-paste the data into a new dataset, but I always try to avoid manual work when doing analyses because something <em>always</em> goes wrong.</p>
+<p>Another option is to use the Descriptives plots available in jamovi, which we see above in the Look at the data section above. I wish there were a way to combine them into one graph, but unfortunately there isn’t within jamovi. Instead, you’ll have to go into the Rj editor (you’ll need to install this add-on first!) and use R code to reshape the data from wide format to long format and then call the descriptives syntax to produce the plot. You <em>could</em> copy-paste the data into a new dataset, but I always try to avoid manual work when doing analyses because something <em>always</em> goes wrong.</p>
 <p>Here’s what this looks like in jamovi:</p>
 <p><img src="images/03_dependent_t-test/dependent_results_plot2.png" /></p>
 <p>To make our lives a bit easier, here is the code in the Rj editor that you can copy-paste (that kind of copy-pasting I allow!) into your own jamovi. You’ll need to edit things like the list of names in line 3, the name of your DV (line 4), the name of your IV (line 5), and re-specify those names in line 9. Then you push the play button (green triangle) at the top right to run the code and you should get output on the right like you see above.</p>
@@ -553,11 +580,13 @@ looking at the data.
 <span id="cb1-10"><a href="dependent-t-test.html#cb1-10" aria-hidden="true" tabindex="-1"></a>                  <span class="at">box =</span> <span class="cn">TRUE</span>,</span>
 <span id="cb1-11"><a href="dependent-t-test.html#cb1-11" aria-hidden="true" tabindex="-1"></a>                  <span class="at">violin =</span> <span class="cn">TRUE</span>,</span>
 <span id="cb1-12"><a href="dependent-t-test.html#cb1-12" aria-hidden="true" tabindex="-1"></a>                  <span class="at">dot =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<p>Here’s a video walking through how to use the Rj editor if you’d like to learn how to use it and practice using R code: <a href="https://www.loom.com/share/397052ce381141b395b7f65246535b09" class="uri">https://www.loom.com/share/397052ce381141b395b7f65246535b09</a></p>
 </div>
 </div>
 <div id="wilcoxon-rank" class="section level3 hasAnchor">
 <h3>Wilcoxon rank<a href="dependent-t-test.html#wilcoxon-rank" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>If you fail to meet the assumption of normality, then we perform the Wilcoxon rank test in stead. To conduct this in jamovi, under Tests select <code>Wilcoxon rank</code>. Here is the output for both the dependent t-test and the Wilcoxon rank test:</p>
+<p>If you fail to meet the assumption of normality, then we perform the Wilcoxon rank test instead. The Wilcoxon rank test will produce more accurate results if normality is violated, but it will produce approximately similar results if normality is met.</p>
+<p>To conduct this in jamovi, under Tests select <code>Wilcoxon rank</code>. Here is the output for both the dependent t-test and the Wilcoxon rank test:</p>
 <p><img src="images/03_dependent_t-test/dependent_results_full.png" /></p>
 <div class="danger">
 <p>

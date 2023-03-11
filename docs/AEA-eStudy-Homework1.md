@@ -1,14 +1,24 @@
+---
+title: "Untitled"
+output: word_document
+date: "2023-03-05"
+---
+
+
+
 # 2. Statistics foundations
 
-```{r intro-setup, echo = FALSE, message=FALSE}
-library(tidyverse)
-```
+
 
 You have learned about both quantitative and qualitative methods. We will be focusing primarily on quantitative methods in this class and in this textbook. By quantitative methods, I mean methods that predominantly collect data that deals with numbers. We can then analyze that data using statistical procedures, which we will shorthand to "statistics." Understanding what we mean by statistics is the purpose of this chapter.
 
-```{r echo = FALSE, message = FALSE, warning = FALSE}
-library(vembedr)
-embed_url("https://www.youtube.com/watch?v=QirHpjLkHmc")
+
+```{=html}
+<div class="vembedr">
+<div>
+<iframe src="https://www.youtube.com/embed/QirHpjLkHmc" width="533" height="300" frameborder="0" allowfullscreen="" data-external="1"></iframe>
+</div>
+</div>
 ```
 
 ### Describing Our Data
@@ -39,7 +49,7 @@ There are also multiple **measures of dispersion** that describe the spread of o
 
     -   **Interquartile range**: the middle 50% (Q1 to Q3)
 
-[![Simply Psychology](images/02-stats-foundations/box-whisker-plot.jpg)](https://www.simplypsychology.org/box-whisker-plot.jpg)
+![Simply Psychology](images/02-stats-foundations/box-whisker-plot.jpg){alt="Simply Psychology"}
 
 -   **Variance**: the sum of the squared deviations from the mean. This means first (a) calculating the mean, (b) subtracting each score from the mean (aka deviations from the mean), (c) squaring each of those deviations values, and (d) summing all those squared deviations. This is represented by the equation $\frac{\sum (X-\mu)^2}{N}$
 
@@ -55,14 +65,14 @@ We also have two main **measures of shape** that describe the shape of the distr
 
     -   **Positive skew**: when the tail points to the positive end of the spectrum; in other words, most of the values are on the left side of the distribution
 
-[![Figure by Peter Prevos.](images/02-stats-foundations/skewness-1.png)](https://lucidmanager.org/r4h2o/stats.html)
+![Figure by Peter Prevos.](images/02-stats-foundations/skewness-1.png){alt="Figure by Peter Prevos."}
 
 -   **Kurtosis**: the weight of the tails relative to a normal distribution. In other words, it's how flat or skinny the distribution is. There are some fancy terms related to kurtosis that you may hear about, but honestly I don't hear them used very frequently by researchers.
 
     -   **Leptokurtic**: light tails; values are more concentrated around the mean
     -   **Platykurtic**: heavy tails; values are less concentrated around the mean
 
-[![Figure by "Student" (1927)](images/02-stats-foundations/kurtosis.png)](https://www.jstor.org/stable/2332181?origin=crossref)
+![Figure by "Student" (1927)](images/02-stats-foundations/kurtosis.png){alt="Figure by \"Student\" (1927)"}
 
 When skew and kurtosis are zero, then we have a special type of distribution called the **normal distribution** in which the data are symmetrical on both sides of the mean. We sometimes call this a "bell curve".
 
@@ -99,7 +109,7 @@ One semester, a student asked, "Isn't time a continuous variable?" To which I re
 Here's another example. Notice that studying can be measured at different levels. Depending on the nature of the question and response options, it might be nominal, ordinal, or continuous! Here's an example of data at the continuous, ordinal, and nominal level.
 
 | Name               | Study_Continuous        | Study_Ordinal                        | Study_Nominal                         |
-|--------------------|-------------------------|--------------------------------------|---------------------------------------|
+|------------------|------------------|------------------|-------------------|
 | *Name (Character)* | *Hours studied per day* | *Likert scale of amount of studying* | *Whether or not they study every day* |
 | Jesus              | 5.0                     | A great deal                         | Yes                                   |
 | Nicky              | 4.5                     | A great deal                         | Yes                                   |
@@ -115,7 +125,7 @@ Because continuous variables have more information, we want to avoid doing thing
 
 Another thing to keep in mind is that just because we put numbers to something does not necessarily make it continuous! Be careful and think critically. If I said cat = 1, dog = 2, and frog = 3 it doesn't make it an ordinal or continuous variable.
 
-[![XKCD: Assinging Numbers](https://imgs.xkcd.com/comics/assigning_numbers.png)](https://xkcd.com/2610/)
+![XKCD: Assinging Numbers](https://imgs.xkcd.com/comics/assigning_numbers.png){alt="XKCD: Assinging Numbers"}
 
 ## Descriptive vs inferential statistics
 
@@ -145,8 +155,8 @@ We conduct our study--let's assume we're fabulous researchers and it worked out 
 
 First, let's describe the sample. We would likely visualize our results, perhaps as a histogram of all test scores, maybe separated by which group they were in. This would help us look at whether our data is normally distributed (more on this in a subsequent chapter on assumption checking). We would get the descriptive statistics: probably the mean, maybe the median if our data is skewed, the standard deviation and variance, and the range. If we wrote up our results and didn't share a visualization, this information would give a good sense of our data to our readers.
 
-But what we really want to know is: which group performed better on the test? For that, we need our mean, standard deviations, and sample sizes for both groups. We then plug the numbers into the equation for this particular inferential statistic (in this case, an independent t-test, but we'll learn about that later) or--even better--we perform the statistic in our statistical software (jamovi). It spits out our statistical value and our p-value and we can then infer what the results mean for our population and answers our research question.[^02.0-statistics-foundations-1]
+But what we really want to know is: which group performed better on the test? For that, we need our mean, standard deviations, and sample sizes for both groups. We then plug the numbers into the equation for this particular inferential statistic (in this case, an independent t-test, but we'll learn about that later) or--even better--we perform the statistic in our statistical software (jamovi). It spits out our statistical value and our p-value and we can then infer what the results mean for our population and answers our research question.[^1]
 
-[^02.0-statistics-foundations-1]: You might be wondering: well, what were the results? Which group performed better? As much as I love Schitt's Creek, most students don't know how to study well, and so the students who watched the video lessons on studying techniques far outperformed the students who watched Schitt's Creek.
+[^1]: You might be wondering: well, what were the results? Which group performed better? As much as I love Schitt's Creek, most students don't know how to study well, and so the students who watched the video lessons on studying techniques far outperformed the students who watched Schitt's Creek.
 
     Interested in better techniques for studying? Check out [The Learning Scientists](https://www.learningscientists.org/blog/category/For+Students). This [article](https://www.learningscientists.org/blog/2020/1/9-1)does a good job of summarizing the research on effective study practices.

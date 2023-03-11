@@ -309,6 +309,15 @@
 </ul></li>
 <li class="appendix"><span><b>Appendices</b></span></li>
 <li class="chapter" data-level="" data-path="answers-to-your-turn-exercises.html"><a href="answers-to-your-turn-exercises.html"><i class="fa fa-check"></i>Answers to Your Turn exercises</a></li>
+<li class="chapter" data-level="" data-path="statistics-foundations-1.html"><a href="statistics-foundations-1.html"><i class="fa fa-check"></i>2. Statistics foundations</a>
+<ul>
+<li class="chapter" data-level="" data-path="statistics-foundations-1.html"><a href="statistics-foundations-1.html#describing-our-data-1"><i class="fa fa-check"></i>Describing Our Data</a></li>
+<li class="chapter" data-level="" data-path="statistics-foundations-1.html"><a href="statistics-foundations-1.html#levels-of-measurement-1"><i class="fa fa-check"></i>Levels of measurement</a></li>
+<li class="chapter" data-level="" data-path="descriptive-vs-inferential-statistics-1.html"><a href="descriptive-vs-inferential-statistics-1.html"><i class="fa fa-check"></i>Descriptive vs inferential statistics</a>
+<ul>
+<li class="chapter" data-level="" data-path="descriptive-vs-inferential-statistics-1.html"><a href="descriptive-vs-inferential-statistics-1.html#an-example-2"><i class="fa fa-check"></i>An example</a></li>
+</ul></li>
+</ul></li>
 <li class="divider"></li>
 <li><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/" 
     target="blank"><img alt="Creative Commons License" 
@@ -493,6 +502,36 @@ quantitatively.
 <blockquote>
 <p>Pearson’s <span class="math inline">\(\chi^2\)</span> test of independence showed a significant association between species and choice, <span class="math inline">\(\chi^2\)</span> (2) = 10.72, <em>p</em> = .005, Cramer’s V = .24. Robots were more likely to say they prefer flowers (70%) compared to humans (30%) and humans were more likely to say they prefer data (60%) compared to robots (40%). Robots (46%) and humans (54%) were equally likely to prefer puppies.</p>
 </blockquote>
+<p>We can also use the observed frequencies to either visualize (see the next table) or write-up in a table. Here’s an example write-up with a table.</p>
+<blockquote>
+<p>Pearson’s <span class="math inline">\(\chi^2\)</span> test of independence showed a significant association between species and choice, <span class="math inline">\(\chi^2\)</span> (2) = 10.72, <em>p</em> = .005, Cramer’s V = .24. Robots were more likely to say they prefer flowers whereas humans were more likely to say they prefer data (see table below).</p>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th>Robots</th>
+<th>Humans</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>puppy</td>
+<td>13 (46%)</td>
+<td>15 (54%)</td>
+</tr>
+<tr class="even">
+<td>flower</td>
+<td>30 (70%)</td>
+<td>13 (30%)</td>
+</tr>
+<tr class="odd">
+<td>data</td>
+<td>44 (40%)</td>
+<td>65 (60%)</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
 </div>
 <div id="visualize-the-results-4" class="section level4 hasAnchor">
 <h4>Visualize the results<a href="chi-square-test-of-independence.html#visualize-the-results-4" class="anchor-section" aria-label="Anchor link to header"></a></h4>
@@ -507,7 +546,7 @@ quantitatively.
 </div>
 <div id="fishers-exact-test" class="section level3 hasAnchor">
 <h3>Fisher’s exact test<a href="chi-square-test-of-independence.html#fishers-exact-test" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>If you violate the assumption that there your expected frequencies are sufficiently large and you have a 2x2 table, you can still perform the <span class="math inline">\(\chi^2\)</span> test of independence but instead of selecting <span class="math inline">\(\chi^2\)</span>you’ll select <code>Fisher's exact test</code>. You’ll interpret your results exactly the same but specify you used Fisher’s exact test. Here’s an example write-up from the results above:</p>
+<p>If you violate the assumption that your expected frequencies are sufficiently large and you have a 2x2 table, you can still perform the <span class="math inline">\(\chi^2\)</span> test of independence but instead of selecting <span class="math inline">\(\chi^2\)</span>you’ll select <code>Fisher's exact test</code>. You’ll interpret your results exactly the same but specify you used Fisher’s exact test. Here’s an example write-up from the results above:</p>
 <blockquote>
 <p>Fisher’s exact test of independence showed a significant association between species and choice, <span class="math inline">\(\chi^2\)</span> (2) = 10.72, <em>p</em> = .004, Cramer’s V = .24. Robots were more likely to say they prefer flowers (70%) compared to humans (30%) and humans were more likely to say they prefer data (60%) compared to robots (40%). Robots (46%) and humans (54%) were equally likely to prefer puppies.</p>
 </blockquote>
@@ -516,7 +555,7 @@ quantitatively.
 <div id="additional-practice-3" class="section level3 hasAnchor">
 <h3>Additional practice<a href="chi-square-test-of-independence.html#additional-practice-3" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Open the <code>Sample_Dataset_2014.xlsx</code> file that we will be using for all Your Turn exercises. You can find the dataset here: <a href="https://github.com/danawanzer/stats-with-jamovi/blob/master/data/Sample_Dataset_2014.xlsx">Sample_Dataset_2014.xlsx Download</a></p>
-<p>To get the most out of these exercises, try to first find out the answer on your own and then use the drop-down menus to check your answer.</p>
+<p>To get the most out of these exercises, try to first find out the answer on your own and then go to the appendix to check your answer.</p>
 <ol style="list-style-type: decimal">
 <li><p><strong>Is Athlete related to Gender?</strong></p>
 <ul>

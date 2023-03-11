@@ -109,7 +109,7 @@ Overall, all four tests lead us to conclude that we satisfy the assumption of no
 
 #### Decide which statistical test you should be using
 
-If you fail to meet the assumption of normality, and no transformation fixes the data, then you can use the [Wilcoxon W test].
+If you fail to meet the assumption of normality, and no transformation fixes the data (refer back to the Cleaning data chapter you read previously!), then you can use the [Wilcoxon W test].
 
 If you meet the assumption of normality, then you can use the Student's t-test.
 
@@ -153,6 +153,10 @@ Once we are satisfied we have satisfied the assumptions for the independent t-te
 
 Our p-value is less than our alpha value of .05, so our results are statistically significant. Like most of the statistics we'll come across, the larger the t-statistic (or F-statistic, or chi-square statistic...), the smaller the p-value will be.
 
+```{block, type="info"}
+What is "df"? That stands for degrees of freedom. The "key terms" chapter covers them in more detail, but in the case of the one-sample t-test they are calculated by the number of participants in our sample minus 1 (n-1) which in this case is 20-1 or 19. 
+```
+
 Because our results are statistically significant, we reject our null hypothesis that the population mean is less than or equal to the sample mean of psychology students.
 
 However, remember what we've learned in the previous chapters! We rejected the null hypothesis, but there's always the chance that we've made a type 1 error.
@@ -182,7 +186,7 @@ We can write up our results in APA something like this:
 
 Let's analyze that against the 4 things we need to report:
 
-> **\#1** Dr. Zeppo's psychology colleague hypothesized that his psychology students have a higher grade than the population of his students. **\#4** Psychology students **\#2** (*M* = 72.30, *SD* = 9.52, *n* = 20) **\#4** had significantly higher grades than the population of Dr. Zeppo's students (*M* = 67.50), **\#3** *t* (19) = 2.25, *p* = .046, *d* = .50.
+> **#1** Dr. Zeppo's psychology colleague hypothesized that his psychology students have a higher grade than the population of his students. **#4** Psychology students **#2** (*M* = 72.30, *SD* = 9.52, *n* = 20) **#4** had significantly higher grades than the population of Dr. Zeppo's students (*M* = 67.50), **#3** *t* (19) = 2.25, *p* = .046, *d* = .50.
 
 Note that this is not the only way we can write up the results in APA format. The key is that we include all four pieces of information as specified above.
 

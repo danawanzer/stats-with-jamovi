@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Descriptive vs inferential statistics | Statistics with jamovi</title>
+  <title>2. Statistics foundations | Untitled</title>
   <meta name="description" content="This is the website for PSYC 290 and PSYC 790 at the University of Wisconsin-Stout, taught by Dana Wanzer." />
   <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Descriptive vs inferential statistics | Statistics with jamovi" />
+  <meta property="og:title" content="2. Statistics foundations | Untitled" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="This is the website for PSYC 290 and PSYC 790 at the University of Wisconsin-Stout, taught by Dana Wanzer." />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Descriptive vs inferential statistics | Statistics with jamovi" />
+  <meta name="twitter:title" content="2. Statistics foundations | Untitled" />
   
   <meta name="twitter:description" content="This is the website for PSYC 290 and PSYC 790 at the University of Wisconsin-Stout, taught by Dana Wanzer." />
   
@@ -23,14 +23,15 @@
 <meta name="author" content="Dana Wanzer" />
 
 
+<meta name="date" content="2023-03-05" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="statistics-foundations.html"/>
-<link rel="next" href="design-methods-key-terms.html"/>
+<link rel="prev" href="answers-to-your-turn-exercises.html"/>
+<link rel="next" href="descriptive-vs-inferential-statistics-1.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -333,7 +334,7 @@
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Statistics with jamovi</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Untitled</a>
           </h1>
         </div>
 
@@ -341,34 +342,174 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="descriptive-vs-inferential-statistics" class="section level2 hasAnchor">
-<h2>Descriptive vs inferential statistics<a href="descriptive-vs-inferential-statistics.html#descriptive-vs-inferential-statistics" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>There are basically two different types of statistics:</p>
-<ol style="list-style-type: decimal">
-<li><p><strong>Descriptive statistics</strong> are used to summarize, organize, and overall <em>describe</em> our sample data. Typically, we do so using measures of central tendency (e.g., mean, median, mode), measures of dispersion (e.g., range, standard deviation, variance), and shape (e.g., skew, kurtosis). We may also visualize the data using tables or graphs.</p></li>
-<li><p><strong>Inferential statistics</strong> are what we use when we collect data about a sample and see how well that sample <em>infers</em> things about the population from which the sample comes from. Typically, we do so with statistical tests like the t-test, ANOVA, correlation, chi-square, regression, and more.</p></li>
-</ol>
-<p>We can visualize the relationship between the population, sample, descriptive statistics, and inferential statistics (see figure below). We are typically interested in a <strong>population</strong> of interest but may not be able to collect data from the entire population because of budget, time, access, or other constraints. We therefore <strong>sample</strong> from the population; ideally, we do so randomly, but there are other types of sampling methods available. We then use <strong>descriptive statistics</strong> to describe our sample data and <strong>inferential statistics</strong> to make generalizations about the population from which they were selected.</p>
-<p><img src="images/02-stats-foundations/descriptive-vs-inferential.png" /></p>
-<p>Note that we typically use both descriptive and inferential statistics. However, some studies may be purely descriptive with no inference back to the population. We typically always describe the sample when we are performing inferential statistics though.</p>
-<div id="an-example" class="section level3 hasAnchor">
-<h3>An example<a href="descriptive-vs-inferential-statistics.html#an-example" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>This has been pretty abstract so far. Let’s go through a fairly simple research study to walk through all of this.</p>
-<p>Imagine we’re conducting an experimental study examining whether watching Schitt’s Creek–a very good show–versus watching video lessons on studying techniques–useful, but boring–improved test performance in UW-Stout students.</p>
-<p>Our population of interest is therefore all UW-Stout students, roughly 9,500 students total. We cannot include them all in our study; it wouldn’t be feasible for us to collect all that data and probably not possible to get the university to get on board with the study of the entire student body. Therefore, we smartly decide to only collect data from a sample of the student body.</p>
-<p>Who might our sample be? Ideally, we’d gather a random sample of the 9,500 students. However, to do that we’d likely need to still get university approval and get a list of a portion of student emails for recruitment purposes (oversampling because our response rate is unlikely to be 100%). I just want to do this study to show what descriptive and inferential statistics are, so I just use students in my two sections of introduction to psychology classes (around 80 students total) as my population. This is definitely not a random sample, but a fine study for our illustrative purposes.</p>
-<p>We conduct our study–let’s assume we’re fabulous researchers and it worked out perfectly. We randomly assign half our students to watch Schitt’s Creek as part of their studying, and the other half watch video lessons on studying techniques. They have an exam a week later and we measure their accuracy on that exam. We then want to know: which group performed better on the exam?</p>
-<p>First, let’s describe the sample. We would likely visualize our results, perhaps as a histogram of all test scores, maybe separated by which group they were in. This would help us look at whether our data is normally distributed (more on this in a subsequent chapter on assumption checking). We would get the descriptive statistics: probably the mean, maybe the median if our data is skewed, the standard deviation and variance, and the range. If we wrote up our results and didn’t share a visualization, this information would give a good sense of our data to our readers.</p>
-<p>But what we really want to know is: which group performed better on the test? For that, we need our mean, standard deviations, and sample sizes for both groups. We then plug the numbers into the equation for this particular inferential statistic (in this case, an independent t-test, but we’ll learn about that later) or–even better–we perform the statistic in our statistical software (jamovi). It spits out our statistical value and our p-value and we can then infer what the results mean for our population and answers our research question.<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></p>
-
+<div id="statistics-foundations-1" class="section level1 hasAnchor">
+<h1>2. Statistics foundations<a href="statistics-foundations-1.html#statistics-foundations-1" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>You have learned about both quantitative and qualitative methods. We will be focusing primarily on quantitative methods in this class and in this textbook. By quantitative methods, I mean methods that predominantly collect data that deals with numbers. We can then analyze that data using statistical procedures, which we will shorthand to “statistics.” Understanding what we mean by statistics is the purpose of this chapter.</p>
+<div class="vembedr">
+<div>
+<iframe src="https://www.youtube.com/embed/QirHpjLkHmc" width="533" height="300" frameborder="0" allowfullscreen="" data-external="1"></iframe>
 </div>
 </div>
-<div class="footnotes">
-<hr />
-<ol start="1">
-<li id="fn1"><p>You might be wondering: well, what were the results? Which group performed better? As much as I love Schitt’s Creek, most students don’t know how to study well, and so the students who watched the video lessons on studying techniques far outperformed the students who watched Schitt’s Creek.</p>
-<p>Interested in better techniques for studying? Check out <a href="https://www.learningscientists.org/blog/category/For+Students">The Learning Scientists</a>. This <a href="https://www.learningscientists.org/blog/2020/1/9-1">article</a>does a good job of summarizing the research on effective study practices.<a href="descriptive-vs-inferential-statistics.html#fnref1" class="footnote-back">↩︎</a></p></li>
-</ol>
+<div id="describing-our-data-1" class="section level3 hasAnchor">
+<h3>Describing Our Data<a href="statistics-foundations-1.html#describing-our-data-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>First, let’s understand some basic statistics related to how we describe our data, including measures of central tendency (averages), measures of dispersion (spread), measures of shape of the distribution,</p>
+<div id="measures-of-central-tendency-1" class="section level4 hasAnchor">
+<h4>Measures of Central Tendency<a href="statistics-foundations-1.html#measures-of-central-tendency-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>There are multiple <strong>measures of central tendency</strong> (these are <em>all</em> averages so you must be careful when you say that word to explain which type you mean!):</p>
+<ul>
+<li><p><strong>Mean</strong>: the sum of all points divided by the total number of points; susceptible to outliers</p></li>
+<li><p><strong>Median</strong>: the middlemost value; less susceptible to outliers and best used when the data is skewed</p></li>
+<li><p><strong>Mode</strong>: most frequent score. Our data can also be <strong>multimodal</strong> when there are multiple modes or <strong>bimodal</strong> when there are two modes.</p></li>
+</ul>
+<p>Note that depending on the shape of the distribution, the mean, median, and mode may not be the same value. If we have a <strong>normal distribution</strong> then they will be the exact same! However, if we have a positively skewed distribution, the mean and median will be pulled towards the positively skewed data, as shown in this figure by <a href="https://lucidmanager.org/r4h2o/stats.html">Peter Prevos</a>.</p>
+<p><img src="images/02-stats-foundations/tendency-1.png" /></p>
+</div>
+<div id="measures-of-dispersion-1" class="section level4 hasAnchor">
+<h4>Measures of Dispersion<a href="statistics-foundations-1.html#measures-of-dispersion-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>There are also multiple <strong>measures of dispersion</strong> that describe the spread of our data:</p>
+<ul>
+<li><p><strong>Range</strong>: the difference between the maximum and minimum value (e.g., if the minimum score is 17 and the maximum is 49, then the range is 32)</p></li>
+<li><p><strong>Quartile</strong>: when a dataset is divided into four equal parts, the first quartile (Q1) is at the 25th percentile, the second quartile (Q2) is at the 50th percentile, and the third quartile (Q3) is at the 75th percentile. Note that the median is also the 50th percentile!</p>
+<ul>
+<li><strong>Interquartile range</strong>: the middle 50% (Q1 to Q3)</li>
+</ul></li>
+</ul>
+<div class="figure">
+<img src="images/02-stats-foundations/box-whisker-plot.jpg" alt="Simply Psychology" />
+<p class="caption">Simply Psychology</p>
+</div>
+<ul>
+<li><p><strong>Variance</strong>: the sum of the squared deviations from the mean. This means first (a) calculating the mean, (b) subtracting each score from the mean (aka deviations from the mean), (c) squaring each of those deviations values, and (d) summing all those squared deviations. This is represented by the equation <span class="math inline">\(\frac{\sum (X-\mu)^2}{N}\)</span></p></li>
+<li><p><strong>Standard deviation</strong>: is the square of the variance. This is represented by the equation <span class="math inline">\(\sqrt{\frac{\sum (X-\mu)^2}{N}}\)</span> however that equation is only used if we are examining the whole population. If we only have a sample, we replace the denominator <code>N</code> with <code>N-1</code>.</p></li>
+</ul>
+</div>
+<div id="measures-of-the-shape-of-the-distribution-1" class="section level4 hasAnchor">
+<h4>Measures of the Shape of the Distribution<a href="statistics-foundations-1.html#measures-of-the-shape-of-the-distribution-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>We also have two main <strong>measures of shape</strong> that describe the shape of the distribution of our data:</p>
+<ul>
+<li><p><strong>Skew</strong>: in a non-normal distribution, it is when one tail of the distribution is longer than another. Present in asymmetric distributions</p>
+<ul>
+<li><p><strong>Negative skew</strong>: when the tail points to the negative end of the spectrum; in other words, most of the values are on the right side of the distribution</p></li>
+<li><p><strong>Positive skew</strong>: when the tail points to the positive end of the spectrum; in other words, most of the values are on the left side of the distribution</p></li>
+</ul></li>
+</ul>
+<div class="figure">
+<img src="images/02-stats-foundations/skewness-1.png" alt="Figure by Peter Prevos." />
+<p class="caption">Figure by Peter Prevos.</p>
+</div>
+<ul>
+<li><p><strong>Kurtosis</strong>: the weight of the tails relative to a normal distribution. In other words, it’s how flat or skinny the distribution is. There are some fancy terms related to kurtosis that you may hear about, but honestly I don’t hear them used very frequently by researchers.</p>
+<ul>
+<li><strong>Leptokurtic</strong>: light tails; values are more concentrated around the mean</li>
+<li><strong>Platykurtic</strong>: heavy tails; values are less concentrated around the mean</li>
+</ul></li>
+</ul>
+<div class="figure">
+<img src="images/02-stats-foundations/kurtosis.png" alt="Figure by &quot;Student&quot; (1927)" />
+<p class="caption">Figure by “Student” (1927)</p>
+</div>
+<p>When skew and kurtosis are zero, then we have a special type of distribution called the <strong>normal distribution</strong> in which the data are symmetrical on both sides of the mean. We sometimes call this a “bell curve”.</p>
+</div>
+<div id="visualizing-the-distribution-1" class="section level4 hasAnchor">
+<h4>Visualizing the Distribution<a href="statistics-foundations-1.html#visualizing-the-distribution-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Although there are many ways we can do this, the two most common ways we will visualize the distribution using jamovi are with a <strong>histogram</strong> which could also be a density curve or a <strong>boxplot</strong>. We’ll learn more about visualizing in Chapter <a href="visualizing-data.html#visualizing-data"><strong>??</strong></a>.</p>
+</div>
+</div>
+<div id="levels-of-measurement-1" class="section level3 hasAnchor">
+<h3>Levels of measurement<a href="statistics-foundations-1.html#levels-of-measurement-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>This may or may not be refresher material for you, but it is extremely important you are familiar with the four levels of measurement.</p>
+<p><img src="images/01-intro/Levels%20of%20measurement.png" /></p>
+<p><strong>Categorical</strong>: variables that have <em>categories</em> to the levels, but cannot be analyzed with a mean because the levels are not proportionate. There are two types of categorical variables:</p>
+<ul>
+<li><p><strong>Nominal</strong>: a categorical variable in which each level of the variable is named but there is no order to them (e.g., breeds of dogs). Nominal variables can only be analyzed with frequencies, modes, counts, or percentages. Nominal variables with only two levels (generally coded as 0 or 1, although jamovi can handle named levels), we call these special nominal variables as either binary, dummy-coded, or dichotomous nominal variables. For example, binary variables could be coded as yes or no or as absence or presence.</p></li>
+<li><p><strong>Ordinal</strong>: a categorical variable in which each level of the variable is named and there is an order to them (e.g., ranks). We can analyze ordinal variables with frequencies and percentages, like nominal variables, but we can <em>also</em> analyze them using medians, minimum and maximum values, ranges, and percentiles.</p></li>
+</ul>
+<p><strong>Continuous</strong>: variables with proportionate intervals between the levels meaning they can be analyzed with a mean, SD, variance. There are two types of continuous variables (although for the purpose of this course we will simply call them continuous variables):</p>
+<ul>
+<li><p><strong>Interval</strong>: a continuous variable that has intervals that are directly proportionate (e.g., the distance between 2-3 is the same as the distance between 5-6). We can analyze interval variables using means, variances, and standard deviations.</p></li>
+<li><p><strong>Ratio</strong>: a continuous variable like an internal variable but can accommodate an absolute zero, meaning a zero is actually possible (e.g., weight, temperature in Kelvin, reaction time). We can also analyze ratio variables with means, variances, and standard deviations, but we can also conduct arithmetic operations like fractions and ratios.</p></li>
+</ul>
+<p>Note that in this class, I won’t ask you to differentiate between interval and ratio levels of measurement because the differences between the two are usually not meaningful in our work. You’ll even find that jamovi doesn’t differentiate between the two, either. Instead, you just need to know whether the variables are continuous, ordinal, or nominal.</p>
+<div id="examples-of-levels-of-measurement-1" class="section level4 hasAnchor">
+<h4>Examples of levels of measurement<a href="statistics-foundations-1.html#examples-of-levels-of-measurement-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Confused still on the levels of measurement? Maybe this will help!</p>
+<p>One semester, a student asked, “Isn’t time a continuous variable?” To which I responded, “It depends on how it is measured!” If time was measured in a simple pre/post design, such as the start of the semester and the end of the semester, then it’s a nominal variable, and a specific type of nominal variable that we can call binary or dichotomous. If time was measured by month, January through December, then it would be ordinal because January is before (earlier than) February, for example. There is an order to the months, and a calendar that went March, October, April, January, etc. would make no sense. If time was measured as a continuous variable, it could be something like the exact day, exact time, response time, or time remaining.</p>
+<p>Here’s another example. Notice that studying can be measured at different levels. Depending on the nature of the question and response options, it might be nominal, ordinal, or continuous! Here’s an example of data at the continuous, ordinal, and nominal level.</p>
+<table>
+<colgroup>
+<col width="24%" />
+<col width="24%" />
+<col width="24%" />
+<col width="26%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Study_Continuous</th>
+<th>Study_Ordinal</th>
+<th>Study_Nominal</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><em>Name (Character)</em></td>
+<td><em>Hours studied per day</em></td>
+<td><em>Likert scale of amount of studying</em></td>
+<td><em>Whether or not they study every day</em></td>
+</tr>
+<tr class="even">
+<td>Jesus</td>
+<td>5.0</td>
+<td>A great deal</td>
+<td>Yes</td>
+</tr>
+<tr class="odd">
+<td>Nicky</td>
+<td>4.5</td>
+<td>A great deal</td>
+<td>Yes</td>
+</tr>
+<tr class="even">
+<td>Bradford</td>
+<td>3.2</td>
+<td>A moderate amount</td>
+<td>Yes</td>
+</tr>
+<tr class="odd">
+<td>Sylvia</td>
+<td>1.7</td>
+<td>A small amount</td>
+<td>Yes</td>
+</tr>
+<tr class="even">
+<td>Martha</td>
+<td>0.2</td>
+<td>Rarely</td>
+<td>Yes</td>
+</tr>
+<tr class="odd">
+<td>Lillian</td>
+<td>0.0</td>
+<td>Never</td>
+<td>No</td>
+</tr>
+<tr class="even">
+<td>Trayvon</td>
+<td>0.0</td>
+<td>Never</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<p>We can make any continuous variable into an ordinal and nominal variable and any ordinal variable into a nominal variable. But if we have a nominal variable we cannot make it ordinal, nor can we make an ordinal variable continuous. In other words, continuous variables <em>contain more information</em>. Often, we want to avoid losing information and <em>always</em> keep the variable at the highest level of measurement. Continuous has more information than ordinal has more information than nominal.</p>
+<p>Because continuous variables have more information, we want to avoid doing things like mean or median splits or “collapsing” categories when you can. A mean or median split, which involves finding the mean or median value and splitting the data so it’s above the mean/median or below the mean/median, is making a continuous variable as nominal, which is removing information. Collapsing categories may also further reduce the information.</p>
+<p>Another thing to keep in mind is that just because we put numbers to something does not necessarily make it continuous! Be careful and think critically. If I said cat = 1, dog = 2, and frog = 3 it doesn’t make it an ordinal or continuous variable.</p>
+<div class="figure">
+<img src="https://imgs.xkcd.com/comics/assigning_numbers.png" alt="XKCD: Assinging Numbers" />
+<p class="caption">XKCD: Assinging Numbers</p>
+</div>
+</div>
+</div>
 </div>
 <div class="psyteachr_footer">
   
@@ -460,8 +601,8 @@ window.onload = function() {
           </div>
         </div>
       </div>
-<a href="statistics-foundations.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="design-methods-key-terms.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="answers-to-your-turn-exercises.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="descriptive-vs-inferential-statistics-1.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
