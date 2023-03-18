@@ -119,7 +119,7 @@ In fact, we've read in the BEAN chapters how to calculate for power! We could us
 If you fail to meet one or both of the assumptions of normality (and no transformations fixed your data) and homogeneity of variances, jamovi has the alternative statistics easily built in. Here's what statistic you should choose based on satisfying assumptions:
 
 |                                            | **Normality: satisfied**         | **Normality: not satisfied** |
-|-----------------------------|-----------------------|--------------------|
+|--------------------------------------------|----------------------------------|------------------------------|
 | **Homogeneity of Variance: satisfied**     | Student's t-test                 | [Mann-Whitney U test]        |
 | **Homogeneity of Variance: not satisfied** | [Welch's t-test](#welchs-t-test) | [Mann-Whitney U test]        |
 
