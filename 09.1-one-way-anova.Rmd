@@ -123,7 +123,7 @@ We test for homogeneity of variance using the Levene's test, looking at the grou
 If you fail to meet one or both of the assumptions of normality (and no transformations fixed your data; refer back to the Cleaning Data chapter to recall how to transform data) and homogeneity of variances, jamovi has the alternative statistics easily built in. Here's what statistic you should choose based on satisfying assumptions:
 
 |                                            | **Normality: satisfied**                                            | **Normality: not satisfied**                             |
-|---------------------|------------------------|---------------------------|
+|--------------------------------------------|---------------------------------------------------------------------|----------------------------------------------------------|
 | **Homogeneity of Variance: satisfied**     | one-way ANOVA (but using the ANOVA function)                        | [Kruskal-Wallis test] (using the one-way ANOVA function) |
 | **Homogeneity of Variance: not satisfied** | [Welch's F-test](#welchs-f-test) (using the one-way ANOVA function) | [Kruskal-Wallis test] (using the one-way ANOVA function) |
 
