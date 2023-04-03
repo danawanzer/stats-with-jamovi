@@ -28,7 +28,7 @@ Next let's look at how gender is related to reading scores. First, our t-statist
 
 ### Dependent t-test as a regression
 
-The dependent t-test can't be performed as a regression in the base jamovi, but it can if we run it in the Rj editor using the stats package. The regression formula for a dependent t-test is $y_1 -y_0 = 1$ and jamovi doesn't like it if there are not IVs, just an intercept. However, the stats package doesn't mind! Notice that our t-statistic, df, and p-value are exactly the same, and that the intercept estimate and SE match the mean difference in the paired samples t-test.
+The dependent t-test can't be performed as a regression in the base jamovi, but it can if we run it in the Rj editor using the `stats` package (as opposed to using the `jamovi` package that we've been using as part of the jamovi software). The regression formula for a dependent t-test is $y_1 -y_0 = 1$ and jamovi doesn't like it if there are not IVs, just an intercept. However, the stats package doesn't mind! Notice that our t-statistic, df, and p-value are exactly the same, and that the intercept estimate and SE match the mean difference in the paired samples t-test.
 
 ![](images/14-regression-wrap-up/dependent_t-test.png)
 

@@ -5,9 +5,11 @@ library(tidyverse)
 options(knitr.graphics.auto_pdf = TRUE)
 ```
 
-**ANCOVA** (**AN**alysis of **COVA**riance) examines the difference in means between [three or more]{.ul} groups, while controlling for or partialling out the effect of one or more continuous confounds or covariates.
+**ANCOVA** (**AN**alysis of **COVA**riance) examines the difference in means between [three or more]{.underline} groups, while controlling for or partialling out the effect of one or more continuous confounds or covariates.
 
 **Some definitions**: A *confounding* variable is a variable that affects or is related to both the independent and dependent variable. A *covariate* variable is a variable that only affects or is only related to the dependent variable.
+
+![](images/02-stats-foundations/Possible-relationships-of-a-covariate-and-a-confounder-to-an-exposure-variable-and-an.png)
 
 There are two main reasons for including covariates:
 
@@ -30,7 +32,7 @@ embed_url("https://www.youtube.com/watch?v=OdKyMYoO0VU")
 
 ### Step 2: Check Assumptions
 
-The ANCOVA has two additional assumptions we'll get to next; otherwise, it also has the same assumptions as the one-way ANOVA (i.e., normal distribution, homogeneity of variance, interval or ratio DV, scores are independent between groups). Let's test those first. Shapiro-Wilk's test was not statistically significant (*p* = .735) and the Q-Q plot looks good; therefore, we've satisfied the assumption of normality. Levene's test was not statistically significant (*p* = .925); therefore, we've satisfied the assumption of homogeneity of variance.
+The ANCOVA has two additional assumptions we'll get to next; otherwise, it also has the same assumptions as the one-way ANOVA (i.e., normal distribution, homogeneity of variance, interval or ratio DV, scores are independent between groups). Let's test those first. Shapiro-Wilk's test was not statistically significant (*p* = .735), the Q-Q plot looks good, skew and kurtosis were fine, and distribution looks fine; therefore, we've satisfied the assumption of normality. Levene's test was not statistically significant (*p* = .925); therefore, we've satisfied the assumption of homogeneity of variance.
 
 ![](images/07-ancova/ancova_assumptions.png)
 
@@ -40,17 +42,13 @@ The ANCOVA has two additional assumptions.
 
 When the covariate and treatment effect are related, then we can have incorrect F-statistic values. However, this is only important in experimental designs. In quasi-experimental designs, this is often violated and you just have to interpret results accordingly.
 
--   If you do have an experimental manipulation with a covariate, you can test this assumption by running a one-way ANOVA but with your experimental manipulation as your IV or group variable and your covariate as your DV. If there is a significant F-ratio, then you have violated this assumption.
+-   If you do have an experimental manipulation with a covariate, you can test this assumption by running a one-way ANOVA but with your experimental manipulation as your IV or group variable and your covariate as your DV. If there is a significant F-statistic, then you have violated this assumption. In this case, one of our IVs (stress) is significantly related to age, so we violate this assumption. This suggests that age is not a covariate, but more appropriately a confounder, which necessitates a different type of analysis not described here (mediation).
 
 ![](images/07-ancova/ancova_assumptions2.png)
 
 #### **Homogeneity of regression slopes**
 
-The second additional assumption is that the relationship between the covariate and the dependent variable is similar for all levels of the independent variable (homogeneity of regression slopes). We can test this by adding an interaction term between the covariate and each independent variable in jamovi under the Model drop-down menu.
-
-If the interaction effect is not significant it can be removed. If it is significant then a different and more advanced statistical technique might be appropriate (which is beyond the scope of this class). In our case, the interactions between each IV and our covariate are not statistically significant so we can remove the interaction terms and move on.
-
-To test this assumption, add an interaction term between the covariate and each independent variable in jamovi under the Model drop-down menu. Add the interactions as model terms.However, we have two additional assumptions we need to check. Let's check the assumption of independence of the covariate and treatment effect. For that, we need to perform another ANOVA (not an ANCOVA) with our independent variables predicting age. Our results indicate we violate this assumption: both `stress` and the interaction of `stress * commute` are related to age. This suggests age is in fact a *confounding* variable, not a covariate. We should be performing a mediation, but because we want to illustrate the ANCOVA we will continue.
+The second additional assumption is that the relationship between the covariate and the dependent variable is similar for all levels of the independent variable (homogeneity of regression slopes). We can test this by adding an interaction term between the covariate and each independent variable in jamovi under the Model drop-down menu. Age does not significantly interact with either stress (*p* = .520) or commute (*p* = .771).
 
 ![](images/07-ancova/ancova_assumptions3.png)
 

@@ -6,15 +6,15 @@ library(viridis)
 options(knitr.graphics.auto_pdf = TRUE)
 ```
 
-Regression can examine multiple predictor variables simultaneously. Whereas the factorial ANOVA can only handle categorical variables (i.e., nominal or ordinal), regression can handle all types of predictor variables including both categorical and continuous.
+Regression can examine multiple predictor variables simultaneously. Whereas the factorial ANOVA can only handle categorical variables (i.e., nominal or ordinal), regression can handle all types of predictor variables including both categorical and continuous IVs. However, for the purpose of what we are learning, the outcome variable must be continuous (a logistic, multinomial, or ordinal regression can be used for categorical DVs).
 
 There are three types of regression in general:
 
-1.  [Linear regression]{.ul}: this looks at the effect of a single predictor (IV) on a single outcome (DV). This is equivalent to a t-test (dichotomous predictor), one-way ANOVA (ordinal predictor), or correlation (scale predictor).
+1.  [Linear regression]{.underline}: this looks at the effect of a single predictor (IV) on a single outcome (DV). This is equivalent to a t-test (dichotomous predictor), one-way ANOVA (ordinal predictor), or correlation (scale predictor).
 
-2.  [Multiple regression]{.ul}: this looks at the effect of multiple predictors (IVs) on a single outcome (DV).
+2.  [Multiple regression]{.underline}: this looks at the effect of multiple predictors (IVs) on a single outcome (DV).
 
-3.  [Hierarchical regression]{.ul}: this looks at the effect of multiple predictors (IVs) on a single outcome (DV), but there are multiple "blocks" or "steps" so that you can check the added predictability of new variables.
+3.  [Hierarchical regression]{.underline}: this looks at the effect of multiple predictors (IVs) on a single outcome (DV), but there are multiple "blocks" or "steps" so that you can check the added predictability of new variables.
 
 Note that the linear regression is actually equivalent to a lot of the statistics we've learned. For example, the linear regression will produce the same results as a t-test when we have a dichotomous predictor, a one-way ANOVA when we have an ordinal predictor, and a correlation when we have a continuous predictor. We'll learn more about this at the end of the textbook when we wrap everything up.
 
@@ -23,6 +23,8 @@ Note that the linear regression is actually equivalent to a lot of the statistic
 A linear regression model is basically a linear line, which many of us learned as y = mx + b, where y is our predicted outcome score, x is the IV, b is the intercept (the score in y when x = 0), and m is the slope (when you increase x-value by 1 unit, the y-value goes up by m units).
 
 Let's imagine we have a dataset of dragons with a categorical predictor (whether they are spotted or striped) and a continuous predictor (height) and a continuous dependent variable (weight). We want to use this dataset to be able to predict the weight of future dragons. First, let's learn how to interpret the coefficients for our two predictor variables (images from [Allison Horst](https://github.com/allisonhorst/stats-illustrations#multiple-linear-regression-dragons-thread)).
+
+A bunch of dragons' data were collected, and found the following linear regression equation: `weight = 2.4 + .6(spotted) + .3(height)` based on all the data. This is very similar to the algebraic equations you've learned in math classes: 2.4 is the constant (i.e., the average weight, in tons, for dragons that are not spotted and have a height of 0). .6 is the coefficient for spotted such that spotted dragons tend to be, on average, .6 times heavier than non-spotted dragons. On the other hand, .3 is the coefficient for height such that the taller dragons are, the heavier they tend to weigh.
 
 ```{r echo = FALSE, fig.cap = "Regression lines and residuals", fig.show='hold',fig.align='center', out.width = "49%"}
 knitr::include_graphics(c("images/13-regression/dragon_categorical.png", "images/13-regression/dragons_continuous.png"))

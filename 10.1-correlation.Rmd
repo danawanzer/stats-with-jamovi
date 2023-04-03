@@ -11,7 +11,7 @@ Correlation (*r*) tests the relationship between two variables, which are usuall
 
 We will learn about other types of correlations, but mainly we are interested in the Pearson product moment correlation, which is often just called the Pearson correlation or simply correlation. Other correlations are generally referred to by their specific name.
 
-The strength of the correlation is determined by how closely the points in the scatterplot matrix fit on the regression line. Correlations are really *standardized covariances*. [Covariance]{.ul} is the extent to which the deviation of one variable from its mean matches the deviation of the other variable from its mean. We then standardize the covariance into the correlation which ranges from -1 to +1. Because correlations are standardized, they are considered effect sizes! Commonly, we describe values of ±.1 as a small effect size, ±.3 as medium, and ±.5 as large, but remember that this heuristic is simply a heuristic and it's best to think about size in relation to your field.
+The strength of the correlation is determined by how closely the points in the scatterplot matrix fit on the regression line. Correlations are really *standardized covariances*. [Covariance]{.underline} is the extent to which the deviation of one variable from its mean matches the deviation of the other variable from its mean. We then standardize the covariance into the correlation which ranges from -1 to +1. Because correlations are standardized, they are considered effect sizes! Commonly, we describe values of ±.1 as a small effect size, ±.3 as medium, and ±.5 as large, but remember that this heuristic is simply a heuristic and it's best to think about size in relation to your field.
 
 ![](images/08-correlation/correlation-examples.png)
 
@@ -21,9 +21,9 @@ The strength of the correlation is determined by how closely the points in the s
 
 ### Step 1: Look at the data
 
-Let's run an example with data from lsj-data. Open data from your Data Library in "lsj-data". Select and open "parenthood". This dataset measures a new mother's[^correlation-1] daily grumpiness very precisely, on a scale from 0 (not at all grumpy) to 100 (extremely grumpy). In addition, I am also tracking her sleeping patterns and her son's sleeping patterns across 100 days.
+Let's run an example with data from lsj-data. Open data from your Data Library in "lsj-data". Select and open "parenthood". This dataset measures a new mother's[^10.1-correlation-1] daily grumpiness very precisely, on a scale from 0 (not at all grumpy) to 100 (extremely grumpy). In addition, I am also tracking her sleeping patterns and her son's sleeping patterns across 100 days.
 
-[^correlation-1]: The dataset built into jamovi says the person's name is Dan, but they now go by Danielle. You can follow her on Twitter at [\@djnavarro](https://twitter.com/djnavarro).
+[^10.1-correlation-1]: The dataset built into jamovi says the person's name is Dan, but they now go by Danielle. You can follow her on Twitter at [\@djnavarro](https://twitter.com/djnavarro).
 
 Here's a video walking through the correlation.
 
@@ -76,7 +76,7 @@ One of our data points (`day)` is strange because it's just a linear number 1-10
 
 #### Testing linearity
 
-To check linearity we examine the scatterplots as shown above. We look at all the dots and look to see if there is a non-linear (e.g., curvilinear) relationship. If there seems to be a curve to the data points then you fail to meet this assumption. Note that you need to look at the data points themselves; the correlation matrix will always produce lines even if the underlying data looks curvilinear.
+To check linearity we examine the scatterplots as shown above. We look at all the **dots** and look to see if there is a non-linear (e.g., curvilinear) relationship. If there seems to be a curve to the data points then you fail to meet this assumption. Note that you need to look at the data points themselves; the correlation matrix will always produce lines even if the underlying data looks curvilinear.
 
 The scatterplots above do not suggest a non-linear relationship, so we meet the assumption of linearity.
 
@@ -119,6 +119,8 @@ Once we are satisfied we have satisfied the assumptions for the correlation, we 
 ![](images/08-correlation/correlation-matrix.png)
 
 It looks like three of the variables are significantly (*p* \< .05) correlated with each other: `dan.sleep`, `baby.sleep`, and `dan.grump`. `day` does not seem to be significantly correlated with any of the other three variables.
+
+Note that it's not included in the correlation matrix for some reason, but the degrees of freedom for a correlation are n-2.
 
 #### Write up the results in APA style
 
