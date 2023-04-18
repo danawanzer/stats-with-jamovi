@@ -99,7 +99,7 @@ One semester, a student asked, "Isn't time a continuous variable?" To which I re
 Here's another example. Notice that studying can be measured at different levels. Depending on the nature of the question and response options, it might be nominal, ordinal, or continuous! Here's an example of data at the continuous, ordinal, and nominal level.
 
 | Name               | Study_Continuous        | Study_Ordinal                        | Study_Nominal                         |
-|--------------------|-------------------------|--------------------------------------|---------------------------------------|
+|----------------|----------------|--------------------|---------------------|
 | *Name (Character)* | *Hours studied per day* | *Likert scale of amount of studying* | *Whether or not they study every day* |
 | Jesus              | 5.0                     | A great deal                         | Yes                                   |
 | Nicky              | 4.5                     | A great deal                         | Yes                                   |
