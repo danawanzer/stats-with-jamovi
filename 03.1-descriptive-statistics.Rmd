@@ -28,13 +28,19 @@ Second, those little icons will be really helpful to let you know what variables
 
 ### Describing your data
 
-We explore our data partly to describe our data and partly to check our data before performing inferential statistics. jamovi puts all our descriptive statistics into one useful analysis under the Exploration tab called `Descriptives`.
+We explore our data partly to describe our data and partly to check our data before performing inferential statistics. jamovi puts all our descriptive statistics into one useful analysis under the Analyses tab within the Exploration menu called `Descriptives`.
 
 #### Describing nominal or ordinal data
 
-Nominal and ordinal data is described mainly using frequencies. Choose your variable and move it to the Variables box and then select the option `Frequency tables`. Note that it tells you it's best for nominal and ordinal data with the two icons!
+Nominal and ordinal data is described mainly using frequencies. Choose your categorical variable(s) and move it to the Variables box and then select the option `Frequency tables`. Note that it tells you it's best for nominal and ordinal data with the two icons!
+
+I recommend you watch this video by Alexander Swan on [how to describe categorical data in jamovi](https://youtu.be/eGdkYZbljbQ).
 
 #### Describing continuous data
+
+Continuous data is described using a variety of measures of central tendency, dispersion, and more. Choose your continuous variable(s) in the list of variables on the left side and move it to the Variables box.
+
+I recommend you watch this video by Alexander Swan on [how to describe continuous data in jamovi](https://youtu.be/oVE0nxJ0J44).
 
 In the `Descriptives` analysis, these are under the `Statistics` drop-down menu. There are a ton of possible options!
 
@@ -108,5 +114,3 @@ For some more complicated figures, I turn to the `ggplot2` package in R. Here's 
 [^03.1-descriptive-statistics-4]: This comes from [Wanzer (2020) What is evaluation? Perspectives of how evaluation differs (or not) from research](https://journals.sagepub.com/doi/10.1177/1098214020920710)
 
 ![](images/02-stats-foundations/example4.png)
-
-In this class, we'll learn about effective data visualization later in the semester. I will provide some brief tutorials to help you get started, but please note that learning data visualization should be a course unto itself, so we will not be able to cover everything.
