@@ -18,10 +18,11 @@ knitr::write_bib(c(
 ```
 # New website!
 
+```{block, type="info"}
 This website is no longer maintained. Please use the updated version here: [https://danalinnell.github.io/statistics-with-jamovi/](https://danalinnell.github.io/statistics-with-jamovi/)
 
 The website was updated due to (a) a name change and (b) GitHub does not allow changing usernames. Additionally, this gave me the opportunity to do a major overhaul of the structure of the book. 
-
+```
 
 # Welcome {.unnumbered}
 
