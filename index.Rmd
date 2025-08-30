@@ -16,6 +16,12 @@ description: "This is the website for PSYC 290 and PSYC 790 at the University of
 knitr::write_bib(c(
   .packages(), 'bookdown', 'tidyverse'), 'packages.bib')
 ```
+# New website!
+
+This website is no longer maintained. Please use the updated version here: [https://danalinnell.github.io/statistics-with-jamovi/](https://danalinnell.github.io/statistics-with-jamovi/)
+
+The website was updated due to (a) a name change and (b) GitHub does not allow changing usernames. Additionally, this gave me the opportunity to do a major overhaul of the structure of the book. 
+
 
 # Welcome {.unnumbered}
 
